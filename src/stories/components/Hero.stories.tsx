@@ -12,7 +12,7 @@ const image = {
 };
 
 export default {
-  title: "Components/Hero",
+  title: "Molecules/Hero",
   component: Hero,
   args: {
     src: image.src,

@@ -24,5 +24,5 @@ const Template: ComponentStory<typeof BackgroundImage> = (args) => (
 export const Default = Template.bind({});
 Default.args = { bgcolor: "default" };
 
-export const Custom = Template.bind({});
-Custom.args = { ...Default.args, bgcolor: "#000" };
+export const CustomBackgroundColor = Template.bind({});
+CustomBackgroundColor.args = { ...Default.args, bgcolor: "#000" };

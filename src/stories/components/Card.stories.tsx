@@ -9,7 +9,7 @@ import * as ListGroup from "./ListGroup.stories";
 import * as ButtonLink from "./ButtonLink.stories";
 
 export default {
-  title: "Components/Card",
+  title: "Molecules/Card",
   component: Card,
   args: {
     border: 4,

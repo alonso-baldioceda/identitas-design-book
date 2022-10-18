@@ -24,5 +24,8 @@ const Template: ComponentStory<typeof Mask> = (args) => (
 
 export const Default = Template.bind({});
 
-export const Custom = Template.bind({});
-Custom.args = { ...Default.args, bgcolor: "rgba(255, 0, 0, 0.5)" };
+export const CustomBackgroundColor = Template.bind({});
+CustomBackgroundColor.args = {
+  ...Default.args,
+  bgcolor: "rgba(255, 0, 0, 0.5)",
+};
