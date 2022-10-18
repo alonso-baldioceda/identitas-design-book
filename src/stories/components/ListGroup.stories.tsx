@@ -1,39 +1,75 @@
 import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-// Components
+// Stories
 import ListGroup from "./ListGroup";
-import ListGroupItem from "./ListGroupItem";
-
-// Assets
-import imageFile from "./../../images/svg/bed-single.svg";
-
-const image = {
-  src: imageFile,
-  alt: "my image",
-};
+import * as ListGroupItem from "./ListGroupItem.stories";
 
 export default {
   title: "Components/ListGroup",
   component: ListGroup,
-  args: [
+  args: {
+    list: [
+      {
+        ...ListGroupItem.Default.args,
+      },
+      {
+        ...ListGroupItem.Default.args,
+      },
+      {
+        ...ListGroupItem.Default.args,
+      },
+    ],
+  },
+} as ComponentMeta<typeof ListGroup>;
+
+const Template: ComponentStory<typeof ListGroup> = (args) => (
+  <ListGroup {...args} />
+);
+
+export const Default = Template.bind({});
+
+export const TextWithIcon = Template.bind({});
+TextWithIcon.args = {
+  list: [
     {
-      text: "some text here!!",
-      imgSrc: image.src,
-      imgAlt: image.alt,
+      ...ListGroupItem.TextWithIcon.args,
+    },
+    {
+      ...ListGroupItem.TextWithIcon.args,
+    },
+    {
+      ...ListGroupItem.TextWithIcon.args,
     },
   ],
 };
 
-export const ListWithItems = () => (
-  <ListGroup>
-    <ListGroupItem text="some text here!!">
-      <img src={image.src} alt={image.alt} height={40} width={40} />
-    </ListGroupItem>
-    <ListGroupItem text="some text here!!">
-      <img src={image.src} alt={image.alt} height={40} width={40} />
-    </ListGroupItem>
-    <ListGroupItem text="some text here!!">
-      <img src={image.src} alt={image.alt} height={40} width={40} />
-    </ListGroupItem>
-  </ListGroup>
-);
+export const TextWithIconCustomSize = Template.bind({});
+TextWithIconCustomSize.args = {
+  list: [
+    {
+      ...ListGroupItem.TextWithIconCustomSize.args,
+    },
+    {
+      ...ListGroupItem.TextWithIconCustomSize.args,
+    },
+    {
+      ...ListGroupItem.TextWithIconCustomSize.args,
+    },
+  ],
+};
+
+export const TextWithIconAndSubheading = Template.bind({});
+TextWithIconAndSubheading.args = {
+  list: [
+    {
+      ...ListGroupItem.TextWithIconAndSubheading.args,
+    },
+    {
+      ...ListGroupItem.TextWithIconAndSubheading.args,
+    },
+    {
+      ...ListGroupItem.TextWithIconAndSubheading.args,
+    },
+  ],
+};

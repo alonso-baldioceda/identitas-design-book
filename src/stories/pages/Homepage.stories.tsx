@@ -4,13 +4,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Page
 import Homepage from "./Homepage";
 
-// Components
-
 // Stories
-import ButtonLink from "../components/ButtonLink.stories";
-import Card from "./../components/Card.stories";
-import Hero from "../components/Hero.stories";
-import ListGroup from "./../components/ListGroup.stories";
+import * as Card from "./../components/Card.stories";
+import * as Hero from "../components/Hero.stories";
 
 export default {
   /* 👇 The title prop is optional.
@@ -25,14 +21,12 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
   <Homepage {...args} />
 );
 
-export const Home = Template.bind({});
-Home.args = {
-  hero: { ...Hero.args },
+export const Default = Template.bind({});
+Default.args = {
+  hero: { ...Hero.Default.args },
   cardsData: [
-    { distribution: Card.args, list: ListGroup.args, cta: ButtonLink.args },
-    { distribution: Card.args, list: ListGroup.args, cta: ButtonLink.args },
-    { distribution: Card.args, list: ListGroup.args, cta: ButtonLink.args },
+    { ...Card.BookingSample.args },
+    { ...Card.BookingSample.args },
+    { ...Card.BookingSample.args },
   ],
 };
-
-Home.storyName = "Homepage";

@@ -4,7 +4,7 @@ import classnames from "classnames";
 interface ButtonLinkProps {
   appearance: string;
   bold?: boolean;
-  children?: ReactNode;
+  text: string;
   disabled?: boolean;
   mb?: number;
   px?: number;
@@ -17,13 +17,13 @@ interface ButtonLinkProps {
 const ButtonLink: FC<ButtonLinkProps> = ({
   appearance = "primary",
   bold = true,
-  children,
   disabled = false,
   mb = 0,
   px = 4,
   py = 2,
   rounded = true,
   targetBlank = false,
+  text = "click me!!",
   url = "#",
 }) => (
   <a
@@ -40,7 +40,7 @@ const ButtonLink: FC<ButtonLinkProps> = ({
       { "fw-bold": bold }
     )}
   >
-    {children}
+    {text}
   </a>
 );
 

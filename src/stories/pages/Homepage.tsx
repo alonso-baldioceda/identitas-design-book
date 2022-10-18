@@ -1,22 +1,19 @@
 import React, { FC } from "react";
 
 // Components
-import ButtonLink from "../components/ButtonLink";
 import Card from "../components/Card";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import Layout from "../components/Layout";
-import ListGroup from "../components/ListGroup";
-import ListGroupItem from "../components/ListGroupItem";
 import Spacer from "../components/Spacer";
 import Hero from "../components/Hero";
 
 // Assets
-import imageFile from "./../../images/svg/bed-single.svg";
+// import imageFile from "./../../images/svg/bed-single.svg";
 
-const image = {
-  src: imageFile,
-  alt: "my image",
-};
+// const image = {
+//   src: imageFile,
+//   alt: "my image",
+// };
 
 // Types
 export interface HomepageProps {
@@ -25,20 +22,12 @@ export interface HomepageProps {
 }
 
 const Homepage: FC<HomepageProps> = ({ hero, cardsData }) => {
+  console.log("cardsData", cardsData);
+
   return (
     <Layout>
       <section className="anchor-block" id="main">
-        <Hero {...hero}>
-          <div className="position-absolute start-0 bottom-0 p-4 w-100">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col col-lg-8 col-xl-6">
-                  <h1 className="mb-0 text-white">some text here!!</h1>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Hero>
+        <Hero {...hero} />
       </section>
       <section className="anchor-block" id="units">
         <FadeInWhenVisible>
@@ -67,30 +56,7 @@ const Homepage: FC<HomepageProps> = ({ hero, cardsData }) => {
                       className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4"
                       key={index}
                     >
-                      <Card {...card.distribution} key={index}>
-                        <div className="px-3 py-5">
-                          <div className="mb-3">
-                            <ListGroup>
-                              {card.list.map((listItem: any, index: number) => (
-                                <ListGroupItem {...listItem} key={index}>
-                                  <img
-                                    src={listItem.imgSrc}
-                                    alt={listItem.imgAlt}
-                                    height={40}
-                                    width={40}
-                                  />
-                                </ListGroupItem>
-                              ))}
-                            </ListGroup>
-                          </div>
-                          <p className="text-center small mb-2">
-                            Reservar por:
-                          </p>
-                          <div className="d-flex justify-content-center">
-                            <ButtonLink {...card.cta}>Airbnb</ButtonLink>
-                          </div>
-                        </div>
-                      </Card>
+                      <Card {...card} key={index} />
                     </div>
                   ))}
                 </div>

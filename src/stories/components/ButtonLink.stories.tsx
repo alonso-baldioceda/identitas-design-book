@@ -16,6 +16,7 @@ export default {
     py: 2,
     rounded: true,
     targetBlank: false,
+    text: "button",
     url: "https://www.google.com/",
   },
   argTypes: {
@@ -51,11 +52,11 @@ export default {
 } as ComponentMeta<typeof ButtonLink>;
 
 const Template: ComponentStory<typeof ButtonLink> = (args) => (
-  <ButtonLink {...args}>link</ButtonLink>
+  <ButtonLink {...args} />
 );
 
-export const ButtonLinkPrimary = Template.bind({});
-ButtonLinkPrimary.args = {
+export const Default = Template.bind({});
+Default.args = {
   appearance: "primary",
   bold: true,
   disabled: false,
@@ -64,14 +65,12 @@ ButtonLinkPrimary.args = {
   py: 2,
   rounded: true,
   targetBlank: false,
+  text: "click me!!",
   url: "https://www.google.com/",
-  children: "button",
 };
-ButtonLinkPrimary.storyName = "Primary";
 
-export const ButtonLinkSecondary = Template.bind({});
-ButtonLinkSecondary.args = {
-  ...ButtonLinkPrimary.args,
+export const Secondary = Template.bind({});
+Secondary.args = {
+  ...Default.args,
   appearance: "secondary",
 };
-ButtonLinkSecondary.storyName = "Secondary";

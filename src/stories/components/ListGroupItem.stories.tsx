@@ -6,6 +6,7 @@ import ListGroupItem from "./ListGroupItem";
 
 // Assets
 import imageFile from "./../../images/svg/bed-single.svg";
+
 const image = {
   src: imageFile,
   alt: "my image",
@@ -16,10 +17,8 @@ export default {
   component: ListGroupItem,
   args: {
     text: "some text here!!",
-    src: null,
-    alt: null,
   },
-};
+} as ComponentMeta<typeof ListGroupItem>;
 
 const Template: ComponentStory<typeof ListGroupItem> = (args) => (
   <ListGroupItem {...args} />
@@ -28,7 +27,7 @@ const Template: ComponentStory<typeof ListGroupItem> = (args) => (
 export const Default = Template.bind({});
 
 export const TextWithIcon = Template.bind({});
-TextWithIcon.args = { ...Default.args, src: image.src, alt: image.alt };
+TextWithIcon.args = { ...Default.args, alt: image.alt, src: image.src };
 
 export const TextWithIconCustomSize = Template.bind({});
 TextWithIconCustomSize.args = {
@@ -37,4 +36,14 @@ TextWithIconCustomSize.args = {
   height: 60,
   src: image.src,
   width: 60,
+};
+
+export const TextWithIconAndSubheading = Template.bind({});
+TextWithIconAndSubheading.args = {
+  ...TextWithIcon.args,
+  alt: image.alt,
+  height: 50,
+  small: "some other text here!!",
+  src: image.src,
+  width: 50,
 };

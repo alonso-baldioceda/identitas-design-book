@@ -14,6 +14,7 @@ export const color = {
   primary: "#FF4785", // coral
   secondary: "#1EA7FD", // ocean
   tertiary: "#DDDDDD",
+  transparent: "transparent",
 
   orange: "#FC521F",
   gold: "#FFAE00",

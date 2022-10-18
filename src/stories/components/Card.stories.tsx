@@ -5,15 +5,18 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Card from "./Card";
 
 // Stories
-import { ListWithItems } from "./ListGroup.stories";
-import { ButtonLinkPrimary } from "./ButtonLink.stories";
+import * as ListGroup from "./ListGroup.stories";
+import * as ButtonLink from "./ButtonLink.stories";
 
 export default {
   title: "Components/Card",
   component: Card,
   args: {
     border: 4,
+    cta: { ...ButtonLink.Default.args },
     foreignBackgroundColor: "primary",
+    list: [...ListGroup.TextWithIcon.args?.list],
+    preCta: "Reservar por",
     title: "title here!!",
     upfrontBackgroundColor: "transparent",
   },
@@ -33,26 +36,15 @@ export default {
   },
 } as ComponentMeta<typeof Card>;
 
-export const BookingSample: ComponentStory<typeof Card> = () => (
-  <Card
-    border={4}
-    title="Title here!!"
-    foreignBackgroundColor="primary"
-    upfrontBackgroundColor="transparent"
-  >
-    <div className="px-3 py-5">
-      <div className="mb-3">
-        <ListWithItems />
-      </div>
-      <p className="text-center small mb-2">Reservar por:</p>
-      <div className="d-flex justify-content-center">
-        <ButtonLinkPrimary
-          appearance="primary"
-          disabled={false}
-          targetBlank={true}
-          url="https://www.google.com/"
-        />
-      </div>
-    </div>
-  </Card>
-);
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+
+export const BookingSample = Template.bind({});
+BookingSample.args = {
+  border: 4,
+  cta: { ...ButtonLink.Default.args },
+  foreignBackgroundColor: "primary",
+  list: [...ListGroup.TextWithIcon.args?.list],
+  preCta: "Reservar por",
+  title: "title here!!",
+  upfrontBackgroundColor: "transparent",
+};

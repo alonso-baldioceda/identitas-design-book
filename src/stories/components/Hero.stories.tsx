@@ -15,30 +15,24 @@ export default {
   title: "Components/Hero",
   component: Hero,
   args: {
-    title: "title here!!",
     src: image.src,
     mask: true,
     bgColor: "default",
+    text: "some text here!!",
   },
 } as ComponentMeta<typeof Hero>;
 
 const Template: ComponentStory<typeof Hero> = (args) => {
-  return (
-    <Hero {...args}>
-      <div className="position-absolute start-0 bottom-0 p-4 w-100">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col col-lg-8 col-xl-6">
-              <h1 className="mb-0 text-white">some text here!!</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </Hero>
-  );
+  return <Hero {...args} />;
 };
 
 export const Default = Template.bind({});
+Default.args = {
+  src: image.src,
+  mask: true,
+  bgColor: "default",
+  text: "some text here!!",
+};
 
 export const MaskDisabled = Template.bind({});
 MaskDisabled.args = { ...Default.args, mask: false };

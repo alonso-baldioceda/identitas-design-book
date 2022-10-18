@@ -1,9 +1,9 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import classnames from "classnames";
 
 interface ButtonProps {
   appearance: string;
-  children: ReactNode;
+  text: string;
   disabled?: boolean;
   bold?: boolean;
   mb?: number;
@@ -15,13 +15,13 @@ interface ButtonProps {
 
 const Button: FC<ButtonProps> = ({
   appearance = "primary",
-  children,
-  disabled = false,
   bold = true,
+  disabled = false,
   mb = 0,
   px = 4,
   py = 2,
   rounded = true,
+  text = "click me!!",
   type = "button",
 }) => (
   <button
@@ -33,7 +33,7 @@ const Button: FC<ButtonProps> = ({
     type={type}
     disabled={disabled}
   >
-    {children}
+    {text}
   </button>
 );
 
