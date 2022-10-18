@@ -9,18 +9,20 @@ import imageFile from "./../../images/ocean.jpg";
 
 const image = {
   src: imageFile,
-  alt: "my image",
 };
 
 export default {
   title: "Components/BackgroundImage",
   component: BackgroundImage,
-  args: { bgColor: "", imgSrc: image.src, imgAlt: image.alt },
+  args: { src: image.src, bgcolor: "default" },
 } as ComponentMeta<typeof BackgroundImage>;
 
 const Template: ComponentStory<typeof BackgroundImage> = (args) => (
-  <BackgroundImage {...args}>some text here!!</BackgroundImage>
+  <BackgroundImage {...args} />
 );
 
 export const Default = Template.bind({});
-Default.storyName = "BackgroundImage";
+Default.args = { bgcolor: "default" };
+
+export const Custom = Template.bind({});
+Custom.args = { ...Default.args, bgcolor: "#000" };

@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 
 // Styles
@@ -20,19 +20,26 @@ const StyledListGroupItemIconWrapper = styled.span`
 
 // Props
 interface ListGroupItemProps {
-  children?: ReactNode;
+  alt?: string;
+  height?: number;
+  src?: string;
   text: string;
+  width?: number;
 }
 
 const ListGroupItem: FC<ListGroupItemProps> = ({
-  children = undefined,
-  text,
+  alt = "",
+  height = 40,
+  src = "",
+  text = "some text here!!",
+  width = 40,
 }) => {
   return (
     <StyledListGroupItem className="d-flex flex-row align-items-center justify-content-center">
-      {children && (
+      {src && (
         <StyledListGroupItemIconWrapper className="d-flex align-items-center justify-content-center mb-2">
-          {children}
+          {/* TODO: add svg support */}
+          <img src={src} alt={alt} height={height} width={width} />
         </StyledListGroupItemIconWrapper>
       )}
       <p className="mb-0">{text}</p>

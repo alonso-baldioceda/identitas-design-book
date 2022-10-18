@@ -8,6 +8,7 @@ import Layout from "../components/Layout";
 import ListGroup from "../components/ListGroup";
 import ListGroupItem from "../components/ListGroupItem";
 import Spacer from "../components/Spacer";
+import Hero from "../components/Hero";
 
 // Assets
 import imageFile from "./../../images/svg/bed-single.svg";
@@ -19,12 +20,26 @@ const image = {
 
 // Types
 export interface HomepageProps {
+  hero: any;
   cardsData?: any;
 }
 
-const Homepage: FC<HomepageProps> = ({ cardsData }) => {
+const Homepage: FC<HomepageProps> = ({ hero, cardsData }) => {
   return (
     <Layout>
+      <section className="anchor-block" id="main">
+        <Hero {...hero}>
+          <div className="position-absolute start-0 bottom-0 p-4 w-100">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col col-lg-8 col-xl-6">
+                  <h1 className="mb-0 text-white">some text here!!</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Hero>
+      </section>
       <section className="anchor-block" id="units">
         <FadeInWhenVisible>
           <div className="bg-merino">

@@ -1,44 +1,25 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import Mask from "./Mask";
+import { color } from "./../shared/styles.js";
 
 const StyledBgImg = styled((props) => <div {...props} />)`
-  /* TODO: replace red by theme color */
-  background-color: ${(props) => (props.bgColor ? `${props.bgColor}` : `red`)};
-  background-image: ${(props) => `url(${props.image})`};
+  background-color: ${(props) =>
+    props.bgcolor !== "default" ? `${props.bgcolor}` : color.primary};
+  background-image: ${(props) => `url(${props.src})`};
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
   z-index: -1;
-
-  @media (min-width: 992px) {
-    /* TODO: analyze code improvement */
-    height: calc(100vh);
-    /* height: calc(100vh - 80px); */
-  }
 `;
 
 // Types
 interface BackgroundImageProps {
-  bgColor?: string;
   src: string;
-  alt: string;
-  mask?: boolean;
+  bgcolor?: string | null;
 }
 
-const BackgroundImage: FC<BackgroundImageProps> = ({
-  // TODO: move color to variables
-  bgColor = "bg-gun-powder",
-  src = "",
-  alt = "",
-  mask = true,
-}) => {
-  return (
-    <>
-      <StyledBgImg />
-      {mask && <Mask />}
-    </>
-  );
-};
+const BackgroundImage: FC<BackgroundImageProps> = (props) => (
+  <StyledBgImg className="vh-100" {...props} />
+);
 
 export default BackgroundImage;

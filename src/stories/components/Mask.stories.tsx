@@ -13,7 +13,7 @@ const StyledStory = styled.div`
 export default {
   title: "Components/Mask",
   component: Mask,
-  args: { bgColor: "default" },
+  args: { bgcolor: "default" },
 } as ComponentMeta<typeof Mask>;
 
 const Template: ComponentStory<typeof Mask> = (args) => (
@@ -25,4 +25,4 @@ const Template: ComponentStory<typeof Mask> = (args) => (
 export const Default = Template.bind({});
 
 export const Custom = Template.bind({});
-Custom.args = { ...Default.args, bgColor: "rgba(255, 0, 0, 0.5)" };
+Custom.args = { ...Default.args, bgcolor: "rgba(255, 0, 0, 0.5)" };

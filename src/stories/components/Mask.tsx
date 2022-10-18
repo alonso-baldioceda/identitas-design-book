@@ -4,20 +4,19 @@ import { color } from "./../shared/styles.js";
 
 // Styles
 const StyledMask = styled((props) => <div {...props} />)`
-  background: ${({ bgColor }) =>
-    bgColor !== "default" ? bgColor : color.background};
-  z-index: -1;
+  background: ${(props) =>
+    props.bgcolor !== "default" ? props.bgcolor : color.background};
 `;
 
 // Types
 interface MaskProps {
-  bgColor?: string;
+  bgcolor?: string;
 }
 
-const Mask: FC<MaskProps> = ({ bgColor = "default" }) => {
+const Mask: FC<MaskProps> = ({ bgcolor = "default" }) => {
   return (
     <StyledMask
-      bgColor={bgColor}
+      bgcolor={bgcolor}
       className="position-absolute bottom-0 start-0 end-0 top-0 w-100 h-100"
     />
   );

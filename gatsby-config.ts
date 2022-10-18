@@ -38,20 +38,20 @@ const config: GatsbyConfig = {
       },
       __key: "pages",
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `mdx`,
-        path: `${__dirname}/src/stories/components`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `mdx`,
-        path: `${__dirname}/src/stories/pages`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `mdx`,
+    //     path: `${__dirname}/src/stories/components`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `mdx`,
+    //     path: `${__dirname}/src/stories/pages`,
+    //   },
+    // },
   ],
 };
 
