@@ -7,14 +7,6 @@ import Layout from "../components/Layout";
 import Spacer from "../components/Spacer";
 import Hero from "../components/Hero";
 
-// Assets
-// import imageFile from "./../../images/svg/bed-single.svg";
-
-// const image = {
-//   src: imageFile,
-//   alt: "my image",
-// };
-
 // Types
 export interface HomepageProps {
   hero: any;
@@ -22,8 +14,6 @@ export interface HomepageProps {
 }
 
 const Homepage: FC<HomepageProps> = ({ hero, cardsData }) => {
-  console.log("cardsData", cardsData);
-
   return (
     <Layout>
       <section className="anchor-block" id="main">
