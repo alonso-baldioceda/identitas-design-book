@@ -6,6 +6,7 @@ module.exports = {
     "@storybook/addon-interactions",
     "storybook-addon-themes",
   ],
+  plugins: ["inline-react-svg"],
   framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-webpack5",
@@ -24,6 +25,11 @@ module.exports = {
     );
 
     config.resolve.mainFields = ["browser", "module", "main"];
+
     return config;
+  },
+  babel: async (options) => {
+    options.plugins.push("babel-plugin-inline-react-svg");
+    return options;
   },
 };

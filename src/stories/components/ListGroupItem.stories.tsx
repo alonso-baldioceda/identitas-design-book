@@ -5,20 +5,22 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ListGroupItem from "./ListGroupItem";
 
 // Assets
-import imageFile from "./../../images/svg/bed-single.svg";
-
-const image = {
-  alt: "my image",
-  src: imageFile,
-};
+import BedQueen from "./../../images/svg/bed-queen.svg";
 
 export default {
   title: "Components/ListGroupItem",
   component: ListGroupItem,
   args: {
-    alt: image.alt,
-    src: image.src,
+    iconsize: "default",
     text: "some text here!!",
+    subtext: "some other text here!!",
+    svg: "",
+  },
+  argTypes: {
+    iconsize: {
+      control: "select",
+      options: ["small", "default", "large"],
+    },
   },
 } as ComponentMeta<typeof ListGroupItem>;
 
@@ -28,32 +30,29 @@ const Template: ComponentStory<typeof ListGroupItem> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  subtext: "",
+  svg: "",
   text: "some text here!!",
 };
 
-export const TextWithIcon = Template.bind({});
-TextWithIcon.args = {
+export const TextWithIconDefault = Template.bind({});
+TextWithIconDefault.args = {
   ...Default.args,
-  alt: image.alt,
-  src: image.src,
-  text: "some other text here!!",
+  svg: <BedQueen />,
+  text: "some more text here!!",
 };
 
-export const TextWithIconCustomSize = Template.bind({});
-TextWithIconCustomSize.args = {
-  ...TextWithIcon.args,
-  alt: image.alt,
-  height: 60,
-  src: image.src,
-  width: 60,
+export const TextWithIconSmall = Template.bind({});
+TextWithIconSmall.args = {
+  ...TextWithIconDefault.args,
+  iconsize: "small",
+  svg: <BedQueen />,
 };
 
 export const TextWithIconAndSubheading = Template.bind({});
 TextWithIconAndSubheading.args = {
-  ...TextWithIcon.args,
-  alt: image.alt,
-  height: 50,
-  small: "some other text here!!",
-  src: image.src,
-  width: 50,
+  ...TextWithIconDefault.args,
+  iconsize: "large",
+  subtext: "some other text here!!",
+  svg: <BedQueen />,
 };

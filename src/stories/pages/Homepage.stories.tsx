@@ -8,6 +8,16 @@ import Homepage from "./Homepage";
 import * as Card from "./../components/Card.stories";
 import * as Hero from "../components/Hero.stories";
 
+// Assets
+// import bedQueen from "./../../images/svg/bed-queen.svg";
+
+import BedQueen from "./../../images/svg/bed-queen.svg";
+
+// const image = {
+//   alt: "my image",
+//   src: bedQueen,
+// };
+
 export default {
   /* 👇 The title prop is optional.
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
@@ -28,5 +38,11 @@ Default.args = {
     { ...Card.BookingSample.args },
     { ...Card.BookingSample.args },
     { ...Card.BookingSample.args },
+  ],
+  servicesData: [
+    {
+      icon: BedQueen,
+      text: "some other text here!!",
+    },
   ],
 };

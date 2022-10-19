@@ -11,9 +11,10 @@ import Hero from "../components/Hero";
 export interface HomepageProps {
   hero: any;
   cardsData?: any;
+  servicesData?: any;
 }
 
-const Homepage: FC<HomepageProps> = ({ hero, cardsData }) => {
+const Homepage: FC<HomepageProps> = ({ hero, cardsData, servicesData }) => {
   return (
     <Layout>
       <section className="anchor-block" id="main">

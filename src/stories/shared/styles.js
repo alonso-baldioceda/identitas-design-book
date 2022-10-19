@@ -57,6 +57,14 @@ export const spacing = {
   },
 };
 
+export const sizing = {
+  icon: {
+    small: 48,
+    default: 64,
+    large: 80,
+  },
+};
+
 export const typography = {
   type: {
     primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
