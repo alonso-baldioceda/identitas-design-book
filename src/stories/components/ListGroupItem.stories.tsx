@@ -11,13 +11,13 @@ export default {
   title: "Components/ListGroupItem",
   component: ListGroupItem,
   args: {
-    iconsize: "default",
+    size: "default",
     text: "some text here!!",
     subtext: "some other text here!!",
     svg: "",
   },
   argTypes: {
-    iconsize: {
+    size: {
       control: "select",
       options: ["small", "default", "large"],
     },
@@ -45,14 +45,14 @@ TextWithIconDefault.args = {
 export const TextWithIconSmall = Template.bind({});
 TextWithIconSmall.args = {
   ...TextWithIconDefault.args,
-  iconsize: "small",
+  size: "small",
   svg: <BedQueen />,
 };
 
 export const TextWithIconAndSubheading = Template.bind({});
 TextWithIconAndSubheading.args = {
   ...TextWithIconDefault.args,
-  iconsize: "large",
+  size: "large",
   subtext: "some other text here!!",
   svg: <BedQueen />,
 };
