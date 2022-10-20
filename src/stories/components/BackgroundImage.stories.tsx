@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { color } from "./../shared/styles.js";
 
 // Components
 import BackgroundImage from "./BackgroundImage";
@@ -14,7 +15,7 @@ const image = {
 export default {
   title: "Components/BackgroundImage",
   component: BackgroundImage,
-  args: { src: image.src, bgcolor: "default" },
+  args: { src: image.src, bgcolor: color.primary },
 } as ComponentMeta<typeof BackgroundImage>;
 
 const Template: ComponentStory<typeof BackgroundImage> = (args) => (
@@ -22,7 +23,7 @@ const Template: ComponentStory<typeof BackgroundImage> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = { bgcolor: "default" };
+Default.args = { bgcolor: color.primary };
 
 export const CustomBackgroundColor = Template.bind({});
 CustomBackgroundColor.args = { ...Default.args, bgcolor: "#000" };

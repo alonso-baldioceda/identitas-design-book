@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { color } from "./../shared/styles.js";
 
 // Components
 import Mask from "./Mask";
@@ -13,7 +14,7 @@ const StyledStory = styled.div`
 export default {
   title: "Components/Mask",
   component: Mask,
-  args: { bgcolor: "default" },
+  args: { bgcolor: color.background },
 } as ComponentMeta<typeof Mask>;
 
 const Template: ComponentStory<typeof Mask> = (args) => (

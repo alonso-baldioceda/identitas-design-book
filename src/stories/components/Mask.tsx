@@ -4,8 +4,7 @@ import { color } from "./../shared/styles.js";
 
 // Styles
 const StyledMask = styled((props) => <div {...props} />)`
-  background: ${(props) =>
-    props.bgcolor !== "default" ? props.bgcolor : color.background};
+  background: ${(props) => props.bgcolor};
 `;
 
 // Types
@@ -13,7 +12,7 @@ interface MaskProps {
   bgcolor?: string;
 }
 
-const Mask: FC<MaskProps> = ({ bgcolor = "default" }) => {
+const Mask: FC<MaskProps> = ({ bgcolor = color.background }) => {
   return (
     <StyledMask
       bgcolor={bgcolor}

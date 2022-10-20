@@ -15,7 +15,7 @@ const StyledBgImg = styled((props) => <div {...props} />)`
 // Types
 interface BackgroundImageProps {
   src: string;
-  bgcolor?: string | null;
+  bgcolor?: string;
 }
 
 const BackgroundImage: FC<BackgroundImageProps> = (props) => (

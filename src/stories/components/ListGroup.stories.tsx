@@ -29,38 +29,38 @@ const Template: ComponentStory<typeof ListGroup> = (args) => (
 
 export const Default = Template.bind({});
 
-export const TextWithIcon = Template.bind({});
-TextWithIcon.args = {
+export const TextWithIconDefault = Template.bind({});
+TextWithIconDefault.args = {
   list: [
     {
-      ...ListGroupItem.TextWithIcon.args,
+      ...ListGroupItem.TextWithIconDefault.args,
     },
     {
-      ...ListGroupItem.TextWithIcon.args,
+      ...ListGroupItem.TextWithIconDefault.args,
     },
     {
-      ...ListGroupItem.TextWithIcon.args,
+      ...ListGroupItem.TextWithIconDefault.args,
     },
   ],
 };
 
-export const TextWithIconCustomSize = Template.bind({});
-TextWithIconCustomSize.args = {
+export const TextWithIconSmall = Template.bind({});
+TextWithIconSmall.args = {
   list: [
     {
-      ...ListGroupItem.TextWithIconCustomSize.args,
+      ...ListGroupItem.TextWithIconSmall.args,
     },
     {
-      ...ListGroupItem.TextWithIconCustomSize.args,
+      ...ListGroupItem.TextWithIconSmall.args,
     },
     {
-      ...ListGroupItem.TextWithIconCustomSize.args,
+      ...ListGroupItem.TextWithIconSmall.args,
     },
   ],
 };
 
-export const TextWithIconAndSubheading = Template.bind({});
-TextWithIconAndSubheading.args = {
+export const TextWithIconLargeAndSubheading = Template.bind({});
+TextWithIconLargeAndSubheading.args = {
   list: [
     {
       ...ListGroupItem.TextWithIconAndSubheading.args,
