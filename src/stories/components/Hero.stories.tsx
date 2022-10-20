@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { color } from "./../shared/styles.js";
 
 // Components
 import Hero from "./Hero";
@@ -17,7 +18,7 @@ export default {
   args: {
     src: image.src,
     mask: true,
-    bgColor: "default",
+    bgColor: color.background,
     text: "some text here!!",
   },
 } as ComponentMeta<typeof Hero>;
@@ -30,7 +31,7 @@ export const Default = Template.bind({});
 Default.args = {
   src: image.src,
   mask: true,
-  bgColor: "default",
+  bgColor: color.background,
   text: "some text here!!",
 };
 

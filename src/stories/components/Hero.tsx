@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { color } from "./../shared/styles.js";
 
 // Components
 import BackgroundImage from "./BackgroundImage";
@@ -20,7 +21,7 @@ interface HeroProps {
 
 const Hero: FC<HeroProps> = ({
   bgColor = "default",
-  mask = true,
+  mask = color.background,
   src,
   text = "some text here!!",
 }) => {

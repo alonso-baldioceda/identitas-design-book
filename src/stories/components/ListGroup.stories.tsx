@@ -6,7 +6,7 @@ import ListGroup from "./ListGroup";
 import * as ListGroupItem from "./ListGroupItem.stories";
 
 export default {
-  title: "Components/ListGroup",
+  title: "Molecules/ListGroup",
   component: ListGroup,
   args: {
     list: [

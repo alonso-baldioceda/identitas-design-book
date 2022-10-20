@@ -8,16 +8,16 @@ import ListGroupItem from "./ListGroupItem";
 import BedQueen from "./../../images/svg/bed-queen.svg";
 
 export default {
-  title: "Components/ListGroupItem",
+  title: "Molecules/ListGroupItem",
   component: ListGroupItem,
   args: {
-    size: "default",
+    svgSize: "default",
     text: "some text here!!",
-    subtext: "some other text here!!",
+    subText: "some other text here!!",
     svg: "",
   },
   argTypes: {
-    size: {
+    svgSize: {
       control: "select",
       options: ["small", "default", "large"],
     },
@@ -30,7 +30,7 @@ const Template: ComponentStory<typeof ListGroupItem> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  subtext: "",
+  subText: "",
   svg: "",
   text: "some text here!!",
 };
@@ -45,14 +45,14 @@ TextWithIconDefault.args = {
 export const TextWithIconSmall = Template.bind({});
 TextWithIconSmall.args = {
   ...TextWithIconDefault.args,
-  size: "small",
+  svgSize: "small",
   svg: <BedQueen />,
 };
 
 export const TextWithIconAndSubheading = Template.bind({});
 TextWithIconAndSubheading.args = {
   ...TextWithIconDefault.args,
-  size: "large",
-  subtext: "some other text here!!",
+  svgSize: "large",
+  subText: "some other text here!!",
   svg: <BedQueen />,
 };

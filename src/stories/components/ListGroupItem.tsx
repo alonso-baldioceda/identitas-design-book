@@ -31,30 +31,30 @@ const StyledListGroupItemIconWrapper = styled((props) => <span {...props} />)`
 // Props
 interface ListGroupItemProps {
   text: string;
-  size: string;
+  svgSize: string;
   // remove any
   svg?: any;
-  subtext?: string;
+  subText?: string;
 }
 
 const ListGroupItem: FC<ListGroupItemProps> = ({
   text,
-  size = "default",
+  svgSize = "default",
   svg,
-  subtext,
+  subText,
 }) => {
   return (
     <StyledListGroupItem className="d-flex flex-row align-items-center justify-content-center mb-2">
       {svg && (
         <StyledListGroupItemIconWrapper className="d-flex align-items-center justify-content-center">
-          <SVG icon={svg} size={size} />
+          <SVG icon={svg} size={svgSize} />
         </StyledListGroupItemIconWrapper>
       )}
       <div>
         <StyledHeading className="mb-0">{text}</StyledHeading>
-        {subtext && (
+        {subText && (
           <StyledSubheading className="d-block fw-light">
-            {subtext}
+            {subText}
           </StyledSubheading>
         )}
       </div>
