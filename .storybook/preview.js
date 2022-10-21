@@ -26,4 +26,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  grid: {
+    gridOn: true,
+    columns: 12,
+    gap: "1.5rem",
+    gutter: "50px",
+    maxWidth: "1440px",
+  },
 };

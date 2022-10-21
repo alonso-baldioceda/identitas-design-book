@@ -11,8 +11,8 @@ export const background = {
 
 export const color = {
   // Palette
-  primary: "#FF4785", // coral
-  secondary: "#1EA7FD", // ocean
+  primary: "#81B29A",
+  secondary: "#1EA7FD",
   tertiary: "#DDDDDD",
   transparent: "transparent",
 
@@ -22,6 +22,7 @@ export const color = {
   seafoam: "#37D5D3",
   purple: "#6F2CAC",
   ultraviolet: "#2A0481",
+  white: "#FFFFFF",
 
   // Monochrome
   lightest: "#FFFFFF",
@@ -34,6 +35,7 @@ export const color = {
   darker: "#444444",
   darkest: "#333333",
 
+  // Border
   border: "rgba(0,0,0,.1)",
 
   // Status
@@ -43,6 +45,9 @@ export const color = {
 
   // Background
   background: "rgba(0, 0, 0, 0.25)",
+
+  // Social
+  airbnb: "#F83759",
 };
 
 export const spacing = {
@@ -67,7 +72,7 @@ export const sizing = {
 
 export const typography = {
   type: {
-    primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    primary: '"Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif',
     code: '"SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace',
   },
   weight: {

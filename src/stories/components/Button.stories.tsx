@@ -21,7 +21,7 @@ export default {
   argTypes: {
     appearance: {
       control: "select",
-      options: ["primary", "secondary", "ternary"],
+      options: ["primary", "secondary", "ternary", "airbnb"],
     },
     bold: {
       control: "boolean",
@@ -71,4 +71,9 @@ Default.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = { ...Default.args, appearance: "secondary" };
-Secondary.storyName = "Secondary";
+
+export const Ternary = Template.bind({});
+Ternary.args = { ...Default.args, appearance: "ternary" };
+
+export const Airbnb = Template.bind({});
+Airbnb.args = { ...Default.args, appearance: "airbnb" };

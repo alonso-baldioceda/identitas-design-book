@@ -27,11 +27,11 @@ export default {
     },
     foreignBackgroundColor: {
       control: "select",
-      options: ["primary", "secondary", "ternary"],
+      options: ["primary", "secondary", "ternary", "airbnb"],
     },
     upfrontBackgroundColor: {
       control: "select",
-      options: ["transparent", "white"],
+      options: ["transparent", "white", "primary", "secondary", "ternary"],
     },
   },
 } as ComponentMeta<typeof Card>;

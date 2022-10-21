@@ -5,6 +5,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "storybook-addon-themes",
+    "storybook-addon-grid",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",
