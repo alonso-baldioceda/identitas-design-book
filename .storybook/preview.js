@@ -1,4 +1,6 @@
+import React from "react";
 import { action } from "@storybook/addon-actions";
+import { GlobalStyle } from "./../src/stories/shared/global";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -34,3 +36,12 @@ export const parameters = {
     maxWidth: "1440px",
   },
 };
+
+export const decorators = [
+  (Story) => (
+    <>
+      <GlobalStyle />
+      <Story />
+    </>
+  ),
+];
