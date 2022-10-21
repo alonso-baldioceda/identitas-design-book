@@ -68,9 +68,11 @@ export const bodyStyles = css`
 
   /* Other texts */
 
-  p {
-    color: ${color.dark};
-    font-weight: 400;
+  body {
+    p {
+      color: ${color.dark} !important;
+      font-weight: 400;
+    }
   }
 
   .small {
@@ -91,6 +93,14 @@ export const bodyStyles = css`
     background-color: ${color.primary} !important;
   }
 
+  .bg-primary-pastel {
+    background-color: ${color.pastelprimary} !important;
+  }
+
+  .bg-secondary-pastel {
+    background-color: ${color.pastelsecondary} !important;
+  }
+
   /* Borders */
 
   .border-airbnb {
@@ -108,7 +118,6 @@ export const bodyStyles = css`
   /* Buttons */
 
   .btn {
-    max-width: 260px;
     min-width: 200px;
 
     &.btn-airbnb {

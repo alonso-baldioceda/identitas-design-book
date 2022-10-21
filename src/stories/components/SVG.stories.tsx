@@ -14,6 +14,12 @@ export default {
     icon: <BedQueen />,
     size: "default",
   },
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["small", "default", "large"],
+    },
+  },
 } as ComponentMeta<typeof SVG>;
 
 const Template: ComponentStory<typeof SVG> = (args) => <SVG {...args} />;

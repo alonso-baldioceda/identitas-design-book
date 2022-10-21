@@ -11,10 +11,10 @@ export default {
   title: "Molecules/ListGroupItem",
   component: ListGroupItem,
   args: {
-    svgSize: "default",
-    text: "some text here!!",
     subText: "some other text here!!",
     svg: "",
+    svgSize: "default",
+    text: "some text here!!",
   },
   argTypes: {
     svgSize: {

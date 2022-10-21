@@ -29,6 +29,7 @@ export default {
       control: "select",
       options: ["primary", "secondary", "ternary", "airbnb"],
     },
+    // TODO: check contrast
     upfrontBackgroundColor: {
       control: "select",
       options: ["transparent", "white", "primary", "secondary", "ternary"],

@@ -73,3 +73,19 @@ TextWithIconLargeAndSubheading.args = {
     },
   ],
 };
+
+export const TextWithIconFloated = Template.bind({});
+TextWithIconFloated.args = {
+  float: true,
+  list: [
+    {
+      ...ListGroupItem.TextWithIconAndSubheading.args,
+    },
+    {
+      ...ListGroupItem.TextWithIconAndSubheading.args,
+    },
+    {
+      ...ListGroupItem.TextWithIconAndSubheading.args,
+    },
+  ],
+};

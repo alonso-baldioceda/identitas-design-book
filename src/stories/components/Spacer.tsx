@@ -30,7 +30,7 @@ export const StyledSpacing = styled.div`
 // Props
 export interface SpacerProps {
   bottomOnly?: boolean;
-  children: ReactNode | ReactNode[];
+  children?: ReactNode | ReactNode[];
 }
 
 const Spacer: FC<SpacerProps> = ({ bottomOnly, children }) => {

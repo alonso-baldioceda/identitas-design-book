@@ -6,11 +6,16 @@ module.exports = {
     "@storybook/addon-interactions",
     "storybook-addon-themes",
     "storybook-addon-grid",
+    "@storybook/addon-a11y",
+    "@storybook/addon-storysource",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-webpack5",
+  },
+  features: {
+    interactionsDebugger: true,
   },
   webpackFinal: async (config) => {
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.

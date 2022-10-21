@@ -11,12 +11,18 @@ export const background = {
 
 export const color = {
   // Palette
+
+  // Primary
   primary: "#81B29A",
   secondary: "#1EA7FD",
   tertiary: "#DDDDDD",
   transparent: "transparent",
   dark: "#222222",
   white: "#FFFFFF",
+
+  // Pastel
+  pastelprimary: "#E5EFEA",
+  pastelsecondary: "#F4F1DE",
 
   // orange: "#FC521F",
   // gold: "#FFAE00",
