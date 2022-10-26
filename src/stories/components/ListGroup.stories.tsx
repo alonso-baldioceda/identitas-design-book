@@ -27,7 +27,19 @@ const Template: ComponentStory<typeof ListGroup> = (args) => (
   <ListGroup {...args} />
 );
 
-export const Default = Template.bind({});
+export const Default = Template.bind({
+  list: [
+    {
+      ...ListGroupItem.Default.args,
+    },
+    {
+      ...ListGroupItem.Default.args,
+    },
+    {
+      ...ListGroupItem.Default.args,
+    },
+  ],
+});
 
 export const TextWithIconDefault = Template.bind({});
 TextWithIconDefault.args = {

@@ -10,28 +10,30 @@ import Hero from "../components/Hero";
 
 // Types
 export interface HomepageProps {
-  hero: any;
-  cardsData?: any;
-  servicesBasics?: any;
-  servicesFacilities?: any;
-  servicesKitchen?: any;
-  servicesBetAndBath?: any;
-  servicesOutdoor?: any;
+  heroProps: any;
+  cardsProps?: any;
+  servicesBasicsProps?: any;
+  servicesFacilitiesProps?: any;
+  servicesKitchenProps?: any;
+  servicesBetAndBathProps?: any;
+  servicesOutdoorProps?: any;
+  rulesProps?: any;
 }
 
 const Homepage: FC<HomepageProps> = ({
-  hero,
-  cardsData,
-  servicesBasics,
-  servicesFacilities,
-  servicesKitchen,
-  servicesBetAndBath,
-  servicesOutdoor,
+  heroProps,
+  cardsProps,
+  servicesBasicsProps,
+  servicesFacilitiesProps,
+  servicesKitchenProps,
+  servicesBetAndBathProps,
+  servicesOutdoorProps,
+  rulesProps,
 }) => {
   return (
     <Layout>
       <section className="anchor-block" id="main">
-        <Hero {...hero} />
+        <Hero {...heroProps} />
       </section>
       <section className="anchor-block" id="units">
         <FadeInWhenVisible>
@@ -57,13 +59,13 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center justify-content-md-start">
                   <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
-                    <Card {...cardsData[0]} />
+                    <Card {...cardsProps[0]} />
                   </div>
                   <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
-                    <Card {...cardsData[1]} />
+                    <Card {...cardsProps[1]} />
                   </div>
                   <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
-                    <Card {...cardsData[2]} />
+                    <Card {...cardsProps[2]} />
                   </div>
                 </div>
               </div>
@@ -115,8 +117,8 @@ const Homepage: FC<HomepageProps> = ({
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="col-10 col-sm-12 mb-4">
                   <ListGroup
-                    list={servicesBasics.list}
-                    float={servicesBasics.float}
+                    list={servicesBasicsProps.list}
+                    float={servicesBasicsProps.float}
                   />
                 </div>
               </div>
@@ -134,8 +136,8 @@ const Homepage: FC<HomepageProps> = ({
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="col-10 col-sm-12 mb-4">
                   <ListGroup
-                    list={servicesFacilities.list}
-                    float={servicesFacilities.float}
+                    list={servicesFacilitiesProps.list}
+                    float={servicesFacilitiesProps.float}
                   />
                 </div>
               </div>
@@ -153,8 +155,8 @@ const Homepage: FC<HomepageProps> = ({
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="col-10 col-sm-12 mb-4">
                   <ListGroup
-                    list={servicesKitchen.list}
-                    float={servicesKitchen.float}
+                    list={servicesKitchenProps.list}
+                    float={servicesKitchenProps.float}
                   />
                 </div>
               </div>
@@ -172,8 +174,8 @@ const Homepage: FC<HomepageProps> = ({
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="col-10 col-sm-12 mb-4">
                   <ListGroup
-                    list={servicesBetAndBath.list}
-                    float={servicesBetAndBath.float}
+                    list={servicesBetAndBathProps.list}
+                    float={servicesBetAndBathProps.float}
                   />
                 </div>
               </div>
@@ -182,7 +184,7 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center justify-content-sm-start">
                   <div className="col-10 col-sm-12">
-                    <h3 className="mb-0">Al aire libree</h3>
+                    <h3 className="mb-0">Al aire libre</h3>
                   </div>
                 </div>
               </div>
@@ -191,14 +193,36 @@ const Homepage: FC<HomepageProps> = ({
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="col-10 col-sm-12 mb-4">
                   <ListGroup
-                    list={servicesOutdoor.list}
-                    float={servicesOutdoor.float}
+                    list={servicesOutdoorProps.list}
+                    float={servicesOutdoorProps.float}
                   />
                 </div>
               </div>
             </div>
             <Spacer bottomOnly></Spacer>
           </div>
+        </FadeInWhenVisible>
+      </section>
+      <section className="anchor-block" id="rules">
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row justify-content-center justify-content-sm-start">
+                <div className="col-10 col-sm-12">
+                  <h3 className="mb-0">Rules</h3>
+                </div>
+              </div>
+            </div>
+          </Spacer>
+          <Spacer bottomOnly={true}>
+            <div className="container">
+              <div className="row justify-content-center justify-content-sm-start">
+                <div className="col-10 col-sm-12 mb-4">
+                  <ListGroup list={rulesProps.list} float={rulesProps.float} />
+                </div>
+              </div>
+            </div>
+          </Spacer>
         </FadeInWhenVisible>
       </section>
     </Layout>

@@ -1,40 +1,37 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import classnames from "classnames";
-import { spacing } from "./../shared/styles.js";
 
 // Components
 import ListGroupItem from "./ListGroupItem";
 
 // Styles
 const StyledListGroup = styled((props) => <ul {...props} />)`
-  flex-wrap: wrap;
+  display: grid;
+  grid-gap: 30px;
 
-  li {
-    ${(props) =>
-      props.float === "false" &&
-      `
-        justify-content: center;
-      `}
+  ${(props) =>
+    props.float === "true" &&
+    `
+      grid-template-columns: repeat(1, 1fr);
 
-    ${(props) =>
-      props.float === "true" &&
-      `
-        flex: 0 0 100%;
- 
-        @media (min-width: 768px) {
-          flex: 0 0  50%;
-        }
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-        @media (min-width: 992px) {
-          flex: 0 0 33.33333%;
-        }
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    `}
 
-        > div {
-          padding-right: ${spacing.padding.medium}px;
-        }
-      `}
-  }
+  ${(props) =>
+    props.float === "false" &&
+    `
+      grid-template-columns: repeat(1, 1fr);
+
+      > li {
+        margin: 0 auto;
+      }
+    `}
 `;
 
 interface ListGroupProps {
@@ -44,13 +41,7 @@ interface ListGroupProps {
 }
 
 const ListGroup: FC<ListGroupProps> = ({ list, float = false }) => (
-  <StyledListGroup
-    className={classnames("mb-0 p-0 list-unstyled d-flex", {
-      "flex-row": float === true,
-      "flex-column": float === false,
-    })}
-    float={float.toString()}
-  >
+  <StyledListGroup className="mb-0 p-0 list-unstyled" float={float.toString()}>
     {/* TODO: remove any */}
     {list.map((item: any, index: number) => (
       <ListGroupItem {...item} key={index} />

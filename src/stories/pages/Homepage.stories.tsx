@@ -26,6 +26,10 @@ import ShampooIcon from "./../../images/svg/shampoo.svg";
 import PatioIcon from "./../../images/svg/patio.svg";
 import GardenIcon from "./../../images/svg/garden.svg";
 import MapIcon from "./../../images/svg/navigator.svg";
+import CheckInIcon from "./../../images/svg/clock.svg";
+import CheckOutIcon from "./../../images/svg/clock.svg";
+import SmokeIcon from "./../../images/svg/no-smoking.svg";
+import PartyIcon from "./../../images/svg/party.svg";
 
 // Page
 import Homepage from "./Homepage";
@@ -49,13 +53,13 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  hero: {
+  heroProps: {
     src: HeroImageFile,
     mask: true,
     bgColor: color.background,
     text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
   },
-  cardsData: [
+  cardsProps: [
     {
       border: 4,
       cta: {
@@ -135,7 +139,7 @@ Default.args = {
       upfrontBackgroundColor: "transparent",
     },
   ],
-  servicesBasics: {
+  servicesBasicsProps: {
     heading: "Basics",
     float: true,
     list: [
@@ -167,7 +171,7 @@ Default.args = {
       },
     ],
   },
-  servicesFacilities: {
+  servicesFacilitiesProps: {
     heading: "Instalaciones",
     float: true,
     list: [
@@ -183,7 +187,7 @@ Default.args = {
       },
     ],
   },
-  servicesKitchen: {
+  servicesKitchenProps: {
     heading: "Comedor",
     float: true,
     list: [
@@ -231,7 +235,7 @@ Default.args = {
       },
     ],
   },
-  servicesBetAndBath: {
+  servicesBetAndBathProps: {
     heading: "Cama y baño",
     float: true,
     list: [
@@ -252,7 +256,7 @@ Default.args = {
       },
     ],
   },
-  servicesOutdoor: {
+  servicesOutdoorProps: {
     heading: "Cama y baño",
     float: true,
     list: [
@@ -265,6 +269,33 @@ Default.args = {
         svg: <GardenIcon />,
         svgSize: "small",
         text: "Admitimos animales de compañía",
+      },
+    ],
+  },
+  rulesProps: {
+    heading: "Lo que debes saber",
+    float: true,
+
+    list: [
+      {
+        svg: <CheckInIcon />,
+        svgSize: "small",
+        text: "Llegada: 15:00 a 21:00",
+      },
+      {
+        svg: <CheckOutIcon />,
+        svgSize: "small",
+        text: "Salida: 11:00",
+      },
+      {
+        svg: <SmokeIcon />,
+        svgSize: "small",
+        text: "Prohibido fumar",
+      },
+      {
+        svg: <PartyIcon />,
+        svgSize: "small",
+        text: "Está prohibido hacer fiestas o eventos",
       },
     ],
   },

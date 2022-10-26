@@ -5,16 +5,6 @@ import styled from "styled-components";
 import SVG from "./SVG";
 
 // Styles
-const StyledListGroupItem = styled((props) => <li {...props} />)`
-  /* &:last-child {
-    margin-bottom: 0 !important;
-
-    span {
-      margin-bottom: 0 !important;
-    }
-  } */
-`;
-
 const StyledHeading = styled.p`
   font-size: 18px;
 `;
@@ -23,7 +13,7 @@ const StyledSubheading = styled.p`
   font-size: 16px;
 `;
 
-const StyledListGroupItemIconWrapper = styled((props) => <span {...props} />)`
+const StyledIconWrapper = styled((props) => <span {...props} />)`
   border-radius: 50%;
   margin-right: 0.75rem;
 `;
@@ -44,11 +34,11 @@ const ListGroupItem: FC<ListGroupItemProps> = ({
   subText,
 }) => {
   return (
-    <StyledListGroupItem className="d-flex flex-row align-items-center mb-3">
+    <li className="d-flex flex-row align-items-center">
       {svg && (
-        <StyledListGroupItemIconWrapper className="d-flex align-items-center justify-content-center">
+        <StyledIconWrapper className="d-flex align-items-center justify-content-center">
           <SVG icon={svg} size={svgSize} />
-        </StyledListGroupItemIconWrapper>
+        </StyledIconWrapper>
       )}
       <div>
         <StyledHeading className="mb-0">{text}</StyledHeading>
@@ -58,7 +48,7 @@ const ListGroupItem: FC<ListGroupItemProps> = ({
           </StyledSubheading>
         )}
       </div>
-    </StyledListGroupItem>
+    </li>
   );
 };
 
