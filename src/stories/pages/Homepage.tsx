@@ -2,11 +2,12 @@ import React, { FC } from "react";
 
 // Components
 import Card from "../components/Card";
+import Drive from "../components/Drive";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
+import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import ListGroup from "../components/ListGroup";
 import Spacer from "../components/Spacer";
-import Hero from "../components/Hero";
 
 // Types
 export interface HomepageProps {
@@ -17,6 +18,7 @@ export interface HomepageProps {
   servicesKitchenProps?: any;
   servicesBetAndBathProps?: any;
   servicesOutdoorProps?: any;
+  driveProps?: any;
   rulesProps?: any;
 }
 
@@ -28,6 +30,7 @@ const Homepage: FC<HomepageProps> = ({
   servicesKitchenProps,
   servicesBetAndBathProps,
   servicesOutdoorProps,
+  driveProps,
   rulesProps,
 }) => {
   return (
@@ -201,6 +204,15 @@ const Homepage: FC<HomepageProps> = ({
             </div>
             <Spacer bottomOnly></Spacer>
           </div>
+        </FadeInWhenVisible>
+      </section>
+      <section className="anchor-block" id="drive">
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="bg-white">
+              <Drive {...driveProps} />
+            </div>
+          </Spacer>
         </FadeInWhenVisible>
       </section>
       <section className="anchor-block" id="rules">

@@ -6,5 +6,7 @@ declare module "*.svg" {
   export default content;
 }
 
-// Remove later
+declare module "react-pannellum";
+
+// TODO: Remove later
 declare module "*";

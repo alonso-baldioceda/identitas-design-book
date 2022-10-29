@@ -21,7 +21,7 @@ export default {
   argTypes: {
     appearance: {
       control: "select",
-      options: ["primary", "secondary", "ternary", "airbnb"],
+      options: ["primary", "secondary", "ternary", "dark", "airbnb"],
     },
     bold: {
       control: "boolean",
