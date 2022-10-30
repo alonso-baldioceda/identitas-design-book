@@ -83,6 +83,20 @@ export const bodyStyles = css`
   /***** Utilities *****/
   /*********************/
 
+  /* Text colors */
+
+  /* .text-primary {
+    color: ${color.primary} !important;
+  }
+
+  .text-secondary {
+    color: ${color.secondary} !important;
+  }
+
+  .text-ternary {
+    color: ${color.ternary} !important;
+  } */
+
   /* Background */
 
   .bg-airbnb {

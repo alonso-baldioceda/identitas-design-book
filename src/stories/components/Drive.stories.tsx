@@ -14,6 +14,7 @@ export default {
     buttonAppearance: "primary",
     heading: "Como llegar?",
     text: "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
+    // TODO: add posibility to include an image instead of an SVG
     icon: <MapIcon />,
     iconLeft: false,
     targetBlank: true,

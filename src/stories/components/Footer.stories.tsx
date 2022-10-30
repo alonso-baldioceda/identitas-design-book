@@ -4,49 +4,38 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Footer from "./Footer";
 
+// Assets
+import HomeIcon from "./../../images/svg/home.svg";
+import EnvelopeIcon from "./../../images/svg/envelope.svg";
+import PhoneIcon from "./../../images/svg/phone.svg";
+
 export default {
   title: "Molecules/Footer",
   component: Footer,
-  args: {
-    menuLinks: [
-      {
-        name: "main",
-        anchor: "#main",
-        text: "Inicio",
-      },
-      {
-        name: "units",
-        anchor: "#units",
-        text: "Cabinas",
-      },
-      {
-        name: "common",
-        anchor: "#common-spaces",
-        text: "Espacios comúnes",
-      },
-      {
-        name: "services",
-        anchor: "#services",
-        text: "Servicios",
-      },
-      {
-        name: "drive",
-        anchor: "#drive",
-        text: "Cómo llegar?",
-      },
-      {
-        name: "contact",
-        anchor: "#contact",
-        translate: "Contáctenos",
-      },
-    ],
-  },
 } as ComponentMeta<typeof Footer>;
 
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 
-export const Default = Template.bind({
-  menuLinks: [
+export const Default = Template.bind({});
+
+Default.args = {
+  contact: [
+    {
+      icon: <HomeIcon />,
+      text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+    },
+    {
+      icon: <EnvelopeIcon />,
+      text: "vistalagoarenal@gmail.com",
+    },
+    {
+      icon: <PhoneIcon />,
+      text: "+(506) 8327 4040",
+    },
+  ],
+  headerContact: "Contáctenos",
+  headerLinks: "Enlaces",
+  menu: [
     {
       name: "main",
       anchor: "#main",
@@ -75,7 +64,7 @@ export const Default = Template.bind({
     {
       name: "contact",
       anchor: "#contact",
-      translate: "Contáctenos",
+      text: "Contáctenos",
     },
   ],
-});
+};

@@ -8,6 +8,7 @@ module.exports = {
     "storybook-addon-grid",
     "@storybook/addon-a11y",
     "@storybook/addon-storysource",
+    "storybook-addon-state",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",
