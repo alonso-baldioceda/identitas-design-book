@@ -34,7 +34,7 @@ const Homepage: FC<HomepageProps> = ({
   rulesProps,
 }) => {
   return (
-    <Layout>
+    <>
       <section className="anchor-block" id="main">
         <Hero {...heroProps} />
       </section>
@@ -237,7 +237,7 @@ const Homepage: FC<HomepageProps> = ({
           </Spacer>
         </FadeInWhenVisible>
       </section>
-    </Layout>
+    </>
   );
 };
 

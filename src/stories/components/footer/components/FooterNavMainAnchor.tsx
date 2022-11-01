@@ -23,7 +23,7 @@ interface NavigationAnchorProps {
   to: string;
 }
 
-const NavigationAnchorBottom: FC<NavigationAnchorProps> = ({
+const FooterNavMainAnchor: FC<NavigationAnchorProps> = ({
   appearance = "white",
   index = -1,
   onAnchorLinkClick,
@@ -41,4 +41,4 @@ const NavigationAnchorBottom: FC<NavigationAnchorProps> = ({
   </StyledAnchorLink>
 );
 
-export default NavigationAnchorBottom;
+export default FooterNavMainAnchor;

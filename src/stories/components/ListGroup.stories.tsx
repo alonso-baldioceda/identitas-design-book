@@ -9,6 +9,8 @@ export default {
   title: "Molecules/ListGroup",
   component: ListGroup,
   args: {
+    mb: 0,
+    p: 0,
     list: [
       {
         ...ListGroupItem.Default.args,

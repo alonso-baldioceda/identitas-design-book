@@ -5,8 +5,18 @@ import { color } from "./../shared/styles.js";
 // TODO: code gatsby-plugin-image && gatsby-background-image approach
 // Most probably static query required
 const StyledBgImg = styled((props) => <div {...props} />)`
-  background-color: ${(props) =>
-    props.bgcolor !== "default" ? `${props.bgcolor}` : color.primary};
+  ${(props) =>
+    props.bgcolor !== "default" &&
+    `
+      background-color: ${props.bgcolor};
+    `}
+
+  ${(props) =>
+    props.bgcolor === "default" &&
+    `
+      background-color: ${color.primary};
+    `}
+
   background-image: ${(props) => `url(${props.src})`};
   background-position: center;
   background-repeat: no-repeat;

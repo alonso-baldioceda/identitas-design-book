@@ -2,16 +2,25 @@ import React, { FC, useState, useContext, useMemo, ReactElement } from "react";
 import styled from "styled-components";
 
 // Components
-import NavigationAnchorBottom from "./NavigationAnchorBottom";
-import SVG from "./SVG";
+import FooterNavMainAnchor from "./components/FooterNavMainAnchor";
+import SVG from "../SVG";
 
 // Contexts
 // import Global from "./../contexts/global";
 
 // Styles
-const StyledFooter = styled.section`
+const StyledFooter = styled((props) => <section {...props} />)`
   svg {
     fill: #fff;
+  }
+
+  h2,
+  p {
+    ${(props) =>
+      props.bgcolor === "dark" &&
+      `
+      color: #fff;
+    `}
   }
 
   ul {
@@ -36,20 +45,13 @@ interface ContactItemProps {
 }
 
 interface FooterProps {
-  bgColor?: string;
-  headerContact: string;
-  headerLinks: string;
-  menu: MenuItemProps[];
-  contact: ContactItemProps[];
+  bgcolor: string;
+  navigation: { header: string; list: MenuItemProps[] };
+  contact: { header: string; list: ContactItemProps[] };
 }
 
-const Footer: FC<FooterProps> = ({
-  bgColor = "dark",
-  contact,
-  headerContact,
-  headerLinks,
-  menu,
-}) => {
+const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
+  // console.log("contact", contact, navigation, bgcolor);
   //   const context = useContext(Global);
 
   //   const { menu, setActive } = context;
@@ -58,51 +60,51 @@ const Footer: FC<FooterProps> = ({
 
   const renderNavigationItems = useMemo(() => {
     return (
-      <ul className="list-unstyled list-navigation mb-0">
-        {menu.map((menuItem: MenuItemProps, menuIndex: number) => (
-          <li className="mb-1 mb-lg-3" key={`navigation-${menuIndex}`}>
-            <NavigationAnchorBottom
+      <ul className="list-unstyled mb-0">
+        {navigation.list.map((menuItem: MenuItemProps, index: number) => (
+          <li className="mb-1 mb-lg-3" key={`navigation-${index}`}>
+            <FooterNavMainAnchor
               to={`/${menuItem.anchor}`}
-              index={menuIndex}
-              stripHash
-              onAnchorLinkClick={() => setActive(menuIndex)}
+              index={index}
+              onAnchorLinkClick={() => setActive(index)}
               text={menuItem.text}
             />
           </li>
         ))}
       </ul>
     );
-  }, [menu]);
+  }, [navigation.list]);
 
   const renderContactItems = useMemo(() => {
     return (
-      <ul className="list-unstyled list-contact mb-0">
-        {contact.map((contactItem: ContactItemProps, menuIndex: number) => (
-          <li key={`contact-${menuIndex}`}>
-            <p className="text-white mb-3 d-flex align-items-center">
+      <ul className="list-unstyled mb-0">
+        {contact.list.map((contactItem: ContactItemProps, index: number) => (
+          <li key={`contact-${index}`}>
+            <div className="d-flex align-items-center mb-3">
               <span className="me-3">
                 <SVG icon={contactItem.icon} size="small" />
               </span>
-              {contactItem.text}
-            </p>
+              <p className="mb-0">{contactItem.text}</p>
+            </div>
           </li>
         ))}
       </ul>
     );
-  }, [contact]);
+  }, [contact.list]);
 
   return (
     <StyledFooter
-      className={`py-3 py-md-5 text-center text-lg-start text-muted bg-${bgColor}`}
+      className={`py-3 py-md-5 text-center text-lg-start text-muted bg-${bgcolor}`}
+      bgcolor={bgcolor}
     >
       <div className="container">
         <div className="row">
           <div className="col-10 col-sm-12 col-md-6 mx-auto text-start">
-            <h2 className="text-white mb-4 mb-lg-5">{headerLinks}</h2>
+            <h2 className="mb-4 mb-lg-5">{navigation.header}</h2>
             {renderNavigationItems}
           </div>
           <div className="col-10 col-sm-12 col-md-6 mx-auto mt-5 mt-md-0 text-start">
-            <h2 className="text-white mb-4 mb-lg-5">{headerContact}</h2>
+            <h2 className="mb-4 mb-lg-5">{contact.header}</h2>
             {renderContactItems}
           </div>
         </div>

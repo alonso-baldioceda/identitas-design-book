@@ -4,53 +4,48 @@ import { GlobalStyle } from "./../shared/global.js";
 // import GlobalProvider from "./../components/globalProvider";
 
 // Components
-import Footer from "./Footer";
+import Footer from "./footer/Footer";
 
-interface LayoutProps {
-  children: ReactNode | ReactNode[];
+// Types
+interface MenuItemProps {
+  anchor: string;
+  name: string;
+  text: string;
 }
 
-const Layout: FC<LayoutProps> = ({ children }) => (
-  <>
-    <GlobalStyle />
-    <main className="main" id="main">
-      {children}
-    </main>
-    <Footer
-      menu={[
-        {
-          name: "main",
-          anchor: "#main",
-          text: "Inicio",
-        },
-        {
-          name: "units",
-          anchor: "#units",
-          text: "Cabinas",
-        },
-        {
-          name: "common",
-          anchor: "#common-spaces",
-          text: "Espacios comúnes",
-        },
-        {
-          name: "services",
-          anchor: "#services",
-          text: "Servicios",
-        },
-        {
-          name: "drive",
-          anchor: "#drive",
-          text: "Cómo llegar?",
-        },
-        {
-          name: "contact",
-          anchor: "#contact",
-          text: "Contáctenos",
-        },
-      ]}
-    />
-  </>
-);
+interface ContactItemProps {
+  icon: ReactNode;
+  text: string;
+}
+
+interface LayoutProps {
+  footer: {
+    bgColor?: string;
+    // contact: { header: string; list: ContactItemProps[] };
+    // navigation: { header: string; list: MenuItemProps[] };
+    // TODO: fix these types
+    contact: { header: string; list: any };
+    navigation: { header: string; list: any };
+  };
+  children: ReactNode | ReactNode[];
+  // footer: any;
+}
+
+const Layout: FC<LayoutProps> = ({
+  children,
+  footer: { bgColor = "dark", contact, navigation },
+}) => {
+  // console.log("footer", footer);
+  // const { bgColor, contact } = footer || "dark";
+  return (
+    <>
+      <GlobalStyle />
+      <main className="main" id="main">
+        {children}
+      </main>
+      <Footer bgcolor={bgColor} contact={contact} navigation={navigation} />
+    </>
+  );
+};
 
 export default Layout;

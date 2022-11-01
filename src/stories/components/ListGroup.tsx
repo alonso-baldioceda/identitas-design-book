@@ -38,10 +38,20 @@ interface ListGroupProps {
   // TODO: remove any
   list: any;
   float?: boolean;
+  mb?: number;
+  p?: number;
 }
 
-const ListGroup: FC<ListGroupProps> = ({ list, float = false }) => (
-  <StyledListGroup className="mb-0 p-0 list-unstyled" float={float.toString()}>
+const ListGroup: FC<ListGroupProps> = ({
+  mb = 0,
+  p = 0,
+  list,
+  float = false,
+}) => (
+  <StyledListGroup
+    className={`mb-${mb} p-${p} list-unstyled`}
+    float={float.toString()}
+  >
     {/* TODO: remove any */}
     {list.map((item: any, index: number) => (
       <ListGroupItem {...item} key={index} />

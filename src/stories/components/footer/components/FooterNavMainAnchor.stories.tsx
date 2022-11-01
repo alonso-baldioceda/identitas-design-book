@@ -3,20 +3,20 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import useState from "storybook-addon-state";
 
 // Components
-import NavigationAnchorBottom from "./NavigationAnchorBottom";
+import FooterNavMainAnchor from "./FooterNavMainAnchor";
 
 export default {
-  title: "Components/NavigationAnchorBottom",
-  component: NavigationAnchorBottom,
+  title: "Components/FooterNavMainAnchor",
+  component: FooterNavMainAnchor,
   argTypes: {
     appearance: {
       control: "select",
       options: ["white", "dark"],
     },
   },
-} as ComponentMeta<typeof NavigationAnchorBottom>;
+} as ComponentMeta<typeof FooterNavMainAnchor>;
 
-const Template: ComponentStory<typeof NavigationAnchorBottom> = (args) => {
+const Template: ComponentStory<typeof FooterNavMainAnchor> = (args) => {
   const [active, setActive] = useState<number>("clicks", -1);
 
   const onAnchorLinkClick = (index: number) => {
@@ -25,7 +25,7 @@ const Template: ComponentStory<typeof NavigationAnchorBottom> = (args) => {
   };
 
   return (
-    <NavigationAnchorBottom {...args} onAnchorLinkClick={onAnchorLinkClick} />
+    <FooterNavMainAnchor {...args} onAnchorLinkClick={onAnchorLinkClick} />
   );
 };
 
