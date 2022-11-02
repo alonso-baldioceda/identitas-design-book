@@ -2,8 +2,6 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import { color } from "./../shared/styles.js";
 
-// TODO: code gatsby-plugin-image && gatsby-background-image approach
-// Most probably static query required
 const StyledBgImg = styled((props) => <div {...props} />)`
   ${(props) =>
     props.bgcolor !== "default" &&

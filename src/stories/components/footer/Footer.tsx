@@ -45,13 +45,12 @@ interface ContactItemProps {
 }
 
 interface FooterProps {
-  bgcolor: string;
+  bgcolor?: string;
   navigation: { header: string; list: MenuItemProps[] };
   contact: { header: string; list: ContactItemProps[] };
 }
 
 const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
-  // console.log("contact", contact, navigation, bgcolor);
   //   const context = useContext(Global);
 
   //   const { menu, setActive } = context;

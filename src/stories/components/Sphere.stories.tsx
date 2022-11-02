@@ -34,20 +34,18 @@ export default {
   },
 } as ComponentMeta<typeof Sphere>;
 
-const Template: ComponentStory<typeof Sphere> = (args) => (
-  <Sphere {...args}>some text here</Sphere>
-);
+const Template: ComponentStory<typeof Sphere> = (args) => <Sphere {...args} />;
 
 export const Default = Template.bind({
   border: 5,
   borderColor: "primary",
-  height: "40ppx",
+  height: "400px",
   id: "sphereSample1",
   image: SphereImage1,
   pitch: 6,
   preview: SpherePreviewImage1,
   sceneId: "sphereSample1",
-  width: "400px",
+  width: "100%",
   yaw: 40,
 });
 

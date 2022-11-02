@@ -36,11 +36,6 @@ Default.args = {
   index: 1,
   to: "#main",
   text: "Inicio",
-  // item: {
-  //   name: "main",
-  //   anchor: "#main",
-  //   text: "Inicio",
-  // },
   // TODO: pass the function with content
   // onAnchorLinkClick: onAnchorLinkClick,
   stripHash: true,

@@ -37,6 +37,7 @@
     "gbimage-bridge": "^0.2.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0",
     "react-image-lightbox": "^5.1.4",
     "react-intersection-observer": "^9.4.0",
     "react-masonry-component": "^6.3.0",

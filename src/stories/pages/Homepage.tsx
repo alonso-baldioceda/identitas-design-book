@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { Helmet } from "react-helmet";
 
 // Components
 import Card from "../components/Card";
@@ -8,11 +9,15 @@ import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import ListGroup from "../components/ListGroup";
 import Spacer from "../components/Spacer";
+import Sphere from "../components/Sphere";
 
 // Types
 export interface HomepageProps {
   heroProps: any;
   cardsProps?: any;
+  sphereProps1?: any;
+  sphereProps2?: any;
+  sphereProps3?: any;
   servicesBasicsProps?: any;
   servicesFacilitiesProps?: any;
   servicesKitchenProps?: any;
@@ -20,11 +25,15 @@ export interface HomepageProps {
   servicesOutdoorProps?: any;
   driveProps?: any;
   rulesProps?: any;
+  footerProps?: any;
 }
 
 const Homepage: FC<HomepageProps> = ({
   heroProps,
   cardsProps,
+  sphereProps1,
+  sphereProps2,
+  sphereProps3,
   servicesBasicsProps,
   servicesFacilitiesProps,
   servicesKitchenProps,
@@ -32,9 +41,27 @@ const Homepage: FC<HomepageProps> = ({
   servicesOutdoorProps,
   driveProps,
   rulesProps,
+  footerProps,
 }) => {
   return (
-    <>
+    <Layout footer={footerProps}>
+      <Helmet>
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "url": "https://vistalagoarenal.com/",
+              "name": "${process.env.GATSBY_WEBSITE_NAME}",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+50683274040",
+                "contactType": "Customer Support"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
       <section className="anchor-block" id="main">
         <Hero {...heroProps} />
       </section>
@@ -69,6 +96,34 @@ const Homepage: FC<HomepageProps> = ({
                   </div>
                   <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
                     <Card {...cardsProps[2]} />
+                  </div>
+                </div>
+              </div>
+            </Spacer>
+            <Spacer bottomOnly={true}>
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-10 col-sm-6">
+                    {/* <div className="mb-3"> */}
+                    <Sphere {...sphereProps1} />
+                    {/* </div> */}
+                  </div>
+                  <div className="col-10 col-sm-6">
+                    <div className="mb-3">
+                      <Sphere {...sphereProps2} />
+                    </div>
+                  </div>
+                  <div className="col-10 col-sm-6">
+                    <div className="mb-3">
+                      <Sphere {...sphereProps3} />
+                    </div>
+                  </div>
+                  <div className="col-10 col-sm-6">
+                    {/* <Album
+                      images={units}
+                      alts={unitsImagesAlts}
+                      border="acapulco"
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -237,7 +292,7 @@ const Homepage: FC<HomepageProps> = ({
           </Spacer>
         </FadeInWhenVisible>
       </section>
-    </>
+    </Layout>
   );
 };
 

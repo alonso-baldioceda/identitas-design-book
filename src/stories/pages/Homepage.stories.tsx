@@ -3,7 +3,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { color } from "./../shared/styles.js";
 
 // Assets
-import HeroImageFile from "./../../images/home-hero.jpg";
+import HeroImage from "./../../images/home-hero.jpg";
+import SphereImage1 from "./../../images/tour/room1.jpg";
+import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
 import BedQueen from "./../../images/svg/bed-queen.svg";
 import WifiIcon from "./../../images/svg/wifi.svg";
 import WashingIcon from "./../../images/svg/washing.svg";
@@ -30,13 +32,12 @@ import CheckInIcon from "./../../images/svg/clock.svg";
 import CheckOutIcon from "./../../images/svg/clock.svg";
 import SmokeIcon from "./../../images/svg/no-smoking.svg";
 import PartyIcon from "./../../images/svg/party.svg";
+import HomeIcon from "./../../images/svg/home.svg";
+import EnvelopeIcon from "./../../images/svg/envelope.svg";
+import PhoneIcon from "./../../images/svg/phone.svg";
 
 // Page
 import Homepage from "./Homepage";
-
-const heroImage = {
-  src: HeroImageFile,
-};
 
 export default {
   /* 👇 The title prop is optional.
@@ -54,7 +55,7 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   heroProps: {
-    src: HeroImageFile,
+    src: HeroImage,
     mask: true,
     bgColor: color.background,
     text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
@@ -139,6 +140,42 @@ Default.args = {
       upfrontBackgroundColor: "transparent",
     },
   ],
+  sphereProps1: {
+    border: 5,
+    borderColor: "primary",
+    height: "400px",
+    id: "sphereSample1",
+    image: SphereImage1,
+    pitch: 6,
+    preview: SpherePreviewImage1,
+    sceneId: "sphereSample1",
+    width: "100%",
+    yaw: 40,
+  },
+  sphereProps2: {
+    border: 5,
+    borderColor: "primary",
+    height: "400px",
+    id: "sphereSample2",
+    image: SphereImage1,
+    pitch: 6,
+    preview: SpherePreviewImage1,
+    sceneId: "sphereSample2",
+    width: "100%",
+    yaw: 40,
+  },
+  sphereProps3: {
+    border: 5,
+    borderColor: "primary",
+    height: "400px",
+    id: "sphereSample3",
+    image: SphereImage1,
+    pitch: 6,
+    preview: SpherePreviewImage1,
+    sceneId: "sphereSample3",
+    width: "100%",
+    yaw: 40,
+  },
   servicesBasicsProps: {
     heading: "Basics",
     float: true,
@@ -273,7 +310,7 @@ Default.args = {
     ],
   },
   driveProps: {
-    buttonAppearance: "primary",
+    buttonAppearance: "dark",
     heading: "Como llegar?",
     text: "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
     icon: <MapIcon />,
@@ -306,5 +343,60 @@ Default.args = {
         text: "Está prohibido hacer fiestas o eventos",
       },
     ],
+  },
+  footerProps: {
+    bgColor: "dark",
+    contact: {
+      header: "Contáctenos",
+      list: [
+        {
+          icon: <HomeIcon />,
+          text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+        },
+        {
+          icon: <EnvelopeIcon />,
+          text: "vistalagoarenal@gmail.com",
+        },
+        {
+          icon: <PhoneIcon />,
+          text: "+(506) 8327 4040",
+        },
+      ],
+    },
+    navigation: {
+      header: "Enlaces",
+      list: [
+        {
+          name: "main",
+          anchor: "#main",
+          text: "Inicio",
+        },
+        {
+          name: "units",
+          anchor: "#units",
+          text: "Cabinas",
+        },
+        {
+          name: "common",
+          anchor: "#common-spaces",
+          text: "Espacios comúnes",
+        },
+        {
+          name: "services",
+          anchor: "#services",
+          text: "Servicios",
+        },
+        {
+          name: "drive",
+          anchor: "#drive",
+          text: "Cómo llegar?",
+        },
+        {
+          name: "contact",
+          anchor: "#contact",
+          text: "Contáctenos",
+        },
+      ],
+    },
   },
 };

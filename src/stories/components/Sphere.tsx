@@ -44,7 +44,7 @@ const Sphere: FC<SphereProps> = ({
   pitch = 0,
   preview,
   sceneId,
-  width = "400px",
+  width = "100%",
   yaw = 0,
 }) => {
   const config = {
@@ -61,7 +61,7 @@ const Sphere: FC<SphereProps> = ({
   return (
     <SphereWrapper>
       <div
-        className={`d-inline-block position-relative border border-${border} border-${borderColor}`}
+        className={`d-inline-block w-100 position-relative border border-${border} border-${borderColor}`}
       >
         <Rotation className="position-absolute bg-white top-0 end-0 p-1" />
         <ReactPannellum

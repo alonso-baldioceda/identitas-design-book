@@ -46,7 +46,7 @@ const Template: ComponentStory<typeof Layout> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   footer: {
-    bgColor: "dark",
+    bgcolor: "dark",
     contact: {
       header: "Contáctenos",
       list: [

@@ -20,7 +20,7 @@ interface ContactItemProps {
 
 interface LayoutProps {
   footer: {
-    bgColor?: string;
+    bgcolor?: string;
     // contact: { header: string; list: ContactItemProps[] };
     // navigation: { header: string; list: MenuItemProps[] };
     // TODO: fix these types
@@ -28,22 +28,20 @@ interface LayoutProps {
     navigation: { header: string; list: any };
   };
   children: ReactNode | ReactNode[];
-  // footer: any;
 }
 
-const Layout: FC<LayoutProps> = ({
-  children,
-  footer: { bgColor = "dark", contact, navigation },
-}) => {
-  // console.log("footer", footer);
-  // const { bgColor, contact } = footer || "dark";
+const Layout: FC<LayoutProps> = ({ children, footer }) => {
   return (
     <>
       <GlobalStyle />
       <main className="main" id="main">
         {children}
       </main>
-      <Footer bgcolor={bgColor} contact={contact} navigation={navigation} />
+      <Footer
+        bgcolor={footer.bgcolor}
+        contact={footer.contact}
+        navigation={footer.navigation}
+      />
     </>
   );
 };
