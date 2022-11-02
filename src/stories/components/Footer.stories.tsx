@@ -5,9 +5,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Footer from "./Footer";
 
 // Assets
-import HomeIcon from "./../../../images/svg/home.svg";
-import EnvelopeIcon from "./../../../images/svg/envelope.svg";
-import PhoneIcon from "./../../../images/svg/phone.svg";
+import HomeIcon from "./../../images/svg/home.svg";
+import EnvelopeIcon from "./../../images/svg/envelope.svg";
+import PhoneIcon from "./../../images/svg/phone.svg";
 
 export default {
   title: "Molecules/Footer",

@@ -4,28 +4,13 @@ import { GlobalStyle } from "./../shared/global.js";
 // import GlobalProvider from "./../components/globalProvider";
 
 // Components
-import Footer from "./footer/Footer";
-
-// Types
-interface MenuItemProps {
-  anchor: string;
-  name: string;
-  text: string;
-}
-
-interface ContactItemProps {
-  icon: ReactNode;
-  text: string;
-}
+import Footer, { MenuItemProps, ContactItemProps } from "./Footer";
 
 interface LayoutProps {
   footer: {
     bgcolor?: string;
-    // contact: { header: string; list: ContactItemProps[] };
-    // navigation: { header: string; list: MenuItemProps[] };
-    // TODO: fix these types
-    contact: { header: string; list: any };
-    navigation: { header: string; list: any };
+    contact: { header: string; list: ContactItemProps[] };
+    navigation: { header: string; list: MenuItemProps[] };
   };
   children: ReactNode | ReactNode[];
 }

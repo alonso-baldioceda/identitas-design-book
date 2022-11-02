@@ -2,8 +2,8 @@ import React, { FC, useState, useContext, useMemo, ReactElement } from "react";
 import styled from "styled-components";
 
 // Components
-import FooterNavMainAnchor from "./components/FooterNavMainAnchor";
-import SVG from "../SVG";
+import FooterNavMainAnchor from "./FooterNavMainAnchor";
+import SVG from "./SVG";
 
 // Contexts
 // import Global from "./../contexts/global";
@@ -33,13 +33,13 @@ const StyledFooter = styled((props) => <section {...props} />)`
 `;
 
 // Types
-interface MenuItemProps {
+export interface MenuItemProps {
   anchor: string;
   name: string;
   text: string;
 }
 
-interface ContactItemProps {
+export interface ContactItemProps {
   icon: ReactElement;
   text: string;
 }

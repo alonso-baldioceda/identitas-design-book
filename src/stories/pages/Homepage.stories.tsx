@@ -60,6 +60,9 @@ Default.args = {
     bgColor: color.background,
     text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
   },
+  cardsGridProps: {
+    xl: 3,
+  },
   cardsProps: [
     {
       border: 4,
@@ -140,6 +143,10 @@ Default.args = {
       upfrontBackgroundColor: "transparent",
     },
   ],
+  unitsGridProps: {
+    lg: 2,
+    xl: 2,
+  },
   sphereProps1: {
     border: 5,
     borderColor: "primary",

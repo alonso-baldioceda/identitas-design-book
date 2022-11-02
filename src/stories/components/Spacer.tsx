@@ -1,5 +1,5 @@
 import React, { FC, ReactNode } from "react";
-import classNames from "classnames";
+import classnames from "classnames";
 import styled from "styled-components";
 
 // Styles
@@ -35,7 +35,7 @@ export interface SpacerProps {
 
 const Spacer: FC<SpacerProps> = ({ bottomOnly, children }) => {
   return (
-    <StyledSpacing className={classNames({ "bottom-only": bottomOnly })}>
+    <StyledSpacing className={classnames({ "bottom-only": bottomOnly })}>
       {children}
     </StyledSpacing>
   );

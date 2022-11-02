@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import Card from "../components/Card";
 import Drive from "../components/Drive";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
+import Grid from "../components/Grid";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import ListGroup from "../components/ListGroup";
@@ -14,7 +15,9 @@ import Sphere from "../components/Sphere";
 // Types
 export interface HomepageProps {
   heroProps: any;
+  cardsGridProps: any;
   cardsProps?: any;
+  unitsGridProps?: any;
   sphereProps1?: any;
   sphereProps2?: any;
   sphereProps3?: any;
@@ -30,7 +33,9 @@ export interface HomepageProps {
 
 const Homepage: FC<HomepageProps> = ({
   heroProps,
+  cardsGridProps,
   cardsProps,
+  unitsGridProps,
   sphereProps1,
   sphereProps2,
   sphereProps3,
@@ -88,14 +93,12 @@ const Homepage: FC<HomepageProps> = ({
             <Spacer bottomOnly={true}>
               <div className="container">
                 <div className="row justify-content-center justify-content-md-start">
-                  <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
-                    <Card {...cardsProps[0]} />
-                  </div>
-                  <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
-                    <Card {...cardsProps[1]} />
-                  </div>
-                  <div className="col-10 col-sm-12 col-lg-6 col-xl-4 mb-4">
-                    <Card {...cardsProps[2]} />
+                  <div className="col-10 col-sm-12">
+                    <Grid {...cardsGridProps}>
+                      <Card {...cardsProps[0]} />
+                      <Card {...cardsProps[1]} />
+                      <Card {...cardsProps[2]} />
+                    </Grid>
                   </div>
                 </div>
               </div>
@@ -103,27 +106,12 @@ const Homepage: FC<HomepageProps> = ({
             <Spacer bottomOnly={true}>
               <div className="container">
                 <div className="row justify-content-center">
-                  <div className="col-10 col-sm-6">
-                    {/* <div className="mb-3"> */}
-                    <Sphere {...sphereProps1} />
-                    {/* </div> */}
-                  </div>
-                  <div className="col-10 col-sm-6">
-                    <div className="mb-3">
+                  <div className="col-10 col-sm-12">
+                    <Grid {...unitsGridProps}>
+                      <Sphere {...sphereProps1} />
                       <Sphere {...sphereProps2} />
-                    </div>
-                  </div>
-                  <div className="col-10 col-sm-6">
-                    <div className="mb-3">
                       <Sphere {...sphereProps3} />
-                    </div>
-                  </div>
-                  <div className="col-10 col-sm-6">
-                    {/* <Album
-                      images={units}
-                      alts={unitsImagesAlts}
-                      border="acapulco"
-                    /> */}
+                    </Grid>
                   </div>
                 </div>
               </div>
@@ -153,15 +141,15 @@ const Homepage: FC<HomepageProps> = ({
       <section className="anchor-block" id="services">
         <FadeInWhenVisible>
           <div className="bg-primary-pastel">
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12">
-                  <Spacer>
+            <Spacer>
+              <div className="container">
+                <div className="row justify-content-center justify-content-sm-start">
+                  <div className="col-10 col-sm-12">
                     <h2 className="m-0">Services</h2>
-                  </Spacer>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Spacer>
             <Spacer bottomOnly={true}>
               <div className="container">
                 <div className="row justify-content-center justify-content-sm-start">
@@ -284,7 +272,7 @@ const Homepage: FC<HomepageProps> = ({
           <Spacer bottomOnly={true}>
             <div className="container">
               <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12 mb-4">
+                <div className="col-10 col-sm-12">
                   <ListGroup list={rulesProps.list} float={rulesProps.float} />
                 </div>
               </div>
