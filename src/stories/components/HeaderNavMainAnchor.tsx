@@ -1,18 +1,23 @@
 import React, { FC, useContext } from "react";
 // import { AnchorLink } from "gatsby-plugin-anchor-links"; ---> remover esta librería
-import { Link } from "react-scroll";
-import classnames from "classnames";
+import { Link as LinkScroll } from "react-scroll";
+import { Link as LinkGatsby } from "gatsby";
+// import classnames from "classnames";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
 // Types
+export enum Types {
+  Anchor = "anchor",
+  Link = "linkn",
+}
+
 export interface HeaderNavMainAnchorProps {
-  className?: string;
-  //   index: number;
+  type?: Types;
   activeClass?: string;
   duration?: number;
-  index: number;
+  index?: number;
   offset?: number;
   smooth?: boolean;
   spy?: boolean;
@@ -21,8 +26,8 @@ export interface HeaderNavMainAnchorProps {
 }
 
 const HeaderNavMainAnchor: FC<HeaderNavMainAnchorProps> = ({
+  type = "link",
   activeClass,
-  className = "nav-link",
   duration = 500,
   index,
   offset = -70,
@@ -35,20 +40,21 @@ const HeaderNavMainAnchor: FC<HeaderNavMainAnchorProps> = ({
 
   //   const { active, setActive } = context;
 
-  return (
-    <Link
+  // TODO: handle active on both cases
+  return (type as Types) === Types.Link ? (
+    <LinkGatsby to={to} />
+  ) : (
+    <LinkScroll
       activeClass="active"
-      className={classnames(`${className}`, {
-        // active: index === active,
-      })}
       duration={duration}
       offset={offset}
       smooth={smooth}
       spy={spy}
       to={to}
+      // index={index}
     >
       {text}
-    </Link>
+    </LinkScroll>
   );
 };
 

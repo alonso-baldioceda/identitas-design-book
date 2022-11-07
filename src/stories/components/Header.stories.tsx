@@ -6,6 +6,7 @@ import Header from "./Header";
 
 // Assets
 import Logo from "./../../images/svg/logo-black.svg";
+import PhoneIcon from "./../../images/svg/call.svg";
 import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
@@ -18,6 +19,57 @@ export default {
       text: "Company name",
       to: "/#topPage",
     },
+    navigation: [
+      {
+        type: "anchor",
+        anchor: "#main",
+        text: "Inicio",
+      },
+      {
+        type: "anchor",
+        anchor: "#units",
+        text: "Cabinas",
+      },
+      {
+        type: "anchor",
+        anchor: "#common-spaces",
+        text: "Espacios comúnes",
+      },
+      {
+        type: "anchor",
+        anchor: "#services",
+        text: "Servicios",
+      },
+      {
+        type: "anchor",
+        anchor: "#drive",
+        text: "Cómo llegar?",
+      },
+      {
+        type: "anchor",
+        anchor: "#contact",
+        text: "Contáctenos",
+      },
+      {
+        type: "link",
+        anchor: "#info",
+        text: "Info",
+      },
+    ],
+    phone: "+50683274040",
+    phoneIcon: <PhoneIcon />,
+    socials: [
+      {
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
+        icon: <InstagramIcon />,
+      },
+      {
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal/",
+        icon: <FacebookIcon />,
+      },
+    ],
   },
 } as ComponentMeta<typeof Header>;
 
@@ -30,40 +82,45 @@ Default.args = {
     text: "Company name",
     to: "/#topPage",
   },
-
   navigation: [
     {
-      name: "main",
+      type: "anchor",
       anchor: "#main",
       text: "Inicio",
     },
     {
-      name: "units",
+      type: "anchor",
       anchor: "#units",
       text: "Cabinas",
     },
     {
-      name: "common",
+      type: "anchor",
       anchor: "#common-spaces",
       text: "Espacios comúnes",
     },
     {
-      name: "services",
+      type: "anchor",
       anchor: "#services",
       text: "Servicios",
     },
     {
-      name: "drive",
+      type: "anchor",
       anchor: "#drive",
       text: "Cómo llegar?",
     },
     {
-      name: "contact",
+      type: "anchor",
       anchor: "#contact",
       text: "Contáctenos",
     },
+    {
+      type: "link",
+      anchor: "#info",
+      text: "Info",
+    },
   ],
-
+  phone: "+50683274040",
+  phoneIcon: <PhoneIcon />,
   socials: [
     {
       text: "Instagram",

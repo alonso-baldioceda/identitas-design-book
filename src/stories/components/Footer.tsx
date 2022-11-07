@@ -1,3 +1,4 @@
+import { type } from "os";
 import React, { FC, useState, useContext, useMemo, ReactElement } from "react";
 import styled from "styled-components";
 
@@ -35,7 +36,7 @@ const StyledFooter = styled((props) => <section {...props} />)`
 // Types
 export interface MenuItemProps {
   anchor: string;
-  name: string;
+  type: string;
   text: string;
 }
 

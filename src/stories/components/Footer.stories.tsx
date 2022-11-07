@@ -47,34 +47,39 @@ Default.args = {
     header: "Enlaces",
     list: [
       {
-        name: "main",
+        type: "anchor",
         anchor: "#main",
         text: "Inicio",
       },
       {
-        name: "units",
+        type: "anchor",
         anchor: "#units",
         text: "Cabinas",
       },
       {
-        name: "common",
+        type: "anchor",
         anchor: "#common-spaces",
         text: "Espacios comúnes",
       },
       {
-        name: "services",
+        type: "anchor",
         anchor: "#services",
         text: "Servicios",
       },
       {
-        name: "drive",
+        type: "anchor",
         anchor: "#drive",
         text: "Cómo llegar?",
       },
       {
-        name: "contact",
+        type: "anchor",
         anchor: "#contact",
         text: "Contáctenos",
+      },
+      {
+        type: "link",
+        anchor: "#info",
+        text: "Info",
       },
     ],
   },
