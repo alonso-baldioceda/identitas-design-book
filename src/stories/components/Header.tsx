@@ -1,24 +1,19 @@
-import React, { useContext, FC, useMemo, useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import React, { useContext, FC, useMemo, useCallback, ReactNode } from "react";
+// import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { Link } from "gatsby";
 import classnames from "classnames";
 
 // Components
-import Brand from "./brand";
-import NavigationAnchorTop from "./navigationAnchorTop";
-import LanguageSelector from "./languageSelector";
+import Brand, { BrandProps } from "./Brand";
+import HeaderNavMainAnchor from "./HeaderNavMainAnchor";
+// import LanguageSelector from "./languageSelector";
 
 // Contexts
-import GlobalContext from "./../contexts/globalContext";
-
-// Assets
-import Call from "./../images/svg/call.svg";
-import Instagram from "./../images/svg/instagram.svg";
-import Facebook from "./../images/svg/facebook.svg";
+// import GlobalContext from "./../contexts/globalContext";
 
 // Styles
-const Nav = styled.div`
+const StyledHeader = styled.div`
   background: var(--white);
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   height: 82px;
@@ -73,121 +68,162 @@ const Nav = styled.div`
   }
 `;
 
+const NavPage = styled((props) => <Link {...props} />)`
+  background: transparent;
+  border-bottom: 2px solid transparent;
+  color: var(--black);
+  display: inline-block;
+  margin: 0 1.25rem 0 0;
+  padding: 0 !important;
+  position: relative;
+  z-index: 1;
+
+  &.active {
+    border-bottom: 2px solid var(--terracotta);
+    color: var(--black) !important;
+  }
+
+  &:hover {
+    border-bottom: 2px solid var(--terracotta);
+    color: var(--black) !important;
+  }
+
+  &:visited {
+    color: var(--black) !important;
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const StyledSocial = styled.a`
+  color: transparent;
+  font-size: 0;
+  height: 26px;
+  line-height: 0;
+  margin-right: 0.5rem;
+  width: 26px;
+
+  @media (min-width: 1200px) {
+    margin-right: 1.25rem;
+  }
+
+  &:last-of-type {
+    margin-right: calc(40px + 0.5rem);
+
+    @media (min-width: 768px) {
+      margin-right: calc(40px + 0.75rem);
+    }
+
+    @media (min-width: 1200px) {
+      margin-right: 0;
+    }
+  }
+
+  svg {
+    height: 26px;
+    transition: all 0.125s !important;
+    width: 26px;
+
+    &:hover {
+      fill: var(--terracotta);
+    }
+  }
+`;
+
 // Types
-interface IMenuItemProps {
+interface MenuItemProps {
   anchor: string;
   name: string;
-  translate: string;
+  text: string;
 }
 
-const Header: FC = () => {
-  const { t } = useTranslation();
+interface SocialProps {
+  text: string;
+  url: string;
+  icon: ReactNode;
+}
 
-  const context = useContext(GlobalContext);
+interface HeaderProps {
+  brand: BrandProps;
+  navigation: MenuItemProps[];
+  socials: SocialProps[];
+}
 
-  const { menu, active, setActive, facebook, instagram, phoneRef } = context;
+const Header: FC<HeaderProps> = ({ brand, navigation, socials }) => {
+  //   const { t } = useTranslation();
 
-  const languagesList = {
-    es: "Esp",
-    en: "Eng",
-  };
+  //   const context = useContext(GlobalContext);
 
-  const renderBrand = useCallback(() => {
-    return (
-      <Brand
-        className="d-flex align-items-center"
-        to={`/#topPage`}
-        onAnchorLinkClick={() => {
-          setActive !== undefined && setActive(-1);
-        }}
-      />
-    );
-  }, [setActive]);
+  //   const { menu, active, setActive, facebook, instagram, phoneRef } = context;
+
+  //   const languagesList = {
+  //     es: "Esp",
+  //     en: "Eng",
+  //   };
 
   const renderNavigation = useMemo(() => {
-    return menu.map((menuItem: IMenuItemProps, menuIndex: number) => {
+    return navigation.map((menuItem: MenuItemProps, menuIndex: number) => {
       return (
         <li className="nav-item" key={`menu-horizontal-nav-${menuIndex}`}>
-          <NavigationAnchorTop
-            item={menuItem}
-            to={`/${menuItem.anchor}`}
-            index={menuIndex}
-            stripHash
-            onAnchorLinkClick={() => {
-              setActive !== undefined && setActive(menuIndex);
-            }}
+          <HeaderNavMainAnchor
             className={classnames("nav-link ", {
-              active: menuIndex === active,
+              // active: menuIndex === active,
             })}
-          >
-            {t(menuItem.translate)}
-          </NavigationAnchorTop>
+            index={menuIndex}
+            text={menuItem.text}
+            to={`/${menuItem.anchor}`}
+          />
         </li>
       );
     });
-  }, [menu]);
-
-  const renderPhone = useMemo(() => {
-    return (
-      <a href={`tel:${phoneRef}`} className="phone muted-link">
-        <Call />
-      </a>
-    );
-  }, [phoneRef]);
+  }, [navigation]);
 
   return (
-    <Nav>
+    <StyledHeader>
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-12">
             <div className="d-flex align-items-center justify-content-between nav-wrapper">
               <div className="d-flex align-items-center left-options">
-                {renderBrand()}
+                <Brand {...brand} />
                 <ul className="nav justify-content-center d-none d-xl-flex">
                   {renderNavigation}
                   <li className="nav-item">
-                    <Link
-                      className={classnames(
-                        "nav-link default-navigation-link text-decoration-none",
-                        {
-                          active: active === 6,
-                        }
-                      )}
+                    <NavPage
+                      className={classnames("nav-link", {
+                        // active: active === 6,
+                      })}
                       to="/info"
                     >
                       Info
-                    </Link>
+                    </NavPage>
                   </li>
                 </ul>
               </div>
               <div className="d-flex justify-content-end align-items-center right-options">
-                <div className="d-none d-xl-inline">
+                {/* <div className="d-none d-xl-inline">
                   <LanguageSelector languagesList={languagesList} />
                 </div>
-                {renderPhone}
+                <a href={`tel:${phoneRef}`} className="phone muted-link">
+                    <Call />
+                </a> */}
                 <span className="separator"></span>
-                <a
-                  href={instagram}
-                  target="_blank"
-                  className="muted-link header-social"
-                >
-                  {t(`followInstagram`)}
-                  <Instagram />
-                </a>
-                <a
-                  href={facebook}
-                  target="_blank"
-                  className="muted-link header-social"
-                >
-                  {t(`followFacebook`)}
-                  <Facebook />
-                </a>
+                <div className="social">
+                  {socials.map((social) => (
+                    <StyledSocial href={social.url} target="_blank">
+                      {social.text}
+                      {social.icon}
+                    </StyledSocial>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </Nav>
+    </StyledHeader>
   );
 };
 

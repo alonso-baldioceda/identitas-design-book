@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { Helmet } from "react-helmet";
 
 // Components
+import ButtonLink from "../components/ButtonLink";
 import Card from "../components/Card";
-import Drive from "../components/Drive";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import Grid from "../components/Grid";
 import Hero from "../components/Hero";
@@ -14,6 +14,7 @@ import Sphere from "../components/Sphere";
 
 // Types
 export interface HomepageProps {
+  headerProps: any;
   heroProps: any;
   cardsGridProps: any;
   cardsProps?: any;
@@ -32,6 +33,7 @@ export interface HomepageProps {
 }
 
 const Homepage: FC<HomepageProps> = ({
+  headerProps,
   heroProps,
   cardsGridProps,
   cardsProps,
@@ -49,7 +51,7 @@ const Homepage: FC<HomepageProps> = ({
   footerProps,
 }) => {
   return (
-    <Layout footer={footerProps}>
+    <Layout footer={footerProps} header={headerProps}>
       <Helmet>
         <script type="application/ld+json">
           {`
@@ -253,7 +255,30 @@ const Homepage: FC<HomepageProps> = ({
         <FadeInWhenVisible>
           <Spacer>
             <div className="bg-white">
-              <Drive {...driveProps} />
+              <div className="container">
+                <div className="row align-items-center justify-content-center">
+                  <div className="col-10 col-sm-12 col-md-6">
+                    <h2 className="mb-5">{driveProps.heading}</h2>
+                    <p className="mb-5">{driveProps.text}</p>
+                    <div className="mb-5 mb-md-0">
+                      <ButtonLink
+                        appearance={driveProps.buttonAppearance}
+                        bold
+                        mb={0}
+                        px={4}
+                        py={2}
+                        rounded
+                        targetBlank={driveProps.targetBlank}
+                        text={driveProps.cta}
+                        url={driveProps.url}
+                      />
+                    </div>
+                  </div>
+                  <div className="col-10 col-sm-12 col-md-6">
+                    {driveProps.icon}
+                  </div>
+                </div>
+              </div>
             </div>
           </Spacer>
         </FadeInWhenVisible>

@@ -54,6 +54,44 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  headerProps: {
+    bgColor: "dark",
+    navigation: {
+      list: [
+        {
+          name: "main",
+          anchor: "#main",
+          text: "Inicio",
+        },
+        {
+          name: "units",
+          anchor: "#units",
+          text: "Cabinas",
+        },
+        {
+          name: "common",
+          anchor: "#common-spaces",
+          text: "Espacios comúnes",
+        },
+        {
+          name: "services",
+          anchor: "#services",
+          text: "Servicios",
+        },
+        {
+          name: "drive",
+          anchor: "#drive",
+          text: "Cómo llegar?",
+        },
+        {
+          name: "contact",
+          anchor: "#contact",
+          text: "Contáctenos",
+        },
+      ],
+    },
+  },
+
   heroProps: {
     src: HeroImage,
     mask: true,

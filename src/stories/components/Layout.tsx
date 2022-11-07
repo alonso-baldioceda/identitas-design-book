@@ -7,12 +7,15 @@ import { GlobalStyle } from "./../shared/global.js";
 import Footer, { MenuItemProps, ContactItemProps } from "./Footer";
 
 interface LayoutProps {
+  children: ReactNode | ReactNode[];
   footer: {
     bgcolor?: string;
     contact: { header: string; list: ContactItemProps[] };
     navigation: { header: string; list: MenuItemProps[] };
   };
-  children: ReactNode | ReactNode[];
+  header: {
+    navigation: { header: string; list: MenuItemProps[] };
+  };
 }
 
 const Layout: FC<LayoutProps> = ({ children, footer }) => {
