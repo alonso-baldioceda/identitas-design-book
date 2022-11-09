@@ -13,7 +13,7 @@ export enum Types {
   Link = "linkn",
 }
 
-export interface HeaderNavMainAnchorProps {
+export interface LinkProps {
   type?: Types;
   activeClass?: string;
   duration?: number;
@@ -25,7 +25,7 @@ export interface HeaderNavMainAnchorProps {
   to: string;
 }
 
-const HeaderNavMainAnchor: FC<HeaderNavMainAnchorProps> = ({
+const Link: FC<LinkProps> = ({
   type = "link",
   activeClass,
   duration = 500,
@@ -58,4 +58,4 @@ const HeaderNavMainAnchor: FC<HeaderNavMainAnchorProps> = ({
   );
 };
 
-export default HeaderNavMainAnchor;
+export default Link;

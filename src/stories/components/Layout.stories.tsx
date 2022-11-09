@@ -5,6 +5,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import HomeIcon from "./../../images/svg/home.svg";
 import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import PhoneIcon from "./../../images/svg/phone.svg";
+import CallIcon from "./../../images/svg/call.svg";
+import FacebookIcon from "./../../images/svg/facebook.svg";
+import InstagramIcon from "./../../images/svg/instagram.svg";
+import Logo from "./../../images/svg/logo-black.svg";
 
 // Components
 import Layout from "./Layout";
@@ -43,8 +47,68 @@ const Template: ComponentStory<typeof Layout> = (args) => (
   </Layout>
 );
 
+const navList = [
+  {
+    type: "anchor",
+    anchor: "#main",
+    text: "Inicio",
+  },
+  {
+    type: "anchor",
+    anchor: "#units",
+    text: "Cabinas",
+  },
+  {
+    type: "anchor",
+    anchor: "#common-spaces",
+    text: "Espacios comúnes",
+  },
+  {
+    type: "anchor",
+    anchor: "#services",
+    text: "Servicios",
+  },
+  {
+    type: "anchor",
+    anchor: "#drive",
+    text: "Cómo llegar?",
+  },
+  {
+    type: "anchor",
+    anchor: "#contact",
+    text: "Contáctenos",
+  },
+  {
+    type: "link",
+    anchor: "#info",
+    text: "Info",
+  },
+];
+
 export const Default = Template.bind({});
 Default.args = {
+  header: {
+    brand: {
+      logo: <Logo />,
+      text: "Company name",
+      to: "/#topPage",
+    },
+    navigation: navList,
+    phone: "+50683274040",
+    phoneIcon: <CallIcon />,
+    socials: [
+      {
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
+        icon: <InstagramIcon />,
+      },
+      {
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal/",
+        icon: <FacebookIcon />,
+      },
+    ],
+  },
   footer: {
     bgcolor: "dark",
     contact: {
@@ -66,38 +130,7 @@ Default.args = {
     },
     navigation: {
       header: "Enlaces",
-      list: [
-        {
-          name: "main",
-          anchor: "#main",
-          text: "Inicio",
-        },
-        {
-          name: "units",
-          anchor: "#units",
-          text: "Cabinas",
-        },
-        {
-          name: "common",
-          anchor: "#common-spaces",
-          text: "Espacios comúnes",
-        },
-        {
-          name: "services",
-          anchor: "#services",
-          text: "Servicios",
-        },
-        {
-          name: "drive",
-          anchor: "#drive",
-          text: "Cómo llegar?",
-        },
-        {
-          name: "contact",
-          anchor: "#contact",
-          text: "Contáctenos",
-        },
-      ],
+      list: navList,
     },
   },
 };

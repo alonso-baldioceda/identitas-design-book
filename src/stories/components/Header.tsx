@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 // Components
 import Brand, { BrandProps } from "./Brand";
-import HeaderNavMainAnchor from "./HeaderNavMainAnchor";
+import Link from "./Link";
 // import LanguageSelector from "./languageSelector";
 
 // Contexts
@@ -57,6 +57,7 @@ const StyledHeader = styled.div`
       svg {
         height: 26px;
         transition: all 0.125s !important;
+        vertical-align: top;
         width: 26px;
 
         &:hover {
@@ -131,7 +132,7 @@ interface MenuItemProps {
   text: string;
 }
 
-interface SocialProps {
+export interface SocialProps {
   text: string;
   url: string;
   icon: ReactNode;
@@ -167,7 +168,7 @@ const Header: FC<HeaderProps> = ({
     return navigation.map((menuItem: MenuItemProps, menuIndex: number) => {
       return (
         <li className="nav-item" key={`menu-horizontal-nav-${menuIndex}`}>
-          <HeaderNavMainAnchor
+          <Link
             index={menuIndex}
             text={menuItem.text}
             to={`/${menuItem.anchor}`}
@@ -201,8 +202,12 @@ const Header: FC<HeaderProps> = ({
                 )}
                 {socials && (
                   <div className="social">
-                    {socials.map((social) => (
-                      <StyledSocial href={social.url} target="_blank">
+                    {socials.map((social: SocialProps, index: number) => (
+                      <StyledSocial
+                        href={social.url}
+                        target="_blank"
+                        key={`social-${index}`}
+                      >
                         {social.text}
                         {social.icon}
                       </StyledSocial>

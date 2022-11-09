@@ -2,6 +2,12 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { color } from "./../shared/styles.js";
 
+// Page
+import Homepage from "./Homepage";
+
+// Stories
+import * as Layout from "./../components/Layout.stories";
+
 // Assets
 import HeroImage from "./../../images/home-hero.jpg";
 import SphereImage1 from "./../../images/tour/room1.jpg";
@@ -32,12 +38,6 @@ import CheckInIcon from "./../../images/svg/clock.svg";
 import CheckOutIcon from "./../../images/svg/clock.svg";
 import SmokeIcon from "./../../images/svg/no-smoking.svg";
 import PartyIcon from "./../../images/svg/party.svg";
-import HomeIcon from "./../../images/svg/home.svg";
-import EnvelopeIcon from "./../../images/svg/envelope.svg";
-import PhoneIcon from "./../../images/svg/phone.svg";
-
-// Page
-import Homepage from "./Homepage";
 
 export default {
   /* 👇 The title prop is optional.
@@ -55,39 +55,7 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   headerProps: {
-    bgColor: "dark",
-    navigation: [
-      {
-        name: "main",
-        anchor: "#main",
-        text: "Inicio",
-      },
-      {
-        name: "units",
-        anchor: "#units",
-        text: "Cabinas",
-      },
-      {
-        name: "common",
-        anchor: "#common-spaces",
-        text: "Espacios comúnes",
-      },
-      {
-        name: "services",
-        anchor: "#services",
-        text: "Servicios",
-      },
-      {
-        name: "drive",
-        anchor: "#drive",
-        text: "Cómo llegar?",
-      },
-      {
-        name: "contact",
-        anchor: "#contact",
-        text: "Contáctenos",
-      },
-    ],
+    ...Layout.Default.args?.header,
   },
   heroProps: {
     src: HeroImage,
@@ -387,58 +355,6 @@ Default.args = {
     ],
   },
   footerProps: {
-    bgColor: "dark",
-    contact: {
-      header: "Contáctenos",
-      list: [
-        {
-          icon: <HomeIcon />,
-          text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-        },
-        {
-          icon: <EnvelopeIcon />,
-          text: "vistalagoarenal@gmail.com",
-        },
-        {
-          icon: <PhoneIcon />,
-          text: "+(506) 8327 4040",
-        },
-      ],
-    },
-    navigation: {
-      header: "Enlaces",
-      list: [
-        {
-          name: "main",
-          anchor: "#main",
-          text: "Inicio",
-        },
-        {
-          name: "units",
-          anchor: "#units",
-          text: "Cabinas",
-        },
-        {
-          name: "common",
-          anchor: "#common-spaces",
-          text: "Espacios comúnes",
-        },
-        {
-          name: "services",
-          anchor: "#services",
-          text: "Servicios",
-        },
-        {
-          name: "drive",
-          anchor: "#drive",
-          text: "Cómo llegar?",
-        },
-        {
-          name: "contact",
-          anchor: "#contact",
-          text: "Contáctenos",
-        },
-      ],
-    },
+    ...Layout.Default.args?.footer,
   },
 };

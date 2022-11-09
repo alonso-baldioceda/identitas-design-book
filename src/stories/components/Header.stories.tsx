@@ -4,6 +4,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Header from "./Header";
 
+// Stories
+import * as Layout from "./Layout.stories";
+
 // Assets
 import Logo from "./../../images/svg/logo-black.svg";
 import PhoneIcon from "./../../images/svg/call.svg";
@@ -19,43 +22,7 @@ export default {
       text: "Company name",
       to: "/#topPage",
     },
-    navigation: [
-      {
-        type: "anchor",
-        anchor: "#main",
-        text: "Inicio",
-      },
-      {
-        type: "anchor",
-        anchor: "#units",
-        text: "Cabinas",
-      },
-      {
-        type: "anchor",
-        anchor: "#common-spaces",
-        text: "Espacios comúnes",
-      },
-      {
-        type: "anchor",
-        anchor: "#services",
-        text: "Servicios",
-      },
-      {
-        type: "anchor",
-        anchor: "#drive",
-        text: "Cómo llegar?",
-      },
-      {
-        type: "anchor",
-        anchor: "#contact",
-        text: "Contáctenos",
-      },
-      {
-        type: "link",
-        anchor: "#info",
-        text: "Info",
-      },
-    ],
+    navigation: Layout.Default.args?.header?.navigation,
     phone: "+50683274040",
     phoneIcon: <PhoneIcon />,
     socials: [
@@ -82,43 +49,7 @@ Default.args = {
     text: "Company name",
     to: "/#topPage",
   },
-  navigation: [
-    {
-      type: "anchor",
-      anchor: "#main",
-      text: "Inicio",
-    },
-    {
-      type: "anchor",
-      anchor: "#units",
-      text: "Cabinas",
-    },
-    {
-      type: "anchor",
-      anchor: "#common-spaces",
-      text: "Espacios comúnes",
-    },
-    {
-      type: "anchor",
-      anchor: "#services",
-      text: "Servicios",
-    },
-    {
-      type: "anchor",
-      anchor: "#drive",
-      text: "Cómo llegar?",
-    },
-    {
-      type: "anchor",
-      anchor: "#contact",
-      text: "Contáctenos",
-    },
-    {
-      type: "link",
-      anchor: "#info",
-      text: "Info",
-    },
-  ],
+  navigation: Layout.Default.args?.header?.navigation,
   phone: "+50683274040",
   phoneIcon: <PhoneIcon />,
   socials: [

@@ -4,6 +4,8 @@ import { GlobalStyle } from "./../shared/global.js";
 // import GlobalProvider from "./../components/globalProvider";
 
 // Components
+import Header, { SocialProps } from "./Header";
+import { BrandProps } from "./Brand";
 import Footer, { MenuItemProps, ContactItemProps } from "./Footer";
 
 interface LayoutProps {
@@ -14,22 +16,23 @@ interface LayoutProps {
     navigation: { header: string; list: MenuItemProps[] };
   };
   header: {
-    navigation: { header: string; list: MenuItemProps[] };
+    brand: BrandProps;
+    navigation: MenuItemProps[];
+    phone?: string;
+    phoneIcon?: ReactNode;
+    socials: SocialProps[];
   };
 }
 
-const Layout: FC<LayoutProps> = ({ children, footer }) => {
+const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
   return (
     <>
       <GlobalStyle />
+      <Header {...header} />
       <main className="main" id="main">
         {children}
       </main>
-      <Footer
-        bgcolor={footer.bgcolor}
-        contact={footer.contact}
-        navigation={footer.navigation}
-      />
+      <Footer {...footer} />
     </>
   );
 };

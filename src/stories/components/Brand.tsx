@@ -17,7 +17,7 @@ const StyledBrand = styled((props) => <AnchorLink {...props} />)`
   }
 
   span {
-    color: var(--black);
+    color: #000;
     font-size: 1.175rem;
     font-weight: 700;
     margin-left: 0.375rem;
