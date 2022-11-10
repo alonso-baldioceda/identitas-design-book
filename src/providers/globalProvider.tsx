@@ -36,11 +36,11 @@ const GlobalProvider: FC<GlobalProviderProps> = ({ children, location }) => {
 
   const {
     menuLinks: menu,
-    siteUrl,
-    phone,
-    phoneRef,
-    facebook,
-    instagram,
+    // siteUrl,
+    // phone,
+    // phoneRef,
+    // facebook,
+    // instagram,
   } = data.site.siteMetadata;
 
   const [active, setActive] = useState(-1);
@@ -102,13 +102,13 @@ const GlobalProvider: FC<GlobalProviderProps> = ({ children, location }) => {
     setLanguage,
     open,
     toggleMenu,
-    siteUrl,
-    phone,
-    phoneRef,
-    whatsapp: "https://wa.me/50683274040",
-    messenger: "http://m.me/vistalagoarenal",
-    facebook,
-    instagram,
+    // siteUrl,
+    // phone,
+    // phoneRef,
+    // whatsapp: "https://wa.me/50683274040",
+    // messenger: "http://m.me/vistalagoarenal",
+    // facebook,
+    // instagram,
   };
   return (
     <GlobalContext.Provider value={defaultState}>

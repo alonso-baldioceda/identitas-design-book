@@ -41,6 +41,7 @@ export const color = {
   dark: "#666666",
   darker: "#444444",
   darkest: "#333333",
+  black: "#000000",
 
   // Border
   border: "rgba(0,0,0,.1)",

@@ -11,7 +11,12 @@ export default {
   title: "Components/Brand",
   component: Brand,
   args: {
-    logo: <Logo />,
+    duration: 500,
+    logoIcon: <Logo />,
+    logoSize: 60,
+    offset: -70,
+    smooth: true,
+    spy: true,
     text: "Company name",
     to: "/#topPage",
   },
@@ -21,7 +26,7 @@ const Template: ComponentStory<typeof Brand> = (args) => <Brand {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  logo: <Logo />,
+  logoIcon: <Logo />,
   text: "Company name",
   to: "/#topPage",
 };

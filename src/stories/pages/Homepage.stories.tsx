@@ -186,136 +186,141 @@ Default.args = {
     width: "100%",
     yaw: 40,
   },
-  servicesBasicsProps: {
-    heading: "Basics",
-    float: true,
+  services: {
+    heading: "Services",
     list: [
       {
-        svg: <WifiIcon />,
-        svgSize: "small",
-        text: "Wifi",
+        heading: "Basics",
+        float: true,
+        list: [
+          {
+            svg: <WifiIcon />,
+            svgSize: "small",
+            text: "Wifi",
+          },
+          {
+            svg: <WashingIcon />,
+            svgSize: "small",
+            text: "Lavadora",
+          },
+          {
+            svg: <DryerIcon />,
+            svgSize: "small",
+            text: "Secadora",
+          },
+          {
+            subText: "Toallas, sábanas, jabón y papel higiénico",
+            svg: <TowelsIcon />,
+            svgSize: "small",
+            text: "Servicios imprescindibles",
+          },
+          {
+            svg: <HotWaterIcon />,
+            svgSize: "small",
+            text: "Agua caliente",
+          },
+        ],
       },
       {
-        svg: <WashingIcon />,
-        svgSize: "small",
-        text: "Lavadora",
+        heading: "Instalaciones",
+        float: true,
+        list: [
+          {
+            svg: <ParkingIcon />,
+            svgSize: "small",
+            text: "Estacionamiento gratuito en las instalaciones",
+          },
+          {
+            svg: <FootprintIcon />,
+            svgSize: "small",
+            text: "Admitimos animales de compañía",
+          },
+        ],
       },
       {
-        svg: <DryerIcon />,
-        svgSize: "small",
-        text: "Secadora",
+        heading: "Comedor",
+        float: true,
+        list: [
+          {
+            subText: "Los huéspedes pueden cocinar en este espacio",
+            svg: <KitchenIcon />,
+            svgSize: "small",
+            text: "Comedor",
+          },
+          {
+            svg: <OvenIcon />,
+            svgSize: "small",
+            text: "Horno",
+          },
+          {
+            svg: <SilverwareIcon />,
+            svgSize: "small",
+            text: "Playos y cubiertos",
+          },
+          {
+            svg: <RefrigeratorIcon />,
+            svgSize: "small",
+            text: "Refrigerador",
+          },
+          {
+            svg: <StoveIcon />,
+            svgSize: "small",
+            text: "Cocina",
+          },
+          {
+            svg: <CoffeeMakerIcon />,
+            svgSize: "small",
+            text: "Cafetera",
+          },
+          {
+            subText: "Ollas y sartenes, aceite, sal y pimienta",
+            svg: <OilIcon />,
+            svgSize: "small",
+            text: "Utensilios básicos para cocinar",
+          },
+          {
+            svg: <BarbecueUtensilsIcon />,
+            svgSize: "small",
+            text: "Utensilios para hacer parrillada",
+          },
+        ],
       },
       {
-        subText: "Toallas, sábanas, jabón y papel higiénico",
-        svg: <TowelsIcon />,
-        svgSize: "small",
-        text: "Servicios imprescindibles",
+        heading: "Cama y baño",
+        float: true,
+        list: [
+          {
+            svg: <PillowIcon />,
+            svgSize: "small",
+            text: "Estacionamiento gratuito en las instalaciones",
+          },
+          {
+            svg: <BedLinensIcon />,
+            svgSize: "small",
+            text: "Admitimos animales de compañía",
+          },
+          {
+            svg: <ShampooIcon />,
+            svgSize: "small",
+            text: "Admitimos animales de compañía",
+          },
+        ],
       },
       {
-        svg: <HotWaterIcon />,
-        svgSize: "small",
-        text: "Agua caliente",
-      },
-    ],
-  },
-  servicesFacilitiesProps: {
-    heading: "Instalaciones",
-    float: true,
-    list: [
-      {
-        svg: <ParkingIcon />,
-        svgSize: "small",
-        text: "Estacionamiento gratuito en las instalaciones",
-      },
-      {
-        svg: <FootprintIcon />,
-        svgSize: "small",
-        text: "Admitimos animales de compañía",
-      },
-    ],
-  },
-  servicesKitchenProps: {
-    heading: "Comedor",
-    float: true,
-    list: [
-      {
-        subText: "Los huéspedes pueden cocinar en este espacio",
-        svg: <KitchenIcon />,
-        svgSize: "small",
-        text: "Comedor",
-      },
-      {
-        svg: <OvenIcon />,
-        svgSize: "small",
-        text: "Horno",
-      },
-      {
-        svg: <SilverwareIcon />,
-        svgSize: "small",
-        text: "Playos y cubiertos",
-      },
-      {
-        svg: <RefrigeratorIcon />,
-        svgSize: "small",
-        text: "Refrigerador",
-      },
-      {
-        svg: <StoveIcon />,
-        svgSize: "small",
-        text: "Cocina",
-      },
-      {
-        svg: <CoffeeMakerIcon />,
-        svgSize: "small",
-        text: "Cafetera",
-      },
-      {
-        subText: "Ollas y sartenes, aceite, sal y pimienta",
-        svg: <OilIcon />,
-        svgSize: "small",
-        text: "Utensilios básicos para cocinar",
-      },
-      {
-        svg: <BarbecueUtensilsIcon />,
-        svgSize: "small",
-        text: "Utensilios para hacer parrillada",
-      },
-    ],
-  },
-  servicesBetAndBathProps: {
-    heading: "Cama y baño",
-    float: true,
-    list: [
-      {
-        svg: <PillowIcon />,
-        svgSize: "small",
-        text: "Estacionamiento gratuito en las instalaciones",
-      },
-      {
-        svg: <BedLinensIcon />,
-        svgSize: "small",
-        text: "Admitimos animales de compañía",
-      },
-      {
-        svg: <ShampooIcon />,
-        svgSize: "small",
-        text: "Admitimos animales de compañía",
-      },
-    ],
-  },
-  servicesOutdoorProps: {
-    heading: "Cama y baño",
-    float: true,
-    list: [
-      {
-        svg: <PatioIcon />,
-        svgSize: "small",
-        text: "Estacionamiento gratuito en las instalaciones",
-      },
-      {
-        svg: <GardenIcon />,
-        svgSize: "small",
-        text: "Admitimos animales de compañía",
+        heading: "Cama y baño",
+        float: true,
+        list: [
+          {
+            svg: <PatioIcon />,
+            svgSize: "small",
+            text: "Estacionamiento gratuito en las instalaciones",
+          },
+          {
+            svg: <GardenIcon />,
+            svgSize: "small",
+            text: "Admitimos animales de compañía",
+          },
+        ],
       },
     ],
   },

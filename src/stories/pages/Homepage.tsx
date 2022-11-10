@@ -11,7 +11,6 @@ import Layout from "../components/Layout";
 import ListGroup from "../components/ListGroup";
 import Spacer from "../components/Spacer";
 import Sphere from "../components/Sphere";
-// import BlockOneColumn from "../components/BlockOneColumn";
 
 // Types
 export interface HomepageProps {
@@ -23,11 +22,7 @@ export interface HomepageProps {
   sphereProps1?: any;
   sphereProps2?: any;
   sphereProps3?: any;
-  servicesBasicsProps?: any;
-  servicesFacilitiesProps?: any;
-  servicesKitchenProps?: any;
-  servicesBetAndBathProps?: any;
-  servicesOutdoorProps?: any;
+  services?: any;
   driveProps?: any;
   rulesProps?: any;
   footerProps?: any;
@@ -42,11 +37,7 @@ const Homepage: FC<HomepageProps> = ({
   sphereProps1,
   sphereProps2,
   sphereProps3,
-  servicesBasicsProps,
-  servicesFacilitiesProps,
-  servicesKitchenProps,
-  servicesBetAndBathProps,
-  servicesOutdoorProps,
+  services,
   driveProps,
   rulesProps,
   footerProps,
@@ -148,107 +139,39 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center justify-content-sm-start">
                   <div className="col-10 col-sm-12">
-                    <h2 className="m-0">Services</h2>
+                    <h2 className="m-0">{services.heading}</h2>
                   </div>
                 </div>
               </div>
             </Spacer>
-            <Spacer bottomOnly={true}>
-              <div className="container">
-                <div className="row justify-content-center justify-content-sm-start">
-                  <div className="col-10 col-sm-12">
-                    <h3 className="mb-0">Basics</h3>
-                  </div>
+            {/* TODO: remove any */}
+            {services?.list.map((service: any, index: number) => {
+              return (
+                <div key={index}>
+                  <Spacer bottomOnly={true}>
+                    <div className="container">
+                      <div className="row justify-content-center justify-content-sm-start">
+                        <div className="col-10 col-sm-12">
+                          <h3 className="mb-0">{service.heading}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </Spacer>
+                  <Spacer bottomOnly={true}>
+                    <div className="container">
+                      <div className="row justify-content-center justify-content-sm-start">
+                        <div className="col-10 col-sm-12">
+                          <ListGroup
+                            list={service.list}
+                            float={service.float}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </Spacer>
                 </div>
-              </div>
-            </Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12 mb-4">
-                  <ListGroup
-                    list={servicesBasicsProps.list}
-                    float={servicesBasicsProps.float}
-                  />
-                </div>
-              </div>
-            </div>
-            <Spacer>
-              <div className="container">
-                <div className="row justify-content-center justify-content-sm-start">
-                  <div className="col-10 col-sm-12">
-                    <h3 className="mb-0">Instalaciones</h3>
-                  </div>
-                </div>
-              </div>
-            </Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12 mb-4">
-                  <ListGroup
-                    list={servicesFacilitiesProps.list}
-                    float={servicesFacilitiesProps.float}
-                  />
-                </div>
-              </div>
-            </div>
-            <Spacer>
-              <div className="container">
-                <div className="row justify-content-center justify-content-sm-start">
-                  <div className="col-10 col-sm-12">
-                    <h3 className="mb-0">Comedor</h3>
-                  </div>
-                </div>
-              </div>
-            </Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12 mb-4">
-                  <ListGroup
-                    list={servicesKitchenProps.list}
-                    float={servicesKitchenProps.float}
-                  />
-                </div>
-              </div>
-            </div>
-            <Spacer>
-              <div className="container">
-                <div className="row justify-content-center justify-content-sm-start">
-                  <div className="col-10 col-sm-12">
-                    <h3 className="mb-0">Cama y baño</h3>
-                  </div>
-                </div>
-              </div>
-            </Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12 mb-4">
-                  <ListGroup
-                    list={servicesBetAndBathProps.list}
-                    float={servicesBetAndBathProps.float}
-                  />
-                </div>
-              </div>
-            </div>
-            <Spacer>
-              <div className="container">
-                <div className="row justify-content-center justify-content-sm-start">
-                  <div className="col-10 col-sm-12">
-                    <h3 className="mb-0">Al aire libre</h3>
-                  </div>
-                </div>
-              </div>
-            </Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12 mb-4">
-                  <ListGroup
-                    list={servicesOutdoorProps.list}
-                    float={servicesOutdoorProps.float}
-                  />
-                </div>
-              </div>
-            </div>
-            <Spacer bottomOnly></Spacer>
+              );
+            })}
           </div>
         </FadeInWhenVisible>
       </section>

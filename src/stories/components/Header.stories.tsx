@@ -18,7 +18,7 @@ export default {
   component: Header,
   args: {
     brand: {
-      logo: <Logo />,
+      logoIcon: <Logo />,
       text: "Company name",
       to: "/#topPage",
     },
@@ -45,7 +45,7 @@ const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   brand: {
-    logo: <Logo />,
+    logoIcon: <Logo />,
     text: "Company name",
     to: "/#topPage",
   },

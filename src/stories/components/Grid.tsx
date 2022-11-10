@@ -7,6 +7,7 @@ const StyledGrid = styled((props) => <div {...props} />)`
   grid-gap: ${(props) => `${props.gap}px`};
   grid-template-columns: ${(props) => `repeat(${props.xs}, 1fr)`};
 
+  /* Replace px per variables */
   @media (min-width: 576px) {
     grid-template-columns: ${(props) => `repeat(${props.sm}, 1fr)`};
   }
