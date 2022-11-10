@@ -10,7 +10,7 @@ export const bodyStyles = css`
   /***** Typography ****/
   /*********************/
 
-  /* Genneral */
+  /* General */
 
   html * {
     font-family: "Ubuntu", sans-serif;

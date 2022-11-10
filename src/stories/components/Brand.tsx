@@ -1,65 +1,54 @@
-import React, { FC, ReactNode, useContext } from "react";
-import styled from "styled-components";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import React, { FC, useContext, ReactNode } from "react";
+
+import { Link } from "react-scroll";
+// import classnames from "classnames";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
-// Styles
-const StyledBrand = styled((props) => <AnchorLink {...props} />)`
-  height: 82px;
-  text-decoration: none;
-
-  svg {
-    height: 60px;
-    margin: 0;
-    width: 60px;
-  }
-
-  span {
-    color: #000;
-    font-size: 1.175rem;
-    font-weight: 700;
-    margin-left: 0.375rem;
-    margin-right: 1.25rem;
-
-    @media (min-width: 768px) {
-      font-size: 1.375rem;
-      padding-bottom: 0.25rem;
-    }
-  }
-`;
-
 // Types
+
 export interface BrandProps {
-  //   onAnchorLinkClick: () => void;
-  //   stripHash?: boolean;
+  activeClass?: string;
+  duration?: number;
   logo: ReactNode;
+  offset?: number;
+  smooth?: boolean;
+  spy?: boolean;
   text: string;
   to: string;
 }
 
 const Brand: FC<BrandProps> = ({
+  activeClass,
+  duration = 500,
   logo,
-  text = "Company name",
-  to = "/#topPage",
+  offset = -70,
+  smooth = true,
+  spy = true,
+  text,
+  to,
 }) => {
   //   const context = useContext(GlobalContext);
 
-  //   const { setActive } = context;
+  //   const { active, setActive } = context;
 
+  // TODO: handle active on both cases
   return (
-    <StyledBrand
-      className="d-flex align-items-center"
+    <Link
+      // TODO: should I use activeClass here?
+      activeClass={activeClass}
+      duration={duration}
+      logo={logo}
+      offset={offset}
+      smooth={smooth}
+      spy={spy}
+      text={text}
       to={to}
-      onAnchorLinkClick={() => {
-        console.log("hi!!");
-        // setActive !== undefined && setActive(-1);
-      }}
     >
-      {logo}
+      <span>{logo}</span>
       <span>{text}</span>
-    </StyledBrand>
+    </Link>
   );
 };
 

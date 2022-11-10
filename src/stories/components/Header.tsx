@@ -14,6 +14,7 @@ import PhoneIcon from "./../../images/svg/call.svg";
 
 // Styles
 const StyledHeader = styled.div`
+  /* TODO: replace colors for variables */
   background: #fff;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   height: 82px;
@@ -165,14 +166,10 @@ const Header: FC<HeaderProps> = ({
   //   };
 
   const renderNavigation = useMemo(() => {
-    return navigation.map((menuItem: MenuItemProps, menuIndex: number) => {
+    return navigation.map((menuItem: MenuItemProps, index: number) => {
       return (
-        <li className="nav-item" key={`menu-horizontal-nav-${menuIndex}`}>
-          <Link
-            index={menuIndex}
-            text={menuItem.text}
-            to={`/${menuItem.anchor}`}
-          />
+        <li className="nav-item" key={`menu-horizontal-nav-${index}`}>
+          <Link index={index} text={menuItem.text} to={`/${menuItem.anchor}`} />
         </li>
       );
     });

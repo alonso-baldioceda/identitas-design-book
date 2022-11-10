@@ -1,5 +1,4 @@
 import React, { FC, useContext } from "react";
-// import { AnchorLink } from "gatsby-plugin-anchor-links"; ---> remover esta librería
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkGatsby } from "gatsby";
 // import classnames from "classnames";
@@ -39,6 +38,8 @@ const Link: FC<LinkProps> = ({
   //   const context = useContext(GlobalContext);
 
   //   const { active, setActive } = context;
+
+  console.log("to", to);
 
   // TODO: handle active on both cases
   return (type as Types) === Types.Link ? (

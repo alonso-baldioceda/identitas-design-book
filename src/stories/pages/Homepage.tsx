@@ -11,6 +11,7 @@ import Layout from "../components/Layout";
 import ListGroup from "../components/ListGroup";
 import Spacer from "../components/Spacer";
 import Sphere from "../components/Sphere";
+// import BlockOneColumn from "../components/BlockOneColumn";
 
 // Types
 export interface HomepageProps {

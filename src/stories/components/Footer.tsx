@@ -1,27 +1,28 @@
-import { type } from "os";
 import React, { FC, useState, useContext, useMemo, ReactElement } from "react";
 import styled from "styled-components";
 
 // Components
-import FooterNavMainAnchor from "./FooterNavMainAnchor";
 import SVG from "./SVG";
+import Link from "./Link";
 
 // Contexts
 // import Global from "./../contexts/global";
 
 // Styles
 const StyledFooter = styled((props) => <section {...props} />)`
+  /* TODO: replace colors by variables */
   svg {
     fill: #fff;
   }
 
   h2,
-  p {
+  p,
+  a {
     ${(props) =>
       props.bgcolor === "dark" &&
       `
-      color: #fff;
-    `}
+        color: #fff !important; 
+      `}
   }
 
   ul {
@@ -63,11 +64,10 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
       <ul className="list-unstyled mb-0">
         {navigation.list.map((menuItem: MenuItemProps, index: number) => (
           <li className="mb-1 mb-lg-3" key={`navigation-${index}`}>
-            <FooterNavMainAnchor
-              to={`/${menuItem.anchor}`}
+            <Link
               index={index}
-              onAnchorLinkClick={() => setActive(index)}
               text={menuItem.text}
+              to={`/${menuItem.anchor}`}
             />
           </li>
         ))}
