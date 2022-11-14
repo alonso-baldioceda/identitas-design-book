@@ -5,14 +5,16 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Brand from "./Brand";
 
 // Assets
-import Logo from "./../../images/svg/logo-black.svg";
+import LogoIcon from "./../../images/svg/logo-black.svg";
 
 export default {
   title: "Components/Brand",
   component: Brand,
   args: {
     duration: 500,
-    logoIcon: <Logo />,
+    fontWeight: 700,
+    logoIcon: "",
+    logoMarginRight: 3,
     logoSize: 60,
     offset: -70,
     smooth: true,
@@ -20,13 +22,34 @@ export default {
     text: "Company name",
     to: "/#topPage",
   },
+  argTypes: {
+    duration: {
+      control: "select",
+      options: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+    },
+    fontWeight: {
+      control: "select",
+      options: [400, 500, 600, 700, 800, 900],
+    },
+    logoMarginRight: {
+      control: "select",
+      options: [1, 2, 3, 4, 5],
+    },
+  },
 } as ComponentMeta<typeof Brand>;
 
 const Template: ComponentStory<typeof Brand> = (args) => <Brand {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  logoIcon: <Logo />,
+  duration: 500,
+  fontWeight: 700,
+  logoIcon: <LogoIcon />,
+  logoMarginRight: 3,
+  logoSize: 60,
+  offset: -70,
+  smooth: true,
+  spy: true,
   text: "Company name",
   to: "/#topPage",
 };

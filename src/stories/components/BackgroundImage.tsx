@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { color } from "./../shared/styles.js";
 
 const StyledBgImg = styled((props) => <div {...props} />)`
+  height: 100vh;
+
   ${(props) =>
     props.bgcolor !== "default" &&
     `
@@ -24,12 +26,12 @@ const StyledBgImg = styled((props) => <div {...props} />)`
 
 // Types
 interface BackgroundImageProps {
-  src: string;
   bgcolor?: string;
+  src: string;
 }
 
 const BackgroundImage: FC<BackgroundImageProps> = (props) => (
-  <StyledBgImg className="vh-100" {...props} />
+  <StyledBgImg {...props} />
 );
 
 export default BackgroundImage;

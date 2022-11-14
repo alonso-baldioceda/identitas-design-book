@@ -5,7 +5,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Header from "./Header";
 
 // Stories
-import * as Layout from "./Layout.stories";
+import * as LayoutStories from "./Layout.stories";
+import * as BrandStories from "./Brand.stories";
+import * as LanguageSelectorStories from "./LanguageSelector.stories";
 
 // Assets
 import Logo from "./../../images/svg/logo-black.svg";
@@ -18,11 +20,10 @@ export default {
   component: Header,
   args: {
     brand: {
-      logoIcon: <Logo />,
-      text: "Company name",
-      to: "/#topPage",
+      ...BrandStories.Default.args,
     },
-    navigation: Layout.Default.args?.header?.navigation,
+    languagesList: LanguageSelectorStories.Default.args?.languagesList,
+    navigation: LayoutStories.Default.args?.header?.navigation,
     phone: "+50683274040",
     phoneIcon: <PhoneIcon />,
     socials: [
@@ -42,14 +43,27 @@ export default {
 
 const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 
+console.log("LanguageSelectorStories", {
+  ...LanguageSelectorStories.Default.args,
+});
+
 export const Default = Template.bind({});
 Default.args = {
   brand: {
+    duration: 500,
+    fontWeight: 700,
     logoIcon: <Logo />,
+    logoMarginRight: 3,
+    logoSize: 60,
+    offset: -70,
+    smooth: true,
+    spy: true,
     text: "Company name",
     to: "/#topPage",
   },
-  navigation: Layout.Default.args?.header?.navigation,
+  languagesList: ["es", "en"],
+  // languagesList: LanguageSelectorStories.Default.args },
+  navigation: LayoutStories.Default.args?.header?.navigation,
   phone: "+50683274040",
   phoneIcon: <PhoneIcon />,
   socials: [

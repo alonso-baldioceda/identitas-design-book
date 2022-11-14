@@ -39,8 +39,6 @@ const Link: FC<LinkProps> = ({
 
   //   const { active, setActive } = context;
 
-  console.log("to", to);
-
   // TODO: handle active on both cases
   return (type as Types) === Types.Link ? (
     <LinkGatsby to={to} />

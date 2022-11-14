@@ -1,10 +1,11 @@
 import React, { useContext, FC, useMemo, useCallback, ReactNode } from "react";
 import styled from "styled-components";
+import { color } from "./../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./Brand";
 import Link from "./Link";
-// import LanguageSelector from "./languageSelector";
+import LanguageSelector, { LanguageSelectorProps } from "./LanguageSelector";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -15,7 +16,7 @@ import PhoneIcon from "./../../images/svg/call.svg";
 // Styles
 const StyledHeader = styled.div`
   /* TODO: replace colors for variables */
-  background: #fff;
+  background: ${color.white};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   height: 82px;
   position: fixed;
@@ -30,7 +31,7 @@ const StyledHeader = styled.div`
     .side-right {
       .nav-item {
         border-bottom: 2px solid transparent;
-        color: #000;
+        color: ${color.black};
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.6px;
@@ -41,7 +42,7 @@ const StyledHeader = styled.div`
         &:hover,
         &:focus,
         &:visited {
-          color: #000 !important;
+          color: ${color.black} !important;
         }
 
         &.active,
@@ -87,7 +88,7 @@ const StyledPhone = styled.a`
 `;
 
 const StyledSeparator = styled.span`
-  background: #000;
+  background: ${color.black};
   height: 44px;
   margin: 0 0.5rem;
   width: 2px;
@@ -141,6 +142,7 @@ export interface SocialProps {
 
 interface HeaderProps {
   brand: BrandProps;
+  languagesList?: string[];
   navigation: MenuItemProps[];
   phone?: string;
   phoneIcon?: ReactNode;
@@ -149,6 +151,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({
   brand,
+  languagesList,
   navigation,
   phone,
   phoneIcon = PhoneIcon,
@@ -159,11 +162,6 @@ const Header: FC<HeaderProps> = ({
   //   const context = useContext(GlobalContext);
 
   //   const { menu, active, setActive, facebook, instagram, phoneRef } = context;
-
-  //   const languagesList = {
-  //     es: "Esp",
-  //     en: "Eng",
-  //   };
 
   const renderNavigation = useMemo(() => {
     return navigation.map((menuItem: MenuItemProps, index: number) => {
@@ -184,13 +182,14 @@ const Header: FC<HeaderProps> = ({
               <div className="d-flex align-items-center side-left">
                 <Brand {...brand} />
                 <ul className="nav justify-content-center d-none d-xl-flex">
+                  {/* TODO: posibly add a better hover effect */}
                   {renderNavigation}
                 </ul>
               </div>
               <div className="d-flex justify-content-end align-items-center side-right">
-                {/* <div className="d-none d-xl-inline">
-                  <LanguageSelector languagesList={languagesList} />
-                </div>*/}
+                <div className="d-none d-xl-inline">
+                  <LanguageSelector languagesList={["es", "en"]} />
+                </div>
                 {phone && (
                   <>
                     <StyledPhone href={`tel:${phone}`}>{phoneIcon}</StyledPhone>

@@ -8,7 +8,11 @@ import Mask from "./Mask";
 
 // Styles
 const StyledHero = styled.div`
+  height: 100vh;
   max-width: 2200px;
+  overflow: hidden;
+  position: relative;
+  width: "100%";
 `;
 
 // Types
@@ -26,7 +30,7 @@ const Hero: FC<HeroProps> = ({
   text = "some text here!!",
 }) => {
   return (
-    <StyledHero className="position-relative w-100 overflow-hidden vh-100">
+    <StyledHero>
       <BackgroundImage src={src} bgcolor="default" />
       {mask && <Mask bgcolor={bgColor} />}
       <div className="position-absolute start-0 bottom-0 p-4 w-100">

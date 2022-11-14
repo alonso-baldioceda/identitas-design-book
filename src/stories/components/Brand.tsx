@@ -1,7 +1,6 @@
 import React, { FC, useContext, ReactNode } from "react";
 import styled from "styled-components";
 import { color } from "./../shared/styles.js";
-
 import { Link } from "react-scroll";
 // import classnames from "classnames";
 
@@ -24,21 +23,22 @@ const StyledBrand = styled((props) => <Link {...props} />)`
   span {
     color: ${color.black};
     font-size: 1.175rem;
-    font-weight: 700;
+    font-weight: ${(props) => `${props.fontWeight}`};
     margin-left: 0.375rem;
 
     @media (min-width: 768px) {
       font-size: 1.375rem;
-      /* padding-bottom: 0.25rem; */
+      margin-bottom: 4px;
     }
   }
 `;
 
 // Types
 export interface BrandProps {
-  activeClass?: string;
   duration?: number;
-  logoIcon: ReactNode;
+  fontWeight?: number;
+  // TODO: remove this "any"
+  logoIcon: any;
   logoMarginRight?: number;
   logoSize?: number;
   offset?: number;
@@ -49,8 +49,8 @@ export interface BrandProps {
 }
 
 const Brand: FC<BrandProps> = ({
-  activeClass,
   duration = 500,
+  fontWeight = 700,
   logoIcon,
   logoMarginRight = 3,
   logoSize = 60,
@@ -59,6 +59,7 @@ const Brand: FC<BrandProps> = ({
   spy = true,
   text,
   to,
+  ...rest
 }) => {
   //   const context = useContext(GlobalContext);
 
@@ -67,9 +68,8 @@ const Brand: FC<BrandProps> = ({
   // TODO: handle active on both cases
   return (
     <StyledBrand
-      // TODO: should I use activeClass here?
-      activeClass={activeClass}
       duration={duration}
+      fontWeight={fontWeight}
       logoIcon={logoIcon}
       logoSize={logoSize}
       offset={offset}

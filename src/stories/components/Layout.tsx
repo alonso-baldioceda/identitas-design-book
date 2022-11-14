@@ -6,6 +6,7 @@ import { GlobalStyle } from "./../shared/global.js";
 // Components
 import Header, { SocialProps } from "./Header";
 import { BrandProps } from "./Brand";
+import { LanguageSelectorProps } from "./LanguageSelector";
 import Footer, { MenuItemProps, ContactItemProps } from "./Footer";
 
 interface LayoutProps {
@@ -17,6 +18,7 @@ interface LayoutProps {
   };
   header: {
     brand: BrandProps;
+    // languagesList: LanguageSelectorProps;
     navigation: MenuItemProps[];
     phone?: string;
     phoneIcon?: ReactNode;

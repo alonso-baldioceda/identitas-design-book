@@ -1,25 +1,35 @@
 import React, { FC } from "react";
 import ReactPannellum from "react-pannellum";
 import styled from "styled-components";
+import { color } from "./../shared/styles.js";
 
 // Assets
 import RotationIcon from "./../../images/svg/rotation.svg";
 
-const Rotation = styled((props: any) => <RotationIcon {...props} />)`
-  height: 56px;
-  width: 56px;
-  z-index: 100;
-`;
+const SphereStyled = styled.div`
+  position: relative;
 
-const SphereWrapper = styled.div`
   .pnlm-load-button {
     background-color: rgba(255, 255, 255, 0.7);
     transition: background-color 0.25s linear;
+
+    p {
+      color: ${color.black};
+    }
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.85);
     }
   }
+`;
+
+const RotationIconStyled = styled((props: any) => <RotationIcon {...props} />)`
+  height: 56px;
+  position: absolute;
+  right: 0%;
+  top: 0;
+  width: 56px;
+  z-index: 100;
 `;
 
 interface SphereProps {
@@ -59,24 +69,20 @@ const Sphere: FC<SphereProps> = ({
   };
 
   return (
-    <SphereWrapper>
-      <div
-        className={`d-inline-block w-100 position-relative border border-${border} border-${borderColor}`}
-      >
-        <Rotation className="position-absolute bg-white top-0 end-0 p-1" />
-        <ReactPannellum
-          id={id}
-          sceneId={sceneId}
-          imageSource={image}
-          config={config}
-          style={{
-            background: `transparent`,
-            height: `${height}`,
-            width: `${width}`,
-          }}
-        />
-      </div>
-    </SphereWrapper>
+    <SphereStyled className={`border border-${border} border-${borderColor}`}>
+      <RotationIconStyled className=" bg-white p-1" />
+      <ReactPannellum
+        id={id}
+        sceneId={sceneId}
+        imageSource={image}
+        config={config}
+        style={{
+          background: `transparent`,
+          height: `${height}`,
+          width: `${width}`,
+        }}
+      />
+    </SphereStyled>
   );
 };
 
