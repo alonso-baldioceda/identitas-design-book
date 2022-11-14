@@ -6,7 +6,7 @@ import { color } from "./../shared/styles.js";
 import Homepage from "./Homepage";
 
 // Stories
-import * as Layout from "./../components/Layout.stories";
+import * as Layout from "./../compositions/Layout.stories";
 
 // Assets
 import HeroImage from "./../../images/home-hero.jpg";

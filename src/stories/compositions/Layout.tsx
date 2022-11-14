@@ -5,9 +5,11 @@ import { GlobalStyle } from "./../shared/global.js";
 
 // Components
 import Header, { SocialProps } from "./Header";
-import { BrandProps } from "./Brand";
-import { LanguageSelectorProps } from "./LanguageSelector";
-import Footer, { MenuItemProps, ContactItemProps } from "./Footer";
+import { BrandProps } from "./../components/Brand";
+import Footer, {
+  MenuItemProps,
+  ContactItemProps,
+} from "./../compositions/Footer";
 
 interface LayoutProps {
   children: ReactNode | ReactNode[];

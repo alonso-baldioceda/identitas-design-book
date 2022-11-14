@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { prefix, color } from "./../shared/styles.js";
 
 // Components
-import SVG from "./SVG";
-import Link from "./Link";
-import Spacer from "./Spacer";
+import SVG from "./../components/SVG";
+import Link from "./../components/Link";
+import Spacer from "./../components/Spacer";
 
 // Contexts
 // import Global from "./../contexts/global";

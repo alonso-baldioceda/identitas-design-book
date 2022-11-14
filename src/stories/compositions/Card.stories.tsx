@@ -5,11 +5,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Card from "./Card";
 
 // Stories
-import * as ListGroup from "./ListGroup.stories";
-import * as ButtonLink from "./ButtonLink.stories";
+import * as ListGroup from "./../compositions/ListGroup.stories";
+import * as ButtonLink from "./../components/ButtonLink.stories";
 
 export default {
-  title: "Molecules/Card",
+  title: "Compositions/Card",
   component: Card,
   argTypes: {
     border: {

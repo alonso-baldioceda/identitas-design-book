@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { prefix } from "./../shared/styles.js";
 
 // Components
-import ListGroupItem from "./ListGroupItem";
+import ListGroupItem from "./../components/ListGroupItem";
 
 // Styles
 const StyledListGroup = styled((props) => <ul {...props} />)`

@@ -4,10 +4,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Footer from "./Footer";
 
-import * as Layout from "./Layout.stories";
+// Stories
+import * as Layout from "./../compositions/Layout.stories";
 
 export default {
-  title: "Molecules/Footer",
+  title: "Compositions/Footer",
   component: Footer,
   argTypes: {
     bgColor: {

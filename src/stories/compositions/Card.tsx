@@ -2,8 +2,8 @@ import React, { FC } from "react";
 import { prefix, color } from "./../shared/styles.js";
 
 // Components
-import ListGroup from "./ListGroup";
-import ButtonLink from "./ButtonLink";
+import ListGroup from "./../compositions/ListGroup";
+import ButtonLink from "./../components/ButtonLink";
 
 //Props
 interface CardProps {

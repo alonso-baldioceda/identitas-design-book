@@ -8,28 +8,22 @@ import ListGroupItem from "./ListGroupItem";
 import BedQueen from "./../../images/svg/bed-queen.svg";
 
 export default {
-  title: "Molecules/ListGroupItem",
+  title: "Compositions/ListGroupItem",
   component: ListGroupItem,
   args: {
-    heading: "some other text here!!",
-    headingBottom: 0,
+    text: "some other text here!!",
+    textBottom: 0,
     svg: "",
     svgSize: "default",
-    text: "some text here!!",
-    textBottom: 0,
   },
   argTypes: {
-    headingBottom: {
+    textBottom: {
       control: "select",
       options: [1, 2, 3, 4, 5],
     },
     svgSize: {
       control: "select",
       options: ["small", "default", "large"],
-    },
-    textBottom: {
-      control: "select",
-      options: [1, 2, 3, 4, 5],
     },
   },
 } as ComponentMeta<typeof ListGroupItem>;
@@ -40,10 +34,8 @@ const Template: ComponentStory<typeof ListGroupItem> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  text: "",
   svg: "",
-  heading: "some text here!!",
-  headingBottom: 0,
+  text: "some text here!!",
   textBottom: 0,
 };
 
@@ -51,7 +43,7 @@ export const TextWithIconDefault = Template.bind({});
 TextWithIconDefault.args = {
   ...Default.args,
   svg: <BedQueen />,
-  heading: "some more text here!!",
+  text: "some more text here!!",
 };
 
 export const TextWithIconSmall = Template.bind({});
@@ -64,7 +56,8 @@ TextWithIconSmall.args = {
 export const TextWithIconAndSubheading = Template.bind({});
 TextWithIconAndSubheading.args = {
   ...TextWithIconDefault.args,
+  subText: "some text here!!",
+  svg: <BedQueen />,
   svgSize: "large",
   text: "some other text here!!",
-  svg: <BedQueen />,
 };

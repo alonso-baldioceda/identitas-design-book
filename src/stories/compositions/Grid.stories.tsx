@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Grid from "./Grid";
 
 export default {
-  title: "Molecules/Grid",
+  title: "Compositions/Grid",
   component: Grid,
   args: {
     gap: 30,

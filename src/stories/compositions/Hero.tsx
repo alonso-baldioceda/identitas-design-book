@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { prefix, color } from "./../shared/styles.js";
 
 // Components
-import BackgroundImage from "./BackgroundImage";
-import Mask from "./Mask";
+import BackgroundImage from "./../components/BackgroundImage";
+import Mask from "./../components/Mask";
 
 // Styles
 const StyledHero = styled.div`

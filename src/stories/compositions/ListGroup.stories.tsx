@@ -3,23 +3,23 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Stories
 import ListGroup from "./ListGroup";
-import * as ListGroupItem from "./ListGroupItem.stories";
+import * as ListGroupItemStories from "./../components/ListGroupItem.stories";
 
 export default {
-  title: "Molecules/ListGroup",
+  title: "Compositions/ListGroup",
   component: ListGroup,
   args: {
     mb: 0,
     p: 0,
     list: [
       {
-        ...ListGroupItem.Default.args,
+        ...ListGroupItemStories.Default.args,
       },
       {
-        ...ListGroupItem.Default.args,
+        ...ListGroupItemStories.Default.args,
       },
       {
-        ...ListGroupItem.Default.args,
+        ...ListGroupItemStories.Default.args,
       },
     ],
   },
@@ -32,13 +32,13 @@ const Template: ComponentStory<typeof ListGroup> = (args) => (
 export const Default = Template.bind({
   list: [
     {
-      ...ListGroupItem.Default.args,
+      ...ListGroupItemStories.Default.args,
     },
     {
-      ...ListGroupItem.Default.args,
+      ...ListGroupItemStories.Default.args,
     },
     {
-      ...ListGroupItem.Default.args,
+      ...ListGroupItemStories.Default.args,
     },
   ],
 });
@@ -47,13 +47,13 @@ export const TextWithIconDefault = Template.bind({});
 TextWithIconDefault.args = {
   list: [
     {
-      ...ListGroupItem.TextWithIconDefault.args,
+      ...ListGroupItemStories.TextWithIconDefault.args,
     },
     {
-      ...ListGroupItem.TextWithIconDefault.args,
+      ...ListGroupItemStories.TextWithIconDefault.args,
     },
     {
-      ...ListGroupItem.TextWithIconDefault.args,
+      ...ListGroupItemStories.TextWithIconDefault.args,
     },
   ],
 };
@@ -62,13 +62,13 @@ export const TextWithIconSmall = Template.bind({});
 TextWithIconSmall.args = {
   list: [
     {
-      ...ListGroupItem.TextWithIconSmall.args,
+      ...ListGroupItemStories.TextWithIconSmall.args,
     },
     {
-      ...ListGroupItem.TextWithIconSmall.args,
+      ...ListGroupItemStories.TextWithIconSmall.args,
     },
     {
-      ...ListGroupItem.TextWithIconSmall.args,
+      ...ListGroupItemStories.TextWithIconSmall.args,
     },
   ],
 };
@@ -77,13 +77,13 @@ export const TextWithIconLargeAndSubheading = Template.bind({});
 TextWithIconLargeAndSubheading.args = {
   list: [
     {
-      ...ListGroupItem.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIconAndSubheading.args,
     },
     {
-      ...ListGroupItem.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIconAndSubheading.args,
     },
     {
-      ...ListGroupItem.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIconAndSubheading.args,
     },
   ],
 };
@@ -93,13 +93,13 @@ TextWithIconFloated.args = {
   float: true,
   list: [
     {
-      ...ListGroupItem.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIconAndSubheading.args,
     },
     {
-      ...ListGroupItem.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIconAndSubheading.args,
     },
     {
-      ...ListGroupItem.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIconAndSubheading.args,
     },
   ],
 };

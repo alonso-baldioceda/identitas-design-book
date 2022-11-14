@@ -13,10 +13,10 @@ import InstagramIcon from "./../../images/svg/instagram.svg";
 import Layout from "./Layout";
 
 // Stories
-import * as LanguageSelectorStories from "./LanguageSelector.stories";
+import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
 
 export default {
-  title: "Molecules/Layout",
+  title: "Compositions/Layout",
   component: Layout,
 } as ComponentMeta<typeof Layout>;
 

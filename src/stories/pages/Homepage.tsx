@@ -3,14 +3,16 @@ import { Helmet } from "react-helmet";
 
 // Components
 import ButtonLink from "../components/ButtonLink";
-import Card from "../components/Card";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
-import Grid from "../components/Grid";
-import Hero from "../components/Hero";
-import Layout from "../components/Layout";
-import ListGroup from "../components/ListGroup";
 import Spacer from "../components/Spacer";
 import Sphere from "../components/Sphere";
+
+// Compositions
+import Card from "../compositions/Card";
+import Grid from "../compositions/Grid";
+import Hero from "../compositions/Hero";
+import Layout from "../compositions/Layout";
+import ListGroup from "../compositions/ListGroup";
 
 // Types
 export interface HomepageProps {

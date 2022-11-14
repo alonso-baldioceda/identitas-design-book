@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { prefix, color } from "./../shared/styles.js";
 
 // Components
-import Brand, { BrandProps } from "./Brand";
-import Link from "./Link";
-import LanguageSelector from "./LanguageSelector";
+import Brand, { BrandProps } from "./../components/Brand";
+import LanguageSelector from "./../components/LanguageSelector";
+import Link from "./../components/Link";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -203,6 +203,7 @@ const Header: FC<HeaderProps> = ({
                 )}
                 {socials && (
                   <div className="social">
+                    {/* TODO: create component for this */}
                     {socials.map((social: SocialProps, index: number) => (
                       <StyledSocial
                         href={social.url}

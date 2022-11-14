@@ -6,17 +6,16 @@ import Header from "./Header";
 
 // Stories
 import * as LayoutStories from "./Layout.stories";
-import * as BrandStories from "./Brand.stories";
-import * as LanguageSelectorStories from "./LanguageSelector.stories";
+import * as BrandStories from "./../components/Brand.stories";
+import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
 
 // Assets
-// import LogoIcon from "./../../images/svg/logo-black.svg";
 import PhoneIcon from "./../../images/svg/call.svg";
 import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
 export default {
-  title: "Molecules/Header",
+  title: "Compositions/Header",
   component: Header,
   args: {
     brand: {
