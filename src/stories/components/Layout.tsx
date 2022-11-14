@@ -18,7 +18,7 @@ interface LayoutProps {
   };
   header: {
     brand: BrandProps;
-    // languagesList: LanguageSelectorProps;
+    languagesList: string[];
     navigation: MenuItemProps[];
     phone?: string;
     phoneIcon?: ReactNode;

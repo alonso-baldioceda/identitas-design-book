@@ -1,5 +1,6 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import classnames from "classnames";
+import { prefix } from "./../shared/styles.js";
 
 interface ButtonLinkProps {
   appearance: string;
@@ -33,7 +34,7 @@ const ButtonLink: FC<ButtonLinkProps> = ({
     role="button"
     target={targetBlank ? "_blank" : ""}
     className={classnames(
-      `btn btn-${appearance} py-${py} px-${px} mb-${mb} text-capitalize ${
+      `btn btn-${appearance} py-${py} px-${px} mb-${mb} text-capitalize ${prefix}-button-link ${
         disabled && "disabled"
       }`,
       { "rounded-pill": rounded },

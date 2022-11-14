@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import classnames from "classnames";
 import styled from "styled-components";
+import { prefix } from "./../shared/styles.js";
 
 // Styles
 export const StyledSpacing = styled.div`
@@ -35,7 +36,9 @@ export interface SpacerProps {
 
 const Spacer: FC<SpacerProps> = ({ bottomOnly, children }) => {
   return (
-    <StyledSpacing className={classnames({ "bottom-only": bottomOnly })}>
+    <StyledSpacing
+      className={classnames(`${prefix}-spacer`, { "bottom-only": bottomOnly })}
+    >
       {children}
     </StyledSpacing>
   );

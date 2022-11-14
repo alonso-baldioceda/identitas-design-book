@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import ReactPannellum from "react-pannellum";
 import styled from "styled-components";
-import { color } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 // Assets
 import RotationIcon from "./../../images/svg/rotation.svg";
@@ -69,7 +69,9 @@ const Sphere: FC<SphereProps> = ({
   };
 
   return (
-    <SphereStyled className={`border border-${border} border-${borderColor}`}>
+    <SphereStyled
+      className={`border border-${border} border-${borderColor} ${prefix}-sphere`}
+    >
       <RotationIconStyled className=" bg-white p-1" />
       <ReactPannellum
         id={id}

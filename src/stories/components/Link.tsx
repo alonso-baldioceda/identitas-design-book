@@ -1,6 +1,7 @@
 import React, { FC, useContext } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkGatsby } from "gatsby";
+import { prefix } from "./../shared/styles.js";
 // import classnames from "classnames";
 
 // Contexts
@@ -40,8 +41,9 @@ const Link: FC<LinkProps> = ({
   //   const { active, setActive } = context;
 
   // TODO: handle active on both cases
+  // TODO: create storybook for this component
   return (type as Types) === Types.Link ? (
-    <LinkGatsby to={to} />
+    <LinkGatsby to={to} className={`${prefix}-link-gatsby`} />
   ) : (
     <LinkScroll
       activeClass="active"
@@ -51,6 +53,7 @@ const Link: FC<LinkProps> = ({
       spy={spy}
       to={to}
       // index={index}
+      className={`${prefix}-link-scroll`}
     >
       {text}
     </LinkScroll>

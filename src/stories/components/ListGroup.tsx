@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import { prefix } from "./../shared/styles.js";
 
 // Components
 import ListGroupItem from "./ListGroupItem";
@@ -49,7 +50,7 @@ const ListGroup: FC<ListGroupProps> = ({
   float = false,
 }) => (
   <StyledListGroup
-    className={`mb-${mb} p-${p} list-unstyled`}
+    className={`mb-${mb} p-${p} list-unstyled ${prefix}-list-group`}
     float={float.toString()}
   >
     {/* TODO: remove any */}

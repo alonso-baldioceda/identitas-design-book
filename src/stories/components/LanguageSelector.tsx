@@ -2,7 +2,7 @@ import React, { useState, useContext, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 // import classnames from "classnames";
-import { color } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -77,7 +77,7 @@ const LanguageSelector: FC<LanguageSelectorProps> = ({ languagesList }) => {
   };
 
   return (
-    <div className="languages-selector">
+    <div className={`${prefix}-languages-selector`}>
       {languagesList.map((language: string, index: number) => (
         <LinkTranslate
           key={index}

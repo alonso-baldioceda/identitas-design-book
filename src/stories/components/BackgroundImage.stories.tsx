@@ -6,10 +6,10 @@ import { color } from "./../shared/styles.js";
 import BackgroundImage from "./BackgroundImage";
 
 // Assets
-import imageFile from "./../../images/ocean.jpg";
+import OceanImage from "./../../images/ocean.jpg";
 
 const image = {
-  src: imageFile,
+  src: OceanImage,
 };
 
 export default {

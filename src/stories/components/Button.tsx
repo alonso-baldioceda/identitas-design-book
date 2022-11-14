@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import classnames from "classnames";
+import { prefix } from "./../shared/styles.js";
 
 interface ButtonProps {
   appearance: string;
@@ -26,7 +27,7 @@ const Button: FC<ButtonProps> = ({
 }) => (
   <button
     className={classnames(
-      `btn btn-${appearance} py-${py} px-${px} mb-${mb} text-capitalize`,
+      `btn btn-${appearance} py-${py} px-${px} mb-${mb} text-capitalize ${prefix}-button`,
       { "rounded-pill": rounded },
       { "fw-bold": bold }
     )}

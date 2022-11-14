@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Brand from "./Brand";
 
 // Assets
-import LogoIcon from "./../../images/svg/logo-black.svg";
+// import LogoIcon from "./../../images/svg/logo-black.svg";
 
 export default {
   title: "Components/Brand",
@@ -13,9 +13,9 @@ export default {
   args: {
     duration: 500,
     fontWeight: 700,
-    logoIcon: "",
+    // logoIcon: "",
     logoMarginRight: 3,
-    logoSize: 60,
+    // logoSize: 60,
     offset: -70,
     smooth: true,
     spy: true,
@@ -44,9 +44,9 @@ export const Default = Template.bind({});
 Default.args = {
   duration: 500,
   fontWeight: 700,
-  logoIcon: <LogoIcon />,
+  // logoIcon: <LogoIcon />,
   logoMarginRight: 3,
-  logoSize: 60,
+  // logoSize: 60,
   offset: -70,
   smooth: true,
   spy: true,

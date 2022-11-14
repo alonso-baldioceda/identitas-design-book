@@ -1,11 +1,11 @@
 import React, { useContext, FC, useMemo, useCallback, ReactNode } from "react";
 import styled from "styled-components";
-import { color } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./Brand";
 import Link from "./Link";
-import LanguageSelector, { LanguageSelectorProps } from "./LanguageSelector";
+import LanguageSelector from "./LanguageSelector";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -30,29 +30,32 @@ const StyledHeader = styled.div`
     .side-left,
     .side-right {
       .nav-item {
-        border-bottom: 2px solid transparent;
-        color: ${color.black};
-        font-size: 16px;
-        font-weight: 500;
-        letter-spacing: 0.6px;
-        margin-right: 15px;
-        text-decoration: none;
+        a {
+          border-bottom: 2px solid transparent;
+          color: ${color.black};
+          display: block;
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.6px;
+          margin-right: 15px;
+          text-decoration: none;
 
-        &.active,
-        &:hover,
-        &:focus,
-        &:visited {
-          color: ${color.black} !important;
-        }
+          &.active,
+          &:hover,
+          &:focus,
+          &:visited {
+            color: ${color.black} !important;
+          }
 
-        &.active,
-        &:focus,
-        &:hover {
-          border-bottom: 2px solid red;
-        }
+          &.active,
+          &:focus,
+          &:hover {
+            border-bottom: 2px solid red;
+          }
 
-        &:focus {
-          outline: none;
+          &:focus {
+            outline: none;
+          }
         }
       }
 
@@ -142,7 +145,7 @@ export interface SocialProps {
 
 interface HeaderProps {
   brand: BrandProps;
-  languagesList?: string[];
+  languagesList: string[];
   navigation: MenuItemProps[];
   phone?: string;
   phoneIcon?: ReactNode;
@@ -151,7 +154,7 @@ interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({
   brand,
-  languagesList,
+  languagesList = ["es"],
   navigation,
   phone,
   phoneIcon = PhoneIcon,
@@ -174,7 +177,7 @@ const Header: FC<HeaderProps> = ({
   }, [navigation]);
 
   return (
-    <StyledHeader>
+    <StyledHeader className={`${prefix}-header`}>
       <div className="container-fluid">
         <div className="row align-items-center">
           <div className="col-12">
@@ -188,7 +191,9 @@ const Header: FC<HeaderProps> = ({
               </div>
               <div className="d-flex justify-content-end align-items-center side-right">
                 <div className="d-none d-xl-inline">
-                  <LanguageSelector languagesList={["es", "en"]} />
+                  <LanguageSelector
+                    languagesList={languagesList ? languagesList : ["es"]}
+                  />
                 </div>
                 {phone && (
                   <>

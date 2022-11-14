@@ -8,13 +8,11 @@ import PhoneIcon from "./../../images/svg/phone.svg";
 import CallIcon from "./../../images/svg/call.svg";
 import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
-import LogoIcon from "./../../images/svg/logo-black.svg";
 
 // Components
 import Layout from "./Layout";
 
 // Stories
-// import * as BrandStories from "./Brand.stories";
 import * as LanguageSelectorStories from "./LanguageSelector.stories";
 
 export default {
@@ -93,11 +91,20 @@ export const Default = Template.bind({});
 Default.args = {
   header: {
     brand: {
-      logoIcon: <LogoIcon />,
+      duration: 500,
+      fontWeight: 700,
+      // logoIcon: <LogoIcon />,
+      logoMarginRight: 3,
+      // logoSize: 60,
+      offset: -70,
+      smooth: true,
+      spy: true,
       text: "Company name",
       to: "/#topPage",
     },
-    // languagesList: LanguageSelectorStories.Default.args?.languagesList,
+    languagesList: LanguageSelectorStories.Default.args?.languagesList
+      ? LanguageSelectorStories.Default.args.languagesList
+      : ["es"],
     navigation: navList,
     phone: "+50683274040",
     phoneIcon: <CallIcon />,

@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
+import { prefix } from "./../shared/styles.js";
 
 // Styles
 const StyledGrid = styled((props) => <div {...props} />)`
@@ -23,13 +24,6 @@ const StyledGrid = styled((props) => <div {...props} />)`
   @media (min-width: 1200px) {
     grid-template-columns: ${(props) => `repeat(${props.xl}, 1fr)`};
   }
-  /*
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  */
 `;
 
 interface GridProps {
@@ -51,7 +45,15 @@ const Grid: FC<GridProps> = ({
   lg = 3,
   xl = 4,
 }) => (
-  <StyledGrid gap={gap} xs={xs} sm={sm} md={md} lg={lg} xl={xl}>
+  <StyledGrid
+    gap={gap}
+    xs={xs}
+    sm={sm}
+    md={md}
+    lg={lg}
+    xl={xl}
+    className={`${prefix}-grid`}
+  >
     {children}
   </StyledGrid>
 );

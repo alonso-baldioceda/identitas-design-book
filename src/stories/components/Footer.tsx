@@ -1,18 +1,19 @@
 import React, { FC, useState, useContext, useMemo, ReactElement } from "react";
 import styled from "styled-components";
+import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import SVG from "./SVG";
 import Link from "./Link";
+import Spacer from "./Spacer";
 
 // Contexts
 // import Global from "./../contexts/global";
 
 // Styles
 const StyledFooter = styled((props) => <section {...props} />)`
-  /* TODO: replace colors by variables */
   svg {
-    fill: #fff;
+    fill: ${color.white};
   }
 
   h2,
@@ -21,7 +22,7 @@ const StyledFooter = styled((props) => <section {...props} />)`
     ${(props) =>
       props.bgcolor === "dark" &&
       `
-        color: #fff !important; 
+        color: ${color.white} !important; 
       `}
   }
 
@@ -63,7 +64,7 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
     return (
       <ul className="list-unstyled mb-0">
         {navigation.list.map((menuItem: MenuItemProps, index: number) => (
-          <li className="mb-1 mb-lg-3" key={`navigation-${index}`}>
+          <li className="mb-3" key={`navigation-${index}`}>
             <Link
               index={index}
               text={menuItem.text}
@@ -94,21 +95,23 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
 
   return (
     <StyledFooter
-      className={`py-3 py-md-5 text-center text-lg-start text-muted bg-${bgcolor}`}
+      className={`text-center text-lg-start text-muted bg-${bgcolor} ${prefix}-footer`}
       bgcolor={bgcolor}
     >
-      <div className="container">
-        <div className="row">
-          <div className="col-10 col-sm-12 col-md-6 mx-auto text-start">
-            <h2 className="mb-4 mb-lg-5">{navigation.header}</h2>
-            {renderNavigationItems}
-          </div>
-          <div className="col-10 col-sm-12 col-md-6 mx-auto mt-5 mt-md-0 text-start">
-            <h2 className="mb-4 mb-lg-5">{contact.header}</h2>
-            {renderContactItems}
+      <Spacer>
+        <div className="container">
+          <div className="row">
+            <div className="col-10 col-sm-12 col-md-6 mx-auto text-start">
+              <h2 className="mb-5">{navigation.header}</h2>
+              {renderNavigationItems}
+            </div>
+            <div className="col-10 col-sm-12 col-md-6 mx-auto mt-5 mt-md-0 text-start">
+              <h2 className="mb-5">{contact.header}</h2>
+              {renderContactItems}
+            </div>
           </div>
         </div>
-      </div>
+      </Spacer>
     </StyledFooter>
   );
 };

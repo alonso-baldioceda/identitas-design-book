@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { color } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import BackgroundImage from "./BackgroundImage";
@@ -30,7 +30,7 @@ const Hero: FC<HeroProps> = ({
   text = "some text here!!",
 }) => {
   return (
-    <StyledHero>
+    <StyledHero className={`${prefix}-hero`}>
       <BackgroundImage src={src} bgcolor="default" />
       {mask && <Mask bgcolor={bgColor} />}
       <div className="position-absolute start-0 bottom-0 p-4 w-100">

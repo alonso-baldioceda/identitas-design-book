@@ -1,5 +1,8 @@
 import { css } from "styled-components";
 
+// TODO: set from dev envs probably
+export const prefix = "identitas";
+
 // Global style variables
 export const background = {
   app: "#F6F9FC",
@@ -10,8 +13,6 @@ export const background = {
 };
 
 export const color = {
-  // Palette
-
   // Primary
   primary: "#81B29A",
   secondary: "#1EA7FD",

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { color } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import ListGroup from "./ListGroup";
@@ -28,7 +28,7 @@ const Card: FC<CardProps> = ({
   upfrontBackgroundColor = color.transparent,
 }) => (
   <div
-    className={`d-flex flex-column align-items-center border border-${border} border-${foreignBackgroundColor}`}
+    className={`d-flex flex-column align-items-center border border-${border} border-${foreignBackgroundColor} ${prefix}-card`}
   >
     <h3
       className={`mb-0 py-4 text-capitalize w-100 text-center bg-${foreignBackgroundColor}`}

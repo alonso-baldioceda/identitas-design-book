@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { color } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 const StyledBgImg = styled((props) => <div {...props} />)`
   height: 100vh;
@@ -31,7 +31,7 @@ interface BackgroundImageProps {
 }
 
 const BackgroundImage: FC<BackgroundImageProps> = (props) => (
-  <StyledBgImg {...props} />
+  <StyledBgImg {...props} className={`${prefix}-background-image`} />
 );
 
 export default BackgroundImage;

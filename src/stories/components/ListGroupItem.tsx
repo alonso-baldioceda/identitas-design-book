@@ -1,19 +1,12 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
+import { prefix } from "./../shared/styles.js";
 
 // Components
 import SVG from "./SVG";
 
 // Styles
-const StyledHeading = styled.p`
-  font-size: 18px;
-`;
-
-const StyledSubheading = styled.p`
-  font-size: 16px;
-`;
-
-const StyledIconWrapper = styled((props) => <span {...props} />)`
+const IconWrapper = styled((props) => <span {...props} />)`
   border-radius: 50%;
   margin-right: 0.75rem;
 `;
@@ -22,8 +15,7 @@ const StyledIconWrapper = styled((props) => <span {...props} />)`
 interface ListGroupItemProps {
   headingBottom?: number;
   heading: string;
-  // remove any
-  svg?: any;
+  svg?: ReactNode;
   svgSize: string;
   text?: string;
   textBottom?: number;
@@ -38,22 +30,16 @@ const ListGroupItem: FC<ListGroupItemProps> = ({
   textBottom = 0,
 }) => {
   return (
-    <li className="d-flex flex-row align-items-center">
+    <li
+      className={`d-flex flex-row align-items-center ${prefix}-list-group-tem`}
+    >
       {svg && (
-        <StyledIconWrapper className="d-flex align-items-center justify-content-center">
+        <IconWrapper className="d-flex align-items-center justify-content-center">
           <SVG icon={svg} size={svgSize} />
-        </StyledIconWrapper>
+        </IconWrapper>
       )}
-      <div>
-        <StyledHeading className={`mb-${headingBottom}`}>
-          {heading}
-        </StyledHeading>
-        {text && (
-          <StyledSubheading className={`d-block fw-light mb-${textBottom}`}>
-            {text}
-          </StyledSubheading>
-        )}
-      </div>
+      <p className={`mb-${headingBottom}`}>{heading}</p>
+      {text && <p className={`d-block mb-${textBottom}`}>{text}</p>}
     </li>
   );
 };
