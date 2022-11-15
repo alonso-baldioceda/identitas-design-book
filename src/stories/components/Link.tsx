@@ -2,7 +2,6 @@ import React, { FC, useContext } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import { Link as LinkGatsby } from "gatsby";
 import { prefix } from "./../shared/styles.js";
-// import classnames from "classnames";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -10,14 +9,13 @@ import { prefix } from "./../shared/styles.js";
 // Types
 export enum Types {
   Anchor = "anchor",
-  Link = "linkn",
+  Link = "link",
 }
 
 export interface LinkProps {
   type?: Types;
-  activeClass?: string;
+  // activeClass?: string;
   duration?: number;
-  index?: number;
   offset?: number;
   smooth?: boolean;
   spy?: boolean;
@@ -26,16 +24,17 @@ export interface LinkProps {
 }
 
 const Link: FC<LinkProps> = ({
-  type = "link",
-  activeClass,
+  type,
+  // activeClass = "active",
   duration = 500,
-  index,
-  offset = -70,
+  offset = -80,
   smooth = true,
   spy = true,
   text,
   to,
 }) => {
+  console.log("to ===> ", to, "type ===> ", type);
+
   //   const context = useContext(GlobalContext);
 
   //   const { active, setActive } = context;
@@ -43,17 +42,17 @@ const Link: FC<LinkProps> = ({
   // TODO: handle active on both cases
   // TODO: create storybook for this component
   return (type as Types) === Types.Link ? (
-    <LinkGatsby to={to} className={`${prefix}-link-gatsby`} />
+    <LinkGatsby to={to} className={`${prefix}-link-gatsby`} type={type}>
+      {text}
+    </LinkGatsby>
   ) : (
     <LinkScroll
-      activeClass="active"
+      // activeClass="active"
       duration={duration}
       offset={offset}
       smooth={smooth}
       spy={spy}
-      to={`${to}`}
-      href={`${to}`}
-      // index={index}
+      to={to}
       className={`${prefix}-link-scroll`}
     >
       {text}

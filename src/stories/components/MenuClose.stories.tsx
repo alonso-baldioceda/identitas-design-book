@@ -14,20 +14,26 @@ const StyledStory = styled.div`
 export default {
   title: "Components/MenuClose",
   component: MenuClose,
-  args: { color: color.black },
+  args: { colorOpen: color.black, colorClose: color.black, isOpen: false },
 } as ComponentMeta<typeof MenuClose>;
 
 const Template: ComponentStory<typeof MenuClose> = (args) => (
-  <StyledStory className="position-relative">
+  <StyledStory className="position-relative bg-primary">
     <MenuClose {...args} />
   </StyledStory>
 );
 
 export const Default = Template.bind({});
+Default.args = {};
 
-export const CustomColor = Template.bind({});
-CustomColor.args = {
+export const CustomOpenColor = Template.bind({});
+CustomOpenColor.args = {
+  colorOpen: "red",
+};
+
+export const CustomCloseColor = Template.bind({});
+CustomCloseColor.args = {
   ...Default.args,
-  // TODO: handle color using props
-  color: "rgba(255, 0, 0, 1)",
+  colorClose: "blue",
+  isOpen: true,
 };

@@ -63,10 +63,10 @@ const Homepage: FC<HomepageProps> = ({
           `}
         </script>
       </Helmet>
-      <section className="anchor-block" id="main">
+      <section id="main">
         <Hero {...heroProps} />
       </section>
-      <section className="anchor-block" id="units">
+      <section id="units">
         <FadeInWhenVisible>
           {/* TODO: update background color */}
           <div className="bg-secondary-pastel">
@@ -115,7 +115,7 @@ const Homepage: FC<HomepageProps> = ({
           </div>
         </FadeInWhenVisible>
       </section>
-      <section className="anchor-block" id="common-spaces">
+      <section id="common-spaces">
         <FadeInWhenVisible>
           <Spacer>
             <div className="container">
@@ -134,7 +134,7 @@ const Homepage: FC<HomepageProps> = ({
           </Spacer>
         </FadeInWhenVisible>
       </section>
-      <section className="anchor-block" id="services">
+      <section id="services">
         <FadeInWhenVisible>
           <div className="bg-primary-pastel">
             <Spacer>
@@ -177,7 +177,7 @@ const Homepage: FC<HomepageProps> = ({
           </div>
         </FadeInWhenVisible>
       </section>
-      <section className="anchor-block" id="drive">
+      <section id="drive">
         <FadeInWhenVisible>
           <Spacer>
             <div className="bg-white">
@@ -209,7 +209,10 @@ const Homepage: FC<HomepageProps> = ({
           </Spacer>
         </FadeInWhenVisible>
       </section>
-      <section className="anchor-block" id="rules">
+      <section id="contact">
+        <h1>Contact here!</h1>
+      </section>
+      <section id="rules">
         <FadeInWhenVisible>
           <Spacer>
             <div className="container">

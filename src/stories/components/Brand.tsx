@@ -1,7 +1,8 @@
-import React, { FC, useContext, ReactNode } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../shared/styles.js";
 import { Link } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
 // import classnames from "classnames";
 
 // Contexts
@@ -13,11 +14,12 @@ import LogoIcon from "./../../images/svg/logo-black.svg";
 // Styles
 const StyledBrand = styled((props) => <Link {...props} />)`
   align-items: center;
+  cursor: pointer;
   display: flex;
   padding: 12px 0;
   text-decoration: none;
 
-  /* TODO: research about how to inject props to SVG */
+  /* TODO: probably we will need to use the background image approach if want "hover" state */
   svg {
     height: 60px !important;
     margin: 0;
@@ -39,6 +41,7 @@ const StyledBrand = styled((props) => <Link {...props} />)`
 
 // Types
 export interface BrandProps {
+  // activeClass?: string;
   duration?: number;
   fontWeight?: number;
   // logoIcon?: ReactNode;
@@ -52,17 +55,22 @@ export interface BrandProps {
 }
 
 const Brand: FC<BrandProps> = ({
+  // activeClass,
   duration = 500,
   fontWeight = 700,
   // logoIcon = "",
   logoMarginRight = 3,
   // logoSize = 60,
-  offset = -70,
+  offset = -60,
   smooth = true,
   spy = true,
   text,
   to,
 }) => {
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
+
   //   const context = useContext(GlobalContext);
 
   //   const { active, setActive } = context;
@@ -71,16 +79,18 @@ const Brand: FC<BrandProps> = ({
 
   return (
     <StyledBrand
+      // activeClass={activeClass}
+      className={`me-${logoMarginRight} ${prefix}-brand`}
       duration={duration}
       fontWeight={fontWeight}
       // logoIcon={logoIcon}
       // logoSize={logoSize}
       offset={offset}
+      onClick={scrollToTop}
       smooth={smooth}
       spy={spy}
       text={text}
       to={to}
-      className={`me-${logoMarginRight} ${prefix}-brand`}
     >
       <LogoIcon />
       <span>{text}</span>

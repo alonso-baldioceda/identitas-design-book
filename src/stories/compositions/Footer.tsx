@@ -58,7 +58,7 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
 
   //   const { menu, setActive } = context;
 
-  const [active, setActive] = useState(-1);
+  // const [active, setActive] = useState(-1);
 
   const renderNavigationItems = useMemo(() => {
     return (
@@ -66,7 +66,7 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
         {navigation.list.map((menuItem: MenuItemProps, index: number) => (
           <li className="mb-3" key={`navigation-${index}`}>
             <Link
-              index={index}
+              // index={index}
               text={menuItem.text}
               to={`/${menuItem.anchor}`}
             />

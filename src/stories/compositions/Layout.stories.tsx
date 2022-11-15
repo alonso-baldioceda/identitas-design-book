@@ -11,6 +11,7 @@ import InstagramIcon from "./../../images/svg/instagram.svg";
 
 // Components
 import Layout from "./Layout";
+import { Types as LinkTypes } from "./../components/Link";
 
 // Stories
 import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
@@ -51,37 +52,37 @@ const Template: ComponentStory<typeof Layout> = (args) => (
 
 const navList = [
   {
-    type: "anchor",
-    anchor: "#main",
+    type: LinkTypes.Anchor,
+    anchor: "main",
     text: "Inicio",
   },
   {
-    type: "anchor",
-    anchor: "#units",
+    type: LinkTypes.Anchor,
+    anchor: "units",
     text: "Cabinas",
   },
   {
-    type: "anchor",
-    anchor: "#common-spaces",
+    type: LinkTypes.Anchor,
+    anchor: "common-spaces",
     text: "Espacios comúnes",
   },
   {
-    type: "anchor",
-    anchor: "#services",
+    type: LinkTypes.Anchor,
+    anchor: "services",
     text: "Servicios",
   },
   {
-    type: "anchor",
-    anchor: "#drive",
+    type: LinkTypes.Anchor,
+    anchor: "drive",
     text: "Cómo llegar?",
   },
   {
-    type: "anchor",
-    anchor: "#contact",
+    type: LinkTypes.Anchor,
+    anchor: "contact",
     text: "Contáctenos",
   },
   {
-    type: "link",
+    type: LinkTypes.Link,
     anchor: "info",
     text: "Info",
   },
@@ -100,8 +101,9 @@ Default.args = {
       smooth: true,
       spy: true,
       text: "Company name",
-      to: "/#topPage",
+      to: "main",
     },
+    // TODO: fix this
     languagesList: LanguageSelectorStories.Default.args?.languagesList
       ? LanguageSelectorStories.Default.args.languagesList
       : ["es"],

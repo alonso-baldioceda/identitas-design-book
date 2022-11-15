@@ -20,7 +20,7 @@ export default {
     smooth: true,
     spy: true,
     text: "Company name",
-    to: "/#topPage",
+    to: "main",
   },
   argTypes: {
     duration: {
@@ -47,9 +47,9 @@ Default.args = {
   // logoIcon: <LogoIcon />,
   logoMarginRight: 3,
   // logoSize: 60,
-  offset: -70,
+  offset: -80,
   smooth: true,
   spy: true,
   text: "Company name",
-  to: "/#topPage",
+  to: "main",
 };

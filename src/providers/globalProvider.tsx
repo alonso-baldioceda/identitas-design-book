@@ -43,7 +43,7 @@ const GlobalProvider: FC<GlobalProviderProps> = ({ children, location }) => {
     // instagram,
   } = data.site.siteMetadata;
 
-  const [active, setActive] = useState(-1);
+  // const [active, setActive] = useState(-1);
   const [language, setLanguage] = useState(0);
   const [open, setOpen] = useState(false);
 
@@ -52,52 +52,52 @@ const GlobalProvider: FC<GlobalProviderProps> = ({ children, location }) => {
     setOpen(!open);
   };
 
-  const changeLinkState = () => {
-    const sections = document.querySelectorAll<HTMLElement>(".anchor-block");
+  // const changeLinkState = () => {
+  //   const sections = document.querySelectorAll<HTMLElement>(".anchor-block");
 
-    if (sections.length > 0) {
-      let adjustment: number = 0;
+  //   if (sections.length > 0) {
+  //     let adjustment: number = 0;
 
-      if (window.matchMedia("(max-width: 1200px)")) {
-        adjustment = 90;
-      } else if (window.matchMedia("(max-width: 992px)")) {
-        adjustment = 170;
-      } else if (window.matchMedia("(max-width: 768px)")) {
-        adjustment = 95;
-      }
+  //     if (window.matchMedia("(max-width: 1200px)")) {
+  //       adjustment = 90;
+  //     } else if (window.matchMedia("(max-width: 992px)")) {
+  //       adjustment = 170;
+  //     } else if (window.matchMedia("(max-width: 768px)")) {
+  //       adjustment = 95;
+  //     }
 
-      let index = sections.length;
+  //     let index = sections.length;
 
-      while (
-        --index &&
-        window.scrollY + adjustment < sections[index].offsetTop
-      ) {}
+  //     while (
+  //       --index &&
+  //       window.scrollY + adjustment < sections[index].offsetTop
+  //     ) {}
 
-      setActive(index);
-    }
-  };
+  //     setActive(index);
+  //   }
+  // };
 
-  useEffect(() => {
-    if (location?.pathname === "/") {
-      changeLinkState();
-      window.addEventListener("scroll", changeLinkState);
-    }
+  // useEffect(() => {
+  // if (location?.pathname === "/") {
+  // changeLinkState();
+  // window.addEventListener("scroll", changeLinkState);
+  // }
 
-    if (location?.pathname === "/info") {
-      console.log(active, location?.pathname);
-      setActive(6);
-    }
+  // if (location?.pathname === "/info") {
+  //   console.log(active, location?.pathname);
+  //   setActive(6);
+  // }
 
-    return () => {
-      setActive(0);
-      window.removeEventListener("scroll", changeLinkState);
-    };
-  }, []);
+  // return () => {
+  // setActive(0);
+  // window.removeEventListener("scroll", changeLinkState);
+  // };
+  // }, []);
 
   const defaultState = {
     menu,
-    active,
-    setActive,
+    // active,
+    // setActive,
     language,
     setLanguage,
     open,

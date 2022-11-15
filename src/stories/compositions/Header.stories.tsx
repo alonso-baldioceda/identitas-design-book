@@ -54,7 +54,7 @@ Default.args = {
     smooth: true,
     spy: true,
     text: "Company name",
-    to: "/#topPage",
+    to: "main",
   },
   languagesList: LanguageSelectorStories.Default.args?.languagesList,
   navigation: LayoutStories.Default.args?.header?.navigation,

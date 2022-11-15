@@ -5,7 +5,7 @@ import { prefix, color } from "./../shared/styles.js";
 // Components
 import Brand, { BrandProps } from "./../components/Brand";
 import LanguageSelector from "./../components/LanguageSelector";
-import Link from "./../components/Link";
+import Link, { Types as LinkTypes } from "./../components/Link";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -13,6 +13,7 @@ import Link from "./../components/Link";
 // Assets
 // TODO: we can eventually move this icon to props
 import PhoneIcon from "./../../images/svg/call.svg";
+import { type } from "os";
 
 // Styles
 const StyledHeader = styled.div`
@@ -168,18 +169,49 @@ const Header: FC<HeaderProps> = ({
   //   const { menu, active, setActive, facebook, instagram, phoneRef } = context;
 
   const renderNavigation = useMemo(() => {
-    return navigation.map((menuItem: MenuItemProps, index: number) => {
+    const nav = navigation.map((menuItem: MenuItemProps, index: number) => {
       return (
-        <li className="nav-item" key={`menu-horizontal-nav-${index}`}>
+        <li className="nav-item" key={`horizontal-nav-${index}`}>
           <Link
-            index={index}
             text={menuItem.text}
-            to={`${menuItem.type === "link" ? "/" : ""}${menuItem.anchor}`}
+            type={
+              menuItem.type && menuItem.type === LinkTypes.Link
+                ? LinkTypes.Link
+                : LinkTypes.Anchor
+            }
+            to={`${
+              menuItem.type === "link"
+                ? `/${menuItem.anchor}`
+                : `${menuItem.anchor}`
+            }`}
           />
         </li>
       );
     });
+
+    return (
+      <ul className="nav justify-content-center d-none d-xl-flex">{nav}</ul>
+    );
   }, [navigation]);
+
+  // const renderNavigation = () =>
+  //   navigation.map((menuItem: MenuItemProps, index: number) => (
+  //     <li className="nav-item" key={`horizontal-nav-${index}`}>
+  //       <Link
+  //         text={menuItem.text}
+  //         type={
+  //           menuItem.type && menuItem.type === LinkTypes.Link
+  //             ? LinkTypes.Link
+  //             : LinkTypes.Anchor
+  //         }
+  //         to={`${
+  //           menuItem.type === "link"
+  //             ? `/${menuItem.anchor}`
+  //             : `${menuItem.anchor}`
+  //         }`}
+  //       />
+  //     </li>
+  //   ));
 
   return (
     <StyledHeader className={`${prefix}-header`}>
@@ -189,10 +221,11 @@ const Header: FC<HeaderProps> = ({
             <div className="d-flex align-items-center justify-content-between nav-wrapper">
               <div className="d-flex align-items-center side-left">
                 <Brand {...brand} />
-                <ul className="nav justify-content-center d-none d-xl-flex">
-                  {/* TODO: posibly add a better hover effect */}
-                  {renderNavigation}
-                </ul>
+                {/* TODO: create NavHeader */}
+                {/* TODO: posibly add a better hover effect */}
+                {/* <ul className="nav justify-content-center d-none d-xl-flex"> */}
+                {renderNavigation}
+                {/* </ul> */}
               </div>
               <div className="d-flex justify-content-end align-items-center side-right">
                 <div className="d-none d-xl-inline">
@@ -208,7 +241,7 @@ const Header: FC<HeaderProps> = ({
                 )}
                 {socials && (
                   <div className="social">
-                    {/* TODO: create component for this */}
+                    {/* TODO: create component for this (ButtonCircle) */}
                     {socials.map((social: SocialProps, index: number) => (
                       <StyledSocial
                         href={social.url}

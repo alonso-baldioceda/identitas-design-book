@@ -20,7 +20,17 @@ const StyledMenuIcon = styled((props) => <div {...props} />)`
 
   span {
     ${(props) =>
-      props.color ? `background: ${props.color};` : `${color.black};`}
+      props.colorOpen !== "" &&
+      `
+        background: ${props.colorOpen};
+      `}
+
+    ${(props) =>
+      props.colorOpen === "" &&
+      `
+        background: ${color.black};
+      `}
+
     border-radius: 9px;
     display: block;
     height: 3px;
@@ -45,11 +55,14 @@ const StyledMenuIcon = styled((props) => <div {...props} />)`
     top: 24px;
   }
 
-  &.open {
+  &.is-open {
     z-index: 99999;
 
     span {
-      background: ${color.white};
+      ${(props) =>
+        props.colorOpen
+          ? `background: ${props.colorClose};`
+          : `${color.black};`}
 
       &:nth-child(1) {
         left: 50%;
@@ -75,22 +88,33 @@ const StyledMenuIcon = styled((props) => <div {...props} />)`
 `;
 
 interface MenuCloseProps {
-  color: string;
+  colorClose?: string;
+  colorOpen?: string;
+  hideFrom?: string;
+  isOpen: boolean;
 }
 
-const MenuClose: FC<MenuCloseProps> = ({ color }) => {
+const MenuClose: FC<MenuCloseProps> = ({
+  colorOpen = "",
+  colorClose = "",
+  hideFrom = "xl",
+  isOpen = false,
+}) => {
   //   const context = useContext(GlobalContext);
 
-  //   const { open, toggleMenu } = context;
+  //   const { isOpen, toggleMenu } = context;
 
   return (
     <StyledMenuIcon
-      //   className={`d-xl-none ${open ? "open" : ""}`}
-      className={`d-xl-none ${prefix}-menu-close`}
-      color={color}
+      className={`d-${hideFrom}-none ${
+        isOpen ? "is-open" : ""
+      } ${prefix}-menu-close`}
+      colorOpen={colorOpen}
+      colorClose={colorClose}
+      isOpen={isOpen}
       onClick={
         () => console.log("hola")
-        // toggleMenu !== undefined && open !== undefined && toggleMenu(open)
+        // toggleMenu !== undefined && isOpen !== undefined && toggleMenu(isOpen)
       }
     >
       <span></span>
