@@ -6,6 +6,13 @@ import { prefix, sizing } from "./../shared/styles.js";
 const StyledSVG = styled((props) => <div {...props} />)`
   svg {
     ${(props) =>
+      props.size === "extra-small" &&
+      `
+        height: ${sizing.icon.extraSmall}px;
+        width: ${sizing.icon.extraSmall}px;
+      `}
+
+    ${(props) =>
       props.size === "small" &&
       `
         height: ${sizing.icon.small}px;
@@ -13,10 +20,10 @@ const StyledSVG = styled((props) => <div {...props} />)`
       `}
 
     ${(props) =>
-      props.size === "default" &&
+      props.size === "medium" &&
       `
-        height: ${sizing.icon.default}px;
-        width: ${sizing.icon.default}px;
+        height: ${sizing.icon.medium}px;
+        width: ${sizing.icon.medium}px;
       `}
 
     ${(props) =>
@@ -34,7 +41,7 @@ interface SVGProps {
   size?: string;
 }
 
-const SVG: FC<SVGProps> = ({ icon, size = "default" }) => {
+const SVG: FC<SVGProps> = ({ icon, size = "medium" }) => {
   return (
     <StyledSVG size={size} className={`${prefix}-svg`}>
       {icon}

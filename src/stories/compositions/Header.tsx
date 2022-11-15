@@ -4,6 +4,7 @@ import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./../components/Brand";
+import LinkIcon from "../components/LinkIcon";
 import LanguageSelector from "./../components/LanguageSelector";
 import Link, { Types as LinkTypes } from "./../components/Link";
 
@@ -13,7 +14,6 @@ import Link, { Types as LinkTypes } from "./../components/Link";
 // Assets
 // TODO: we can eventually move this icon to props
 import PhoneIcon from "./../../images/svg/call.svg";
-import { type } from "os";
 
 // Styles
 const StyledHeader = styled.div`
@@ -60,17 +60,6 @@ const StyledHeader = styled.div`
           }
         }
       }
-
-      svg {
-        height: 26px;
-        transition: all 0.125s !important;
-        vertical-align: top;
-        width: 26px;
-
-        &:hover {
-          fill: red;
-        }
-      }
     }
 
     .side-left {
@@ -107,31 +96,6 @@ const StyledSeparator = styled.span`
   }
 `;
 
-const StyledSocial = styled.a`
-  color: transparent;
-  font-size: 0;
-  height: 26px;
-  line-height: 0;
-  margin-right: 0.5rem;
-  width: 26px;
-
-  @media (min-width: 1200px) {
-    margin-right: 1.25rem;
-  }
-
-  &:last-of-type {
-    margin-right: calc(40px + 0.5rem);
-
-    @media (min-width: 768px) {
-      margin-right: calc(40px + 0.75rem);
-    }
-
-    @media (min-width: 1200px) {
-      margin-right: 0;
-    }
-  }
-`;
-
 // Types
 interface MenuItemProps {
   anchor: string;
@@ -140,9 +104,13 @@ interface MenuItemProps {
 }
 
 export interface SocialProps {
-  text: string;
-  url: string;
+  appearance: string;
+  disabled?: boolean;
+  mb?: number;
+  text?: string;
   icon: ReactNode;
+  size: string;
+  url: string;
 }
 
 interface HeaderProps {
@@ -194,25 +162,6 @@ const Header: FC<HeaderProps> = ({
     );
   }, [navigation]);
 
-  // const renderNavigation = () =>
-  //   navigation.map((menuItem: MenuItemProps, index: number) => (
-  //     <li className="nav-item" key={`horizontal-nav-${index}`}>
-  //       <Link
-  //         text={menuItem.text}
-  //         type={
-  //           menuItem.type && menuItem.type === LinkTypes.Link
-  //             ? LinkTypes.Link
-  //             : LinkTypes.Anchor
-  //         }
-  //         to={`${
-  //           menuItem.type === "link"
-  //             ? `/${menuItem.anchor}`
-  //             : `${menuItem.anchor}`
-  //         }`}
-  //       />
-  //     </li>
-  //   ));
-
   return (
     <StyledHeader className={`${prefix}-header`}>
       <div className="container-fluid">
@@ -223,9 +172,7 @@ const Header: FC<HeaderProps> = ({
                 <Brand {...brand} />
                 {/* TODO: create NavHeader */}
                 {/* TODO: posibly add a better hover effect */}
-                {/* <ul className="nav justify-content-center d-none d-xl-flex"> */}
                 {renderNavigation}
-                {/* </ul> */}
               </div>
               <div className="d-flex justify-content-end align-items-center side-right">
                 <div className="d-none d-xl-inline">
@@ -240,17 +187,9 @@ const Header: FC<HeaderProps> = ({
                   </>
                 )}
                 {socials && (
-                  <div className="social">
-                    {/* TODO: create component for this (ButtonCircle) */}
+                  <div>
                     {socials.map((social: SocialProps, index: number) => (
-                      <StyledSocial
-                        href={social.url}
-                        target="_blank"
-                        key={`social-${index}`}
-                      >
-                        {social.text}
-                        {social.icon}
-                      </StyledSocial>
+                      <LinkIcon {...social} key={index} />
                     ))}
                   </div>
                 )}

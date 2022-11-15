@@ -33,7 +33,7 @@ const Link: FC<LinkProps> = ({
   text,
   to,
 }) => {
-  console.log("to ===> ", to, "type ===> ", type);
+  // console.log("to ===> ", to, "type ===> ", type);
 
   //   const context = useContext(GlobalContext);
 
@@ -42,7 +42,7 @@ const Link: FC<LinkProps> = ({
   // TODO: handle active on both cases
   // TODO: create storybook for this component
   return (type as Types) === Types.Link ? (
-    <LinkGatsby to={to} className={`${prefix}-link-gatsby`} type={type}>
+    <LinkGatsby to={to} className={`${prefix}-link-gatsby`}>
       {text}
     </LinkGatsby>
   ) : (

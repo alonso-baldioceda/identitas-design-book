@@ -8,6 +8,7 @@ import Header from "./Header";
 import * as LayoutStories from "./Layout.stories";
 import * as BrandStories from "./../components/Brand.stories";
 import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
+// import * as LinkIconStories from "./../components/LinkIcon.stories";
 
 // Assets
 import PhoneIcon from "./../../images/svg/call.svg";
@@ -27,14 +28,18 @@ export default {
     phoneIcon: <PhoneIcon />,
     socials: [
       {
+        appearance: "primary",
+        icon: <InstagramIcon />,
+        size: "extra-small",
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",
-        icon: <InstagramIcon />,
       },
       {
+        appearance: "primary",
+        icon: <FacebookIcon />,
+        size: "extra-small",
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal/",
-        icon: <FacebookIcon />,
       },
     ],
   },
@@ -62,14 +67,18 @@ Default.args = {
   phoneIcon: <PhoneIcon />,
   socials: [
     {
+      appearance: "primary",
+      icon: <InstagramIcon />,
+      size: "extra-small",
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",
-      icon: <InstagramIcon />,
     },
     {
-      text: "Facebook",
-      url: "https://www.facebook.com/vistalagoarenal/",
-      icon: <FacebookIcon />,
+      appearance: "primary",
+      icon: <InstagramIcon />,
+      size: "extra-small",
+      text: "Instagram",
+      url: "https://www.instagram.com/vistalagoarenal/",
     },
   ],
 };

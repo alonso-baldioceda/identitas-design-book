@@ -6,22 +6,28 @@ import { prefix } from "./../shared/styles.js";
 import SVG from "./SVG";
 
 // Styles
-const ListGroupItemStyled = styled.li``;
+const ListGroupItemStyled = styled.li`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+`;
 
 const Subtext = styled.p`
   font-size: 1rem;
   font-weight: 300;
+  margin-bottom: 0;
 `;
 
 const IconWrapper = styled((props) => <span {...props} />)`
+  align-items: center;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
   margin-right: 0.75rem;
 `;
 
 // Props
 interface ListGroupItemProps {
-  // headingBottom?: number;
-  // heading: string;
   svg?: ReactNode;
   svgSize: string;
   text?: string;
@@ -30,26 +36,22 @@ interface ListGroupItemProps {
 }
 
 const ListGroupItem: FC<ListGroupItemProps> = ({
-  // heading,
-  // headingBottom = 0,
-  svgSize = "default",
+  svgSize = "medium",
   svg,
   subText,
   text,
   textBottom = 0,
 }) => {
   return (
-    <ListGroupItemStyled
-      className={`d-flex flex-row align-items-center ${prefix}-list-group-tem`}
-    >
+    <ListGroupItemStyled className={`${prefix}-list-group-tem`}>
       {svg && (
-        <IconWrapper className="d-flex align-items-center justify-content-center">
+        <IconWrapper>
           <SVG icon={svg} size={svgSize} />
         </IconWrapper>
       )}
       <div className="content">
-        {text && <p className={`d-block mb-${textBottom}`}>{text}</p>}
-        {subText && <Subtext className={`d-block mb-0`}>{subText}</Subtext>}
+        {text && <p className={`mb-${textBottom}`}>{text}</p>}
+        {subText && <small>{subText}</small>}
       </div>
     </ListGroupItemStyled>
   );

@@ -14,7 +14,7 @@ export default {
     text: "some other text here!!",
     textBottom: 0,
     svg: "",
-    svgSize: "default",
+    svgSize: "medium",
   },
   argTypes: {
     textBottom: {
@@ -23,7 +23,7 @@ export default {
     },
     svgSize: {
       control: "select",
-      options: ["small", "default", "large"],
+      options: ["extra-small", "small", "medium", "large"],
     },
   },
 } as ComponentMeta<typeof ListGroupItem>;

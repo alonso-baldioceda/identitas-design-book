@@ -73,8 +73,9 @@ export const spacing = {
 
 export const sizing = {
   icon: {
+    extraSmall: 32,
     small: 48,
-    default: 64,
+    medium: 64,
     large: 80,
   },
 };
