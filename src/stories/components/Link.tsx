@@ -51,7 +51,8 @@ const Link: FC<LinkProps> = ({
       offset={offset}
       smooth={smooth}
       spy={spy}
-      to={to}
+      to={`${to}`}
+      href={`${to}`}
       // index={index}
       className={`${prefix}-link-scroll`}
     >

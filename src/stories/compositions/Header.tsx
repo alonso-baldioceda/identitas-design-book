@@ -11,6 +11,7 @@ import Link from "./../components/Link";
 // import GlobalContext from "./../contexts/globalContext";
 
 // Assets
+// TODO: we can eventually move this icon to props
 import PhoneIcon from "./../../images/svg/call.svg";
 
 // Styles
@@ -170,7 +171,11 @@ const Header: FC<HeaderProps> = ({
     return navigation.map((menuItem: MenuItemProps, index: number) => {
       return (
         <li className="nav-item" key={`menu-horizontal-nav-${index}`}>
-          <Link index={index} text={menuItem.text} to={`/${menuItem.anchor}`} />
+          <Link
+            index={index}
+            text={menuItem.text}
+            to={`${menuItem.type === "link" ? "/" : ""}${menuItem.anchor}`}
+          />
         </li>
       );
     });

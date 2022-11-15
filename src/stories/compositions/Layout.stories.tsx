@@ -82,7 +82,7 @@ const navList = [
   },
   {
     type: "link",
-    anchor: "#info",
+    anchor: "info",
     text: "Info",
   },
 ];
