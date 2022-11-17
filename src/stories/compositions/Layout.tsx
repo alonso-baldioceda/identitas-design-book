@@ -7,6 +7,12 @@ import { GlobalStyle } from "./../shared/global.js";
 import Header, { HeaderProps } from "./Header";
 import Footer, { FooterProps } from "./Footer";
 
+// Props
+export enum Types {
+  Anchor = "anchor",
+  Link = "link",
+}
+
 interface LayoutProps {
   children: ReactNode | ReactNode[];
   footer: FooterProps;

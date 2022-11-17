@@ -10,8 +10,8 @@ import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
 // Components
-import Layout from "./Layout";
-import { Types as LinkTypes } from "./../components/Link";
+import Layout, { Types } from "./Layout";
+// TODO: move this to shared/types
 import { LinkIconSizes } from "./../components/LinkIcon";
 
 // Stories
@@ -20,37 +20,37 @@ import { LinkIconSizes } from "./../components/LinkIcon";
 
 const navList = [
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "main",
     text: "Inicio",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "units",
     text: "Cabinas",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "common-spaces",
     text: "Espacios comúnes",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "services",
     text: "Servicios",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "drive",
     text: "Cómo llegar?",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "contact",
     text: "Contáctenos",
   },
   {
-    type: LinkTypes.Link,
+    type: Types.Link,
     anchor: "info",
     text: "Info",
   },

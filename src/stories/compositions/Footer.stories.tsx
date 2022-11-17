@@ -2,8 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Footer from "./Footer";
-import { Types as LinkTypes } from "./../components/Link";
+import Footer, { Types } from "./Footer";
 
 // Stories
 // import * as Layout from "./../compositions/Layout.stories";
@@ -12,43 +11,40 @@ import { Types as LinkTypes } from "./../components/Link";
 import HomeIcon from "./../../images/svg/home.svg";
 import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import PhoneIcon from "./../../images/svg/phone.svg";
-// import CallIcon from "./../../images/svg/call.svg";
-// import FacebookIcon from "./../../images/svg/facebook.svg";
-// import InstagramIcon from "./../../images/svg/instagram.svg";
 
 const navList = [
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "main",
     text: "Inicio",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "units",
     text: "Cabinas",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "common-spaces",
     text: "Espacios comúnes",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "services",
     text: "Servicios",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "drive",
     text: "Cómo llegar?",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "contact",
     text: "Contáctenos",
   },
   {
-    type: LinkTypes.Link,
+    type: Types.Link,
     anchor: "info",
     text: "Info",
   },

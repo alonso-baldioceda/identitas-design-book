@@ -4,9 +4,10 @@ import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./../components/Brand";
-import LinkIcon, { LinkIconProps } from "../components/LinkIcon";
 import LanguageSelector from "./../components/LanguageSelector";
-import Link, { Types as LinkTypes } from "./../components/Link";
+import LinkGatsby from "./../components/LinkGatsby";
+import LinkIcon, { LinkIconProps } from "../components/LinkIcon";
+import LinkScroll from "./../components/LinkScroll";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -94,6 +95,12 @@ const StyledSeparator = styled.span`
 `;
 
 // Types
+
+export enum Types {
+  Anchor = "anchor",
+  Link = "link",
+}
+
 interface HeaderMenuItemProps {
   anchor: string;
   type: string;
@@ -128,19 +135,11 @@ const Header: FC<HeaderProps> = ({
       (navItem: HeaderMenuItemProps, index: number) => {
         return (
           <li key={`horizontal-nav-${index}`}>
-            <Link
-              text={navItem.text}
-              type={
-                navItem.type && navItem.type === LinkTypes.Link
-                  ? LinkTypes.Link
-                  : LinkTypes.Anchor
-              }
-              to={`${
-                navItem.type === "link"
-                  ? `/${navItem.anchor}`
-                  : `${navItem.anchor}`
-              }`}
-            />
+            {navItem.type && navItem.type === Types.Link ? (
+              <LinkGatsby text={navItem.text} to={navItem.anchor} />
+            ) : (
+              <LinkScroll text={navItem.text} to={navItem.anchor} />
+            )}
           </li>
         );
       }

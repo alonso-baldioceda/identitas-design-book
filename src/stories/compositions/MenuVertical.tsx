@@ -6,7 +6,8 @@ import { color } from "./../shared/styles.js";
 
 // Components
 import LanguageSelector from "./../components/LanguageSelector";
-import Link, { Types as LinkTypes } from "./../components/Link";
+import LinkGatsby from "./../components/LinkGatsby";
+import LinkScroll from "./../components/LinkScroll";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -30,36 +31,36 @@ const StyledMenuVertical = styled.div`
   }
 `;
 
-const StyledLink = styled((props) => <Link {...props} />)`
-  background: transparent;
-  border-bottom: 2px solid transparent;
-  color: ${color.white};
-  display: inline-block;
-  font-size: 22px;
-  font-weight: 500;
-  padding: 0;
-  text-decoration: none;
-  transition: all 0.5s ease;
+// const StyledLink = styled((props) => <Link {...props} />)`
+//   background: transparent;
+//   border-bottom: 2px solid transparent;
+//   color: ${color.white};
+//   display: inline-block;
+//   font-size: 22px;
+//   font-weight: 500;
+//   padding: 0;
+//   text-decoration: none;
+//   transition: all 0.5s ease;
 
-  &:hover {
-    border-bottom: 2px solid blue;
-    color: red;
-    text-decoration: none;
-  }
+//   &:hover {
+//     border-bottom: 2px solid blue;
+//     color: red;
+//     text-decoration: none;
+//   }
 
-  &:visited {
-    color: ${color.white} !important;
-  }
+//   &:visited {
+//     color: ${color.white} !important;
+//   }
 
-  &:focus {
-    outline: none;
-  }
+//   &:focus {
+//     outline: none;
+//   }
 
-  &.active {
-    border-bottom: 2px solid var(--terracotta);
-    color: ${color.white} !important;
-  }
-`;
+//   &.active {
+//     border-bottom: 2px solid var(--terracotta);
+//     color: ${color.white} !important;
+//   }
+// `;
 
 const LanguagesWrapper = styled.div`
   display: inline-block;
@@ -115,6 +116,11 @@ const motionDefaultItem = {
 };
 
 // Types
+export enum Types {
+  Anchor = "anchor",
+  Link = "link",
+}
+
 interface VerticalMenuItemProps {
   anchor: string;
   type: string;
@@ -167,26 +173,17 @@ const MenuVertical: FC<MenuVerticalProps> = ({
       >
         {navigation.map((navItem: VerticalMenuItemProps, index: number) => (
           <motion.div variants={motionDefaultItem} key={index}>
-            <StyledLink
-              text={navItem.text}
-              type={
-                navItem.type && navItem.type === LinkTypes.Link
-                  ? LinkTypes.Link
-                  : LinkTypes.Anchor
-              }
-              to={`${
-                navItem.type === LinkTypes.Link
-                  ? `/${navItem.anchor}`
-                  : `${navItem.anchor}`
-              }`}
-              className={`mb-${linkMb}`}
-              // onClick={() => {
+            {navItem.type && navItem.type === Types.Link ? (
+              <LinkGatsby text={navItem.text} to={navItem.anchor} />
+            ) : (
+              <LinkScroll text={navItem.text} to={navItem.anchor} />
+            )}
+            {/* // onClick={() => {
               //   setActive !== undefined && setActive(index);
               //   toggleMenu !== undefined &&
               //     isOpen !== undefined &&
               //     toggleMenu(isOpen);
-              // }}
-            />
+              // */}
           </motion.div>
         ))}
         <hr className="my-2" />

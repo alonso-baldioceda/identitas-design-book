@@ -2,59 +2,51 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Header from "./Header";
-import { Types as LinkTypes } from "./../components/Link";
+import Header, { Types } from "./Header";
 import { LinkIconSizes } from "./../components/LinkIcon";
 
 // Stories
 import * as BrandStories from "./../components/Brand.stories";
 import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
-// import * as LinkIconStories from "./../components/LinkIcon.stories";
 
 // Assets
 import PhoneIcon from "./../../images/svg/call.svg";
 import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
-// console.log(
-//   "LanguageSelectorStories.Default.args",
-//   LanguageSelectorStories.Default.args,
-//   typeof LanguageSelectorStories.Default.args
-// );
-
 const navList = [
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "main",
     text: "Inicio",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "units",
     text: "Cabinas",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "common-spaces",
     text: "Espacios comúnes",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "services",
     text: "Servicios",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "drive",
     text: "Cómo llegar?",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "contact",
     text: "Contáctenos",
   },
   {
-    type: LinkTypes.Link,
+    type: Types.Link,
     anchor: "info",
     text: "Info",
   },

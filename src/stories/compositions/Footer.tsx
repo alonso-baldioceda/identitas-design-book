@@ -4,7 +4,8 @@ import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import SVG from "./../components/SVG";
-import Link from "./../components/Link";
+import LinkScroll from "./../components/LinkScroll";
+import LinkGatsby from "./../components/LinkGatsby";
 import Spacer from "./../components/Spacer";
 
 // Contexts
@@ -36,6 +37,11 @@ const StyledFooter = styled((props) => <section {...props} />)`
 `;
 
 // Types
+export enum Types {
+  Anchor = "anchor",
+  Link = "link",
+}
+
 interface FooterMenuItemProps {
   anchor: string;
   type: string;
@@ -63,13 +69,13 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
   const renderNavigationItems = useMemo(() => {
     return (
       <ul className="list-unstyled mb-0">
-        {navigation.list.map((menuItem: FooterMenuItemProps, index: number) => (
-          <li className="mb-3" key={`navigation-${index}`}>
-            <Link
-              // index={index}
-              text={menuItem.text}
-              to={`/${menuItem.anchor}`}
-            />
+        {navigation.list.map((navItem: FooterMenuItemProps, index: number) => (
+          <li className="mb-3" key={`footer-nav-${index}`}>
+            {navItem.type && navItem.type === Types.Link ? (
+              <LinkGatsby text={navItem.text} to={navItem.anchor} />
+            ) : (
+              <LinkScroll text={navItem.text} to={navItem.anchor} />
+            )}
           </li>
         ))}
       </ul>

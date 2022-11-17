@@ -2,45 +2,44 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import MenuVertical from "./MenuVertical";
-import { Types as LinkTypes } from "./../components/Link";
+import MenuVertical, { Types } from "./MenuVertical";
 
 // Stories
 import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
 
 const navList = [
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "main",
     text: "Inicio",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "units",
     text: "Cabinas",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "common-spaces",
     text: "Espacios comúnes",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "services",
     text: "Servicios",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "drive",
     text: "Cómo llegar?",
   },
   {
-    type: LinkTypes.Anchor,
+    type: Types.Anchor,
     anchor: "contact",
     text: "Contáctenos",
   },
   {
-    type: LinkTypes.Link,
+    type: Types.Link,
     anchor: "info",
     text: "Info",
   },
