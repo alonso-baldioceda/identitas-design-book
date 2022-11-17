@@ -36,20 +36,20 @@ const StyledFooter = styled((props) => <section {...props} />)`
 `;
 
 // Types
-export interface MenuItemProps {
+interface FooterMenuItemProps {
   anchor: string;
   type: string;
   text: string;
 }
 
-export interface ContactItemProps {
+interface ContactItemProps {
   icon: ReactElement;
   text: string;
 }
 
-interface FooterProps {
+export interface FooterProps {
   bgcolor?: string;
-  navigation: { header: string; list: MenuItemProps[] };
+  navigation: { header: string; list: FooterMenuItemProps[] };
   contact: { header: string; list: ContactItemProps[] };
 }
 
@@ -63,7 +63,7 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
   const renderNavigationItems = useMemo(() => {
     return (
       <ul className="list-unstyled mb-0">
-        {navigation.list.map((menuItem: MenuItemProps, index: number) => (
+        {navigation.list.map((menuItem: FooterMenuItemProps, index: number) => (
           <li className="mb-3" key={`navigation-${index}`}>
             <Link
               // index={index}

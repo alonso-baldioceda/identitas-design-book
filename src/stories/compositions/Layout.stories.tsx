@@ -14,7 +14,8 @@ import Layout from "./Layout";
 import { Types as LinkTypes } from "./../components/Link";
 
 // Stories
-import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
+// import * as HeaderStories from "./Header.stories";
+// import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
 
 export default {
   title: "Compositions/Layout",
@@ -26,6 +27,24 @@ const Template: ComponentStory<typeof Layout> = (args) => (
     <div className="container">
       <div className="row">
         <div className="col">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+            aspernatur optio dignissimos quam atque cum non assumenda vitae
+            explicabo molestiae iste quasi exercitationem esse, repellat quidem
+            consectetur qui similique quaerat.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+            aspernatur optio dignissimos quam atque cum non assumenda vitae
+            explicabo molestiae iste quasi exercitationem esse, repellat quidem
+            consectetur qui similique quaerat.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+            aspernatur optio dignissimos quam atque cum non assumenda vitae
+            explicabo molestiae iste quasi exercitationem esse, repellat quidem
+            consectetur qui similique quaerat.
+          </p>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
             aspernatur optio dignissimos quam atque cum non assumenda vitae
@@ -94,32 +113,32 @@ Default.args = {
     brand: {
       duration: 500,
       fontWeight: 700,
-      // logoIcon: <LogoIcon />,
       logoMarginRight: 3,
-      // logoSize: 60,
-      offset: -70,
+      offset: -60,
       smooth: true,
       spy: true,
-      text: "Company name",
-      to: "main",
+      text: "",
+      to: "",
     },
     // TODO: fix this
-    languagesList: LanguageSelectorStories.Default.args?.languagesList
-      ? LanguageSelectorStories.Default.args.languagesList
-      : ["es"],
+    languages: ["es"],
     navigation: navList,
     phone: "+50683274040",
     phoneIcon: <CallIcon />,
     socials: [
       {
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-        icon: <InstagramIcon />,
+        icon: <FacebookIcon />,
+        mb: 1,
+        size: "extra-small",
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
       },
       {
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal/",
-        icon: <FacebookIcon />,
+        icon: <InstagramIcon />,
+        mb: 1,
+        size: "extra-small",
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
       },
     ],
   },

@@ -4,8 +4,10 @@ import { prefix, color } from "./../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./../components/Brand";
-import LinkIcon from "../components/LinkIcon";
-import LanguageSelector from "./../components/LanguageSelector";
+import LinkIcon, { LinkIconProps } from "../components/LinkIcon";
+import LanguageSelector, {
+  LanguageSelectorProps,
+} from "./../components/LanguageSelector";
 import Link, { Types as LinkTypes } from "./../components/Link";
 
 // Contexts
@@ -29,35 +31,32 @@ const StyledHeader = styled.div`
     margin: 0 auto;
     max-width: 2200px;
 
-    .side-left,
-    .side-right {
-      .nav-item {
-        a {
-          border-bottom: 2px solid transparent;
-          color: ${color.black};
-          display: block;
-          font-size: 16px;
-          font-weight: 500;
-          letter-spacing: 0.6px;
-          margin-right: 15px;
-          text-decoration: none;
+    li {
+      a {
+        border-bottom: 2px solid transparent;
+        color: ${color.black};
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: 0.6px;
+        margin-right: 15px;
+        text-decoration: none;
 
-          &.active,
-          &:hover,
-          &:focus,
-          &:visited {
-            color: ${color.black} !important;
-          }
+        &.active,
+        &:hover,
+        &:focus,
+        &:visited {
+          color: ${color.black} !important;
+        }
 
-          &.active,
-          &:focus,
-          &:hover {
-            border-bottom: 2px solid red;
-          }
+        &.active,
+        &:focus,
+        &:hover {
+          border-bottom: 2px solid red;
+        }
 
-          &:focus {
-            outline: none;
-          }
+        &:focus {
+          outline: none;
         }
       }
     }
@@ -97,34 +96,24 @@ const StyledSeparator = styled.span`
 `;
 
 // Types
-interface MenuItemProps {
+interface HeaderMenuItemProps {
   anchor: string;
   type: string;
   text: string;
 }
 
-export interface SocialProps {
-  appearance: string;
-  disabled?: boolean;
-  mb?: number;
-  text?: string;
-  icon: ReactNode;
-  size: string;
-  url: string;
-}
-
-interface HeaderProps {
+export interface HeaderProps {
   brand: BrandProps;
-  languagesList: string[];
-  navigation: MenuItemProps[];
+  languages: string[];
+  navigation: HeaderMenuItemProps[];
   phone?: string;
   phoneIcon?: ReactNode;
-  socials: SocialProps[];
+  socials: LinkIconProps[];
 }
 
 const Header: FC<HeaderProps> = ({
   brand,
-  languagesList = ["es"],
+  languages = ["es"],
   navigation,
   phone,
   phoneIcon = PhoneIcon,
@@ -132,30 +121,32 @@ const Header: FC<HeaderProps> = ({
 }) => {
   //   const { t } = useTranslation();
 
-  //   const context = useContext(GlobalContext);
+  //   const conte: useContext(GlobalContext);
 
   //   const { menu, active, setActive, facebook, instagram, phoneRef } = context;
 
   const renderNavigation = useMemo(() => {
-    const nav = navigation.map((menuItem: MenuItemProps, index: number) => {
-      return (
-        <li className="nav-item" key={`horizontal-nav-${index}`}>
-          <Link
-            text={menuItem.text}
-            type={
-              menuItem.type && menuItem.type === LinkTypes.Link
-                ? LinkTypes.Link
-                : LinkTypes.Anchor
-            }
-            to={`${
-              menuItem.type === "link"
-                ? `/${menuItem.anchor}`
-                : `${menuItem.anchor}`
-            }`}
-          />
-        </li>
-      );
-    });
+    const nav = navigation.map(
+      (menuItem: HeaderMenuItemProps, index: number) => {
+        return (
+          <li key={`horizontal-nav-${index}`}>
+            <Link
+              text={menuItem.text}
+              type={
+                menuItem.type && menuItem.type === LinkTypes.Link
+                  ? LinkTypes.Link
+                  : LinkTypes.Anchor
+              }
+              to={`${
+                menuItem.type === "link"
+                  ? `/${menuItem.anchor}`
+                  : `${menuItem.anchor}`
+              }`}
+            />
+          </li>
+        );
+      }
+    );
 
     return (
       <ul className="nav justify-content-center d-none d-xl-flex">{nav}</ul>
@@ -177,7 +168,7 @@ const Header: FC<HeaderProps> = ({
               <div className="d-flex justify-content-end align-items-center side-right">
                 <div className="d-none d-xl-inline">
                   <LanguageSelector
-                    languagesList={languagesList ? languagesList : ["es"]}
+                    languages={languages ? languages : ["es"]}
                   />
                 </div>
                 {phone && (
@@ -186,13 +177,10 @@ const Header: FC<HeaderProps> = ({
                     <StyledSeparator />
                   </>
                 )}
-                {socials && (
-                  <div>
-                    {socials.map((social: SocialProps, index: number) => (
-                      <LinkIcon {...social} key={index} />
-                    ))}
-                  </div>
-                )}
+                {socials &&
+                  socials.map((social: LinkIconProps, index: number) => (
+                    <LinkIcon {...social} key={index} />
+                  ))}
               </div>
             </div>
           </div>

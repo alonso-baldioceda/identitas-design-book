@@ -56,10 +56,10 @@ const LinkTranslate = styled.a`
 `;
 
 export interface LanguageSelectorProps {
-  languagesList: string[];
+  languages: string[];
 }
 
-const LanguageSelector: FC<LanguageSelectorProps> = ({ languagesList }) => {
+const LanguageSelector: FC<LanguageSelectorProps> = ({ languages }) => {
   const { i18n } = useTranslation();
   //   const context = useContext(GlobalContext);
   //   const { language, setLanguage, open } = context;
@@ -78,7 +78,7 @@ const LanguageSelector: FC<LanguageSelectorProps> = ({ languagesList }) => {
 
   return (
     <div className={`${prefix}-languages-selector`}>
-      {languagesList.map((language: string, index: number) => (
+      {languages.map((language: string, index: number) => (
         <LinkTranslate
           key={index}
           onClick={() => {

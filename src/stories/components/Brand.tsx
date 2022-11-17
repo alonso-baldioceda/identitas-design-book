@@ -41,31 +41,25 @@ const StyledBrand = styled((props) => <Link {...props} />)`
 
 // Types
 export interface BrandProps {
-  // activeClass?: string;
-  duration?: number;
-  fontWeight?: number;
-  // logoIcon?: ReactNode;
-  logoMarginRight?: number;
-  // logoSize?: number;
-  offset?: number;
-  smooth?: boolean;
-  spy?: boolean;
+  duration: number;
+  fontWeight: number;
+  logoMarginRight: number;
+  offset: number;
+  smooth: boolean;
+  spy: boolean;
   text: string;
   to: string;
 }
 
 const Brand: FC<BrandProps> = ({
-  // activeClass,
   duration = 500,
   fontWeight = 700,
-  // logoIcon = "",
   logoMarginRight = 3,
-  // logoSize = 60,
   offset = -60,
   smooth = true,
   spy = true,
-  text,
-  to,
+  text = "",
+  to = "",
 }) => {
   const scrollToTop = () => {
     scroll.scrollToTop();
@@ -79,12 +73,9 @@ const Brand: FC<BrandProps> = ({
 
   return (
     <StyledBrand
-      // activeClass={activeClass}
       className={`me-${logoMarginRight} ${prefix}-brand`}
       duration={duration}
       fontWeight={fontWeight}
-      // logoIcon={logoIcon}
-      // logoSize={logoSize}
       offset={offset}
       onClick={scrollToTop}
       smooth={smooth}

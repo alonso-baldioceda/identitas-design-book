@@ -13,9 +13,7 @@ export default {
   args: {
     duration: 500,
     fontWeight: 700,
-    // logoIcon: "",
     logoMarginRight: 3,
-    // logoSize: 60,
     offset: -70,
     smooth: true,
     spy: true,
@@ -44,9 +42,7 @@ export const Default = Template.bind({});
 Default.args = {
   duration: 500,
   fontWeight: 700,
-  // logoIcon: <LogoIcon />,
   logoMarginRight: 3,
-  // logoSize: 60,
   offset: -80,
   smooth: true,
   spy: true,

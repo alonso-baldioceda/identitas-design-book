@@ -12,6 +12,7 @@ const ListGroupItemStyled = styled.li`
   flex-direction: row;
 `;
 
+// TODO: check if delete
 const Subtext = styled.p`
   font-size: 1rem;
   font-weight: 300;

@@ -8,7 +8,7 @@ export default {
   title: "Components/LanguageSelector",
   component: LanguageSelector,
   args: {
-    languagesList: ["es", "en"],
+    languages: ["es", "en"],
   },
 } as ComponentMeta<typeof LanguageSelector>;
 
@@ -18,5 +18,5 @@ const Template: ComponentStory<typeof LanguageSelector> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  languagesList: ["es", "en"],
+  languages: ["es", "en"],
 };
