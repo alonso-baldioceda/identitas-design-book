@@ -4,6 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Header from "./Header";
 import { Types as LinkTypes } from "./../components/Link";
+import { LinkIconSizes } from "./../components/LinkIcon";
 
 // Stories
 import * as BrandStories from "./../components/Brand.stories";
@@ -82,14 +83,14 @@ export default {
       {
         icon: <FacebookIcon />,
         mb: 1,
-        size: "extra-small",
+        size: LinkIconSizes.xs,
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal",
       },
       {
         icon: <InstagramIcon />,
         mb: 1,
-        size: "extra-small",
+        size: LinkIconSizes.xs,
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",
       },
@@ -119,14 +120,14 @@ Default.args = {
     {
       icon: <FacebookIcon />,
       mb: 1,
-      size: "extra-small",
+      size: LinkIconSizes.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
     },
     {
       icon: <InstagramIcon />,
       mb: 1,
-      size: "extra-small",
+      size: LinkIconSizes.xs,
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",
     },

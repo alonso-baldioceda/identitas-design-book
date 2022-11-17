@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import ListGroupItem from "./ListGroupItem";
+import ListGroupItem, { ListGroupItemSizes } from "./ListGroupItem";
 
 // Assets
 import BedQueen from "./../../images/svg/bed-queen.svg";
@@ -14,7 +14,7 @@ export default {
     text: "some other text here!!",
     textBottom: 0,
     svg: "",
-    svgSize: "medium",
+    svgSize: ListGroupItemSizes.md,
   },
   argTypes: {
     textBottom: {
@@ -49,7 +49,7 @@ TextWithIconDefault.args = {
 export const TextWithIconSmall = Template.bind({});
 TextWithIconSmall.args = {
   ...TextWithIconDefault.args,
-  svgSize: "small",
+  svgSize: ListGroupItemSizes.sm,
   svg: <BedQueen />,
 };
 
@@ -58,6 +58,6 @@ TextWithIconAndSubheading.args = {
   ...TextWithIconDefault.args,
   subText: "some text here!!",
   svg: <BedQueen />,
-  svgSize: "large",
+  svgSize: ListGroupItemSizes.lg,
   text: "some other text here!!",
 };

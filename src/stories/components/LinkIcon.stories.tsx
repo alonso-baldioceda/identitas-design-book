@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { color as colors } from "./../shared/styles.js";
 
 // Components
-import LinkIcon from "./LinkIcon";
+import LinkIcon, { LinkIconSizes } from "./LinkIcon";
 
 // Assets
 import FacebookIcon from "./../../images/svg/facebook.svg";
@@ -17,7 +17,7 @@ export default {
     icon: <FacebookIcon />,
     mb: 0,
     me: 1,
-    size: "extra-small",
+    size: LinkIconSizes.xs,
     text: "facebook",
     url: "https://www.google.com/",
   },
@@ -51,7 +51,7 @@ Facebook.args = {
   icon: <FacebookIcon />,
   mb: 0,
   me: 1,
-  size: "extra-small",
+  size: LinkIconSizes.xs,
   text: "facebook",
   url: "https://www.google.com/",
 };
@@ -64,10 +64,10 @@ Instagram.args = {
 };
 
 export const SmallSize = Template.bind({});
-SmallSize.args = { ...Facebook.args, size: "small" };
+SmallSize.args = { ...Facebook.args, size: LinkIconSizes.sm };
 
 export const MediumSize = Template.bind({});
-MediumSize.args = { ...Facebook.args, size: "medium" };
+MediumSize.args = { ...Facebook.args, size: LinkIconSizes.md };
 
 export const LargeSize = Template.bind({});
-LargeSize.args = { ...Facebook.args, size: "large" };
+LargeSize.args = { ...Facebook.args, size: LinkIconSizes.lg };

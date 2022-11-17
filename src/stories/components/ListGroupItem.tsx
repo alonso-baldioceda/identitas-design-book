@@ -27,7 +27,14 @@ const IconWrapper = styled((props) => <span {...props} />)`
   margin-right: 0.75rem;
 `;
 
-// Props
+// Types
+export enum ListGroupItemSizes {
+  xs = "extra-small",
+  sm = "small",
+  md = "medium",
+  lg = "large",
+}
+
 interface ListGroupItemProps {
   svg?: ReactNode;
   svgSize: string;
@@ -37,7 +44,7 @@ interface ListGroupItemProps {
 }
 
 const ListGroupItem: FC<ListGroupItemProps> = ({
-  svgSize = "medium",
+  svgSize = ListGroupItemSizes.md,
   svg,
   subText,
   text,

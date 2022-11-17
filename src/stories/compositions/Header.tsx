@@ -5,9 +5,7 @@ import { prefix, color } from "./../shared/styles.js";
 // Components
 import Brand, { BrandProps } from "./../components/Brand";
 import LinkIcon, { LinkIconProps } from "../components/LinkIcon";
-import LanguageSelector, {
-  LanguageSelectorProps,
-} from "./../components/LanguageSelector";
+import LanguageSelector from "./../components/LanguageSelector";
 import Link, { Types as LinkTypes } from "./../components/Link";
 
 // Contexts
@@ -127,20 +125,20 @@ const Header: FC<HeaderProps> = ({
 
   const renderNavigation = useMemo(() => {
     const nav = navigation.map(
-      (menuItem: HeaderMenuItemProps, index: number) => {
+      (navItem: HeaderMenuItemProps, index: number) => {
         return (
           <li key={`horizontal-nav-${index}`}>
             <Link
-              text={menuItem.text}
+              text={navItem.text}
               type={
-                menuItem.type && menuItem.type === LinkTypes.Link
+                navItem.type && navItem.type === LinkTypes.Link
                   ? LinkTypes.Link
                   : LinkTypes.Anchor
               }
               to={`${
-                menuItem.type === "link"
-                  ? `/${menuItem.anchor}`
-                  : `${menuItem.anchor}`
+                navItem.type === "link"
+                  ? `/${navItem.anchor}`
+                  : `${navItem.anchor}`
               }`}
             />
           </li>

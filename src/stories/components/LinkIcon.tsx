@@ -1,11 +1,12 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, color as colors } from "./../shared/styles.js";
+import { prefix } from "./../shared/styles.js";
 
 // Components
 import SVG from "./SVG";
 
+// Styles
 const StyledLinkIcon = styled((props) => <a {...props} />)`
   align-items: center;
   border-radius: 50rem;
@@ -17,13 +18,20 @@ const StyledLinkIcon = styled((props) => <a {...props} />)`
   position: relative;
 `;
 
+// Types
+export enum LinkIconSizes {
+  xs = "extra-small",
+  sm = "small",
+  md = "medium",
+  lg = "large",
+}
+
 export interface LinkIconProps {
   disabled?: boolean;
   icon: ReactNode;
   mb?: number;
   me?: number;
-  // TODO: probably need to create ENUM for size
-  size?: string;
+  size?: LinkIconSizes;
   text?: string;
   url: string;
 }
