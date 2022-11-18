@@ -10,47 +10,12 @@ import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
 // Components
-import Layout, { Types } from "./Layout";
+import Layout from "./Layout";
 // TODO: move this to shared/types
 import { LinkIconSizes } from "./../components/LinkIcon";
 
-const navList = [
-  {
-    type: Types.Anchor,
-    anchor: "main",
-    text: "Inicio",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "units",
-    text: "Cabinas",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "common-spaces",
-    text: "Espacios comúnes",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "services",
-    text: "Servicios",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "drive",
-    text: "Cómo llegar?",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "contact",
-    text: "Contáctenos",
-  },
-  {
-    type: Types.Link,
-    anchor: "info",
-    text: "Info",
-  },
-];
+// Constants
+import NAV from "../../shared/constants/nav";
 
 export default {
   title: "Compositions/Layout",
@@ -69,9 +34,14 @@ export default {
       },
       // TODO: fix this
       languages: ["es"],
-      navigation: navList,
-      phone: "+50683274040",
-      phoneIcon: <CallIcon />,
+      navigation: NAV,
+      call: {
+        icon: <PhoneIcon />,
+        me: 0,
+        size: LinkIconSizes.xs,
+        text: "call us",
+        url: "tel:+50683274040",
+      },
       socials: [
         {
           icon: <FacebookIcon />,
@@ -110,7 +80,7 @@ export default {
       },
       navigation: {
         header: "Enlaces",
-        list: navList,
+        list: NAV,
       },
     },
   },
@@ -178,9 +148,14 @@ Default.args = {
     },
     // TODO: fix this
     languages: ["es"],
-    navigation: navList,
-    phone: "+50683274040",
-    phoneIcon: <CallIcon />,
+    navigation: NAV,
+    call: {
+      icon: <PhoneIcon />,
+      me: 0,
+      size: LinkIconSizes.xs,
+      text: "call us",
+      url: "tel:+50683274040",
+    },
     socials: [
       {
         icon: <FacebookIcon />,
@@ -219,7 +194,7 @@ Default.args = {
     },
     navigation: {
       header: "Enlaces",
-      list: navList,
+      list: NAV,
     },
   },
 };

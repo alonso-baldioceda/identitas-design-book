@@ -2,72 +2,33 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Header, { Types } from "./Header";
+import Header from "./Header";
 import { LinkIconSizes } from "./../../components/LinkIcon";
 
-// Stories
-import * as LanguageSelectorStories from "./../../components/LanguageSelector.stories";
+// Constants
+import NAV from "./../../../shared/constants/nav";
 
 // Assets
 import PhoneIcon from "./../../../images/svg/call.svg";
 import FacebookIcon from "./../../../images/svg/facebook.svg";
 import InstagramIcon from "./../../../images/svg/instagram.svg";
 
-const navList = [
-  {
-    type: Types.Anchor,
-    anchor: "main",
-    text: "Inicio",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "units",
-    text: "Cabinas",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "common-spaces",
-    text: "Espacios comúnes",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "services",
-    text: "Servicios",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "drive",
-    text: "Cómo llegar?",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "contact",
-    text: "Contáctenos",
-  },
-  {
-    type: Types.Link,
-    anchor: "info",
-    text: "Info",
-  },
-];
-
 export default {
   title: "Compositions/Header",
   component: Header,
   args: {
-    // brand: {
-    //   duration: 500,
-    //   fontWeight: 700,
-    //   logoMarginRight: 3,
-    //   offset: -70,
-    //   smooth: true,
-    //   spy: true,
-    //   text: "Company name",
-    //   to: "main",
-    // },
-    brand: LanguageSelectorStories.Default.args,
-    languages: LanguageSelectorStories.Default.args?.languages,
-    navigation: navList,
+    brand: {
+      duration: 500,
+      fontWeight: 700,
+      logoMarginRight: 3,
+      offset: -70,
+      smooth: true,
+      spy: true,
+      text: "Company name",
+      to: "main",
+    },
+    languages: ["es", "en"],
+    navigation: NAV,
     call: {
       icon: <PhoneIcon />,
       me: 0,
@@ -108,8 +69,8 @@ Default.args = {
     text: "Company name",
     to: "main",
   },
-  languages: LanguageSelectorStories.Default.args?.languages,
-  navigation: navList,
+  languages: ["es", "en"],
+  navigation: NAV,
   call: {
     icon: <PhoneIcon />,
     me: 0,
@@ -117,7 +78,6 @@ Default.args = {
     text: "call us",
     url: "tel:+50683274040",
   },
-
   socials: [
     {
       icon: <FacebookIcon />,

@@ -12,6 +12,10 @@ import LinkScroll from "./../components/LinkScroll";
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
+// Types
+import Link from "../../shared/interfaces/link";
+import LinkType from "../../shared/enums/linkType";
+
 // Styles
 const StyledMenuVertical = styled.div`
   backdrop-filter: blur(4px);
@@ -116,23 +120,12 @@ const motionDefaultItem = {
 };
 
 // Types
-export enum Types {
-  Anchor = "anchor",
-  Link = "link",
-}
-
-interface VerticalMenuItemProps {
-  anchor: string;
-  type: string;
-  text: string;
-}
-
 interface MenuVerticalProps {
   backgroundColor: string;
   hideFrom?: string;
   languages: string[];
   linkMb?: number;
-  navigation: VerticalMenuItemProps[];
+  navigation: Link[];
   isOpen: boolean;
   textColor?: string;
   translate: string;
@@ -171,9 +164,9 @@ const MenuVertical: FC<MenuVerticalProps> = ({
         animate={`${isOpen ? "visible" : ""}`}
         variants={motionDefault}
       >
-        {navigation.map((navItem: VerticalMenuItemProps, index: number) => (
+        {navigation.map((navItem: Link, index: number) => (
           <motion.div variants={motionDefaultItem} key={index}>
-            {navItem.type && navItem.type === Types.Link ? (
+            {navItem.type && navItem.type === LinkType.Link ? (
               <LinkGatsby text={navItem.text} to={navItem.anchor} />
             ) : (
               <LinkScroll text={navItem.text} to={navItem.anchor} />

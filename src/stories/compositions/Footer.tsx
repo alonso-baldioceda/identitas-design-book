@@ -11,6 +11,10 @@ import Spacer from "./../components/Spacer";
 // Contexts
 // import Global from "./../contexts/global";
 
+// Types
+import Link from "../../shared/interfaces/link";
+import LinkType from "./../../shared/enums/linkType";
+
 // Styles
 const StyledFooter = styled((props) => <section {...props} />)`
   svg {
@@ -37,41 +41,30 @@ const StyledFooter = styled((props) => <section {...props} />)`
 `;
 
 // Types
-export enum Types {
-  Anchor = "anchor",
-  Link = "link",
-}
-
-interface FooterMenuItemProps {
-  anchor: string;
-  type: string;
-  text: string;
-}
-
-interface ContactItemProps {
+interface Contact {
   icon: ReactElement;
   text: string;
 }
 
 export interface FooterProps {
   bgcolor?: string;
-  navigation: { header: string; list: FooterMenuItemProps[] };
-  contact: { header: string; list: ContactItemProps[] };
+  navigation: { header: string; list: Link[] };
+  contact: { header: string; list: Contact[] };
 }
 
 const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
-  //   const context = useContext(Global);
-
-  //   const { menu, setActive } = context;
-
+  // const context = useContext(Global);
+  // const { menu, setActive } = context;
   // const [active, setActive] = useState(-1);
 
   const renderNavigationItems = useMemo(() => {
     return (
+      // TODO: remove these classes
       <ul className="list-unstyled mb-0">
-        {navigation.list.map((navItem: FooterMenuItemProps, index: number) => (
+        {navigation.list.map((navItem: Link, index: number) => (
+          // TODO: add mb to props
           <li className="mb-3" key={`footer-nav-${index}`}>
-            {navItem.type && navItem.type === Types.Link ? (
+            {navItem.type && navItem.type === LinkType.Link ? (
               <LinkGatsby text={navItem.text} to={navItem.anchor} />
             ) : (
               <LinkScroll text={navItem.text} to={navItem.anchor} />
@@ -85,7 +78,7 @@ const Footer: FC<FooterProps> = ({ bgcolor = "dark", contact, navigation }) => {
   const renderContactItems = useMemo(() => {
     return (
       <ul className="list-unstyled mb-0">
-        {contact.list.map((contactItem: ContactItemProps, index: number) => (
+        {contact.list.map((contactItem: Contact, index: number) => (
           <li key={`contact-${index}`}>
             <div className="d-flex align-items-center mb-3">
               <span className="me-3">

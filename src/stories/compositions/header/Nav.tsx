@@ -9,6 +9,10 @@ import LinkScroll from "../../components/LinkScroll";
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
+// Types
+import Link from "../../../shared/interfaces/link";
+import LinkType from "../../../shared/enums/linkType";
+
 // Styles
 const StyledNav = styled.ul`
   display: none;
@@ -55,20 +59,9 @@ const StyledNav = styled.ul`
   }
 `;
 
-// Types
-export enum Types {
-  Anchor = "anchor",
-  Link = "link",
-}
-
-interface HeaderMenuItemProps {
-  anchor: string;
-  type: string;
-  text: string;
-}
-
+// Interfaces
 export interface HeaderProps {
-  navigation: HeaderMenuItemProps[];
+  navigation: Link[];
 }
 
 //  TODO: possibly add a better hover effect */
@@ -78,9 +71,9 @@ const Nav: FC<HeaderProps> = ({ navigation }) => {
   // TODO: analize including useMemo
   return (
     <StyledNav className={`nav ${prefix}-nav`}>
-      {navigation.map((navItem: HeaderMenuItemProps, index: number) => (
-        <li key={`horizontal-nav-${index}`}>
-          {navItem.type && navItem.type === Types.Link ? (
+      {navigation.map((navItem: Link, index: number) => (
+        <li key={`nav-${index}`}>
+          {navItem.type && navItem.type === LinkType.Link ? (
             <LinkGatsby text={navItem.text} to={navItem.anchor} />
           ) : (
             <LinkScroll text={navItem.text} to={navItem.anchor} />

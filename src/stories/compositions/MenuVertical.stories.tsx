@@ -2,48 +2,10 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import MenuVertical, { Types } from "./MenuVertical";
+import MenuVertical from "./MenuVertical";
 
-// Stories
-import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
-
-const navList = [
-  {
-    type: Types.Anchor,
-    anchor: "main",
-    text: "Inicio",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "units",
-    text: "Cabinas",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "common-spaces",
-    text: "Espacios comúnes",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "services",
-    text: "Servicios",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "drive",
-    text: "Cómo llegar?",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "contact",
-    text: "Contáctenos",
-  },
-  {
-    type: Types.Link,
-    anchor: "info",
-    text: "Info",
-  },
-];
+// Constants
+import NAV from "../../shared/constants/nav";
 
 export default {
   title: "Compositions/MenuVertical",
@@ -51,9 +13,9 @@ export default {
   args: {
     backgroundColor: "dark",
     hideFrom: "xl",
-    languages: LanguageSelectorStories.Default.args?.languages,
+    languages: ["es", "en"],
     linkMb: 2,
-    navigation: navList,
+    navigation: NAV,
     isOpen: false,
     translate: "",
     translateMb: 2,
@@ -78,9 +40,9 @@ export const Default = Template.bind({});
 Default.args = {
   backgroundColor: "dark",
   hideFrom: "xl",
-  languages: LanguageSelectorStories.Default.args?.languages,
+  languages: ["es", "en"],
   linkMb: 2,
-  navigation: navList,
+  navigation: NAV,
   isOpen: true,
   translate: "Idiomas",
   translateMb: 2,

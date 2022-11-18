@@ -11,6 +11,9 @@ import Nav from "./Nav";
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
+// Types
+import Link from "../../../shared/interfaces/link";
+
 // Styles
 const StyledHeader = styled.div`
   /* TODO: replace colors for variables */
@@ -44,19 +47,6 @@ const StyledSeparator = styled.span`
 
 // Types
 // TODO: move to common types
-export enum Types {
-  Anchor = "anchor",
-  Link = "link",
-}
-
-// TODO: move to common types
-interface HeaderMenuItemProps {
-  anchor: string;
-  type: string;
-  text: string;
-}
-
-// TODO: move to common types
 enum LinkIconSizes {
   xs = "extra-small",
   sm = "small",
@@ -64,23 +54,13 @@ enum LinkIconSizes {
   lg = "large",
 }
 
-// // TODO: move to common types
-interface CallProps {
-  disabled?: boolean;
-  icon: ReactNode;
-  mb?: number;
-  me?: number;
-  size?: LinkIconSizes;
-  text?: string;
-  url: string;
-}
-
+// Interfaces
 export interface HeaderProps {
   brand: BrandProps;
-  languages: string[];
-  navigation: HeaderMenuItemProps[];
-  call?: CallProps;
-  socials: LinkIconProps[];
+  languages?: string[];
+  navigation: Link[];
+  call?: LinkIconProps;
+  socials?: LinkIconProps[];
 }
 
 const Header: FC<HeaderProps> = ({

@@ -2,53 +2,15 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Footer, { Types } from "./Footer";
+import Footer from "./Footer";
 
-// Stories
-// import * as Layout from "./../compositions/Layout.stories";
+// Constants
+import NAV from "../../shared/constants/nav";
 
 // Assets
 import HomeIcon from "./../../images/svg/home.svg";
 import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import PhoneIcon from "./../../images/svg/phone.svg";
-
-const navList = [
-  {
-    type: Types.Anchor,
-    anchor: "main",
-    text: "Inicio",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "units",
-    text: "Cabinas",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "common-spaces",
-    text: "Espacios comúnes",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "services",
-    text: "Servicios",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "drive",
-    text: "Cómo llegar?",
-  },
-  {
-    type: Types.Anchor,
-    anchor: "contact",
-    text: "Contáctenos",
-  },
-  {
-    type: Types.Link,
-    anchor: "info",
-    text: "Info",
-  },
-];
 
 export default {
   title: "Compositions/Footer",
@@ -74,7 +36,7 @@ export default {
     },
     navigation: {
       header: "Enlaces",
-      list: navList,
+      list: NAV,
     },
   },
   argTypes: {
@@ -110,6 +72,6 @@ Default.args = {
   },
   navigation: {
     header: "Enlaces",
-    list: navList,
+    list: NAV,
   },
 };
