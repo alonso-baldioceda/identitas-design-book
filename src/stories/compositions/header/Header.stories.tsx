@@ -3,16 +3,15 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
 import Header, { Types } from "./Header";
-import { LinkIconSizes } from "./../components/LinkIcon";
+import { LinkIconSizes } from "./../../components/LinkIcon";
 
 // Stories
-import * as BrandStories from "./../components/Brand.stories";
-import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
+import * as LanguageSelectorStories from "./../../components/LanguageSelector.stories";
 
 // Assets
-import PhoneIcon from "./../../images/svg/call.svg";
-import FacebookIcon from "./../../images/svg/facebook.svg";
-import InstagramIcon from "./../../images/svg/instagram.svg";
+import PhoneIcon from "./../../../images/svg/call.svg";
+import FacebookIcon from "./../../../images/svg/facebook.svg";
+import InstagramIcon from "./../../../images/svg/instagram.svg";
 
 const navList = [
   {
@@ -69,19 +68,24 @@ export default {
     brand: LanguageSelectorStories.Default.args,
     languages: LanguageSelectorStories.Default.args?.languages,
     navigation: navList,
-    phone: "+50683274040",
-    phoneIcon: <PhoneIcon />,
+    call: {
+      icon: <PhoneIcon />,
+      me: 0,
+      size: LinkIconSizes.xs,
+      text: "call us",
+      url: "tel:+50683274040",
+    },
     socials: [
       {
         icon: <FacebookIcon />,
-        mb: 1,
+        mb: 0,
         size: LinkIconSizes.xs,
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal",
       },
       {
         icon: <InstagramIcon />,
-        mb: 1,
+        mb: 0,
         size: LinkIconSizes.xs,
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",
@@ -106,19 +110,25 @@ Default.args = {
   },
   languages: LanguageSelectorStories.Default.args?.languages,
   navigation: navList,
-  phone: "+50683274040",
-  phoneIcon: <PhoneIcon />,
+  call: {
+    icon: <PhoneIcon />,
+    me: 0,
+    size: LinkIconSizes.xs,
+    text: "call us",
+    url: "tel:+50683274040",
+  },
+
   socials: [
     {
       icon: <FacebookIcon />,
-      mb: 1,
+      mb: 0,
       size: LinkIconSizes.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
     },
     {
       icon: <InstagramIcon />,
-      mb: 1,
+      mb: 0,
       size: LinkIconSizes.xs,
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",

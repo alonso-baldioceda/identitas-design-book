@@ -14,10 +14,6 @@ import Layout, { Types } from "./Layout";
 // TODO: move this to shared/types
 import { LinkIconSizes } from "./../components/LinkIcon";
 
-// Stories
-// import * as HeaderStories from "./Header.stories";
-// import * as LanguageSelectorStories from "./../components/LanguageSelector.stories";
-
 const navList = [
   {
     type: Types.Anchor,

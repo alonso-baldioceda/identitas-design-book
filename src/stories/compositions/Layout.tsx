@@ -4,7 +4,7 @@ import { GlobalStyle } from "./../shared/global.js";
 // import GlobalProvider from "./../components/globalProvider";
 
 // Components
-import Header, { HeaderProps } from "./Header";
+import Header, { HeaderProps } from "./header/Header";
 import Footer, { FooterProps } from "./Footer";
 
 // Props
