@@ -1,4 +1,4 @@
-import React, { useContext, FC, useMemo, useCallback, ReactNode } from "react";
+import React, { useContext, FC } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
@@ -7,6 +7,7 @@ import Brand, { BrandProps } from "../../components/Brand";
 import LanguageSelector from "../../components/LanguageSelector";
 import LinkIcon, { LinkIconProps } from "../../components/LinkIcon";
 import Nav from "./Nav";
+import Separator from "./Separator.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -27,21 +28,6 @@ const StyledHeader = styled.div`
   .nav-wrapper {
     margin: 0 auto;
     max-width: 2200px;
-  }
-`;
-
-const StyledSeparator = styled.span`
-  background: ${color.black};
-  height: 44px;
-  margin: 0 0.5rem;
-  width: 2px;
-
-  @media (min-width: 768px) {
-    margin: 0 0.75rem;
-  }
-
-  @media (min-width: 1200px) {
-    margin: 1.25rem;
   }
 `;
 
@@ -93,7 +79,7 @@ const Header: FC<HeaderProps> = ({
                   </div>
                 )}
                 {call && <LinkIcon {...call} />}
-                <StyledSeparator />
+                <Separator />
                 {socials &&
                   socials.map((social: LinkIconProps, index: number) => (
                     <LinkIcon {...social} key={index} />
