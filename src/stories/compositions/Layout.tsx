@@ -5,7 +5,7 @@ import { GlobalStyle } from "./../shared/global.js";
 
 // Components
 import Header, { HeaderProps } from "./header/Header";
-import Footer, { FooterProps } from "./Footer";
+import Footer, { FooterProps } from "./footer/Footer";
 
 // Interfaces
 interface LayoutProps {

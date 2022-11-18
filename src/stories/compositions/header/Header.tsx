@@ -7,7 +7,7 @@ import Brand, { BrandProps } from "../../components/Brand";
 import LanguageSelector from "../../components/LanguageSelector";
 import LinkIcon, { LinkIconProps } from "../../components/LinkIcon";
 import Nav from "./Nav";
-import Separator from "./Separator.js";
+import Separator from "./Separator";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";

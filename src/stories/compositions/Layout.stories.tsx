@@ -5,7 +5,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import HomeIcon from "./../../images/svg/home.svg";
 import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import PhoneIcon from "./../../images/svg/phone.svg";
-import CallIcon from "./../../images/svg/call.svg";
 import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
@@ -15,7 +14,7 @@ import Layout from "./Layout";
 import { LinkIconSizes } from "./../components/LinkIcon";
 
 // Constants
-import NAV from "../../shared/constants/nav";
+import NAV from "./../../shared/constants/nav";
 
 export default {
   title: "Compositions/Layout",
