@@ -5,16 +5,17 @@ import classnames from "classnames";
 import { color } from "./../shared/styles.js";
 
 // Components
-import LanguageSelector from "./../components/LanguageSelector";
-import LinkGatsby from "./../components/LinkGatsby";
-import LinkScroll from "./../components/LinkScroll";
+import MenuVerticalNav from "./MenuVerticalNav";
+import MenuVerticalLaguages from "./MenuVerticalLanguages";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
+// Constants
+import animationParent from "./../../shared/constants/animations.js";
+
 // Types
 import Link from "../../shared/interfaces/link";
-import LinkType from "../../shared/enums/linkType";
 
 // Styles
 const StyledMenuVertical = styled.div`
@@ -27,126 +28,49 @@ const StyledMenuVertical = styled.div`
   position: fixed;
   right: 0;
   top: 0;
+  /* TODO: move transition to variables  */
   transition: opacity 0.125s ease !important;
   z-index: 88888;
 
   &.open {
     display: block !important;
   }
-`;
 
-// const StyledLink = styled((props) => <Link {...props} />)`
-//   background: transparent;
-//   border-bottom: 2px solid transparent;
-//   color: ${color.white};
-//   display: inline-block;
-//   font-size: 22px;
-//   font-weight: 500;
-//   padding: 0;
-//   text-decoration: none;
-//   transition: all 0.5s ease;
-
-//   &:hover {
-//     border-bottom: 2px solid blue;
-//     color: red;
-//     text-decoration: none;
-//   }
-
-//   &:visited {
-//     color: ${color.white} !important;
-//   }
-
-//   &:focus {
-//     outline: none;
-//   }
-
-//   &.active {
-//     border-bottom: 2px solid var(--terracotta);
-//     color: ${color.white} !important;
-//   }
-// `;
-
-const LanguagesWrapper = styled.div`
-  display: inline-block;
-
-  a {
-    color: ${color.white};
-    display: block;
-    font-size: 22px;
-    font-weight: 500;
-    text-transform: capitalize;
-    transition: all 0.5s ease;
-
-    &:nth-child(1) {
-      width: 85px;
-    }
-
-    &:nth-child(2) {
-      width: 80px;
-    }
-
-    &:hover {
-      color: var(--manhattan);
-      text-decoration: underline;
-    }
-
-    &.active {
-      border-bottom: 2px solid red;
-    }
+  /* TODO: analyze what to do */
+  hr {
+    background-color: white;
   }
 `;
 
-const Label = styled.p`
-  color: var(--acapulco);
-  font-size: 22px;
-  font-weight: 500;
-`;
-
-// Animations
-const motionDefault = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.0125,
-      delayChildren: 0.125,
-    },
-  },
-};
-
-const motionDefaultItem = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-};
-
 // Types
 interface MenuVerticalProps {
-  backgroundColor: string;
+  bgColor: string;
   hideFrom?: string;
-  languages: string[];
-  linkMb?: number;
-  navigation: Link[];
   isOpen: boolean;
-  textColor?: string;
-  translate: string;
-  translateMb?: number;
+  languages: string[];
+  navigation: Link[];
+  px?: number;
+  py?: number;
+  separator?: number;
+  translate?: string;
 }
 
 const MenuVertical: FC<MenuVerticalProps> = ({
-  backgroundColor = color.black,
+  bgColor = color.black,
   hideFrom = "xl",
-  languages,
-  linkMb = 2,
-  navigation,
   isOpen,
+  languages,
+  navigation,
+  px = 4,
+  py = 4,
+  separator = 4,
   translate,
-  translateMb = 2,
 }) => {
   //   const { t } = useTranslation();
 
   //   const context = useContext(GlobalContext);
 
-  //   const { menu, active, setActive, isOpen, toggleMenu } = context;
+  //   const { active, setActive, isOpen, toggleMenu } = context;
 
   //   const languages = {
   //     es: "Español",
@@ -155,37 +79,25 @@ const MenuVertical: FC<MenuVerticalProps> = ({
 
   return (
     <StyledMenuVertical
-      className={classnames(`d-${hideFrom}-none bg-${backgroundColor}`, {
-        open: isOpen,
-      })}
+      className={classnames(
+        `d-${hideFrom}-none bg-${bgColor} px-${px} py-${py}`,
+        {
+          open: isOpen,
+        }
+      )}
     >
       <motion.div
         initial="hidden"
         animate={`${isOpen ? "visible" : ""}`}
-        variants={motionDefault}
+        variants={animationParent}
       >
-        {navigation.map((navItem: Link, index: number) => (
-          <motion.div variants={motionDefaultItem} key={index}>
-            {navItem.type && navItem.type === LinkType.Link ? (
-              <LinkGatsby text={navItem.text} to={navItem.anchor} />
-            ) : (
-              <LinkScroll text={navItem.text} to={navItem.anchor} />
-            )}
-            {/* // onClick={() => {
-              //   setActive !== undefined && setActive(index);
-              //   toggleMenu !== undefined &&
-              //     isOpen !== undefined &&
-              //     toggleMenu(isOpen);
-              // */}
-          </motion.div>
-        ))}
-        <hr className="my-2" />
-        <motion.div variants={motionDefaultItem}>
-          <Label className={`mb-${translateMb}`}>{translate}</Label>
-          <LanguagesWrapper>
-            <LanguageSelector languages={languages} />
-          </LanguagesWrapper>
-        </motion.div>
+        <MenuVerticalNav
+          navigation={navigation}
+          bgColor={bgColor}
+          isOpen={true}
+        />
+        <hr className={`my-${separator}`} />
+        <MenuVerticalLaguages languages={languages} translate={translate} />
       </motion.div>
     </StyledMenuVertical>
   );

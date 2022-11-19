@@ -38,12 +38,10 @@ const Template: ComponentStory<typeof MenuVertical> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  backgroundColor: "dark",
+  bgColor: "dark",
   hideFrom: "xl",
   languages: ["es", "en"],
-  linkMb: 2,
   navigation: NAV,
   isOpen: true,
   translate: "Idiomas",
-  translateMb: 2,
 };
