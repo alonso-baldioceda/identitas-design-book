@@ -3,15 +3,15 @@ import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
 // Components
-import LinkGatsby from "../../components/LinkGatsby";
-import LinkScroll from "../../components/LinkScroll";
+import LinkGatsby from "./../../components/LinkGatsby";
+import LinkScroll from "./../../components/LinkScroll";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
 // Types
-import Link from "../../../shared/interfaces/link";
-import LinkType from "../../../shared/enums/linkType";
+import Link from "./../../../shared/interfaces/link";
+import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
 const StyledNav = styled.ul`

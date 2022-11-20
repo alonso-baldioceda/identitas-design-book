@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { color } from "./../shared/styles.js";
 
 // Components
-import LinkGatsby from "./../components/LinkGatsby";
-import LinkScroll from "./../components/LinkScroll";
+import LinkGatsby from "../components/LinkGatsby";
+import LinkScroll from "../components/LinkScroll";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -18,7 +18,7 @@ import Link from "../../shared/interfaces/link";
 import LinkType from "../../shared/enums/linkType";
 
 // Styles
-const StyledMenuVerticalNav = styled((props) => <motion.ul {...props} />)`
+const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
   margin: 0 !important;
   padding: 0 !important;
 
@@ -55,14 +55,14 @@ const StyledMenuVerticalNav = styled((props) => <motion.ul {...props} />)`
 `;
 
 // Interfaces
-interface MenuVerticalNavProps {
+interface MobileNavProps {
   bgColor?: string;
   isOpen?: boolean;
   linkMb?: number;
   navigation: Link[];
 }
 
-const MenuVerticalNav: FC<MenuVerticalNavProps> = ({
+const MobileNav: FC<MobileNavProps> = ({
   bgColor,
   isOpen,
   linkMb = 2,
@@ -80,7 +80,7 @@ const MenuVerticalNav: FC<MenuVerticalNavProps> = ({
   //   };
 
   return (
-    <StyledMenuVerticalNav>
+    <StyledMobileNav>
       {navigation.map((navItem: Link, index: number) => (
         <motion.div
           variants={animationChildren}
@@ -94,8 +94,8 @@ const MenuVerticalNav: FC<MenuVerticalNavProps> = ({
           )}
         </motion.div>
       ))}
-    </StyledMenuVerticalNav>
+    </StyledMobileNav>
   );
 };
 
-export default MenuVerticalNav;
+export default MobileNav;

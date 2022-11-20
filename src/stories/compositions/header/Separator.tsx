@@ -5,6 +5,8 @@ import { prefix, color } from "./../../shared/styles.js";
 // Styles
 const StyledSeparator = styled((props) => <div {...props} />)`
   background: ${color.black};
+  /* TODO: move height to props */
+  /* TODO: add color in props */
   height: 44px;
   width: 2px;
 

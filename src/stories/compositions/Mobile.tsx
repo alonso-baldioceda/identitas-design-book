@@ -5,8 +5,8 @@ import classnames from "classnames";
 import { color } from "./../shared/styles.js";
 
 // Components
-import MenuVerticalNav from "./MenuVerticalNav";
-import MenuVerticalLaguages from "./MenuVerticalLanguages";
+import MobileNav from "./MobileNav";
+import MobileLaguages from "./MobileLanguages";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
@@ -18,7 +18,7 @@ import animationParent from "./../../shared/constants/animations.js";
 import Link from "../../shared/interfaces/link";
 
 // Styles
-const StyledMenuVertical = styled.div`
+const StyledMobile = styled.div`
   backdrop-filter: blur(4px);
   background: rgba(2, 18, 23, 1) !important;
   /* display: none; */
@@ -43,7 +43,7 @@ const StyledMenuVertical = styled.div`
 `;
 
 // Types
-interface MenuVerticalProps {
+interface MobileProps {
   bgColor: string;
   hideFrom?: string;
   isOpen: boolean;
@@ -55,7 +55,7 @@ interface MenuVerticalProps {
   translate?: string;
 }
 
-const MenuVertical: FC<MenuVerticalProps> = ({
+const Mobile: FC<MobileProps> = ({
   bgColor = color.black,
   hideFrom = "xl",
   isOpen,
@@ -78,7 +78,7 @@ const MenuVertical: FC<MenuVerticalProps> = ({
   //   };
 
   return (
-    <StyledMenuVertical
+    <StyledMobile
       className={classnames(
         `d-${hideFrom}-none bg-${bgColor} px-${px} py-${py}`,
         {
@@ -91,16 +91,12 @@ const MenuVertical: FC<MenuVerticalProps> = ({
         animate={`${isOpen ? "visible" : ""}`}
         variants={animationParent}
       >
-        <MenuVerticalNav
-          navigation={navigation}
-          bgColor={bgColor}
-          isOpen={true}
-        />
+        <MobileNav navigation={navigation} bgColor={bgColor} isOpen={true} />
         <hr className={`my-${separator}`} />
-        <MenuVerticalLaguages languages={languages} translate={translate} />
+        <MobileLaguages languages={languages} translate={translate} />
       </motion.div>
-    </StyledMenuVertical>
+    </StyledMobile>
   );
 };
 
-export default MenuVertical;
+export default Mobile;

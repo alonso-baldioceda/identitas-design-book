@@ -2,21 +2,21 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import MenuVertical from "./MenuVertical";
+import Mobile from "./Mobile";
 
 // Constants
 import NAV from "../../shared/constants/nav";
 
 export default {
-  title: "Compositions/MenuVertical",
-  component: MenuVertical,
+  title: "Compositions/Mobile",
+  component: Mobile,
   args: {
     backgroundColor: "dark",
     hideFrom: "xl",
+    isOpen: false,
     languages: ["es", "en"],
     linkMb: 2,
     navigation: NAV,
-    isOpen: false,
     translate: "",
     translateMb: 2,
   },
@@ -30,18 +30,16 @@ export default {
       options: ["md", "lg", "xl"],
     },
   },
-} as ComponentMeta<typeof MenuVertical>;
+} as ComponentMeta<typeof Mobile>;
 
-const Template: ComponentStory<typeof MenuVertical> = (args) => (
-  <MenuVertical {...args} />
-);
+const Template: ComponentStory<typeof Mobile> = (args) => <Mobile {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
   bgColor: "dark",
   hideFrom: "xl",
+  isOpen: true,
   languages: ["es", "en"],
   navigation: NAV,
-  isOpen: true,
   translate: "Idiomas",
 };

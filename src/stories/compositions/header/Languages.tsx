@@ -2,7 +2,7 @@ import React, { useState, useContext, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 // import classnames from "classnames";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";

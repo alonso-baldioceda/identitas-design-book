@@ -3,17 +3,17 @@ import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
 // Components
-import Brand, { BrandProps } from "../../components/Brand";
-import LanguageSelector from "../../components/LanguageSelector";
-import LinkIcon, { LinkIconProps } from "../../components/LinkIcon";
+import Brand, { BrandProps } from "./../../components/Brand";
+import Languages from "./Languages";
+import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import Nav from "./Nav";
 import Separator from "./Separator";
 
 // Contexts
-// import GlobalContext from "./../contexts/globalContext";
+import LayoutContext from "./../LayoutContext";
 
 // Types
-import Link from "../../../shared/interfaces/link";
+import Link from "./../../../shared/interfaces/link";
 
 // Styles
 const StyledHeader = styled.div`
@@ -56,6 +56,8 @@ const Header: FC<HeaderProps> = ({
   call,
   socials,
 }) => {
+  const { active } = useContext(LayoutContext);
+  console.log("active", active);
   //  const conte: useContext(GlobalContext);
   //  const { active, setActive } = context;
 
@@ -73,9 +75,7 @@ const Header: FC<HeaderProps> = ({
                 {languages && (
                   // TODO: add when to hide to props
                   <div className="d-none d-xl-inline">
-                    <LanguageSelector
-                      languages={languages ? languages : ["es"]}
-                    />
+                    <Languages languages={languages ? languages : ["es"]} />
                   </div>
                 )}
                 {call && <LinkIcon {...call} />}

@@ -54,14 +54,14 @@ const LinkTranslate = styled.a`
 `;
 
 // Interface
-export interface MenuVerticalLanguagesProps {
+export interface MobileLanguagesProps {
   languages: string[];
   linkMb?: string;
   translate?: string;
   translateMy?: number;
 }
 
-const MenuVerticalLanguages: FC<MenuVerticalLanguagesProps> = ({
+const MobileLanguages: FC<MobileLanguagesProps> = ({
   languages,
   linkMb = 2,
   translate,
@@ -110,4 +110,4 @@ const MenuVerticalLanguages: FC<MenuVerticalLanguagesProps> = ({
   );
 };
 
-export default MenuVerticalLanguages;
+export default MobileLanguages;
