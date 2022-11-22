@@ -1,6 +1,9 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { GlobalStyle } from "./../src/stories/shared/global";
+import { themes } from "@storybook/theming";
+// import light from "./Light";
+import "./styles.css";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -21,6 +24,19 @@ window.___navigate = (pathname) => {
 };
 
 export const parameters = {
+  backgrounds: {
+    disable: true,
+  },
+  darkMode: {
+    current: "light",
+    darkClass: "darkClass",
+    lightClass: "lightClass",
+    stylePreview: true,
+    // Override the default dark theme
+    dark: { ...themes.dark, appBg: "black" },
+    // Override the default light theme
+    light: { ...themes.light },
+  },
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

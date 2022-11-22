@@ -9,7 +9,7 @@ export default {
   component: LinkScroll,
   args: {
     // TODO: create ENUM for duration
-    duration: 500,
+    duration: 250,
     offset: -80,
     smooth: true,
     spy: true,
@@ -23,7 +23,7 @@ const Template: ComponentStory<typeof LinkScroll> = (args) => (
 );
 
 export const Default = Template.bind({
-  duration: 500,
+  duration: 250,
   offset: -80,
   smooth: true,
   spy: true,

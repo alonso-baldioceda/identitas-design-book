@@ -63,7 +63,7 @@ const Homepage: FC<HomepageProps> = ({
           `}
         </script>
       </Helmet>
-      <section id="main">
+      <section id="top">
         <Hero {...heroProps} />
       </section>
       <section id="units">

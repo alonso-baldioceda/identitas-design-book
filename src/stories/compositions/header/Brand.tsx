@@ -1,15 +1,18 @@
-import React, { FC, useContext } from "react";
+import React, { FC, ReactNode, useContext } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../shared/styles.js";
-import { Link } from "react-scroll";
-import { animateScroll as scroll } from "react-scroll";
+import { prefix, color } from "./../../shared/styles.js";
+import { Link } from "gatsby";
+// import { animateScroll as scroll } from "react-scroll";
 // import classnames from "classnames";
 
+// Components
+import SVG from "./../../components/SVG";
+
 // Contexts
-// import GlobalContext from "./../contexts/globalContext";
+// import LayoutContext from "./../compositions/LayoutContext";
 
 // Assets
-import LogoIcon from "./../../images/svg/logo-black.svg";
+import LogoIcon from "./../../../images/svg/logo-black.svg";
 
 // Styles
 const StyledBrand = styled((props) => <Link {...props} />)`
@@ -41,49 +44,52 @@ const StyledBrand = styled((props) => <Link {...props} />)`
 
 // Types
 export interface BrandProps {
-  duration: number;
+  // duration: number;
   fontWeight: number;
   logoMarginRight: number;
-  offset: number;
-  smooth: boolean;
-  spy: boolean;
+  // offset: number;
+  // smooth: boolean;
+  // spy: boolean;
+  svg: ReactNode;
   text: string;
   to: string;
 }
 
 const Brand: FC<BrandProps> = ({
-  duration = 500,
+  // duration = 500,
   fontWeight = 700,
   logoMarginRight = 3,
-  offset = -60,
-  smooth = true,
-  spy = true,
+  // offset = -60,
+  // smooth = true,
+  // spy = true,
+  svg,
   text = "",
   to = "",
 }) => {
-  const scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+  // const { active, setActive } = useContext(LayoutContext);
 
-  //   const context = useContext(GlobalContext);
-
-  //   const { active, setActive } = context;
+  // const scrollToTop = () => {
+  //   scroll.scrollToTop();
+  //   setActive && setActive(0);
+  // };
 
   // TODO: handle active on both cases
 
   return (
     <StyledBrand
       className={`me-${logoMarginRight} ${prefix}-brand`}
-      duration={duration}
+      // duration={duration}
       fontWeight={fontWeight}
-      offset={offset}
-      onClick={scrollToTop}
-      smooth={smooth}
-      spy={spy}
+      // offset={offset}
+      // onClick={scrollToTop}
+      // smooth={smooth}
+      // spy={spy}
       text={text}
       to={to}
+      // activeClass="brand-active"
     >
-      <LogoIcon />
+      {/* TODO: move this to SVG component */}
+      <SVG icon={svg} size="medium" />
       <span>{text}</span>
     </StyledBrand>
   );

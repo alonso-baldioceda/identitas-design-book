@@ -27,31 +27,25 @@ const StyledNav = styled((props) => <ul {...props} />)`
 
     a {
       text-decoration: none;
-
-      ${(props) =>
-        props.bgColor === "dark" &&
-        `
-            color: ${color.white} !important; 
-        `}
+      color: ${color.white} !important;
     }
   }
 `;
 
 // Interfaces
 export interface NavProps {
-  bgColor: string;
-  mb: number;
+  // bgColor?: string;
+  mb?: number;
   navigation: Link[];
 }
 
-const Nav: FC<NavProps> = ({ bgColor, mb, navigation }) => {
+const Nav: FC<NavProps> = ({ mb, navigation }) => {
   // const context = useContext(Global);
   // const { menu, setActive } = context;
-  // const [active, setActive] = useState(-1);
 
   // TODO: include useMemo
   return (
-    <StyledNav className={`${prefix}-nav`} bgColor={bgColor}>
+    <StyledNav className={`${prefix}-nav`}>
       {navigation.map((navItem: any, index: number) => (
         <li key={index} className={`mb-${mb ? mb : "3"}`}>
           {navItem.type && navItem.type === LinkType.Link ? (

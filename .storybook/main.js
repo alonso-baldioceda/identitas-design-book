@@ -1,14 +1,15 @@
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "@storybook/addon-links",
+    "@storybook/addon-a11y",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-a11y",
+    "@storybook/addon-links",
     "@storybook/addon-storysource",
-    "storybook-addon-themes",
     "storybook-addon-grid",
     "storybook-addon-state",
+    "storybook-addon-themes",
+    "storybook-dark-mode",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",

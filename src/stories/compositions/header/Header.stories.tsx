@@ -12,20 +12,22 @@ import NAV from "./../../../shared/constants/nav";
 import PhoneIcon from "./../../../images/svg/call.svg";
 import FacebookIcon from "./../../../images/svg/facebook.svg";
 import InstagramIcon from "./../../../images/svg/instagram.svg";
+import LogoIcon from "./../../../images/svg/logo-black.svg";
 
 export default {
   title: "Compositions/Header",
   component: Header,
   args: {
     brand: {
-      duration: 500,
+      // duration: 250,
       fontWeight: 700,
       logoMarginRight: 3,
-      offset: -70,
-      smooth: true,
-      spy: true,
+      // offset: -70,
+      // smooth: true,
+      // spy: true,
+      svg: <LogoIcon />,
       text: "Company name",
-      to: "main",
+      to: "#",
     },
     languages: ["es", "en"],
     navigation: NAV,
@@ -60,12 +62,13 @@ const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   brand: {
-    duration: 500,
+    // duration: 250,
     fontWeight: 700,
     logoMarginRight: 3,
-    offset: -70,
-    smooth: true,
-    spy: true,
+    // offset: -70,
+    // smooth: true,
+    // spy: true,
+    svg: <LogoIcon />,
     text: "Company name",
     to: "main",
   },

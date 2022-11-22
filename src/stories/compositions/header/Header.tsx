@@ -1,16 +1,13 @@
-import React, { useContext, FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
 // Components
-import Brand, { BrandProps } from "./../../components/Brand";
+import Brand, { BrandProps } from "./Brand";
 import Languages from "./Languages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import Nav from "./Nav";
 import Separator from "./Separator";
-
-// Contexts
-import LayoutContext from "./../LayoutContext";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -43,6 +40,7 @@ enum LinkIconSizes {
 // Interfaces
 export interface HeaderProps {
   brand: BrandProps;
+  hideFrom: string;
   languages?: string[];
   navigation: Link[];
   call?: LinkIconProps;
@@ -51,16 +49,12 @@ export interface HeaderProps {
 
 const Header: FC<HeaderProps> = ({
   brand,
+  hideFrom = "xl",
   languages = ["es"],
   navigation,
   call,
   socials,
 }) => {
-  const { active } = useContext(LayoutContext);
-  console.log("active", active);
-  //  const conte: useContext(GlobalContext);
-  //  const { active, setActive } = context;
-
   return (
     <StyledHeader className={`${prefix}-header`}>
       <div className="container-fluid">
@@ -72,10 +66,10 @@ const Header: FC<HeaderProps> = ({
                 <Nav navigation={navigation} />
               </div>
               <div className="d-flex justify-content-end align-items-center">
+                {/* TODO: set control to show languages */}
                 {languages && (
-                  // TODO: add when to hide to props
-                  <div className="d-none d-xl-inline">
-                    <Languages languages={languages ? languages : ["es"]} />
+                  <div className={`d-none d-${hideFrom}-inline`}>
+                    <Languages languages={languages} />
                   </div>
                 )}
                 {call && <LinkIcon {...call} />}

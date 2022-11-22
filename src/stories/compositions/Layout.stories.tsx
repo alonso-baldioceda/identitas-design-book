@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Assets
+import LogoIcon from "./../../images/svg/logo-black.svg";
 import HomeIcon from "./../../images/svg/home.svg";
 import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import PhoneIcon from "./../../images/svg/phone.svg";
@@ -22,17 +23,18 @@ export default {
   args: {
     header: {
       brand: {
-        duration: 500,
+        // duration: 250,
         fontWeight: 700,
         logoMarginRight: 3,
-        offset: -60,
-        smooth: true,
-        spy: true,
+        // offset: -60,
+        // smooth: true,
+        // spy: true,
+        svg: <LogoIcon />,
         text: "",
         to: "",
       },
-      // TODO: fix this
-      languages: ["es"],
+      hideFrom: "xl",
+      languages: ["es", "en"],
       navigation: NAV,
       call: {
         icon: <PhoneIcon />,
@@ -136,17 +138,19 @@ export const Default = Template.bind({});
 Default.args = {
   header: {
     brand: {
-      duration: 500,
+      // duration: 250,
       fontWeight: 700,
       logoMarginRight: 3,
-      offset: -60,
-      smooth: true,
-      spy: true,
+      // offset: -60,
+      // smooth: true,
+      // spy: true,
+      svg: <LogoIcon />,
       text: "",
       to: "",
     },
     // TODO: fix this
-    languages: ["es"],
+    languages: ["es", "en"],
+    hideFrom: "xl",
     navigation: NAV,
     call: {
       icon: <PhoneIcon />,
@@ -173,7 +177,6 @@ Default.args = {
     ],
   },
   footer: {
-    bgcolor: "dark",
     contact: {
       header: "Contáctenos",
       list: [

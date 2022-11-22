@@ -1,7 +1,5 @@
-import React, { ReactNode, FC } from "react";
+import React, { ReactNode, FC, useState } from "react";
 import { GlobalStyle } from "./../shared/global.js";
-
-// import GlobalProvider from "./../components/globalProvider";
 
 // Components
 import Header, { HeaderProps } from "./header/Header";
@@ -18,15 +16,19 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
+  const [active, setActive] = useState(-1);
+  const [language, setLanguage] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <LayoutContext.Provider
       value={{
-        active: 0,
-        language: 0,
-        isOpen: false,
-        setActive: undefined,
-        setLanguage: undefined,
-        toggleMenu: undefined,
+        active,
+        language,
+        isOpen,
+        setActive,
+        setLanguage,
+        setIsOpen,
       }}
     >
       <GlobalStyle />

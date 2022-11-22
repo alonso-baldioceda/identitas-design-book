@@ -25,14 +25,9 @@ const StyledContact = styled((props) => <ul {...props} />)`
       }
 
       p {
+        color: ${color.white} !important;
         margin-bottom: 0;
         text-decoration: none;
-
-        ${(props) =>
-          props.bgColor === "dark" &&
-          `
-            color: ${color.white} !important; 
-        `}
       }
     }
   }
@@ -47,12 +42,11 @@ interface ContactItem {
 }
 
 export interface NavProps {
-  bgColor: string;
   list: ContactItem[];
 }
 
-const Nav: FC<NavProps> = ({ bgColor, list }) => (
-  <StyledContact className={`${prefix}-contact`} bgColor={bgColor}>
+const Nav: FC<NavProps> = ({ list }) => (
+  <StyledContact className={`${prefix}-contact`}>
     {list.map((contactItem: ContactItem, index: number) => (
       <li key={index}>
         <div className={`mb-${contactItem.mb ? contactItem.mb : "3"}`}>

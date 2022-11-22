@@ -6,18 +6,19 @@ interface LayoutContextProps {
   isOpen?: boolean;
   language?: number;
   setActive?: (active: number) => void;
+  setIsOpen?: (isOpen: boolean) => void;
   setLanguage?: (active: number) => void;
-  toggleMenu?: (isOpen: boolean) => void;
 }
 
 // Defaults
 const defaultState = {
   active: 0,
-  language: 0,
+  // TODO: maybe need to include a global language variable
   isOpen: false,
+  language: 0,
   setActive: undefined,
+  setIsOpen: undefined,
   setLanguage: undefined,
-  toggleMenu: undefined,
 };
 
 const LayoutContext = createContext<LayoutContextProps>(defaultState);

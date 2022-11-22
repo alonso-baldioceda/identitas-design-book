@@ -3,7 +3,7 @@ import LinkType from "../enums/linkType";
 const NAV = [
   {
     type: LinkType.Anchor,
-    anchor: "main",
+    anchor: "top",
     text: "Inicio",
   },
   {

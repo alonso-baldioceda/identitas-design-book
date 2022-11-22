@@ -16,7 +16,6 @@ export default {
   title: "Compositions/Footer",
   component: Footer,
   args: {
-    bgcolor: "dark",
     contact: {
       header: "Contáctenos",
       list: [
@@ -52,7 +51,6 @@ const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  bgcolor: "dark",
   contact: {
     header: "Contáctenos",
     list: [

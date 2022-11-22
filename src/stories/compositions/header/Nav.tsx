@@ -7,7 +7,7 @@ import LinkGatsby from "./../../components/LinkGatsby";
 import LinkScroll from "./../../components/LinkScroll";
 
 // Contexts
-// import GlobalContext from "./../contexts/globalContext";
+// import LayoutContext from "./../LayoutContext";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -66,8 +66,8 @@ export interface HeaderProps {
 
 //  TODO: possibly add a better hover effect */
 const Nav: FC<HeaderProps> = ({ navigation }) => {
-  //   const conte: useContext(GlobalContext);
-  //   const {  active, setActive } = context;
+  // const { active, setActive } = useContext(LayoutContext);
+
   // TODO: analize including useMemo
   return (
     <StyledNav className={`nav ${prefix}-nav`}>
