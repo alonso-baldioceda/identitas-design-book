@@ -4,7 +4,7 @@ import { Meta, Typeset } from "@storybook/addon-docs/blocks";
 
 export const typography = {
   type: {
-    primary: '"Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif',
+    primary: '"Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif',
   },
   weight: {
     regular: "400",
@@ -13,20 +13,14 @@ export const typography = {
     black: "900",
   },
   size: {
-    s1: 12,
-    s2: 14,
-    s3: 16,
-    m1: 20,
-    m2: 24,
-    m3: 28,
-    l1: 32,
-    l2: 40,
-    l3: 48,
+    h1: 48,
+    h2: 40,
+    h3: 32,
+    h4: 28,
+    h5: 24,
+    h6: 20,
   },
 };
-
-export const SampleText =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 # Typography
 
@@ -36,19 +30,54 @@ export const SampleText =
 
 ## Typography
 
+<br />
+
+### Headings
+
 <Typeset
-  fontSizes={[
-    Number(typography.size.s1),
-    Number(typography.size.s2),
-    Number(typography.size.s3),
-    Number(typography.size.m1),
-    Number(typography.size.m2),
-    Number(typography.size.m3),
-    Number(typography.size.l1),
-    Number(typography.size.l2),
-    Number(typography.size.l3),
-  ]}
-  fontWeight={typography.weight.black}
-  sampleText={SampleText}
   fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.h1]}
+  sampleText="Headline 1"
+  style={{ lineHeight: "52px" }}
+/>
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.h2]}
+  sampleText="Headline 2"
+  style={{ lineHeight: "52px" }}
+/>
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.h3]}
+  sampleText="Headline 3"
+  style={{ lineHeight: "52px" }}
+/>
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.h4]}
+  sampleText="Headline 4"
+  style={{ lineHeight: "52px" }}
+/>
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.h5]}
+  sampleText="Headline 5"
+  style={{ lineHeight: "52px" }}
+/>
+
+<Typeset
+  fontFamily={typography.type.primary}
+  fontWeight={typography.weight.bold}
+  fontSizes={[typography.size.h6]}
+  sampleText="Headline 6"
+  style={{ lineHeight: "52px" }}
 />

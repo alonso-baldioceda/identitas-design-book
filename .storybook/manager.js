@@ -1,8 +1,6 @@
-import { addons } from "@storybook/addons";
-// import { themes } from "@storybook/theming";
-import light from "./Light";
+// import { addons } from "@storybook/addons";
+// import theme from "./Theme";
 
-addons.setConfig({
-  // theme: themes.dark,
-  theme: light,
-});
+// addons.setConfig({
+//   theme: theme,
+// });

@@ -1,73 +1,75 @@
-import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs";
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
 
-import { themes, ThemeProvider, convert, ensure } from "@storybook/theming";
+import { color } from "./../shared/styles.js";
 
-<Meta title="Complex Colors" />
+<Meta title="Design System|Colors" />
 
-# Light color scheme
+# Colors
 
-<div styles={{ background: "#eeeeee", padding: "40px" }}>
-  <ColorPalette>
-    {Object.entries(convert(themes.light).color).map(([k, v]) => {
-      if (
-        typeof v === "string" &&
-        (v.match(/^#/) || v.match(/^rgb/) || k.match(/color/i))
-      ) {
-        return <ColorItem key={k} title={k} colors={{ [k]: v }} />;
-      } else if (typeof v === "object") {
-        return (
-          <ColorItem
-            key={k}
-            title={k}
-            colors={Object.entries(v).reduce(
-              (acc, [key, value]) =>
-                typeof value === "string" &&
-                (value.match(/^#/) ||
-                  value.match(/^rgb/) ||
-                  key.match(/color/i))
-                  ? { ...acc, [key]: value }
-                  : acc,
-              {}
-            )}
-          />
-        );
-      }
-      return null;
-    })}
-  </ColorPalette>
-</div>
-
-# Dark color scheme
-
-<div style={{ background: "#202020", padding: "40px" }}>
-  <ThemeProvider theme={ensure(themes.dark)}>
-    <ColorPalette>
-      {Object.entries(convert(themes.dark).color).map(([k, v]) => {
-        if (
-          typeof v === "string" &&
-          (v.match(/^#/) || v.match(/^rgb/) || k.match(/color/i))
-        ) {
-          return <ColorItem key={k} title={k} colors={{ [k]: v }} />;
-        } else if (typeof v === "object") {
-          return (
-            <ColorItem
-              key={k}
-              title={k}
-              colors={Object.entries(v).reduce(
-                (acc, [key, value]) =>
-                  typeof value === "string" &&
-                  (value.match(/^#/) ||
-                    value.match(/^rgb/) ||
-                    key.match(/color/i))
-                    ? { ...acc, [key]: value }
-                    : acc,
-                {}
-              )}
-            />
-          );
-        }
-        return null;
-      })}
-    </ColorPalette>
-  </ThemeProvider>
-</div>
+<ColorPalette>
+  <ColorItem
+    title="theme.color.primary"
+    subtitle="Coral"
+    colors={[color.primary]}
+  />
+  <ColorItem
+    title="theme.color.secondary"
+    subtitle="Blue"
+    colors={[color.secondary]}
+  />
+  <ColorItem
+    title="theme.color.tertiary"
+    subtitle="Grey"
+    colors={[color.tertiary]}
+  />
+  <ColorItem
+    title="theme.color.positive"
+    subtitle="Green"
+    colors={[color.positive]}
+  />
+  <ColorItem
+    title="theme.color.warning"
+    subtitle="Ochre"
+    colors={[color.warning]}
+  />
+  <ColorItem
+    title="theme.color.negative"
+    subtitle="Red"
+    colors={[color.negative]}
+  />
+  <ColorItem
+    title="theme.color.orange"
+    subtitle="Orange"
+    colors={[color.orange]}
+  />
+  <ColorItem title="theme.color.gold" subtitle="Gold" colors={[color.gold]} />
+  <ColorItem
+    title="theme.color.seafoam"
+    subtitle="Seafoam"
+    colors={[color.seafoam]}
+  />
+  <ColorItem
+    title="theme.color.purple"
+    subtitle="Purple"
+    colors={[color.purple]}
+  />
+  <ColorItem
+    title="theme.color.ultraviolet"
+    subtitle="Ultraviolet"
+    colors={[color.ultraviolet]}
+  />
+  <ColorItem
+    title="Monochrome"
+    colors={[
+      color.darkest,
+      color.darker,
+      color.dark,
+      color.mediumdark,
+      color.medium,
+      color.mediumlight,
+      color.light,
+      color.lighter,
+      color.lightest,
+    ]}
+  />
+</ColorPalette>

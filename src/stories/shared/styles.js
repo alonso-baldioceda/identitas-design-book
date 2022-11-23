@@ -26,12 +26,12 @@ export const color = {
   pastelprimary: "#E5EFEA",
   pastelsecondary: "#F4F1DE",
 
-  // orange: "#FC521F",
-  // gold: "#FFAE00",
-  // green: "#66BF3C",
-  // seafoam: "#37D5D3",
-  // purple: "#6F2CAC",
-  // ultraviolet: "#2A0481",
+  orange: "#FC521F",
+  gold: "#FFAE00",
+  green: "#66BF3C",
+  seafoam: "#37D5D3",
+  purple: "#6F2CAC",
+  ultraviolet: "#2A0481",
 
   // Monochrome
   lightest: "#FFFFFF",
