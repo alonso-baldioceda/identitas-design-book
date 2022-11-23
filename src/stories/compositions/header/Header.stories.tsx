@@ -1,5 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import styled from "styled-components";
 
 // Components
 import Header from "./Header";
@@ -13,6 +14,15 @@ import PhoneIcon from "./../../../images/svg/call.svg";
 import FacebookIcon from "./../../../images/svg/facebook.svg";
 import InstagramIcon from "./../../../images/svg/instagram.svg";
 import LogoIcon from "./../../../images/svg/logo-black.svg";
+
+// Styles
+const HeaderWrapper = styled.div`
+  height: 82px;
+
+  > div {
+    position: relative;
+  }
+`;
 
 export default {
   title: "Compositions/Header",
@@ -29,7 +39,14 @@ export default {
       text: "Company name",
       to: "#",
     },
+    hideLanguagesFrom: "xl",
     languages: ["es", "en"],
+    menuClose: {
+      colorClose: "black",
+      colorOpen: "black",
+      isOpen: false,
+      setIsOpen: () => {},
+    },
     navigation: NAV,
     call: {
       icon: <PhoneIcon />,
@@ -38,6 +55,8 @@ export default {
       text: "call us",
       url: "tel:+50683274040",
     },
+    showCall: true,
+    showLanguages: true,
     socials: [
       {
         icon: <FacebookIcon />,
@@ -55,9 +74,19 @@ export default {
       },
     ],
   },
+  argTypes: {
+    hideLanguagesFrom: {
+      control: "select",
+      options: ["md", "lg", "xl"],
+    },
+  },
 } as ComponentMeta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
+const Template: ComponentStory<typeof Header> = (args) => (
+  <HeaderWrapper className="position-relative">
+    <Header {...args} />
+  </HeaderWrapper>
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -73,6 +102,12 @@ Default.args = {
     to: "main",
   },
   languages: ["es", "en"],
+  menuClose: {
+    colorClose: "black",
+    colorOpen: "black",
+    isOpen: true,
+    setIsOpen: () => {},
+  },
   navigation: NAV,
   call: {
     icon: <PhoneIcon />,
@@ -81,6 +116,8 @@ Default.args = {
     text: "call us",
     url: "tel:+50683274040",
   },
+  showCall: true,
+  showLanguages: true,
   socials: [
     {
       icon: <FacebookIcon />,

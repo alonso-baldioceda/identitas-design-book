@@ -14,11 +14,26 @@ const StyledStory = styled.div`
 export default {
   title: "Components/MenuClose",
   component: MenuClose,
-  args: { colorOpen: color.black, colorClose: color.black, isOpen: false },
+  args: {
+    colorOpen: color.black,
+    colorClose: color.black,
+    isOpen: false,
+    setIsOpen: () => void {},
+  },
+  argTypes: {
+    colorOpen: {
+      control: "select",
+      options: ["primary", "secondary", "ternary", "dark", "white"],
+    },
+    colorClose: {
+      control: "select",
+      options: ["primary", "secondary", "ternary", "dark", "white"],
+    },
+  },
 } as ComponentMeta<typeof MenuClose>;
 
 const Template: ComponentStory<typeof MenuClose> = (args) => (
-  <StyledStory className="position-relative bg-primary">
+  <StyledStory className="p-5">
     <MenuClose {...args} />
   </StyledStory>
 );
@@ -28,12 +43,12 @@ Default.args = {};
 
 export const CustomOpenColor = Template.bind({});
 CustomOpenColor.args = {
-  colorOpen: "red",
+  colorOpen: "primary",
 };
 
 export const CustomCloseColor = Template.bind({});
 CustomCloseColor.args = {
   ...Default.args,
-  colorClose: "blue",
+  colorClose: "primary",
   isOpen: true,
 };

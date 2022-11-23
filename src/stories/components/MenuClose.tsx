@@ -1,36 +1,20 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../shared/styles.js";
-
-// Contexts
-// import GlobalContext from "./../contexts/globalContext";
+import classnames from "classnames";
 
 // Styles
-
-const StyledMenuIcon = styled((props) => <div {...props} />)`
+const StyledMenuClose = styled((props) => <div {...props} />)`
   cursor: pointer;
-  height: 28px;
+  display: inline-block;
+  height: 32px;
   overflow: hidden;
-  position: fixed;
-  right: 15px;
-  top: 28px;
   transform: rotate(0deg);
-  width: 35px;
+  width: 32px;
   z-index: 1000;
 
   span {
-    ${(props) =>
-      props.colorOpen !== "" &&
-      `
-        background: ${props.colorOpen};
-      `}
-
-    ${(props) =>
-      props.colorOpen === "" &&
-      `
-        background: ${color.black};
-      `}
-
+    background: ${color.black};
     border-radius: 9px;
     display: block;
     height: 3px;
@@ -40,29 +24,26 @@ const StyledMenuIcon = styled((props) => <div {...props} />)`
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
     width: 100%;
-  }
 
-  span:nth-child(1) {
-    top: 0px;
-  }
+    &:nth-child(1) {
+      top: 2px;
+    }
 
-  span:nth-child(2),
-  span:nth-child(3) {
-    top: 12px;
-  }
+    &:nth-child(2),
+    &:nth-child(3) {
+      top: 14px;
+    }
 
-  span:nth-child(4) {
-    top: 24px;
+    &:nth-child(4) {
+      top: 26px;
+    }
   }
 
   &.is-open {
     z-index: 99999;
 
     span {
-      ${(props) =>
-        props.colorOpen
-          ? `background: ${props.colorClose};`
-          : `${color.black};`}
+      background: ${color.black};
 
       &:nth-child(1) {
         left: 50%;
@@ -79,49 +60,44 @@ const StyledMenuIcon = styled((props) => <div {...props} />)`
       }
 
       &:nth-child(4) {
+        left: 50%;
         top: 12px;
         width: 0%;
-        left: 50%;
       }
     }
   }
 `;
 
-interface MenuCloseProps {
+export interface MenuCloseProps {
   colorClose?: string;
   colorOpen?: string;
-  hideFrom?: string;
   isOpen: boolean;
+  setIsOpen?: (arg: boolean) => void;
 }
 
+const Span: FC<any> = ({ colorClose, colorOpen, isOpen }) => (
+  <span className={`${isOpen ? `bg-${colorClose}` : `bg-${colorOpen}`}`}></span>
+);
+
 const MenuClose: FC<MenuCloseProps> = ({
-  colorOpen = "",
-  colorClose = "",
-  hideFrom = "xl",
+  colorClose = "dark",
+  colorOpen = "dark",
   isOpen = false,
+  setIsOpen,
 }) => {
-  //   const context = useContext(GlobalContext);
-
-  //   const { isOpen, toggleMenu } = context;
-
   return (
-    <StyledMenuIcon
-      className={`d-${hideFrom}-none ${
-        isOpen ? "is-open" : ""
-      } ${prefix}-menu-close`}
-      colorOpen={colorOpen}
-      colorClose={colorClose}
-      isOpen={isOpen}
-      onClick={
-        () => console.log("hola")
-        // toggleMenu !== undefined && isOpen !== undefined && toggleMenu(isOpen)
-      }
+    <StyledMenuClose
+      className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
+      onClick={() => {
+        setIsOpen && setIsOpen(isOpen);
+        console.log("hola");
+      }}
     >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-    </StyledMenuIcon>
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+    </StyledMenuClose>
   );
 };
 

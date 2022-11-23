@@ -8,6 +8,7 @@ import Languages from "./Languages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import Nav from "./Nav";
 import Separator from "./Separator";
+import MenuClose, { MenuCloseProps } from "../../components/MenuClose";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -28,31 +29,28 @@ const StyledHeader = styled.div`
   }
 `;
 
-// Types
-// TODO: move to common types
-enum LinkIconSizes {
-  xs = "extra-small",
-  sm = "small",
-  md = "medium",
-  lg = "large",
-}
-
 // Interfaces
 export interface HeaderProps {
   brand: BrandProps;
-  hideFrom: string;
-  languages?: string[];
-  navigation: Link[];
   call?: LinkIconProps;
+  hideLanguagesFrom: string;
+  languages?: string[];
+  menuClose?: MenuCloseProps;
+  navigation: Link[];
+  showCall?: boolean;
+  showLanguages?: boolean;
   socials?: LinkIconProps[];
 }
 
 const Header: FC<HeaderProps> = ({
   brand,
-  hideFrom = "xl",
-  languages = ["es"],
-  navigation,
   call,
+  hideLanguagesFrom = "xl",
+  languages = ["es"],
+  menuClose,
+  navigation,
+  showCall = false,
+  showLanguages = false,
   socials,
 }) => {
   return (
@@ -67,17 +65,26 @@ const Header: FC<HeaderProps> = ({
               </div>
               <div className="d-flex justify-content-end align-items-center">
                 {/* TODO: set control to show languages */}
-                {languages && (
-                  <div className={`d-none d-${hideFrom}-inline`}>
+                {showLanguages && languages && (
+                  <div className={`d-none d-${hideLanguagesFrom}-inline`}>
                     <Languages languages={languages} />
                   </div>
                 )}
-                {call && <LinkIcon {...call} />}
+                {showCall && call && <LinkIcon {...call} />}
                 <Separator />
-                {socials &&
-                  socials.map((social: LinkIconProps, index: number) => (
-                    <LinkIcon {...social} key={index} />
-                  ))}
+                {socials?.map((social: LinkIconProps, index: number) => (
+                  <LinkIcon {...social} key={index} />
+                ))}
+                <div className="d-xl-none d-flex">
+                  {menuClose?.isOpen && menuClose?.setIsOpen && (
+                    <MenuClose
+                      isOpen={menuClose.isOpen}
+                      setIsOpen={menuClose.setIsOpen}
+                      colorOpen={menuClose.colorOpen}
+                      colorClose={menuClose.colorClose}
+                    />
+                  )}
+                </div>
               </div>
             </div>
           </div>

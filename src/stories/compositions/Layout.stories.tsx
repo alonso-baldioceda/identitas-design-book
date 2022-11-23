@@ -59,6 +59,12 @@ export default {
           url: "https://www.instagram.com/vistalagoarenal/",
         },
       ],
+      menuClose: {
+        colorClose: "black",
+        colorOpen: "red",
+        isOpen: true,
+        hideFrom: "xl",
+      },
     },
     footer: {
       bgcolor: "dark",
@@ -175,6 +181,12 @@ Default.args = {
         url: "https://www.instagram.com/vistalagoarenal/",
       },
     ],
+    menuClose: {
+      colorClose: "blue",
+      colorOpen: "red",
+      isOpen: true,
+      hideFrom: "xl",
+    },
   },
   footer: {
     contact: {
