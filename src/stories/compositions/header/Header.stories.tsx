@@ -41,12 +41,6 @@ export default {
     },
     hideLanguagesFrom: "xl",
     languages: ["es", "en"],
-    menuClose: {
-      colorClose: "black",
-      colorOpen: "black",
-      isOpen: false,
-      setIsOpen: () => {},
-    },
     navigation: NAV,
     call: {
       icon: <PhoneIcon />,
@@ -54,6 +48,14 @@ export default {
       size: LinkIconSizes.xs,
       text: "call us",
       url: "tel:+50683274040",
+    },
+    mobile: {
+      bgColor: "dark",
+      hideFrom: "xl",
+      isOpen: true,
+      languages: ["es", "en"],
+      navigation: NAV,
+      translate: "Idiomas",
     },
     showCall: true,
     showLanguages: true,
@@ -91,23 +93,13 @@ const Template: ComponentStory<typeof Header> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   brand: {
-    // duration: 250,
     fontWeight: 700,
     logoMarginRight: 3,
-    // offset: -70,
-    // smooth: true,
-    // spy: true,
     svg: <LogoIcon />,
     text: "Company name",
     to: "main",
   },
   languages: ["es", "en"],
-  menuClose: {
-    colorClose: "black",
-    colorOpen: "black",
-    isOpen: true,
-    setIsOpen: () => {},
-  },
   navigation: NAV,
   call: {
     icon: <PhoneIcon />,
@@ -115,6 +107,14 @@ Default.args = {
     size: LinkIconSizes.xs,
     text: "call us",
     url: "tel:+50683274040",
+  },
+  mobile: {
+    bgColor: "dark",
+    hideFrom: "xl",
+    isOpen: true,
+    languages: ["es", "en"],
+    navigation: NAV,
+    translate: "Idiomas",
   },
   showCall: true,
   showLanguages: true,

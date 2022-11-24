@@ -12,7 +12,7 @@ import SVG from "./../../components/SVG";
 // import LayoutContext from "./../compositions/LayoutContext";
 
 // Assets
-import LogoIcon from "./../../../images/svg/logo-black.svg";
+// import LogoIcon from "./../../../images/svg/logo-black.svg";
 
 // Styles
 const StyledBrand = styled((props) => <Link {...props} />)`

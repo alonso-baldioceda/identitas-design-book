@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
@@ -8,7 +8,11 @@ import Languages from "./Languages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import Nav from "./Nav";
 import Separator from "./Separator";
-import MenuClose, { MenuCloseProps } from "../../components/MenuClose";
+import MenuClose from "../../components/MenuClose";
+import Mobile, { MobileProps } from "./../Mobile";
+
+// Contexts
+import LayoutContext from "./../LayoutContext";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -34,10 +38,10 @@ export interface HeaderProps {
   brand: BrandProps;
   call?: LinkIconProps;
   hideLanguagesFrom: string;
-  languages?: string[];
-  menuClose?: MenuCloseProps;
+  languages: string[];
   navigation: Link[];
   showCall?: boolean;
+  mobile: MobileProps;
   showLanguages?: boolean;
   socials?: LinkIconProps[];
 }
@@ -47,50 +51,57 @@ const Header: FC<HeaderProps> = ({
   call,
   hideLanguagesFrom = "xl",
   languages = ["es"],
-  menuClose,
   navigation,
   showCall = false,
   showLanguages = false,
   socials,
+  mobile,
 }) => {
+  const { active, isOpen, setActive, setIsOpen } = useContext(LayoutContext);
+
+  const handleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <StyledHeader className={`${prefix}-header`}>
-      <div className="container-fluid">
-        <div className="row align-items-center">
-          <div className="col-12">
-            <div className="d-flex align-items-center justify-content-between nav-wrapper">
-              <div className="d-flex align-items-center">
-                <Brand {...brand} />
-                <Nav navigation={navigation} />
-              </div>
-              <div className="d-flex justify-content-end align-items-center">
-                {/* TODO: set control to show languages */}
-                {showLanguages && languages && (
-                  <div className={`d-none d-${hideLanguagesFrom}-inline`}>
-                    <Languages languages={languages} />
-                  </div>
-                )}
-                {showCall && call && <LinkIcon {...call} />}
-                <Separator />
-                {socials?.map((social: LinkIconProps, index: number) => (
-                  <LinkIcon {...social} key={index} />
-                ))}
-                <div className="d-xl-none d-flex">
-                  {menuClose?.isOpen && menuClose?.setIsOpen && (
-                    <MenuClose
-                      isOpen={menuClose.isOpen}
-                      setIsOpen={menuClose.setIsOpen}
-                      colorOpen={menuClose.colorOpen}
-                      colorClose={menuClose.colorClose}
-                    />
+    <>
+      <StyledHeader className={`${prefix}-header`}>
+        <div className="container-fluid">
+          <div className="row align-items-center">
+            <div className="col-12">
+              <div className="d-flex align-items-center justify-content-between nav-wrapper">
+                <div className="d-flex align-items-center">
+                  <Brand {...brand} />
+                  <Nav navigation={navigation} />
+                </div>
+                <div className="d-flex justify-content-end align-items-center">
+                  {showLanguages && languages && (
+                    <div className={`d-none d-${hideLanguagesFrom}-inline`}>
+                      <Languages languages={languages} />
+                    </div>
                   )}
+                  {showCall && call && <LinkIcon {...call} />}
+                  {(showLanguages || showCall) && <Separator />}
+                  {socials?.map((social: LinkIconProps, index: number) => (
+                    <LinkIcon {...social} key={index} />
+                  ))}
+                  <div className="d-xl-none d-flex">
+                    <MenuClose isOpen={isOpen} setIsOpen={handleIsOpen} />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </StyledHeader>
+      </StyledHeader>
+      <Mobile
+        isOpen={isOpen}
+        bgColor="dark"
+        languages={["es", "en"]}
+        translate="Idiomas"
+        navigation={navigation}
+      />
+    </>
   );
 };
 

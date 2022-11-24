@@ -68,37 +68,39 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
   }
 `;
 
+// Types
+interface SpanProps {
+  colorClose: string;
+  colorOpen: string;
+  isOpen: boolean;
+}
+
 export interface MenuCloseProps {
   colorClose?: string;
   colorOpen?: string;
   isOpen: boolean;
-  setIsOpen?: (arg: boolean) => void;
+  setIsOpen: (arg: boolean) => void;
 }
 
-const Span: FC<any> = ({ colorClose, colorOpen, isOpen }) => (
+const Span: FC<SpanProps> = ({ colorClose, colorOpen, isOpen }) => (
   <span className={`${isOpen ? `bg-${colorClose}` : `bg-${colorOpen}`}`}></span>
 );
 
 const MenuClose: FC<MenuCloseProps> = ({
   colorClose = "dark",
   colorOpen = "dark",
-  isOpen = false,
+  isOpen,
   setIsOpen,
-}) => {
-  return (
-    <StyledMenuClose
-      className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
-      onClick={() => {
-        setIsOpen && setIsOpen(isOpen);
-        console.log("hola");
-      }}
-    >
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-    </StyledMenuClose>
-  );
-};
+}) => (
+  <StyledMenuClose
+    className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
+    onClick={() => setIsOpen(!isOpen)}
+  >
+    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+  </StyledMenuClose>
+);
 
 export default MenuClose;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Assets
@@ -21,51 +21,47 @@ export default {
   title: "Compositions/Layout",
   component: Layout,
   args: {
-    header: {
-      brand: {
-        // duration: 250,
-        fontWeight: 700,
-        logoMarginRight: 3,
-        // offset: -60,
-        // smooth: true,
-        // spy: true,
-        svg: <LogoIcon />,
-        text: "",
-        to: "",
-      },
-      hideFrom: "xl",
-      languages: ["es", "en"],
-      navigation: NAV,
-      call: {
-        icon: <PhoneIcon />,
-        me: 0,
-        size: LinkIconSizes.xs,
-        text: "call us",
-        url: "tel:+50683274040",
-      },
-      socials: [
-        {
-          icon: <FacebookIcon />,
-          mb: 1,
-          size: LinkIconSizes.xs,
-          text: "Facebook",
-          url: "https://www.facebook.com/vistalagoarenal",
-        },
-        {
-          icon: <InstagramIcon />,
-          mb: 1,
-          size: LinkIconSizes.xs,
-          text: "Instagram",
-          url: "https://www.instagram.com/vistalagoarenal/",
-        },
-      ],
-      menuClose: {
-        colorClose: "black",
-        colorOpen: "red",
-        isOpen: true,
-        hideFrom: "xl",
-      },
+    brand: {
+      fontWeight: 700,
+      logoMarginRight: 3,
+      svg: <LogoIcon />,
+      text: "Company name",
+      to: "main",
     },
+    hideLanguagesFrom: "xl",
+    languages: ["es", "en"],
+    menuClose: {
+      colorClose: "black",
+      colorOpen: "black",
+      isOpen: true,
+      setIsOpen: () => {},
+    },
+    navigation: NAV,
+    call: {
+      icon: <PhoneIcon />,
+      me: 0,
+      size: LinkIconSizes.xs,
+      text: "call us",
+      url: "tel:+50683274040",
+    },
+    showCall: true,
+    showLanguages: true,
+    socials: [
+      {
+        icon: <FacebookIcon />,
+        mb: 0,
+        size: LinkIconSizes.xs,
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
+      },
+      {
+        icon: <InstagramIcon />,
+        mb: 0,
+        size: LinkIconSizes.xs,
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
+      },
+    ],
     footer: {
       bgcolor: "dark",
       contact: {
@@ -93,70 +89,67 @@ export default {
   },
 } as ComponentMeta<typeof Layout>;
 
-const Template: ComponentStory<typeof Layout> = (args) => (
-  <Layout {...args}>
-    <div className="container">
-      <div className="row">
-        <div className="col">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aspernatur optio dignissimos quam atque cum non assumenda vitae
-            explicabo molestiae iste quasi exercitationem esse, repellat quidem
-            consectetur qui similique quaerat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aspernatur optio dignissimos quam atque cum non assumenda vitae
-            explicabo molestiae iste quasi exercitationem esse, repellat quidem
-            consectetur qui similique quaerat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aspernatur optio dignissimos quam atque cum non assumenda vitae
-            explicabo molestiae iste quasi exercitationem esse, repellat quidem
-            consectetur qui similique quaerat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aspernatur optio dignissimos quam atque cum non assumenda vitae
-            explicabo molestiae iste quasi exercitationem esse, repellat quidem
-            consectetur qui similique quaerat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aspernatur optio dignissimos quam atque cum non assumenda vitae
-            explicabo molestiae iste quasi exercitationem esse, repellat quidem
-            consectetur qui similique quaerat.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            aspernatur optio dignissimos quam atque cum non assumenda vitae
-            explicabo molestiae iste quasi exercitationem esse, repellat quidem
-            consectetur qui similique quaerat.
-          </p>
+const Template: ComponentStory<typeof Layout> = (args) => {
+  return (
+    <Layout {...args}>
+      <div className="container">
+        <div className="row">
+          <div className="col">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              aspernatur optio dignissimos quam atque cum non assumenda vitae
+              explicabo molestiae iste quasi exercitationem esse, repellat
+              quidem consectetur qui similique quaerat.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              aspernatur optio dignissimos quam atque cum non assumenda vitae
+              explicabo molestiae iste quasi exercitationem esse, repellat
+              quidem consectetur qui similique quaerat.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              aspernatur optio dignissimos quam atque cum non assumenda vitae
+              explicabo molestiae iste quasi exercitationem esse, repellat
+              quidem consectetur qui similique quaerat.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              aspernatur optio dignissimos quam atque cum non assumenda vitae
+              explicabo molestiae iste quasi exercitationem esse, repellat
+              quidem consectetur qui similique quaerat.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              aspernatur optio dignissimos quam atque cum non assumenda vitae
+              explicabo molestiae iste quasi exercitationem esse, repellat
+              quidem consectetur qui similique quaerat.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
+              aspernatur optio dignissimos quam atque cum non assumenda vitae
+              explicabo molestiae iste quasi exercitationem esse, repellat
+              quidem consectetur qui similique quaerat.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
   header: {
     brand: {
-      // duration: 250,
       fontWeight: 700,
       logoMarginRight: 3,
-      // offset: -60,
-      // smooth: true,
-      // spy: true,
       svg: <LogoIcon />,
-      text: "",
-      to: "",
+      text: "Company name",
+      to: "main",
     },
-    // TODO: fix this
+    hideLanguagesFrom: "xl",
     languages: ["es", "en"],
-    hideFrom: "xl",
     navigation: NAV,
     call: {
       icon: <PhoneIcon />,
@@ -165,28 +158,32 @@ Default.args = {
       text: "call us",
       url: "tel:+50683274040",
     },
+    mobile: {
+      bgColor: "dark",
+      hideFrom: "xl",
+      isOpen: true,
+      languages: ["es", "en"],
+      navigation: NAV,
+      translate: "Idiomas",
+    },
+    showCall: true,
+    showLanguages: true,
     socials: [
       {
         icon: <FacebookIcon />,
-        mb: 1,
+        mb: 0,
         size: LinkIconSizes.xs,
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal",
       },
       {
         icon: <InstagramIcon />,
-        mb: 1,
+        mb: 0,
         size: LinkIconSizes.xs,
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",
       },
     ],
-    menuClose: {
-      colorClose: "blue",
-      colorOpen: "red",
-      isOpen: true,
-      hideFrom: "xl",
-    },
   },
   footer: {
     contact: {

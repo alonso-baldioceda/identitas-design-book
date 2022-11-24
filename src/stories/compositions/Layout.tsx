@@ -1,7 +1,6 @@
 import React, { ReactNode, FC, useState } from "react";
 import { GlobalStyle } from "./../shared/global.js";
 import { ThemeProvider } from "styled-components";
-
 import { lightTheme, darkTheme } from "./../../../.storybook/Theme.js";
 
 // Components
@@ -25,9 +24,9 @@ const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Dark mode button toggler
-  const darkModeHandler = () => {
-    setIsDark(isDark === "light" ? "dark" : "light");
-  };
+  // const darkModeHandler = () => {
+  //   setIsDark(isDark === "light" ? "dark" : "light");
+  // };
 
   return (
     <LayoutContext.Provider
