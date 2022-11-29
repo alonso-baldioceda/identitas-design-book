@@ -4,12 +4,12 @@ import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./Brand";
-import Languages from "./Languages";
+import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
-import Nav from "./Nav";
+import DesktopNav from "./DesktopNav";
 import Separator from "./Separator";
 import MenuClose from "../../components/MenuClose";
-import Mobile, { MobileProps } from "./../Mobile";
+import Mobile, { MobileProps } from "./Mobile";
 
 // Contexts
 import LayoutContext from "./../LayoutContext";
@@ -41,7 +41,7 @@ export interface HeaderProps {
   languages: string[];
   navigation: Link[];
   showCall?: boolean;
-  mobile: MobileProps;
+  mobile?: MobileProps;
   showLanguages?: boolean;
   socials?: LinkIconProps[];
 }
@@ -55,7 +55,6 @@ const Header: FC<HeaderProps> = ({
   showCall = false,
   showLanguages = false,
   socials,
-  mobile,
 }) => {
   const { active, isOpen, setActive, setIsOpen } = useContext(LayoutContext);
 
@@ -72,12 +71,12 @@ const Header: FC<HeaderProps> = ({
               <div className="d-flex align-items-center justify-content-between nav-wrapper">
                 <div className="d-flex align-items-center">
                   <Brand {...brand} />
-                  <Nav navigation={navigation} />
+                  <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
                   {showLanguages && languages && (
                     <div className={`d-none d-${hideLanguagesFrom}-inline`}>
-                      <Languages languages={languages} />
+                      <DesktopLanguages languages={languages} />
                     </div>
                   )}
                   {showCall && call && <LinkIcon {...call} />}

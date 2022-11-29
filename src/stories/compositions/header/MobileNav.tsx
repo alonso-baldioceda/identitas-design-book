@@ -1,23 +1,24 @@
 import React, { useContext, FC } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { color } from "./../shared/styles.js";
+import { color } from "./../../shared/styles.js";
 
 // Components
-import LinkGatsby from "../components/LinkGatsby";
-import LinkScroll from "../components/LinkScroll";
+import LinkGatsby from "./../../components/LinkGatsby";
+import LinkScroll from "./../../components/LinkScroll";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
 // Constants
-import animationChildren from "./../../shared/constants/animations.js";
+import animationChildren from "./../../../shared/constants/animations.js";
 
 // Types
-import Link from "../../shared/interfaces/link";
-import LinkType from "../../shared/enums/linkType";
+import Link from "./../../../shared/interfaces/link";
+import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
+// TODO: apply theme styles
 const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
   margin: 0 !important;
   padding: 0 !important;
@@ -48,7 +49,7 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
     }
 
     &.active {
-      border-bottom: 2px solid var(--terracotta);
+      border-bottom: 2px solid red;
       color: ${color.white} !important;
     }
   }
@@ -56,29 +57,12 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
 
 // Interfaces
 interface MobileNavProps {
-  bgColor?: string;
-  isOpen?: boolean;
+  // isOpen?: boolean;
   linkMb?: number;
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({
-  bgColor,
-  isOpen,
-  linkMb = 2,
-  navigation,
-}) => {
-  //   const { t } = useTranslation();
-
-  //   const context = useContext(GlobalContext);
-
-  //   const { active, setActive, isOpen, toggleMenu } = context;
-
-  //   const languages = {
-  //     es: "Español",
-  //     en: "English",
-  //   };
-
+const MobileNav: FC<MobileNavProps> = ({ linkMb = 2, navigation }) => {
   return (
     <StyledMobileNav>
       {navigation.map((navItem: Link, index: number) => (

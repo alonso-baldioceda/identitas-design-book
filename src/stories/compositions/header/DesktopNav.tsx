@@ -14,7 +14,7 @@ import Link from "./../../../shared/interfaces/link";
 import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
-const StyledNav = styled.ul`
+const StyledDesktopNav = styled.ul`
   display: none;
   justify-content: center;
 
@@ -60,17 +60,17 @@ const StyledNav = styled.ul`
 `;
 
 // Interfaces
-export interface HeaderProps {
+export interface DesktopNavProps {
   navigation: Link[];
 }
 
 //  TODO: possibly add a better hover effect */
-const Nav: FC<HeaderProps> = ({ navigation }) => {
+const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => {
   // const { active, setActive } = useContext(LayoutContext);
 
   // TODO: analize including useMemo
   return (
-    <StyledNav className={`nav ${prefix}-nav`}>
+    <StyledDesktopNav className={`nav ${prefix}-nav`}>
       {navigation.map((navItem: Link, index: number) => (
         <li key={`nav-${index}`}>
           {navItem.type && navItem.type === LinkType.Link ? (
@@ -80,8 +80,8 @@ const Nav: FC<HeaderProps> = ({ navigation }) => {
           )}
         </li>
       ))}
-    </StyledNav>
+    </StyledDesktopNav>
   );
 };
 
-export default Nav;
+export default DesktopNav;

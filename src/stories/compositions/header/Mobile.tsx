@@ -2,20 +2,17 @@ import React, { useContext, FC } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import classnames from "classnames";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 import MobileNav from "./MobileNav";
 import MobileLaguages from "./MobileLanguages";
 
-// Contexts
-// import GlobalContext from "./../contexts/globalContext";
-
 // Constants
-import animationParent from "./../../shared/constants/animations.js";
+import animationParent from "./../../../shared/constants/animations.js";
 
 // Types
-import Link from "../../shared/interfaces/link";
+import Link from "./../../../shared/interfaces/link";
 
 // Styles
 const StyledMobile = styled.div`
@@ -66,6 +63,7 @@ const Mobile: FC<MobileProps> = ({
   translate,
 }) => {
   return (
+    // FIXME: motion effect is not working
     <StyledMobile
       className={classnames(
         `d-${hideFrom}-none bg-${bgColor} px-${px} py-${py} ${prefix}-mobile`,
@@ -79,7 +77,7 @@ const Mobile: FC<MobileProps> = ({
         animate={`${isOpen ? "visible" : ""}`}
         variants={animationParent}
       >
-        <MobileNav navigation={navigation} bgColor={bgColor} isOpen={true} />
+        <MobileNav navigation={navigation} />
         <hr className={`my-${separator}`} />
         <MobileLaguages languages={languages} translate={translate} />
       </motion.div>

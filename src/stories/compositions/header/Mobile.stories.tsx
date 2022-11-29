@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Mobile from "./Mobile";
 
 // Constants
-import NAV from "../../shared/constants/nav";
+import NAV from "./../../../shared/constants/nav.js";
 
 export default {
   title: "Compositions/Mobile",

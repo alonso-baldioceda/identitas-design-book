@@ -3,13 +3,13 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 // import classnames from "classnames";
 import { motion } from "framer-motion";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
 // Constants
-import animationParent from "./../../shared/constants/animations.js";
+import animationParent from "./../../../shared/constants/animations.js";
 
 // Styles
 const Label = styled.p`

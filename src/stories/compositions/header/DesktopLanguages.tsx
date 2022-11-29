@@ -55,11 +55,11 @@ const LinkTranslate = styled.a`
   }
 `;
 
-export interface LanguagesProps {
+export interface DesktopLanguagesProps {
   languages: string[];
 }
 
-const Languages: FC<LanguagesProps> = ({ languages }) => {
+const DesktopLanguages: FC<DesktopLanguagesProps> = ({ languages }) => {
   const { i18n } = useTranslation();
   //   const context = useContext(GlobalContext);
   //   const { language, setLanguage, open } = context;
@@ -98,4 +98,4 @@ const Languages: FC<LanguagesProps> = ({ languages }) => {
   );
 };
 
-export default Languages;
+export default DesktopLanguages;
