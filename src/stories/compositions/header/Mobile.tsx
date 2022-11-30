@@ -1,44 +1,39 @@
 import React, { useContext, FC } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import classnames from "classnames";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import MobileNav from "./MobileNav";
 import MobileLaguages from "./MobileLanguages";
 
-// Constants
-import animationParent from "./../../../shared/constants/animations.js";
-
 // Types
 import Link from "./../../../shared/interfaces/link";
 
 // Styles
-const StyledMobile = styled.div`
+const StyledMobile = styled((props) => <div {...props} />)`
   backdrop-filter: blur(4px);
-  background: rgba(2, 18, 23, 1) !important;
   bottom: 0;
   display: none;
   left: 0;
   position: fixed;
   right: 0;
-  top: 82px;
   /* TODO: move transition to variables  */
-  transition: opacity 0.125s ease !important;
+  transition: opacity 1.125s ease-in-out !important;
   z-index: 99999;
 
   &.open {
     display: block !important;
   }
 
-  /* TODO: analyze what to do */
+  /* TODO: add divisor color */
   hr {
     background-color: white;
   }
 `;
 
 // Types
+// TODO: Add prop startingAt
 export interface MobileProps {
   bgColor: string;
   hideFrom?: string;
@@ -48,41 +43,35 @@ export interface MobileProps {
   px?: number;
   py?: number;
   separator?: number;
+  startingAt?: number;
   translate?: string;
 }
 
 const Mobile: FC<MobileProps> = ({
-  bgColor = color.black,
-  hideFrom = "xl",
+  bgColor,
+  hideFrom,
   isOpen,
   languages,
   navigation,
-  px = 4,
-  py = 4,
-  separator = 4,
+  px,
+  py,
+  separator,
+  startingAt,
   translate,
-}) => {
-  return (
-    // FIXME: motion effect is not working
-    <StyledMobile
-      className={classnames(
-        `d-${hideFrom}-none bg-${bgColor} px-${px} py-${py} ${prefix}-mobile`,
-        {
-          open: isOpen,
-        }
-      )}
-    >
-      <motion.div
-        initial="hidden"
-        animate={`${isOpen ? "visible" : ""}`}
-        variants={animationParent}
-      >
-        <MobileNav navigation={navigation} />
-        <hr className={`my-${separator}`} />
-        <MobileLaguages languages={languages} translate={translate} />
-      </motion.div>
-    </StyledMobile>
-  );
-};
+}) => (
+  <StyledMobile
+    className={classnames(
+      `d-${hideFrom}-none bg-${bgColor} px-${px ? px : 4} py-${
+        py ? py : 4
+      } ${prefix}-mobile`,
+      { open: isOpen }
+    )}
+    style={{ top: startingAt ? startingAt : 0 }}
+  >
+    <MobileNav navigation={navigation} />
+    <hr className={`my-${separator}`} />
+    <MobileLaguages languages={languages} translate={translate} />
+  </StyledMobile>
+);
 
 export default Mobile;

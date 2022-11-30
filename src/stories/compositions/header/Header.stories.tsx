@@ -17,8 +17,6 @@ import LogoIcon from "./../../../images/svg/logo-black.svg";
 
 // Styles
 const HeaderWrapper = styled.div`
-  height: 82px;
-
   > div {
     position: relative;
   }
@@ -27,55 +25,65 @@ const HeaderWrapper = styled.div`
 export default {
   title: "Compositions/Header",
   component: Header,
-  args: {
-    brand: {
-      // duration: 250,
-      fontWeight: 700,
-      logoMarginRight: 3,
-      // offset: -70,
-      // smooth: true,
-      // spy: true,
-      svg: <LogoIcon />,
-      text: "Company name",
-      to: "#",
-    },
-    hideLanguagesFrom: "xl",
-    languages: ["es", "en"],
-    navigation: NAV,
-    call: {
-      icon: <PhoneIcon />,
-      me: 0,
-      size: LinkIconSizes.xs,
-      text: "call us",
-      url: "tel:+50683274040",
-    },
-    mobile: {
-      bgColor: "dark",
-      hideFrom: "xl",
-      isOpen: true,
-      languages: ["es", "en"],
-      navigation: NAV,
-      translate: "Idiomas",
-    },
-    showCall: true,
-    showLanguages: true,
-    socials: [
-      {
-        icon: <FacebookIcon />,
-        mb: 0,
-        size: LinkIconSizes.xs,
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal",
-      },
-      {
-        icon: <InstagramIcon />,
-        mb: 0,
-        size: LinkIconSizes.xs,
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-      },
-    ],
-  },
+  // args: {
+  //   brand: {
+  //     // duration: 250,
+  //     fontWeight: 700,
+  //     logoMarginRight: 3,
+  //     // offset: -70,
+  //     // smooth: true,
+  //     // spy: true,
+  //     svg: <LogoIcon />,
+  //     text: "Company name",
+  //     to: "#",
+  //   },
+  //   hideLanguagesFrom: "xl",
+  //   languages: ["es", "en"],
+  //   navigation: NAV,
+  //   call: {
+  //     icon: <PhoneIcon />,
+  //     me: 0,
+  //     size: LinkIconSizes.xs,
+  //     text: "call us",
+  //     url: "tel:+50683274040",
+  //   },
+  //   mobile: {
+  //     bgColor: "dark",
+  //     hideFrom: "xl",
+  //     isOpen: true,
+  //     languages: ["es", "en"],
+  //     navigation: NAV,
+  //     startingAt: 82,
+  //     translate: "Idiomas",
+  //   },
+  //   showCall: true,
+  //   showLanguages: true,
+  //   socials: [
+  //     {
+  //       icon: <FacebookIcon />,
+  //       mb: 0,
+  //       me: 1,
+  //       meSm: 3,
+  //       meMd: 3,
+  //       meLg: 0,
+  //       meXl: 0,
+  //       size: LinkIconSizes.xs,
+  //       text: "Facebook",
+  //       url: "https://www.facebook.com/vistalagoarenal",
+  //     },
+  //     {
+  //       icon: <InstagramIcon />,
+  //       mb: 0,
+  //       meSm: 3,
+  //       meMd: 3,
+  //       meLg: 0,
+  //       meXl: 0,
+  //       size: LinkIconSizes.xs,
+  //       text: "Instagram",
+  //       url: "https://www.instagram.com/vistalagoarenal/",
+  //     },
+  //   ],
+  // },
   argTypes: {
     hideLanguagesFrom: {
       control: "select",
@@ -122,6 +130,10 @@ Default.args = {
     {
       icon: <FacebookIcon />,
       mb: 0,
+      meSm: 3,
+      meMd: 3,
+      meLg: 3,
+      meXl: 3,
       size: LinkIconSizes.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
@@ -129,6 +141,10 @@ Default.args = {
     {
       icon: <InstagramIcon />,
       mb: 0,
+      meSm: 3,
+      meMd: 3,
+      meLg: 0,
+      meXl: 0,
       size: LinkIconSizes.xs,
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",

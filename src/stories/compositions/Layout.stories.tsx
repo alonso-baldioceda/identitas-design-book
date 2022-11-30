@@ -20,77 +20,10 @@ import NAV from "./../../shared/constants/nav";
 export default {
   title: "Compositions/Layout",
   component: Layout,
-  args: {
-    brand: {
-      fontWeight: 700,
-      logoMarginRight: 3,
-      svg: <LogoIcon />,
-      text: "Company name",
-      to: "main",
-    },
-    hideLanguagesFrom: "xl",
-    languages: ["es", "en"],
-    menuClose: {
-      colorClose: "black",
-      colorOpen: "black",
-      isOpen: true,
-      setIsOpen: () => {},
-    },
-    navigation: NAV,
-    call: {
-      icon: <PhoneIcon />,
-      me: 0,
-      size: LinkIconSizes.xs,
-      text: "call us",
-      url: "tel:+50683274040",
-    },
-    showCall: true,
-    showLanguages: true,
-    socials: [
-      {
-        icon: <FacebookIcon />,
-        mb: 0,
-        size: LinkIconSizes.xs,
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal",
-      },
-      {
-        icon: <InstagramIcon />,
-        mb: 0,
-        size: LinkIconSizes.xs,
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-      },
-    ],
-    footer: {
-      bgcolor: "dark",
-      contact: {
-        header: "Contáctenos",
-        list: [
-          {
-            icon: <HomeIcon />,
-            text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-          },
-          {
-            icon: <EnvelopeIcon />,
-            text: "vistalagoarenal@gmail.com",
-          },
-          {
-            icon: <PhoneIcon />,
-            text: "+(506) 8327 4040",
-          },
-        ],
-      },
-      navigation: {
-        header: "Enlaces",
-        list: NAV,
-      },
-    },
-  },
 } as ComponentMeta<typeof Layout>;
 
-const Template: ComponentStory<typeof Layout> = (args) => {
-  return (
+const Template: ComponentStory<typeof Layout> = (args) => (
+  <div className="position-relative">
     <Layout {...args}>
       <div className="container">
         <div className="row">
@@ -135,8 +68,8 @@ const Template: ComponentStory<typeof Layout> = (args) => {
         </div>
       </div>
     </Layout>
-  );
-};
+  </div>
+);
 
 export const Default = Template.bind({});
 Default.args = {
@@ -164,6 +97,7 @@ Default.args = {
       isOpen: true,
       languages: ["es", "en"],
       navigation: NAV,
+      startingAt: 82,
       translate: "Idiomas",
     },
     showCall: true,
@@ -172,6 +106,11 @@ Default.args = {
       {
         icon: <FacebookIcon />,
         mb: 0,
+        me: 3,
+        meSm: 3,
+        meMd: 3,
+        meLg: 3,
+        meXl: 3,
         size: LinkIconSizes.xs,
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal",
@@ -179,6 +118,11 @@ Default.args = {
       {
         icon: <InstagramIcon />,
         mb: 0,
+        me: 3,
+        meSm: 3,
+        meMd: 3,
+        meLg: 3,
+        meXl: 0,
         size: LinkIconSizes.xs,
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",

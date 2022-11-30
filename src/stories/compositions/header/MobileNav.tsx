@@ -10,9 +10,6 @@ import LinkScroll from "./../../components/LinkScroll";
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
-// Constants
-import animationChildren from "./../../../shared/constants/animations.js";
-
 // Types
 import Link from "./../../../shared/interfaces/link";
 import LinkType from "./../../../shared/enums/linkType";
@@ -20,8 +17,8 @@ import LinkType from "./../../../shared/enums/linkType";
 // Styles
 // TODO: apply theme styles
 const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0;
+  padding: 0;
 
   a {
     background: transparent;
@@ -62,24 +59,18 @@ interface MobileNavProps {
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({ linkMb = 2, navigation }) => {
-  return (
-    <StyledMobileNav>
-      {navigation.map((navItem: Link, index: number) => (
-        <motion.div
-          variants={animationChildren}
-          key={index}
-          className={`mb-${linkMb}`}
-        >
-          {navItem.type && navItem.type === LinkType.Link ? (
-            <LinkGatsby text={navItem.text} to={navItem.anchor} />
-          ) : (
-            <LinkScroll text={navItem.text} to={navItem.anchor} />
-          )}
-        </motion.div>
-      ))}
-    </StyledMobileNav>
-  );
-};
+const MobileNav: FC<MobileNavProps> = ({ linkMb = 2, navigation }) => (
+  <StyledMobileNav>
+    {navigation.map((navItem: Link, index: number) => (
+      <li key={index} className={`mb-${linkMb}`}>
+        {navItem.type && navItem.type === LinkType.Link ? (
+          <LinkGatsby text={navItem.text} to={navItem.anchor} />
+        ) : (
+          <LinkScroll text={navItem.text} to={navItem.anchor} />
+        )}
+      </li>
+    ))}
+  </StyledMobileNav>
+);
 
 export default MobileNav;

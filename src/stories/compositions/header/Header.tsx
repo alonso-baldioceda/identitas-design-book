@@ -46,6 +46,7 @@ export interface HeaderProps {
   socials?: LinkIconProps[];
 }
 
+// TODO: add height
 const Header: FC<HeaderProps> = ({
   brand,
   call,
@@ -99,6 +100,7 @@ const Header: FC<HeaderProps> = ({
         languages={["es", "en"]}
         translate="Idiomas"
         navigation={navigation}
+        startingAt={82}
       />
     </>
   );

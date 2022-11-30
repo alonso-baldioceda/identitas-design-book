@@ -2,14 +2,10 @@ import React, { useState, useContext, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 // import classnames from "classnames";
-import { motion } from "framer-motion";
 import { prefix, color } from "./../../shared/styles.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
-
-// Constants
-import animationParent from "./../../../shared/constants/animations.js";
 
 // Styles
 const Label = styled.p`
@@ -84,7 +80,7 @@ const MobileLanguages: FC<MobileLanguagesProps> = ({
   };
 
   return (
-    <motion.div variants={animationParent}>
+    <div>
       <Label className={`my-${translateMy}`}>{translate}:</Label>
       <div className={`${prefix}-languages`}>
         {languages.map((language: string, index: number) => (
@@ -106,7 +102,7 @@ const MobileLanguages: FC<MobileLanguagesProps> = ({
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 };
 
