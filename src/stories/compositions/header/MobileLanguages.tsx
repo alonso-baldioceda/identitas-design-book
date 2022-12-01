@@ -18,8 +18,6 @@ const Label = styled.p`
 `;
 
 const LinkTranslate = styled.a`
-  background: transparent;
-  border-bottom: 2px solid transparent;
   color: ${color.white};
   display: inline-block;
   font-size: 22px;
@@ -30,7 +28,6 @@ const LinkTranslate = styled.a`
   text-transform: capitalize;
 
   &:hover {
-    border-bottom: 2px solid blue;
     color: red;
     text-decoration: none;
   }
@@ -44,7 +41,6 @@ const LinkTranslate = styled.a`
   }
 
   &.active {
-    border-bottom: 2px solid var(--terracotta);
     color: ${color.white} !important;
   }
 `;

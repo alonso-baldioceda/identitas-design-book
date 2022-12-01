@@ -39,6 +39,7 @@ export interface MobileProps {
   hideFrom?: string;
   isOpen: boolean;
   languages: string[];
+  linkMb?: number;
   navigation: Link[];
   px?: number;
   py?: number;
@@ -52,6 +53,7 @@ const Mobile: FC<MobileProps> = ({
   hideFrom,
   isOpen,
   languages,
+  linkMb,
   navigation,
   px,
   py,
@@ -68,7 +70,7 @@ const Mobile: FC<MobileProps> = ({
     )}
     style={{ top: startingAt ? startingAt : 0 }}
   >
-    <MobileNav navigation={navigation} />
+    <MobileNav navigation={navigation} linkMb={linkMb} />
     <hr className={`my-${separator}`} />
     <MobileLaguages languages={languages} translate={translate} />
   </StyledMobile>

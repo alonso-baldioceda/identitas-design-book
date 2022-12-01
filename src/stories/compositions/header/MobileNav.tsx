@@ -21,8 +21,6 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
   padding: 0;
 
   a {
-    background: transparent;
-    border-bottom: 2px solid transparent;
     color: ${color.white};
     display: inline-block;
     font-size: 22px;
@@ -32,9 +30,8 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
     transition: all 0.5s ease;
 
     &:hover {
-      border-bottom: 2px solid blue;
       color: red;
-      text-decoration: none;
+      text-decoration: none !important;
     }
 
     &:visited {
@@ -46,7 +43,6 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
     }
 
     &.active {
-      border-bottom: 2px solid red;
       color: ${color.white} !important;
     }
   }
@@ -54,15 +50,19 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
 
 // Interfaces
 interface MobileNavProps {
-  // isOpen?: boolean;
+  // isMenuOpen?: boolean;
   linkMb?: number;
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({ linkMb = 2, navigation }) => (
+const MobileNav: FC<MobileNavProps> = ({
+  // isMenuOpen,
+  linkMb,
+  navigation,
+}) => (
   <StyledMobileNav>
     {navigation.map((navItem: Link, index: number) => (
-      <li key={index} className={`mb-${linkMb}`}>
+      <li key={index} className={`mb-${linkMb ? linkMb : 0}`}>
         {navItem.type && navItem.type === LinkType.Link ? (
           <LinkGatsby text={navItem.text} to={navItem.anchor} />
         ) : (

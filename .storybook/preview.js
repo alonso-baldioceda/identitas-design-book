@@ -3,6 +3,7 @@ import { action } from "@storybook/addon-actions";
 import { GlobalStyle } from "./../src/stories/shared/global";
 import { themes } from "@storybook/theming";
 import "./styles.css";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -35,6 +36,9 @@ export const parameters = {
     dark: { ...themes.dark, appBg: "black" },
     // Override the default light theme
     light: { ...themes.light },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },

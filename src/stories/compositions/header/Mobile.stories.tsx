@@ -91,6 +91,7 @@ export const Default = Template.bind({});
 Default.args = {
   bgColor: "dark",
   hideFrom: "xl",
+  linkMb: 3,
   isOpen: true,
   languages: ["es", "en"],
   navigation: NAV,

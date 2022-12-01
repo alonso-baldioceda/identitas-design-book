@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Styles
@@ -94,7 +94,10 @@ const MenuClose: FC<MenuCloseProps> = ({
 }) => (
   <StyledMenuClose
     className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
-    onClick={() => setIsOpen(!isOpen)}
+    onClick={() => {
+      document.body.style.overflow = isOpen === true ? "scroll" : "hidden";
+      setIsOpen(!isOpen);
+    }}
   >
     <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
     <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />

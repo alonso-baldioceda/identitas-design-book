@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-import classnames from "classnames";
 import { prefix } from "./../shared/styles.js";
 
 // Components
@@ -57,7 +56,7 @@ const LinkIcon: FC<LinkIconProps> = ({
   return (
     <StyledLinkIcon
       href={url}
-      className={`${prefix}-button text-capitalize me-${me} me-sm-${meSm} me-mb-${meMd} me-lg-${meLg} me-xl-${meXl} 
+      className={`${prefix}-button text-capitalize mb-${mb} me-${me} me-sm-${meSm} me-mb-${meMd} me-lg-${meLg} me-xl-${meXl} 
       ${disabled ? disabled : ""}`}
     >
       {text}

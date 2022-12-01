@@ -8,7 +8,7 @@ import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
 import Separator from "./Separator";
-import MenuClose from "../../components/MenuClose";
+import MenuClose from "./MenuClose";
 import Mobile, { MobileProps } from "./Mobile";
 
 // Contexts
@@ -44,6 +44,7 @@ export interface HeaderProps {
   mobile?: MobileProps;
   showLanguages?: boolean;
   socials?: LinkIconProps[];
+  showSocials?: boolean;
 }
 
 // TODO: add height
@@ -52,9 +53,11 @@ const Header: FC<HeaderProps> = ({
   call,
   hideLanguagesFrom = "xl",
   languages = ["es"],
+  mobile,
   navigation,
   showCall = false,
   showLanguages = false,
+  showSocials,
   socials,
 }) => {
   const { active, isOpen, setActive, setIsOpen } = useContext(LayoutContext);
@@ -82,9 +85,10 @@ const Header: FC<HeaderProps> = ({
                   )}
                   {showCall && call && <LinkIcon {...call} />}
                   {(showLanguages || showCall) && <Separator />}
-                  {socials?.map((social: LinkIconProps, index: number) => (
-                    <LinkIcon {...social} key={index} />
-                  ))}
+                  {showSocials &&
+                    socials?.map((social: LinkIconProps, index: number) => (
+                      <LinkIcon {...social} key={index} />
+                    ))}
                   <div className="d-xl-none d-flex">
                     <MenuClose isOpen={isOpen} setIsOpen={handleIsOpen} />
                   </div>
@@ -96,11 +100,13 @@ const Header: FC<HeaderProps> = ({
       </StyledHeader>
       <Mobile
         isOpen={isOpen}
-        bgColor="dark"
-        languages={["es", "en"]}
-        translate="Idiomas"
+        bgColor={mobile ? mobile.bgColor : ""}
+        languages={mobile ? mobile.languages : ["es", "en"]}
+        translate={mobile ? mobile.translate : ""}
         navigation={navigation}
-        startingAt={82}
+        startingAt={mobile ? mobile.startingAt : 0}
+        hideFrom={mobile ? mobile.hideFrom : "xl"}
+        linkMb={mobile ? mobile.linkMb : 0}
       />
     </>
   );

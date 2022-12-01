@@ -42,6 +42,7 @@ const StyledBrand = styled((props) => <Link {...props} />)`
   }
 `;
 
+// TODO: add feature hide name in XS devices
 // Types
 export interface BrandProps {
   // duration: number;

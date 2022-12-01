@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { color } from "./../shared/styles.js";
+import { color } from "./../../shared/styles.js";
 
 // Components
 import MenuClose from "./MenuClose";

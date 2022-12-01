@@ -6,6 +6,7 @@ export interface LinkProps {
   // activeClass?: string;
   duration?: number;
   offset?: number;
+  onClick?: () => void;
   smooth?: boolean;
   spy?: boolean;
   text: string;
@@ -15,6 +16,7 @@ export interface LinkProps {
 const LinkScroll: FC<LinkProps> = ({
   // activeClass = "active",
   duration = 500,
+  onClick,
   offset = -80,
   smooth = true,
   spy = true,
@@ -29,6 +31,7 @@ const LinkScroll: FC<LinkProps> = ({
     spy={spy}
     to={to}
     className={`${prefix}-link-scroll`}
+    onClick={onClick ? onClick : () => {}}
   >
     {text}
   </Link>
