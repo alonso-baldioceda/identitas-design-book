@@ -1,6 +1,9 @@
 enum Size {
-  xs = "extra-small",
-  sm = "small",
-  md = "medium",
-  lg = "large",
+  xs = "xs",
+  sm = "sm",
+  md = "md",
+  lg = "lg",
+  xl = "xl",
 }
+
+export default Size;

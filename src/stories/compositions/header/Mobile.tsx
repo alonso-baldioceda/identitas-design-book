@@ -18,12 +18,14 @@ const StyledMobile = styled((props) => <div {...props} />)`
   left: 0;
   position: fixed;
   right: 0;
+  opacity: 0;
   /* TODO: move transition to variables  */
   transition: opacity 1.125s ease-in-out !important;
   z-index: 99999;
 
   &.open {
     display: block !important;
+    opacity: 1;
   }
 
   /* TODO: add divisor color */
@@ -35,12 +37,12 @@ const StyledMobile = styled((props) => <div {...props} />)`
 // Types
 // TODO: Add prop startingAt
 export interface MobileProps {
-  bgColor: string;
+  bgColor?: string;
   hideFrom?: string;
   isOpen: boolean;
-  languages: string[];
+  languages?: string[];
   linkMb?: number;
-  navigation: Link[];
+  navigation?: Link[];
   px?: number;
   py?: number;
   separator?: number;
@@ -70,9 +72,12 @@ const Mobile: FC<MobileProps> = ({
     )}
     style={{ top: startingAt ? startingAt : 0 }}
   >
-    <MobileNav navigation={navigation} linkMb={linkMb} />
+    <MobileNav navigation={navigation ? navigation : []} linkMb={linkMb} />
     <hr className={`my-${separator}`} />
-    <MobileLaguages languages={languages} translate={translate} />
+    <MobileLaguages
+      languages={languages ? languages : []}
+      translate={translate ? translate : ""}
+    />
   </StyledMobile>
 );
 

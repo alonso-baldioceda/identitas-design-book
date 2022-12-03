@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Assets
@@ -6,13 +6,12 @@ import LogoIcon from "./../../images/svg/logo-black.svg";
 import HomeIcon from "./../../images/svg/home.svg";
 import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import PhoneIcon from "./../../images/svg/phone.svg";
-import FacebookIcon from "./../../images/svg/facebook.svg";
-import InstagramIcon from "./../../images/svg/instagram.svg";
 
 // Components
 import Layout from "./Layout";
-// TODO: move this to shared/types
-import { LinkIconSizes } from "./../components/LinkIcon";
+
+// Stories
+import * as Header from "./header/Header.stories";
 
 // Constants
 import NAV from "./../../shared/constants/nav";
@@ -74,62 +73,17 @@ const Template: ComponentStory<typeof Layout> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   header: {
+    ...Header.Default.args,
     brand: {
       fontWeight: 700,
+      hideNameOnMobile: true,
       logoMarginRight: 3,
       svg: <LogoIcon />,
       text: "Company name",
       to: "main",
     },
-    hideLanguagesFrom: "xl",
-    showLanguages: true,
     languages: ["es", "en"],
     navigation: NAV,
-    showCall: true,
-    call: {
-      icon: <PhoneIcon />,
-      me: 0,
-      size: LinkIconSizes.xs,
-      text: "call us",
-      url: "tel:+50683274040",
-    },
-    mobile: {
-      bgColor: "dark",
-      hideFrom: "xl",
-      isOpen: true,
-      languages: ["es", "en"],
-      linkMb: 1,
-      navigation: NAV,
-      startingAt: 82,
-      translate: "Idiomas",
-    },
-    showSocials: true,
-    socials: [
-      {
-        icon: <FacebookIcon />,
-        mb: 0,
-        me: 2,
-        meSm: 3,
-        meMd: 3,
-        meLg: 3,
-        meXl: 3,
-        size: LinkIconSizes.xs,
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal",
-      },
-      {
-        icon: <InstagramIcon />,
-        mb: 0,
-        me: 2,
-        meSm: 3,
-        meMd: 3,
-        meLg: 3,
-        meXl: 0,
-        size: LinkIconSizes.xs,
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-      },
-    ],
   },
   footer: {
     contact: {

@@ -4,10 +4,12 @@ import styled from "styled-components";
 
 // Components
 import Header from "./Header";
-import { LinkIconSizes } from "./../../components/LinkIcon";
 
 // Constants
 import NAV from "./../../../shared/constants/nav";
+
+// Types
+import Size from "./../../../shared/enums/size";
 
 // Assets
 import PhoneIcon from "./../../../images/svg/call.svg";
@@ -80,29 +82,33 @@ export const Default = Template.bind({});
 Default.args = {
   brand: {
     fontWeight: 700,
+    hideNameOnMobile: true,
     logoMarginRight: 3,
     svg: <LogoIcon />,
     text: "Company name",
     to: "main",
   },
-  languages: ["es", "en"],
+  minHeight: 84,
+  hideLanguagesFrom: "xl",
   showLanguages: true,
+  languages: ["es", "en"],
   navigation: NAV,
+  showCall: true,
   call: {
     icon: <PhoneIcon />,
     me: 0,
-    size: LinkIconSizes.xs,
+    size: Size.xs,
     text: "call us",
     url: "tel:+50683274040",
   },
-  showCall: true,
   mobile: {
     bgColor: "dark",
     hideFrom: "xl",
-    linkMb: 0,
     isOpen: true,
     languages: ["es", "en"],
+    linkMb: 1,
     navigation: NAV,
+    startingAt: 82,
     translate: "Idiomas",
   },
   showSocials: true,
@@ -110,22 +116,24 @@ Default.args = {
     {
       icon: <FacebookIcon />,
       mb: 0,
+      me: 2,
       meSm: 3,
       meMd: 3,
       meLg: 3,
       meXl: 3,
-      size: LinkIconSizes.xs,
+      size: Size.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
     },
     {
       icon: <InstagramIcon />,
       mb: 0,
+      me: 2,
       meSm: 3,
       meMd: 3,
       meLg: 3,
       meXl: 0,
-      size: LinkIconSizes.xs,
+      size: Size.xs,
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",
     },

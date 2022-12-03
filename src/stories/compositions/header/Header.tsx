@@ -22,22 +22,24 @@ const StyledHeader = styled.div`
   /* TODO: replace colors for variables */
   background: ${color.white};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
-  height: 82px;
   position: fixed;
   width: 100%;
   z-index: 200;
+  display: flex;
+  align-items: center;
+`;
 
-  .nav-wrapper {
-    margin: 0 auto;
-    max-width: 2200px;
-  }
+const StyledNavWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 2200px;
 `;
 
 // Interfaces
 export interface HeaderProps {
   brand: BrandProps;
   call?: LinkIconProps;
-  hideLanguagesFrom: string;
+  minHeight?: number;
+  hideLanguagesFrom?: string;
   languages: string[];
   navigation: Link[];
   showCall?: boolean;
@@ -47,11 +49,11 @@ export interface HeaderProps {
   showSocials?: boolean;
 }
 
-// TODO: add height
 const Header: FC<HeaderProps> = ({
   brand,
   call,
-  hideLanguagesFrom = "xl",
+  minHeight,
+  hideLanguagesFrom,
   languages = ["es"],
   mobile,
   navigation,
@@ -60,26 +62,35 @@ const Header: FC<HeaderProps> = ({
   showSocials,
   socials,
 }) => {
-  const { active, isOpen, setActive, setIsOpen } = useContext(LayoutContext);
+  const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
   };
 
+  const mobileProps = { ...mobile, isOpen };
+
   return (
     <>
-      <StyledHeader className={`${prefix}-header`}>
+      <StyledHeader
+        className={`${prefix}-header`}
+        style={{ minHeight: minHeight ? minHeight : 84 }}
+      >
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-12">
-              <div className="d-flex align-items-center justify-content-between nav-wrapper">
+              <StyledNavWrapper className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                   <Brand {...brand} />
                   <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
                   {showLanguages && languages && (
-                    <div className={`d-none d-${hideLanguagesFrom}-inline`}>
+                    <div
+                      className={`d-none d-${
+                        hideLanguagesFrom ? hideLanguagesFrom : "xl"
+                      }-inline`}
+                    >
                       <DesktopLanguages languages={languages} />
                     </div>
                   )}
@@ -93,21 +104,12 @@ const Header: FC<HeaderProps> = ({
                     <MenuClose isOpen={isOpen} setIsOpen={handleIsOpen} />
                   </div>
                 </div>
-              </div>
+              </StyledNavWrapper>
             </div>
           </div>
         </div>
       </StyledHeader>
-      <Mobile
-        isOpen={isOpen}
-        bgColor={mobile ? mobile.bgColor : ""}
-        languages={mobile ? mobile.languages : ["es", "en"]}
-        translate={mobile ? mobile.translate : ""}
-        navigation={navigation}
-        startingAt={mobile ? mobile.startingAt : 0}
-        hideFrom={mobile ? mobile.hideFrom : "xl"}
-        linkMb={mobile ? mobile.linkMb : 0}
-      />
+      {mobileProps && <Mobile {...mobileProps} />}
     </>
   );
 };

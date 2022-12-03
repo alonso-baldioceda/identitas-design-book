@@ -5,6 +5,9 @@ import { prefix } from "./../shared/styles.js";
 // Components
 import SVG from "./SVG";
 
+// Types
+import Size from "./../../shared/enums/size";
+
 // Styles
 const StyledLinkIcon = styled((props) => <a {...props} />)`
   align-items: center;
@@ -18,14 +21,6 @@ const StyledLinkIcon = styled((props) => <a {...props} />)`
   position: relative;
 `;
 
-// Types
-export enum LinkIconSizes {
-  xs = "extra-small",
-  sm = "small",
-  md = "medium",
-  lg = "large",
-}
-
 export interface LinkIconProps {
   disabled?: boolean;
   icon: ReactNode;
@@ -35,7 +30,7 @@ export interface LinkIconProps {
   meMd?: number;
   meLg?: number;
   meXl?: number;
-  size?: LinkIconSizes;
+  size?: Size;
   text?: string;
   url: string;
 }

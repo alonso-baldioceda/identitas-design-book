@@ -11,9 +11,6 @@ import SVG from "./../../components/SVG";
 // Contexts
 // import LayoutContext from "./../compositions/LayoutContext";
 
-// Assets
-// import LogoIcon from "./../../../images/svg/logo-black.svg";
-
 // Styles
 const StyledBrand = styled((props) => <Link {...props} />)`
   align-items: center;
@@ -22,18 +19,16 @@ const StyledBrand = styled((props) => <Link {...props} />)`
   padding: 12px 0;
   text-decoration: none;
 
-  /* TODO: probably we will need to use the background image approach if want "hover" state */
-  svg {
-    height: 60px !important;
-    margin: 0;
-    width: 60px !important;
-  }
-
   span {
     color: ${color.black};
     font-size: 1.175rem;
-    font-weight: ${(props) => `${props.fontWeight}`};
     margin-left: 0.375rem;
+
+    ${(props) =>
+      props.fontWeight &&
+      `
+        font-weight: ${props.bgcolor};
+      `}
 
     @media (min-width: 768px) {
       font-size: 1.375rem;
@@ -47,6 +42,7 @@ const StyledBrand = styled((props) => <Link {...props} />)`
 export interface BrandProps {
   // duration: number;
   fontWeight: number;
+  hideNameOnMobile?: boolean;
   logoMarginRight: number;
   // offset: number;
   // smooth: boolean;
@@ -59,6 +55,7 @@ export interface BrandProps {
 const Brand: FC<BrandProps> = ({
   // duration = 500,
   fontWeight = 700,
+  hideNameOnMobile,
   logoMarginRight = 3,
   // offset = -60,
   // smooth = true,
@@ -67,8 +64,6 @@ const Brand: FC<BrandProps> = ({
   text = "",
   to = "",
 }) => {
-  // const { active, setActive } = useContext(LayoutContext);
-
   // const scrollToTop = () => {
   //   scroll.scrollToTop();
   //   setActive && setActive(0);
@@ -89,9 +84,8 @@ const Brand: FC<BrandProps> = ({
       to={to}
       // activeClass="brand-active"
     >
-      {/* TODO: move this to SVG component */}
       <SVG icon={svg} size="medium" />
-      <span>{text}</span>
+      {hideNameOnMobile !== false && <span>{text}</span>}
     </StyledBrand>
   );
 };

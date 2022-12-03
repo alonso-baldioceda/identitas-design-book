@@ -2,7 +2,10 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import LinkIcon, { LinkIconSizes } from "./LinkIcon";
+import LinkIcon from "./LinkIcon";
+
+// Types
+import Size from "./../../shared/enums/size";
 
 // Assets
 import FacebookIcon from "./../../images/svg/facebook.svg";
@@ -80,7 +83,7 @@ Facebook.args = {
   meMd: 3,
   meSm: 3,
   meXl: 3,
-  size: LinkIconSizes.xs,
+  size: Size.sm,
   text: "facebook",
   url: "https://www.google.com/",
 };
@@ -93,10 +96,10 @@ Instagram.args = {
 };
 
 export const SmallSize = Template.bind({});
-SmallSize.args = { ...Facebook.args, size: LinkIconSizes.sm };
+SmallSize.args = { ...Facebook.args, size: Size.sm };
 
 export const MediumSize = Template.bind({});
-MediumSize.args = { ...Facebook.args, size: LinkIconSizes.md };
+MediumSize.args = { ...Facebook.args, size: Size.md };
 
 export const LargeSize = Template.bind({});
-LargeSize.args = { ...Facebook.args, size: LinkIconSizes.lg };
+LargeSize.args = { ...Facebook.args, size: Size.lg };

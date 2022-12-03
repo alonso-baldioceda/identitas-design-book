@@ -7,6 +7,7 @@ interface LinkGatsbyProps {
   // active?: string;
   text: string;
   to: string;
+  onClick?: () => void;
 }
 
 const LinkGatsby: FC<LinkGatsbyProps> = ({ text = "gatsby link", to }) => (

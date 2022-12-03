@@ -1,6 +1,5 @@
-import React, { useContext, FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { color } from "./../../shared/styles.js";
 
 // Components
@@ -8,7 +7,7 @@ import LinkGatsby from "./../../components/LinkGatsby";
 import LinkScroll from "./../../components/LinkScroll";
 
 // Contexts
-// import GlobalContext from "./../contexts/globalContext";
+import LayoutContext from "./../LayoutContext";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -16,12 +15,12 @@ import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
 // TODO: apply theme styles
-const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
+const StyledMobileNav = styled.ul`
   margin: 0;
   padding: 0;
 
   a {
-    color: ${color.white};
+    color: ${color.white} !important;
     display: inline-block;
     font-size: 22px;
     font-weight: 500;
@@ -30,7 +29,7 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
     transition: all 0.5s ease;
 
     &:hover {
-      color: red;
+      color: red !important;
       text-decoration: none !important;
     }
 
@@ -43,34 +42,41 @@ const StyledMobileNav = styled((props) => <motion.ul {...props} />)`
     }
 
     &.active {
-      color: ${color.white} !important;
+      color: yellow !important;
+      /* color: ${color.white} !important; */
     }
   }
 `;
 
 // Interfaces
 interface MobileNavProps {
-  // isMenuOpen?: boolean;
   linkMb?: number;
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({
-  // isMenuOpen,
-  linkMb,
-  navigation,
-}) => (
-  <StyledMobileNav>
-    {navigation.map((navItem: Link, index: number) => (
-      <li key={index} className={`mb-${linkMb ? linkMb : 0}`}>
-        {navItem.type && navItem.type === LinkType.Link ? (
-          <LinkGatsby text={navItem.text} to={navItem.anchor} />
-        ) : (
-          <LinkScroll text={navItem.text} to={navItem.anchor} />
-        )}
-      </li>
-    ))}
-  </StyledMobileNav>
-);
+const MobileNav: FC<MobileNavProps> = ({ linkMb, navigation }) => {
+  const { isOpen, setIsOpen } = useContext(LayoutContext);
 
+  return (
+    <StyledMobileNav>
+      {navigation.map((navItem: Link, index: number) => (
+        <li key={index} className={`mb-${linkMb ? linkMb : 0}`}>
+          {navItem.type && navItem.type === LinkType.Link ? (
+            <LinkGatsby
+              text={navItem.text}
+              to={navItem.anchor}
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          ) : (
+            <LinkScroll
+              text={navItem.text}
+              to={navItem.anchor}
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          )}
+        </li>
+      ))}
+    </StyledMobileNav>
+  );
+};
 export default MobileNav;

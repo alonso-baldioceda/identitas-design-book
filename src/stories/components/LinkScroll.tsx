@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import React, { FC } from "react";
 import { Link } from "react-scroll";
 import { prefix } from "./../shared/styles.js";
 
