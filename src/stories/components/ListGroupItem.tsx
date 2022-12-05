@@ -29,10 +29,10 @@ const IconWrapper = styled((props) => <span {...props} />)`
 
 // Types
 export enum ListGroupItemSizes {
-  xs = "extra-small",
-  sm = "small",
-  md = "medium",
-  lg = "large",
+  xs = "xs",
+  sm = "sm",
+  md = "md",
+  lg = "lg",
 }
 
 interface ListGroupItemProps {

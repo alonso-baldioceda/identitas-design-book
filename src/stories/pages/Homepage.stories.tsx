@@ -85,7 +85,7 @@ Default.args = {
       list: [
         {
           svg: <BedQueen />,
-          svgSize: "small",
+          svgSize: "sm",
           text: "2 camas matrimoniales",
         },
       ],
@@ -111,7 +111,7 @@ Default.args = {
       list: [
         {
           svg: <BedQueen />,
-          svgSize: "small",
+          svgSize: "sm",
           text: "2 camas matrimoniales",
         },
       ],
@@ -137,7 +137,7 @@ Default.args = {
       list: [
         {
           svg: <BedQueen />,
-          svgSize: "small",
+          svgSize: "sm",
           text: "2 camas matrimoniales",
         },
       ],
@@ -195,28 +195,28 @@ Default.args = {
         list: [
           {
             svg: <WifiIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Wifi",
           },
           {
             svg: <WashingIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Lavadora",
           },
           {
             svg: <DryerIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Secadora",
           },
           {
             subText: "Toallas, sábanas, jabón y papel higiénico",
             svg: <TowelsIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Servicios imprescindibles",
           },
           {
             svg: <HotWaterIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Agua caliente",
           },
         ],
@@ -227,12 +227,12 @@ Default.args = {
         list: [
           {
             svg: <ParkingIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Estacionamiento gratuito en las instalaciones",
           },
           {
             svg: <FootprintIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Admitimos animales de compañía",
           },
         ],
@@ -244,43 +244,43 @@ Default.args = {
           {
             subText: "Los huéspedes pueden cocinar en este espacio",
             svg: <KitchenIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Comedor",
           },
           {
             svg: <OvenIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Horno",
           },
           {
             svg: <SilverwareIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Playos y cubiertos",
           },
           {
             svg: <RefrigeratorIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Refrigerador",
           },
           {
             svg: <StoveIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Cocina",
           },
           {
             svg: <CoffeeMakerIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Cafetera",
           },
           {
             subText: "Ollas y sartenes, aceite, sal y pimienta",
             svg: <OilIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Utensilios básicos para cocinar",
           },
           {
             svg: <BarbecueUtensilsIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Utensilios para hacer parrillada",
           },
         ],
@@ -291,17 +291,17 @@ Default.args = {
         list: [
           {
             svg: <PillowIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Estacionamiento gratuito en las instalaciones",
           },
           {
             svg: <BedLinensIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Admitimos animales de compañía",
           },
           {
             svg: <ShampooIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Admitimos animales de compañía",
           },
         ],
@@ -312,12 +312,12 @@ Default.args = {
         list: [
           {
             svg: <PatioIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Estacionamiento gratuito en las instalaciones",
           },
           {
             svg: <GardenIcon />,
-            svgSize: "small",
+            svgSize: "sm",
             text: "Admitimos animales de compañía",
           },
         ],
@@ -339,22 +339,22 @@ Default.args = {
     list: [
       {
         svg: <CheckInIcon />,
-        svgSize: "small",
+        svgSize: "sm",
         text: "Llegada: 15:00 a 21:00",
       },
       {
         svg: <CheckOutIcon />,
-        svgSize: "small",
+        svgSize: "sm",
         text: "Salida: 11:00",
       },
       {
         svg: <SmokeIcon />,
-        svgSize: "small",
+        svgSize: "sm",
         text: "Prohibido fumar",
       },
       {
         svg: <PartyIcon />,
-        svgSize: "small",
+        svgSize: "sm",
         text: "Está prohibido hacer fiestas o eventos",
       },
     ],

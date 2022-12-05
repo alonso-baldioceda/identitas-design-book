@@ -51,7 +51,8 @@ const Nav: FC<NavProps> = ({ list }) => (
       <li key={index}>
         <div className={`mb-${contactItem.mb ? contactItem.mb : "3"}`}>
           <span className={`me-${contactItem.me ? contactItem.me : "3"}`}>
-            <SVG icon={contactItem.icon} size="small" />
+            {/* TODO: move size to props */}
+            <SVG icon={contactItem.icon} size="sm" />
           </span>
           <p>{contactItem.text}</p>
         </div>

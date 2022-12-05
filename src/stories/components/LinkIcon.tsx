@@ -13,7 +13,7 @@ const StyledLinkIcon = styled((props) => <a {...props} />)`
   align-items: center;
   border-radius: 50rem;
   color: transparent;
-  display: inline-block;
+  display: flex;
   font-size: 0;
   justify-content: center;
   line-height: 0;
@@ -53,6 +53,7 @@ const LinkIcon: FC<LinkIconProps> = ({
       href={url}
       className={`${prefix}-button text-capitalize mb-${mb} me-${me} me-sm-${meSm} me-mb-${meMd} me-lg-${meLg} me-xl-${meXl} 
       ${disabled ? disabled : ""}`}
+      size={size}
     >
       {text}
       <SVG icon={icon} size={size} />

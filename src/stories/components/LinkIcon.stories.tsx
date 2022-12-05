@@ -64,7 +64,7 @@ export default {
     },
     size: {
       control: "select",
-      options: ["extra-small", "small", "medium", "large"],
+      options: ["xs", "sm", "md", "lg"],
     },
   },
 } as ComponentMeta<typeof LinkIcon>;

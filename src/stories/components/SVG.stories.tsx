@@ -12,12 +12,12 @@ export default {
   component: SVG,
   args: {
     icon: <BedQueen />,
-    size: "medium",
+    size: "md",
   },
   argTypes: {
     size: {
       control: "select",
-      options: ["extra-small", "small", "medium", "large"],
+      options: ["xs", "sm", "md", "lg"],
     },
   },
 } as ComponentMeta<typeof SVG>;

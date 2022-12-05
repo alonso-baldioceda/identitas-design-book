@@ -13,32 +13,6 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
   width: 32px;
   z-index: 1000;
 
-  span {
-    background: ${color.black};
-    border-radius: 9px;
-    display: block;
-    height: 3px;
-    left: 0;
-    opacity: 1;
-    position: absolute;
-    transform: rotate(0deg);
-    transition: 0.125s ease-in-out;
-    width: 100%;
-
-    &:nth-child(1) {
-      top: 2px;
-    }
-
-    &:nth-child(2),
-    &:nth-child(3) {
-      top: 14px;
-    }
-
-    &:nth-child(4) {
-      top: 26px;
-    }
-  }
-
   &.is-open {
     z-index: 99999;
 
@@ -68,6 +42,32 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
   }
 `;
 
+const StyledSpan = styled.span`
+  background: ${color.black};
+  border-radius: 9px;
+  display: block;
+  height: 3px;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  transform: rotate(0deg);
+  transition: 0.125s ease-in-out;
+  width: 100%;
+
+  &:nth-child(1) {
+    top: 2px;
+  }
+
+  &:nth-child(2),
+  &:nth-child(3) {
+    top: 14px;
+  }
+
+  &:nth-child(4) {
+    top: 26px;
+  }
+`;
+
 // Types
 interface SpanProps {
   colorClose: string;
@@ -83,7 +83,9 @@ export interface MenuCloseProps {
 }
 
 const Span: FC<SpanProps> = ({ colorClose, colorOpen, isOpen }) => (
-  <span className={`${isOpen ? `bg-${colorClose}` : `bg-${colorOpen}`}`}></span>
+  <StyledSpan
+    className={`${isOpen ? `bg-${colorClose}` : `bg-${colorOpen}`}`}
+  />
 );
 
 const MenuClose: FC<MenuCloseProps> = ({
