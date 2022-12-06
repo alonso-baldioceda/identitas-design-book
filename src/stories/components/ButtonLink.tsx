@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import classnames from "classnames";
 import { prefix } from "./../shared/styles.js";
 
-interface ButtonLinkProps {
+export interface ButtonLinkProps {
   appearance: string;
   bold?: boolean;
   text: string;

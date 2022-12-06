@@ -7,6 +7,8 @@ import Homepage from "./Homepage";
 
 // Stories
 import * as Layout from "./../compositions/Layout.stories";
+import * as Card from "./../compositions/Card.stories";
+import * as Sphere from "./../components/Sphere.stories";
 
 // Assets
 import HeroImage from "./../../images/home-hero.jpg";
@@ -40,10 +42,6 @@ import SmokeIcon from "./../../images/svg/no-smoking.svg";
 import PartyIcon from "./../../images/svg/party.svg";
 
 export default {
-  /* 👇 The title prop is optional.
-   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
-   * to learn how to generate automatic titles
-   */
   title: "Pages/Homepage",
   component: Homepage,
 } as ComponentMeta<typeof Homepage>;
@@ -68,82 +66,46 @@ Default.args = {
   },
   cardsProps: [
     {
-      border: 4,
-      cta: {
-        appearance: "airbnb",
-        bold: true,
-        disabled: false,
-        mb: 0,
-        px: 4,
-        py: 2,
-        rounded: true,
-        targetBlank: false,
-        text: "Airbnb",
-        url: "https://www.google.com/",
+      ...Card.Default.args,
+      airbnb: {
+        ...Card.Default.args?.airbnb,
+        url: "https://www.pinterest.com/",
       },
-      foreignBackgroundColor: "primary",
       list: [
         {
           svg: <BedQueen />,
-          svgSize: "sm",
           text: "2 camas matrimoniales",
         },
       ],
-      preCta: "Reservar por",
       title: "Cabina 1",
-      upfrontBackgroundColor: "transparent",
     },
     {
-      border: 4,
-      cta: {
-        appearance: "airbnb",
-        bold: true,
-        disabled: false,
-        mb: 0,
-        px: 4,
-        py: 2,
-        rounded: true,
-        targetBlank: false,
-        text: "Airbnb",
-        url: "https://www.google.com/",
+      ...Card.Default.args,
+      airbnb: {
+        ...Card.Default.args?.airbnb,
+        url: "https://www.instagram.com/",
       },
-      foreignBackgroundColor: "primary",
       list: [
         {
           svg: <BedQueen />,
-          svgSize: "sm",
           text: "2 camas matrimoniales",
         },
       ],
-      preCta: "Reservar por",
       title: "Cabina 2",
-      upfrontBackgroundColor: "transparent",
     },
     {
-      border: 4,
-      cta: {
-        appearance: "airbnb",
-        bold: true,
-        disabled: false,
-        mb: 0,
-        px: 4,
-        py: 2,
-        rounded: true,
-        targetBlank: false,
-        text: "Airbnb",
-        url: "https://www.google.com/",
+      ...Card.Default.args,
+      airbnb: {
+        ...Card.Default.args?.airbnb,
+        url: "https://www.facebook.com/",
       },
-      foreignBackgroundColor: "primary",
       list: [
         {
           svg: <BedQueen />,
-          svgSize: "sm",
-          text: "2 camas matrimoniales",
+          text: "1 cama matrimonial",
         },
       ],
-      preCta: "Reservar por",
       title: "Cabina 3",
-      upfrontBackgroundColor: "transparent",
     },
   ],
   unitsGridProps: {
@@ -151,39 +113,30 @@ Default.args = {
     xl: 2,
   },
   sphereProps1: {
-    border: 5,
-    borderColor: "primary",
-    height: "400px",
+    ...Sphere.Default.args,
     id: "sphereSample1",
     image: SphereImage1,
     pitch: 6,
     preview: SpherePreviewImage1,
     sceneId: "sphereSample1",
-    width: "100%",
     yaw: 40,
   },
   sphereProps2: {
-    border: 5,
-    borderColor: "primary",
-    height: "400px",
+    ...Sphere.Default.args,
     id: "sphereSample2",
     image: SphereImage1,
     pitch: 6,
     preview: SpherePreviewImage1,
     sceneId: "sphereSample2",
-    width: "100%",
     yaw: 40,
   },
   sphereProps3: {
-    border: 5,
-    borderColor: "primary",
-    height: "400px",
+    ...Sphere.Default.args,
     id: "sphereSample3",
     image: SphereImage1,
     pitch: 6,
     preview: SpherePreviewImage1,
     sceneId: "sphereSample3",
-    width: "100%",
     yaw: 40,
   },
   services: {
@@ -335,7 +288,6 @@ Default.args = {
   rulesProps: {
     heading: "Lo que debes saber",
     float: true,
-
     list: [
       {
         svg: <CheckInIcon />,

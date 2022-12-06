@@ -28,6 +28,10 @@ const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
   //   setIsDark(isDark === "light" ? "dark" : "light");
   // };
 
+  // const handingDarkMode = () => {
+  //   setIsDark(isDark === "light" ? "light" : "dark");
+  // };
+
   return (
     <LayoutContext.Provider
       value={{

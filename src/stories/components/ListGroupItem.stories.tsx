@@ -2,7 +2,10 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import ListGroupItem, { ListGroupItemSizes } from "./ListGroupItem";
+import ListGroupItem from "./ListGroupItem";
+
+// Types
+import Size from "./../../shared/enums/size";
 
 // Assets
 import BedQueen from "./../../images/svg/bed-queen.svg";
@@ -10,12 +13,6 @@ import BedQueen from "./../../images/svg/bed-queen.svg";
 export default {
   title: "Compositions/ListGroupItem",
   component: ListGroupItem,
-  args: {
-    text: "some other text here!!",
-    textBottom: 0,
-    svg: "",
-    svgSize: ListGroupItemSizes.md,
-  },
   argTypes: {
     textBottom: {
       control: "select",
@@ -34,7 +31,6 @@ const Template: ComponentStory<typeof ListGroupItem> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  svg: "",
   text: "some text here!!",
   textBottom: 0,
 };
@@ -49,15 +45,12 @@ TextWithIconDefault.args = {
 export const TextWithIconSmall = Template.bind({});
 TextWithIconSmall.args = {
   ...TextWithIconDefault.args,
-  svgSize: ListGroupItemSizes.sm,
-  svg: <BedQueen />,
+  svgSize: Size.md,
 };
 
 export const TextWithIconAndSubheading = Template.bind({});
 TextWithIconAndSubheading.args = {
-  ...TextWithIconDefault.args,
+  ...TextWithIconSmall.args,
   subText: "some text here!!",
-  svg: <BedQueen />,
-  svgSize: ListGroupItemSizes.lg,
   text: "some other text here!!",
 };

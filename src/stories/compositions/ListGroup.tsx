@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { prefix } from "./../shared/styles.js";
 
 // Components
-import ListGroupItem from "./../components/ListGroupItem";
+import ListGroupItem, {
+  ListGroupItemProps,
+} from "./../components/ListGroupItem";
 
 // Styles
 const StyledListGroup = styled((props) => <ul {...props} />)`
@@ -35,9 +37,9 @@ const StyledListGroup = styled((props) => <ul {...props} />)`
     `}
 `;
 
-interface ListGroupProps {
+export interface ListGroupProps {
   // TODO: remove any
-  list: any;
+  list: ListGroupItemProps[];
   float?: boolean;
   mb?: number;
   p?: number;
@@ -54,9 +56,11 @@ const ListGroup: FC<ListGroupProps> = ({
     float={float.toString()}
   >
     {/* TODO: remove any */}
-    {list.map((item: any, index: number) => (
-      <ListGroupItem {...item} key={index} />
-    ))}
+    {list
+      ? list.map((item: ListGroupItemProps, index: number) => (
+          <ListGroupItem {...item} key={index} />
+        ))
+      : ""}
   </StyledListGroup>
 );
 

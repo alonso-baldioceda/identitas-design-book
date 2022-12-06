@@ -12,7 +12,6 @@ const ListGroupItemStyled = styled.li`
   flex-direction: row;
 `;
 
-// TODO: check if delete
 const Subtext = styled.p`
   font-size: 1rem;
   font-weight: 300;
@@ -28,41 +27,32 @@ const IconWrapper = styled((props) => <span {...props} />)`
 `;
 
 // Types
-export enum ListGroupItemSizes {
-  xs = "xs",
-  sm = "sm",
-  md = "md",
-  lg = "lg",
-}
-
-interface ListGroupItemProps {
+export interface ListGroupItemProps {
   svg?: ReactNode;
-  svgSize: string;
+  svgSize?: string;
   text?: string;
   textBottom?: number;
   subText?: string;
 }
 
 const ListGroupItem: FC<ListGroupItemProps> = ({
-  svgSize = ListGroupItemSizes.md,
+  svgSize,
   svg,
   subText,
   text,
-  textBottom = 0,
-}) => {
-  return (
-    <ListGroupItemStyled className={`${prefix}-list-group-tem`}>
-      {svg && (
-        <IconWrapper>
-          <SVG icon={svg} size={svgSize} />
-        </IconWrapper>
-      )}
-      <div className="content">
-        {text && <p className={`mb-${textBottom}`}>{text}</p>}
-        {subText && <small>{subText}</small>}
-      </div>
-    </ListGroupItemStyled>
-  );
-};
+  textBottom,
+}) => (
+  <ListGroupItemStyled className={`${prefix}-list-group-item`}>
+    {svg && (
+      <IconWrapper>
+        <SVG icon={svg} size={svgSize ? svgSize : "sm"} />
+      </IconWrapper>
+    )}
+    <div className="content">
+      {text && <p className={`mb-${textBottom ? textBottom : 0}`}>{text}</p>}
+      {subText && <Subtext>{subText}</Subtext>}
+    </div>
+  </ListGroupItemStyled>
+);
 
 export default ListGroupItem;

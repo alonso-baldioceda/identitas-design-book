@@ -8,28 +8,14 @@ import * as ListGroupItemStories from "./../components/ListGroupItem.stories";
 export default {
   title: "Compositions/ListGroup",
   component: ListGroup,
-  args: {
-    mb: 0,
-    p: 0,
-    list: [
-      {
-        ...ListGroupItemStories.Default.args,
-      },
-      {
-        ...ListGroupItemStories.Default.args,
-      },
-      {
-        ...ListGroupItemStories.Default.args,
-      },
-    ],
-  },
 } as ComponentMeta<typeof ListGroup>;
 
 const Template: ComponentStory<typeof ListGroup> = (args) => (
   <ListGroup {...args} />
 );
 
-export const Default = Template.bind({
+export const Default = Template.bind({});
+Default.args = {
   list: [
     {
       ...ListGroupItemStories.Default.args,
@@ -41,7 +27,7 @@ export const Default = Template.bind({
       ...ListGroupItemStories.Default.args,
     },
   ],
-});
+};
 
 export const TextWithIconDefault = Template.bind({});
 TextWithIconDefault.args = {

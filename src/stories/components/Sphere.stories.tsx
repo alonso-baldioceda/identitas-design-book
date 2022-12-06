@@ -51,9 +51,3 @@ export const Default = Template.bind({
 
 export const Secondary = Template.bind({});
 Secondary.args = { borderColor: "secondary" };
-
-export const Ternary = Template.bind({});
-Ternary.args = { borderColor: "ternary" };
-
-export const White = Template.bind({});
-White.args = { borderColor: "white" };

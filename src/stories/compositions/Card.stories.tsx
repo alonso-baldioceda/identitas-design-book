@@ -4,9 +4,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Card from "./Card";
 
-// Stories
-import * as ListGroup from "./../compositions/ListGroup.stories";
-import * as ButtonLink from "./../components/ButtonLink.stories";
+// Types
+import Size from "./../../shared/enums/size";
+
+// Assets
+import BedQueen from "./../../images/svg/bed-queen.svg";
 
 export default {
   title: "Compositions/Card",
@@ -30,12 +32,30 @@ export default {
 
 const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
 
-export const BookingSample = Template.bind({});
-BookingSample.args = {
+export const Default = Template.bind({});
+Default.args = {
   border: 4,
-  cta: { ...ButtonLink.Airbnb.args },
+  airbnb: {
+    appearance: "airbnb",
+    bold: true,
+    disabled: false,
+    mb: 0,
+    px: 4,
+    py: 2,
+    rounded: true,
+    targetBlank: false,
+    text: "Airbnb",
+    url: "https://www.google.com/",
+  },
   foreignBackgroundColor: "primary",
-  list: [...ListGroup.TextWithIconDefault.args?.list],
+  list: [
+    {
+      svg: <BedQueen />,
+      svgSize: Size.sm,
+      text: "some text here!!",
+      textBottom: 0,
+    },
+  ],
   preCta: "Reservar por",
   title: "title here!!",
   upfrontBackgroundColor: "transparent",

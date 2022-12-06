@@ -84,7 +84,7 @@ const Brand: FC<BrandProps> = ({
       to={to}
       // activeClass="brand-active"
     >
-      <SVG icon={svg} size="medium" />
+      <SVG icon={svg} size="md" />
       {hideNameOnMobile !== false && <span>{text}</span>}
     </StyledBrand>
   );
