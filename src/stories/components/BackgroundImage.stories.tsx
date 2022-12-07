@@ -8,14 +8,20 @@ import BackgroundImage from "./BackgroundImage";
 // Assets
 import OceanImage from "./../../images/ocean.jpg";
 
-const image = {
-  src: OceanImage,
-};
-
 export default {
   title: "Components/BackgroundImage",
   component: BackgroundImage,
-  args: { src: image.src, bgcolor: color.primary },
+  argTypes: {
+    bgcolor: {
+      control: "select",
+      name: "Background Color",
+      options: ["primary", "secondary", "ternary", "dark", "white"],
+    },
+    src: {
+      name: "Image Source",
+      control: "text",
+    },
+  },
 } as ComponentMeta<typeof BackgroundImage>;
 
 const Template: ComponentStory<typeof BackgroundImage> = (args) => (
@@ -23,7 +29,11 @@ const Template: ComponentStory<typeof BackgroundImage> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = { bgcolor: color.primary };
+// TODO: maybe move bgcolor to type
+Default.args = {
+  bgcolor: color.primary,
+  src: OceanImage,
+};
 
 export const CustomBackgroundColor = Template.bind({});
-CustomBackgroundColor.args = { ...Default.args, bgcolor: "#000" };
+CustomBackgroundColor.args = { ...Default.args, bgcolor: color.secondary };

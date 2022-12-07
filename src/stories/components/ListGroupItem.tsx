@@ -5,6 +5,9 @@ import { prefix } from "./../shared/styles.js";
 // Components
 import SVG from "./SVG";
 
+// Types
+import Size from "./../../shared/enums/size";
+
 // Styles
 const ListGroupItemStyled = styled.li`
   align-items: center;
@@ -45,7 +48,7 @@ const ListGroupItem: FC<ListGroupItemProps> = ({
   <ListGroupItemStyled className={`${prefix}-list-group-item`}>
     {svg && (
       <IconWrapper>
-        <SVG icon={svg} size={svgSize ? svgSize : "sm"} />
+        <SVG icon={svg} size={svgSize ? svgSize : Size.sm} />
       </IconWrapper>
     )}
     <div className="content">

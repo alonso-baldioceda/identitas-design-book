@@ -11,6 +11,9 @@ import SVG from "./../../components/SVG";
 // Contexts
 // import LayoutContext from "./../compositions/LayoutContext";
 
+// Types
+import Size from "./../../../shared/enums/size";
+
 // Styles
 const StyledBrand = styled((props) => <Link {...props} />)`
   align-items: center;
@@ -47,6 +50,7 @@ export interface BrandProps {
   // offset: number;
   // smooth: boolean;
   // spy: boolean;
+  size?: string;
   svg: ReactNode;
   text: string;
   to: string;
@@ -60,6 +64,7 @@ const Brand: FC<BrandProps> = ({
   // offset = -60,
   // smooth = true,
   // spy = true,
+  size,
   svg,
   text = "",
   to = "",
@@ -84,7 +89,7 @@ const Brand: FC<BrandProps> = ({
       to={to}
       // activeClass="brand-active"
     >
-      <SVG icon={svg} size="md" />
+      <SVG icon={svg} size={size ? size : Size.sm} />
       {hideNameOnMobile !== false && <span>{text}</span>}
     </StyledBrand>
   );

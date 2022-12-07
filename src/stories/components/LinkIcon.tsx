@@ -56,7 +56,7 @@ const LinkIcon: FC<LinkIconProps> = ({
       size={size}
     >
       {text}
-      <SVG icon={icon} size={size} />
+      <SVG icon={icon} size={size ? size : Size.sm} />
     </StyledLinkIcon>
   );
 };

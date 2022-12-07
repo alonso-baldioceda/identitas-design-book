@@ -1,6 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { prefix, sizing } from "./../shared/styles.js";
+
+// Constants
+import Size from "../../shared/enums/size.ts";
 
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`
@@ -37,16 +40,14 @@ const StyledSVG = styled((props) => <div {...props} />)`
 
 // Types
 interface SVGProps {
-  icon: any;
+  icon: ReactNode;
   size?: string;
 }
 
-const SVG: FC<SVGProps> = ({ icon, size }) => {
-  return (
-    <StyledSVG size={size ? size : "md"} className={`${prefix}-svg`}>
-      {icon}
-    </StyledSVG>
-  );
-};
+const SVG: FC<SVGProps> = ({ icon, size }) => (
+  <StyledSVG size={size ? size : Size.md} className={`${prefix}-svg`}>
+    {icon}
+  </StyledSVG>
+);
 
 export default SVG;

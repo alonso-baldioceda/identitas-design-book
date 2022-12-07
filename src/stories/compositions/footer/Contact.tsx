@@ -5,6 +5,9 @@ import { prefix, color } from "./../../shared/styles.js";
 // Components
 import SVG from "../../components/SVG";
 
+// Types
+import Size from "../../../shared/enums/size.ts";
+
 // Styles
 const StyledContact = styled((props) => <ul {...props} />)`
   list-style: none;
@@ -34,25 +37,30 @@ const StyledContact = styled((props) => <ul {...props} />)`
 `;
 
 // Interfaces
-interface ContactItem {
+interface itemsProps {
   icon: ReactElement;
   mb?: number;
   me?: number;
   text: string;
+  size?: string;
 }
 
 export interface NavProps {
-  list: ContactItem[];
+  list: itemsProps[];
 }
 
 const Nav: FC<NavProps> = ({ list }) => (
   <StyledContact className={`${prefix}-contact`}>
-    {list.map((contactItem: ContactItem, index: number) => (
+    {/* TODO: use ListGroup instead of this */}
+    {list.map((contactItem: itemsProps, index: number) => (
       <li key={index}>
+        {/* TODO: Handle default value 3 into a variable */}
         <div className={`mb-${contactItem.mb ? contactItem.mb : "3"}`}>
           <span className={`me-${contactItem.me ? contactItem.me : "3"}`}>
-            {/* TODO: move size to props */}
-            <SVG icon={contactItem.icon} size="sm" />
+            <SVG
+              icon={contactItem.icon}
+              size={contactItem.size ? contactItem.size : Size.xs}
+            />
           </span>
           <p>{contactItem.text}</p>
         </div>
