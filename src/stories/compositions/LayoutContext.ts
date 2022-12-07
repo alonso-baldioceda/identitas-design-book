@@ -3,9 +3,11 @@ import { createContext } from "react";
 // Types
 interface LayoutContextProps {
   active: number;
+  isDark: boolean;
   isOpen: boolean;
   language?: number;
   setActive: (active: number) => void;
+  setIsDark: (isDark: boolean) => void;
   setIsOpen: (isOpen: boolean) => void;
   setLanguage?: (language: number) => void;
 }
@@ -14,11 +16,13 @@ interface LayoutContextProps {
 const defaultState = {
   active: 0,
   // TODO: maybe need to include a global language variable
+  isDark: false,
   isOpen: false,
   language: 0,
   setActive: () => {},
+  setIsDark: () => {},
   setIsOpen: () => {},
-  setLanguage: undefined,
+  setLanguage: () => {},
 };
 
 const LayoutContext = createContext<LayoutContextProps>(defaultState);

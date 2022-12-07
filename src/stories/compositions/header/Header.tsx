@@ -8,6 +8,7 @@ import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
 import Separator from "./Separator";
+import SwitchMode from "./../../components/SwitchMode";
 import MenuClose from "./MenuClose";
 import Mobile, { MobileProps } from "./Mobile";
 
@@ -62,10 +63,10 @@ const Header: FC<HeaderProps> = ({
   showSocials,
   socials,
 }) => {
-  const { isOpen, setIsOpen } = useContext(LayoutContext);
+  const { isOpen, setIsOpen, isDark, setIsDark } = useContext(LayoutContext);
 
   const handleIsOpen = () => {
-    setIsOpen(!isOpen);
+    setIsOpen(isOpen ? false : true);
   };
 
   const mobileProps = { ...mobile, isOpen };
@@ -96,6 +97,10 @@ const Header: FC<HeaderProps> = ({
                   )}
                   {showCall && call && <LinkIcon {...call} />}
                   {(showLanguages || showCall) && <Separator />}
+                  <SwitchMode
+                    setIsDark={setIsDark}
+                    isDark={isDark ? isDark : false}
+                  />
                   {showSocials &&
                     socials?.map((social: LinkIconProps, index: number) => (
                       <LinkIcon {...social} key={index} />

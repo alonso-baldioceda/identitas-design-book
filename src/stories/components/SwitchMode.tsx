@@ -10,7 +10,7 @@ import SVG from "./../components/SVG";
 import Size from "./../../shared/enums/size.ts";
 
 // Assets
-import DarkMode from "./../../images/svg/dark-mode.svg";
+import DarkModeIcon from "./../../images/svg/dark-mode.svg";
 
 // Styles
 const StyledSwitchMode = styled((props) => <button {...props} />)`
@@ -27,40 +27,34 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
   padding: 0;
   width: auto;
 
-  width: 32px;
-  height: 32px;
-  /* background-color: red; */
-
   svg {
-    transition: stroke var(--transition-duration);
+    transition: stroke 400ms;
     stroke: #000;
 
-    /* path {
-      fill: #000;
-    } */
-  }
+    .moon-icon {
+      opacity: 0;
+      stroke-dasharray: 0px 1px;
+      transition: stroke-dasharray 0.25s ease-in, opacity 150ms ease-in;
+    }
 
-  .moon-icon {
-    opacity: 0;
-    stroke-dasharray: 0px 1px;
-    transition: stroke-dasharray 0.5s ease-in, opacity 300ms ease-in;
-  }
-
-  .sun-icon {
-    opacity: 1;
-    stroke-dasharray: 1px 1px;
-    transition: stroke-dasharray 0.5s ease-in, opacity 300ms ease-in;
+    .sun-icon {
+      opacity: 1;
+      stroke-dasharray: 1px 1px;
+      transition: stroke-dasharray 0.125s ease-in, opacity 300ms ease-in;
+    }
   }
 
   &.is-dark {
-    .moon-icon {
-      opacity: 1;
-      stroke-dasharray: 1px 1px;
-    }
+    svg {
+      .moon-icon {
+        opacity: 1;
+        stroke-dasharray: 1px 1px;
+      }
 
-    &.sun-icon {
-      opacity: 0;
-      stroke-dasharray: 0px 1px;
+      .sun-icon {
+        opacity: 0;
+        stroke-dasharray: 0px 1px;
+      }
     }
   }
 `;
@@ -68,17 +62,22 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 // Types
 interface SwitchModeProps {
   isDark?: boolean;
+  me?: number;
+  setIsDark?: (isDark: boolean) => void;
   size?: string;
 }
 
-const SwitchMode: FC<SwitchModeProps> = ({ isDark, size }) => {
-  return (
-    <StyledSwitchMode
-      className={classnames(`${prefix}-swith-mode`, { "is-dark": isDark })}
-    >
-      <SVG icon={<DarkMode />} size={size ? size : Size.xs} />
-    </StyledSwitchMode>
-  );
-};
+const SwitchMode: FC<SwitchModeProps> = ({ isDark, me, setIsDark, size }) => (
+  <StyledSwitchMode
+    className={classnames(`${prefix}-swith-mode me-${me ? me : 3}`, {
+      "is-dark": isDark,
+    })}
+    onClick={() => {
+      setIsDark && setIsDark(isDark ? false : true);
+    }}
+  >
+    <SVG icon={<DarkModeIcon />} size={Size.xs} />
+  </StyledSwitchMode>
+);
 
 export default SwitchMode;

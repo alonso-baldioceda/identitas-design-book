@@ -18,32 +18,30 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
-  const [isDark, setIsDark] = useState("light");
-  const [active, setActive] = useState(-1);
+  const [isDark, setIsDark] = useState<boolean>(false);
+  const [active, setActive] = useState<number>(-1);
   const [language, setLanguage] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   // Dark mode button toggler
-  // const darkModeHandler = () => {
-  //   setIsDark(isDark === "light" ? "dark" : "light");
-  // };
-
-  // const handingDarkMode = () => {
-  //   setIsDark(isDark === "light" ? "light" : "dark");
-  // };
+  const handingDarkMode = () => {
+    setIsDark(false);
+  };
 
   return (
     <LayoutContext.Provider
       value={{
         active,
         language,
+        isDark,
         isOpen,
         setActive,
         setLanguage,
         setIsOpen,
+        setIsDark,
       }}
     >
-      <ThemeProvider theme={isDark === "dark" ? darkTheme : lightTheme}>
+      <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyle theme={isDark} />
         <Header {...header} />
         <main className="main" id="main">
