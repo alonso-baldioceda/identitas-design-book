@@ -85,7 +85,7 @@ Default.args = {
     hideNameOnMobile: true,
     logoMarginRight: 3,
     svg: <LogoIcon />,
-    text: "Company name",
+    name: "Company name",
     to: "main",
   },
   minHeight: 84,
@@ -112,6 +112,7 @@ Default.args = {
     translate: "Idiomas",
   },
   showSocials: true,
+  showSwitchMode: true,
   socials: [
     {
       icon: <FacebookIcon />,

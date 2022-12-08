@@ -15,7 +15,6 @@ interface LayoutContextProps {
 // Defaults
 const defaultState = {
   active: 0,
-  // TODO: maybe need to include a global language variable
   isDark: false,
   isOpen: false,
   language: 0,

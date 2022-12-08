@@ -1,7 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 import classnames from "classnames";
+
+// Contexts
+import LayoutContext from "./../LayoutContext";
 
 // Styles
 const StyledMenuClose = styled((props) => <div {...props} />)`
@@ -78,8 +81,6 @@ interface SpanProps {
 export interface MenuCloseProps {
   colorClose?: string;
   colorOpen?: string;
-  isOpen: boolean;
-  setIsOpen: (arg: boolean) => void;
 }
 
 const Span: FC<SpanProps> = ({ colorClose, colorOpen, isOpen }) => (
@@ -91,21 +92,23 @@ const Span: FC<SpanProps> = ({ colorClose, colorOpen, isOpen }) => (
 const MenuClose: FC<MenuCloseProps> = ({
   colorClose = "dark",
   colorOpen = "dark",
-  isOpen,
-  setIsOpen,
-}) => (
-  <StyledMenuClose
-    className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
-    onClick={() => {
-      document.body.style.overflow = isOpen === true ? "scroll" : "hidden";
-      setIsOpen(!isOpen);
-    }}
-  >
-    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-    <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-  </StyledMenuClose>
-);
+}) => {
+  const { isOpen, setIsOpen } = useContext(LayoutContext);
+
+  return (
+    <StyledMenuClose
+      className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
+      onClick={() => {
+        document.body.style.overflow = isOpen === true ? "scroll" : "hidden";
+        setIsOpen(!isOpen);
+      }}
+    >
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+    </StyledMenuClose>
+  );
+};
 
 export default MenuClose;

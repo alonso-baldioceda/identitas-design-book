@@ -48,6 +48,7 @@ export interface HeaderProps {
   showLanguages?: boolean;
   socials?: LinkIconProps[];
   showSocials?: boolean;
+  showSwitchMode?: boolean;
 }
 
 const Header: FC<HeaderProps> = ({
@@ -55,19 +56,17 @@ const Header: FC<HeaderProps> = ({
   call,
   minHeight,
   hideLanguagesFrom,
+  // TODO: replace languages for globbal languages variable
   languages = ["es"],
   mobile,
   navigation,
   showCall = false,
   showLanguages = false,
   showSocials,
+  showSwitchMode,
   socials,
 }) => {
-  const { isOpen, setIsOpen, isDark, setIsDark } = useContext(LayoutContext);
-
-  const handleIsOpen = () => {
-    setIsOpen(isOpen ? false : true);
-  };
+  const { isOpen, isDark, setIsDark } = useContext(LayoutContext);
 
   const mobileProps = { ...mobile, isOpen };
 
@@ -97,16 +96,18 @@ const Header: FC<HeaderProps> = ({
                   )}
                   {showCall && call && <LinkIcon {...call} />}
                   {(showLanguages || showCall) && <Separator />}
-                  <SwitchMode
-                    setIsDark={setIsDark}
-                    isDark={isDark ? isDark : false}
-                  />
+                  {showSwitchMode && (
+                    <SwitchMode
+                      setIsDark={setIsDark}
+                      isDark={isDark ? isDark : false}
+                    />
+                  )}
                   {showSocials &&
                     socials?.map((social: LinkIconProps, index: number) => (
                       <LinkIcon {...social} key={index} />
                     ))}
                   <div className="d-xl-none d-flex">
-                    <MenuClose isOpen={isOpen} setIsOpen={handleIsOpen} />
+                    <MenuClose />
                   </div>
                 </div>
               </StyledNavWrapper>

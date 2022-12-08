@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, useContext } from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 import { Link } from "gatsby";
@@ -30,8 +30,15 @@ const StyledBrand = styled((props) => <Link {...props} />)`
     ${(props) =>
       props.fontWeight &&
       `
-        font-weight: ${props.bgcolor};
+        font-weight: ${props.fontWeight};
       `}
+
+    ${(props) =>
+      !props.fontWeight &&
+      `
+        font-weight: 700;
+      `}
+
 
     @media (min-width: 768px) {
       font-size: 1.375rem;
@@ -52,13 +59,13 @@ export interface BrandProps {
   // spy: boolean;
   size?: string;
   svg: ReactNode;
-  text: string;
+  name: string;
   to: string;
 }
 
 const Brand: FC<BrandProps> = ({
   // duration = 500,
-  fontWeight = 700,
+  fontWeight,
   hideNameOnMobile,
   logoMarginRight = 3,
   // offset = -60,
@@ -66,8 +73,8 @@ const Brand: FC<BrandProps> = ({
   // spy = true,
   size,
   svg,
-  text = "",
-  to = "",
+  name,
+  to,
 }) => {
   // const scrollToTop = () => {
   //   scroll.scrollToTop();
@@ -85,12 +92,11 @@ const Brand: FC<BrandProps> = ({
       // onClick={scrollToTop}
       // smooth={smooth}
       // spy={spy}
-      text={text}
       to={to}
       // activeClass="brand-active"
     >
       <SVG icon={svg} size={size ? size : Size.sm} />
-      {hideNameOnMobile !== false && <span>{text}</span>}
+      {hideNameOnMobile !== false && <span>{name}</span>}
     </StyledBrand>
   );
 };

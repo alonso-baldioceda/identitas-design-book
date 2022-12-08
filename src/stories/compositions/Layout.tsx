@@ -21,12 +21,7 @@ const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
   const [isDark, setIsDark] = useState<boolean>(false);
   const [active, setActive] = useState<number>(-1);
   const [language, setLanguage] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Dark mode button toggler
-  const handingDarkMode = () => {
-    setIsDark(false);
-  };
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <LayoutContext.Provider

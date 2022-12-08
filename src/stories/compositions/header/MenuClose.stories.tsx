@@ -50,5 +50,4 @@ export const CustomCloseColor = Template.bind({});
 CustomCloseColor.args = {
   ...Default.args,
   colorClose: "primary",
-  isOpen: true,
 };
