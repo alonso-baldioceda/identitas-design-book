@@ -23,7 +23,7 @@ const StyledBrand = styled((props) => <Link {...props} />)`
   text-decoration: none;
 
   span {
-    color: ${color.black};
+    color: ${(props) => props.theme.colors.textPrimary};
     font-size: 1.175rem;
     margin-left: 0.375rem;
 
@@ -96,7 +96,7 @@ const Brand: FC<BrandProps> = ({
       // activeClass="brand-active"
     >
       <SVG icon={svg} size={size ? size : Size.sm} />
-      {hideNameOnMobile !== false && <span>{name}</span>}
+      {hideNameOnMobile ? <span>{name}</span> : null}
     </StyledBrand>
   );
 };

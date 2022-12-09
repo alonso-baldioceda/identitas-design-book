@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
 
@@ -28,6 +28,12 @@ export default {
   title: "Compositions/Header",
   component: Header,
   argTypes: {
+    bgColor: {
+      name: "Background Color",
+      description: "Background color",
+      control: "select",
+      options: ["default", "secondary", "ternary"],
+    },
     brand: {
       name: "Brand",
       description: "Logo and company name as a single piece",
@@ -139,4 +145,10 @@ Default.args = {
       url: "https://www.instagram.com/vistalagoarenal/",
     },
   ],
+};
+
+export const CustomColor = Template.bind({});
+CustomColor.args = {
+  ...Default.args,
+  bgColor: "blue",
 };

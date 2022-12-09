@@ -4,6 +4,8 @@ import { GlobalStyle } from "./../src/stories/shared/global";
 import { themes } from "@storybook/theming";
 import "./styles.css";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from "./Theme";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -59,9 +61,9 @@ export const parameters = {
 
 export const decorators = [
   (Story) => (
-    <>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
       <Story />
-    </>
+    </ThemeProvider>
   ),
 ];

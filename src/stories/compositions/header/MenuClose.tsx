@@ -46,7 +46,7 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
 `;
 
 const StyledSpan = styled.span`
-  background: ${color.black};
+  background: ${(props) => props.theme.colors.textPrimary};
   border-radius: 9px;
   display: block;
   height: 3px;
@@ -71,28 +71,9 @@ const StyledSpan = styled.span`
   }
 `;
 
-// Types
-interface SpanProps {
-  colorClose: string;
-  colorOpen: string;
-  isOpen: boolean;
-}
+export interface MenuCloseProps {}
 
-export interface MenuCloseProps {
-  colorClose?: string;
-  colorOpen?: string;
-}
-
-const Span: FC<SpanProps> = ({ colorClose, colorOpen, isOpen }) => (
-  <StyledSpan
-    className={`${isOpen ? `bg-${colorClose}` : `bg-${colorOpen}`}`}
-  />
-);
-
-const MenuClose: FC<MenuCloseProps> = ({
-  colorClose = "dark",
-  colorOpen = "dark",
-}) => {
+const MenuClose: FC<MenuCloseProps> = () => {
   const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   return (
@@ -103,10 +84,10 @@ const MenuClose: FC<MenuCloseProps> = ({
         setIsOpen(!isOpen);
       }}
     >
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
-      <Span isOpen={isOpen} colorClose={colorClose} colorOpen={colorOpen} />
+      <StyledSpan />
+      <StyledSpan />
+      <StyledSpan />
+      <StyledSpan />
     </StyledMenuClose>
   );
 };

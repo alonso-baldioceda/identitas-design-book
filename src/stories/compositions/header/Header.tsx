@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import Brand, { BrandProps } from "./Brand";
@@ -19,15 +19,25 @@ import LayoutContext from "./../LayoutContext";
 import Link from "./../../../shared/interfaces/link";
 
 // Styles
-const StyledHeader = styled.div`
-  /* TODO: replace colors for variables */
-  background: ${color.white};
+const StyledHeader = styled((props) => <div {...props} />)`
+  align-items: center;
+  background: ${(props) =>
+    props.bgcolor ? props.bgcolor : `${props.theme.colors.backgroundPrimary}`};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
+  display: flex;
   position: fixed;
+  /* TODO:  */
+  transition: all 0.15s ease-in-out;
   width: 100%;
   z-index: 200;
-  display: flex;
-  align-items: center;
+
+  .${prefix}-brand {
+    svg {
+      path {
+        fill: ${(props) => props.theme.colors.textPrimary};
+      }
+    }
+  }
 `;
 
 const StyledNavWrapper = styled.div`
@@ -37,6 +47,7 @@ const StyledNavWrapper = styled.div`
 
 // Interfaces
 export interface HeaderProps {
+  bgColor?: string;
   brand: BrandProps;
   call?: LinkIconProps;
   minHeight?: number;
@@ -52,15 +63,16 @@ export interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({
+  bgColor,
   brand,
   call,
   minHeight,
   hideLanguagesFrom,
-  // TODO: replace languages for globbal languages variable
+  // TODO: replace languages for global languages variable
   languages = ["es"],
   mobile,
   navigation,
-  showCall = false,
+  showCall,
   showLanguages = false,
   showSocials,
   showSwitchMode,
@@ -75,6 +87,7 @@ const Header: FC<HeaderProps> = ({
       <StyledHeader
         className={`${prefix}-header`}
         style={{ minHeight: minHeight ? minHeight : 84 }}
+        bgcolor={bgColor}
       >
         <div className="container-fluid">
           <div className="row align-items-center">
