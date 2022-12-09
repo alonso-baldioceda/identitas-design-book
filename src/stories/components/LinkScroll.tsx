@@ -1,9 +1,23 @@
 import React, { FC } from "react";
 import { Link } from "react-scroll";
 import { prefix } from "./../shared/styles.js";
+import styled from "styled-components";
 
+// Styles
+const StyledLinkScroll = styled((props) => <Link {...props} />)`
+  color: ${(props) => props.theme.colors.textPrimary};
+  cursor: pointer;
+
+  &.active,
+  &:hover,
+  &:focus,
+  &:visited {
+    color: ${(props) => props.theme.colors.textPrimary};
+  }
+`;
+
+// Interfaces
 export interface LinkProps {
-  // activeClass?: string;
   duration?: number;
   offset?: number;
   onClick?: () => void;
@@ -14,27 +28,25 @@ export interface LinkProps {
 }
 
 const LinkScroll: FC<LinkProps> = ({
-  // activeClass = "active",
-  duration = 500,
+  duration,
   onClick,
-  offset = -80,
-  smooth = true,
-  spy = true,
+  offset,
+  smooth,
+  spy,
   text,
   to,
 }) => (
-  <Link
-    // activeClass="active"
-    duration={duration}
-    offset={offset}
-    smooth={smooth}
-    spy={spy}
+  <StyledLinkScroll
+    duration={duration ? duration : 500}
+    offset={offset ? offset : -80}
+    smooth={smooth ? smooth : true}
+    spy={spy ? spy : true}
     to={to}
     className={`${prefix}-link-scroll`}
     onClick={onClick ? onClick : () => {}}
   >
     {text}
-  </Link>
+  </StyledLinkScroll>
 );
 
 export default LinkScroll;

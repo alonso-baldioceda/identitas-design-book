@@ -6,6 +6,7 @@ export const lightTheme = {
     primary: "blue",
     backgroundPrimary: "#FFFFFF",
     textPrimary: "#222222",
+    textSecondary: "red",
   },
 };
 
@@ -17,5 +18,6 @@ export const darkTheme = {
     primary: "red",
     backgroundPrimary: "#000000",
     textPrimary: "#FFFFFF",
+    textSecondary: "red",
   },
 };

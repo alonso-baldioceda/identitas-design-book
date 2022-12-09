@@ -1,37 +1,23 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import classnames from "classnames";
+import { prefix } from "./../../shared/styles.js";
 
 // Styles
 const StyledSeparator = styled((props) => <div {...props} />)`
-  background: ${color.black};
-  /* TODO: move height to props */
-  /* TODO: add color in props */
-  height: 44px;
+  ${(props) =>
+    props.color
+      ? `background: ${props.color};`
+      : `background: ${props.theme.colors.textPrimary};`}
+
+  height: ${(props) => (props.height ? props.height : 44)}px;
   width: 2px;
-
-  ${(props) => props.xs && `margin: 0 ${props.xs}rem;`}
-
-  /* TODO: move media queries */
-  @media (min-width: 576px) {
-    ${(props) => props.sm && `margin: 0 ${props.sm}rem;`}
-  }
-
-  @media (min-width: 768px) {
-    ${(props) => props.md && `margin: 0 ${props.md}rem;`}
-  }
-
-  @media (min-width: 992px) {
-    ${(props) => props.lg && `margin: 0 ${props.lg}rem;`}
-  }
-
-  @media (min-width: 1200px) {
-    ${(props) => props.xl && `margin: 0 ${props.xl}rem;`}
-  }
 `;
 
 // Interfaces
 export interface SeparatorProps {
+  color?: string;
+  height?: number;
   xs?: number;
   sm?: number;
   md?: number;
@@ -40,20 +26,28 @@ export interface SeparatorProps {
 }
 
 const Separator: FC<SeparatorProps> = ({
-  xs = 0.5,
-  sm = 0.75,
-  md = 0.75,
-  lg = 1.25,
-  xl = 1.25,
-}) => (
-  <StyledSeparator
-    className={`${prefix}-separator`}
-    xs={xs}
-    sm={sm}
-    md={md}
-    lg={lg}
-    xl={xl}
-  />
-);
+  color,
+  height,
+  xs,
+  sm,
+  md,
+  lg,
+  xl,
+}) => {
+  return (
+    <StyledSeparator
+      className={classnames(
+        `mx-${xs ? xs : 3}`,
+        `mx-sm-${sm ? sm : 3}`,
+        `mx-md-${md ? md : 3}`,
+        `mx-lg-${lg ? lg : 3}`,
+        `mx-xl-${xl ? xl : 3}`,
+        `${prefix}-separator`
+      )}
+      color={color}
+      height={height}
+    />
+  );
+};
 
 export default Separator;

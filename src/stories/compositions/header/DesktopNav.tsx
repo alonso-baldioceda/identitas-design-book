@@ -1,6 +1,6 @@
-import React, { useContext, FC, useMemo } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import LinkGatsby from "./../../components/LinkGatsby";
@@ -25,20 +25,12 @@ const StyledDesktopNav = styled.ul`
   li {
     a {
       border-bottom: 2px solid transparent;
-      color: ${color.black};
       display: block;
       font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.6px;
       margin-right: 15px;
       text-decoration: none;
-
-      &.active,
-      &:hover,
-      &:focus,
-      &:visited {
-        color: ${color.black} !important;
-      }
 
       &.active,
       &:focus,
@@ -66,8 +58,6 @@ export interface DesktopNavProps {
 
 //  TODO: possibly add a better hover effect */
 const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => {
-  // const { active, setActive } = useContext(LayoutContext);
-
   // TODO: analize including useMemo
   return (
     <StyledDesktopNav className={`nav ${prefix}-nav`}>
