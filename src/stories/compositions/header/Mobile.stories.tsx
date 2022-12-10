@@ -6,8 +6,11 @@ import styled from "styled-components";
 import Mobile from "./Mobile";
 
 // Constants
-import NAV from "./../../../shared/constants/nav.js";
-import COLOR_OPTIONS from "./../../../shared/constants/colorOptions.js";
+import {
+  NAV,
+  COLOR_OPTIONS,
+  SPACING_OPTION,
+} from "./../../../shared/constants/";
 
 // Styles
 const MobileWrapper = styled.div`
@@ -53,20 +56,20 @@ export default {
       control: "select",
       description: "'Left' / 'Right' menu wrapper spacing",
       name: "Padding X",
-      options: [1, 2, 3, 4, 5],
+      options: SPACING_OPTION,
     },
     py: {
       control: "select",
       description: "'Top' / 'Bottom' menu wrapper spacing",
       name: "Padding Y",
-      options: [1, 2, 3, 4, 5],
+      options: SPACING_OPTION,
     },
     separator: {
       control: "select",
       description: "'Left' / 'Roght' separator spacing",
       name: "Separator spacing",
 
-      options: [1, 2, 3, 4, 5],
+      options: SPACING_OPTION,
     },
     startingAt: {
       description: "Distance from top page",
@@ -89,7 +92,13 @@ export const Default = Template.bind({});
 Default.args = {
   bgColor: "dark",
   hideFrom: "xl",
-  linkMb: 3,
+  linkSpacing: {
+    xs: 1,
+    sm: 1,
+    md: 1,
+    lg: 1,
+    xl: 1,
+  },
   isOpen: true,
   languages: ["es", "en"],
   navigation: NAV,

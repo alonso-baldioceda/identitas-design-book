@@ -7,7 +7,7 @@ import { color } from "./../../shared/styles.js";
 import MenuClose from "./MenuClose";
 
 // Constants
-import COLOR_OPTIONS from "./../../../shared/constants/colorOptions";
+import { COLOR_OPTIONS } from "./../../../shared/constants/";
 
 // Styles
 const StyledStory = styled.div`

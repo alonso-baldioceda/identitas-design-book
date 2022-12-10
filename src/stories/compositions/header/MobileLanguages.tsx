@@ -49,16 +49,16 @@ const LinkTranslate = styled.a`
 // Interface
 export interface MobileLanguagesProps {
   languages: string[];
-  linkMb?: string;
+  linkSpacing?: string;
   translate?: string;
   translateMy?: number;
 }
 
 const MobileLanguages: FC<MobileLanguagesProps> = ({
   languages,
-  linkMb = 2,
+  linkSpacing,
   translate,
-  translateMy = 2,
+  translateMy,
 }) => {
   const { i18n } = useTranslation();
   //   const context = useContext(GlobalContext);
@@ -81,7 +81,7 @@ const MobileLanguages: FC<MobileLanguagesProps> = ({
       <Label className={`my-${translateMy}`}>{translate}:</Label>
       <div className={`${prefix}-languages`}>
         {languages.map((language: string, index: number) => (
-          <div key={index} className={`mb-${linkMb}`}>
+          <div key={index} className={`mb-${2}`}>
             <LinkTranslate
               onClick={() => {
                 changeLocale(language);

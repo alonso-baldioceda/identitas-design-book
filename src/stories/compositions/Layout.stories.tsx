@@ -14,7 +14,7 @@ import Layout from "./Layout";
 import * as Header from "./header/Header.stories";
 
 // Constants
-import NAV from "./../../shared/constants/nav";
+import { NAV } from "./../../shared/constants/";
 
 export default {
   title: "Compositions/Layout",

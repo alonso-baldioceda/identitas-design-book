@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Brand from "./Brand";
 
 // Constants
-import SPACING_OPTIONS from "./../../../shared/constants/spacingOptions";
+import { SPACING_OPTIONS } from "./../../../shared/constants/";
 
 // Assets
 import LogoIcon from "./../../../images/svg/logo-black.svg";

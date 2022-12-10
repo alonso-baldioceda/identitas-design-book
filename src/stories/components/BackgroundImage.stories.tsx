@@ -6,7 +6,7 @@ import { color } from "./../shared/styles.js";
 import BackgroundImage from "./BackgroundImage";
 
 // Constants
-import COLOR_OPTIONS from "./../../shared/constants/colorOptions";
+import { COLOR_OPTIONS } from "./../../shared/constants/";
 
 // Assets
 import OceanImage from "./../../images/ocean.jpg";

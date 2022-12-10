@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Footer from "./Footer";
 
 // Constants
-import NAV from "./../../../shared/constants/nav";
+import { NAV } from "./../../../shared/constants/";
 
 // Assets
 import HomeIcon from "./../../../images/svg/home.svg";

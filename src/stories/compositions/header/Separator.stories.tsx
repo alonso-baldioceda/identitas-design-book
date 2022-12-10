@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Separator from "./Separator";
 
 // Constants
-import COLOR_CONTROL from "./../../../shared/constants/colorControl";
+import { COLOR_CONTROL } from "./../../../shared/constants/";
 
 export default {
   title: "Components/Separator",

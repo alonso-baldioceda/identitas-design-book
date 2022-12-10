@@ -4,6 +4,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import ListGroupItem from "./ListGroupItem";
 
+// Constants
+import { SPACING_OPTION } from "./../../shared/constants/";
+
 // Types
 import Size from "./../../shared/enums/size";
 
@@ -16,7 +19,7 @@ export default {
   argTypes: {
     textBottom: {
       control: "select",
-      options: [1, 2, 3, 4, 5],
+      options: SPACING_OPTION,
     },
     svgSize: {
       control: "select",

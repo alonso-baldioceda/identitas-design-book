@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Header from "./Header";
 
 // Constants
-import NAV from "./../../../shared/constants/nav";
+import { NAV } from "./../../../shared/constants/";
 
 // Types
 import Size from "./../../../shared/enums/size";
@@ -111,7 +111,13 @@ Default.args = {
     hideFrom: "xl",
     isOpen: true,
     languages: ["es", "en"],
-    linkMb: 1,
+    linkSpacing: {
+      xs: 0,
+      sm: 0,
+      md: 0,
+      lg: 0,
+      xl: 0,
+    },
     navigation: NAV,
     startingAt: 82,
     translate: "Idiomas",
