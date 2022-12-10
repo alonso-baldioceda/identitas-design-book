@@ -24,11 +24,11 @@ const StyledContact = styled((props) => <ul {...props} />)`
       display: flex;
 
       svg {
-        fill: ${color.white};
+        fill: ${(props) => props.theme.colors.white};
       }
 
       p {
-        color: ${color.white} !important;
+        color: ${(props) => props.theme.colors.white} !important;
         margin-bottom: 0;
         text-decoration: none;
       }

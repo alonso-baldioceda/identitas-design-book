@@ -33,21 +33,19 @@ const Separator: FC<SeparatorProps> = ({
   md,
   lg,
   xl,
-}) => {
-  return (
-    <StyledSeparator
-      className={classnames(
-        `mx-${xs ? xs : 3}`,
-        `mx-sm-${sm ? sm : 3}`,
-        `mx-md-${md ? md : 3}`,
-        `mx-lg-${lg ? lg : 3}`,
-        `mx-xl-${xl ? xl : 3}`,
-        `${prefix}-separator`
-      )}
-      color={color}
-      height={height}
-    />
-  );
-};
+}) => (
+  <StyledSeparator
+    className={classnames(
+      `mx-${xs ? xs : 3}`,
+      `mx-sm-${sm ? sm : 3}`,
+      `mx-md-${md ? md : 3}`,
+      `mx-lg-${lg ? lg : 3}`,
+      `mx-xl-${xl ? xl : 3}`,
+      `${prefix}-separator`
+    )}
+    color={color}
+    height={height}
+  />
+);
 
 export default Separator;

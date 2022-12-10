@@ -27,7 +27,7 @@ const StyledNav = styled((props) => <ul {...props} />)`
 
     a {
       text-decoration: none;
-      color: ${color.white} !important;
+      color: ${(props) => props.theme.colors.white} !important;
     }
   }
 `;

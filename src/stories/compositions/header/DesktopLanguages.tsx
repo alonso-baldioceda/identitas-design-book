@@ -6,7 +6,7 @@ import { prefix } from "./../../shared/styles.js";
 
 // Styles
 const LinkTranslate = styled((props) => <a {...props} />)`
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid ${(props) => props.theme.colors.transparent};
   color: ${(props) => props.theme.colors.body};
   cursor: pointer;
   font-weight: 500;
@@ -15,18 +15,12 @@ const LinkTranslate = styled((props) => <a {...props} />)`
   text-decoration: none;
   text-transform: uppercase;
 
-  &:first-of-type {
-    margin-right: 0.75rem;
-  }
-
   /* TODO: improve hover effect */
   &.active,
   &:hover,
   &:focus {
-    /* TODO: change red for a variable */
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid ${(props) => props.theme.colors.secondary};
     color: ${(props) => props.theme.colors.body};
-    text-decoration: none !important;
   }
 
   &:visited {

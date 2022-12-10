@@ -23,10 +23,11 @@ const StyledHeader = styled((props) => <div {...props} />)`
   align-items: center;
   background: ${(props) =>
     props.bgcolor ? props.bgcolor : `${props.theme.colors.bgPrimary}`};
+  /* TODO: move shadow to variable */
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   display: flex;
   position: fixed;
-  /* TODO:  */
+  /* TODO: move transition to variable */
   transition: all 0.15s ease-in-out;
   width: 100%;
   z-index: 200;

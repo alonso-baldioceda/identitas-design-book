@@ -1,6 +1,7 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { color } from "./../../shared/styles.js";
+import classnames from "classnames";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import LinkGatsby from "./../../components/LinkGatsby";
@@ -14,27 +15,27 @@ import Link from "./../../../shared/interfaces/link";
 import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
-// TODO: apply theme styles
 const StyledMobileNav = styled.ul`
   margin: 0;
   padding: 0;
 
   a {
-    color: ${color.white} !important;
+    color: ${(props) => props.theme.colors.white} !important;
     display: inline-block;
     font-size: 22px;
     font-weight: 500;
     padding: 0;
     text-decoration: none;
+    /* TODO: move to variable */
     transition: all 0.5s ease;
 
     &:hover {
-      color: red !important;
+      color: ${(props) => props.theme.colors.secondary} !important;
       text-decoration: none !important;
     }
 
     &:visited {
-      color: ${color.white} !important;
+      color: ${(props) => props.theme.colors.white} !important;
     }
 
     &:focus {
@@ -42,25 +43,37 @@ const StyledMobileNav = styled.ul`
     }
 
     &.active {
-      color: yellow !important;
-      /* color: ${color.white} !important; */
+      color: ${(props) => props.theme.colors.secondary} !important;
     }
   }
 `;
 
 // Interfaces
 interface MobileNavProps {
-  linkMb?: number;
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({ linkMb, navigation }) => {
+const MobileNav: FC<MobileNavProps> = ({ xs, sm, md, lg, xl, navigation }) => {
   const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   return (
-    <StyledMobileNav>
+    <StyledMobileNav className={`${prefix}-mobile-nav`}>
       {navigation.map((navItem: Link, index: number) => (
-        <li key={index} className={`mb-${linkMb ? linkMb : 0}`}>
+        <li
+          key={index}
+          className={classnames(
+            `mb-${xs ? xs : 0}`,
+            `mb-sm-${sm ? sm : 0}`,
+            `mb-md-${md ? md : 0}`,
+            `mb-lg-${lg ? lg : 0}`,
+            `mb-xl-${xl ? xl : 0}`
+          )}
+        >
           {navItem.type && navItem.type === LinkType.Link ? (
             <LinkGatsby
               text={navItem.text}

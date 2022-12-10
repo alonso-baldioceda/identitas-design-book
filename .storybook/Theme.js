@@ -1,25 +1,27 @@
 const colors = {
   primary: "blue",
   secondary: "red",
+  transparent: "transparent",
+  black: "#000000",
+  white: "#FFFFFF",
   monocromatic: {
     lighter: "#FFFFFF",
     darker: "#000000",
-    transparent: "transparent",
   },
 };
 
 export const lightTheme = {
-  body: "#FFFFFF",
   colors: {
-    body: "#222222",
+    ...colors,
+    body: colors.black,
     bgPrimary: colors.monocromatic.lighter,
   },
 };
 
 export const darkTheme = {
-  body: "#121212",
   colors: {
-    body: "#FFFFFF",
+    ...colors,
+    body: colors.white,
     bgPrimary: colors.monocromatic.darker,
   },
 };

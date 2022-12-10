@@ -2,15 +2,15 @@ import React, { useState, useContext, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 // import classnames from "classnames";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
 // Styles
 const Label = styled.p`
-  border-bottom: 2px solid transparent;
-  color: ${color.white};
+  border-bottom: 2px solid ${(props) => props.theme.colors.transparent};
+  color: ${(props) => props.theme.colors.white};
   font-size: 22px;
   font-weight: 500;
   padding: 0;
@@ -18,22 +18,23 @@ const Label = styled.p`
 `;
 
 const LinkTranslate = styled.a`
-  color: ${color.white};
+  color: ${(props) => props.theme.colors.white};
   display: inline-block;
   font-size: 22px;
   font-weight: 500;
   padding: 0;
   text-decoration: none;
+  /* TODO: move to variable default */
   transition: all 0.5s ease;
   text-transform: capitalize;
 
   &:hover {
-    color: red;
+    color: ${(props) => props.theme.colors.white};
     text-decoration: none;
   }
 
   &:visited {
-    color: ${color.white} !important;
+    color: ${(props) => props.theme.colors.white} !important;
   }
 
   &:focus {
@@ -41,7 +42,7 @@ const LinkTranslate = styled.a`
   }
 
   &.active {
-    color: ${color.white} !important;
+    color: ${(props) => props.theme.colors.white} !important;
   }
 `;
 

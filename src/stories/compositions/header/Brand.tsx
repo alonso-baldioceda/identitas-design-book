@@ -28,13 +28,13 @@ const StyledBrand = styled((props) => <Link {...props} />)`
     margin-left: 0.375rem;
 
     ${(props) =>
-      props.fontWeight &&
+      props.fw &&
       `
-        font-weight: ${props.fontWeight};
+        font-weight: ${props.fw};
       `}
 
     ${(props) =>
-      !props.fontWeight &&
+      !props.fw &&
       `
         font-weight: 700;
       `}
@@ -102,7 +102,7 @@ const Brand: FC<BrandProps> = ({
         `${prefix}-brand`
       )}
       // duration={duration}
-      fontWeight={fontWeight}
+      fw={fontWeight}
       // offset={offset}
       // onClick={scrollToTop}
       // smooth={smooth}

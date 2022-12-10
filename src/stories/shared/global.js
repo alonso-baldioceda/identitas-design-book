@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from "styled-components";
 
+// TODO: move global inside theme so we can use theme props
+
 import { color, typography } from "./styles";
 
 export const fontUrl =

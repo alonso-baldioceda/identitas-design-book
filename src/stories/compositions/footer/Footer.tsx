@@ -13,7 +13,7 @@ import Link from "./../../../shared/interfaces/link";
 // Styles
 const StyledFooter = styled((props) => <section {...props} />)`
   h2 {
-    color: ${color.white} !important;
+    color: ${(props) => props.theme.colors.white} !important;
   }
 `;
 

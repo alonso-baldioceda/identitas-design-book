@@ -20,7 +20,7 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
     z-index: 99999;
 
     span {
-      background: ${color.black};
+      background: ${(props) => props.theme.colors.body};
 
       &:nth-child(1) {
         left: 50%;
@@ -74,6 +74,7 @@ const StyledSpan = styled.span`
 export interface MenuCloseProps {}
 
 const MenuClose: FC<MenuCloseProps> = () => {
+  // TODO: Add prop isOpen and setIsOpen
   const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   return (

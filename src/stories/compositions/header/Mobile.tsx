@@ -30,7 +30,7 @@ const StyledMobile = styled((props) => <div {...props} />)`
 
   /* TODO: add divisor color */
   hr {
-    background-color: white;
+    background-color: ${(props) => props.theme.colors.white};
   }
 `;
 
@@ -41,7 +41,6 @@ export interface MobileProps {
   hideFrom?: string;
   isOpen: boolean;
   languages?: string[];
-  linkMb?: number;
   navigation?: Link[];
   px?: number;
   py?: number;
@@ -55,7 +54,6 @@ const Mobile: FC<MobileProps> = ({
   hideFrom,
   isOpen,
   languages,
-  linkMb,
   navigation,
   px,
   py,
@@ -72,7 +70,7 @@ const Mobile: FC<MobileProps> = ({
     )}
     style={{ top: startingAt ? startingAt : 0 }}
   >
-    <MobileNav navigation={navigation ? navigation : []} linkMb={linkMb} />
+    <MobileNav navigation={navigation ? navigation : []} />
     <hr className={`my-${separator}`} />
     <MobileLaguages
       languages={languages ? languages : []}
