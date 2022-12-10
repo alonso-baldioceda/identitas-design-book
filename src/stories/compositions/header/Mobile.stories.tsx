@@ -7,6 +7,7 @@ import Mobile from "./Mobile";
 
 // Constants
 import NAV from "./../../../shared/constants/nav.js";
+import COLOR_OPTIONS from "./../../../shared/constants/colorOptions.js";
 
 // Styles
 const MobileWrapper = styled.div`
@@ -26,7 +27,7 @@ export default {
       defaultValue: "dark",
       description: "Footer background color",
       name: "Background Color",
-      options: ["primary", "secondary", "ternary", "dark", "light"],
+      options: COLOR_OPTIONS,
     },
     hideFrom: {
       control: "select",
@@ -50,27 +51,24 @@ export default {
     },
     px: {
       control: "select",
-      defaultValue: 3,
       description: "'Left' / 'Right' menu wrapper spacing",
       name: "Padding X",
       options: [1, 2, 3, 4, 5],
     },
     py: {
       control: "select",
-      defaultValue: 3,
       description: "'Top' / 'Bottom' menu wrapper spacing",
       name: "Padding Y",
       options: [1, 2, 3, 4, 5],
     },
     separator: {
       control: "select",
-      defaultValue: 3,
       description: "'Left' / 'Roght' separator spacing",
       name: "Separator spacing",
+
       options: [1, 2, 3, 4, 5],
     },
     startingAt: {
-      defaultValue: 0,
       description: "Distance from top page",
       name: "Starting at",
     },

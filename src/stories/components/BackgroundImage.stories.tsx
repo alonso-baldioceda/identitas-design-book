@@ -5,6 +5,9 @@ import { color } from "./../shared/styles.js";
 // Components
 import BackgroundImage from "./BackgroundImage";
 
+// Constants
+import COLOR_OPTIONS from "./../../shared/constants/colorOptions";
+
 // Assets
 import OceanImage from "./../../images/ocean.jpg";
 
@@ -15,7 +18,7 @@ export default {
     bgcolor: {
       control: "select",
       name: "Background Color",
-      options: ["primary", "secondary", "ternary", "dark", "white"],
+      options: COLOR_OPTIONS,
     },
     src: {
       name: "Image Source",

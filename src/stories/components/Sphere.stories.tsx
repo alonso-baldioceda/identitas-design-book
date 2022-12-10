@@ -4,6 +4,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Sphere from "./Sphere";
 
+// Constants
+import COLOR_OPTIONS from "./../../shared/constants/colorOptions";
+import SPACING_OPTIONS from "./../../shared/constants/spacingOptions";
+
 // Assets
 import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
@@ -25,11 +29,11 @@ export default {
   argTypes: {
     border: {
       control: "select",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     borderColor: {
       control: "select",
-      options: ["primary", "secondary", "white", "dark"],
+      options: COLOR_OPTIONS,
     },
   },
 } as ComponentMeta<typeof Sphere>;

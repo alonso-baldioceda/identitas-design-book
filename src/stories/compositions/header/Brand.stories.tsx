@@ -4,6 +4,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Brand from "./Brand";
 
+// Constants
+import SPACING_OPTIONS from "./../../../shared/constants/spacingOptions";
+
 // Assets
 import LogoIcon from "./../../../images/svg/logo-black.svg";
 
@@ -23,31 +26,32 @@ export default {
     me: {
       control: "select",
       name: "Logo xs margin right",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     meSm: {
       control: "select",
       name: "Logo sm margin right",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     meMd: {
       control: "select",
       name: "Logo md margin right",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     meLg: {
       control: "select",
       name: "Logo lg margin right",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     meXl: {
       control: "select",
       name: "Logo xl margin right",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     size: {
       control: "select",
       name: "Size",
+      // TODO: Add size enum
       options: ["sm", "md", "lg"],
     },
     name: {

@@ -6,6 +6,9 @@ import { color } from "./../../shared/styles.js";
 // Components
 import MenuClose from "./MenuClose";
 
+// Constants
+import COLOR_OPTIONS from "./../../../shared/constants/colorOptions";
+
 // Styles
 const StyledStory = styled.div`
   width: 400px;
@@ -23,11 +26,11 @@ export default {
   argTypes: {
     colorOpen: {
       control: "select",
-      options: ["primary", "secondary", "ternary", "dark", "white"],
+      options: COLOR_OPTIONS,
     },
     colorClose: {
       control: "select",
-      options: ["primary", "secondary", "ternary", "dark", "white"],
+      options: COLOR_OPTIONS,
     },
   },
 } as ComponentMeta<typeof MenuClose>;

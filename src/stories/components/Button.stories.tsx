@@ -4,6 +4,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Button from "./Button";
 
+// Constants
+import COLOR_OPTIONS from "./../../shared/constants/colorOptions";
+import SPACING_OPTIONS from "./../../shared/constants/spacingOptions";
+
 export default {
   title: "Components/Button",
   component: Button,
@@ -21,7 +25,7 @@ export default {
   argTypes: {
     appearance: {
       control: "select",
-      options: ["primary", "secondary", "ternary", "dark", "airbnb"],
+      options: COLOR_OPTIONS,
     },
     bold: {
       control: "boolean",
@@ -33,15 +37,15 @@ export default {
     },
     mb: {
       control: "select",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     px: {
       control: "select",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     py: {
       control: "select",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     rounded: {
       control: "boolean",

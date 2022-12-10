@@ -4,6 +4,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Card from "./Card";
 
+// Constants
+import COLOR_OPTIONS from "./../../shared/constants/colorOptions";
+import SPACING_OPTIONS from "./../../shared/constants/spacingOptions";
+
 // Types
 import Size from "./../../shared/enums/size";
 
@@ -16,11 +20,11 @@ export default {
   argTypes: {
     border: {
       control: "select",
-      options: [0, 1, 2, 3, 4, 5],
+      options: SPACING_OPTIONS,
     },
     foreignBackgroundColor: {
       control: "select",
-      options: ["primary", "secondary", "ternary", "airbnb"],
+      options: COLOR_OPTIONS,
     },
     // TODO: check contrast
     upfrontBackgroundColor: {

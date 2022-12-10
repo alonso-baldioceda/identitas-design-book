@@ -4,6 +4,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Separator from "./Separator";
 
+// Constants
+import COLOR_CONTROL from "./../../../shared/constants/colorControl";
+
 export default {
   title: "Components/Separator",
   component: Separator,
@@ -11,10 +14,7 @@ export default {
     color: {
       name: "Color",
       description: "Color of the separator",
-      control: {
-        type: "color",
-        presetColors: ["red", "green", "blue", "yellow"],
-      },
+      control: COLOR_CONTROL,
     },
     height: {
       name: "Height",
