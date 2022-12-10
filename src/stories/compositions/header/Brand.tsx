@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 import { Link } from "gatsby";
 // import { animateScroll as scroll } from "react-scroll";
-// import classnames from "classnames";
+import classnames from "classnames";
 
 // Components
 import SVG from "./../../components/SVG";
@@ -23,7 +23,7 @@ const StyledBrand = styled((props) => <Link {...props} />)`
   text-decoration: none;
 
   span {
-    color: ${(props) => props.theme.colors.textPrimary};
+    color: ${(props) => props.theme.colors.body};
     font-size: 1.175rem;
     margin-left: 0.375rem;
 
@@ -53,7 +53,11 @@ export interface BrandProps {
   // duration: number;
   fontWeight: number;
   hideNameOnMobile?: boolean;
-  logoMarginRight: number;
+  me?: number;
+  meSm?: number;
+  meMd?: number;
+  meLg?: number;
+  meXl?: number;
   // offset: number;
   // smooth: boolean;
   // spy: boolean;
@@ -67,7 +71,11 @@ const Brand: FC<BrandProps> = ({
   // duration = 500,
   fontWeight,
   hideNameOnMobile,
-  logoMarginRight = 3,
+  me,
+  meSm,
+  meMd,
+  meLg,
+  meXl,
   // offset = -60,
   // smooth = true,
   // spy = true,
@@ -85,7 +93,14 @@ const Brand: FC<BrandProps> = ({
 
   return (
     <StyledBrand
-      className={`me-${logoMarginRight} ${prefix}-brand`}
+      className={classnames(
+        `me-${me ? me : 3}`,
+        `me-sm-${meSm ? meSm : 3}`,
+        `me-md-${meMd ? meMd : 3}`,
+        `me-lg-${meLg ? meLg : 3}`,
+        `me-xl-${meXl ? meXl : 3}`,
+        `${prefix}-brand`
+      )}
       // duration={duration}
       fontWeight={fontWeight}
       // offset={offset}

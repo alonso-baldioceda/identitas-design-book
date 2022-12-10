@@ -77,9 +77,8 @@ Default.args = {
     brand: {
       fontWeight: 700,
       hideNameOnMobile: true,
-      logoMarginRight: 3,
       svg: <LogoIcon />,
-      text: "Company name",
+      name: "Company name",
       to: "main",
     },
     languages: ["es", "en"],

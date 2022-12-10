@@ -20,9 +20,29 @@ export default {
       name: "Hide Name On Mobile?",
       description: "Hide name on mobile devices",
     },
-    logoMarginRight: {
+    me: {
       control: "select",
-      name: "Logo Margin Right",
+      name: "Logo xs margin right",
+      options: [0, 1, 2, 3, 4, 5],
+    },
+    meSm: {
+      control: "select",
+      name: "Logo sm margin right",
+      options: [0, 1, 2, 3, 4, 5],
+    },
+    meMd: {
+      control: "select",
+      name: "Logo md margin right",
+      options: [0, 1, 2, 3, 4, 5],
+    },
+    meLg: {
+      control: "select",
+      name: "Logo lg margin right",
+      options: [0, 1, 2, 3, 4, 5],
+    },
+    meXl: {
+      control: "select",
+      name: "Logo xl margin right",
       options: [0, 1, 2, 3, 4, 5],
     },
     size: {
@@ -54,7 +74,6 @@ export const Default = Template.bind({});
 Default.args = {
   fontWeight: 700,
   hideNameOnMobile: true,
-  logoMarginRight: 3,
   svg: <LogoIcon />,
   name: "Company name",
   to: "main",

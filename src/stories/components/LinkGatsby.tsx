@@ -5,14 +5,14 @@ import styled from "styled-components";
 
 // Styles
 const StyledLinkGatsby = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.theme.colors.textPrimary};
+  color: ${(props) => props.theme.colors.body};
   cursor: pointer;
 
   &.active,
   &:hover,
   &:focus,
   &:visited {
-    color: ${(props) => props.theme.colors.textPrimary};
+    color: ${(props) => props.theme.colors.body};
   }
 `;
 

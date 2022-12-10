@@ -7,7 +7,7 @@ import { prefix } from "./../../shared/styles.js";
 // Styles
 const LinkTranslate = styled((props) => <a {...props} />)`
   border-bottom: 2px solid transparent;
-  color: ${(props) => props.theme.colors.textPrimary};
+  color: ${(props) => props.theme.colors.body};
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 0.6px;
@@ -25,12 +25,12 @@ const LinkTranslate = styled((props) => <a {...props} />)`
   &:focus {
     /* TODO: change red for a variable */
     border-bottom: 2px solid red;
-    color: ${(props) => props.theme.colors.textPrimary};
+    color: ${(props) => props.theme.colors.body};
     text-decoration: none !important;
   }
 
   &:visited {
-    color: ${(props) => props.theme.colors.textPrimary};
+    color: ${(props) => props.theme.colors.body};
     text-decoration: none;
   }
 `;

@@ -8,7 +8,7 @@ import Size from "../../shared/enums/size.ts";
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`
   svg {
-    fill: ${(props) => props.theme.colors.textPrimary};
+    fill: ${(props) => props.theme.colors.body};
 
     ${(props) =>
       props.size === "xs" &&

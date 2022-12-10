@@ -8,7 +8,7 @@ const StyledSeparator = styled((props) => <div {...props} />)`
   ${(props) =>
     props.color
       ? `background: ${props.color};`
-      : `background: ${props.theme.colors.textPrimary};`}
+      : `background: ${props.theme.colors.body};`}
 
   height: ${(props) => (props.height ? props.height : 44)}px;
   width: 2px;

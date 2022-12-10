@@ -22,7 +22,7 @@ import Link from "./../../../shared/interfaces/link";
 const StyledHeader = styled((props) => <div {...props} />)`
   align-items: center;
   background: ${(props) =>
-    props.bgcolor ? props.bgcolor : `${props.theme.colors.backgroundPrimary}`};
+    props.bgcolor ? props.bgcolor : `${props.theme.colors.bgPrimary}`};
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   display: flex;
   position: fixed;
@@ -34,7 +34,7 @@ const StyledHeader = styled((props) => <div {...props} />)`
   .${prefix}-brand {
     svg {
       path {
-        fill: ${(props) => props.theme.colors.textPrimary};
+        fill: ${(props) => props.theme.colors.body};
       }
     }
   }

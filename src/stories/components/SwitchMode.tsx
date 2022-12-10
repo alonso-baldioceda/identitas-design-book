@@ -41,6 +41,7 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
       opacity: 1;
       stroke-dasharray: 1px 1px;
       transition: stroke-dasharray 0.125s ease-in, opacity 300ms ease-in;
+      fill: transparent;
     }
   }
 

@@ -46,7 +46,7 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
 `;
 
 const StyledSpan = styled.span`
-  background: ${(props) => props.theme.colors.textPrimary};
+  background: ${(props) => props.theme.colors.body};
   border-radius: 9px;
   display: block;
   height: 3px;
