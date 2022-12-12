@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Header from "./Header";
 
 // Constants
-import { NAV } from "./../../../shared/constants/";
+import { NAV, COLOR_OPTIONS } from "./../../../shared/constants/";
 
 // Types
 import Size from "./../../../shared/enums/size";
@@ -32,7 +32,7 @@ export default {
       name: "Background Color",
       description: "Background color",
       control: "select",
-      options: ["default", "secondary", "ternary"],
+      options: COLOR_OPTIONS,
     },
     brand: {
       name: "Brand",
@@ -97,7 +97,6 @@ Default.args = {
   hideLanguagesFrom: "xl",
   showLanguages: true,
   languages: ["es", "en"],
-  navigation: NAV,
   showCall: true,
   call: {
     icon: <PhoneIcon />,
@@ -150,6 +149,10 @@ Default.args = {
       url: "https://www.instagram.com/vistalagoarenal/",
     },
   ],
+  nav: {
+    classes: "me-3",
+    links: NAV,
+  },
 };
 
 export const CustomColor = Template.bind({});

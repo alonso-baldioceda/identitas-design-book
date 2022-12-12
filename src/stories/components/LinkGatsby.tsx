@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Link } from "gatsby";
 import { prefix } from "./../shared/styles.js";
 import styled from "styled-components";
+import classnames from "classnames";
 
 // Styles
 const StyledLinkGatsby = styled((props) => <Link {...props} />)`
@@ -12,19 +13,25 @@ const StyledLinkGatsby = styled((props) => <Link {...props} />)`
   &:hover,
   &:focus,
   &:visited {
-    color: ${(props) => props.theme.colors.body};
+    color: ${(props) => (props.hover ? props.hover : props.theme.colors.body)};
   }
 `;
 
 interface LinkGatsbyProps {
+  classes?: string;
+  hover?: string;
+  onClick?: () => void;
   text: string;
   to: string;
-  onClick?: () => void;
 }
 
-const LinkGatsby: FC<LinkGatsbyProps> = ({ text = "gatsby link", to }) => (
-  <StyledLinkGatsby to={to} className={`${prefix}-link-gatsby`}>
-    {text}
+const LinkGatsby: FC<LinkGatsbyProps> = ({ text, to, hover, classes }) => (
+  <StyledLinkGatsby
+    to={to}
+    hover={hover}
+    className={classnames(`${classes ? classes : ""}`, `${prefix}-link-gatsby`)}
+  >
+    {text ? text : "Link"}
   </StyledLinkGatsby>
 );
 export default LinkGatsby;

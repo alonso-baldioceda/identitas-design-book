@@ -1,15 +1,15 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix } from "./../shared/styles.js";
 
 // Components
 import BackgroundImage from "./../components/BackgroundImage";
 import Mask from "./../components/Mask";
+import Panel from "./hero/Panel";
 
 // Styles
-const StyledHero = styled.div`
+const StyledHero = styled((props) => <div {...props} />)`
   height: 100vh;
-  max-width: 2200px;
   overflow: hidden;
   position: relative;
   width: "100%";
@@ -17,32 +17,31 @@ const StyledHero = styled.div`
 
 // Types
 interface HeroProps {
-  src: string;
-  text: string;
+  bgColor?: string;
   mask?: boolean;
-  bgColor: string;
+  maskColor: string;
+  maxWidth?: string;
+  src: string;
+  // TODO: replace any by PanelProps
+  panel?: any;
 }
 
 const Hero: FC<HeroProps> = ({
-  bgColor = "default",
-  mask = color.background,
+  bgColor,
+  mask,
+  maskColor,
+  maxWidth,
   src,
-  text = "some text here!!",
+  panel,
 }) => {
   return (
-    <StyledHero className={`${prefix}-hero`}>
-      <BackgroundImage src={src} bgcolor="default" />
-      {mask && <Mask bgcolor={bgColor} />}
-      <div className="position-absolute start-0 bottom-0 p-4 w-100">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col col-lg-8 col-xl-6">
-              {/* TODO: move text color (e.g: text-white) to props */}
-              <h1 className="mb-0 text-white">{text}</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+    <StyledHero
+      className={`${prefix}-hero`}
+      style={{ maxWidth: maxWidth ? maxWidth : 2200 }}
+    >
+      <BackgroundImage src={src} />
+      {mask && <Mask bgcolor={maskColor} />}
+      <Panel {...panel} text="some text here!!!" />
     </StyledHero>
   );
 };

@@ -9,7 +9,7 @@ import Mobile from "./Mobile";
 import {
   NAV,
   COLOR_OPTIONS,
-  SPACING_OPTION,
+  SPACING_OPTIONS,
 } from "./../../../shared/constants/";
 
 // Styles
@@ -56,20 +56,20 @@ export default {
       control: "select",
       description: "'Left' / 'Right' menu wrapper spacing",
       name: "Padding X",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     py: {
       control: "select",
       description: "'Top' / 'Bottom' menu wrapper spacing",
       name: "Padding Y",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     separator: {
       control: "select",
       description: "'Left' / 'Roght' separator spacing",
       name: "Separator spacing",
 
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     startingAt: {
       description: "Distance from top page",

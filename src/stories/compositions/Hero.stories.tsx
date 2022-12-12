@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { color } from "./../shared/styles.js";
 
 // Components
 import Hero from "./Hero";
@@ -8,19 +7,10 @@ import Hero from "./Hero";
 // Assets
 import imageFile from "./../../images/ocean.jpg";
 
-const image = {
-  src: imageFile,
-};
-
 export default {
   title: "Compositions/Hero",
   component: Hero,
-  args: {
-    src: image.src,
-    mask: true,
-    bgColor: color.background,
-    text: "some text here!!",
-  },
+  // TODO: Add argTypes
 } as ComponentMeta<typeof Hero>;
 
 const Template: ComponentStory<typeof Hero> = (args) => {
@@ -29,10 +19,26 @@ const Template: ComponentStory<typeof Hero> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  src: image.src,
+  src: imageFile,
   mask: true,
-  bgColor: color.background,
-  text: "some text here!!",
+  panel: {
+    color: "white",
+    text: "some text here!!!!",
+    size: {
+      xs: 12,
+      sm: 12,
+      md: 12,
+      lg: 12,
+      xl: 12,
+    },
+    spacing: {
+      xs: 2,
+      sm: 2,
+      md: 2,
+      lg: 3,
+      xl: 3,
+    },
+  },
 };
 
 export const MaskDisabled = Template.bind({});

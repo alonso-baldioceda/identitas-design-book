@@ -29,17 +29,17 @@ Default.args = {
   ],
 };
 
-export const TextWithIconDefault = Template.bind({});
-TextWithIconDefault.args = {
+export const TextWithIcon = Template.bind({});
+TextWithIcon.args = {
   list: [
     {
-      ...ListGroupItemStories.TextWithIconDefault.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconDefault.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconDefault.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
   ],
 };
@@ -48,13 +48,13 @@ export const TextWithIconSmall = Template.bind({});
 TextWithIconSmall.args = {
   list: [
     {
-      ...ListGroupItemStories.TextWithIconSmall.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconSmall.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconSmall.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
   ],
 };
@@ -63,13 +63,13 @@ export const TextWithIconLargeAndSubheading = Template.bind({});
 TextWithIconLargeAndSubheading.args = {
   list: [
     {
-      ...ListGroupItemStories.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
   ],
 };
@@ -79,13 +79,13 @@ TextWithIconFloated.args = {
   float: true,
   list: [
     {
-      ...ListGroupItemStories.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
     {
-      ...ListGroupItemStories.TextWithIconAndSubheading.args,
+      ...ListGroupItemStories.TextWithIcon.args,
     },
   ],
 };

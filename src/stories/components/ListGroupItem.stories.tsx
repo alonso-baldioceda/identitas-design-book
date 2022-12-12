@@ -5,10 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ListGroupItem from "./ListGroupItem";
 
 // Constants
-import { SPACING_OPTION } from "./../../shared/constants/";
-
-// Types
-import Size from "./../../shared/enums/size";
+import { SPACING_OPTIONS, SIZE_OPTIONS } from "./../../shared/constants/";
 
 // Assets
 import BedQueen from "./../../images/svg/bed-queen.svg";
@@ -17,13 +14,34 @@ export default {
   title: "Compositions/ListGroupItem",
   component: ListGroupItem,
   argTypes: {
-    textBottom: {
+    text: {
+      control: "object",
+      name: "Text",
+      description: "Text to display",
+    },
+    mb: {
+      name: "Margin Bottom",
       control: "select",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
+    },
+    mbSm: {
+      name: "Margin Bottom (Small)",
+      control: "select",
+      options: SPACING_OPTIONS,
+    },
+    mbMd: {
+      name: "Margin Bottom (Medium)",
+      control: "select",
+      options: SPACING_OPTIONS,
+    },
+    mbLg: {
+      name: "Margin Bottom (Large)",
+      control: "select",
+      options: SPACING_OPTIONS,
     },
     svgSize: {
       control: "select",
-      options: ["xs", "sm", "md", "lg"],
+      options: SIZE_OPTIONS,
     },
   },
 } as ComponentMeta<typeof ListGroupItem>;
@@ -34,26 +52,38 @@ const Template: ComponentStory<typeof ListGroupItem> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  text: "some text here!!",
-  textBottom: 0,
+  text: {
+    heading: {
+      text: "some text here!!",
+      mb: 0,
+      mbSm: 0,
+      mbMd: 0,
+      mbLg: 0,
+      mbXl: 0,
+    },
+  },
 };
 
-export const TextWithIconDefault = Template.bind({});
-TextWithIconDefault.args = {
+export const TextWithIcon = Template.bind({});
+TextWithIcon.args = {
   ...Default.args,
   svg: <BedQueen />,
-  text: "some more text here!!",
-};
-
-export const TextWithIconSmall = Template.bind({});
-TextWithIconSmall.args = {
-  ...TextWithIconDefault.args,
-  svgSize: Size.md,
-};
-
-export const TextWithIconAndSubheading = Template.bind({});
-TextWithIconAndSubheading.args = {
-  ...TextWithIconSmall.args,
-  subText: "some text here!!",
-  text: "some other text here!!",
+  text: {
+    heading: {
+      text: "some text here!!",
+      mb: 0,
+      mbSm: 0,
+      mbMd: 0,
+      mbLg: 0,
+      mbXl: 0,
+    },
+    bottom: {
+      text: "some more text here!!",
+      mb: 0,
+      mbSm: 0,
+      mbMd: 0,
+      mbLg: 0,
+      mbXl: 0,
+    },
+  },
 };

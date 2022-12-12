@@ -6,9 +6,6 @@ import { prefix } from "./../../shared/styles.js";
 import LinkGatsby from "./../../components/LinkGatsby";
 import LinkScroll from "./../../components/LinkScroll";
 
-// Contexts
-// import LayoutContext from "./../LayoutContext";
-
 // Types
 import Link from "./../../../shared/interfaces/link";
 import LinkType from "./../../../shared/enums/linkType";
@@ -54,19 +51,36 @@ const StyledDesktopNav = styled.ul`
 
 // Interfaces
 export interface DesktopNavProps {
+  classes?: string;
   navigation: Link[];
+  transform?: "uppercase" | "lowercase" | "capitalize" | "none";
 }
 
-//  TODO: possibly add a better hover effect */
+// TODO: possibly add a better hover effect */
 // TODO: analize including useMemo
-const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => (
+const DesktopNav: FC<DesktopNavProps> = ({
+  classes,
+  navigation,
+  transform,
+}) => (
   <StyledDesktopNav className={`nav ${prefix}-nav`}>
     {navigation.map((navItem: Link, index: number) => (
-      <li key={`nav-${index}`}>
+      <li
+        key={`nav-${index}`}
+        style={{ textTransform: transform ? transform : "capitalize" }}
+      >
         {navItem.type && navItem.type === LinkType.Link ? (
-          <LinkGatsby text={navItem.text} to={navItem.anchor} />
+          <LinkGatsby
+            text={navItem.text}
+            to={navItem.anchor}
+            classes={classes ? classes : ""}
+          />
         ) : (
-          <LinkScroll text={navItem.text} to={navItem.anchor} />
+          <LinkScroll
+            text={navItem.text}
+            to={navItem.anchor}
+            classes={classes ? classes : ""}
+          />
         )}
       </li>
     ))}

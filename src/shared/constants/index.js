@@ -83,3 +83,5 @@ export const COLOR_OPTIONS = [
 ];
 
 export const SPACING_OPTIONS = [0, 1, 2, 3, 4, 5];
+
+export const SIZE_OPTIONS = ["xs", "sm", "md", "lg"];

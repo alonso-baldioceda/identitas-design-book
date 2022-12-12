@@ -77,8 +77,10 @@ export const bodyStyles = css`
     }
   }
 
-  .small {
-    font-size: 15px;
+  small {
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 0;
   }
 
   /*********************/

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Link } from "react-scroll";
 import { prefix } from "./../shared/styles.js";
 import styled from "styled-components";
+import classnames from "classnames";
 
 // Styles
 const StyledLinkScroll = styled((props) => <Link {...props} />)`
@@ -18,6 +19,7 @@ const StyledLinkScroll = styled((props) => <Link {...props} />)`
 
 // Interfaces
 export interface LinkProps {
+  classes?: string;
   duration?: number;
   offset?: number;
   onClick?: () => void;
@@ -28,6 +30,7 @@ export interface LinkProps {
 }
 
 const LinkScroll: FC<LinkProps> = ({
+  classes,
   duration,
   onClick,
   offset,
@@ -42,8 +45,8 @@ const LinkScroll: FC<LinkProps> = ({
     smooth={smooth ? smooth : true}
     spy={spy ? spy : true}
     to={to}
-    className={`${prefix}-link-scroll`}
     onClick={onClick ? onClick : () => {}}
+    className={classnames(`${classes ? classes : ""}`, `${prefix}-link-scroll`)}
   >
     {text}
   </StyledLinkScroll>

@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Grid from "./Grid";
 
 // Constants
-import { SPACING_OPTION } from "./../../shared/constants/";
+import { SPACING_OPTIONS } from "./../../shared/constants/";
 
 export default {
   title: "Compositions/Grid",
@@ -21,23 +21,23 @@ export default {
   argTypes: {
     xs: {
       control: "select",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     sm: {
       control: "select",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     md: {
       control: "select",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     lg: {
       control: "select",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
     xl: {
       control: "select",
-      options: SPACING_OPTION,
+      options: SPACING_OPTIONS,
     },
   },
 } as ComponentMeta<typeof Grid>;

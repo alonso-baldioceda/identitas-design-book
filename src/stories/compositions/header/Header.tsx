@@ -51,16 +51,20 @@ export interface HeaderProps {
   bgColor?: string;
   brand: BrandProps;
   call?: LinkIconProps;
-  minHeight?: number;
   hideLanguagesFrom?: string;
   languages: string[];
-  navigation: Link[];
-  showCall?: boolean;
+  minHeight?: number;
   mobile?: MobileProps;
+  showCall?: boolean;
   showLanguages?: boolean;
-  socials?: LinkIconProps[];
   showSocials?: boolean;
   showSwitchMode?: boolean;
+  socials?: LinkIconProps[];
+  nav: {
+    links: Link[];
+    transform?: "uppercase" | "lowercase" | "capitalize" | "none";
+    classes?: string;
+  };
 }
 
 const Header: FC<HeaderProps> = ({
@@ -72,7 +76,7 @@ const Header: FC<HeaderProps> = ({
   // TODO: replace languages for global languages variable
   languages = ["es"],
   mobile,
-  navigation,
+  nav,
   showCall,
   showLanguages = false,
   showSocials,
@@ -96,7 +100,11 @@ const Header: FC<HeaderProps> = ({
               <StyledNavWrapper className="d-flex align-items-center justify-content-between">
                 <div className="d-flex align-items-center">
                   <Brand {...brand} />
-                  <DesktopNav navigation={navigation} />
+                  <DesktopNav
+                    navigation={nav.links}
+                    transform={nav.transform}
+                    classes={nav.classes}
+                  />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
                   {showLanguages && languages && (
