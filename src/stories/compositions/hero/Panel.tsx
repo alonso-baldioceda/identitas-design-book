@@ -5,8 +5,38 @@ import classnames from "classnames";
 
 // Styles
 const StyledPanel = styled((props) => <div {...props} />)`
-  position: absolute;
-  width: 100%;
+  ${(props) =>
+    props.bgcolor &&
+    `
+      background-color: ${props.bgcolor};
+    `}
+
+  ${(props) =>
+    !props.bgcolor &&
+    `
+      background-color: ${props.theme.colors.primary};
+    `}
+
+  ${(props) =>
+    props.bordercolor &&
+    `
+      border-color: ${props.bordercolor} !important;
+    `}
+
+  ${(props) =>
+    !props.bordercolor &&
+    `
+      border-color: ${props.theme.colors.transparent} !important;
+    `}
+
+  ${(props) =>
+    props.borderradius &&
+    `
+      border-radius: ${props.borderradius}px;
+      border-style: solid;
+    `}
+
+    position: absolute;
 `;
 
 const Heading = styled((props) => <h1 {...props} />)`
@@ -17,54 +47,73 @@ const Heading = styled((props) => <h1 {...props} />)`
 // Types
 interface PanelProps {
   bgColor?: string;
+  borderColor?: string;
+  borderRadius?: number;
+  borderWidth?: number;
+  colLg?: number;
+  colMd?: number;
   color?: string;
+  colSm?: number;
+  colXl?: number;
+  colXs?: number;
+  pLg?: number;
+  pMd?: number;
+  pSm?: number;
+  pXl?: number;
+  pXs?: number;
+  position?: string;
   text: string;
-  size?: {
-    xs?: number;
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
-  spacing?: {
-    xs?: number;
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
 }
 
-const Panel: FC<PanelProps> = ({ bgColor, color, size, spacing, text }) => (
-  // TODO: add position to props
-  // top-right, top-left, top-center, bottom-right, bottom-left, bottom-center, center-center, center-left, center-right
+const Panel: FC<PanelProps> = ({
+  borderColor,
+  borderRadius,
+  borderWidth,
+  bgColor,
+  color,
+  colXs,
+  colSm,
+  colMd,
+  colLg,
+  colXl,
+  pXs,
+  pSm,
+  pMd,
+  pLg,
+  pXl,
+  position,
+  text,
+}) => (
   <StyledPanel
     className={classnames(
-      `start-0 bottom-0`,
-      `p-${spacing ? spacing.xs : 2}`,
-      `p-sm-${spacing ? spacing.sm : 2}`,
-      `p-md-${spacing ? spacing.md : 2}`,
-      `p-lg-${spacing ? spacing.lg : 3}`,
-      `p-xl-${spacing ? spacing.xl : 3}`,
+      `border border-${borderWidth ? borderWidth : 0}`,
+      `p-${pXs ? pXs : 2}`,
+      `p-sm-${pSm ? pSm : 2}`,
+      `p-md-${pMd ? pMd : 2}`,
+      `p-lg-${pLg ? pLg : 3}`,
+      `p-xl-${pXl ? pXl : 3}`,
+      `col-${colXs ? colXs : 12}`,
+      `col-sm-${colSm ? colSm : 12}`,
+      `col-md-${colMd ? colMd : 12}`,
+      `col-lg-${colLg ? colLg : 12}`,
+      `col-xl-${colXl ? colXl : 12}`,
+      { "top-0 start-0": position === "top-start" },
+      { "top-0 start-50 translate-middle-x": position === "top-center" },
+      { "top-0 end-0": position === "top-end" },
+      { "top-50 start-0 translate-middle-y": position === "middle-start" },
+      { "top-50 start-50 translate-middle": position === "middle-center" },
+      { "top-50 end-0 translate-middle-y": position === "middle-end" },
+      { "bottom-0 start-0": position === "bottom-start" },
+      { "bottom-0 start-50 translate-middle-x": position === "bottom-center" },
+      { "bottom-0 end-0": position === "bottom-end" },
       `${prefix}-panel`
     )}
+    bordercolor={borderColor ? borderColor : null}
+    borderradius={borderRadius ? borderRadius : null}
+    borderwidth={borderWidth ? borderWidth : null}
+    bgcolor={bgColor ? bgColor : null}
   >
-    <div className="container-fluid">
-      <div className="row">
-        <div
-          className={classnames(
-            `col-${size ? size.xs : 12}`,
-            `col-sm-${size ? size.sm : 12}`,
-            `col-md-${size ? size.md : 12}`,
-            `col-lg-${size ? size.lg : 8}`,
-            `col-xl-${size ? size.xl : 6}`
-          )}
-          //   bgcolor={bgColor ? bgColor : null}
-        >
-          <Heading color={color ? color : null}>{text}</Heading>
-        </div>
-      </div>
-    </div>
+    <Heading color={color ? color : null}>{text}</Heading>
   </StyledPanel>
 );
 
