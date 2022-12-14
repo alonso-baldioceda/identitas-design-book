@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
-import BackgroundImage from "./../components/BackgroundImage";
-import Mask from "./../components/Mask";
-import Panel from "./hero/Panel";
+import BackgroundImage from "./../../components/BackgroundImage";
+import Mask from "./../../components/Mask";
+import Panel, { PanelProps } from "./Panel";
 
 // Styles
 const StyledHero = styled((props) => <div {...props} />)`
@@ -22,8 +22,7 @@ interface HeroProps {
   maskColor: string;
   maxWidth?: string;
   src: string;
-  // TODO: replace any by PanelProps
-  panel?: any;
+  panel?: PanelProps;
 }
 
 const Hero: FC<HeroProps> = ({
@@ -41,7 +40,11 @@ const Hero: FC<HeroProps> = ({
     >
       <BackgroundImage src={src} />
       {mask && <Mask bgcolor={maskColor} />}
-      <Panel {...panel} text="some text here!!!" />
+      <Panel
+        {...panel}
+        text={panel ? panel.text : ""}
+        position={panel ? panel.position : "bottom-start"}
+      />
     </StyledHero>
   );
 };

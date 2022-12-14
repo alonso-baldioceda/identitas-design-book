@@ -14,7 +14,7 @@ const StyledPanel = styled((props) => <div {...props} />)`
   ${(props) =>
     !props.bgcolor &&
     `
-      background-color: ${props.theme.colors.primary};
+      background-color: ${props.theme.colors.transparent};
     `}
 
   ${(props) =>
@@ -45,7 +45,7 @@ const Heading = styled((props) => <h1 {...props} />)`
 `;
 
 // Types
-interface PanelProps {
+export interface PanelProps {
   bgColor?: string;
   borderColor?: string;
   borderRadius?: number;
@@ -61,6 +61,11 @@ interface PanelProps {
   pSm?: number;
   pXl?: number;
   pXs?: number;
+  mXs?: number;
+  mSm?: number;
+  mMd?: number;
+  mLg?: number;
+  mXl?: number;
   position?: string;
   text: string;
 }
@@ -81,22 +86,33 @@ const Panel: FC<PanelProps> = ({
   pMd,
   pLg,
   pXl,
+  mXs,
+  mSm,
+  mMd,
+  mLg,
+  mXl,
   position,
   text,
 }) => (
   <StyledPanel
     className={classnames(
       `border border-${borderWidth ? borderWidth : 0}`,
-      `p-${pXs ? pXs : 2}`,
-      `p-sm-${pSm ? pSm : 2}`,
-      `p-md-${pMd ? pMd : 2}`,
-      `p-lg-${pLg ? pLg : 3}`,
-      `p-xl-${pXl ? pXl : 3}`,
+      `p-${pXs ? pXs : 0}`,
+      `p-sm-${pSm ? pSm : 0}`,
+      `p-md-${pMd ? pMd : 0}`,
+      `p-lg-${pLg ? pLg : 0}`,
+      `p-xl-${pXl ? pXl : 0}`,
+      `m-${mXs ? mXs : 0}`,
+      `m-sm-${mSm ? mSm : 0}`,
+      `m-md-${mMd ? mMd : 0}`,
+      `m-lg-${mLg ? mLg : 0}`,
+      `m-xl-${mXl ? mXl : 0}`,
       `col-${colXs ? colXs : 12}`,
       `col-sm-${colSm ? colSm : 12}`,
       `col-md-${colMd ? colMd : 12}`,
       `col-lg-${colLg ? colLg : 12}`,
       `col-xl-${colXl ? colXl : 12}`,
+      `${!position && "bottom-0 start-0"}`,
       { "top-0 start-0": position === "top-start" },
       { "top-0 start-50 translate-middle-x": position === "top-center" },
       { "top-0 end-0": position === "top-end" },

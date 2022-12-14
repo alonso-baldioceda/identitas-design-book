@@ -10,7 +10,7 @@ import Sphere from "../components/Sphere";
 // Compositions
 import Card from "../compositions/Card";
 import Grid from "../compositions/Grid";
-import Hero from "../compositions/Hero";
+import Hero from "../compositions/hero/Hero";
 import Layout from "../compositions/Layout";
 import ListGroup from "../compositions/ListGroup";
 
@@ -44,6 +44,12 @@ const Homepage: FC<HomepageProps> = ({
   rulesProps,
   footerProps,
 }) => {
+  console.log("heroProps", heroProps);
+  const newHeroProps = {
+    ...heroProps,
+    text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
+  };
+
   return (
     <Layout footer={footerProps} header={headerProps}>
       <Helmet>
@@ -64,7 +70,7 @@ const Homepage: FC<HomepageProps> = ({
         </script>
       </Helmet>
       <section id="top">
-        <Hero {...heroProps} />
+        <Hero {...newHeroProps} />
       </section>
       <section id="units">
         <FadeInWhenVisible>

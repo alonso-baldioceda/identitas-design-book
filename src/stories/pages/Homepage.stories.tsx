@@ -58,8 +58,20 @@ Default.args = {
   heroProps: {
     src: HeroImage,
     mask: true,
-    bgColor: color.background,
-    text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
+    panel: {
+      text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
+      mXs: 2,
+      mSm: 2,
+      mMd: 2,
+      mLg: 3,
+      mXl: 3,
+      colXs: 12,
+      colSm: 12,
+      colMd: 6,
+      colLg: 6,
+      colXl: 6,
+      borderRadius: 0,
+    },
   },
   cardsGridProps: {
     xl: 3,
