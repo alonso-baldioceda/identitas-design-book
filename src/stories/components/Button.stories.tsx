@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Button from "./Button";
+import ButtonComponent from "./Button";
 
 // Constants
-import { COLOR_OPTIONS, SPACING_OPTIONS } from "./../../shared/constants/";
+import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
   title: "Components/Button",
-  component: Button,
+  component: ButtonComponent,
   args: {
     appearance: "primary",
     bold: true,
@@ -23,44 +23,53 @@ export default {
   },
   argTypes: {
     appearance: {
-      control: "select",
-      options: COLOR_OPTIONS,
+      name: "Appearance",
+      control: COLOR_CONTROL,
     },
     bold: {
+      name: "Bold",
       control: "boolean",
       options: [false, true],
     },
     disabled: {
+      name: "Disabled",
       control: "boolean",
       options: [false, true],
     },
     mb: {
+      name: "Margin Bottom",
       control: "select",
       options: SPACING_OPTIONS,
     },
     px: {
+      name: "Padding X",
       control: "select",
       options: SPACING_OPTIONS,
     },
     py: {
+      name: "Padding Y",
       control: "select",
       options: SPACING_OPTIONS,
     },
     rounded: {
+      name: "Rounded",
       control: "boolean",
       options: [false, true],
     },
     type: {
+      name: "Type",
       control: "select",
       options: ["button", "submit"],
     },
   },
-} as ComponentMeta<typeof Button>;
+} as ComponentMeta<typeof ButtonComponent>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof ButtonComponent> = (args) => (
+  <ButtonComponent {...args} />
+);
 
-export const Default = Template.bind({});
-Default.args = {
+export const Button = Template.bind({});
+Button.args = {
   appearance: "primary",
   bold: true,
   disabled: false,
@@ -71,12 +80,3 @@ Default.args = {
   text: "button",
   type: "button",
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = { ...Default.args, appearance: "secondary" };
-
-export const Ternary = Template.bind({});
-Ternary.args = { ...Default.args, appearance: "ternary" };
-
-export const Airbnb = Template.bind({});
-Airbnb.args = { ...Default.args, appearance: "airbnb" };

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
 
 // Components
-import Panel from "./Panel";
+import PanelComponent from "./Panel";
 
 // Constants
 import { COLOR_CONTROL, POSITIONS_OPTIONS } from "./../../../shared/constants/";
@@ -15,8 +15,8 @@ const PanelWrapper = styled((props) => <div {...props} />)`
 `;
 
 export default {
-  title: "Components/Panel",
-  component: Panel,
+  title: "Compositions",
+  component: PanelComponent,
   argTypes: {
     bgColor: { name: "Background Color", control: COLOR_CONTROL },
     color: { name: "Color", control: COLOR_CONTROL },
@@ -42,16 +42,16 @@ export default {
     pLg: { name: "Padding Lg", control: { type: "number", min: 0, max: 5 } },
     pXl: { name: "Padding Xl", control: { type: "number", min: 0, max: 5 } },
   },
-} as ComponentMeta<typeof Panel>;
+} as ComponentMeta<typeof PanelComponent>;
 
-const Template: ComponentStory<typeof Panel> = (args) => (
+const Template: ComponentStory<typeof PanelComponent> = (args) => (
   <PanelWrapper>
-    <Panel {...args} />
+    <PanelComponent {...args} />
   </PanelWrapper>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Panel = Template.bind({});
+Panel.args = {
   bgColor: "red",
   text: "some text here!!!",
   pXs: 2,

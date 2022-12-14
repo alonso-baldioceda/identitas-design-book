@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import LinkIcon from "./LinkIcon";
+import LinkIconComponent from "./LinkIcon";
 
 // Types
 import Size from "./../../shared/enums/size";
@@ -12,8 +12,8 @@ import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
 
 export default {
-  title: "Components/LinkIcon",
-  component: LinkIcon,
+  title: "Components",
+  component: LinkIconComponent,
   argTypes: {
     icon: {
       name: "Icon",
@@ -67,14 +67,14 @@ export default {
       options: ["xs", "sm", "md", "lg"],
     },
   },
-} as ComponentMeta<typeof LinkIcon>;
+} as ComponentMeta<typeof LinkIconComponent>;
 
-const Template: ComponentStory<typeof LinkIcon> = (args) => (
-  <LinkIcon {...args} />
+const Template: ComponentStory<typeof LinkIconComponent> = (args) => (
+  <LinkIconComponent {...args} />
 );
 
-export const Facebook = Template.bind({});
-Facebook.args = {
+export const LinkIcon = Template.bind({});
+LinkIcon.args = {
   disabled: false,
   icon: <FacebookIcon />,
   mb: 0,
@@ -87,19 +87,3 @@ Facebook.args = {
   text: "facebook",
   url: "https://www.google.com/",
 };
-
-export const Instagram = Template.bind({});
-Instagram.args = {
-  ...Facebook.args,
-  icon: <InstagramIcon />,
-  text: "instagram",
-};
-
-export const SmallSize = Template.bind({});
-SmallSize.args = { ...Facebook.args, size: Size.sm };
-
-export const MediumSize = Template.bind({});
-MediumSize.args = { ...Facebook.args, size: Size.md };
-
-export const LargeSize = Template.bind({});
-LargeSize.args = { ...Facebook.args, size: Size.lg };

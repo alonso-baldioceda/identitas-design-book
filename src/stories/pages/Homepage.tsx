@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 import ButtonLink from "../components/ButtonLink";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import Spacer from "../components/Spacer";
-import Sphere from "../components/Sphere";
+import Sphere from "../compositions/Sphere";
 
 // Compositions
 import Card from "../compositions/Card";
@@ -44,7 +44,6 @@ const Homepage: FC<HomepageProps> = ({
   rulesProps,
   footerProps,
 }) => {
-  console.log("heroProps", heroProps);
   const newHeroProps = {
     ...heroProps,
     text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",

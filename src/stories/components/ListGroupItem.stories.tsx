@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import ListGroupItem from "./ListGroupItem";
+import ListGroupItemComponent from "./ListGroupItem";
 
 // Constants
 import { SPACING_OPTIONS, SIZE_OPTIONS } from "./../../shared/constants/";
@@ -11,8 +11,8 @@ import { SPACING_OPTIONS, SIZE_OPTIONS } from "./../../shared/constants/";
 import BedQueen from "./../../images/svg/bed-queen.svg";
 
 export default {
-  title: "Compositions/ListGroupItem",
-  component: ListGroupItem,
+  title: "Compositions",
+  component: ListGroupItemComponent,
   argTypes: {
     text: {
       control: "object",
@@ -44,14 +44,14 @@ export default {
       options: SIZE_OPTIONS,
     },
   },
-} as ComponentMeta<typeof ListGroupItem>;
+} as ComponentMeta<typeof ListGroupItemComponent>;
 
-const Template: ComponentStory<typeof ListGroupItem> = (args) => (
-  <ListGroupItem {...args} />
+const Template: ComponentStory<typeof ListGroupItemComponent> = (args) => (
+  <ListGroupItemComponent {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const ListGroupItem = Template.bind({});
+ListGroupItem.args = {
   text: {
     heading: {
       text: "some text here!!",
@@ -66,7 +66,7 @@ Default.args = {
 
 export const TextWithIcon = Template.bind({});
 TextWithIcon.args = {
-  ...Default.args,
+  ...ListGroupItem.args,
   svg: <BedQueen />,
   text: {
     heading: {

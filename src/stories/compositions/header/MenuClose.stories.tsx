@@ -4,10 +4,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { color } from "./../../shared/styles.js";
 
 // Components
-import MenuClose from "./MenuClose";
+import MenuCloseComponent from "./MenuClose";
 
 // Constants
-import { COLOR_OPTIONS } from "./../../../shared/constants/";
+import { COLOR_CONTROL } from "./../../../shared/constants/";
 
 // Styles
 const StyledStory = styled.div`
@@ -15,42 +15,24 @@ const StyledStory = styled.div`
 `;
 
 export default {
-  title: "Components/MenuClose",
-  component: MenuClose,
-  args: {
-    colorOpen: color.black,
-    colorClose: color.black,
-    isOpen: false,
-    setIsOpen: () => void {},
-  },
+  title: "Components",
+  component: MenuCloseComponent,
   argTypes: {
-    colorOpen: {
-      control: "select",
-      options: COLOR_OPTIONS,
-    },
-    colorClose: {
-      control: "select",
-      options: COLOR_OPTIONS,
-    },
+    colorOpen: { name: "Color Open", control: COLOR_CONTROL },
+    colorClose: { name: "Color Close", control: COLOR_CONTROL },
   },
-} as ComponentMeta<typeof MenuClose>;
+} as ComponentMeta<typeof MenuCloseComponent>;
 
-const Template: ComponentStory<typeof MenuClose> = (args) => (
+const Template: ComponentStory<typeof MenuCloseComponent> = (args) => (
   <StyledStory className="p-5">
-    <MenuClose {...args} />
+    <MenuCloseComponent {...args} />
   </StyledStory>
 );
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const CustomOpenColor = Template.bind({});
-CustomOpenColor.args = {
-  colorOpen: "primary",
-};
-
-export const CustomCloseColor = Template.bind({});
-CustomCloseColor.args = {
-  ...Default.args,
-  colorClose: "primary",
+export const CloseMenu = Template.bind({});
+CloseMenu.args = {
+  colorOpen: color.black,
+  colorClose: color.black,
+  isOpen: false,
+  setIsOpen: () => void {},
 };

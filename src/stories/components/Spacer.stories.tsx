@@ -2,23 +2,26 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Spacer from "./Spacer";
+import SpacerComponent from "./Spacer";
 
 export default {
-  title: "Components/Spacer",
-  component: Spacer,
-  args: {
-    bottomOnly: false,
+  title: "Components",
+  component: SpacerComponent,
+  argTypes: {
+    bottomOnly: {
+      control: "boolean",
+      name: "Bottom Only",
+    },
   },
-} as ComponentMeta<typeof Spacer>;
+} as ComponentMeta<typeof SpacerComponent>;
 
-const Template: ComponentStory<typeof Spacer> = (args) => (
+const Template: ComponentStory<typeof SpacerComponent> = (args) => (
   <div className="bg-primary px-4">
-    <Spacer {...args}>some text here</Spacer>
+    <SpacerComponent {...args}>some text here</SpacerComponent>
   </div>
 );
 
-export const FullSpacer = Template.bind({});
-
-export const BottonSpacer = Template.bind({});
-BottonSpacer.args = { bottomOnly: true };
+export const Spacer = Template.bind({});
+Spacer.args = {
+  bottomOnly: false,
+};

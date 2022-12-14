@@ -18,13 +18,13 @@ export const Default = Template.bind({});
 Default.args = {
   list: [
     {
-      ...ListGroupItemStories.Default.args,
+      ...ListGroupItemStories.ListGroupItem.args,
     },
     {
-      ...ListGroupItemStories.Default.args,
+      ...ListGroupItemStories.ListGroupItem.args,
     },
     {
-      ...ListGroupItemStories.Default.args,
+      ...ListGroupItemStories.ListGroupItem.args,
     },
   ],
 };

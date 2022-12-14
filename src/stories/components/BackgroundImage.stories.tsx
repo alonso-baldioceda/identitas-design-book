@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import BackgroundImage from "./BackgroundImage";
+import BackgroundImageComponent from "./BackgroundImage";
 
 // Constants
 import { COLOR_CONTROL } from "./../../shared/constants/";
@@ -11,8 +11,8 @@ import { COLOR_CONTROL } from "./../../shared/constants/";
 import OceanImage from "./../../images/ocean.jpg";
 
 export default {
-  title: "Components/BackgroundImage",
-  component: BackgroundImage,
+  title: "Components",
+  component: BackgroundImageComponent,
   argTypes: {
     bgColor: {
       control: COLOR_CONTROL,
@@ -23,13 +23,13 @@ export default {
       control: "text",
     },
   },
-} as ComponentMeta<typeof BackgroundImage>;
+} as ComponentMeta<typeof BackgroundImageComponent>;
 
-const Template: ComponentStory<typeof BackgroundImage> = (args) => (
-  <BackgroundImage {...args} />
+const Template: ComponentStory<typeof BackgroundImageComponent> = (args) => (
+  <BackgroundImageComponent {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const BackgroundImage = Template.bind({});
+BackgroundImage.args = {
   src: OceanImage,
 };

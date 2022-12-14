@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { color } from "./../shared/styles.js";
 
 // Components
-import Mask from "./Mask";
+import MaskComponent from "./Mask";
+
+// Constants
+import { COLOR_CONTROL } from "./../../shared/constants";
 
 // Styles
 const StyledStory = styled.div`
@@ -12,21 +14,30 @@ const StyledStory = styled.div`
 `;
 
 export default {
-  title: "Components/Mask",
-  component: Mask,
-  args: { bgcolor: color.background },
-} as ComponentMeta<typeof Mask>;
+  title: "Components",
+  component: MaskComponent,
+  argTypes: {
+    bgColor: {
+      name: "Background Color",
+      control: COLOR_CONTROL,
+    },
+    opacity: {
+      name: "Opacity",
+      control: {
+        type: "range",
+        min: 0,
+        max: 100,
+        step: 1,
+      },
+    },
+  },
+} as ComponentMeta<typeof MaskComponent>;
 
-const Template: ComponentStory<typeof Mask> = (args) => (
+const Template: ComponentStory<typeof MaskComponent> = (args) => (
   <StyledStory className="position-relative">
-    <Mask {...args} />
+    <MaskComponent {...args} />
   </StyledStory>
 );
 
-export const Default = Template.bind({});
-
-export const CustomBackgroundColor = Template.bind({});
-CustomBackgroundColor.args = {
-  ...Default.args,
-  bgcolor: "rgba(255, 0, 0, 0.5)",
-};
+export const Mask = Template.bind({});
+Mask.args = {};

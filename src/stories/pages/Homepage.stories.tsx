@@ -8,7 +8,7 @@ import Homepage from "./Homepage";
 // Stories
 import * as Layout from "./../compositions/Layout.stories";
 import * as Card from "./../compositions/Card.stories";
-import * as Sphere from "./../components/Sphere.stories";
+import * as SphereStories from "./../compositions/Sphere.stories";
 
 // Assets
 import HeroImage from "./../../images/home-hero.jpg";
@@ -125,7 +125,7 @@ Default.args = {
     xl: 2,
   },
   sphereProps1: {
-    ...Sphere.Default.args,
+    ...SphereStories.Sphere.args,
     id: "sphereSample1",
     image: SphereImage1,
     pitch: 6,
@@ -134,7 +134,7 @@ Default.args = {
     yaw: 40,
   },
   sphereProps2: {
-    ...Sphere.Default.args,
+    ...SphereStories.Sphere.args,
     id: "sphereSample2",
     image: SphereImage1,
     pitch: 6,
@@ -143,7 +143,7 @@ Default.args = {
     yaw: 40,
   },
   sphereProps3: {
-    ...Sphere.Default.args,
+    ...SphereStories.Sphere.args,
     id: "sphereSample3",
     image: SphereImage1,
     pitch: 6,

@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import SVG from "./SVG";
+import SVGComponent from "./SVG";
 
 // Constants
 import Size from "../../shared/enums/size.ts";
@@ -11,8 +11,8 @@ import Size from "../../shared/enums/size.ts";
 import BedQueen from "./../../images/svg/bed-queen.svg";
 
 export default {
-  title: "Components/SVG",
-  component: SVG,
+  title: "Components",
+  component: SVGComponent,
   argTypes: {
     size: {
       control: "select",
@@ -21,28 +21,18 @@ export default {
     },
     icon: {
       name: "Icon",
-      description: "SVG icon",
+      description: "SVGComponent icon",
       control: "text",
     },
   },
-} as ComponentMeta<typeof SVG>;
+} as ComponentMeta<typeof SVGComponent>;
 
-const Template: ComponentStory<typeof SVG> = (args) => <SVG {...args} />;
+const Template: ComponentStory<typeof SVGComponent> = (args) => (
+  <SVGComponent {...args} />
+);
 
-export const Default = Template.bind({});
-Default.args = {
+export const SVG = Template.bind({});
+SVG.args = {
   icon: <BedQueen />,
   size: Size.md,
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  ...Default.args,
-  size: Size.sm,
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  ...Default.args,
-  size: Size.lg,
 };

@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Card from "./Card";
 
 // Constants
-import { COLOR_OPTIONS, SPACING_OPTIONS } from "./../../shared/constants/";
+import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../shared/constants/";
 
 // Types
 import Size from "./../../shared/enums/size";
@@ -18,17 +18,17 @@ export default {
   component: Card,
   argTypes: {
     border: {
+      name: "Border",
       control: "select",
       options: SPACING_OPTIONS,
     },
     foreignBackgroundColor: {
-      control: "select",
-      options: COLOR_OPTIONS,
+      name: "Foreign Background Color",
+      control: COLOR_CONTROL,
     },
-    // TODO: check contrast
     upfrontBackgroundColor: {
-      control: "select",
-      options: ["transparent", "white", "primary", "secondary", "ternary"],
+      name: "Upfront Background Color",
+      control: COLOR_CONTROL,
     },
   },
 } as ComponentMeta<typeof Card>;

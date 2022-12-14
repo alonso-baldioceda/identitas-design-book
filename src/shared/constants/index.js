@@ -68,19 +68,16 @@ export const ANIMATION_CHILDREN = {
 
 export const COLOR_CONTROL = {
   type: "color",
-  presetColors: ["red", "green", "blue", "yellow", "white", "black"],
+  presetColors: [
+    { color: "#0094FF", title: "Primary" },
+    { color: "#FF0000", title: "Secondary" },
+    { color: "#24d300", title: "Ternary" },
+    { color: "#000000", title: "Black" },
+    { color: "#FFFFFF", title: "White" },
+  ],
 };
 
-export const COLOR_OPTIONS = [
-  "primary",
-  "secondary",
-  "ternary",
-  "dark",
-  "light",
-  "black",
-  "white",
-  "transparent",
-];
+export const OPACITY_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const SPACING_OPTIONS = [0, 1, 2, 3, 4, 5];
 

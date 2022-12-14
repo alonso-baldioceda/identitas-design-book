@@ -2,16 +2,17 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import SwitchMode from "./SwitchMode";
+import SwitchModeComponent from "./SwitchMode";
 
 // Constants
 import Size from "../../shared/enums/size.ts";
 
 export default {
   title: "Components/SwitchMode",
-  component: SwitchMode,
+  component: SwitchModeComponent,
   argTypes: {
     size: {
+      name: "Size",
       control: "select",
       options: ["xs", "sm", "md", "lg"],
     },
@@ -20,14 +21,14 @@ export default {
       name: "Dark Mode",
     },
   },
-} as ComponentMeta<typeof SwitchMode>;
+} as ComponentMeta<typeof SwitchModeComponent>;
 
-const Template: ComponentStory<typeof SwitchMode> = (args) => (
-  <SwitchMode {...args} />
+const Template: ComponentStory<typeof SwitchModeComponent> = (args) => (
+  <SwitchModeComponent {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const SwitchMode = Template.bind({});
+SwitchMode.args = {
   isDark: false,
   size: Size.xs,
 };

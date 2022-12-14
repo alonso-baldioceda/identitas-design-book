@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Hero from "./Hero";
 
 // Stories
-import { Default as PanelDefault } from "./Panel.stories";
+// import { Default as PanelDefault } from "./Panel.stories";
 
 // Assets
 import imageFile from "./../../../images/ocean.jpg";
@@ -15,8 +15,6 @@ export default {
   component: Hero,
   // TODO: Add argTypes
 } as ComponentMeta<typeof Hero>;
-
-console.log(PanelDefault.args);
 
 const Template: ComponentStory<typeof Hero> = (args) => {
   return <Hero {...args} />;

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import ReactPannellum from "react-pannellum";
 import styled from "styled-components";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix } from "./../shared/styles.js";
 
 // Assets
 import RotationIcon from "./../../images/svg/rotation.svg";

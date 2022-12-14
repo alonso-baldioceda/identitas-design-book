@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Header from "./Header";
 
 // Constants
-import { NAV, COLOR_OPTIONS } from "./../../../shared/constants/";
+import { NAV, COLOR_CONTROL } from "./../../../shared/constants/";
 
 // Types
 import Size from "./../../../shared/enums/size";
@@ -31,8 +31,7 @@ export default {
     bgColor: {
       name: "Background Color",
       description: "Background color",
-      control: "select",
-      options: COLOR_OPTIONS,
+      control: COLOR_CONTROL,
     },
     brand: {
       name: "Brand",

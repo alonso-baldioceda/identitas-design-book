@@ -2,22 +2,22 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import LinkGatsby from "./LinkGatsby";
+import LinkGatsbyComponent from "./LinkGatsby";
 
 export default {
-  title: "Components/LinkGatsby",
-  component: LinkGatsby,
+  title: "Components",
+  component: LinkGatsbyComponent,
   args: {
     text: "Gatsby Link",
     to: "/info",
   },
-} as ComponentMeta<typeof LinkGatsby>;
+} as ComponentMeta<typeof LinkGatsbyComponent>;
 
-const Template: ComponentStory<typeof LinkGatsby> = (args) => (
-  <LinkGatsby {...args} />
+const Template: ComponentStory<typeof LinkGatsbyComponent> = (args) => (
+  <LinkGatsbyComponent {...args} />
 );
 
-export const Default = Template.bind({
+export const GatsbyLink = Template.bind({
   text: "Gatsby Link",
-  to: "/info",
+  to: "#",
 });

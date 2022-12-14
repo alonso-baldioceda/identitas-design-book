@@ -8,8 +8,8 @@ import Mobile from "./Mobile";
 // Constants
 import {
   NAV,
-  COLOR_OPTIONS,
   SPACING_OPTIONS,
+  COLOR_CONTROL,
 } from "./../../../shared/constants/";
 
 // Styles
@@ -26,11 +26,8 @@ export default {
   component: Mobile,
   argTypes: {
     bgColor: {
-      control: "select",
-      defaultValue: "dark",
-      description: "Footer background color",
       name: "Background Color",
-      options: COLOR_OPTIONS,
+      control: COLOR_CONTROL,
     },
     hideFrom: {
       control: "select",

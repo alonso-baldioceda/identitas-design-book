@@ -2,14 +2,14 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import ButtonLink from "./ButtonLink";
+import ButtonLinkComponent from "./ButtonLink";
 
 // Constants
-import { COLOR_OPTIONS, SPACING_OPTIONS } from "./../../shared/constants/";
+import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
   title: "Components/ButtonLink",
-  component: ButtonLink,
+  component: ButtonLinkComponent,
   args: {
     appearance: "primary",
     bold: true,
@@ -24,8 +24,8 @@ export default {
   },
   argTypes: {
     appearance: {
-      control: "select",
-      options: COLOR_OPTIONS,
+      name: "Appearance",
+      control: COLOR_CONTROL,
     },
     bold: {
       control: "boolean",
@@ -52,14 +52,14 @@ export default {
       options: [false, true],
     },
   },
-} as ComponentMeta<typeof ButtonLink>;
+} as ComponentMeta<typeof ButtonLinkComponent>;
 
-const Template: ComponentStory<typeof ButtonLink> = (args) => (
-  <ButtonLink {...args} />
+const Template: ComponentStory<typeof ButtonLinkComponent> = (args) => (
+  <ButtonLinkComponent {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const ButtonLink = Template.bind({});
+ButtonLink.args = {
   appearance: "primary",
   bold: true,
   disabled: false,
@@ -71,15 +71,3 @@ Default.args = {
   text: "click me!!",
   url: "https://www.google.com/",
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  ...Default.args,
-  appearance: "secondary",
-};
-
-export const Ternary = Template.bind({});
-Ternary.args = { ...Default.args, appearance: "ternary" };
-
-export const Airbnb = Template.bind({});
-Airbnb.args = { ...Default.args, appearance: "airbnb" };
