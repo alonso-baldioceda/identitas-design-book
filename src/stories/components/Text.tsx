@@ -1,18 +1,25 @@
 import React, { FC } from "react";
-import styled from "styled-components";
-
-// Styles
-const StyledText = styled((props) => <p {...props} />)`
-  color: ${(props) => props.color};
-`;
 
 interface TextProps {
   color?: string;
   text: string;
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span" | "small";
+  variant?:
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "h6"
+    | "p"
+    | "span"
+    | "small"
+    | "label";
+  className?: string;
+  align?: "left" | "center" | "right" | "justify" | "initial" | "inherit";
+  noWrap?: boolean;
 }
 
-const Text: FC<TextProps> = ({ text, variant }) => {
+const Text: FC<TextProps> = ({ align, text, variant, className, noWrap }) => {
   const getVariant = (variant: string) => {
     switch (variant) {
       case "h1":
@@ -33,12 +40,24 @@ const Text: FC<TextProps> = ({ text, variant }) => {
         return "span";
       case "small":
         return "small";
+      case "label":
+        return "label";
       default:
         return "p";
     }
   };
 
-  return React.createElement(getVariant(variant ? variant : "p"), {}, text);
+  return React.createElement(
+    getVariant(variant ? variant : "p"),
+    {
+      className: className ? className : "",
+      style: {
+        textAlign: align ? align : "left",
+        whiteSpace: noWrap ? "nowrap" : "normal",
+      },
+    },
+    text ? text : ""
+  );
 };
 
 export default Text;

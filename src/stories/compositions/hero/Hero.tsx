@@ -12,7 +12,7 @@ const StyledHero = styled((props) => <div {...props} />)`
   height: 100vh;
   overflow: hidden;
   position: relative;
-  width: "100%";
+  width: 100%;
 `;
 
 // Types
@@ -38,8 +38,9 @@ const Hero: FC<HeroProps> = ({
       className={`${prefix}-hero`}
       style={{ maxWidth: maxWidth ? maxWidth : 2200 }}
     >
+      {/* TODO: add a mobile image version */}
       <BackgroundImage src={src} />
-      {mask && <Mask bgcolor={maskColor} />}
+      {mask && <Mask bgColor={maskColor} opacity={25} />}
       <Panel
         {...panel}
         text={panel ? panel.text : ""}

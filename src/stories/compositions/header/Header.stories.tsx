@@ -120,6 +120,10 @@ Default.args = {
     startingAt: 82,
     translate: "Idiomas",
   },
+  separator: {
+    xs: 2,
+    sm: 2,
+  },
   showSocials: true,
   showSwitchMode: true,
   socials: [

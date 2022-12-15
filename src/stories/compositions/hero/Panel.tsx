@@ -36,7 +36,45 @@ const StyledPanel = styled((props) => <div {...props} />)`
       border-style: solid;
     `}
 
-    position: absolute;
+  ${(props) =>
+    props.size &&
+    `
+       width: ${props.size}%;
+    `}
+
+  ${(props) =>
+    props.sizesm &&
+    `
+      @media (min-width: 768px) {
+        width: ${props.sizesm}%;
+      }
+    `}
+
+  ${(props) =>
+    props.sizemd &&
+    `
+      @media (min-width: 992px) {
+        width: ${props.sizemd}%;
+      }
+    `}
+
+  ${(props) =>
+    props.sizelg &&
+    `
+      @media (min-width: 1200px) {
+        width: ${props.sizelg}%;
+      }
+    `}
+
+  ${(props) =>
+    props.sizexl &&
+    `
+      @media (min-width: 1400px) {
+        width: ${props.sizexl}%;
+      }
+    `}
+
+  position: absolute;
 `;
 
 const Heading = styled((props) => <h1 {...props} />)`
@@ -50,12 +88,12 @@ export interface PanelProps {
   borderColor?: string;
   borderRadius?: number;
   borderWidth?: number;
-  colLg?: number;
-  colMd?: number;
   color?: string;
-  colSm?: number;
-  colXl?: number;
-  colXs?: number;
+  size?: number;
+  sizeSm?: number;
+  sizeMd?: number;
+  sizeLg?: number;
+  sizeXl?: number;
   pLg?: number;
   pMd?: number;
   pSm?: number;
@@ -76,11 +114,11 @@ const Panel: FC<PanelProps> = ({
   borderWidth,
   bgColor,
   color,
-  colXs,
-  colSm,
-  colMd,
-  colLg,
-  colXl,
+  size,
+  sizeSm,
+  sizeMd,
+  sizeLg,
+  sizeXl,
   pXs,
   pSm,
   pMd,
@@ -107,11 +145,6 @@ const Panel: FC<PanelProps> = ({
       `m-md-${mMd ? mMd : 0}`,
       `m-lg-${mLg ? mLg : 0}`,
       `m-xl-${mXl ? mXl : 0}`,
-      `col-${colXs ? colXs : 12}`,
-      `col-sm-${colSm ? colSm : 12}`,
-      `col-md-${colMd ? colMd : 12}`,
-      `col-lg-${colLg ? colLg : 12}`,
-      `col-xl-${colXl ? colXl : 12}`,
       `${!position && "bottom-0 start-0"}`,
       { "top-0 start-0": position === "top-start" },
       { "top-0 start-50 translate-middle-x": position === "top-center" },
@@ -128,7 +161,14 @@ const Panel: FC<PanelProps> = ({
     borderradius={borderRadius ? borderRadius : null}
     borderwidth={borderWidth ? borderWidth : null}
     bgcolor={bgColor ? bgColor : null}
+    size={size ? size : 100}
+    sizesm={sizeSm ? sizeSm : 100}
+    sizemd={sizeMd ? sizeMd : 100}
+    sizelg={sizeLg ? sizeLg : 50}
+    sizexl={sizeXl ? sizeXl : 40}
   >
+    {/* TODO: Replace by "Text component" */}
+    {/* or even better, to allow a set of subcomponents only */}
     <Heading color={color ? color : null}>{text}</Heading>
   </StyledPanel>
 );

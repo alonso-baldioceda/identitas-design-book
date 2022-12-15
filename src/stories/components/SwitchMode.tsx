@@ -64,15 +64,34 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 interface SwitchModeProps {
   isDark?: boolean;
   me?: number;
+  meSm?: number;
+  meMd?: number;
+  meLg?: number;
+  meXl?: number;
   setIsDark?: (isDark: boolean) => void;
   size?: string;
 }
 
-const SwitchMode: FC<SwitchModeProps> = ({ isDark, me, setIsDark, size }) => (
+const SwitchMode: FC<SwitchModeProps> = ({
+  isDark,
+  me,
+  meSm,
+  meMd,
+  meLg,
+  meXl,
+  setIsDark,
+  size,
+}) => (
   <StyledSwitchMode
-    className={classnames(`${prefix}-swith-mode me-${me ? me : 3}`, {
-      "is-dark": isDark,
-    })}
+    className={classnames(
+      { "is-dark": isDark },
+      `me-${me ? me : 3}`,
+      `me-sm-${meSm ? meSm : 3}`,
+      `me-md-${meMd ? meMd : 3}`,
+      `me-lg-${meLg ? meLg : 3}`,
+      `me-xl-${meXl ? meXl : 3}`,
+      `${prefix}-swith-mode`
+    )}
     onClick={() => {
       setIsDark && setIsDark(isDark ? false : true);
     }}

@@ -7,7 +7,7 @@ import Brand, { BrandProps } from "./Brand";
 import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
-import Separator from "./Separator";
+import Separator, { SeparatorProps } from "./Separator";
 import SwitchMode from "./../../components/SwitchMode";
 import MenuClose from "./MenuClose";
 import Mobile, { MobileProps } from "./Mobile";
@@ -42,6 +42,9 @@ const StyledHeader = styled((props) => <div {...props} />)`
 `;
 
 const StyledNavWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   margin: 0 auto;
   max-width: 2200px;
 `;
@@ -55,6 +58,7 @@ export interface HeaderProps {
   languages: string[];
   minHeight?: number;
   mobile?: MobileProps;
+  separator?: SeparatorProps;
   showCall?: boolean;
   showLanguages?: boolean;
   showSocials?: boolean;
@@ -77,6 +81,7 @@ const Header: FC<HeaderProps> = ({
   languages = ["es"],
   mobile,
   nav,
+  separator,
   showCall,
   showLanguages = false,
   showSocials,
@@ -97,7 +102,7 @@ const Header: FC<HeaderProps> = ({
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-12">
-              <StyledNavWrapper className="d-flex align-items-center justify-content-between">
+              <StyledNavWrapper>
                 <div className="d-flex align-items-center">
                   <Brand {...brand} />
                   <DesktopNav
@@ -117,11 +122,13 @@ const Header: FC<HeaderProps> = ({
                     </div>
                   )}
                   {showCall && call && <LinkIcon {...call} />}
-                  {(showLanguages || showCall) && <Separator />}
+                  {(showLanguages || showCall) && <Separator {...separator} />}
                   {showSwitchMode && (
                     <SwitchMode
                       setIsDark={setIsDark}
                       isDark={isDark ? isDark : false}
+                      me={2}
+                      meSm={2}
                     />
                   )}
                   {showSocials &&

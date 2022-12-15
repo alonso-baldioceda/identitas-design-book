@@ -72,9 +72,9 @@ const Homepage: FC<HomepageProps> = ({
         <Hero {...newHeroProps} />
       </section>
       <section id="units">
-        <FadeInWhenVisible>
-          {/* TODO: update background color */}
-          <div className="bg-secondary-pastel">
+        {/* TODO: update background color */}
+        <div className="bg-secondary-pastel">
+          <FadeInWhenVisible>
             <Spacer>
               <div className="container">
                 <div className="row justify-content-center">
@@ -117,8 +117,8 @@ const Homepage: FC<HomepageProps> = ({
                 </div>
               </div>
             </Spacer>
-          </div>
-        </FadeInWhenVisible>
+          </FadeInWhenVisible>
+        </div>
       </section>
       <section id="common-spaces">
         <FadeInWhenVisible>
