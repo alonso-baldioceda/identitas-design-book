@@ -78,11 +78,14 @@ Default.args = {
       fontWeight: 700,
       hideNameOnMobile: true,
       svg: <LogoIcon />,
-      name: "Company name",
+      name: "Vista Lago Arenal",
       to: "main",
     },
     languages: ["es", "en"],
-    navigation: NAV,
+    nav: {
+      classes: "me-3",
+      links: NAV,
+    },
   },
   footer: {
     contact: {

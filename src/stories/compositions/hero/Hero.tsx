@@ -9,7 +9,18 @@ import Panel, { PanelProps } from "./Panel";
 
 // Styles
 const StyledHero = styled((props) => <div {...props} />)`
-  height: 100vh;
+  ${(props) =>
+    props.height &&
+    `
+      height: ${props.height};
+    `}
+
+  ${(props) =>
+    !props.height &&
+    `
+      height: 100vh;
+    `}
+
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -17,26 +28,27 @@ const StyledHero = styled((props) => <div {...props} />)`
 
 // Types
 interface HeroProps {
-  bgColor?: string;
   mask?: boolean;
   maskColor: string;
   maxWidth?: string;
   src: string;
   panel?: PanelProps;
+  height?: string | number;
 }
 
 const Hero: FC<HeroProps> = ({
-  bgColor,
   mask,
   maskColor,
   maxWidth,
   src,
   panel,
+  height,
 }) => {
   return (
     <StyledHero
       className={`${prefix}-hero`}
       style={{ maxWidth: maxWidth ? maxWidth : 2200 }}
+      height={height ? height : null}
     >
       {/* TODO: add a mobile image version */}
       <BackgroundImage src={src} />

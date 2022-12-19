@@ -7,6 +7,7 @@ import Header from "./Header";
 
 // Constants
 import { NAV, COLOR_CONTROL } from "./../../../shared/constants/";
+import LinkType from "./../../../shared/enums/linkType";
 
 // Types
 import Size from "./../../../shared/enums/size";
@@ -85,6 +86,7 @@ const Template: ComponentStory<typeof Header> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  fixed: true,
   brand: {
     fontWeight: 700,
     hideNameOnMobile: true,
@@ -109,14 +111,51 @@ Default.args = {
     hideFrom: "xl",
     isOpen: true,
     languages: ["es", "en"],
-    linkSpacing: {
-      xs: 0,
-      sm: 0,
-      md: 0,
-      lg: 0,
-      xl: 0,
-    },
-    navigation: NAV,
+    navigation: [
+      {
+        type: LinkType.Anchor,
+        anchor: "top",
+        text: "Inicio",
+        offset: -104,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "units",
+        text: "Cabinas",
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "common-spaces",
+        text: "Espacios comúnes",
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "services",
+        text: "Servicios",
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "drive",
+        text: "Cómo llegar?",
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "contact",
+        text: "Contáctenos",
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: LinkType.Link,
+        anchor: "info",
+        text: "Info",
+        classes: "mb-2 mb-sm-2",
+      },
+    ],
     startingAt: 82,
     translate: "Idiomas",
   },

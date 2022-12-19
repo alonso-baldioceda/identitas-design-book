@@ -13,6 +13,18 @@ import imageFile from "./../../../images/ocean.jpg";
 export default {
   title: "Compositions/Hero",
   component: Hero,
+  argTypes: {
+    src: {
+      name: "Image",
+      description: "Image to be used as background",
+      control: "text",
+    },
+    mask: {
+      name: "Mask",
+      description: "Whether to apply a mask to the image",
+      control: "boolean",
+    },
+  },
   // TODO: Add argTypes
 } as ComponentMeta<typeof Hero>;
 

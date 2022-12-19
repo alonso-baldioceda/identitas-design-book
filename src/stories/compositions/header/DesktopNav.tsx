@@ -26,8 +26,6 @@ const StyledDesktopNav = styled.ul`
       font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.6px;
-      /* TODO: include margin-right into props */
-      margin-right: 15px;
       text-decoration: none;
 
       &.active,
@@ -80,6 +78,10 @@ const DesktopNav: FC<DesktopNavProps> = ({
             text={navItem.text}
             to={navItem.anchor}
             classes={classes ? classes : ""}
+            offset={navItem.offset ? navItem.offset : -80}
+            smooth={navItem.smooth ? navItem.smooth : true}
+            spy={navItem.spy ? navItem.spy : true}
+            duration={navItem.duration ? navItem.duration : 500}
           />
         )}
       </li>

@@ -49,14 +49,12 @@ const LinkTranslate = styled.a`
 // Interface
 export interface MobileLanguagesProps {
   languages: string[];
-  linkSpacing?: string;
   translate?: string;
   translateMy?: number;
 }
 
 const MobileLanguages: FC<MobileLanguagesProps> = ({
   languages,
-  linkSpacing,
   translate,
   translateMy,
 }) => {

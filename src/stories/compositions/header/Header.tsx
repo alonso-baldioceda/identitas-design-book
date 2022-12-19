@@ -1,6 +1,7 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
 import { prefix } from "./../../shared/styles.js";
+import classnames from "classnames";
 
 // Components
 import Brand, { BrandProps } from "./Brand";
@@ -19,14 +20,27 @@ import LayoutContext from "./../LayoutContext";
 import Link from "./../../../shared/interfaces/link";
 
 // Styles
-const StyledHeader = styled((props) => <div {...props} />)`
+const StyledHeader = styled((props) => <header {...props} />)`
+  &.fixed {
+    position: fixed;
+  }
+
+  ${(props) =>
+    props.bgcolor &&
+    `
+      background: ${props.bgcolor};
+    `}
+
+  ${(props) =>
+    !props.bgcolor &&
+    `
+      background: ${props.theme.colors.bgPrimary};
+    `}
+
   align-items: center;
-  background: ${(props) =>
-    props.bgcolor ? props.bgcolor : `${props.theme.colors.bgPrimary}`};
   /* TODO: move shadow to variable */
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   display: flex;
-  position: fixed;
   /* TODO: move transition to variable */
   transition: all 0.15s ease-in-out;
   width: 100%;
@@ -55,6 +69,7 @@ export interface HeaderProps {
   brand: BrandProps;
   call?: LinkIconProps;
   hideLanguagesFrom?: string;
+  fixed?: boolean;
   languages: string[];
   minHeight?: number;
   mobile?: MobileProps;
@@ -77,6 +92,7 @@ const Header: FC<HeaderProps> = ({
   call,
   minHeight,
   hideLanguagesFrom,
+  fixed,
   // TODO: replace languages for global languages variable
   languages = ["es"],
   mobile,
@@ -95,9 +111,13 @@ const Header: FC<HeaderProps> = ({
   return (
     <>
       <StyledHeader
-        className={`${prefix}-header`}
+        className={classnames(
+          { fixed: fixed ? fixed : false },
+          `${prefix}-header`
+        )}
         style={{ minHeight: minHeight ? minHeight : 84 }}
         bgcolor={bgColor}
+        fixed={fixed ? fixed.toString() : null}
       >
         <div className="container-fluid">
           <div className="row align-items-center">
@@ -135,6 +155,7 @@ const Header: FC<HeaderProps> = ({
                     socials?.map((social: LinkIconProps, index: number) => (
                       <LinkIcon {...social} key={index} />
                     ))}
+                  {/* TODO: consider move this to props */}
                   <div className="d-xl-none d-flex">
                     <MenuClose />
                   </div>

@@ -9,6 +9,9 @@ export const NAV = [
     type: LinkType.Anchor,
     anchor: "top",
     text: "Inicio",
+    // TODO: fix offset
+    // offset default 80 +- header- 84 = 104
+    offset: -104,
   },
   {
     type: LinkType.Anchor,

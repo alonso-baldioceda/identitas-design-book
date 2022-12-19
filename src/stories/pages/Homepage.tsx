@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 
 // Components
@@ -44,10 +44,36 @@ const Homepage: FC<HomepageProps> = ({
   rulesProps,
   footerProps,
 }) => {
+  const [headerHeight, setHeaderHeight] = useState<number>(0);
+
   const newHeroProps = {
     ...heroProps,
     text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
   };
+
+  // TODO: create a hook for this
+  // TODO: probably move to Layout
+  useEffect(() => {
+    if (document.getElementById("main")) {
+      const mainStartingAt = document.getElementById("main");
+      const header = document.querySelector("header");
+      const headerFixedHeight = header?.clientHeight;
+
+      headerFixedHeight && setHeaderHeight(headerFixedHeight);
+
+      newHeroProps.height = `calc(100vh - ${headerHeight}px)`;
+
+      if (mainStartingAt) {
+        if (header && header.classList.contains("fixed")) {
+          // console.log("hola", headerFixedHeight);
+
+          mainStartingAt.style.paddingTop = `${headerHeight}px`;
+        } else {
+          // console.log("adios");
+        }
+      }
+    }
+  }, [headerHeight]);
 
   return (
     <Layout footer={footerProps} header={headerProps}>
@@ -69,7 +95,8 @@ const Homepage: FC<HomepageProps> = ({
         </script>
       </Helmet>
       <section id="top">
-        <Hero {...newHeroProps} />
+        {/* TODO: there should be a better way to pass height */}
+        <Hero {...newHeroProps} height={`calc(100vh - ${headerHeight}px)`} />
       </section>
       <section id="units">
         {/* TODO: update background color */}

@@ -9,7 +9,6 @@ import MobileLaguages from "./MobileLanguages";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
-import { linkSync } from "fs";
 
 // Styles
 const StyledMobile = styled((props) => <div {...props} />)`
@@ -36,7 +35,6 @@ const StyledMobile = styled((props) => <div {...props} />)`
 `;
 
 // Types
-// TODO: Add prop startingAt
 export interface MobileProps {
   bgColor?: string;
   hideFrom?: string;
@@ -48,13 +46,6 @@ export interface MobileProps {
   separator?: number;
   startingAt?: number;
   translate?: string;
-  linkSpacing?: {
-    xs?: number;
-    sm?: number;
-    md?: number;
-    lg?: number;
-    xl?: number;
-  };
 }
 
 const Mobile: FC<MobileProps> = ({
@@ -62,7 +53,6 @@ const Mobile: FC<MobileProps> = ({
   hideFrom,
   isOpen,
   languages,
-  linkSpacing,
   navigation,
   px,
   py,
@@ -79,7 +69,7 @@ const Mobile: FC<MobileProps> = ({
     )}
     style={{ top: startingAt ? startingAt : 0 }}
   >
-    <MobileNav navigation={navigation ? navigation : []} {...linkSpacing} />
+    <MobileNav navigation={navigation ? navigation : []} />
     <hr className={`my-${separator}`} />
     <MobileLaguages
       languages={languages ? languages : []}

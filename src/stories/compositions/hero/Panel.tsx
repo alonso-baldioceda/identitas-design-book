@@ -20,13 +20,7 @@ const StyledPanel = styled((props) => <div {...props} />)`
   ${(props) =>
     props.bordercolor &&
     `
-      border-color: ${props.bordercolor} !important;
-    `}
-
-  ${(props) =>
-    !props.bordercolor &&
-    `
-      border-color: ${props.theme.colors.transparent} !important;
+      border-color: ${props.bordercolor};
     `}
 
   ${(props) =>

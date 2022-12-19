@@ -47,8 +47,6 @@ const DesktopLanguages: FC<DesktopLanguagesProps> = ({
   meXl,
 }) => {
   const { i18n } = useTranslation();
-  //   const context = useContext(GlobalContext);
-  //   const { language, setLanguage, open } = context;
 
   const [, setLanguage] = useState({
     language: "es",
@@ -81,9 +79,6 @@ const DesktopLanguages: FC<DesktopLanguagesProps> = ({
             //     setLanguage !== undefined &&
             //     setLanguage(index);
           }}
-          // className={classnames("text-capitalize", {
-          // active: language === index,
-          // })}
         >
           {language}
         </LinkTranslate>

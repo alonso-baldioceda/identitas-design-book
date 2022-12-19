@@ -1,6 +1,5 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import classnames from "classnames";
 import { prefix } from "./../../shared/styles.js";
 
 // Components
@@ -50,41 +49,29 @@ const StyledMobileNav = styled.ul`
 
 // Interfaces
 interface MobileNavProps {
-  xs?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({ xs, sm, md, lg, xl, navigation }) => {
+const MobileNav: FC<MobileNavProps> = ({ navigation }) => {
   const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   return (
     <StyledMobileNav className={`${prefix}-mobile-nav`}>
       {navigation.map((navItem: Link, index: number) => (
-        <li
-          key={index}
-          className={classnames(
-            `mb-${xs ? xs : 0}`,
-            `mb-sm-${sm ? sm : 0}`,
-            `mb-md-${md ? md : 0}`,
-            `mb-lg-${lg ? lg : 0}`,
-            `mb-xl-${xl ? xl : 0}`
-          )}
-        >
+        <li key={index}>
           {navItem.type && navItem.type === LinkType.Link ? (
             <LinkGatsby
               text={navItem.text}
               to={navItem.anchor}
               onClick={() => setIsOpen(!isOpen)}
+              classes={navItem.classes ? navItem.classes : ""}
             />
           ) : (
             <LinkScroll
               text={navItem.text}
               to={navItem.anchor}
               onClick={() => setIsOpen(!isOpen)}
+              classes={navItem.classes ? navItem.classes : ""}
             />
           )}
         </li>
@@ -92,4 +79,5 @@ const MobileNav: FC<MobileNavProps> = ({ xs, sm, md, lg, xl, navigation }) => {
     </StyledMobileNav>
   );
 };
+
 export default MobileNav;

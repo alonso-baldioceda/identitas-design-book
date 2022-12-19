@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Contexts
@@ -74,7 +74,6 @@ const StyledSpan = styled.span`
 export interface MenuCloseProps {}
 
 const MenuClose: FC<MenuCloseProps> = () => {
-  // TODO: Add prop isOpen and setIsOpen
   const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
+import LinkType from "./../../../shared/enums/linkType";
 
 // Components
 import Mobile from "./Mobile";
@@ -89,16 +90,53 @@ export const Default = Template.bind({});
 Default.args = {
   bgColor: "dark",
   hideFrom: "xl",
-  linkSpacing: {
-    xs: 1,
-    sm: 1,
-    md: 1,
-    lg: 1,
-    xl: 1,
-  },
   isOpen: true,
   languages: ["es", "en"],
-  navigation: NAV,
+  navigation: [
+    {
+      type: LinkType.Anchor,
+      anchor: "top",
+      text: "Inicio",
+      offset: -104,
+      classes: "mb-2 mb-sm-2",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "units",
+      text: "Cabinas",
+      classes: "mb-2 mb-sm-2",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "common-spaces",
+      text: "Espacios comúnes",
+      classes: "mb-2 mb-sm-2",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "services",
+      text: "Servicios",
+      classes: "mb-2 mb-sm-2",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "drive",
+      text: "Cómo llegar?",
+      classes: "mb-2 mb-sm-2",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "contact",
+      text: "Contáctenos",
+      classes: "mb-2 mb-sm-2",
+    },
+    {
+      type: LinkType.Link,
+      anchor: "info",
+      text: "Info",
+      classes: "mb-2 mb-sm-2",
+    },
+  ],
   px: 4,
   py: 4,
   separator: 4,
