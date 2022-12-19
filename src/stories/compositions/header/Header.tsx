@@ -64,13 +64,19 @@ const StyledNavWrapper = styled.div`
 `;
 
 // Interfaces
+
+interface Language {
+  name: string;
+  classes?: string;
+}
+
 export interface HeaderProps {
   bgColor?: string;
   brand: BrandProps;
   call?: LinkIconProps;
   hideLanguagesFrom?: string;
   fixed?: boolean;
-  languages: string[];
+  languages: Language[];
   minHeight?: number;
   mobile?: MobileProps;
   separator?: SeparatorProps;
@@ -79,11 +85,7 @@ export interface HeaderProps {
   showSocials?: boolean;
   showSwitchMode?: boolean;
   socials?: LinkIconProps[];
-  nav: {
-    links: Link[];
-    transform?: "uppercase" | "lowercase" | "capitalize" | "none";
-    classes?: string;
-  };
+  navigation: Link[];
 }
 
 const Header: FC<HeaderProps> = ({
@@ -93,13 +95,12 @@ const Header: FC<HeaderProps> = ({
   minHeight,
   hideLanguagesFrom,
   fixed,
-  // TODO: replace languages for global languages variable
-  languages = ["es"],
+  languages,
   mobile,
-  nav,
+  navigation,
   separator,
   showCall,
-  showLanguages = false,
+  showLanguages,
   showSocials,
   showSwitchMode,
   socials,
@@ -125,11 +126,7 @@ const Header: FC<HeaderProps> = ({
               <StyledNavWrapper>
                 <div className="d-flex align-items-center">
                   <Brand {...brand} />
-                  <DesktopNav
-                    navigation={nav.links}
-                    transform={nav.transform}
-                    classes={nav.classes}
-                  />
+                  <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
                   {showLanguages && languages && (

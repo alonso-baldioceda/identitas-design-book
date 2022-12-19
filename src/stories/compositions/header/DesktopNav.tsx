@@ -49,35 +49,26 @@ const StyledDesktopNav = styled.ul`
 
 // Interfaces
 export interface DesktopNavProps {
-  classes?: string;
   navigation: Link[];
-  transform?: "uppercase" | "lowercase" | "capitalize" | "none";
 }
 
 // TODO: possibly add a better hover effect */
 // TODO: analize including useMemo
-const DesktopNav: FC<DesktopNavProps> = ({
-  classes,
-  navigation,
-  transform,
-}) => (
+const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => (
   <StyledDesktopNav className={`nav ${prefix}-nav`}>
     {navigation.map((navItem: Link, index: number) => (
-      <li
-        key={`nav-${index}`}
-        style={{ textTransform: transform ? transform : "capitalize" }}
-      >
+      <li key={`nav-${index}`}>
         {navItem.type && navItem.type === LinkType.Link ? (
           <LinkGatsby
             text={navItem.text}
             to={navItem.anchor}
-            classes={classes ? classes : ""}
+            classes={navItem.classes ? navItem.classes : ""}
           />
         ) : (
           <LinkScroll
             text={navItem.text}
             to={navItem.anchor}
-            classes={classes ? classes : ""}
+            classes={navItem.classes ? navItem.classes : ""}
             offset={navItem.offset ? navItem.offset : -80}
             smooth={navItem.smooth ? navItem.smooth : true}
             spy={navItem.spy ? navItem.spy : true}

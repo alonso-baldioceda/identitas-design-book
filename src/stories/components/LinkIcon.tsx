@@ -22,43 +22,31 @@ const StyledLinkIcon = styled((props) => <a {...props} />)`
 `;
 
 export interface LinkIconProps {
+  classes?: string;
   disabled?: boolean;
   icon: ReactNode;
-  mb?: number;
-  me?: number;
-  meSm?: number;
-  meMd?: number;
-  meLg?: number;
-  meXl?: number;
   size?: Size;
   text?: string;
   url: string;
 }
 
 const LinkIcon: FC<LinkIconProps> = ({
+  classes,
   disabled,
   icon,
-  mb,
-  me,
-  meSm,
-  meMd,
-  meLg,
-  meXl,
   size,
   text,
   url,
-}) => {
-  return (
-    <StyledLinkIcon
-      href={url}
-      className={`${prefix}-button text-capitalize mb-${mb} me-${me} me-sm-${meSm} me-mb-${meMd} me-lg-${meLg} me-xl-${meXl} 
+}) => (
+  <StyledLinkIcon
+    href={url}
+    className={`${prefix}-button ${classes} 
       ${disabled ? disabled : ""}`}
-      size={size}
-    >
-      {text}
-      <SVG icon={icon} size={size ? size : Size.sm} />
-    </StyledLinkIcon>
-  );
-};
+    size={size}
+  >
+    {text}
+    <SVG icon={icon} size={size ? size : Size.sm} />
+  </StyledLinkIcon>
+);
 
 export default LinkIcon;

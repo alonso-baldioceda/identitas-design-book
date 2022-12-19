@@ -35,11 +35,17 @@ const StyledMobile = styled((props) => <div {...props} />)`
 `;
 
 // Types
+
+interface Language {
+  name: string;
+  classes?: string;
+}
+
 export interface MobileProps {
   bgColor?: string;
   hideFrom?: string;
   isOpen: boolean;
-  languages?: string[];
+  languages?: Language[];
   navigation?: Link[];
   px?: number;
   py?: number;
@@ -72,7 +78,7 @@ const Mobile: FC<MobileProps> = ({
     <MobileNav navigation={navigation ? navigation : []} />
     <hr className={`my-${separator}`} />
     <MobileLaguages
-      languages={languages ? languages : []}
+      languages={languages ? languages : [{ name: "es", classes: "" }]}
       translate={translate ? translate : ""}
     />
   </StyledMobile>

@@ -1,7 +1,6 @@
 import React, { useState, useContext, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-// import classnames from "classnames";
 import { prefix } from "./../../shared/styles.js";
 
 // Contexts
@@ -47,8 +46,13 @@ const LinkTranslate = styled.a`
 `;
 
 // Interface
+interface Language {
+  name: string;
+  classes?: string;
+}
+
 export interface MobileLanguagesProps {
-  languages: string[];
+  languages: Language[];
   translate?: string;
   translateMy?: number;
 }
@@ -78,21 +82,22 @@ const MobileLanguages: FC<MobileLanguagesProps> = ({
     <div>
       <Label className={`my-${translateMy}`}>{translate}:</Label>
       <div className={`${prefix}-languages`}>
-        {languages.map((language: string, index: number) => (
-          <div key={index} className={`mb-${2}`}>
+        {languages.map((language: Language, index: number) => (
+          <div key={index}>
             <LinkTranslate
               onClick={() => {
-                changeLocale(language);
+                changeLocale(language.name);
                 //   open !== undefined &&
                 //     setLanguage !== undefined &&
                 //     setLanguage(index);
               }}
+              className={language.classes ? language.classes : ""}
               // TODO: include active
               // className={classnames("text-capitalize", {
               // active: language === index,
               // })}
             >
-              {language}
+              {language.name}
             </LinkTranslate>
           </div>
         ))}

@@ -13,7 +13,7 @@ const LinkTranslate = styled((props) => <a {...props} />)`
   letter-spacing: 0.6px;
   padding-bottom: 4px;
   text-decoration: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 
   /* TODO: improve hover effect */
   &.active,
@@ -29,23 +29,17 @@ const LinkTranslate = styled((props) => <a {...props} />)`
   }
 `;
 
-export interface DesktopLanguagesProps {
-  languages: string[];
-  me?: number;
-  meSm?: number;
-  meMd?: number;
-  meLg?: number;
-  meXl?: number;
+// Types
+interface Language {
+  name: string;
+  classes?: string;
 }
 
-const DesktopLanguages: FC<DesktopLanguagesProps> = ({
-  languages,
-  me,
-  meSm,
-  meMd,
-  meLg,
-  meXl,
-}) => {
+export interface DesktopLanguagesProps {
+  languages: Language[];
+}
+
+const DesktopLanguages: FC<DesktopLanguagesProps> = ({ languages }) => {
   const { i18n } = useTranslation();
 
   const [, setLanguage] = useState({
@@ -62,25 +56,20 @@ const DesktopLanguages: FC<DesktopLanguagesProps> = ({
 
   return (
     <div className={`${prefix}-languages`}>
-      {languages.map((language: string, index: number) => (
+      {languages.map((language: Language, index: number) => (
         <LinkTranslate
-          className={classnames(
-            `me-${me ? me : 3}`,
-            `me-sm-${meSm ? meSm : 3}`,
-            `me-md-${meMd ? meMd : 3}`,
-            `me-lg-${meLg ? meLg : 3}`,
-            `me-xl-${meXl ? meXl : 3}`,
-            `${prefix}-language-link`
-          )}
+          className={`${
+            language.classes ? language.classes : ""
+          } ${prefix}-language-link`}
           key={index}
           onClick={() => {
-            changeLocale(language);
+            changeLocale(language ? language.name : "es");
             //   open !== undefined &&
             //     setLanguage !== undefined &&
             //     setLanguage(index);
           }}
         >
-          {language}
+          {language.name}
         </LinkTranslate>
       ))}
     </div>

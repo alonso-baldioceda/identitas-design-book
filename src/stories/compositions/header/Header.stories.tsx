@@ -6,7 +6,7 @@ import styled from "styled-components";
 import Header from "./Header";
 
 // Constants
-import { NAV, COLOR_CONTROL } from "./../../../shared/constants/";
+import { COLOR_CONTROL } from "./../../../shared/constants/";
 import LinkType from "./../../../shared/enums/linkType";
 
 // Types
@@ -97,11 +97,20 @@ Default.args = {
   minHeight: 84,
   hideLanguagesFrom: "xl",
   showLanguages: true,
-  languages: ["es", "en"],
+  languages: [
+    {
+      name: "es",
+      classes: "text-uppercase me-3",
+    },
+    {
+      name: "en",
+      classes: "text-uppercase me-3",
+    },
+  ],
   showCall: true,
   call: {
     icon: <PhoneIcon />,
-    me: 0,
+    classes: "mb-0",
     size: Size.xs,
     text: "call us",
     url: "tel:+50683274040",
@@ -110,50 +119,59 @@ Default.args = {
     bgColor: "dark",
     hideFrom: "xl",
     isOpen: true,
-    languages: ["es", "en"],
+    languages: [
+      {
+        name: "es",
+        classes: "text-capitalize",
+      },
+      {
+        name: "es",
+        classes: "text-capitalize",
+      },
+    ],
     navigation: [
       {
         type: LinkType.Anchor,
         anchor: "top",
         text: "Inicio",
         offset: -104,
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "units",
         text: "Cabinas",
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "common-spaces",
         text: "Espacios comúnes",
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "services",
         text: "Servicios",
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "drive",
         text: "Cómo llegar?",
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "contact",
         text: "Contáctenos",
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
       {
         type: LinkType.Link,
         anchor: "info",
         text: "Info",
-        classes: "mb-2 mb-sm-2",
+        classes: "mb-2",
       },
     ],
     startingAt: 82,
@@ -168,33 +186,64 @@ Default.args = {
   socials: [
     {
       icon: <FacebookIcon />,
-      mb: 0,
-      me: 2,
-      meSm: 3,
-      meMd: 3,
-      meLg: 3,
-      meXl: 3,
+      classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
       size: Size.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
     },
     {
       icon: <InstagramIcon />,
-      mb: 0,
-      me: 2,
-      meSm: 3,
-      meMd: 3,
-      meLg: 3,
-      meXl: 0,
+      classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
       size: Size.xs,
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",
     },
   ],
-  nav: {
-    classes: "me-3",
-    links: NAV,
-  },
+  navigation: [
+    {
+      type: LinkType.Anchor,
+      anchor: "top",
+      text: "Inicio",
+      offset: -104,
+      classes: "me-3 text-capitalize",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "units",
+      text: "Cabinas",
+      classes: "me-3 text-capitalize",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "common-spaces",
+      text: "Espacios comúnes",
+      classes: "me-3 text-capitalize",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "services",
+      text: "Servicios",
+      classes: "me-3 text-capitalize",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "drive",
+      text: "Cómo llegar?",
+      classes: "me-3 text-capitalize",
+    },
+    {
+      type: LinkType.Anchor,
+      anchor: "contact",
+      text: "Contáctenos",
+      classes: "me-3 text-capitalize",
+    },
+    {
+      type: LinkType.Link,
+      anchor: "info",
+      text: "Info",
+      classes: "me-3 text-capitalize",
+    },
+  ],
 };
 
 export const CustomColor = Template.bind({});
