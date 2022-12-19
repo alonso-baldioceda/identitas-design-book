@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import SVG from "../../components/SVG";
@@ -38,11 +38,10 @@ const StyledContact = styled((props) => <ul {...props} />)`
 
 // Interfaces
 interface itemsProps {
+  classes?: string;
   icon: ReactElement;
-  mb?: number;
-  me?: number;
-  text: string;
   size?: string;
+  text: string;
 }
 
 export interface NavProps {
@@ -54,9 +53,8 @@ const Nav: FC<NavProps> = ({ list }) => (
     {/* TODO: use ListGroup instead of this */}
     {list.map((contactItem: itemsProps, index: number) => (
       <li key={index}>
-        {/* TODO: Handle default value 3 into a variable */}
-        <div className={`mb-${contactItem.mb ? contactItem.mb : "3"}`}>
-          <span className={`me-${contactItem.me ? contactItem.me : "3"}`}>
+        <div className={`${contactItem.classes ? contactItem.classes : ""}`}>
+          <span className="me-3">
             <SVG
               icon={contactItem.icon}
               size={contactItem.size ? contactItem.size : Size.xs}

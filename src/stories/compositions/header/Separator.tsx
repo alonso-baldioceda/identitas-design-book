@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import classnames from "classnames";
 import { prefix } from "./../../shared/styles.js";
 
 // Styles
@@ -16,33 +15,14 @@ const StyledSeparator = styled((props) => <div {...props} />)`
 
 // Interfaces
 export interface SeparatorProps {
+  classes?: string;
   color?: string;
   height?: number;
-  xs?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
 }
 
-const Separator: FC<SeparatorProps> = ({
-  color,
-  height,
-  xs,
-  sm,
-  md,
-  lg,
-  xl,
-}) => (
+const Separator: FC<SeparatorProps> = ({ classes, color, height }) => (
   <StyledSeparator
-    className={classnames(
-      `mx-${xs ? xs : 3}`,
-      `mx-sm-${sm ? sm : 3}`,
-      `mx-md-${md ? md : 3}`,
-      `mx-lg-${lg ? lg : 3}`,
-      `mx-xl-${xl ? xl : 3}`,
-      `${prefix}-separator`
-    )}
+    className={`${classes ? classes : ""} ${prefix}-separator`}
     color={color}
     height={height}
   />

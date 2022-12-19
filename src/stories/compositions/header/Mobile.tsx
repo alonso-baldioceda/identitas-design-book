@@ -43,12 +43,11 @@ interface Language {
 
 export interface MobileProps {
   bgColor?: string;
+  classes?: string;
   hideFrom?: string;
   isOpen: boolean;
   languages?: Language[];
   navigation?: Link[];
-  px?: number;
-  py?: number;
   separator?: number;
   startingAt?: number;
   translate?: string;
@@ -56,20 +55,19 @@ export interface MobileProps {
 
 const Mobile: FC<MobileProps> = ({
   bgColor,
+  classes,
   hideFrom,
   isOpen,
   languages,
   navigation,
-  px,
-  py,
   separator,
   startingAt,
   translate,
 }) => (
   <StyledMobile
     className={classnames(
-      `d-${hideFrom}-none bg-${bgColor} px-${px ? px : 4} py-${
-        py ? py : 4
+      `d-${hideFrom}-none bg-${bgColor} ${
+        classes ? classes : ""
       } ${prefix}-mobile`,
       { open: isOpen }
     )}

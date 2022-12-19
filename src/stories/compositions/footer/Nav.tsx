@@ -1,14 +1,11 @@
-import React, { FC, useState, useContext, useMemo } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 
 import LinkScroll from "./../../components/LinkScroll";
 import LinkGatsby from "./../../components/LinkGatsby";
-
-// Contexts
-// import Global from "./../contexts/global";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -34,24 +31,27 @@ const StyledNav = styled((props) => <ul {...props} />)`
 
 // Interfaces
 export interface NavProps {
-  // bgColor?: string;
-  mb?: number;
   navigation: Link[];
 }
 
-const Nav: FC<NavProps> = ({ mb, navigation }) => {
-  // const context = useContext(Global);
-  // const { menu, setActive } = context;
-
+const Nav: FC<NavProps> = ({ navigation }) => {
   // TODO: include useMemo
   return (
     <StyledNav className={`${prefix}-nav`}>
       {navigation.map((navItem: any, index: number) => (
-        <li key={index} className={`mb-${mb ? mb : "3"}`}>
+        <li key={index}>
           {navItem.type && navItem.type === LinkType.Link ? (
-            <LinkGatsby text={navItem.text} to={navItem.anchor} />
+            <LinkGatsby
+              text={navItem.text}
+              to={navItem.anchor}
+              classes={`${navItem.classes ? navItem.classes : ""}`}
+            />
           ) : (
-            <LinkScroll text={navItem.text} to={navItem.anchor} />
+            <LinkScroll
+              text={navItem.text}
+              to={navItem.anchor}
+              classes={`${navItem.classes ? navItem.classes : ""}`}
+            />
           )}
         </li>
       ))}

@@ -93,6 +93,7 @@ Default.args = {
     svg: <LogoIcon />,
     name: "Company name",
     to: "main",
+    classes: "me-3",
   },
   minHeight: 84,
   hideLanguagesFrom: "xl",
@@ -117,6 +118,7 @@ Default.args = {
   },
   mobile: {
     bgColor: "dark",
+    classes: "p-4",
     hideFrom: "xl",
     isOpen: true,
     languages: [
@@ -178,8 +180,7 @@ Default.args = {
     translate: "Idiomas",
   },
   separator: {
-    xs: 2,
-    sm: 2,
+    classes: "mx-3",
   },
   showSocials: true,
   showSwitchMode: true,
@@ -244,10 +245,4 @@ Default.args = {
       classes: "me-3 text-capitalize",
     },
   ],
-};
-
-export const CustomColor = Template.bind({});
-CustomColor.args = {
-  ...Default.args,
-  bgColor: "blue",
 };

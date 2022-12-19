@@ -1,9 +1,8 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import { Link } from "gatsby";
 // import { animateScroll as scroll } from "react-scroll";
-import classnames from "classnames";
 
 // Components
 import SVG from "./../../components/SVG";
@@ -50,14 +49,10 @@ const StyledBrand = styled((props) => <Link {...props} />)`
 // TODO: add feature hide name in XS devices
 // Types
 export interface BrandProps {
+  classes?: string;
   // duration: number;
   fontWeight: number;
   hideNameOnMobile?: boolean;
-  me?: number;
-  meSm?: number;
-  meMd?: number;
-  meLg?: number;
-  meXl?: number;
   // offset: number;
   // smooth: boolean;
   // spy: boolean;
@@ -68,14 +63,10 @@ export interface BrandProps {
 }
 
 const Brand: FC<BrandProps> = ({
+  classes,
   // duration = 500,
   fontWeight,
   hideNameOnMobile,
-  me,
-  meSm,
-  meMd,
-  meLg,
-  meXl,
   // offset = -60,
   // smooth = true,
   // spy = true,
@@ -90,17 +81,9 @@ const Brand: FC<BrandProps> = ({
   // };
 
   // TODO: handle active on both cases
-
   return (
     <StyledBrand
-      className={classnames(
-        `me-${me ? me : 3}`,
-        `me-sm-${meSm ? meSm : 3}`,
-        `me-md-${meMd ? meMd : 3}`,
-        `me-lg-${meLg ? meLg : 3}`,
-        `me-xl-${meXl ? meXl : 3}`,
-        `${prefix}-brand`
-      )}
+      className={`${classes ? classes : ""} ${prefix}-brand`}
       // duration={duration}
       fw={fontWeight}
       // offset={offset}
@@ -108,7 +91,6 @@ const Brand: FC<BrandProps> = ({
       // smooth={smooth}
       // spy={spy}
       to={to}
-      // activeClass="brand-active"
     >
       <SVG icon={svg} size={size ? size : Size.sm} />
       {hideNameOnMobile ? <span>{name}</span> : null}

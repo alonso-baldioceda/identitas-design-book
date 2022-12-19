@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Brand from "./Brand";
 
-// Constants
-import { SPACING_OPTIONS } from "./../../../shared/constants/";
-
 // Assets
 import LogoIcon from "./../../../images/svg/logo-black.svg";
 
@@ -23,30 +20,9 @@ export default {
       name: "Hide Name On Mobile?",
       description: "Hide name on mobile devices",
     },
-    me: {
-      control: "select",
-      name: "Logo xs margin right",
-      options: SPACING_OPTIONS,
-    },
-    meSm: {
-      control: "select",
-      name: "Logo sm margin right",
-      options: SPACING_OPTIONS,
-    },
-    meMd: {
-      control: "select",
-      name: "Logo md margin right",
-      options: SPACING_OPTIONS,
-    },
-    meLg: {
-      control: "select",
-      name: "Logo lg margin right",
-      options: SPACING_OPTIONS,
-    },
-    meXl: {
-      control: "select",
-      name: "Logo xl margin right",
-      options: SPACING_OPTIONS,
+    classes: {
+      name: "Classes",
+      control: "text",
     },
     size: {
       control: "select",
@@ -62,7 +38,7 @@ export default {
       name: "SVG",
       description: "Logo",
       // TODO: Add control to select SVG
-      control: "text",
+      // control: "text",
     },
     to: {
       name: "To",
@@ -81,4 +57,5 @@ Default.args = {
   svg: <LogoIcon />,
   name: "Company name",
   to: "main",
+  classes: "me-3",
 };

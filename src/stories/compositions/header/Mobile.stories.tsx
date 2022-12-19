@@ -4,14 +4,10 @@ import styled from "styled-components";
 import LinkType from "./../../../shared/enums/linkType";
 
 // Components
-import Mobile from "./Mobile";
+import MobileComponent from "./Mobile";
 
 // Constants
-import {
-  NAV,
-  SPACING_OPTIONS,
-  COLOR_CONTROL,
-} from "./../../../shared/constants/";
+import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../../shared/constants/";
 
 // Styles
 const MobileWrapper = styled.div`
@@ -24,7 +20,7 @@ const MobileWrapper = styled.div`
 
 export default {
   title: "Compositions/Mobile",
-  component: Mobile,
+  component: MobileComponent,
   argTypes: {
     bgColor: {
       name: "Background Color",
@@ -66,7 +62,6 @@ export default {
       control: "select",
       description: "'Left' / 'Roght' separator spacing",
       name: "Separator spacing",
-
       options: SPACING_OPTIONS,
     },
     startingAt: {
@@ -78,20 +73,30 @@ export default {
       name: "Translate",
     },
   },
-} as ComponentMeta<typeof Mobile>;
+} as ComponentMeta<typeof MobileComponent>;
 
-const Template: ComponentStory<typeof Mobile> = (args) => (
+const Template: ComponentStory<typeof MobileComponent> = (args) => (
   <MobileWrapper>
-    <Mobile {...args} />
+    <MobileComponent {...args} />
   </MobileWrapper>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Mobile = Template.bind({});
+Mobile.args = {
   bgColor: "dark",
+  classes: "p-4",
   hideFrom: "xl",
   isOpen: true,
-  languages: ["es", "en"],
+  languages: [
+    {
+      name: "es",
+      classes: "text-capitalize mb-3",
+    },
+    {
+      name: "en",
+      classes: "text-capitalize mb-3",
+    },
+  ],
   navigation: [
     {
       type: LinkType.Anchor,
@@ -137,8 +142,6 @@ Default.args = {
       classes: "mb-2 mb-sm-2",
     },
   ],
-  px: 4,
-  py: 4,
   separator: 4,
   startingAt: 0,
   translate: "Idiomas",
