@@ -21,7 +21,19 @@ export default {
     text: {
       name: "Text",
       control: {
-        type: "text",
+        type: "select",
+        options: [
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "p",
+          "span",
+          "small",
+          "label",
+        ],
       },
     },
     color: {

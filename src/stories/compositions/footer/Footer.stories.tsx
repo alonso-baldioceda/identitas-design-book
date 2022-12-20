@@ -34,7 +34,11 @@ export const Default = Template.bind({});
 Default.args = {
   bgColor: "#000",
   contact: {
-    header: "Contáctenos",
+    header: {
+      text: "Contáctenos",
+      classes: "mb-5",
+      variant: "h2",
+    },
     list: [
       {
         icon: <HomeIcon />,
@@ -54,7 +58,11 @@ Default.args = {
     ],
   },
   navigation: {
-    header: "Enlaces",
+    header: {
+      text: "Enlaces",
+      classes: "mb-5",
+      variant: "h2",
+    },
     list: [
       {
         type: LinkType.Anchor,

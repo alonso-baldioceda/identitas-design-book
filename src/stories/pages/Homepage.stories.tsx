@@ -74,6 +74,17 @@ Default.args = {
       position: "bottom-start",
     },
   },
+  unitsProps: {
+    title: {
+      text: "Cabinas",
+      classes: "mb-5",
+      variant: "h2",
+    },
+    description: {
+      text: "Cada una de las 4 cabinas tiene 2 camas matrimoniales. Estamos habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
+      classes: "mb-0",
+    },
+  },
   cardsGridProps: {
     xl: 3,
   },

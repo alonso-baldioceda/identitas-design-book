@@ -4,20 +4,26 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import HRComponent from "./HR";
 
+// Constants
+import { COLOR_CONTROL } from "./../../shared/constants/";
+
 export default {
   title: "Components",
   component: HRComponent,
   argTypes: {
     color: {
       name: "Color",
-      control: "color",
+      description: "Color of the line",
+      control: COLOR_CONTROL,
     },
     height: {
       name: "Height",
+      description: "Height of the line in pixels",
       control: "number",
     },
     opacity: {
       name: "Opacity",
+      description: "Opacity of the line",
       control: "range",
       min: 0,
       max: 1,

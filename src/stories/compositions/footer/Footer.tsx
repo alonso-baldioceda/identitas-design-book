@@ -6,9 +6,11 @@ import { prefix } from "./../../shared/styles.js";
 import Contact from "./Contact";
 import Nav from "./Nav";
 import Spacer from "./../../components/Spacer";
+import Text from "../../components/Text";
 
 // Types
-import Link from "./../../../shared/interfaces/link";
+import LinkProps from "./../../../shared/interfaces/link";
+import TextEnum from "./../../../shared/enums/text";
 
 // Styles
 const StyledFooter = styled((props) => <section {...props} />)`
@@ -31,41 +33,61 @@ const StyledFooter = styled((props) => <section {...props} />)`
 
 // Types
 // TODO: maybe need to move
-interface Contact {
+interface ContactListItem {
   icon: ReactElement;
   iconMe?: number;
   text: string;
   classes?: string;
 }
 
-export interface FooterProps {
-  navigation: { header: string; list: Link[] };
-  contact: { header: string; list: Contact[] };
-  bgColor?: string;
+interface HeaderProps {
+  text: string;
+  classes?: string;
+  variant?: string;
 }
 
-const Footer: FC<FooterProps> = ({ bgColor, contact, navigation }) => (
-  <StyledFooter
-    className={`text-center text-lg-start text-muted ${prefix}-footer`}
-    bgcolor={bgColor}
-  >
-    <Spacer>
-      <div className="container">
-        <div className="row">
-          <div className="col-10 col-sm-12 col-md-6 mx-auto text-start">
-            {/* TODO: pass spacing - maybe using the Text component*/}
-            <h2 className="mb-5">{navigation.header}</h2>
-            <Nav navigation={navigation.list} />
-          </div>
-          <div className="col-10 col-sm-12 col-md-6 mx-auto mt-5 mt-md-0 text-start">
-            {/* TODO: pass spacing */}
-            <h2 className="mb-5">{contact.header}</h2>
-            <Contact list={contact.list} />
+export interface FooterProps {
+  navigation: { header: HeaderProps; list: LinkProps[] };
+  contact: { header: HeaderProps; list: ContactListItem[] };
+  bgColor?: string;
+  isDark?: boolean;
+}
+
+const Footer: FC<FooterProps> = ({ bgColor, contact, isDark, navigation }) => {
+  return (
+    <StyledFooter className={`text-muted ${prefix}-footer`} bgcolor={bgColor}>
+      <Spacer>
+        <div className="container">
+          <div className="row">
+            <div className="col-10 col-sm-12 col-md-6 mx-auto">
+              <Text
+                variant={
+                  navigation.header.variant
+                    ? navigation.header.variant
+                    : TextEnum.h2
+                }
+                text={navigation.header.text}
+                classes={
+                  navigation.header.classes ? navigation.header.classes : ""
+                }
+              />
+              <Nav navigation={navigation.list} />
+            </div>
+            <div className="col-10 col-sm-12 col-md-6 mx-auto mt-5 mt-md-0">
+              <Text
+                variant={
+                  contact.header.variant ? contact.header.variant : TextEnum.h2
+                }
+                text={contact.header.text}
+                classes={contact.header.classes ? contact.header.classes : ""}
+              />
+              <Contact list={contact.list} />
+            </div>
           </div>
         </div>
-      </div>
-    </Spacer>
-  </StyledFooter>
-);
+      </Spacer>
+    </StyledFooter>
+  );
+};
 
 export default Footer;

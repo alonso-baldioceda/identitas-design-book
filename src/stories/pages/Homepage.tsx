@@ -6,6 +6,7 @@ import ButtonLink from "../components/ButtonLink";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import Spacer from "../components/Spacer";
 import Sphere from "../compositions/Sphere";
+import Text from "../components/Text";
 
 // Compositions
 import Card from "../compositions/Card";
@@ -18,6 +19,7 @@ import ListGroup from "../compositions/ListGroup";
 export interface HomepageProps {
   headerProps: any;
   heroProps: any;
+  unitsProps: any;
   cardsGridProps: any;
   cardsProps?: any;
   unitsGridProps?: any;
@@ -33,6 +35,7 @@ export interface HomepageProps {
 const Homepage: FC<HomepageProps> = ({
   headerProps,
   heroProps,
+  unitsProps,
   cardsGridProps,
   cardsProps,
   unitsGridProps,
@@ -106,14 +109,15 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-10 col-sm-12">
-                    <h2 className="mb-5">Cabinas</h2>
-                    <p className="mb-0">
-                      Cada una de las 4 cabinas tiene 2 camas matrimoniales.
-                      Estamos habilitadas para alojar familias y amigos de
-                      cuatro a cinco personas. Poseen una iluminación cálida que
-                      induce al reposo, equipada para suplir toda necesidad y
-                      lograr una estadía singular.
-                    </p>
+                    <Text
+                      text={unitsProps.title.text}
+                      variant={unitsProps.title.variant}
+                      classes={unitsProps.title.classes}
+                    />
+                    <Text
+                      text={unitsProps.description.text}
+                      classes={unitsProps.description.classes}
+                    />
                   </div>
                 </div>
               </div>

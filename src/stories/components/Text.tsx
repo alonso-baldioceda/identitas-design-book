@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 
+// Types
+import TextEnum from "./../../shared/enums/text";
+
 // Styles
 const Container = styled.div`
   ${(props) =>
@@ -20,31 +23,19 @@ const Container = styled.div`
 interface TextProps {
   text: string;
   color?: string;
-  variant?:
-    | "h1"
-    | "h2"
-    | "h3"
-    | "h4"
-    | "h5"
-    | "h6"
-    | "p"
-    | "span"
-    | "small"
-    | "label";
+  variant?: string;
   classes?: string;
   noWrap?: boolean;
 }
 
-const Text: FC<TextProps> = ({ variant, color, classes, noWrap, text }) => {
-  return (
-    <Container
-      as={variant}
-      className={`${classes ? classes : ""} ${noWrap ? "text-nowrap" : ""}`}
-      color={color}
-    >
-      {text}
-    </Container>
-  );
-};
+const Text: FC<TextProps> = ({ variant, color, classes, noWrap, text }) => (
+  <Container
+    as={variant ? TextEnum[variant as TextEnum] : TextEnum.p}
+    className={`${classes ? classes : ""} ${noWrap ? "text-nowrap" : ""}`}
+    color={color}
+  >
+    {text}
+  </Container>
+);
 
 export default Text;

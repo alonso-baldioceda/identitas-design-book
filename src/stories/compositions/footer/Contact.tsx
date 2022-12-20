@@ -4,6 +4,7 @@ import { prefix } from "./../../shared/styles.js";
 
 // Components
 import SVG from "../../components/SVG";
+import Text from "../../components/Text";
 
 // Types
 import Size from "../../../shared/enums/size.ts";
@@ -25,12 +26,6 @@ const StyledContact = styled((props) => <ul {...props} />)`
 
       svg {
         fill: ${(props) => props.theme.colors.white};
-      }
-
-      p {
-        color: ${(props) => props.theme.colors.white} !important;
-        margin-bottom: 0;
-        text-decoration: none;
       }
     }
   }
@@ -60,7 +55,7 @@ const Nav: FC<NavProps> = ({ list }) => (
               size={contactItem.size ? contactItem.size : Size.xs}
             />
           </span>
-          <p>{contactItem.text}</p>
+          <Text text={contactItem.text} />
         </div>
       </li>
     ))}

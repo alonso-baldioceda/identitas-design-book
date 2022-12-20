@@ -74,6 +74,7 @@ const Mobile: FC<MobileProps> = ({
     style={{ top: startingAt ? startingAt : 0 }}
   >
     <MobileNav navigation={navigation ? navigation : []} />
+    {/* TODO: replace this for component HR */}
     <hr className={`${separator ? separator : ""}`} />
     <MobileLaguages
       languages={languages ? languages : [{ name: "es", classes: "" }]}
