@@ -7,10 +7,10 @@ import Header from "./Header";
 
 // Constants
 import { COLOR_CONTROL } from "./../../../shared/constants/";
-import LinkType from "./../../../shared/enums/linkType";
 
 // Types
 import Size from "./../../../shared/enums/size";
+import LinkType from "./../../../shared/enums/linkType";
 
 // Assets
 import PhoneIcon from "./../../../images/svg/call.svg";
@@ -143,30 +143,35 @@ Default.args = {
         type: LinkType.Anchor,
         anchor: "units",
         text: "Cabinas",
+        offset: -80,
         classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "common-spaces",
         text: "Espacios comúnes",
+        offset: -80,
         classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "services",
         text: "Servicios",
+        offset: -80,
         classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "drive",
         text: "Cómo llegar?",
+        offset: -80,
         classes: "mb-2",
       },
       {
         type: LinkType.Anchor,
         anchor: "contact",
         text: "Contáctenos",
+        offset: -80,
         classes: "mb-2",
       },
       {
@@ -212,30 +217,35 @@ Default.args = {
       type: LinkType.Anchor,
       anchor: "units",
       text: "Cabinas",
+      offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
       type: LinkType.Anchor,
       anchor: "common-spaces",
       text: "Espacios comúnes",
+      offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
       type: LinkType.Anchor,
       anchor: "services",
       text: "Servicios",
+      offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
       type: LinkType.Anchor,
       anchor: "drive",
       text: "Cómo llegar?",
+      offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
       type: LinkType.Anchor,
       anchor: "contact",
       text: "Contáctenos",
+      offset: -80,
       classes: "me-3 text-capitalize",
     },
     {

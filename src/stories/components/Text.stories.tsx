@@ -1,20 +1,14 @@
 import React from "react";
-// import styled from "styled-components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import TextComponent from "./Mask";
+import TextComponent from "./Text";
 
 // Constants
-// import { COLOR_CONTROL } from "./../../shared/constants";
-
-// // Styles
-// const StyledStory = styled.div`
-//   height: 400px;
-// `;
+import { COLOR_CONTROL } from "./../../shared/constants";
 
 export default {
-  title: "Components/Typography",
+  title: "Components",
   component: TextComponent,
   argTypes: {
     align: {
@@ -29,6 +23,10 @@ export default {
       control: {
         type: "text",
       },
+    },
+    color: {
+      name: "Color",
+      control: COLOR_CONTROL,
     },
     variant: {
       name: "Variant",
@@ -55,7 +53,7 @@ export default {
       },
     },
     noWrap: {
-      name: "No Wrap",
+      name: "No Wrap?",
       control: {
         type: "boolean",
       },
@@ -67,5 +65,11 @@ const Template: ComponentStory<typeof TextComponent> = (args) => (
   <TextComponent {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Text = Template.bind({});
+Text.args = {
+  // color: "red",
+  text: "hi",
+  variant: "h1",
+  classes: "",
+  noWrap: true,
+};

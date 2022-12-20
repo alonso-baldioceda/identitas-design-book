@@ -3,13 +3,23 @@ import styled from "styled-components";
 import { prefix } from "./../shared/styles.js";
 
 const StyledBgImg = styled((props) => <div {...props} />)`
-  height: 100vh;
-  background-color: ${(props) =>
-    props.bgcolor ? props.bgcolor : props.theme.colors.bgPrimary};
+  ${(props) =>
+    props.bgcolor &&
+    `
+      background-color: ${props.bgcolor};
+    `}
+
+  ${(props) =>
+    !props.bgcolor &&
+    `
+      background-color: ${props.theme.colors.bgPrimary};
+    `}
+
   background-image: ${(props) => `url(${props.src})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
   z-index: -1;
 `;
 

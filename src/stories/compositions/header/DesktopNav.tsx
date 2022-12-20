@@ -69,7 +69,7 @@ const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => (
             text={navItem.text}
             to={navItem.anchor}
             classes={navItem.classes ? navItem.classes : ""}
-            offset={navItem.offset ? navItem.offset : -80}
+            offset={navItem.offset ? navItem.offset : 0}
             smooth={navItem.smooth ? navItem.smooth : true}
             spy={navItem.spy ? navItem.spy : true}
             duration={navItem.duration ? navItem.duration : 500}

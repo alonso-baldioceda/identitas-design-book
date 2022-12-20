@@ -1,4 +1,4 @@
-import React, { useContext, FC } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
 import { prefix } from "./../../shared/styles.js";
@@ -48,7 +48,7 @@ export interface MobileProps {
   isOpen: boolean;
   languages?: Language[];
   navigation?: Link[];
-  separator?: number;
+  separator?: string;
   startingAt?: number;
   translate?: string;
 }
@@ -74,7 +74,7 @@ const Mobile: FC<MobileProps> = ({
     style={{ top: startingAt ? startingAt : 0 }}
   >
     <MobileNav navigation={navigation ? navigation : []} />
-    <hr className={`my-${separator}`} />
+    <hr className={`${separator ? separator : ""}`} />
     <MobileLaguages
       languages={languages ? languages : [{ name: "es", classes: "" }]}
       translate={translate ? translate : ""}
