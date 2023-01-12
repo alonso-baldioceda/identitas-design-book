@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { color } from "./../shared/styles.js";
 
 // Page
 import Homepage from "./Homepage";
@@ -59,25 +58,18 @@ Default.args = {
     src: HeroImage,
     mask: true,
     panel: {
+      color: "#FFFFFF",
       text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
-      pXs: 2,
-      pSm: 3,
-      pMd: 3,
-      pLg: 4,
-      pXl: 4,
-      size: 80,
-      sizeSm: 80,
-      sizeMd: 80,
-      sizeLg: 60,
-      sizeXl: 50,
+      classes: "p-2 p-lg-3 m-0 col-4 col-lg-7",
       borderRadius: 0,
+      borderWidth: 0,
       position: "bottom-start",
     },
   },
   unitsProps: {
     title: {
       text: "Cabinas",
-      classes: "mb-5",
+      classes: "mb-0",
       variant: "h2",
     },
     description: {
@@ -163,8 +155,23 @@ Default.args = {
     sceneId: "sphereSample3",
     yaw: 40,
   },
+  commonProps: {
+    title: {
+      text: "Espacios comúnes",
+      classes: "mb-0",
+      variant: "h2",
+    },
+    description: {
+      text: "Nuestras áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, una cocina totalmente equipada, espacio de trabajo y hermosos jardines que adornan los rústicos corredores.",
+      classes: "mb-0",
+    },
+  },
   services: {
-    heading: "Services",
+    title: {
+      text: "Services",
+      classes: "mb-0",
+      variant: "h2",
+    },
     list: [
       {
         heading: "Basics",

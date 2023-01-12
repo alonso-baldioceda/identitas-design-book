@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Hero from "./Hero";
 
-// Stories
-// import { Default as PanelDefault } from "./Panel.stories";
-
 // Assets
 import imageFile from "./../../../images/ocean.jpg";
 
@@ -39,16 +36,7 @@ Default.args = {
   panel: {
     bgColor: "red",
     text: "some text here!!!",
-    pXs: 2,
-    pSm: 2,
-    pMd: 2,
-    pLg: 3,
-    pXl: 3,
-    size: 100,
-    sizeSm: 100,
-    sizeMd: 80,
-    sizeLg: 50,
-    sizeXl: 40,
+    classes: "p-2 p-lg-3 m-0 col-4 m-2",
     borderColor: "blue",
     borderRadius: 0,
     borderWidth: 0,

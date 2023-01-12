@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 import { prefix } from "./../../shared/styles.js";
 import { Link } from "gatsby";
+import Text from "./../../components/Text";
 // import { animateScroll as scroll } from "react-scroll";
 
 // Components
@@ -38,10 +39,8 @@ const StyledBrand = styled((props) => <Link {...props} />)`
         font-weight: 700;
       `}
 
-
     @media (min-width: 768px) {
       font-size: 1.375rem;
-      margin-bottom: 4px;
     }
   }
 `;
@@ -93,7 +92,7 @@ const Brand: FC<BrandProps> = ({
       to={to}
     >
       <SVG icon={svg} size={size ? size : Size.sm} />
-      {hideNameOnMobile ? <span>{name}</span> : null}
+      {hideNameOnMobile ? <Text text={name} variant="span" /> : null}
     </StyledBrand>
   );
 };

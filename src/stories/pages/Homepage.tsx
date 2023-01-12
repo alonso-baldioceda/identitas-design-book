@@ -26,6 +26,7 @@ export interface HomepageProps {
   sphereProps1?: any;
   sphereProps2?: any;
   sphereProps3?: any;
+  commonProps?: any;
   services?: any;
   driveProps?: any;
   rulesProps?: any;
@@ -42,6 +43,7 @@ const Homepage: FC<HomepageProps> = ({
   sphereProps1,
   sphereProps2,
   sphereProps3,
+  commonProps,
   services,
   driveProps,
   rulesProps,
@@ -114,6 +116,14 @@ const Homepage: FC<HomepageProps> = ({
                       variant={unitsProps.title.variant}
                       classes={unitsProps.title.classes}
                     />
+                  </div>
+                </div>
+              </div>
+            </Spacer>
+            <Spacer bottomOnly={true}>
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-10 col-sm-12">
                     <Text
                       text={unitsProps.description.text}
                       classes={unitsProps.description.classes}
@@ -157,13 +167,23 @@ const Homepage: FC<HomepageProps> = ({
             <div className="container">
               <div className="row justify-content-center">
                 <div className="col-10 col-sm-12">
-                  <h2 className="mb-5">Espacios comúnes</h2>
-                  <p className="mb-0">
-                    Nuestras áreas comunes convocan a una experiencia de vínculo
-                    social y personal enlazados a la naturaleza, una cocina
-                    totalmente equipada, espacio de trabajo y hermosos jardines
-                    que adornan los rústicos corredores.
-                  </p>
+                  <Text
+                    text={commonProps.title.text}
+                    variant={commonProps.title.variant}
+                    classes={commonProps.title.classes}
+                  />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+          <Spacer bottomOnly={true}>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-10 col-sm-12">
+                  <Text
+                    text={commonProps.description.text}
+                    classes={commonProps.description.classes}
+                  />
                 </div>
               </div>
             </div>
@@ -177,7 +197,11 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center justify-content-sm-start">
                   <div className="col-10 col-sm-12">
-                    <h2 className="m-0">{services.heading}</h2>
+                    <Text
+                      text={services.title.text}
+                      variant={services.title.variant}
+                      classes={services.title.classes}
+                    />
                   </div>
                 </div>
               </div>

@@ -192,7 +192,7 @@ Default.args = {
   socials: [
     {
       icon: <FacebookIcon />,
-      classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
+      classes: "mb-0 mx-2 mx-sm-3",
       size: Size.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",

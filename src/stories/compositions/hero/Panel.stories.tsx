@@ -18,69 +18,37 @@ export default {
   title: "Compositions",
   component: PanelComponent,
   argTypes: {
-    bgColor: { name: "Background Color", control: COLOR_CONTROL },
-    color: { name: "Color", control: COLOR_CONTROL },
-    text: { name: "Text", control: "text" },
+    bgColor: {
+      name: "Background Color",
+      description: "Background color of the panel",
+      control: COLOR_CONTROL,
+    },
+    color: {
+      name: "Text Color",
+      description: "Text color of the panel",
+      control: COLOR_CONTROL,
+    },
+    text: { name: "Text", description: "Text of the panel", control: "text" },
     position: {
       name: "Position",
+      description: "Position of the panel",
       control: { type: "select", options: POSITIONS_OPTIONS },
     },
-    borderRadius: { name: "Border Radius", control: "number" },
-    borderColor: { name: "Border Color", control: COLOR_CONTROL },
+    borderRadius: {
+      name: "Border Radius",
+      description: "Border radius of the panel",
+      control: { type: "number", min: 0, max: 50 },
+    },
+    borderColor: {
+      name: "Border Color",
+      description: "Border color of the panel",
+      control: COLOR_CONTROL,
+    },
     borderWidth: {
       name: "Border Width",
+      description: "Border width of the panel",
       control: { type: "number", min: 0, max: 5 },
     },
-    size: {
-      name: "Size Xs",
-      control: {
-        type: "range",
-        min: 0,
-        max: 100,
-        step: 10,
-      },
-    },
-    sizeSm: {
-      name: "Size Sm",
-      control: {
-        type: "range",
-        min: 0,
-        max: 100,
-        step: 10,
-      },
-    },
-    sizeMd: {
-      name: "Size Md",
-      control: {
-        type: "range",
-        min: 0,
-        max: 100,
-        step: 10,
-      },
-    },
-    sizeLg: {
-      name: "Size Lg",
-      control: {
-        type: "range",
-        min: 0,
-        max: 100,
-        step: 10,
-      },
-    },
-    sizeXl: {
-      name: "Size Xl",
-      control: {
-        type: "range",
-        min: 0,
-        max: 100,
-        step: 10,
-      },
-    },
-    pXs: { name: "Padding Xs", control: { type: "number", min: 0, max: 5 } },
-    pSm: { name: "Padding Sm", control: { type: "number", min: 0, max: 5 } },
-    pMd: { name: "Padding Md", control: { type: "number", min: 0, max: 5 } },
-    pLg: { name: "Padding Lg", control: { type: "number", min: 0, max: 5 } },
-    pXl: { name: "Padding Xl", control: { type: "number", min: 0, max: 5 } },
   },
 } as ComponentMeta<typeof PanelComponent>;
 
@@ -94,22 +62,8 @@ export const Panel = Template.bind({});
 Panel.args = {
   bgColor: "red",
   text: "some text here!!!",
+  classes: "p-2 p-lg-3 m-0 col-4",
   borderColor: "blue",
   borderRadius: 0,
   borderWidth: 0,
-  size: 100,
-  sizeSm: 100,
-  sizeMd: 60,
-  sizeLg: 40,
-  sizeXl: 40,
-  pXs: 2,
-  pSm: 2,
-  pMd: 2,
-  pLg: 3,
-  pXl: 3,
-  mXs: 0,
-  mSm: 0,
-  mMd: 0,
-  mLg: 0,
-  mXl: 0,
 };

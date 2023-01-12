@@ -32,19 +32,11 @@ export interface ListGroupItemProps {
   text?: {
     heading?: {
       text: string;
-      mb?: number;
-      mbSm?: number;
-      mbMd?: number;
-      mbLg?: number;
-      mbXl?: number;
+      classes?: string;
     };
     bottom?: {
       text: string;
-      mb?: number;
-      mbSm?: number;
-      mbMd?: number;
-      mbLg?: number;
-      mbXl?: number;
+      classes?: string;
     };
   };
 }
@@ -57,29 +49,13 @@ const ListGroupItem: FC<ListGroupItemProps> = ({ svgSize, svg, text }) => (
       </IconWrapper>
     )}
     <div className="text">
-      {text && (
-        <p
-          className={classnames(
-            `mb-${text ? text.heading?.mb : 2}`,
-            `mb-sm-${text ? text.heading?.mbSm : 2}`,
-            `mb-md-${text ? text.heading?.mbMd : 2}`,
-            `mb-lg-${text ? text.heading?.mbLg : 2}`,
-            `mb-xl-${text ? text.heading?.mbXl : 2}`
-          )}
-        >
+      {text?.heading && (
+        <p className={classnames(`${text ? text.heading?.classes : ""}`)}>
           {text ? text.heading?.text : null}
         </p>
       )}
-      {text && (
-        <small
-          className={classnames(
-            `mb-${text ? text.bottom?.mb : 0}`,
-            `mb-sm-${text ? text.bottom?.mbSm : 0}`,
-            `mb-md-${text ? text.bottom?.mbMd : 0}`,
-            `mb-lg-${text ? text.bottom?.mbLg : 0}`,
-            `mb-xl-${text ? text.bottom?.mbXl : 0}`
-          )}
-        >
+      {text?.bottom && (
+        <small className={classnames(`${text ? text.bottom?.classes : ""}`)}>
           {text ? text.bottom?.text : null}
         </small>
       )}

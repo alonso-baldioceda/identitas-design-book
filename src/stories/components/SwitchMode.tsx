@@ -29,7 +29,7 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 
   svg {
     transition: stroke 400ms;
-    stroke: #000;
+    stroke: ${(props) => props.theme.colors.black};
 
     .moon-icon {
       opacity: 0;
@@ -63,40 +63,26 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 // Types
 interface SwitchModeProps {
   isDark?: boolean;
-  me?: number;
-  meSm?: number;
-  meMd?: number;
-  meLg?: number;
-  meXl?: number;
+  classes?: string;
   setIsDark?: (isDark: boolean) => void;
   size?: string;
 }
 
 const SwitchMode: FC<SwitchModeProps> = ({
+  classes,
   isDark,
-  me,
-  meSm,
-  meMd,
-  meLg,
-  meXl,
   setIsDark,
   size,
 }) => (
   <StyledSwitchMode
-    className={classnames(
-      { "is-dark": isDark },
-      `me-${me ? me : 3}`,
-      `me-sm-${meSm ? meSm : 3}`,
-      `me-md-${meMd ? meMd : 3}`,
-      `me-lg-${meLg ? meLg : 3}`,
-      `me-xl-${meXl ? meXl : 3}`,
-      `${prefix}-swith-mode`
-    )}
+    className={classnames(`${classes ? classes : ""} ${prefix}-swith-mode`, {
+      "is-dark": isDark,
+    })}
     onClick={() => {
       setIsDark && setIsDark(isDark ? false : true);
     }}
   >
-    <SVG icon={<DarkModeIcon />} size={Size.xs} />
+    <SVG icon={<DarkModeIcon />} size={size ? size : Size.xs} />
   </StyledSwitchMode>
 );
 

@@ -19,10 +19,12 @@ export default {
   argTypes: {
     bgColor: {
       name: "Background Color",
+      description: "Background color of the mask",
       control: COLOR_CONTROL,
     },
     opacity: {
       name: "Opacity",
+      description: "Opacity of the mask",
       control: {
         type: "range",
         min: 0,
@@ -40,4 +42,7 @@ const Template: ComponentStory<typeof MaskComponent> = (args) => (
 );
 
 export const Mask = Template.bind({});
-Mask.args = {};
+Mask.args = {
+  bgColor: "#000000",
+  opacity: 15,
+};

@@ -146,7 +146,11 @@ Default.args = {
   footer: {
     bgColor: "#000",
     contact: {
-      header: "Contáctenos",
+      header: {
+        text: "Contáctenos",
+        classes: "mb-5",
+        variant: "h2",
+      },
       list: [
         {
           icon: <HomeIcon />,
@@ -166,55 +170,59 @@ Default.args = {
       ],
     },
     navigation: {
-      header: "Enlaces",
+      header: {
+        text: "Enlaces",
+        classes: "mb-5",
+        variant: "h2",
+      },
       list: [
         {
           type: LinkType.Anchor,
           anchor: "top",
           text: "Inicio",
           offset: -104,
-          classes: "d-block mb-3",
+          classes: "mb-3 d-block",
         },
         {
           type: LinkType.Anchor,
           anchor: "units",
           text: "Cabinas",
           offset: -80,
-          classes: "d-block mb-3",
+          classes: "mb-3 d-block",
         },
         {
           type: LinkType.Anchor,
           anchor: "common-spaces",
           text: "Espacios comúnes",
           offset: -80,
-          classes: "d-block mb-3",
+          classes: "mb-3 d-block",
         },
         {
           type: LinkType.Anchor,
           anchor: "services",
           text: "Servicios",
           offset: -80,
-          classes: "d-block mb-3",
+          classes: "mb-3 d-block",
         },
         {
           type: LinkType.Anchor,
           anchor: "drive",
           text: "Cómo llegar?",
           offset: -80,
-          classes: "d-block mb-3",
+          classes: "mb-3 d-block",
         },
         {
           type: LinkType.Anchor,
           anchor: "contact",
           text: "Contáctenos",
           offset: -80,
-          classes: "d-block mb-3",
+          classes: "mb-3 d-block",
         },
         {
           type: LinkType.Link,
           anchor: "info",
           text: "Info",
-          classes: "mb-2",
+          classes: "mb-0 d-block",
         },
       ],
     },
