@@ -4,12 +4,17 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Page
 import Homepage from "./Homepage";
 
-// Stories
-import * as Layout from "./../compositions/Layout.stories";
-import * as Card from "./../compositions/Card.stories";
-import * as SphereStories from "./../compositions/Sphere.stories";
+// Types
+import LinkType from "../../shared/enums/linkType";
+import Size from "./../../shared/enums/size";
 
 // Assets
+import LogoIcon from "./../../images/svg/logo-black.svg";
+import PhoneIcon from "./../../images/svg/call.svg";
+import FacebookIcon from "./../../images/svg/facebook.svg";
+import InstagramIcon from "./../../images/svg/instagram.svg";
+import HomeIcon from "./../../images/svg/home.svg";
+import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import HeroImage from "./../../images/home-hero.jpg";
 import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
@@ -52,7 +57,175 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   headerProps: {
-    ...Layout.Default.args?.header,
+    fixed: true,
+    minHeight: 84,
+    hideLanguagesFrom: "xl",
+    showLanguages: true,
+    showCall: true,
+    call: {
+      icon: <PhoneIcon />,
+      classes: "mb-0",
+      size: Size.xs,
+      text: "call us",
+      url: "tel:+50683274040",
+    },
+    mobile: {
+      bgColor: "dark",
+      classes: "p-4",
+      hideFrom: "xl",
+      isOpen: true,
+      languages: [
+        {
+          name: "es",
+          classes: "text-capitalize",
+        },
+        {
+          name: "es",
+          classes: "text-capitalize",
+        },
+      ],
+      navigation: [
+        {
+          type: LinkType.Anchor,
+          anchor: "top",
+          text: "Inicio",
+          offset: -104,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "units",
+          text: "Cabinas",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "common-spaces",
+          text: "Espacios comúnes",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "services",
+          text: "Servicios",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "drive",
+          text: "Cómo llegar?",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "contact",
+          text: "Contáctenos",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Link,
+          anchor: "info",
+          text: "Info",
+          classes: "mb-2",
+        },
+      ],
+      startingAt: 82,
+      translate: "Idiomas",
+    },
+    separator: {
+      classes: "mx-3",
+    },
+    showSocials: true,
+    showSwitchMode: true,
+    socials: [
+      {
+        icon: <FacebookIcon />,
+        classes: "mb-0 mx-2 mx-sm-3",
+        size: Size.xs,
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
+      },
+      {
+        icon: <InstagramIcon />,
+        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
+        size: Size.xs,
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
+      },
+    ],
+    brand: {
+      fontWeight: 700,
+      hideNameOnMobile: true,
+      svg: <LogoIcon />,
+      name: "Vista Lago Arenal",
+      to: "main",
+      classes: "me-3",
+    },
+    languages: [
+      {
+        name: "es",
+        classes: "text-uppercase me-3",
+      },
+      {
+        name: "en",
+        classes: "text-uppercase me-3",
+      },
+    ],
+    navigation: [
+      {
+        type: LinkType.Anchor,
+        anchor: "top",
+        text: "Inicio",
+        offset: -104,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "units",
+        text: "Cabinas",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "common-spaces",
+        text: "Espacios comúnes",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "services",
+        text: "Servicios",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "drive",
+        text: "Cómo llegar?",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "contact",
+        text: "Contáctenos",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Link,
+        anchor: "info",
+        text: "Info",
+        classes: "me-3 text-capitalize",
+      },
+    ],
   },
   heroProps: {
     src: HeroImage,
@@ -82,43 +255,88 @@ Default.args = {
   },
   cardsProps: [
     {
-      ...Card.Default.args,
+      border: 4,
+      foreignBackgroundColor: "primary",
+      preCta: "Reservar por",
       airbnb: {
-        ...Card.Default.args?.airbnb,
-        url: "https://www.pinterest.com/",
+        appearance: "airbnb",
+        bold: true,
+        disabled: false,
+        mb: 0,
+        px: 4,
+        py: 2,
+        rounded: true,
+        targetBlank: false,
+        text: "Airbnb",
+        url: "https://www.airbnb.co.cr/rooms/547038520602833720?source_impression_id=p3_1654653090_vrBQiADFq1SJJSle",
       },
       list: [
         {
           svg: <BedQueen />,
-          text: "2 camas matrimoniales",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "2 camas matrimoniales",
+            },
+          },
         },
       ],
       title: "Cabina 1",
     },
     {
-      ...Card.Default.args,
+      border: 4,
+      foreignBackgroundColor: "primary",
+      preCta: "Reservar por",
       airbnb: {
-        ...Card.Default.args?.airbnb,
-        url: "https://www.instagram.com/",
+        appearance: "airbnb",
+        bold: true,
+        disabled: false,
+        mb: 0,
+        px: 4,
+        py: 2,
+        rounded: true,
+        targetBlank: false,
+        text: "Airbnb",
+        url: "https://www.airbnb.co.cr/rooms/558085397887318215?source_impression_id=p3_1654653092_LG9GBCv9HT0Wfjo2",
       },
       list: [
         {
           svg: <BedQueen />,
-          text: "2 camas matrimoniales",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "2 camas matrimoniales",
+            },
+          },
         },
       ],
       title: "Cabina 2",
     },
     {
-      ...Card.Default.args,
+      border: 4,
+      foreignBackgroundColor: "primary",
+      preCta: "Reservar por",
       airbnb: {
-        ...Card.Default.args?.airbnb,
-        url: "https://www.facebook.com/",
+        appearance: "airbnb",
+        bold: true,
+        disabled: false,
+        mb: 0,
+        px: 4,
+        py: 2,
+        rounded: true,
+        targetBlank: false,
+        text: "Airbnb",
+        url: "https://es-l.airbnb.com/rooms/662186647924755970?unique_share_id=93af2629-16c5-471d-b1bb-89960aca1db2&source_impression_id=p3_1673629606_LdMv42NRGPYXyTQN",
       },
       list: [
         {
           svg: <BedQueen />,
-          text: "1 cama matrimonial",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "1 cama matrimonial",
+            },
+          },
         },
       ],
       title: "Cabina 3",
@@ -129,30 +347,39 @@ Default.args = {
     xl: 2,
   },
   sphereProps1: {
-    ...SphereStories.Sphere.args,
+    border: 5,
+    borderColor: "primary",
+    height: "400px",
     id: "sphereSample1",
     image: SphereImage1,
     pitch: 6,
     preview: SpherePreviewImage1,
     sceneId: "sphereSample1",
+    width: "100%",
     yaw: 40,
   },
   sphereProps2: {
-    ...SphereStories.Sphere.args,
+    border: 5,
+    borderColor: "primary",
+    height: "400px",
     id: "sphereSample2",
     image: SphereImage1,
     pitch: 6,
     preview: SpherePreviewImage1,
     sceneId: "sphereSample2",
+    width: "100%",
     yaw: 40,
   },
   sphereProps3: {
-    ...SphereStories.Sphere.args,
+    border: 5,
+    borderColor: "primary",
+    height: "400px",
     id: "sphereSample3",
     image: SphereImage1,
     pitch: 6,
     preview: SpherePreviewImage1,
     sceneId: "sphereSample3",
+    width: "100%",
     yaw: 40,
   },
   commonProps: {
@@ -180,23 +407,46 @@ Default.args = {
           {
             svg: <WifiIcon />,
             svgSize: "sm",
-            text: "Wifi",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Wifi",
+              },
+            },
           },
           {
             svg: <WashingIcon />,
             svgSize: "sm",
-            text: "Lavadora",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Lavadora",
+              },
+            },
           },
           {
             svg: <DryerIcon />,
             svgSize: "sm",
-            text: "Secadora",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Secadora",
+              },
+            },
           },
           {
-            subText: "Toallas, sábanas, jabón y papel higiénico",
             svg: <TowelsIcon />,
             svgSize: "sm",
-            text: "Servicios imprescindibles",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Servicios imprescindibles",
+              },
+              bottom: {
+                classes: "mb-0",
+                text: "Toallas, sábanas, jabón y papel higiénico",
+              },
+            },
           },
           {
             svg: <HotWaterIcon />,
@@ -212,12 +462,22 @@ Default.args = {
           {
             svg: <ParkingIcon />,
             svgSize: "sm",
-            text: "Estacionamiento gratuito en las instalaciones",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Estacionamiento gratuito en las instalaciones",
+              },
+            },
           },
           {
             svg: <FootprintIcon />,
             svgSize: "sm",
-            text: "Admitimos animales de compañía",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Admitimos animales de compañía",
+              },
+            },
           },
         ],
       },
@@ -226,46 +486,92 @@ Default.args = {
         float: true,
         list: [
           {
-            subText: "Los huéspedes pueden cocinar en este espacio",
             svg: <KitchenIcon />,
             svgSize: "sm",
-            text: "Comedor",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Comedor",
+              },
+              bottom: {
+                classes: "mb-0",
+                text: "Los huéspedes pueden cocinar en este espacio",
+              },
+            },
           },
           {
             svg: <OvenIcon />,
             svgSize: "sm",
-            text: "Horno",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Horno",
+              },
+            },
           },
           {
             svg: <SilverwareIcon />,
             svgSize: "sm",
-            text: "Playos y cubiertos",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Platos y cubiertos",
+              },
+            },
           },
           {
             svg: <RefrigeratorIcon />,
             svgSize: "sm",
-            text: "Refrigerador",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Refrigerador",
+              },
+            },
           },
           {
             svg: <StoveIcon />,
             svgSize: "sm",
-            text: "Cocina",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Cocina",
+              },
+            },
           },
           {
             svg: <CoffeeMakerIcon />,
             svgSize: "sm",
-            text: "Cafetera",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Cafetera",
+              },
+            },
           },
           {
-            subText: "Ollas y sartenes, aceite, sal y pimienta",
             svg: <OilIcon />,
             svgSize: "sm",
-            text: "Utensilios básicos para cocinar",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Utensilios básicos para cocinar",
+              },
+              bottom: {
+                classes: "mb-0",
+                text: "Ollas y sartenes, aceite, sal y pimienta",
+              },
+            },
           },
           {
             svg: <BarbecueUtensilsIcon />,
             svgSize: "sm",
-            text: "Utensilios para hacer parrillada",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Utensilios para hacer parrillada",
+              },
+            },
           },
         ],
       },
@@ -276,33 +582,58 @@ Default.args = {
           {
             svg: <PillowIcon />,
             svgSize: "sm",
-            text: "Estacionamiento gratuito en las instalaciones",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Estacionamiento gratuito en las instalaciones",
+              },
+            },
           },
           {
             svg: <BedLinensIcon />,
             svgSize: "sm",
-            text: "Admitimos animales de compañía",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Almohadas y mantas adicionales",
+              },
+            },
           },
           {
             svg: <ShampooIcon />,
             svgSize: "sm",
-            text: "Admitimos animales de compañía",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Champú",
+              },
+            },
           },
         ],
       },
       {
-        heading: "Cama y baño",
+        heading: "Al aire libre",
         float: true,
         list: [
           {
             svg: <PatioIcon />,
             svgSize: "sm",
-            text: "Estacionamiento gratuito en las instalaciones",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Patio",
+              },
+            },
           },
           {
             svg: <GardenIcon />,
             svgSize: "sm",
-            text: "Admitimos animales de compañía",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Jardín",
+              },
+            },
           },
         ],
       },
@@ -323,26 +654,139 @@ Default.args = {
       {
         svg: <CheckInIcon />,
         svgSize: "sm",
-        text: "Llegada: 15:00 a 21:00",
+        text: {
+          heading: {
+            classes: "mb-0",
+            text: "Llegada: 15:00 a 21:00",
+          },
+        },
       },
       {
         svg: <CheckOutIcon />,
         svgSize: "sm",
-        text: "Salida: 11:00",
+        text: {
+          heading: {
+            classes: "mb-0",
+            text: "Salida: 11:00",
+          },
+        },
       },
       {
         svg: <SmokeIcon />,
         svgSize: "sm",
-        text: "Prohibido fumar",
+        text: {
+          heading: {
+            classes: "mb-0",
+            text: "Prohibido fumar",
+          },
+        },
       },
       {
         svg: <PartyIcon />,
         svgSize: "sm",
-        text: "Está prohibido hacer fiestas o eventos",
+        text: {
+          heading: {
+            classes: "mb-0",
+            text: "Está prohibido hacer fiestas o eventos",
+          },
+        },
       },
     ],
   },
   footerProps: {
-    ...Layout.Default.args?.footer,
+    bgColor: "#000",
+    contact: {
+      header: {
+        text: "Contáctenos",
+        classes: "mb-5",
+        variant: "h2",
+      },
+      list: [
+        {
+          icon: <HomeIcon />,
+          classes: "mb-3",
+          text: {
+            classes: "mb-0",
+            text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+            color: "#FFFFFF",
+          },
+        },
+        {
+          icon: <EnvelopeIcon />,
+          classes: "mb-3",
+          text: {
+            classes: "mb-0",
+            text: "vistalagoarenal@gmail.com",
+            color: "#FFFFFF",
+          },
+        },
+        {
+          icon: <PhoneIcon />,
+          classes: "mb-3",
+          text: {
+            classes: "mb-0",
+            text: "+(506) 8327 4040",
+            color: "#FFFFFF",
+          },
+        },
+      ],
+    },
+    navigation: {
+      header: {
+        text: "Enlaces",
+        classes: "mb-5",
+        variant: "h2",
+      },
+      list: [
+        {
+          type: LinkType.Anchor,
+          anchor: "top",
+          text: "Inicio",
+          offset: -104,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "units",
+          text: "Cabinas",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "common-spaces",
+          text: "Espacios comúnes",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "services",
+          text: "Servicios",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "drive",
+          text: "Cómo llegar?",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "contact",
+          text: "Contáctenos",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Link,
+          anchor: "info",
+          text: "Info",
+          classes: "mb-0 d-block",
+        },
+      ],
+    },
   },
 };

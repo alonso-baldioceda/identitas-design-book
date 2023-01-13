@@ -36,14 +36,22 @@ const StyledFooter = styled((props) => <section {...props} />)`
 interface ContactListItem {
   icon: ReactElement;
   iconMe?: number;
-  text: string;
+  text?: {
+    text: string;
+    color?: string;
+    variant?: string;
+    classes?: string;
+    noWrap?: boolean;
+  };
   classes?: string;
 }
 
 interface HeaderProps {
   text: string;
-  classes?: string;
+  color?: string;
   variant?: string;
+  classes?: string;
+  noWrap?: boolean;
 }
 
 export interface FooterProps {

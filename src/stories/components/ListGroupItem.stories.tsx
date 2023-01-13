@@ -54,12 +54,8 @@ export const ListGroupItem = Template.bind({});
 ListGroupItem.args = {
   text: {
     heading: {
+      classes: "mb-0",
       text: "some text here!!",
-      mb: 0,
-      mbSm: 0,
-      mbMd: 0,
-      mbLg: 0,
-      mbXl: 0,
     },
   },
 };
@@ -70,20 +66,12 @@ TextWithIcon.args = {
   svg: <BedQueen />,
   text: {
     heading: {
+      classes: "mb-0",
       text: "some text here!!",
-      mb: 0,
-      mbSm: 0,
-      mbMd: 0,
-      mbLg: 0,
-      mbXl: 0,
     },
     bottom: {
+      classes: "mb-0",
       text: "some more text here!!",
-      mb: 0,
-      mbSm: 0,
-      mbMd: 0,
-      mbLg: 0,
-      mbXl: 0,
     },
   },
 };

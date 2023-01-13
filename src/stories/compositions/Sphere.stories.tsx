@@ -14,17 +14,6 @@ import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
 export default {
   title: "Compositions/Sphere",
   component: SphereComponent,
-  args: {
-    border: 5,
-    height: "400px",
-    id: "sphereSample1",
-    image: SphereImage1,
-    pitch: 6,
-    preview: SpherePreviewImage1,
-    sceneId: "sphereSample1",
-    width: "400px",
-    yaw: 40,
-  },
   argTypes: {
     border: {
       name: "Border",

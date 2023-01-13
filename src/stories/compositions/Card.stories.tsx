@@ -55,8 +55,12 @@ Default.args = {
     {
       svg: <BedQueen />,
       svgSize: Size.sm,
-      text: "some text here!!",
-      textBottom: 0,
+      text: {
+        heading: {
+          classes: "mb-0",
+          text: "some text here!!",
+        },
+      },
     },
   ],
   preCta: "Reservar por",

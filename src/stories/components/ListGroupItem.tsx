@@ -33,10 +33,12 @@ export interface ListGroupItemProps {
     heading?: {
       text: string;
       classes?: string;
+      color?: string;
     };
     bottom?: {
       text: string;
       classes?: string;
+      color?: string;
     };
   };
 }

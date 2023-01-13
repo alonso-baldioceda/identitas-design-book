@@ -36,7 +36,13 @@ interface itemsProps {
   classes?: string;
   icon: ReactElement;
   size?: string;
-  text: string;
+  text?: {
+    text: string;
+    color?: string;
+    variant?: string;
+    classes?: string;
+    noWrap?: boolean;
+  };
 }
 
 export interface NavProps {
@@ -55,7 +61,11 @@ const Nav: FC<NavProps> = ({ list }) => (
               size={contactItem.size ? contactItem.size : Size.xs}
             />
           </span>
-          <Text text={contactItem.text} />
+          <Text
+            text={contactItem.text?.text ? contactItem.text?.text : ""}
+            color={contactItem.text ? contactItem.text.color : "#FFFFFF"}
+            classes="mb-0"
+          />
         </div>
       </li>
     ))}
