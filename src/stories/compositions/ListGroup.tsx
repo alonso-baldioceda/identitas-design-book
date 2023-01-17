@@ -38,24 +38,16 @@ const StyledListGroup = styled((props) => <ul {...props} />)`
 `;
 
 export interface ListGroupProps {
-  // TODO: remove any
   list: ListGroupItemProps[];
   float?: boolean;
-  mb?: number;
-  p?: number;
+  classes?: string;
 }
 
-const ListGroup: FC<ListGroupProps> = ({
-  mb = 0,
-  p = 0,
-  list,
-  float = false,
-}) => (
+const ListGroup: FC<ListGroupProps> = ({ classes, list, float }) => (
   <StyledListGroup
-    className={`mb-${mb} p-${p} list-unstyled ${prefix}-list-group`}
-    float={float.toString()}
+    className={`${classes ? classes : ""} list-unstyled ${prefix}-list-group`}
+    float={float ? float.toString() : "false"}
   >
-    {/* TODO: remove any */}
     {list
       ? list.map((item: ListGroupItemProps, index: number) => (
           <ListGroupItem {...item} key={index} />

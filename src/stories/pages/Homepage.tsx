@@ -9,13 +9,16 @@ import Sphere from "../compositions/Sphere";
 import Text from "../components/Text";
 
 // Compositions
-import Card from "../compositions/Card";
+import Card from "../compositions/card/Card";
 import Grid from "../compositions/Grid";
 import Hero from "../compositions/hero/Hero";
 import Layout from "../compositions/Layout";
 import ListGroup from "../compositions/ListGroup";
 
 // Types
+import { TextProps } from "./../components/Text";
+import { ListGroupItemProps } from "./../components/ListGroupItem";
+
 export interface HomepageProps {
   headerProps: any;
   heroProps: any;
@@ -31,6 +34,13 @@ export interface HomepageProps {
   driveProps?: any;
   rulesProps?: any;
   footerProps?: any;
+}
+
+interface ServiceProps {
+  heading: TextProps;
+  float?: boolean;
+  list: ListGroupItemProps[];
+  classes?: string;
 }
 
 const Homepage: FC<HomepageProps> = ({
@@ -206,34 +216,36 @@ const Homepage: FC<HomepageProps> = ({
                 </div>
               </div>
             </Spacer>
-            {/* TODO: remove any */}
-            {services?.list.map((service: any, index: number) => {
-              return (
-                <div key={index}>
-                  <Spacer bottomOnly={true}>
-                    <div className="container">
-                      <div className="row justify-content-center justify-content-sm-start">
-                        <div className="col-10 col-sm-12">
-                          <h3 className="mb-0">{service.heading}</h3>
-                        </div>
+            {services?.list.map((service: ServiceProps, index: number) => (
+              <div key={index} id={`service-${service.heading.text}`}>
+                <Spacer bottomOnly={true}>
+                  <div className="container">
+                    <div className="row justify-content-center justify-content-sm-start">
+                      <div className="col-10 col-sm-12">
+                        <Text
+                          text={service.heading.text}
+                          variant={service.heading.variant}
+                          classes={service.heading.classes}
+                        />
                       </div>
                     </div>
-                  </Spacer>
-                  <Spacer bottomOnly={true}>
-                    <div className="container">
-                      <div className="row justify-content-center justify-content-sm-start">
-                        <div className="col-10 col-sm-12">
-                          <ListGroup
-                            list={service.list}
-                            float={service.float}
-                          />
-                        </div>
+                  </div>
+                </Spacer>
+                <Spacer bottomOnly={true}>
+                  <div className="container">
+                    <div className="row justify-content-center justify-content-sm-start">
+                      <div className="col-10 col-sm-12">
+                        <ListGroup
+                          list={service.list}
+                          float={service.float}
+                          classes={service.classes}
+                        />
                       </div>
                     </div>
-                  </Spacer>
-                </div>
-              );
-            })}
+                  </div>
+                </Spacer>
+              </div>
+            ))}
           </div>
         </FadeInWhenVisible>
       </section>

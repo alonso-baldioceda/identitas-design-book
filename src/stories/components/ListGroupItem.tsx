@@ -8,6 +8,7 @@ import SVG from "./SVG";
 
 // Types
 import Size from "./../../shared/enums/size";
+import { TextProps } from "./../components/Text";
 
 // Styles
 const ListGroupItemStyled = styled.li`
@@ -26,20 +27,11 @@ const IconWrapper = styled((props) => <span {...props} />)`
 
 // Types
 export interface ListGroupItemProps {
-  // TODO: group SVG things into one object
   svg?: ReactNode;
   svgSize?: string;
   text?: {
-    heading?: {
-      text: string;
-      classes?: string;
-      color?: string;
-    };
-    bottom?: {
-      text: string;
-      classes?: string;
-      color?: string;
-    };
+    heading?: TextProps;
+    bottom?: TextProps;
   };
 }
 

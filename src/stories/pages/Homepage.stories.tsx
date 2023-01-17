@@ -279,9 +279,13 @@ Default.args = {
               text: "2 camas matrimoniales",
             },
           },
+          classes: "mb-0 p-0",
         },
       ],
-      title: "Cabina 1",
+      heading: {
+        text: "Cabina 1",
+        variant: "h3",
+      },
     },
     {
       border: 4,
@@ -308,9 +312,13 @@ Default.args = {
               text: "2 camas matrimoniales",
             },
           },
+          classes: "mb-0 p-0",
         },
       ],
-      title: "Cabina 2",
+      heading: {
+        text: "Cabina 2",
+        variant: "h3",
+      },
     },
     {
       border: 4,
@@ -337,9 +345,13 @@ Default.args = {
               text: "1 cama matrimonial",
             },
           },
+          classes: "mb-0 p-0",
         },
       ],
-      title: "Cabina 3",
+      heading: {
+        text: "Cabina 3",
+        variant: "h3",
+      },
     },
   ],
   unitsGridProps: {
@@ -401,7 +413,11 @@ Default.args = {
     },
     list: [
       {
-        heading: "Basics",
+        heading: {
+          classes: "mb-0",
+          text: "Basics",
+          variant: "h3",
+        },
         float: true,
         list: [
           {
@@ -456,7 +472,11 @@ Default.args = {
         ],
       },
       {
-        heading: "Instalaciones",
+        heading: {
+          classes: "mb-0",
+          text: "Instalaciones",
+          variant: "h3",
+        },
         float: true,
         list: [
           {
@@ -482,7 +502,11 @@ Default.args = {
         ],
       },
       {
-        heading: "Comedor",
+        heading: {
+          classes: "mb-0",
+          text: "Comedor",
+          variant: "h3",
+        },
         float: true,
         list: [
           {
@@ -576,7 +600,11 @@ Default.args = {
         ],
       },
       {
-        heading: "Cama y baño",
+        heading: {
+          classes: "mb-0",
+          text: "Cama y baño",
+          variant: "h3",
+        },
         float: true,
         list: [
           {
@@ -612,7 +640,11 @@ Default.args = {
         ],
       },
       {
-        heading: "Al aire libre",
+        heading: {
+          classes: "mb-0",
+          text: "Al aire libre",
+          variant: "h3",
+        },
         float: true,
         list: [
           {
@@ -703,30 +735,39 @@ Default.args = {
       },
       list: [
         {
-          icon: <HomeIcon />,
+          svg: <HomeIcon />,
+          svgSize: "xs",
           classes: "mb-3",
           text: {
-            classes: "mb-0",
-            text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-            color: "#FFFFFF",
+            heading: {
+              classes: "mb-0",
+              text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+              color: "#FFFFFF",
+            },
           },
         },
         {
-          icon: <EnvelopeIcon />,
+          svg: <EnvelopeIcon />,
+          svgSize: "xs",
           classes: "mb-3",
           text: {
-            classes: "mb-0",
-            text: "vistalagoarenal@gmail.com",
-            color: "#FFFFFF",
+            heading: {
+              classes: "mb-0",
+              text: "vistalagoarenal@gmail.com",
+              color: "#FFFFFF",
+            },
           },
         },
         {
-          icon: <PhoneIcon />,
+          svg: <PhoneIcon />,
+          svgSize: "xs",
           classes: "mb-3",
           text: {
-            classes: "mb-0",
-            text: "+(506) 8327 4040",
-            color: "#FFFFFF",
+            heading: {
+              classes: "mb-0",
+              text: "+(506) 8327 4040",
+              color: "#FFFFFF",
+            },
           },
         },
       ],

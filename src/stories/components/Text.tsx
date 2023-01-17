@@ -20,7 +20,7 @@ const Container = styled.div`
 `;
 
 // Types
-interface TextProps {
+export interface TextProps {
   text: string;
   color?: string;
   variant?: string;

@@ -11,6 +11,7 @@ import Text from "../../components/Text";
 // Types
 import LinkProps from "./../../../shared/interfaces/link";
 import TextEnum from "./../../../shared/enums/text";
+import { TextProps } from "./../../components/Text";
 
 // Styles
 const StyledFooter = styled((props) => <section {...props} />)`
@@ -34,29 +35,18 @@ const StyledFooter = styled((props) => <section {...props} />)`
 // Types
 // TODO: maybe need to move
 interface ContactListItem {
-  icon: ReactElement;
+  svg: ReactElement;
+  svgSize?: string;
   iconMe?: number;
   text?: {
-    text: string;
-    color?: string;
-    variant?: string;
-    classes?: string;
-    noWrap?: boolean;
+    heading: TextProps;
   };
   classes?: string;
 }
 
-interface HeaderProps {
-  text: string;
-  color?: string;
-  variant?: string;
-  classes?: string;
-  noWrap?: boolean;
-}
-
 export interface FooterProps {
-  navigation: { header: HeaderProps; list: LinkProps[] };
-  contact: { header: HeaderProps; list: ContactListItem[] };
+  navigation: { header: TextProps; list: LinkProps[] };
+  contact: { header: TextProps; list: ContactListItem[] };
   bgColor?: string;
   isDark?: boolean;
 }
