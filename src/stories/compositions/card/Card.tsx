@@ -8,10 +8,10 @@ import Header, { HeaderProps } from "./Header";
 
 //Props
 interface CardProps {
-  border?: number;
-  foreignBackgroundColor?: string;
-  header: HeaderProps;
   body: BodyProps;
+  border?: number;
+  borderColor?: string;
+  header: HeaderProps;
 }
 
 const StyledCard = styled((props) => <div {...props} />)`
@@ -22,31 +22,23 @@ const StyledCard = styled((props) => <div {...props} />)`
     `}
 
   ${(props) =>
-    !props.border &&
+    props.borderwidth &&
     `
-      border-color: ${color.primary};
+      border-width: ${props.borderwidth}px;
     `}
 
   border-style: solid;
 `;
 
-const Card: FC<CardProps> = ({
-  border,
-  foreignBackgroundColor,
-  header,
-  body,
-}) => {
-  return (
-    <StyledCard
-      className={`d-flex flex-column align-items-center border-${
-        border ? border : 4
-      } ${prefix}-card`}
-      border={foreignBackgroundColor ? foreignBackgroundColor : ""}
-    >
-      <Header {...header} />
-      <Body {...body} />
-    </StyledCard>
-  );
-};
+const Card: FC<CardProps> = ({ border, borderColor, header, body }) => (
+  <StyledCard
+    className={`d-flex flex-column align-items-center ${prefix}-card`}
+    border={borderColor ? borderColor : color.primary}
+    borderwidth={border ? border : 1}
+  >
+    <Header {...header} />
+    <Body {...body} />
+  </StyledCard>
+);
 
 export default Card;

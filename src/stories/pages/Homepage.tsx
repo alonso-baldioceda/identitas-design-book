@@ -262,9 +262,6 @@ const Homepage: FC<HomepageProps> = ({
                       <ButtonLink
                         appearance={driveProps.buttonAppearance}
                         bold
-                        mb={0}
-                        px={4}
-                        py={2}
                         rounded
                         targetBlank={driveProps.targetBlank}
                         text={driveProps.cta}

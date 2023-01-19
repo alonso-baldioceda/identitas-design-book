@@ -14,9 +14,6 @@ export default {
     appearance: "primary",
     bold: true,
     disabled: false,
-    mb: 0,
-    px: 4,
-    py: 2,
     rounded: true,
     targetBlank: false,
     text: "button",
@@ -35,17 +32,9 @@ export default {
       control: "boolean",
       options: [false, true],
     },
-    mb: {
-      control: "select",
-      options: SPACING_OPTIONS,
-    },
-    px: {
-      control: "select",
-      options: SPACING_OPTIONS,
-    },
-    py: {
-      control: "select",
-      options: SPACING_OPTIONS,
+    classes: {
+      control: "text",
+      description: "Classes to be added to the component",
     },
     rounded: {
       control: "boolean",
@@ -62,12 +51,7 @@ export const ButtonLink = Template.bind({});
 ButtonLink.args = {
   appearance: "primary",
   bold: true,
-  disabled: false,
-  mb: 0,
-  px: 4,
-  py: 2,
   rounded: true,
-  targetBlank: false,
   text: "click me!!",
   url: "https://www.google.com/",
 };

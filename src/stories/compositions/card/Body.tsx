@@ -1,38 +1,58 @@
 import React, { FC } from "react";
+import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
 // Components
+import Text, { TextProps } from "./../../components/Text";
 import ListGroup, { ListGroupProps } from "./../../compositions/ListGroup";
 import ButtonLink, { ButtonLinkProps } from "./../../components/ButtonLink";
 
 //Props
 export interface BodyProps {
   airbnb?: ButtonLinkProps;
-  foreignBackgroundColor?: string;
   list: ListGroupProps["list"];
-  preCta?: string | null;
-  upfrontBackgroundColor: string;
+  preCta?: TextProps;
+  backgroundColor: string;
 }
 
-const Body: FC<BodyProps> = ({
-  airbnb,
-  list,
-  preCta,
-  upfrontBackgroundColor,
-}) => {
-  return (
-    <div className={`w-100 bg-${upfrontBackgroundColor}`}>
-      <div className="px-3 py-5">
-        <ListGroup list={list} classes="mb-3 p-0" />
-        {preCta && <p className="text-center small mb-2">{preCta}</p>}
-        {airbnb && (
-          <div className="d-flex justify-content-center">
-            <ButtonLink {...airbnb} />
-          </div>
-        )}
-      </div>
+// Styles
+const StyledBody = styled((props) => <div {...props} />)`
+  ${(props) =>
+    props.background &&
+    `
+      background-color: ${props.background};
+    `}
+
+  ${(props) =>
+    !props.background &&
+    `
+      background-color: ${color.transparent};
+    `}
+
+  width: 100%;
+`;
+
+const Body: FC<BodyProps> = ({ airbnb, list, preCta, backgroundColor }) => (
+  <StyledBody
+    className={`${prefix}-card-body`}
+    background={backgroundColor ? backgroundColor : ""}
+  >
+    <div className="px-3 py-5">
+      <ListGroup list={list} classes="mb-3 p-0" />
+      {preCta && (
+        <Text
+          text={preCta.text}
+          variant={preCta?.variant ? preCta.variant : ""}
+          classes={preCta?.classes ? preCta.classes : ""}
+        />
+      )}
+      {airbnb && (
+        <div className="d-flex justify-content-center">
+          <ButtonLink {...airbnb} />
+        </div>
+      )}
     </div>
-  );
-};
+  </StyledBody>
+);
 
 export default Body;

@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Card from "./Card";
 
-// Constants
-import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../../shared/constants/";
-
 // Types
 import Size from "./../../../shared/enums/size";
 
@@ -14,21 +11,71 @@ import Size from "./../../../shared/enums/size";
 import BedQueen from "./../../../images/svg/bed-queen.svg";
 
 export default {
-  title: "Compositions/Card",
+  title: "Compositions/Card/Default",
   component: Card,
   argTypes: {
     border: {
       name: "Border",
-      control: "select",
-      options: SPACING_OPTIONS,
+      control: "number",
+      description: "Border of the component",
     },
-    foreignBackgroundColor: {
-      name: "Foreign Background Color",
-      control: COLOR_CONTROL,
+    header: {
+      name: "Header",
+      control: "object",
+      description: "Header of the component",
+      table: {
+        type: {
+          summary: "object",
+          detail: `{
+            text: {
+              classes: string;
+              text: string;
+              variant: string;
+            };
+            backgroundColor: string;
+          }`,
+        },
+      },
     },
-    upfrontBackgroundColor: {
-      name: "Upfront Background Color",
-      control: COLOR_CONTROL,
+    body: {
+      name: "Body",
+      control: "object",
+      description: "Body of the component",
+      table: {
+        type: {
+          summary: "object",
+          detail: `{
+            backgroundColor: string;
+            list: {
+              svg: React.ReactNode;
+              svgSize: Size;
+              text: {
+                heading: {
+                  classes: string;
+                  text: string;
+                };
+                body: {
+                  classes: string;
+                  text: string;
+                };
+              };
+            }[];
+            preCta: {
+              classes: string;
+              text: string;
+            };
+            airbnb: {
+              appearance: string;
+              bold: boolean;
+              disabled: boolean;
+              rounded: boolean;
+              targetBlank: boolean;
+              text: string;
+              url: string;
+            };
+          }`,
+        },
+      },
     },
   },
 } as ComponentMeta<typeof Card>;
@@ -44,10 +91,10 @@ Default.args = {
       text: "title here!!",
       variant: "h3",
     },
-    foreignBackgroundColor: "primary",
+    backgroundColor: "#81B29A",
   },
   body: {
-    upfrontBackgroundColor: "transparent",
+    backgroundColor: "transparent",
     list: [
       {
         svg: <BedQueen />,
@@ -60,14 +107,14 @@ Default.args = {
         },
       },
     ],
-    preCta: "Reservar por",
+    preCta: {
+      classes: "text-center small mb-2",
+      text: "Reservar por",
+    },
     airbnb: {
       appearance: "airbnb",
       bold: true,
       disabled: false,
-      mb: 0,
-      px: 4,
-      py: 2,
       rounded: true,
       targetBlank: false,
       text: "Airbnb",
