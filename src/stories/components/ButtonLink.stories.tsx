@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ButtonLinkComponent from "./ButtonLink";
 
 // Constants
-import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../shared/constants/";
+import { COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
   title: "Components/ButtonLink",

@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ButtonComponent from "./Button";
 
 // Constants
-import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../shared/constants/";
+import { COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
   title: "Components/Button",
@@ -14,9 +14,6 @@ export default {
     appearance: "primary",
     bold: true,
     disabled: false,
-    mb: 0,
-    px: 4,
-    py: 2,
     rounded: true,
     text: "button",
     type: "button",
@@ -36,20 +33,10 @@ export default {
       control: "boolean",
       options: [false, true],
     },
-    mb: {
-      name: "Margin Bottom",
-      control: "select",
-      options: SPACING_OPTIONS,
-    },
-    px: {
-      name: "Padding X",
-      control: "select",
-      options: SPACING_OPTIONS,
-    },
-    py: {
-      name: "Padding Y",
-      control: "select",
-      options: SPACING_OPTIONS,
+    classes: {
+      name: "Classes",
+      control: "text",
+      description: "Classes to be added to the component",
     },
     rounded: {
       name: "Rounded",
@@ -73,9 +60,6 @@ Button.args = {
   appearance: "primary",
   bold: true,
   disabled: false,
-  mb: 0,
-  px: 4,
-  py: 2,
   rounded: true,
   text: "button",
   type: "button",

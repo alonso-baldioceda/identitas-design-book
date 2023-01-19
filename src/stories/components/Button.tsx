@@ -4,32 +4,32 @@ import { prefix } from "./../shared/styles.js";
 
 interface ButtonProps {
   appearance: string;
-  text: string;
-  disabled?: boolean;
   bold?: boolean;
-  mb?: number;
-  px?: number;
-  py?: number;
+  classes?: string;
+  disabled?: boolean;
   rounded?: boolean;
+  text: string;
   type?: "button" | "submit";
 }
 
 const Button: FC<ButtonProps> = ({
-  appearance = "primary",
-  bold = true,
-  disabled = false,
-  mb = 0,
-  px = 4,
-  py = 2,
-  rounded = true,
-  text = "click me!!",
-  type = "button",
+  appearance,
+  bold,
+  classes,
+  disabled,
+  rounded,
+  text,
+  type,
 }) => (
   <button
     className={classnames(
-      `btn btn-${appearance} py-${py} px-${px} mb-${mb} text-capitalize ${prefix}-button`,
+      `btn btn-${appearance ? appearance : "primary"} text-capitalize`,
       { "rounded-pill": rounded },
-      { "fw-bold": bold }
+      { "fw-bold": bold },
+      { "mb-0 px-4 py-2 ": !classes },
+      { classes: classes },
+      { disabled: disabled },
+      `${prefix}-button`
     )}
     type={type}
     disabled={disabled}
