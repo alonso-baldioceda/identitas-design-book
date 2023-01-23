@@ -23,12 +23,6 @@ export interface HomepageProps {
   headerProps: any;
   heroProps: any;
   unitsProps: any;
-  cardsGridProps: any;
-  cardsProps?: any;
-  unitsGridProps?: any;
-  sphereProps1?: any;
-  sphereProps2?: any;
-  sphereProps3?: any;
   commonProps?: any;
   services?: any;
   driveProps?: any;
@@ -47,12 +41,6 @@ const Homepage: FC<HomepageProps> = ({
   headerProps,
   heroProps,
   unitsProps,
-  cardsGridProps,
-  cardsProps,
-  unitsGridProps,
-  sphereProps1,
-  sphereProps2,
-  sphereProps3,
   commonProps,
   services,
   driveProps,
@@ -146,10 +134,10 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center justify-content-md-start">
                   <div className="col-10 col-sm-12">
-                    <Grid {...cardsGridProps}>
-                      <Card {...cardsProps[0]} />
-                      <Card {...cardsProps[1]} />
-                      <Card {...cardsProps[2]} />
+                    <Grid {...unitsProps.cardsGridProps}>
+                      <Card {...unitsProps.cardsProps[0]} />
+                      <Card {...unitsProps.cardsProps[1]} />
+                      <Card {...unitsProps.cardsProps[2]} />
                     </Grid>
                   </div>
                 </div>
@@ -159,10 +147,10 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row justify-content-center">
                   <div className="col-10 col-sm-12">
-                    <Grid {...unitsGridProps}>
-                      <Sphere {...sphereProps1} />
-                      <Sphere {...sphereProps2} />
-                      <Sphere {...sphereProps3} />
+                    <Grid {...unitsProps.unitsGridProps}>
+                      <Sphere {...unitsProps.sphereProps1} />
+                      <Sphere {...unitsProps.sphereProps2} />
+                      <Sphere {...unitsProps.sphereProps3} />
                     </Grid>
                   </div>
                 </div>
@@ -255,18 +243,24 @@ const Homepage: FC<HomepageProps> = ({
             <div className="bg-white">
               <div className="container">
                 <div className="row align-items-center justify-content-center">
-                  <div className="col-10 col-sm-12 col-md-6">
-                    {driveProps.heading && <Text {...driveProps.heading} />}
-                    {driveProps.text && <Text {...driveProps.text} />}
-                    {driveProps.buttonLink && (
-                      <div className="mb-5 mb-md-0">
-                        <ButtonLink {...driveProps.buttonLink} />
-                      </div>
-                    )}
-                  </div>
-                  <div className="col-10 col-sm-12 col-md-6">
-                    {driveProps.icon}
-                  </div>
+                  {driveProps.heading ||
+                  driveProps.text ||
+                  driveProps.buttonLink ? (
+                    <div className="col-10 col-sm-12 col-md-6">
+                      {driveProps.heading && <Text {...driveProps.heading} />}
+                      {driveProps.text && <Text {...driveProps.text} />}
+                      {driveProps.buttonLink && (
+                        <div className="mb-5 mb-md-0">
+                          <ButtonLink {...driveProps.buttonLink} />
+                        </div>
+                      )}
+                    </div>
+                  ) : null}
+                  {driveProps.icon && (
+                    <div className="col-10 col-sm-12 col-md-6">
+                      {driveProps.icon}
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

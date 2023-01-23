@@ -251,210 +251,210 @@ Default.args = {
       text: "Cada una de las 4 cabinas tiene 2 camas matrimoniales. Estamos habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
       classes: "mb-0",
     },
-  },
-  cardsGridProps: {
-    xl: 3,
-  },
-  cardsProps: [
-    {
-      border: 4,
-      header: {
-        text: {
-          classes: "mb-0 py-4 text-capitalize",
-          text: "Cabina 1",
-          variant: "h3",
+    cardsGridProps: {
+      xl: 3,
+    },
+    cardsProps: [
+      {
+        border: 4,
+        header: {
+          text: {
+            classes: "mb-0 py-4 text-capitalize",
+            text: "Cabina 1",
+            variant: "h3",
+          },
+          backgroundColor: "#81B29A",
         },
-        backgroundColor: "#81B29A",
-      },
-      body: {
-        backgroundColor: "transparent",
-        list: [
-          {
-            svg: <BedQueen />,
-            svgSize: Size.sm,
-            text: {
-              heading: {
-                classes: "mb-0",
-                text: "2 camas matrimoniales",
-                variant: "h4",
-              },
-              bottom: {
-                classes: "mb-0",
-                text: "(máx. 4 personas)",
+        body: {
+          backgroundColor: "transparent",
+          list: [
+            {
+              svg: <BedQueen />,
+              svgSize: Size.sm,
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: "2 camas matrimoniales",
+                  variant: "h4",
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: "(máx. 4 personas)",
+                },
               },
             },
+          ],
+          preCta: {
+            classes: "text-center small mb-2",
+            text: "Reservar por",
           },
-        ],
-        preCta: {
-          classes: "text-center small mb-2",
-          text: "Reservar por",
-        },
-        airbnb: {
-          appearance: "airbnb",
-          bold: true,
-          disabled: false,
-          classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
-          targetBlank: false,
-          text: "Airbnb",
-          url: "https://www.google.com/",
-        },
-        booking: {
-          appearance: "booking",
-          bold: true,
-          disabled: false,
-          classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
-          targetBlank: false,
-          text: "Booking",
-          url: "https://www.google.com/",
+          airbnb: {
+            appearance: "airbnb",
+            bold: true,
+            disabled: false,
+            classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
+            targetBlank: false,
+            text: "Airbnb",
+            url: "https://www.google.com/",
+          },
+          booking: {
+            appearance: "booking",
+            bold: true,
+            disabled: false,
+            classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+            targetBlank: false,
+            text: "Booking",
+            url: "https://www.google.com/",
+          },
         },
       },
-    },
-    {
-      border: 4,
-      header: {
-        text: {
-          classes: "mb-0 py-4 text-capitalize",
-          text: "Cabina 2",
-          variant: "h3",
+      {
+        border: 4,
+        header: {
+          text: {
+            classes: "mb-0 py-4 text-capitalize",
+            text: "Cabina 2",
+            variant: "h3",
+          },
+          backgroundColor: "#81B29A",
         },
-        backgroundColor: "#81B29A",
-      },
-      body: {
-        backgroundColor: "transparent",
-        list: [
-          {
-            svg: <BedQueen />,
-            svgSize: Size.sm,
-            text: {
-              heading: {
-                classes: "mb-0",
-                text: "2 camas matrimoniales",
-                variant: "h4",
-              },
-              bottom: {
-                classes: "mb-0",
-                text: "(máx. 4 personas)",
+        body: {
+          backgroundColor: "transparent",
+          list: [
+            {
+              svg: <BedQueen />,
+              svgSize: Size.sm,
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: "2 camas matrimoniales",
+                  variant: "h4",
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: "(máx. 4 personas)",
+                },
               },
             },
+          ],
+          preCta: {
+            classes: "text-center small mb-2",
+            text: "Reservar por",
           },
-        ],
-        preCta: {
-          classes: "text-center small mb-2",
-          text: "Reservar por",
-        },
-        airbnb: {
-          appearance: "airbnb",
-          bold: true,
-          disabled: false,
-          classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
-          targetBlank: false,
-          text: "Airbnb",
-          url: "https://www.google.com/",
-        },
-        booking: {
-          appearance: "booking",
-          bold: true,
-          disabled: false,
-          classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
-          targetBlank: false,
-          text: "Booking",
-          url: "https://www.google.com/",
+          airbnb: {
+            appearance: "airbnb",
+            bold: true,
+            disabled: false,
+            classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
+            targetBlank: false,
+            text: "Airbnb",
+            url: "https://www.google.com/",
+          },
+          booking: {
+            appearance: "booking",
+            bold: true,
+            disabled: false,
+            classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+            targetBlank: false,
+            text: "Booking",
+            url: "https://www.google.com/",
+          },
         },
       },
-    },
-    {
-      border: 4,
-      header: {
-        text: {
-          classes: "mb-0 py-4 text-capitalize",
-          text: "Cabina 3",
-          variant: "h3",
+      {
+        border: 4,
+        header: {
+          text: {
+            classes: "mb-0 py-4 text-capitalize",
+            text: "Cabina 3",
+            variant: "h3",
+          },
+          backgroundColor: "#81B29A",
         },
-        backgroundColor: "#81B29A",
-      },
-      body: {
-        backgroundColor: "transparent",
-        list: [
-          {
-            svg: <BedQueen />,
-            svgSize: Size.sm,
-            text: {
-              heading: {
-                classes: "mb-0",
-                text: "1 cama matrimonial",
-                variant: "h4",
-              },
-              bottom: {
-                classes: "mb-0",
-                text: "(máx. 2 personas)",
+        body: {
+          backgroundColor: "transparent",
+          list: [
+            {
+              svg: <BedQueen />,
+              svgSize: Size.sm,
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: "1 cama matrimonial",
+                  variant: "h4",
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: "(máx. 2 personas)",
+                },
               },
             },
+          ],
+          preCta: {
+            classes: "text-center small mb-2",
+            text: "Reservar por",
           },
-        ],
-        preCta: {
-          classes: "text-center small mb-2",
-          text: "Reservar por",
-        },
-        airbnb: {
-          appearance: "airbnb",
-          bold: true,
-          disabled: false,
-          classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
-          targetBlank: false,
-          text: "Airbnb",
-          url: "https://www.google.com/",
-        },
-        booking: {
-          appearance: "booking",
-          bold: true,
-          disabled: false,
-          classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
-          targetBlank: false,
-          text: "Booking",
-          url: "https://www.google.com/",
+          airbnb: {
+            appearance: "airbnb",
+            bold: true,
+            disabled: false,
+            classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
+            targetBlank: false,
+            text: "Airbnb",
+            url: "https://www.google.com/",
+          },
+          booking: {
+            appearance: "booking",
+            bold: true,
+            disabled: false,
+            classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+            targetBlank: false,
+            text: "Booking",
+            url: "https://www.google.com/",
+          },
         },
       },
+    ],
+    unitsGridProps: {
+      lg: 2,
+      xl: 2,
     },
-  ],
-  unitsGridProps: {
-    lg: 2,
-    xl: 2,
-  },
-  sphereProps1: {
-    border: 5,
-    borderColor: "primary",
-    height: "400px",
-    id: "sphereSample1",
-    image: SphereImage1,
-    pitch: 6,
-    preview: SpherePreviewImage1,
-    sceneId: "sphereSample1",
-    width: "100%",
-    yaw: 40,
-  },
-  sphereProps2: {
-    border: 5,
-    borderColor: "primary",
-    height: "400px",
-    id: "sphereSample2",
-    image: SphereImage1,
-    pitch: 6,
-    preview: SpherePreviewImage1,
-    sceneId: "sphereSample2",
-    width: "100%",
-    yaw: 40,
-  },
-  sphereProps3: {
-    border: 5,
-    borderColor: "primary",
-    height: "400px",
-    id: "sphereSample3",
-    image: SphereImage1,
-    pitch: 6,
-    preview: SpherePreviewImage1,
-    sceneId: "sphereSample3",
-    width: "100%",
-    yaw: 40,
+    sphereProps1: {
+      border: 5,
+      borderColor: "primary",
+      height: "400px",
+      id: "sphereSample1",
+      image: SphereImage1,
+      pitch: 6,
+      preview: SpherePreviewImage1,
+      sceneId: "sphereSample1",
+      width: "100%",
+      yaw: 40,
+    },
+    sphereProps2: {
+      border: 5,
+      borderColor: "primary",
+      height: "400px",
+      id: "sphereSample2",
+      image: SphereImage1,
+      pitch: 6,
+      preview: SpherePreviewImage1,
+      sceneId: "sphereSample2",
+      width: "100%",
+      yaw: 40,
+    },
+    sphereProps3: {
+      border: 5,
+      borderColor: "primary",
+      height: "400px",
+      id: "sphereSample3",
+      image: SphereImage1,
+      pitch: 6,
+      preview: SpherePreviewImage1,
+      sceneId: "sphereSample3",
+      width: "100%",
+      yaw: 40,
+    },
   },
   commonProps: {
     title: {
