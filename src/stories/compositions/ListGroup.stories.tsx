@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Stories
 import ListGroup from "./ListGroup";
-import * as ListGroupItemStories from "./../components/ListGroupItem.stories";
+import * as ListGroupItemStories from "./ListGroupItem.stories";
 
 export default {
   title: "Compositions/ListGroup",

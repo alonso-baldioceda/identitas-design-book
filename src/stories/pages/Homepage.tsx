@@ -16,8 +16,8 @@ import Layout from "../compositions/Layout";
 import ListGroup from "../compositions/ListGroup";
 
 // Types
-import { TextProps } from "./../components/Text";
-import { ListGroupItemProps } from "./../components/ListGroupItem";
+import { TextProps } from "../components/Text";
+import { ListGroupItemProps } from "../compositions/ListGroupItem";
 
 export interface HomepageProps {
   headerProps: any;
@@ -256,18 +256,13 @@ const Homepage: FC<HomepageProps> = ({
               <div className="container">
                 <div className="row align-items-center justify-content-center">
                   <div className="col-10 col-sm-12 col-md-6">
-                    <h2 className="mb-5">{driveProps.heading}</h2>
-                    <p className="mb-5">{driveProps.text}</p>
-                    <div className="mb-5 mb-md-0">
-                      <ButtonLink
-                        appearance={driveProps.buttonAppearance}
-                        bold
-                        rounded
-                        targetBlank={driveProps.targetBlank}
-                        text={driveProps.cta}
-                        url={driveProps.url}
-                      />
-                    </div>
+                    {driveProps.heading && <Text {...driveProps.heading} />}
+                    {driveProps.text && <Text {...driveProps.text} />}
+                    {driveProps.buttonLink && (
+                      <div className="mb-5 mb-md-0">
+                        <ButtonLink {...driveProps.buttonLink} />
+                      </div>
+                    )}
                   </div>
                   <div className="col-10 col-sm-12 col-md-6">
                     {driveProps.icon}

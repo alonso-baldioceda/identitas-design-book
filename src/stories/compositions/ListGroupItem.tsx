@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { prefix } from "./../shared/styles.js";
 
 // Components
-import SVG from "./SVG";
+import SVG from "./../components/SVG";
 
 // Types
 import Size from "./../../shared/enums/size";
