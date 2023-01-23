@@ -523,6 +523,7 @@ Default.args = {
               bottom: {
                 classes: "mb-0",
                 text: "Toallas, sábanas, jabón y papel higiénico",
+                variant: "small",
               },
             },
           },
@@ -582,6 +583,7 @@ Default.args = {
               bottom: {
                 classes: "mb-0",
                 text: "Los huéspedes pueden cocinar en este espacio",
+                variant: "small",
               },
             },
           },
@@ -646,6 +648,7 @@ Default.args = {
               bottom: {
                 classes: "mb-0",
                 text: "Ollas y sartenes, aceite, sal y pimienta",
+                variant: "small",
               },
             },
           },
