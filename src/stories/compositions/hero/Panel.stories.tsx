@@ -34,20 +34,10 @@ export default {
       description: "Position of the panel",
       control: { type: "select", options: POSITIONS_OPTIONS },
     },
-    borderRadius: {
-      name: "Border Radius",
-      description: "Border radius of the panel",
-      control: { type: "number", min: 0, max: 50 },
-    },
     borderColor: {
       name: "Border Color",
       description: "Border color of the panel",
       control: COLOR_CONTROL,
-    },
-    borderWidth: {
-      name: "Border Width",
-      description: "Border width of the panel",
-      control: { type: "number", min: 0, max: 5 },
     },
   },
 } as ComponentMeta<typeof PanelComponent>;
@@ -61,9 +51,11 @@ const Template: ComponentStory<typeof PanelComponent> = (args) => (
 export const Panel = Template.bind({});
 Panel.args = {
   bgColor: "red",
-  text: "some text here!!!",
-  classes: "p-2 p-lg-3 m-0 col-4",
+  classes: "p-2 p-lg-3 m-0 col-4 border border-4",
   borderColor: "blue",
-  borderRadius: 0,
-  borderWidth: 0,
+  text: {
+    text: "some text here!!",
+    classes: "mb-5",
+    variant: "h2",
+  },
 };

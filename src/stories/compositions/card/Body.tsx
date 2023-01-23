@@ -10,6 +10,7 @@ import ButtonLink, { ButtonLinkProps } from "./../../components/ButtonLink";
 //Props
 export interface BodyProps {
   airbnb?: ButtonLinkProps;
+  booking?: ButtonLinkProps;
   list: ListGroupProps["list"];
   preCta?: TextProps;
   backgroundColor: string;
@@ -32,7 +33,13 @@ const StyledBody = styled((props) => <div {...props} />)`
   width: 100%;
 `;
 
-const Body: FC<BodyProps> = ({ airbnb, list, preCta, backgroundColor }) => (
+const Body: FC<BodyProps> = ({
+  airbnb,
+  booking,
+  list,
+  preCta,
+  backgroundColor,
+}) => (
   <StyledBody
     className={`${prefix}-card-body`}
     background={backgroundColor ? backgroundColor : ""}
@@ -49,6 +56,11 @@ const Body: FC<BodyProps> = ({ airbnb, list, preCta, backgroundColor }) => (
       {airbnb && (
         <div className="d-flex justify-content-center">
           <ButtonLink {...airbnb} />
+        </div>
+      )}
+      {booking && (
+        <div className="d-flex justify-content-center">
+          <ButtonLink {...booking} />
         </div>
       )}
     </div>

@@ -1,7 +1,10 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import { prefix } from "./../../shared/styles.js";
-import Text from "./../../components/Text";
+import classnames from "classnames";
+
+// Components
+import Text, { TextProps } from "./../../components/Text";
 
 // Styles
 const StyledPanel = styled((props) => <div {...props} />)`
@@ -37,12 +40,10 @@ const StyledPanel = styled((props) => <div {...props} />)`
 export interface PanelProps {
   bgColor?: string;
   borderColor?: string;
-  borderRadius?: number;
-  borderWidth?: number;
   classes?: string;
   color?: string;
   position?: string;
-  text: string;
+  text?: TextProps;
 }
 
 const Position = (position: string) => {
@@ -72,23 +73,22 @@ const Position = (position: string) => {
 
 const Panel: FC<PanelProps> = ({
   borderColor,
-  borderRadius,
-  borderWidth,
   bgColor,
-  color,
+  // color,
   classes,
   position,
   text,
 }) => (
   <StyledPanel
-    className={`${classes ? classes : ""} border border-${
-      borderWidth ? borderWidth : 0
-    } ${position ? Position(position) : "bottom-0 start-0"} ${prefix}-panel`}
+    className={classnames(
+      `text-capitalize ${classes ? classes : ""}`,
+      `${position ? Position(position) : "bottom-0 start-0"}`,
+      `${prefix}-panel`
+    )}
     bordercolor={borderColor ? borderColor : null}
-    borderradius={borderRadius ? borderRadius : null}
     bgcolor={bgColor ? bgColor : null}
   >
-    <Text variant="h1" text={text} color={color ? color : ""} />
+    {text ? <Text {...text} /> : null}
   </StyledPanel>
 );
 

@@ -142,6 +142,11 @@ export const bodyStyles = css`
       background: ${color.airbnb};
       color: ${color.white};
     }
+
+    &.btn-booking {
+      background: ${color.booking};
+      color: ${color.white};
+    }
   }
 `;
 

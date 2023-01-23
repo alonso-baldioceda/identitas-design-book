@@ -4,10 +4,9 @@ import { prefix } from "./../shared/styles.js";
 
 export interface ButtonLinkProps {
   appearance: string;
-  bold?: boolean;
+  // bold?: boolean;
   classes?: string;
   disabled?: boolean;
-  rounded?: boolean;
   targetBlank: boolean;
   text: string;
   url: string;
@@ -15,10 +14,9 @@ export interface ButtonLinkProps {
 
 const ButtonLink: FC<ButtonLinkProps> = ({
   appearance,
-  bold,
+  // bold,
   disabled,
   classes,
-  rounded,
   targetBlank,
   text,
   url,
@@ -31,10 +29,8 @@ const ButtonLink: FC<ButtonLinkProps> = ({
     target={targetBlank ? "_blank" : "_self"}
     className={classnames(
       `btn btn-${appearance ? appearance : "primary"} text-capitalize`,
-      { "rounded-pill": rounded },
-      { "fw-bold": bold },
-      { "mb-0 px-4 py-2 ": !classes },
-      { classes: classes },
+      `${classes ? classes : "mb-0 px-4 py-2"}`,
+      // { "fw-bold": bold },
       { disabled: disabled },
       `${prefix}-button-link`
     )}

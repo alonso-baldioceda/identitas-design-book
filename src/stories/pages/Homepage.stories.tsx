@@ -231,12 +231,14 @@ Default.args = {
     src: HeroImage,
     mask: true,
     panel: {
-      color: "#FFFFFF",
-      text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
       classes: "p-2 p-lg-3 m-0 col-4 col-lg-7",
-      borderRadius: 0,
-      borderWidth: 0,
       position: "bottom-start",
+      text: {
+        text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
+        classes: "mb-0",
+        variant: "h1",
+        color: "#FFFFFF",
+      },
     },
   },
   unitsProps: {
@@ -256,101 +258,161 @@ Default.args = {
   cardsProps: [
     {
       border: 4,
-      foreignBackgroundColor: "primary",
-      preCta: "Reservar por",
-      airbnb: {
-        appearance: "airbnb",
-        bold: true,
-        disabled: false,
-        mb: 0,
-        px: 4,
-        py: 2,
-        rounded: true,
-        targetBlank: false,
-        text: "Airbnb",
-        url: "https://www.airbnb.co.cr/rooms/547038520602833720?source_impression_id=p3_1654653090_vrBQiADFq1SJJSle",
+      header: {
+        text: {
+          classes: "mb-0 py-4 text-capitalize",
+          text: "Cabina 1",
+          variant: "h3",
+        },
+        backgroundColor: "#81B29A",
       },
-      list: [
-        {
-          svg: <BedQueen />,
-          text: {
-            heading: {
-              classes: "mb-0",
-              text: "2 camas matrimoniales",
+      body: {
+        backgroundColor: "transparent",
+        list: [
+          {
+            svg: <BedQueen />,
+            svgSize: Size.sm,
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "2 camas matrimoniales",
+                variant: "h4",
+              },
+              bottom: {
+                classes: "mb-0",
+                text: "(máx. 4 personas)",
+              },
             },
           },
-          classes: "mb-0 p-0",
+        ],
+        preCta: {
+          classes: "text-center small mb-2",
+          text: "Reservar por",
         },
-      ],
-      heading: {
-        text: "Cabina 1",
-        variant: "h3",
+        airbnb: {
+          appearance: "airbnb",
+          bold: true,
+          disabled: false,
+          classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
+          targetBlank: false,
+          text: "Airbnb",
+          url: "https://www.google.com/",
+        },
+        booking: {
+          appearance: "booking",
+          bold: true,
+          disabled: false,
+          classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+          targetBlank: false,
+          text: "Booking",
+          url: "https://www.google.com/",
+        },
       },
     },
     {
       border: 4,
-      foreignBackgroundColor: "primary",
-      preCta: "Reservar por",
-      airbnb: {
-        appearance: "airbnb",
-        bold: true,
-        disabled: false,
-        mb: 0,
-        px: 4,
-        py: 2,
-        rounded: true,
-        targetBlank: false,
-        text: "Airbnb",
-        url: "https://www.airbnb.co.cr/rooms/558085397887318215?source_impression_id=p3_1654653092_LG9GBCv9HT0Wfjo2",
+      header: {
+        text: {
+          classes: "mb-0 py-4 text-capitalize",
+          text: "Cabina 2",
+          variant: "h3",
+        },
+        backgroundColor: "#81B29A",
       },
-      list: [
-        {
-          svg: <BedQueen />,
-          text: {
-            heading: {
-              classes: "mb-0",
-              text: "2 camas matrimoniales",
+      body: {
+        backgroundColor: "transparent",
+        list: [
+          {
+            svg: <BedQueen />,
+            svgSize: Size.sm,
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "2 camas matrimoniales",
+                variant: "h4",
+              },
+              bottom: {
+                classes: "mb-0",
+                text: "(máx. 4 personas)",
+              },
             },
           },
-          classes: "mb-0 p-0",
+        ],
+        preCta: {
+          classes: "text-center small mb-2",
+          text: "Reservar por",
         },
-      ],
-      heading: {
-        text: "Cabina 2",
-        variant: "h3",
+        airbnb: {
+          appearance: "airbnb",
+          bold: true,
+          disabled: false,
+          classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
+          targetBlank: false,
+          text: "Airbnb",
+          url: "https://www.google.com/",
+        },
+        booking: {
+          appearance: "booking",
+          bold: true,
+          disabled: false,
+          classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+          targetBlank: false,
+          text: "Booking",
+          url: "https://www.google.com/",
+        },
       },
     },
     {
       border: 4,
-      foreignBackgroundColor: "primary",
-      preCta: "Reservar por",
-      airbnb: {
-        appearance: "airbnb",
-        bold: true,
-        disabled: false,
-        mb: 0,
-        px: 4,
-        py: 2,
-        rounded: true,
-        targetBlank: false,
-        text: "Airbnb",
-        url: "https://es-l.airbnb.com/rooms/662186647924755970?unique_share_id=93af2629-16c5-471d-b1bb-89960aca1db2&source_impression_id=p3_1673629606_LdMv42NRGPYXyTQN",
+      header: {
+        text: {
+          classes: "mb-0 py-4 text-capitalize",
+          text: "Cabina 3",
+          variant: "h3",
+        },
+        backgroundColor: "#81B29A",
       },
-      list: [
-        {
-          svg: <BedQueen />,
-          text: {
-            heading: {
-              classes: "mb-0",
-              text: "1 cama matrimonial",
+      body: {
+        backgroundColor: "transparent",
+        list: [
+          {
+            svg: <BedQueen />,
+            svgSize: Size.sm,
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "1 cama matrimonial",
+                variant: "h4",
+              },
+              bottom: {
+                classes: "mb-0",
+                text: "(máx. 2 personas)",
+              },
             },
           },
-          classes: "mb-0 p-0",
+        ],
+        preCta: {
+          classes: "text-center small mb-2",
+          text: "Reservar por",
         },
-      ],
-      heading: {
-        text: "Cabina 3",
-        variant: "h3",
+        airbnb: {
+          appearance: "airbnb",
+          bold: true,
+          disabled: false,
+          classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
+          targetBlank: false,
+          text: "Airbnb",
+          url: "https://www.google.com/",
+        },
+        booking: {
+          appearance: "booking",
+          bold: true,
+          disabled: false,
+          classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+          targetBlank: false,
+          text: "Booking",
+          url: "https://www.google.com/",
+        },
       },
     },
   ],

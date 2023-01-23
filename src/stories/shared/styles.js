@@ -57,6 +57,7 @@ export const color = {
 
   // Social
   airbnb: "#F83759",
+  booking: "#00224f",
 };
 
 export const spacing = {

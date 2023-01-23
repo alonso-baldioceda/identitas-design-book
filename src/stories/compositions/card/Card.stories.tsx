@@ -68,11 +68,18 @@ export default {
               appearance: string;
               bold: boolean;
               disabled: boolean;
-              rounded: boolean;
               targetBlank: boolean;
               text: string;
               url: string;
             };
+            booking: {
+              appearance: string;
+              bold: boolean;
+              disabled: boolean;
+              targetBlank: boolean;
+              text: string;
+              url: string;
+            },
           }`,
         },
       },
@@ -113,11 +120,18 @@ Default.args = {
     },
     airbnb: {
       appearance: "airbnb",
-      bold: true,
       disabled: false,
-      rounded: true,
+      classes: "mb-2 px-4 py-2 rounded-pill fw-bold",
       targetBlank: false,
       text: "Airbnb",
+      url: "https://www.google.com/",
+    },
+    booking: {
+      appearance: "booking",
+      disabled: false,
+      classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+      targetBlank: false,
+      text: "Booking",
       url: "https://www.google.com/",
     },
   },

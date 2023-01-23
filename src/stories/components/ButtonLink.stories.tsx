@@ -10,15 +10,6 @@ import { COLOR_CONTROL } from "./../../shared/constants/";
 export default {
   title: "Components/ButtonLink",
   component: ButtonLinkComponent,
-  args: {
-    appearance: "primary",
-    bold: true,
-    disabled: false,
-    rounded: true,
-    targetBlank: false,
-    text: "button",
-    url: "https://www.google.com/",
-  },
   argTypes: {
     appearance: {
       name: "Appearance",
@@ -50,8 +41,7 @@ const Template: ComponentStory<typeof ButtonLinkComponent> = (args) => (
 export const ButtonLink = Template.bind({});
 ButtonLink.args = {
   appearance: "primary",
-  bold: true,
-  rounded: true,
+  classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
   text: "click me!!",
   url: "https://www.google.com/",
 };

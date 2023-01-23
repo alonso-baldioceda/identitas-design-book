@@ -153,19 +153,40 @@ Default.args = {
       },
       list: [
         {
-          icon: <HomeIcon />,
-          text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+          svg: <HomeIcon />,
+          svgSize: "xs",
           classes: "mb-3",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+              color: "#FFFFFF",
+            },
+          },
         },
         {
-          icon: <EnvelopeIcon />,
-          text: "vistalagoarenal@gmail.com",
+          svg: <EnvelopeIcon />,
+          svgSize: "xs",
           classes: "mb-3",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "vistalagoarenal@gmail.com",
+              color: "#FFFFFF",
+            },
+          },
         },
         {
-          icon: <PhoneIcon />,
-          text: "+(506) 8327 4040",
+          svg: <PhoneIcon />,
+          svgSize: "xs",
           classes: "mb-3",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "+(506) 8327 4040",
+              color: "#FFFFFF",
+            },
+          },
         },
       ],
     },

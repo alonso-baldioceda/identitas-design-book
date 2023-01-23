@@ -53,11 +53,7 @@ const Hero: FC<HeroProps> = ({
       {/* TODO: add a mobile image version */}
       <BackgroundImage src={src} />
       {mask && <Mask bgColor={maskColor} opacity={25} />}
-      <Panel
-        {...panel}
-        text={panel ? panel.text : ""}
-        position={panel ? panel.position : "bottom-start"}
-      />
+      <Panel {...panel} />
     </StyledHero>
   );
 };
