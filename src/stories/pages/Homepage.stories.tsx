@@ -467,8 +467,8 @@ Default.args = {
       classes: "mb-0",
     },
   },
-  services: {
-    title: {
+  servicesProps: {
+    heading: {
       text: "Services",
       classes: "mb-0",
       variant: "h2",
@@ -530,7 +530,12 @@ Default.args = {
           {
             svg: <HotWaterIcon />,
             svgSize: "sm",
-            text: "Agua caliente",
+            text: {
+              heading: {
+                classes: "mb-0",
+                text: "Agua caliente",
+              },
+            },
           },
         ],
       },
@@ -737,7 +742,6 @@ Default.args = {
     ],
   },
   driveProps: {
-    buttonAppearance: "dark",
     heading: {
       text: "Como llegar?",
       classes: "mb-5",
@@ -757,7 +761,11 @@ Default.args = {
     },
   },
   rulesProps: {
-    heading: "Lo que debes saber",
+    heading: {
+      text: "Lo que debes saber",
+      classes: "mb-0",
+      variant: "h2",
+    },
     float: true,
     list: [
       {

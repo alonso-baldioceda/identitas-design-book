@@ -1,33 +1,47 @@
-import React, { FC, useState, useEffect } from "react";
+import React, { FC, ReactNode } from "react";
 import { Helmet } from "react-helmet";
 
 // Components
-import ButtonLink from "../components/ButtonLink";
+import ButtonLink, { ButtonLinkProps } from "../components/ButtonLink";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import Spacer from "../components/Spacer";
 import Sphere from "../compositions/Sphere";
-import Text from "../components/Text";
+import Text, { TextProps } from "../components/Text";
 
 // Compositions
 import Card from "../compositions/card/Card";
 import Grid from "../compositions/Grid";
-import Hero from "../compositions/hero/Hero";
+import Hero, { HeroProps } from "../compositions/hero/Hero";
 import Layout from "../compositions/Layout";
 import ListGroup from "../compositions/ListGroup";
-
-// Types
-import { TextProps } from "../components/Text";
+import { HeaderProps } from "./../compositions/header/Header";
+import { FooterProps } from "./../compositions/footer/Footer";
 import { ListGroupItemProps } from "../compositions/ListGroupItem";
 
+// Hooks
+import useAvailHeight from "./../../hooks/useAvailHeight";
+
 export interface HomepageProps {
-  headerProps: any;
-  heroProps: any;
+  headerProps: HeaderProps;
+  heroProps: HeroProps;
   unitsProps: any;
   commonProps?: any;
-  services?: any;
-  driveProps?: any;
-  rulesProps?: any;
-  footerProps?: any;
+  servicesProps: {
+    heading: TextProps;
+    list: ServiceProps[];
+  };
+  driveProps: {
+    heading: TextProps;
+    text: TextProps;
+    buttonLink: ButtonLinkProps;
+    icon: ReactNode;
+  };
+  rulesProps: {
+    heading: TextProps;
+    float: boolean;
+    list: ListGroupItemProps[];
+  };
+  footerProps: FooterProps;
 }
 
 interface ServiceProps {
@@ -42,41 +56,12 @@ const Homepage: FC<HomepageProps> = ({
   heroProps,
   unitsProps,
   commonProps,
-  services,
+  servicesProps,
   driveProps,
   rulesProps,
   footerProps,
 }) => {
-  const [headerHeight, setHeaderHeight] = useState<number>(0);
-
-  const newHeroProps = {
-    ...heroProps,
-    text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
-  };
-
-  // TODO: create a hook for this
-  // TODO: probably move to Layout
-  useEffect(() => {
-    if (document.getElementById("main")) {
-      const mainStartingAt = document.getElementById("main");
-      const header = document.querySelector("header");
-      const headerFixedHeight = header?.clientHeight;
-
-      headerFixedHeight && setHeaderHeight(headerFixedHeight);
-
-      newHeroProps.height = `calc(100vh - ${headerHeight}px)`;
-
-      if (mainStartingAt) {
-        if (header && header.classList.contains("fixed")) {
-          // console.log("hola", headerFixedHeight);
-
-          mainStartingAt.style.paddingTop = `${headerHeight}px`;
-        } else {
-          // console.log("adios");
-        }
-      }
-    }
-  }, [headerHeight]);
+  const [heroHeight, _] = useAvailHeight();
 
   return (
     <Layout footer={footerProps} header={headerProps}>
@@ -98,8 +83,7 @@ const Homepage: FC<HomepageProps> = ({
         </script>
       </Helmet>
       <section id="top">
-        {/* TODO: there should be a better way to pass height */}
-        <Hero {...newHeroProps} height={`calc(100vh - ${headerHeight}px)`} />
+        <Hero {...heroProps} height={`${heroHeight}px`} />
       </section>
       <section id="units">
         {/* TODO: update background color */}
@@ -194,17 +178,19 @@ const Homepage: FC<HomepageProps> = ({
             <Spacer>
               <div className="container">
                 <div className="row justify-content-center justify-content-sm-start">
-                  <div className="col-10 col-sm-12">
-                    <Text
-                      text={services.title.text}
-                      variant={services.title.variant}
-                      classes={services.title.classes}
-                    />
-                  </div>
+                  {servicesProps?.heading && (
+                    <div className="col-10 col-sm-12">
+                      <Text
+                        text={servicesProps?.heading.text}
+                        variant={servicesProps?.heading.variant}
+                        classes={servicesProps?.heading.classes}
+                      />
+                    </div>
+                  )}
                 </div>
               </div>
             </Spacer>
-            {services?.list.map((service: ServiceProps, index: number) => (
+            {servicesProps?.list.map((service: ServiceProps, index: number) => (
               <div key={index} id={`service-${service.heading.text}`}>
                 <Spacer bottomOnly={true}>
                   <div className="container">
@@ -276,7 +262,11 @@ const Homepage: FC<HomepageProps> = ({
             <div className="container">
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="col-10 col-sm-12">
-                  <h3 className="mb-0">Rules</h3>
+                  <Text
+                    text={rulesProps?.heading.text}
+                    variant={rulesProps?.heading.variant}
+                    classes={rulesProps?.heading.classes}
+                  />
                 </div>
               </div>
             </div>

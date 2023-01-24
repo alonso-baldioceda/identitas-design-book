@@ -30,6 +30,11 @@ export default {
       control: "select",
       options: ["button", "submit"],
     },
+    text: {
+      name: "Text",
+      control: "text",
+      description: "Text to be displayed on the button",
+    },
   },
 } as ComponentMeta<typeof ButtonComponent>;
 
@@ -39,9 +44,9 @@ const Template: ComponentStory<typeof ButtonComponent> = (args) => (
 
 export const Button = Template.bind({});
 Button.args = {
-  appearance: "primary",
-  disabled: false,
-  classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+  // appearance: "primary",
+  // disabled: false,
+  classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
   text: "button",
   type: "button",
 };

@@ -27,22 +27,24 @@ const StyledHero = styled((props) => <div {...props} />)`
 `;
 
 // Types
-interface HeroProps {
-  mask?: boolean;
-  maskColor: string;
-  maxWidth?: string;
-  src: string;
-  panel?: PanelProps;
+export interface HeroProps {
   height?: string | number;
+  mask?: boolean;
+  maskColor?: string;
+  maxWidth?: string;
+  opacity?: number;
+  panel?: PanelProps;
+  src: string;
 }
 
 const Hero: FC<HeroProps> = ({
+  height,
   mask,
   maskColor,
   maxWidth,
-  src,
+  opacity,
   panel,
-  height,
+  src,
 }) => {
   return (
     <StyledHero
@@ -52,7 +54,12 @@ const Hero: FC<HeroProps> = ({
     >
       {/* TODO: add a mobile image version */}
       <BackgroundImage src={src} />
-      {mask && <Mask bgColor={maskColor} opacity={25} />}
+      {mask && (
+        <Mask
+          bgColor={maskColor ? maskColor : ""}
+          opacity={opacity ? opacity : 25}
+        />
+      )}
       <Panel {...panel} />
     </StyledHero>
   );

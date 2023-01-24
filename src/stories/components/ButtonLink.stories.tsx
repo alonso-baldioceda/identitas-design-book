@@ -15,10 +15,6 @@ export default {
       name: "Appearance",
       control: COLOR_CONTROL,
     },
-    bold: {
-      control: "boolean",
-      options: [false, true],
-    },
     disabled: {
       control: "boolean",
       options: [false, true],
@@ -27,9 +23,13 @@ export default {
       control: "text",
       description: "Classes to be added to the component",
     },
-    rounded: {
-      control: "boolean",
-      options: [false, true],
+    text: {
+      control: "text",
+      description: "Text to be displayed on the button",
+    },
+    url: {
+      control: "text",
+      description: "URL to be linked to",
     },
   },
 } as ComponentMeta<typeof ButtonLinkComponent>;
@@ -40,8 +40,8 @@ const Template: ComponentStory<typeof ButtonLinkComponent> = (args) => (
 
 export const ButtonLink = Template.bind({});
 ButtonLink.args = {
-  appearance: "primary",
-  classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
+  // appearance: "primary",
+  classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
   text: "click me!!",
   url: "https://www.google.com/",
 };

@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import classnames from "classnames";
 import { prefix } from "./../shared/styles.js";
 
+// TODO: Add hover and visited state
 export interface ButtonLinkProps {
   appearance: string;
   classes?: string;
