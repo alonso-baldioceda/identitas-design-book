@@ -227,6 +227,16 @@ Default.args = {
       },
     ],
   },
+  contactPointProps: {
+    type: "Organization",
+    url: "https://vistalagoarenal.com/",
+    name: "Cabinas Vista Lago Arenal",
+    contactPoint: {
+      type: "ContactPoint",
+      telephone: "+50683274040",
+      contactType: "Customer Support",
+    },
+  },
   heroProps: {
     src: HeroImage,
     mask: true,
@@ -742,23 +752,25 @@ Default.args = {
     ],
   },
   driveProps: {
-    heading: {
-      text: "Como llegar?",
-      classes: "mb-5",
-      variant: "h2",
-    },
-    text: {
-      text: "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
-      classes: "mb-5",
+    content: {
+      heading: {
+        text: "Como llegar?",
+        classes: "mb-5",
+        variant: "h2",
+      },
+      text: {
+        text: "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
+        classes: "mb-5",
+      },
+      buttonLink: {
+        appearance: "primary",
+        classes: "mb-0 px-4 py-2 rounded-pill fw-bold mb-5 mb-md-0",
+        targetBlank: true,
+        text: "Ver en Google Maps",
+        url: "https://goo.gl/maps/M2zvgGvrKBoyRzNH9",
+      },
     },
     icon: <MapIcon />,
-    buttonLink: {
-      appearance: "primary",
-      classes: "mb-0 px-4 py-2 rounded-pill fw-bold",
-      targetBlank: true,
-      text: "Ver en Google Maps",
-      url: "https://goo.gl/maps/M2zvgGvrKBoyRzNH9",
-    },
   },
   rulesProps: {
     heading: {

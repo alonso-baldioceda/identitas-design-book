@@ -1,12 +1,12 @@
 import React, { FC, ReactNode } from "react";
-import { Helmet } from "react-helmet";
 
 // Components
-import ButtonLink, { ButtonLinkProps } from "../components/ButtonLink";
+import ContactPoint, { ContactPointProps } from "../components/ContactPoint";
 import FadeInWhenVisible from "../components/FadeInWhenVisible";
 import Spacer from "../components/Spacer";
 import Sphere from "../compositions/Sphere";
 import Text, { TextProps } from "../components/Text";
+import Drive, { DriveProps } from "../components/Drive";
 
 // Compositions
 import Card from "../compositions/card/Card";
@@ -23,6 +23,7 @@ import useAvailHeight from "./../../hooks/useAvailHeight";
 
 export interface HomepageProps {
   headerProps: HeaderProps;
+  contactPointProps: ContactPointProps;
   heroProps: HeroProps;
   unitsProps: any;
   commonProps?: any;
@@ -31,9 +32,7 @@ export interface HomepageProps {
     list: ServiceProps[];
   };
   driveProps: {
-    heading: TextProps;
-    text: TextProps;
-    buttonLink: ButtonLinkProps;
+    content: DriveProps;
     icon: ReactNode;
   };
   rulesProps: {
@@ -53,6 +52,7 @@ interface ServiceProps {
 
 const Homepage: FC<HomepageProps> = ({
   headerProps,
+  contactPointProps,
   heroProps,
   unitsProps,
   commonProps,
@@ -65,23 +65,7 @@ const Homepage: FC<HomepageProps> = ({
 
   return (
     <Layout footer={footerProps} header={headerProps}>
-      <Helmet>
-        <script type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "url": "https://vistalagoarenal.com/",
-              "name": "${process.env.GATSBY_WEBSITE_NAME}",
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+50683274040",
-                "contactType": "Customer Support"
-              }
-            }
-          `}
-        </script>
-      </Helmet>
+      <ContactPoint {...contactPointProps} />
       <section id="top">
         <Hero {...heroProps} height={`${heroHeight}px`} />
       </section>
@@ -229,19 +213,11 @@ const Homepage: FC<HomepageProps> = ({
             <div className="bg-white">
               <div className="container">
                 <div className="row align-items-center justify-content-center">
-                  {driveProps.heading ||
-                  driveProps.text ||
-                  driveProps.buttonLink ? (
+                  {driveProps && (
                     <div className="col-10 col-sm-12 col-md-6">
-                      {driveProps.heading && <Text {...driveProps.heading} />}
-                      {driveProps.text && <Text {...driveProps.text} />}
-                      {driveProps.buttonLink && (
-                        <div className="mb-5 mb-md-0">
-                          <ButtonLink {...driveProps.buttonLink} />
-                        </div>
-                      )}
+                      <Drive {...driveProps.content} />
                     </div>
-                  ) : null}
+                  )}
                   {driveProps.icon && (
                     <div className="col-10 col-sm-12 col-md-6">
                       {driveProps.icon}
