@@ -144,8 +144,6 @@ const Header: FC<HeaderProps> = ({
                     <SwitchMode
                       setIsDark={setIsDark}
                       isDark={isDark ? isDark : false}
-                      me={2}
-                      meSm={2}
                     />
                   )}
                   {showSocials &&

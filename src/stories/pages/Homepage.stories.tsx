@@ -237,27 +237,36 @@ Default.args = {
       contactType: "Customer Support",
     },
   },
-  heroProps: {
-    src: HeroImage,
-    mask: true,
-    panel: {
-      classes: "p-2 p-lg-3 m-0 col-4 col-lg-7",
-      position: "bottom-start",
-      text: {
-        text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
-        classes: "mb-0",
-        variant: "h1",
-        color: "#FFFFFF",
+  topProps: {
+    blockProps: {
+      id: "top",
+    },
+    heroProps: {
+      src: HeroImage,
+      mask: true,
+      panel: {
+        classes: "p-2 p-lg-3 m-0 col-4 col-lg-7",
+        position: "bottom-start",
+        text: {
+          text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
+          classes: "mb-0",
+          variant: "h1",
+          color: "#FFFFFF",
+        },
       },
     },
   },
   unitsProps: {
-    title: {
+    block: {
+      id: "units",
+      classes: "bg-secondary-pastel",
+    },
+    heading: {
       text: "Cabinas",
       classes: "mb-0",
       variant: "h2",
     },
-    description: {
+    text: {
       text: "Cada una de las 4 cabinas tiene 2 camas matrimoniales. Estamos habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
       classes: "mb-0",
     },
@@ -467,17 +476,24 @@ Default.args = {
     },
   },
   commonProps: {
-    title: {
+    blockProps: {
+      id: "common-spaces",
+    },
+    heading: {
       text: "Espacios comúnes",
       classes: "mb-0",
       variant: "h2",
     },
-    description: {
+    text: {
       text: "Nuestras áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, una cocina totalmente equipada, espacio de trabajo y hermosos jardines que adornan los rústicos corredores.",
       classes: "mb-0",
     },
   },
   servicesProps: {
+    blockProps: {
+      id: "services",
+      classes: "bg-primary-pastel",
+    },
     heading: {
       text: "Services",
       classes: "mb-0",
@@ -752,6 +768,9 @@ Default.args = {
     ],
   },
   driveProps: {
+    blockProps: {
+      id: "drive",
+    },
     content: {
       heading: {
         text: "Como llegar?",
@@ -773,6 +792,9 @@ Default.args = {
     icon: <MapIcon />,
   },
   rulesProps: {
+    blockProps: {
+      id: "rules",
+    },
     heading: {
       text: "Lo que debes saber",
       classes: "mb-0",
