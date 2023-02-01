@@ -51,7 +51,7 @@ const Template: ComponentStory<typeof PanelComponent> = (args) => (
 export const Panel = Template.bind({});
 Panel.args = {
   bgColor: "red",
-  classes: "p-2 p-lg-3 m-0 col-4 border border-4",
+  classes: "p-2 p-lg-3 m-0 col-4 border border-4 text-capitalize",
   borderColor: "blue",
   text: {
     text: "some text here!!",

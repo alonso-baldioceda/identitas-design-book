@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 import classnames from "classnames";
 
 // Components
@@ -29,7 +29,7 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 
   svg {
     transition: stroke 400ms;
-    stroke: ${(props) => props.theme.colors.black};
+    stroke: ${color.black};
 
     .moon-icon {
       opacity: 0;
@@ -75,9 +75,11 @@ const SwitchMode: FC<SwitchModeProps> = ({
   size,
 }) => (
   <StyledSwitchMode
-    className={classnames(`${classes ? classes : ""} ${prefix}-swith-mode`, {
-      "is-dark": isDark,
-    })}
+    className={classnames(
+      { [`${classes}`]: classes },
+      { "is-dark": isDark },
+      `${prefix}-swith-mode`
+    )}
     onClick={() => {
       setIsDark && setIsDark(isDark ? false : true);
     }}

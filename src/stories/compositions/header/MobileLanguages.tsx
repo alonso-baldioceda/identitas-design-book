@@ -1,15 +1,15 @@
 import React, { useState, useContext, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Contexts
 // import GlobalContext from "./../contexts/globalContext";
 
 // Styles
 const Label = styled.p`
-  border-bottom: 2px solid ${(props) => props.theme.colors.transparent};
-  color: ${(props) => props.theme.colors.white};
+  border-bottom: 2px solid ${color.transparent};
+  color: ${color.white};
   font-size: 22px;
   font-weight: 500;
   padding: 0;
@@ -17,7 +17,7 @@ const Label = styled.p`
 `;
 
 const LinkTranslate = styled.a`
-  color: ${(props) => props.theme.colors.white};
+  color: ${color.white};
   display: inline-block;
   font-size: 22px;
   font-weight: 500;
@@ -28,12 +28,12 @@ const LinkTranslate = styled.a`
   text-transform: capitalize;
 
   &:hover {
-    color: ${(props) => props.theme.colors.white};
+    color: ${color.white};
     text-decoration: none;
   }
 
   &:visited {
-    color: ${(props) => props.theme.colors.white} !important;
+    color: ${color.white} !important;
   }
 
   &:focus {
@@ -41,7 +41,7 @@ const LinkTranslate = styled.a`
   }
 
   &.active {
-    color: ${(props) => props.theme.colors.white} !important;
+    color: ${color.white} !important;
   }
 `;
 

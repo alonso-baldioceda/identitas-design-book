@@ -1,30 +1,28 @@
 import React, { useState, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import classnames from "classnames";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Styles
-const LinkTranslate = styled((props) => <a {...props} />)`
-  border-bottom: 2px solid ${(props) => props.theme.colors.transparent};
-  color: ${(props) => props.theme.colors.body};
+const LinkTranslate = styled.a`
+  border-bottom: 2px solid ${color.transparent};
+  color: ${color.black};
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 0.6px;
   padding-bottom: 4px;
   text-decoration: none;
-  /* text-transform: uppercase; */
 
   /* TODO: improve hover effect */
   &.active,
   &:hover,
   &:focus {
-    border-bottom: 2px solid ${(props) => props.theme.colors.secondary};
-    color: ${(props) => props.theme.colors.body};
+    border-bottom: 2px solid ${color.secondary};
+    color: ${color.black};
   }
 
   &:visited {
-    color: ${(props) => props.theme.colors.body};
+    color: ${color.black};
     text-decoration: none;
   }
 `;

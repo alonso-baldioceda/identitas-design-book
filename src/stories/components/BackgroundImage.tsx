@@ -1,18 +1,12 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 
 const StyledBgImg = styled((props) => <div {...props} />)`
   ${(props) =>
     props.bgcolor &&
     `
       background-color: ${props.bgcolor};
-    `}
-
-  ${(props) =>
-    !props.bgcolor &&
-    `
-      background-color: ${props.theme.colors.bgPrimary};
     `}
 
   background-image: ${(props) => `url(${props.src})`};
@@ -32,7 +26,7 @@ interface BackgroundImageProps {
 const BackgroundImage: FC<BackgroundImageProps> = ({ bgColor, src }) => (
   <StyledBgImg
     className={`${prefix}-background-image`}
-    bgcolor={bgColor}
+    bgcolor={bgColor ? bgColor : color.primary}
     src={src}
   />
 );

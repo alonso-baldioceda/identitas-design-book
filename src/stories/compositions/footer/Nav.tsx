@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 
@@ -12,7 +12,7 @@ import Link from "./../../../shared/interfaces/link";
 import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
-const StyledNav = styled((props) => <ul {...props} />)`
+const StyledNav = styled.ul`
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
@@ -23,8 +23,8 @@ const StyledNav = styled((props) => <ul {...props} />)`
     }
 
     a {
+      color: ${color.white} !important;
       text-decoration: none;
-      color: ${(props) => props.theme.colors.white} !important;
     }
   }
 `;

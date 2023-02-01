@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Components
@@ -12,12 +12,6 @@ const StyledPanel = styled((props) => <div {...props} />)`
     props.bgcolor &&
     `
       background-color: ${props.bgcolor};
-    `}
-
-  ${(props) =>
-    !props.bgcolor &&
-    `
-      background-color: ${props.theme.colors.transparent};
     `}
 
   ${(props) =>
@@ -81,12 +75,12 @@ const Panel: FC<PanelProps> = ({
 }) => (
   <StyledPanel
     className={classnames(
-      `text-capitalize ${classes ? classes : ""}`,
+      { [`${classes}`]: classes },
       `${position ? Position(position) : "bottom-0 start-0"}`,
       `${prefix}-panel`
     )}
     bordercolor={borderColor ? borderColor : null}
-    bgcolor={bgColor ? bgColor : null}
+    bgcolor={bgColor ? bgColor : color.transparent}
   >
     {text ? <Text {...text} /> : null}
   </StyledPanel>

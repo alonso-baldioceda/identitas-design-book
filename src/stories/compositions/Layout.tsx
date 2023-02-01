@@ -1,4 +1,4 @@
-import React, { ReactNode, FC, useState } from "react";
+import React, { ReactNode, FC, useState, useEffect } from "react";
 import { GlobalStyle } from "./../shared/global.js";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./../../../.storybook/Theme.js";
@@ -22,6 +22,17 @@ const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
   const [active, setActive] = useState<number>(-1);
   const [language, setLanguage] = useState(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.className += " theme-dark";
+    } else {
+      document.body.className = document.body.className.replace(
+        " theme-dark",
+        ""
+      );
+    }
+  }, [isDark]);
 
   return (
     <LayoutContext.Provider

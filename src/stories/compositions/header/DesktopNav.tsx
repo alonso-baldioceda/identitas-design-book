@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 import LinkGatsby from "./../../components/LinkGatsby";
@@ -21,7 +21,7 @@ const StyledDesktopNav = styled.ul`
 
   li {
     a {
-      border-bottom: 2px solid ${(props) => props.theme.colors.transparent};
+      border-bottom: 2px solid ${color.transparent};
       display: block;
       font-size: 16px;
       font-weight: 500;
@@ -31,7 +31,7 @@ const StyledDesktopNav = styled.ul`
       &.active,
       &:focus,
       &:hover {
-        border-bottom: 2px solid ${(props) => props.theme.colors.secondary};
+        border-bottom: 2px solid ${color.secondary};
       }
 
       &:focus {

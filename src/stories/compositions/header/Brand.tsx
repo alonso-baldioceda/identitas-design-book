@@ -1,9 +1,10 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 import { Link } from "gatsby";
 import Text from "./../../components/Text";
 // import { animateScroll as scroll } from "react-scroll";
+import classnames from "classnames";
 
 // Components
 import SVG from "./../../components/SVG";
@@ -23,21 +24,15 @@ const StyledBrand = styled((props) => <Link {...props} />)`
   text-decoration: none;
 
   span {
-    color: ${(props) => props.theme.colors.body};
-    font-size: 1.175rem;
-    margin-left: 0.375rem;
-
     ${(props) =>
       props.fw &&
       `
         font-weight: ${props.fw};
       `}
 
-    ${(props) =>
-      !props.fw &&
-      `
-        font-weight: 700;
-      `}
+    color: ${color.black};
+    font-size: 1.175rem;
+    margin-left: 0.375rem;
 
     @media (min-width: 768px) {
       font-size: 1.375rem;
@@ -82,9 +77,9 @@ const Brand: FC<BrandProps> = ({
   // TODO: handle active on both cases
   return (
     <StyledBrand
-      className={`${classes ? classes : ""} ${prefix}-brand`}
+      className={classnames({ [`${classes}`]: classes }, `${prefix}-brand`)}
       // duration={duration}
-      fw={fontWeight}
+      fw={fontWeight ? fontWeight : 700}
       // offset={offset}
       // onClick={scrollToTop}
       // smooth={smooth}

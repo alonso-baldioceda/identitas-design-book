@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 import LinkGatsby from "./../../components/LinkGatsby";
@@ -19,7 +19,7 @@ const StyledMobileNav = styled.ul`
   padding: 0;
 
   a {
-    color: ${(props) => props.theme.colors.white} !important;
+    color: ${color.white} !important;
     display: inline-block;
     font-size: 22px;
     font-weight: 500;
@@ -29,12 +29,12 @@ const StyledMobileNav = styled.ul`
     transition: all 0.5s ease;
 
     &:hover {
-      color: ${(props) => props.theme.colors.secondary} !important;
+      color: ${color.secondary} !important;
       text-decoration: none !important;
     }
 
     &:visited {
-      color: ${(props) => props.theme.colors.white} !important;
+      color: ${color.white} !important;
     }
 
     &:focus {
@@ -42,7 +42,7 @@ const StyledMobileNav = styled.ul`
     }
 
     &.active {
-      color: ${(props) => props.theme.colors.secondary} !important;
+      color: ${color.secondary} !important;
     }
   }
 `;

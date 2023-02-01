@@ -12,13 +12,13 @@ export const bodyStyles = css`
   /***** Typography ****/
   /*********************/
 
-  /* General */
+  /* Body */
 
-  html * {
-    font-family: "Ubuntu", sans-serif;
-    font-size: 1.125rem;
-    font-weight: 400;
-  }
+  background-color: ${color.lightest} !important;
+  color: ${color.darkest} !important;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
 
   /* Headings */
 
@@ -68,15 +68,6 @@ export const bodyStyles = css`
     }
   }
 
-  /* Other texts */
-
-  body {
-    p {
-      color: ${color.dark} !important;
-      font-weight: 400;
-    }
-  }
-
   small {
     font-size: 1rem;
     font-weight: 300;
@@ -87,25 +78,7 @@ export const bodyStyles = css`
   /***** Utilities *****/
   /*********************/
 
-  /* Text colors */
-
-  /* .text-primary {
-    color: ${color.primary} !important;
-  }
-
-  .text-secondary {
-    color: ${color.secondary} !important;
-  }
-
-  .text-ternary {
-    color: ${color.ternary} !important;
-  } */
-
   /* Background */
-
-  .bg-airbnb {
-    background-color: ${color.airbnb} !important;
-  }
 
   .bg-primary {
     background-color: ${color.primary} !important;
@@ -119,14 +92,16 @@ export const bodyStyles = css`
     background-color: ${color.pastelsecondary} !important;
   }
 
-  /* Borders */
+  &.theme-dark {
+    background-color: ${color.darkest} !important;
 
-  .border-airbnb {
-    background-color: ${color.airbnb} !important;
-  }
+    .bg-primary-pastel {
+      background-color: ${color.darker} !important;
+    }
 
-  .border-primary {
-    border-color: ${color.primary} !important;
+    .bg-secondary-pastel {
+      background-color: ${color.darker} !important;
+    }
   }
 
   /*********************/

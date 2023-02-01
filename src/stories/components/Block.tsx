@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import classnames from "classnames";
 
 export interface BlockProps {
   id?: string;
@@ -7,7 +8,10 @@ export interface BlockProps {
 }
 
 const Block: FC<BlockProps> = ({ id, classes, children }) => (
-  <section className={`${classes}`} id={`${id ? id : ""}`}>
+  <section
+    className={classnames({ [`${classes}`]: classes })}
+    id={`${id ? id : ""}`}
+  >
     {children}
   </section>
 );

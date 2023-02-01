@@ -1,11 +1,11 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import { GlobalStyle } from "./../src/stories/shared/global";
-import { themes } from "@storybook/theming";
+// import { themes } from "@storybook/theming";
 import "./styles.css";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./Theme";
+// import { ThemeProvider } from "styled-components";
+// import { lightTheme, darkTheme } from "./Theme";
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -35,16 +35,16 @@ export const parameters = {
   backgrounds: {
     disable: true,
   },
-  darkMode: {
-    current: "light",
-    darkClass: "darkClass",
-    lightClass: "lightClass",
-    stylePreview: true,
-    // Override the default dark theme
-    dark: { ...themes.dark, appBg: "black" },
-    // Override the default light theme
-    light: { ...themes.light },
-  },
+  // darkMode: {
+  //   // current: "light",
+  //   // darkClass: "darkClass",
+  //   // lightClass: "lightClass",
+  //   stylePreview: true,
+  //   // Override the default dark theme
+  //   dark: { ...themes.dark, appBg: "black" },
+  //   // Override the default light theme
+  //   light: { ...themes.light },
+  // },
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
@@ -65,11 +65,20 @@ export const parameters = {
   },
 };
 
+// export const decorators = [
+//   (Story) => (
+//     <ThemeProvider theme={lightTheme}>
+//       <GlobalStyle />
+//       <Story />
+//     </ThemeProvider>
+//   ),
+// ];
+
 export const decorators = [
   (Story) => (
-    <ThemeProvider theme={lightTheme}>
+    <>
       <GlobalStyle />
       <Story />
-    </ThemeProvider>
+    </>
   ),
 ];

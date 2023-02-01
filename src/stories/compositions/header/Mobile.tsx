@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 import MobileNav from "./MobileNav";
@@ -11,7 +11,7 @@ import MobileLaguages from "./MobileLanguages";
 import Link from "./../../../shared/interfaces/link";
 
 // Styles
-const StyledMobile = styled((props) => <div {...props} />)`
+const StyledMobile = styled.div`
   backdrop-filter: blur(4px);
   bottom: 0;
   display: none;
@@ -30,7 +30,7 @@ const StyledMobile = styled((props) => <div {...props} />)`
 
   /* TODO: add divisor color */
   hr {
-    background-color: ${(props) => props.theme.colors.white};
+    background-color: ${color.white};
   }
 `;
 
@@ -66,10 +66,10 @@ const Mobile: FC<MobileProps> = ({
 }) => (
   <StyledMobile
     className={classnames(
-      `d-${hideFrom}-none bg-${bgColor} ${
-        classes ? classes : ""
-      } ${prefix}-mobile`,
-      { open: isOpen }
+      `d-${hideFrom}-none bg-${bgColor}`,
+      { [`${classes}`]: classes },
+      { open: isOpen },
+      `${prefix}-mobile`
     )}
     style={{ top: startingAt ? startingAt : 0 }}
   >

@@ -1,13 +1,13 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Contexts
 import LayoutContext from "./../LayoutContext";
 
 // Styles
-const StyledMenuClose = styled((props) => <div {...props} />)`
+const StyledMenuClose = styled.div`
   cursor: pointer;
   display: inline-block;
   height: 32px;
@@ -20,7 +20,7 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
     z-index: 99999;
 
     span {
-      background: ${(props) => props.theme.colors.body};
+      background: ${color.black};
 
       &:nth-child(1) {
         left: 50%;
@@ -46,7 +46,7 @@ const StyledMenuClose = styled((props) => <div {...props} />)`
 `;
 
 const StyledSpan = styled.span`
-  background: ${(props) => props.theme.colors.body};
+  background: ${color.black};
   border-radius: 9px;
   display: block;
   height: 3px;

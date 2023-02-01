@@ -1,6 +1,6 @@
 import React, { FC, ReactElement } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Components
 import Contact from "./Contact";
@@ -21,14 +21,8 @@ const StyledFooter = styled((props) => <section {...props} />)`
       background: ${props.bgcolor};
     `}
 
-  ${(props) =>
-    !props.bgcolor &&
-    `
-      background: ${props.theme.colors.bgPrimary};
-    `}
-
   h2 {
-    color: ${(props) => props.theme.colors.white} !important;
+    color: ${color.white} !important;
   }
 `;
 
@@ -48,12 +42,15 @@ export interface FooterProps {
   navigation: { header: TextProps; list: LinkProps[] };
   contact: { header: TextProps; list: ContactListItem[] };
   bgColor?: string;
-  isDark?: boolean;
+  // isDark?: boolean;
 }
 
-const Footer: FC<FooterProps> = ({ bgColor, contact, isDark, navigation }) => {
+const Footer: FC<FooterProps> = ({ bgColor, contact, navigation }) => {
   return (
-    <StyledFooter className={`text-muted ${prefix}-footer`} bgcolor={bgColor}>
+    <StyledFooter
+      className={`text-muted ${prefix}-footer`}
+      bgcolor={bgColor ? bgColor : color.primary}
+    >
       <Spacer>
         <div className="container">
           <div className="row">

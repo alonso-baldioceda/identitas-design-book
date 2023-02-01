@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-import { prefix, sizing } from "./../shared/styles.js";
+import { prefix, sizing, color } from "./../shared/styles.js";
 
 // Constants
 import Size from "../../shared/enums/size.ts";
@@ -8,7 +8,7 @@ import Size from "../../shared/enums/size.ts";
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`
   svg {
-    fill: ${(props) => props.theme.colors.body};
+    fill: ${color.black};
 
     ${(props) =>
       props.size === "xs" &&
@@ -42,6 +42,7 @@ const StyledSVG = styled((props) => <div {...props} />)`
 
 // Types
 interface SVGProps {
+  // TODO: probably need to add a type for the classes (to customize the SVG)
   icon: ReactNode;
   size?: string;
 }

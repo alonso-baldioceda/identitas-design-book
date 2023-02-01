@@ -1,27 +1,19 @@
-const colors = {
-  primary: "blue",
-  secondary: "red",
-  transparent: "transparent",
-  black: "#000000",
-  white: "#FFFFFF",
-  monocromatic: {
-    lighter: "#FFFFFF",
-    darker: "#000000",
-  },
-};
+import { color } from "./../src/stories/shared/styles";
 
 export const lightTheme = {
   colors: {
-    ...colors,
-    body: colors.black,
-    bgPrimary: colors.monocromatic.lighter,
+    ...color,
+    body: color.black,
+    bgPrimary: color.white,
+    bgSecodary: color.pastelsecondary,
   },
 };
 
 export const darkTheme = {
   colors: {
-    ...colors,
-    body: colors.white,
-    bgPrimary: colors.monocromatic.darker,
+    ...color,
+    body: color.white,
+    bgPrimary: color.black,
+    bgSecodary: color.dark,
   },
 };

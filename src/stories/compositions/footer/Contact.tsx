@@ -1,13 +1,13 @@
 import React, { FC, ReactElement } from "react";
 import styled from "styled-components";
 import ListGroup from "./../ListGroup";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 
 // Types
 import { TextProps } from "./../../components/Text";
 
 // Styles
-const StyledContact = styled((props) => <ul {...props} />)`
+const StyledContact = styled.ul`
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;
@@ -16,7 +16,7 @@ const StyledContact = styled((props) => <ul {...props} />)`
     margin: 0 !important;
 
     svg {
-      fill: ${(props) => props.theme.colors.white};
+      fill: ${color.white};
     }
   }
 `;

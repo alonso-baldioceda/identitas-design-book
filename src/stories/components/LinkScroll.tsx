@@ -1,19 +1,19 @@
 import React, { FC } from "react";
 import { Link } from "react-scroll";
-import { prefix } from "./../shared/styles.js";
+import { prefix, color } from "./../shared/styles.js";
 import styled from "styled-components";
 import classnames from "classnames";
 
 // Styles
 const StyledLinkScroll = styled((props) => <Link {...props} />)`
-  color: ${(props) => props.theme.colors.body};
+  color: ${color.black};
   cursor: pointer;
 
   &.active,
   &:hover,
   &:focus,
   &:visited {
-    color: ${(props) => props.theme.colors.body};
+    color: ${color.black};
   }
 `;
 
@@ -46,7 +46,7 @@ const LinkScroll: FC<LinkProps> = ({
     spy={spy ? spy : true}
     to={to}
     onClick={onClick ? onClick : () => {}}
-    className={classnames(`${classes ? classes : ""}`, `${prefix}-link-scroll`)}
+    className={classnames({ [`${classes}`]: classes }, `${prefix}-link-scroll`)}
   >
     {text}
   </StyledLinkScroll>

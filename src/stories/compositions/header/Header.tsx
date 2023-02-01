@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Components
@@ -31,12 +31,6 @@ const StyledHeader = styled((props) => <header {...props} />)`
       background: ${props.bgcolor};
     `}
 
-  ${(props) =>
-    !props.bgcolor &&
-    `
-      background: ${props.theme.colors.bgPrimary};
-    `}
-
   align-items: center;
   /* TODO: move shadow to variable */
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
@@ -49,7 +43,7 @@ const StyledHeader = styled((props) => <header {...props} />)`
   .${prefix}-brand {
     svg {
       path {
-        fill: ${(props) => props.theme.colors.body};
+        fill: ${color.black};
       }
     }
   }
@@ -112,12 +106,9 @@ const Header: FC<HeaderProps> = ({
   return (
     <>
       <StyledHeader
-        className={classnames(
-          { fixed: fixed ? fixed : false },
-          `${prefix}-header`
-        )}
+        className={classnames({ fixed: fixed }, `${prefix}-header`)}
         style={{ minHeight: minHeight ? minHeight : 84 }}
-        bgcolor={bgColor}
+        bgcolor={bgColor ? bgColor : color.white}
         fixed={fixed ? fixed.toString() : null}
       >
         <div className="container-fluid">

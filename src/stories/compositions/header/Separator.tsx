@@ -1,15 +1,22 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix, color as colors } from "./../../shared/styles.js";
+import classnames from "classnames";
 
 // Styles
 const StyledSeparator = styled((props) => <div {...props} />)`
   ${(props) =>
-    props.color
-      ? `background: ${props.color};`
-      : `background: ${props.theme.colors.body};`}
+    props.color &&
+    `
+      background: ${props.color};
+    `}
 
-  height: ${(props) => (props.height ? props.height : 44)}px;
+  ${(props) =>
+    props.height &&
+    `
+      height: ${props.height}px;
+    `}
+
   width: 2px;
 `;
 
@@ -22,9 +29,9 @@ export interface SeparatorProps {
 
 const Separator: FC<SeparatorProps> = ({ classes, color, height }) => (
   <StyledSeparator
-    className={`${classes ? classes : ""} ${prefix}-separator`}
-    color={color}
-    height={height}
+    className={classnames({ [`${classes}`]: classes }, `${prefix}-separator`)}
+    color={color ? color : colors.black}
+    height={height ? height : 44}
   />
 );
 
