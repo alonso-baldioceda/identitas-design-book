@@ -6,14 +6,14 @@ import classnames from "classnames";
 
 // Styles
 const StyledLinkGatsby = styled((props) => <Link {...props} />)`
-  color: ${color.black};
+  color: ${color.body};
   cursor: pointer;
 
   &.active,
   &:hover,
   &:focus,
   &:visited {
-    color: ${(props) => (props.hover ? props.hover : color.black)};
+    color: ${(props) => (props.hover ? props.hover : color.body)};
   }
 `;
 

@@ -43,7 +43,7 @@ const StyledHeader = styled((props) => <header {...props} />)`
   .${prefix}-brand {
     svg {
       path {
-        fill: ${color.black};
+        fill: ${color.body};
       }
     }
   }

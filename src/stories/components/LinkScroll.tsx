@@ -6,14 +6,14 @@ import classnames from "classnames";
 
 // Styles
 const StyledLinkScroll = styled((props) => <Link {...props} />)`
-  color: ${color.black};
+  color: ${color.body};
   cursor: pointer;
 
   &.active,
   &:hover,
   &:focus,
   &:visited {
-    color: ${color.black};
+    color: ${color.body};
   }
 `;
 

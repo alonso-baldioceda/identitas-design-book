@@ -6,7 +6,7 @@ import { prefix, color } from "./../../shared/styles.js";
 // Styles
 const LinkTranslate = styled.a`
   border-bottom: 2px solid ${color.transparent};
-  color: ${color.black};
+  color: ${color.body};
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 0.6px;
@@ -18,11 +18,11 @@ const LinkTranslate = styled.a`
   &:hover,
   &:focus {
     border-bottom: 2px solid ${color.secondary};
-    color: ${color.black};
+    color: ${color.body};
   }
 
   &:visited {
-    color: ${color.black};
+    color: ${color.body};
     text-decoration: none;
   }
 `;

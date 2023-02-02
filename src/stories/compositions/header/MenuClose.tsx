@@ -20,7 +20,7 @@ const StyledMenuClose = styled.div`
     z-index: 99999;
 
     span {
-      background: ${color.black};
+      background: ${color.body};
 
       &:nth-child(1) {
         left: 50%;
@@ -46,7 +46,7 @@ const StyledMenuClose = styled.div`
 `;
 
 const StyledSpan = styled.span`
-  background: ${color.black};
+  background: ${color.body};
   border-radius: 9px;
   display: block;
   height: 3px;

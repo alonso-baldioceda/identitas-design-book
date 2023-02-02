@@ -23,7 +23,7 @@ const SphereStyled = styled((props) => <div {...props} />)`
     transition: background-color 0.25s linear;
 
     p {
-      color: ${color.black};
+      color: ${color.body};
     }
 
     &:hover {

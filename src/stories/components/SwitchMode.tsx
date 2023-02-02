@@ -29,7 +29,7 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 
   svg {
     transition: stroke 400ms;
-    stroke: ${color.black};
+    stroke: ${color.body};
 
     .moon-icon {
       opacity: 0;

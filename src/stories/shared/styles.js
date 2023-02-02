@@ -14,6 +14,7 @@ export const color = {
   dark: "#222222",
   white: "#FFFFFF",
   black: "#000000",
+  body: black,
 
   // Pastel
   pastelprimary: "#E5EFEA",
@@ -23,12 +24,12 @@ export const color = {
   lightest: "#FFFFFF",
   lighter: "#F8F8F8",
   light: "#F3F3F3",
-  mediumlight: "#EEEEEE",
-  medium: "#DDDDDD",
-  mediumdark: "#999999",
-  dark: "#666666",
-  darker: "#444444",
-  darkest: "#1a1a1a",
+  mediumlight: "#909090",
+  medium: "#838383",
+  mediumdark: "#767676",
+  dark: "#212121",
+  darker: "#171717",
+  darkest: "#0D0D0D",
 
   // Border
   border: "rgba(0,0,0,.1)",

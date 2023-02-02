@@ -95,6 +95,19 @@ export const bodyStyles = css`
   &.theme-dark {
     background-color: ${color.darkest} !important;
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: ${color.white} !important;
+    }
+
+    p {
+      color: ${color.white} !important;
+    }
+
     .bg-primary-pastel {
       background-color: ${color.darker} !important;
     }
