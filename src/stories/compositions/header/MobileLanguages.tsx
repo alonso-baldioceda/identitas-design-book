@@ -23,9 +23,8 @@ const LinkTranslate = styled.a`
   font-weight: 500;
   padding: 0;
   text-decoration: none;
-  /* TODO: move to variable default */
-  transition: all 0.5s ease;
   text-transform: capitalize;
+  transition: all 0.15s ease;
 
   &:hover {
     color: ${color.white};

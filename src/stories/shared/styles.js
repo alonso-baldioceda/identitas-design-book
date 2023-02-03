@@ -14,7 +14,7 @@ export const color = {
   dark: "#222222",
   white: "#FFFFFF",
   black: "#000000",
-  body: black,
+  body: "#000000",
 
   // Pastel
   pastelprimary: "#E5EFEA",

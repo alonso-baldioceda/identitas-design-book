@@ -54,7 +54,7 @@ const StyledSpan = styled.span`
   opacity: 1;
   position: absolute;
   transform: rotate(0deg);
-  transition: 0.125s ease-in-out;
+  transition: 0.15s ease;
   width: 100%;
 
   &:nth-child(1) {

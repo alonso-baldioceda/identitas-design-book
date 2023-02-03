@@ -27,6 +27,7 @@ const StyledDesktopNav = styled.ul`
       font-weight: 500;
       letter-spacing: 0.6px;
       text-decoration: none;
+      transition: all 0.15s ease;
 
       &.active,
       &:focus,

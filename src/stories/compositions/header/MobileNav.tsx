@@ -25,8 +25,7 @@ const StyledMobileNav = styled.ul`
     font-weight: 500;
     padding: 0;
     text-decoration: none;
-    /* TODO: move to variable */
-    transition: all 0.5s ease;
+    transition: all 0.15s ease;
 
     &:hover {
       color: ${color.secondary} !important;

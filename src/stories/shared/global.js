@@ -15,7 +15,7 @@ export const bodyStyles = css`
   /* Body */
 
   background-color: ${color.lightest} !important;
-  color: ${color.darkest} !important;
+  color: ${color.body} !important;
   font-family: "Ubuntu", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
@@ -68,7 +68,16 @@ export const bodyStyles = css`
     }
   }
 
+  /* Paragraph */
+
+  p {
+    color: ${color.black} !important;
+  }
+
+  /* Small */
+
   small {
+    color: ${color.black} !important;
     font-size: 1rem;
     font-weight: 300;
     margin-bottom: 0;
@@ -77,6 +86,28 @@ export const bodyStyles = css`
   /*********************/
   /***** Utilities *****/
   /*********************/
+
+  /* Header */
+
+  header {
+    background-color: ${color.lightest} !important;
+
+    .nav {
+      a {
+        color: ${color.body} !important;
+      }
+    }
+
+    .identitas-brand {
+      span {
+        color: ${color.body} !important;
+      }
+    }
+
+    .identitas-separator {
+      background-color: ${color.body} !important;
+    }
+  }
 
   /* Background */
 
@@ -92,8 +123,24 @@ export const bodyStyles = css`
     background-color: ${color.pastelsecondary} !important;
   }
 
+  /* SVG */
+
+  svg {
+    fill: ${color.body};
+    stroke: ${color.body};
+  }
+
+  /* Horizontal Ruler */
+
+  hr {
+    background-color: ${color.body};
+  }
+
   &.theme-dark {
     background-color: ${color.darkest} !important;
+    color: ${color.white} !important;
+
+    /* Headings */
 
     h1,
     h2,
@@ -104,9 +151,45 @@ export const bodyStyles = css`
       color: ${color.white} !important;
     }
 
+    /* Paragraph */
+
     p {
       color: ${color.white} !important;
     }
+
+    /* Small */
+
+    small {
+      color: ${color.white} !important;
+    }
+
+    /*********************/
+    /***** Utilities *****/
+    /*********************/
+
+    /* Navigation */
+
+    header {
+      background-color: ${color.black} !important;
+
+      .nav {
+        a {
+          color: ${color.white} !important;
+        }
+      }
+
+      .identitas-brand {
+        span {
+          color: ${color.white} !important;
+        }
+      }
+
+      .identitas-separator {
+        background-color: ${color.white} !important;
+      }
+    }
+
+    /* Background */
 
     .bg-primary-pastel {
       background-color: ${color.darker} !important;
@@ -115,10 +198,23 @@ export const bodyStyles = css`
     .bg-secondary-pastel {
       background-color: ${color.darker} !important;
     }
+
+    /* SVG */
+
+    svg {
+      fill: ${color.white};
+      stroke: ${color.white};
+    }
+
+    /* Horizontal Ruler */
+
+    hr {
+      background-color: ${color.white};
+    }
   }
 
   /*********************/
-  /***** Components ****/
+  /****** Common *******/
   /*********************/
 
   /* Buttons */
@@ -139,6 +235,7 @@ export const bodyStyles = css`
 `;
 
 export const GlobalStyle = createGlobalStyle`
- body {
-   ${bodyStyles}
- }`;
+  body {
+    ${bodyStyles}
+  }
+`;

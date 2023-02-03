@@ -29,19 +29,15 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
 
   svg {
     transition: stroke 400ms;
-    stroke: ${color.body};
 
     .moon-icon {
       opacity: 0;
-      stroke-dasharray: 0px 1px;
-      transition: stroke-dasharray 0.25s ease-in, opacity 150ms ease-in;
+      stroke: none;
     }
 
     .sun-icon {
-      opacity: 1;
-      stroke-dasharray: 1px 1px;
-      transition: stroke-dasharray 0.125s ease-in, opacity 300ms ease-in;
       fill: transparent;
+      opacity: 1;
     }
   }
 
@@ -49,12 +45,10 @@ const StyledSwitchMode = styled((props) => <button {...props} />)`
     svg {
       .moon-icon {
         opacity: 1;
-        stroke-dasharray: 1px 1px;
       }
 
       .sun-icon {
         opacity: 0;
-        stroke-dasharray: 0px 1px;
       }
     }
   }

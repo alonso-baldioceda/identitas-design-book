@@ -20,7 +20,7 @@ const SphereStyled = styled((props) => <div {...props} />)`
 
   .pnlm-load-button {
     background-color: rgba(255, 255, 255, 0.7);
-    transition: background-color 0.25s linear;
+    transition: background-color 0.15s ease;
 
     p {
       color: ${color.body};

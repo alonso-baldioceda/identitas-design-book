@@ -6,17 +6,12 @@ import classnames from "classnames";
 // Styles
 const StyledSeparator = styled((props) => <div {...props} />)`
   ${(props) =>
-    props.color &&
-    `
-      background: ${props.color};
-    `}
-
-  ${(props) =>
     props.height &&
     `
       height: ${props.height}px;
     `}
 
+  transition: all 0.15s ease;
   width: 2px;
 `;
 
@@ -27,10 +22,9 @@ export interface SeparatorProps {
   height?: number;
 }
 
-const Separator: FC<SeparatorProps> = ({ classes, color, height }) => (
+const Separator: FC<SeparatorProps> = ({ classes, height }) => (
   <StyledSeparator
     className={classnames({ [`${classes}`]: classes }, `${prefix}-separator`)}
-    color={color ? color : colors.black}
     height={height ? height : 44}
   />
 );

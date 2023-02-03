@@ -25,28 +25,12 @@ const StyledHeader = styled((props) => <header {...props} />)`
     position: fixed;
   }
 
-  ${(props) =>
-    props.bgcolor &&
-    `
-      background: ${props.bgcolor};
-    `}
-
   align-items: center;
-  /* TODO: move shadow to variable */
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
   display: flex;
-  /* TODO: move transition to variable */
-  transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease;
   width: 100%;
   z-index: 200;
-
-  .${prefix}-brand {
-    svg {
-      path {
-        fill: ${color.body};
-      }
-    }
-  }
 `;
 
 const StyledNavWrapper = styled.div`
@@ -65,7 +49,7 @@ interface Language {
 }
 
 export interface HeaderProps {
-  bgColor?: string;
+  // bgColor?: string;
   brand: BrandProps;
   call?: LinkIconProps;
   hideLanguagesFrom?: string;
@@ -83,7 +67,7 @@ export interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({
-  bgColor,
+  // bgColor,
   brand,
   call,
   minHeight,
@@ -108,7 +92,7 @@ const Header: FC<HeaderProps> = ({
       <StyledHeader
         className={classnames({ fixed: fixed }, `${prefix}-header`)}
         style={{ minHeight: minHeight ? minHeight : 84 }}
-        bgcolor={bgColor ? bgColor : color.white}
+        // bgcolor={bgColor ? bgColor : color.white}
         fixed={fixed ? fixed.toString() : null}
       >
         <div className="container-fluid">

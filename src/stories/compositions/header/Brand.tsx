@@ -30,9 +30,9 @@ const StyledBrand = styled((props) => <Link {...props} />)`
         font-weight: ${props.fw};
       `}
 
-    color: ${color.body};
     font-size: 1.175rem;
     margin-left: 0.375rem;
+    transition: all 0.15s ease;
 
     @media (min-width: 768px) {
       font-size: 1.375rem;

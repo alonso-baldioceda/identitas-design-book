@@ -32,7 +32,7 @@ const Text: FC<TextProps> = ({ variant, color, classes, noWrap, text }) => (
       { "text-nowrap": noWrap },
       `${prefix}-text`
     )}
-    color={color ? color : colors.black}
+    color={color ? color : ""}
   >
     {text}
   </Container>

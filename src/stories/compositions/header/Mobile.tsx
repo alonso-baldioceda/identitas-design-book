@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import MobileNav from "./MobileNav";
@@ -19,18 +19,12 @@ const StyledMobile = styled.div`
   position: fixed;
   right: 0;
   opacity: 0;
-  /* TODO: move transition to variables  */
   transition: opacity 1.125s ease-in-out !important;
   z-index: 99999;
 
   &.open {
     display: block !important;
     opacity: 1;
-  }
-
-  /* TODO: add divisor color */
-  hr {
-    background-color: ${color.white};
   }
 `;
 

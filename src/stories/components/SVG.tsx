@@ -1,6 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
-import { prefix, sizing, color } from "./../shared/styles.js";
+import classnames from "classnames";
+import { prefix, sizing, color as colors } from "./../shared/styles.js";
 
 // Constants
 import Size from "../../shared/enums/size.ts";
@@ -8,7 +9,11 @@ import Size from "../../shared/enums/size.ts";
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`
   svg {
-    fill: ${color.body};
+    ${(props) =>
+      props.color &&
+      `
+        fill: ${props.color};
+      `}
 
     ${(props) =>
       props.size === "xs" &&
@@ -37,18 +42,25 @@ const StyledSVG = styled((props) => <div {...props} />)`
         height: ${sizing.icon.large}px;
         width: ${sizing.icon.large}px;
       `}
+
+    transition: all 0.15s ease;
   }
 `;
 
 // Types
 interface SVGProps {
-  // TODO: probably need to add a type for the classes (to customize the SVG)
+  classes?: string;
+  color?: string;
   icon: ReactNode;
   size?: string;
 }
 
-const SVG: FC<SVGProps> = ({ icon, size }) => (
-  <StyledSVG size={size ? size : Size.md} className={`${prefix}-svg`}>
+const SVG: FC<SVGProps> = ({ classes, color, icon, size }) => (
+  <StyledSVG
+    size={size ? size : Size.md}
+    className={classnames({ [`${classes}`]: classes }, `${prefix}-svg`)}
+    color={color ? color : colors.body}
+  >
     {icon}
   </StyledSVG>
 );
