@@ -11,7 +11,6 @@ export const color = {
   secondary: "#1EA7FD",
   tertiary: "#DDDDDD",
   transparent: "transparent",
-  // dark: "#222222",
   white: "#FFFFFF",
   black: "#000000",
   body: "#000000",

@@ -4,8 +4,11 @@ import styled from "styled-components";
 import { prefix, color } from "./../shared/styles.js";
 import classnames from "classnames";
 
-// Assets
-import RotationIcon from "./../../images/svg/rotation.svg";
+// Components
+import SVG from "./../components/SVG";
+
+// Types
+import Size from "./../../shared/enums/size";
 
 const SphereStyled = styled((props) => <div {...props} />)`
   ${(props) =>
@@ -32,7 +35,7 @@ const SphereStyled = styled((props) => <div {...props} />)`
   }
 `;
 
-const RotationIconStyled = styled((props: any) => <RotationIcon {...props} />)`
+const RotationIconStyled = styled.div`
   height: 56px;
   position: absolute;
   right: 0%;
@@ -55,14 +58,14 @@ interface SphereProps {
 
 const Sphere: FC<SphereProps> = ({
   border,
-  height = "400px",
+  height,
   id,
   image,
-  pitch = 0,
+  pitch,
   preview,
   sceneId,
-  width = "100%",
-  yaw = 0,
+  width,
+  yaw,
 }) => {
   const config = {
     autoLoad: false,
@@ -70,8 +73,8 @@ const Sphere: FC<SphereProps> = ({
     keyboardZoom: false,
     mouseZoom: false,
     showFullscreenCtrl: false,
-    yaw: yaw,
-    pitch: pitch,
+    yaw: yaw ? yaw : 0,
+    pitch: pitch ? pitch : 0,
     preview: preview,
   };
 
@@ -80,7 +83,9 @@ const Sphere: FC<SphereProps> = ({
       className={classnames(`${prefix}-sphere`)}
       border={border ? border : 5}
     >
-      <RotationIconStyled className="bg-white p-1" />
+      <RotationIconStyled className="bg-white p-1">
+        <SVG icon="rotation" size={Size.sm} />
+      </RotationIconStyled>
       <ReactPannellum
         id={id}
         sceneId={sceneId}
@@ -88,8 +93,8 @@ const Sphere: FC<SphereProps> = ({
         config={config}
         style={{
           background: `${color.primary}`,
-          height: `${height}`,
-          width: `${width}`,
+          height: `${height ? height : "400px"}`,
+          width: `${width ? width : "100%"}`,
         }}
       />
     </SphereStyled>
