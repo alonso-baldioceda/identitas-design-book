@@ -1,6 +1,6 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import { Link } from "gatsby";
 import Text from "./../../components/Text";
 // import { animateScroll as scroll } from "react-scroll";
@@ -8,9 +8,6 @@ import classnames from "classnames";
 
 // Components
 import SVG from "./../../components/SVG";
-
-// Contexts
-// import LayoutContext from "./../compositions/LayoutContext";
 
 // Types
 import Size from "./../../../shared/enums/size";
@@ -51,7 +48,7 @@ export interface BrandProps {
   // smooth: boolean;
   // spy: boolean;
   size?: string;
-  svg: ReactNode;
+  svg: string;
   name: string;
   to: string;
 }

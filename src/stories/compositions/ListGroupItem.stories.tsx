@@ -63,7 +63,7 @@ ListGroupItem.args = {
 export const TextWithIcon = Template.bind({});
 TextWithIcon.args = {
   ...ListGroupItem.args,
-  svg: <BedQueen />,
+  svg: "bedQueen",
   text: {
     heading: {
       classes: "mb-0",

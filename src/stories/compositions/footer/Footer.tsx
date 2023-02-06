@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
@@ -14,22 +14,12 @@ import TextEnum from "./../../../shared/enums/text";
 import { TextProps } from "./../../components/Text";
 
 // Styles
-const StyledFooter = styled((props) => <section {...props} />)`
-  ${(props) =>
-    props.bgcolor &&
-    `
-      background: ${props.bgcolor};
-    `}
-
-  h2 {
-    color: ${color.white} !important;
-  }
-`;
+const StyledFooter = styled((props) => <footer {...props} />)``;
 
 // Types
 // TODO: maybe need to move
 interface ContactListItem {
-  svg: ReactElement;
+  svg: string;
   svgSize?: string;
   iconMe?: number;
   text?: {
@@ -41,16 +31,11 @@ interface ContactListItem {
 export interface FooterProps {
   navigation: { header: TextProps; list: LinkProps[] };
   contact: { header: TextProps; list: ContactListItem[] };
-  bgColor?: string;
-  // isDark?: boolean;
 }
 
-const Footer: FC<FooterProps> = ({ bgColor, contact, navigation }) => {
+const Footer: FC<FooterProps> = ({ contact, navigation }) => {
   return (
-    <StyledFooter
-      className={`text-muted ${prefix}-footer`}
-      bgcolor={bgColor ? bgColor : color.primary}
-    >
+    <StyledFooter className={`text-muted ${prefix}-footer`}>
       <Spacer>
         <div className="container">
           <div className="row">

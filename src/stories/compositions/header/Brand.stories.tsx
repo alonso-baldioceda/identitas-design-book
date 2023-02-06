@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Brand from "./Brand";
 
-// Assets
-import LogoIcon from "./../../../images/svg/logo-black.svg";
-
 export default {
   title: "Compositions/Brand",
   component: Brand,
@@ -54,7 +51,7 @@ export const Default = Template.bind({});
 Default.args = {
   fontWeight: 700,
   hideNameOnMobile: true,
-  svg: <LogoIcon />,
+  svg: "logo",
   name: "Company name",
   to: "main",
   classes: "me-3",

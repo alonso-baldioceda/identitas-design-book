@@ -1,8 +1,6 @@
 import { createGlobalStyle, css } from "styled-components";
 
-// TODO: move global inside theme so we can use theme props
-
-import { color, typography } from "./styles";
+import { color, prefix } from "./styles";
 
 export const fontUrl =
   "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700";
@@ -92,19 +90,19 @@ export const bodyStyles = css`
   header {
     background-color: ${color.lightest} !important;
 
-    .nav {
-      a {
-        color: ${color.body} !important;
-      }
-    }
-
-    .identitas-brand {
+    .${prefix}-brand {
       span {
         color: ${color.body} !important;
       }
     }
 
-    .identitas-separator {
+    .${prefix}-nav {
+      a {
+        color: ${color.body} !important;
+      }
+    }
+
+    .${prefix}-separator {
       background-color: ${color.body} !important;
     }
   }
@@ -125,9 +123,11 @@ export const bodyStyles = css`
 
   /* SVG */
 
-  svg {
-    fill: ${color.body};
-    stroke: ${color.body};
+  .${prefix}-svg {
+    svg {
+      fill: ${color.body};
+      stroke: ${color.body};
+    }
   }
 
   /* Horizontal Ruler */
@@ -172,19 +172,19 @@ export const bodyStyles = css`
     header {
       background-color: ${color.black} !important;
 
-      .nav {
-        a {
-          color: ${color.white} !important;
-        }
-      }
-
-      .identitas-brand {
+      .${prefix}-brand {
         span {
           color: ${color.white} !important;
         }
       }
 
-      .identitas-separator {
+      .${prefix}-nav {
+        a {
+          color: ${color.white} !important;
+        }
+      }
+
+      .${prefix}-separator {
         background-color: ${color.white} !important;
       }
     }
@@ -201,9 +201,11 @@ export const bodyStyles = css`
 
     /* SVG */
 
-    svg {
-      fill: ${color.white};
-      stroke: ${color.white};
+    .${prefix}-svg {
+      svg {
+        fill: ${color.white};
+        stroke: ${color.white};
+      }
     }
 
     /* Horizontal Ruler */
@@ -230,6 +232,25 @@ export const bodyStyles = css`
     &.btn-booking {
       background: ${color.booking};
       color: ${color.white};
+    }
+  }
+
+  /* Footer */
+
+  footer {
+    &.${prefix}-footer {
+      background-color: ${color.darkest} !important;
+
+      .${prefix}-text {
+        color: ${color.white} !important;
+      }
+
+      .${prefix}-svg {
+        svg {
+          fill: ${color.white};
+          stroke: ${color.white};
+        }
+      }
     }
   }
 `;

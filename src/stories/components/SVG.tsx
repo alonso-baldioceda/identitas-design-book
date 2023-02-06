@@ -1,7 +1,8 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, sizing, color as colors } from "./../shared/styles.js";
+import { prefix, sizing } from "./../shared/styles.js";
+import { icons2 } from "./../shared/icons2";
 
 // Constants
 import Size from "../../shared/enums/size.ts";
@@ -50,18 +51,16 @@ const StyledSVG = styled((props) => <div {...props} />)`
 // Types
 interface SVGProps {
   classes?: string;
-  color?: string;
-  icon: ReactNode;
+  icon: any;
   size?: string;
 }
 
-const SVG: FC<SVGProps> = ({ classes, color, icon, size }) => (
+const SVG: FC<SVGProps> = ({ classes, icon, size }) => (
   <StyledSVG
     size={size ? size : Size.md}
     className={classnames({ [`${classes}`]: classes }, `${prefix}-svg`)}
-    color={color ? color : colors.body}
   >
-    {icon}
+    <div dangerouslySetInnerHTML={{ __html: icons2[icon] }} />
   </StyledSVG>
 );
 

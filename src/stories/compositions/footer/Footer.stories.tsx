@@ -4,11 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Footer from "./Footer";
 
-// Assets
-import HomeIcon from "./../../../images/svg/home.svg";
-import EnvelopeIcon from "./../../../images/svg/envelope.svg";
-import PhoneIcon from "./../../../images/svg/phone.svg";
-
 // Constants
 import { COLOR_CONTROL } from "./../../../shared/constants";
 
@@ -32,7 +27,6 @@ const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  bgColor: "#000",
   contact: {
     header: {
       text: "Contáctenos",
@@ -41,7 +35,7 @@ Default.args = {
     },
     list: [
       {
-        svg: <HomeIcon />,
+        svg: "home",
         svgSize: "xs",
         classes: "mb-3",
         text: {
@@ -53,7 +47,7 @@ Default.args = {
         },
       },
       {
-        svg: <EnvelopeIcon />,
+        svg: "envelope",
         svgSize: "xs",
         classes: "mb-3",
         text: {
@@ -65,7 +59,7 @@ Default.args = {
         },
       },
       {
-        svg: <PhoneIcon />,
+        svg: "phone",
         svgSize: "xs",
         classes: "mb-3",
         text: {

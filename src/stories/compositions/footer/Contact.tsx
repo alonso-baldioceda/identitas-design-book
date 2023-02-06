@@ -24,7 +24,7 @@ const StyledContact = styled.ul`
 // Interfaces
 interface itemsProps {
   classes?: string;
-  svg: ReactElement;
+  svg: string;
   size?: string;
   text?: {
     heading: TextProps;

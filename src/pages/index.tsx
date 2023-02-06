@@ -1,193 +1,307 @@
-import * as React from "react"
-import type { HeadFC } from "gatsby"
+import * as React from "react";
+import type { HeadFC } from "gatsby";
+// import { Link } from "gatsby";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+import Layout from "./../stories/compositions/Layout";
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
+// Types
+import LinkType from "./../shared/enums/linkType";
+import Size from "./../shared/enums/size";
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
+// Assets
+import LogoIcon from "./../images/svg/logo-black.svg";
+import PhoneIcon from "./../images/svg/call.svg";
+import FacebookIcon from "./../images/svg/facebook.svg";
+import InstagramIcon from "./../images/svg/instagram.svg";
+import HomeIcon from "./../images/svg/home.svg";
+import EnvelopeIcon from "./../images/svg/envelope.svg";
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
+const data = {
+  headerProps: {
+    fixed: true,
+    minHeight: 84,
+    hideLanguagesFrom: "xl",
+    showLanguages: true,
+    showCall: true,
+    call: {
+      icon: <PhoneIcon />,
+      classes: "mb-0",
+      size: Size.xs,
+      text: "call us",
+      url: "tel:+50683274040",
+    },
+    mobile: {
+      bgColor: "dark",
+      classes: "p-4",
+      hideFrom: "xl",
+      isOpen: true,
+      languages: [
+        {
+          name: "es",
+          classes: "text-capitalize",
+        },
+        {
+          name: "es",
+          classes: "text-capitalize",
+        },
+      ],
+      navigation: [
+        {
+          type: LinkType.Anchor,
+          anchor: "top",
+          text: "Inicio",
+          offset: -104,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "units",
+          text: "Cabinas",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "common-spaces",
+          text: "Espacios comúnes",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "services",
+          text: "Servicios",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "drive",
+          text: "Cómo llegar?",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "contact",
+          text: "Contáctenos",
+          offset: -80,
+          classes: "mb-2",
+        },
+        {
+          type: LinkType.Link,
+          anchor: "info",
+          text: "Info",
+          classes: "mb-2",
+        },
+      ],
+      startingAt: 82,
+      translate: "Idiomas",
+    },
+    separator: {
+      classes: "mx-3",
+    },
+    showSocials: true,
+    showSwitchMode: true,
+    socials: [
+      {
+        icon: <FacebookIcon />,
+        classes: "mb-0 mx-2 mx-sm-3",
+        size: Size.xs,
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
+      },
+      {
+        icon: <InstagramIcon />,
+        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
+        size: Size.xs,
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
+      },
+    ],
+    brand: {
+      fontWeight: 700,
+      hideNameOnMobile: true,
+      svg: "logo",
+      name: "Vista Lago Arenal",
+      to: "main",
+      classes: "me-3",
+    },
+    languages: [
+      {
+        name: "es",
+        classes: "text-uppercase me-3",
+      },
+      {
+        name: "en",
+        classes: "text-uppercase me-3",
+      },
+    ],
+    navigation: [
+      {
+        type: LinkType.Anchor,
+        anchor: "top",
+        text: "Inicio",
+        offset: -104,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "units",
+        text: "Cabinas",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "common-spaces",
+        text: "Espacios comúnes",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "services",
+        text: "Servicios",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "drive",
+        text: "Cómo llegar?",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "contact",
+        text: "Contáctenos",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Link,
+        anchor: "info",
+        text: "Info",
+        classes: "me-3 text-capitalize",
+      },
+    ],
   },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
+  footerProps: {
+    contact: {
+      header: {
+        text: "Contáctenos",
+        classes: "mb-5",
+        variant: "h2",
+      },
+      list: [
+        {
+          svg: "home",
+          svgSize: "xs",
+          classes: "mb-3",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+              color: "#FFFFFF",
+            },
+          },
+        },
+        {
+          svg: "envelope",
+          svgSize: "xs",
+          classes: "mb-3",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "vistalagoarenal@gmail.com",
+              color: "#FFFFFF",
+            },
+          },
+        },
+        {
+          svg: "phone",
+          svgSize: "xs",
+          classes: "mb-3",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: "+(506) 8327 4040",
+              color: "#FFFFFF",
+            },
+          },
+        },
+      ],
+    },
+    navigation: {
+      header: {
+        text: "Enlaces",
+        classes: "mb-5",
+        variant: "h2",
+      },
+      list: [
+        {
+          type: LinkType.Anchor,
+          anchor: "top",
+          text: "Inicio",
+          offset: -104,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "units",
+          text: "Cabinas",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "common-spaces",
+          text: "Espacios comúnes",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "services",
+          text: "Servicios",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "drive",
+          text: "Cómo llegar?",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Anchor,
+          anchor: "contact",
+          text: "Contáctenos",
+          offset: -80,
+          classes: "mb-3 d-block",
+        },
+        {
+          type: LinkType.Link,
+          anchor: "info",
+          text: "Info",
+          classes: "mb-0 d-block",
+        },
+      ],
+    },
   },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
+};
 
 const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
-  )
-}
+    <Layout header={data.headerProps} footer={data.footerProps}>
+      <p>Hello world!</p>
+    </Layout>
+  );
+};
 
-export default IndexPage
+export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Home Page</title>;

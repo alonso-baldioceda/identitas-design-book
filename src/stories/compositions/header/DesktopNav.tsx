@@ -32,6 +32,7 @@ const StyledDesktopNav = styled.ul`
       &.active,
       &:focus,
       &:hover {
+        /* TODO: move this to theme */
         border-bottom: 2px solid ${color.secondary};
       }
 
@@ -57,27 +58,30 @@ export interface DesktopNavProps {
 // TODO: analize including useMemo
 const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => (
   <StyledDesktopNav className={`nav ${prefix}-nav`}>
-    {navigation.map((navItem: Link, index: number) => (
-      <li key={`nav-${index}`}>
-        {navItem.type && navItem.type === LinkType.Link ? (
-          <LinkGatsby
-            text={navItem.text}
-            to={navItem.anchor}
-            classes={navItem.classes ? navItem.classes : ""}
-          />
-        ) : (
-          <LinkScroll
-            text={navItem.text}
-            to={navItem.anchor}
-            classes={navItem.classes ? navItem.classes : ""}
-            offset={navItem.offset ? navItem.offset : 0}
-            smooth={navItem.smooth ? navItem.smooth : true}
-            spy={navItem.spy ? navItem.spy : true}
-            duration={navItem.duration ? navItem.duration : 500}
-          />
-        )}
-      </li>
-    ))}
+    {navigation.map((navItem: Link, index: number) => {
+      console.log("navItem", navItem);
+      return (
+        <li key={`nav-${index}`}>
+          {navItem.type && navItem.type === LinkType.Link ? (
+            <LinkGatsby
+              text={navItem.text}
+              to={`/${navItem.anchor}`}
+              classes={navItem.classes ? navItem.classes : ""}
+            />
+          ) : (
+            <LinkScroll
+              text={navItem.text}
+              to={navItem.anchor}
+              classes={navItem.classes ? navItem.classes : ""}
+              offset={navItem.offset ? navItem.offset : 0}
+              smooth={navItem.smooth ? navItem.smooth : true}
+              spy={navItem.spy ? navItem.spy : true}
+              duration={navItem.duration ? navItem.duration : 500}
+            />
+          )}
+        </li>
+      );
+    })}
   </StyledDesktopNav>
 );
 

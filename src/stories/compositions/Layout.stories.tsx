@@ -1,12 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-// Assets
-import LogoIcon from "./../../images/svg/logo-black.svg";
-import HomeIcon from "./../../images/svg/home.svg";
-import EnvelopeIcon from "./../../images/svg/envelope.svg";
-import PhoneIcon from "./../../images/svg/phone.svg";
-
 // Components
 import Layout from "./Layout";
 
@@ -77,7 +71,7 @@ Default.args = {
     brand: {
       fontWeight: 700,
       hideNameOnMobile: true,
-      svg: <LogoIcon />,
+      svg: "logo",
       name: "Vista Lago Arenal",
       to: "main",
       classes: "me-3",
@@ -144,7 +138,7 @@ Default.args = {
     ],
   },
   footer: {
-    bgColor: "#000",
+    // bgColor: "#000",
     contact: {
       header: {
         text: "Contáctenos",
@@ -153,7 +147,7 @@ Default.args = {
       },
       list: [
         {
-          svg: <HomeIcon />,
+          svg: "home",
           svgSize: "xs",
           classes: "mb-3",
           text: {
@@ -165,7 +159,7 @@ Default.args = {
           },
         },
         {
-          svg: <EnvelopeIcon />,
+          svg: "envelope",
           svgSize: "xs",
           classes: "mb-3",
           text: {
@@ -177,7 +171,7 @@ Default.args = {
           },
         },
         {
-          svg: <PhoneIcon />,
+          svg: "phone",
           svgSize: "xs",
           classes: "mb-3",
           text: {

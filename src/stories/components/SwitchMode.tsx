@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix } from "./../shared/styles.js";
 import classnames from "classnames";
 
 // Components
@@ -8,9 +8,6 @@ import SVG from "./../components/SVG";
 
 // Constants
 import Size from "./../../shared/enums/size.ts";
-
-// Assets
-import DarkModeIcon from "./../../images/svg/dark-mode.svg";
 
 // Styles
 const StyledSwitchMode = styled((props) => <button {...props} />)`
@@ -78,7 +75,7 @@ const SwitchMode: FC<SwitchModeProps> = ({
       setIsDark && setIsDark(isDark ? false : true);
     }}
   >
-    <SVG icon={<DarkModeIcon />} size={size ? size : Size.xs} />
+    <SVG icon="darkModeSwitch" size={size ? size : Size.xs} />
   </StyledSwitchMode>
 );
 

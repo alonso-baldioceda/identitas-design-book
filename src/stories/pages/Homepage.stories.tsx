@@ -9,41 +9,10 @@ import LinkType from "../../shared/enums/linkType";
 import Size from "./../../shared/enums/size";
 
 // Assets
-import LogoIcon from "./../../images/svg/logo-black.svg";
-import PhoneIcon from "./../../images/svg/call.svg";
-import FacebookIcon from "./../../images/svg/facebook.svg";
-import InstagramIcon from "./../../images/svg/instagram.svg";
-import HomeIcon from "./../../images/svg/home.svg";
-import EnvelopeIcon from "./../../images/svg/envelope.svg";
 import HeroImage from "./../../images/home-hero.jpg";
 import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
-import BedQueen from "./../../images/svg/bed-queen.svg";
-import WifiIcon from "./../../images/svg/wifi.svg";
-import WashingIcon from "./../../images/svg/washing.svg";
-import DryerIcon from "./../../images/svg/dryer.svg";
-import TowelsIcon from "./../../images/svg/towels.svg";
-import HotWaterIcon from "./../../images/svg/hot-water.svg";
-import ParkingIcon from "./../../images/svg/parking.svg";
-import FootprintIcon from "./../../images/svg/footprint.svg";
-import KitchenIcon from "./../../images/svg/kitchen.svg";
-import OvenIcon from "./../../images/svg/oven.svg";
-import SilverwareIcon from "./../../images/svg/silverware.svg";
-import RefrigeratorIcon from "./../../images/svg/refrigerator.svg";
-import StoveIcon from "./../../images/svg/stove.svg";
-import CoffeeMakerIcon from "./../../images/svg/coffee-maker.svg";
-import OilIcon from "./../../images/svg/oil.svg";
-import BarbecueUtensilsIcon from "./../../images/svg/barbecue-utensils.svg";
-import PillowIcon from "./../../images/svg/pillow.svg";
-import BedLinensIcon from "./../../images/svg/bed-linens.svg";
-import ShampooIcon from "./../../images/svg/shampoo.svg";
-import PatioIcon from "./../../images/svg/patio.svg";
-import GardenIcon from "./../../images/svg/garden.svg";
 import MapIcon from "./../../images/svg/navigator.svg";
-import CheckInIcon from "./../../images/svg/clock.svg";
-import CheckOutIcon from "./../../images/svg/clock.svg";
-import SmokeIcon from "./../../images/svg/no-smoking.svg";
-import PartyIcon from "./../../images/svg/party.svg";
 
 export default {
   title: "Pages/Homepage",
@@ -63,7 +32,7 @@ Default.args = {
     showLanguages: true,
     showCall: true,
     call: {
-      icon: <PhoneIcon />,
+      icon: "phone",
       classes: "mb-0",
       size: Size.xs,
       text: "call us",
@@ -144,14 +113,14 @@ Default.args = {
     showSwitchMode: true,
     socials: [
       {
-        icon: <FacebookIcon />,
+        icon: "facebook",
         classes: "mb-0 mx-2 mx-sm-3",
         size: Size.xs,
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal",
       },
       {
-        icon: <InstagramIcon />,
+        icon: "instagram",
         classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
         size: Size.xs,
         text: "Instagram",
@@ -161,7 +130,7 @@ Default.args = {
     brand: {
       fontWeight: 700,
       hideNameOnMobile: true,
-      svg: <LogoIcon />,
+      svg: "logo",
       name: "Vista Lago Arenal",
       to: "main",
       classes: "me-3",
@@ -288,7 +257,7 @@ Default.args = {
           backgroundColor: "transparent",
           list: [
             {
-              svg: <BedQueen />,
+              svg: "bedQueen",
               svgSize: Size.sm,
               text: {
                 heading: {
@@ -341,7 +310,7 @@ Default.args = {
           backgroundColor: "transparent",
           list: [
             {
-              svg: <BedQueen />,
+              svg: "bedQueen",
               svgSize: Size.sm,
               text: {
                 heading: {
@@ -394,7 +363,7 @@ Default.args = {
           backgroundColor: "transparent",
           list: [
             {
-              svg: <BedQueen />,
+              svg: "",
               svgSize: Size.sm,
               text: {
                 heading: {
@@ -509,7 +478,7 @@ Default.args = {
         float: true,
         list: [
           {
-            svg: <WifiIcon />,
+            svg: "wifi",
             svgSize: "sm",
             text: {
               heading: {
@@ -519,7 +488,7 @@ Default.args = {
             },
           },
           {
-            svg: <WashingIcon />,
+            svg: "washing",
             svgSize: "sm",
             text: {
               heading: {
@@ -529,7 +498,7 @@ Default.args = {
             },
           },
           {
-            svg: <DryerIcon />,
+            svg: "dryer",
             svgSize: "sm",
             text: {
               heading: {
@@ -539,7 +508,7 @@ Default.args = {
             },
           },
           {
-            svg: <TowelsIcon />,
+            svg: "towels",
             svgSize: "sm",
             text: {
               heading: {
@@ -554,7 +523,7 @@ Default.args = {
             },
           },
           {
-            svg: <HotWaterIcon />,
+            svg: "hotWater",
             svgSize: "sm",
             text: {
               heading: {
@@ -574,7 +543,7 @@ Default.args = {
         float: true,
         list: [
           {
-            svg: <ParkingIcon />,
+            svg: "parking",
             svgSize: "sm",
             text: {
               heading: {
@@ -584,7 +553,7 @@ Default.args = {
             },
           },
           {
-            svg: <FootprintIcon />,
+            svg: "footprint",
             svgSize: "sm",
             text: {
               heading: {
@@ -604,7 +573,7 @@ Default.args = {
         float: true,
         list: [
           {
-            svg: <KitchenIcon />,
+            svg: "kitchen",
             svgSize: "sm",
             text: {
               heading: {
@@ -619,7 +588,7 @@ Default.args = {
             },
           },
           {
-            svg: <OvenIcon />,
+            svg: "oven",
             svgSize: "sm",
             text: {
               heading: {
@@ -629,7 +598,7 @@ Default.args = {
             },
           },
           {
-            svg: <SilverwareIcon />,
+            svg: "silverware",
             svgSize: "sm",
             text: {
               heading: {
@@ -639,7 +608,7 @@ Default.args = {
             },
           },
           {
-            svg: <RefrigeratorIcon />,
+            svg: "refrigerator",
             svgSize: "sm",
             text: {
               heading: {
@@ -649,7 +618,7 @@ Default.args = {
             },
           },
           {
-            svg: <StoveIcon />,
+            svg: "stove",
             svgSize: "sm",
             text: {
               heading: {
@@ -659,7 +628,7 @@ Default.args = {
             },
           },
           {
-            svg: <CoffeeMakerIcon />,
+            svg: "coffeeMaker",
             svgSize: "sm",
             text: {
               heading: {
@@ -669,7 +638,7 @@ Default.args = {
             },
           },
           {
-            svg: <OilIcon />,
+            svg: "oil",
             svgSize: "sm",
             text: {
               heading: {
@@ -684,7 +653,7 @@ Default.args = {
             },
           },
           {
-            svg: <BarbecueUtensilsIcon />,
+            svg: "barbecueUtensils",
             svgSize: "sm",
             text: {
               heading: {
@@ -704,7 +673,7 @@ Default.args = {
         float: true,
         list: [
           {
-            svg: <PillowIcon />,
+            svg: "pillow",
             svgSize: "sm",
             text: {
               heading: {
@@ -714,7 +683,7 @@ Default.args = {
             },
           },
           {
-            svg: <BedLinensIcon />,
+            svg: "bedLinens",
             svgSize: "sm",
             text: {
               heading: {
@@ -724,7 +693,7 @@ Default.args = {
             },
           },
           {
-            svg: <ShampooIcon />,
+            svg: "shampoo",
             svgSize: "sm",
             text: {
               heading: {
@@ -744,7 +713,7 @@ Default.args = {
         float: true,
         list: [
           {
-            svg: <PatioIcon />,
+            svg: "patio",
             svgSize: "sm",
             text: {
               heading: {
@@ -754,7 +723,7 @@ Default.args = {
             },
           },
           {
-            svg: <GardenIcon />,
+            svg: "garden",
             svgSize: "sm",
             text: {
               heading: {
@@ -803,7 +772,7 @@ Default.args = {
     float: true,
     list: [
       {
-        svg: <CheckInIcon />,
+        svg: "clock",
         svgSize: "sm",
         text: {
           heading: {
@@ -813,7 +782,7 @@ Default.args = {
         },
       },
       {
-        svg: <CheckOutIcon />,
+        svg: "clock",
         svgSize: "sm",
         text: {
           heading: {
@@ -823,7 +792,7 @@ Default.args = {
         },
       },
       {
-        svg: <SmokeIcon />,
+        svg: "smoke",
         svgSize: "sm",
         text: {
           heading: {
@@ -833,7 +802,7 @@ Default.args = {
         },
       },
       {
-        svg: <PartyIcon />,
+        svg: "party",
         svgSize: "sm",
         text: {
           heading: {
@@ -845,7 +814,6 @@ Default.args = {
     ],
   },
   footerProps: {
-    bgColor: "#000",
     contact: {
       header: {
         text: "Contáctenos",
@@ -854,7 +822,7 @@ Default.args = {
       },
       list: [
         {
-          svg: <HomeIcon />,
+          svg: "home",
           svgSize: "xs",
           classes: "mb-3",
           text: {
@@ -866,7 +834,7 @@ Default.args = {
           },
         },
         {
-          svg: <EnvelopeIcon />,
+          svg: "envelope",
           svgSize: "xs",
           classes: "mb-3",
           text: {
@@ -878,7 +846,7 @@ Default.args = {
           },
         },
         {
-          svg: <PhoneIcon />,
+          svg: "phone",
           svgSize: "xs",
           classes: "mb-3",
           text: {

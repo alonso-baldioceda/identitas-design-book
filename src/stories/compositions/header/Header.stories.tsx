@@ -12,12 +12,6 @@ import { COLOR_CONTROL } from "./../../../shared/constants/";
 import Size from "./../../../shared/enums/size";
 import LinkType from "./../../../shared/enums/linkType";
 
-// Assets
-import PhoneIcon from "./../../../images/svg/call.svg";
-import FacebookIcon from "./../../../images/svg/facebook.svg";
-import InstagramIcon from "./../../../images/svg/instagram.svg";
-import LogoIcon from "./../../../images/svg/logo-black.svg";
-
 // Styles
 const HeaderWrapper = styled.div`
   > div {
@@ -90,7 +84,7 @@ Default.args = {
   brand: {
     fontWeight: 700,
     hideNameOnMobile: true,
-    svg: <LogoIcon />,
+    svg: "logo",
     name: "Company name",
     to: "main",
     classes: "me-3",
@@ -110,7 +104,7 @@ Default.args = {
   ],
   showCall: true,
   call: {
-    icon: <PhoneIcon />,
+    icon: "phone",
     classes: "mb-0",
     size: Size.xs,
     text: "call us",
@@ -191,14 +185,14 @@ Default.args = {
   showSwitchMode: true,
   socials: [
     {
-      icon: <FacebookIcon />,
+      icon: "facebook",
       classes: "mb-0 mx-2 mx-sm-3",
       size: Size.xs,
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
     },
     {
-      icon: <InstagramIcon />,
+      icon: "instagram",
       classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
       size: Size.xs,
       text: "Instagram",

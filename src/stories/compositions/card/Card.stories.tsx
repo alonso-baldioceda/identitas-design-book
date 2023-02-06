@@ -47,7 +47,7 @@ export default {
           detail: `{
             backgroundColor: string;
             list: {
-              svg: React.ReactNode;
+              svg: string;
               svgSize: Size;
               text: {
                 heading: {
@@ -104,7 +104,7 @@ Default.args = {
     backgroundColor: "transparent",
     list: [
       {
-        svg: <BedQueen />,
+        svg: "bedQueen",
         svgSize: Size.sm,
         text: {
           heading: {

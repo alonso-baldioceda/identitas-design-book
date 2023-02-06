@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { prefix } from "./../shared/styles.js";
 
@@ -26,7 +26,7 @@ const IconWrapper = styled((props) => <span {...props} />)`
 
 // Types
 export interface ListGroupItemProps {
-  svg?: ReactNode;
+  svg?: string;
   svgSize?: string;
   text?: {
     heading?: TextProps;
@@ -34,20 +34,22 @@ export interface ListGroupItemProps {
   };
 }
 
-const ListGroupItem: FC<ListGroupItemProps> = ({ svgSize, svg, text }) => (
-  <ListGroupItemStyled className={`${prefix}-list-group-item`}>
-    {svg && (
-      <IconWrapper>
-        <SVG icon={svg} size={svgSize ? svgSize : Size.sm} />
-      </IconWrapper>
-    )}
-    {text && (
-      <div className="text">
-        {text?.heading && <Text {...text.heading} />}
-        {text?.bottom && <Text {...text.bottom} />}
-      </div>
-    )}
-  </ListGroupItemStyled>
-);
+const ListGroupItem: FC<ListGroupItemProps> = ({ svgSize, svg, text }) => {
+  return (
+    <ListGroupItemStyled className={`${prefix}-list-group-item`}>
+      {svg && (
+        <IconWrapper>
+          <SVG icon={svg} size={svgSize ? svgSize : Size.sm} />
+        </IconWrapper>
+      )}
+      {text && (
+        <div className="text">
+          {text?.heading && <Text {...text.heading} />}
+          {text?.bottom && <Text {...text.bottom} />}
+        </div>
+      )}
+    </ListGroupItemStyled>
+  );
+};
 
 export default ListGroupItem;
