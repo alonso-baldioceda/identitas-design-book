@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 import { prefix, color } from "./../../shared/styles.js";
 
@@ -35,10 +35,9 @@ export interface NavProps {
 }
 
 const Nav: FC<NavProps> = ({ navigation }) => {
-  // TODO: include useMemo
-  return (
-    <StyledNav className={`${prefix}-nav`}>
-      {navigation.map((navItem: any, index: number) => (
+  const navigationLinks = useMemo(
+    () =>
+      navigation.map((navItem: any, index: number) => (
         <li key={index}>
           {navItem.type && navItem.type === LinkType.Link ? (
             <LinkGatsby
@@ -54,9 +53,11 @@ const Nav: FC<NavProps> = ({ navigation }) => {
             />
           )}
         </li>
-      ))}
-    </StyledNav>
+      )),
+    [navigation]
   );
+
+  return <StyledNav className={`${prefix}-nav`}>{navigationLinks}</StyledNav>;
 };
 
 export default Nav;

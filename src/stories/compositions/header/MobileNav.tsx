@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 import { prefix } from "./../../shared/styles.js";
 
@@ -39,26 +39,34 @@ interface MobileNavProps {
   navigation: Link[];
 }
 
-const MobileNav: FC<MobileNavProps> = ({ navigation }) => (
-  <StyledMobileNav className={`${prefix}-mobile-nav`}>
-    {navigation.map((navItem: Link, index: number) => (
-      <li key={index}>
-        {navItem.type && navItem.type === LinkType.Link ? (
-          <LinkGatsby
-            text={navItem.text}
-            to={navItem.anchor}
-            classes={navItem.classes ? navItem.classes : ""}
-          />
-        ) : (
-          <LinkScroll
-            text={navItem.text}
-            to={navItem.anchor}
-            classes={navItem.classes ? navItem.classes : ""}
-          />
-        )}
-      </li>
-    ))}
-  </StyledMobileNav>
-);
+const MobileNav: FC<MobileNavProps> = ({ navigation }) => {
+  const navigationLinks = useMemo(
+    () =>
+      navigation.map((navItem: Link, index: number) => (
+        <li key={index}>
+          {navItem.type && navItem.type === LinkType.Link ? (
+            <LinkGatsby
+              text={navItem.text}
+              to={navItem.anchor}
+              classes={navItem.classes ? navItem.classes : ""}
+            />
+          ) : (
+            <LinkScroll
+              text={navItem.text}
+              to={navItem.anchor}
+              classes={navItem.classes ? navItem.classes : ""}
+            />
+          )}
+        </li>
+      )),
+    [navigation]
+  );
+
+  return (
+    <StyledMobileNav className={`${prefix}-mobile-nav`}>
+      {navigationLinks}
+    </StyledMobileNav>
+  );
+};
 
 export default MobileNav;

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useMemo } from "react";
 import styled from "styled-components";
 import { prefix } from "./../../shared/styles.js";
 
@@ -46,31 +46,38 @@ export interface DesktopNavProps {
   navigation: Link[];
 }
 
-// TODO: analize including useMemo
-const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => (
-  <StyledDesktopNav className={`nav ${prefix}-nav`}>
-    {navigation.map((navItem: Link, index: number) => (
-      <li key={`nav-${index}`}>
-        {navItem.type && navItem.type === LinkType.Link ? (
-          <LinkGatsby
-            text={navItem.text}
-            to={`/${navItem.anchor}`}
-            classes={navItem.classes ? navItem.classes : ""}
-          />
-        ) : (
-          <LinkScroll
-            text={navItem.text}
-            to={navItem.anchor}
-            classes={navItem.classes ? navItem.classes : ""}
-            offset={navItem.offset ? navItem.offset : 0}
-            smooth={navItem.smooth ? navItem.smooth : true}
-            spy={navItem.spy ? navItem.spy : true}
-            duration={navItem.duration ? navItem.duration : 500}
-          />
-        )}
-      </li>
-    ))}
-  </StyledDesktopNav>
-);
+const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => {
+  const navigationLinks = useMemo(
+    () =>
+      navigation.map((navItem: Link, index: number) => (
+        <li key={`nav-${index}`}>
+          {navItem.type && navItem.type === LinkType.Link ? (
+            <LinkGatsby
+              text={navItem.text}
+              to={`/${navItem.anchor}`}
+              classes={navItem.classes ? navItem.classes : ""}
+            />
+          ) : (
+            <LinkScroll
+              text={navItem.text}
+              to={navItem.anchor}
+              classes={navItem.classes ? navItem.classes : ""}
+              offset={navItem.offset ? navItem.offset : 0}
+              smooth={navItem.smooth ? navItem.smooth : true}
+              spy={navItem.spy ? navItem.spy : true}
+              duration={navItem.duration ? navItem.duration : 500}
+            />
+          )}
+        </li>
+      )),
+    [navigation]
+  );
+
+  return (
+    <StyledDesktopNav className={`nav ${prefix}-nav`}>
+      {navigationLinks}
+    </StyledDesktopNav>
+  );
+};
 
 export default DesktopNav;
