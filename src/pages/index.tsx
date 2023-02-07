@@ -38,7 +38,6 @@ const data = {
       url: "tel:+50683274040",
     },
     mobile: {
-      bgColor: "dark",
       classes: "p-4",
       hideFrom: "xl",
       isOpen: true,
@@ -103,7 +102,11 @@ const data = {
         },
       ],
       startingAt: 82,
-      translate: "Idiomas",
+      mobileLanguagesLabel: {
+        classes: "mb-3",
+        text: "Idiomas:",
+        variant: "label",
+      },
     },
     separator: {
       classes: "mx-3",

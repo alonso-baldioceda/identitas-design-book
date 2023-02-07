@@ -23,34 +23,62 @@ export default {
   title: "Compositions/Header",
   component: Header,
   argTypes: {
-    bgColor: {
-      name: "Background Color",
-      description: "Background color",
-      control: COLOR_CONTROL,
-    },
     brand: {
       name: "Brand",
       description: "Logo and company name as a single piece",
-    },
-    languages: {
-      description: "Languages list",
-      name: "Languages",
-    },
-    navigation: {
-      description: "Navigation links",
-      name: "Navigation",
     },
     call: {
       description: "Call feature",
       name: "Call",
     },
-    showCall: {
-      name: "Show Call?",
-      description: "Show call feature",
+    fixed: {
+      description: "Is the header fixed?",
+      name: "Fixed?",
+    },
+    hideLanguagesFrom: {
+      name: "Hide Languages From",
+      control: "select",
+      options: ["md", "lg", "xl"],
+    },
+    languages: {
+      description: "Languages list",
+      name: "Languages",
+    },
+    minHeight: {
+      name: "Min Height",
+      control: "number",
     },
     mobile: {
       name: "Mobile",
       description: "Navigation and languages mobile's menu",
+      control: "object",
+      table: {
+        type: {
+          summary: "MobileProps",
+          detail: `{
+                    classes: string;
+                    hideFrom: string;
+                    isOpen: boolean;
+                    languages: Language[];
+                    mobileLanguagesLabel: TextProps;
+                    navigation: Link[];
+                    separator: HRProps;
+                    startingAt: number;
+                  }`,
+        },
+      },
+    },
+    navigation: {
+      description: "Navigation links",
+      name: "Navigation",
+    },
+    separator: {
+      description: "Separator between links",
+      name: "Separator",
+    },
+    showCall: {
+      name: "Show Call?",
+      description: "Show call feature",
     },
     showLanguages: {
       name: "Show Languages?",
@@ -60,14 +88,13 @@ export default {
       name: "Show Socials?",
       description: "Show socials list",
     },
+    showSwitchMode: {
+      name: "Show Switch Mode?",
+      description: "Show switch mode button",
+    },
     socials: {
       name: "Socials",
       description: "Facebook, Instagram, etc",
-    },
-    hideLanguagesFrom: {
-      name: "Hide Languages From",
-      control: "select",
-      options: ["md", "lg", "xl"],
     },
   },
 } as ComponentMeta<typeof Header>;
@@ -80,7 +107,6 @@ const Template: ComponentStory<typeof Header> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  fixed: true,
   brand: {
     fontWeight: 700,
     hideNameOnMobile: true,
@@ -89,9 +115,15 @@ Default.args = {
     to: "main",
     classes: "me-3",
   },
-  minHeight: 84,
+  call: {
+    icon: "phone",
+    classes: "mb-0",
+    size: Size.xs,
+    text: "call us",
+    url: "tel:+50683274040",
+  },
+  fixed: true,
   hideLanguagesFrom: "xl",
-  showLanguages: true,
   languages: [
     {
       name: "es",
@@ -102,16 +134,8 @@ Default.args = {
       classes: "text-uppercase me-3",
     },
   ],
-  showCall: true,
-  call: {
-    icon: "phone",
-    classes: "mb-0",
-    size: Size.xs,
-    text: "call us",
-    url: "tel:+50683274040",
-  },
+  minHeight: 84,
   mobile: {
-    bgColor: "dark",
     classes: "p-4",
     hideFrom: "xl",
     isOpen: true,
@@ -176,29 +200,12 @@ Default.args = {
       },
     ],
     startingAt: 82,
-    translate: "Idiomas",
-  },
-  separator: {
-    classes: "mx-3",
-  },
-  showSocials: true,
-  showSwitchMode: true,
-  socials: [
-    {
-      icon: "facebook",
-      classes: "mb-0 mx-2 mx-sm-3",
-      size: Size.xs,
-      text: "Facebook",
-      url: "https://www.facebook.com/vistalagoarenal",
+    mobileLanguagesLabel: {
+      classes: "mb-3",
+      text: "Idiomas:",
+      variant: "label",
     },
-    {
-      icon: "instagram",
-      classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
-      size: Size.xs,
-      text: "Instagram",
-      url: "https://www.instagram.com/vistalagoarenal/",
-    },
-  ],
+  },
   navigation: [
     {
       type: LinkType.Anchor,
@@ -247,6 +254,29 @@ Default.args = {
       anchor: "info",
       text: "Info",
       classes: "me-3 text-capitalize",
+    },
+  ],
+  separator: {
+    classes: "mx-3",
+  },
+  showCall: true,
+  showLanguages: true,
+  showSocials: true,
+  showSwitchMode: true,
+  socials: [
+    {
+      icon: "facebook",
+      classes: "mb-0 mx-2 mx-sm-3",
+      size: Size.xs,
+      text: "Facebook",
+      url: "https://www.facebook.com/vistalagoarenal",
+    },
+    {
+      icon: "instagram",
+      classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
+      size: Size.xs,
+      text: "Instagram",
+      url: "https://www.instagram.com/vistalagoarenal/",
     },
   ],
 };

@@ -235,6 +235,64 @@ export const bodyStyles = css`
     }
   }
 
+  /* Header */
+
+  header {
+    &.${prefix}-header {
+      .${prefix}-nav {
+        .${prefix}-link-scroll, .${prefix}-link-gatsby {
+          border-bottom: 2px solid ${color.transparent};
+
+          &.active,
+          &:focus,
+          &:hover {
+            border-bottom: 2px solid ${color.secondary};
+          }
+        }
+      }
+    }
+  }
+
+  /* Mobile navigation */
+
+  .${prefix}-mobile {
+    background-color: rgba(33, 37, 41, 0.75);
+
+    .${prefix}-mobile-languages {
+      label {
+        color: ${color.white};
+      }
+
+      a {
+        color: ${color.white};
+
+        &:hover,
+        &.active {
+          color: ${color.secondary};
+        }
+
+        &:visited {
+          color: ${color.white};
+        }
+      }
+    }
+
+    .${prefix}-mobile-nav {
+      a {
+        color: ${color.white};
+
+        &:hover,
+        &.active {
+          color: ${color.secondary};
+        }
+
+        &:visited {
+          color: ${color.white};
+        }
+      }
+    }
+  }
+
   /* Footer */
 
   footer {

@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Components
@@ -42,38 +42,35 @@ const StyledNavWrapper = styled.div`
 `;
 
 // Interfaces
-
 interface Language {
   name: string;
   classes?: string;
 }
 
 export interface HeaderProps {
-  // bgColor?: string;
   brand: BrandProps;
   call?: LinkIconProps;
-  hideLanguagesFrom?: string;
   fixed?: boolean;
+  hideLanguagesFrom?: string;
   languages: Language[];
   minHeight?: number;
   mobile?: MobileProps;
+  navigation: Link[];
   separator?: SeparatorProps;
   showCall?: boolean;
   showLanguages?: boolean;
   showSocials?: boolean;
   showSwitchMode?: boolean;
   socials?: LinkIconProps[];
-  navigation: Link[];
 }
 
 const Header: FC<HeaderProps> = ({
-  // bgColor,
   brand,
   call,
-  minHeight,
-  hideLanguagesFrom,
   fixed,
+  hideLanguagesFrom,
   languages,
+  minHeight,
   mobile,
   navigation,
   separator,
@@ -92,7 +89,6 @@ const Header: FC<HeaderProps> = ({
       <StyledHeader
         className={classnames({ fixed: fixed }, `${prefix}-header`)}
         style={{ minHeight: minHeight ? minHeight : 84 }}
-        // bgcolor={bgColor ? bgColor : color.white}
         fixed={fixed ? fixed.toString() : null}
       >
         <div className="container-fluid">

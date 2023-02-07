@@ -39,7 +39,6 @@ Default.args = {
       url: "tel:+50683274040",
     },
     mobile: {
-      bgColor: "dark",
       classes: "p-4",
       hideFrom: "xl",
       isOpen: true,
@@ -104,7 +103,11 @@ Default.args = {
         },
       ],
       startingAt: 82,
-      translate: "Idiomas",
+      mobileLanguagesLabel: {
+        classes: "mb-3",
+        text: "Idiomas:",
+        variant: "label",
+      },
     },
     separator: {
       classes: "mx-3",
@@ -214,7 +217,7 @@ Default.args = {
       src: HeroImage,
       mask: true,
       panel: {
-        classes: "p-2 p-lg-3 m-0 col-4 col-lg-7",
+        classes: "p-2 p-lg-3 m-0 col-12 col-lg-7",
         position: "bottom-start",
         text: {
           text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",

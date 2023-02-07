@@ -6,6 +6,8 @@ import { prefix } from "./../../shared/styles.js";
 // Components
 import MobileNav from "./MobileNav";
 import MobileLaguages from "./MobileLanguages";
+import { TextProps } from "../../components/Text";
+import HR, { HRProps } from "../../components/HR";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
@@ -16,10 +18,10 @@ const StyledMobile = styled.div`
   bottom: 0;
   display: none;
   left: 0;
+  opacity: 0;
   position: fixed;
   right: 0;
-  opacity: 0;
-  transition: opacity 1.125s ease-in-out !important;
+  transition: opacity 1.125s ease-in-out;
   z-index: 99999;
 
   &.open {
@@ -29,38 +31,36 @@ const StyledMobile = styled.div`
 `;
 
 // Types
-
 interface Language {
   name: string;
   classes?: string;
 }
 
 export interface MobileProps {
-  bgColor?: string;
   classes?: string;
   hideFrom?: string;
   isOpen: boolean;
   languages?: Language[];
+  mobileLanguagesLabel?: TextProps;
   navigation?: Link[];
-  separator?: string;
+  separator?: HRProps;
   startingAt?: number;
-  translate?: string;
 }
 
 const Mobile: FC<MobileProps> = ({
-  bgColor,
   classes,
   hideFrom,
   isOpen,
   languages,
+  mobileLanguagesLabel,
   navigation,
   separator,
   startingAt,
-  translate,
 }) => (
   <StyledMobile
     className={classnames(
-      `d-${hideFrom}-none bg-${bgColor}`,
+      { [`d-${hideFrom}-none`]: hideFrom },
+      { "d-md-frrom": !hideFrom },
       { [`${classes}`]: classes },
       { open: isOpen },
       `${prefix}-mobile`
@@ -68,11 +68,10 @@ const Mobile: FC<MobileProps> = ({
     style={{ top: startingAt ? startingAt : 0 }}
   >
     <MobileNav navigation={navigation ? navigation : []} />
-    {/* TODO: replace this for component HR */}
-    <hr className={`${separator ? separator : ""}`} />
+    <HR {...separator} />
     <MobileLaguages
       languages={languages ? languages : [{ name: "es", classes: "" }]}
-      translate={translate ? translate : ""}
+      label={mobileLanguagesLabel}
     />
   </StyledMobile>
 );

@@ -17,6 +17,22 @@ export default {
       control: {
         type: "object",
       },
+      table: {
+        type: {
+          summary: "Link[]",
+          detail: `{
+                    anchor: string;
+                    classes: string;
+                    duration: number;
+                    offset: number;
+                    smooth: boolean;
+                    spy: true;
+                    text: string;
+                    to: string;
+                    type: LinkType;
+                  }`,
+        },
+      },
     },
   },
 } as ComponentMeta<typeof DesktopNavComponent>;

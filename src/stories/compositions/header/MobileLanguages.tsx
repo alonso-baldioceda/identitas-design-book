@@ -1,23 +1,22 @@
-import React, { useState, useContext, FC } from "react";
+import React, { useState, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
-// Contexts
-// import GlobalContext from "./../contexts/globalContext";
+// Components
+import Text, { TextProps } from "../../components/Text";
 
 // Styles
-const Label = styled.p`
-  border-bottom: 2px solid ${color.transparent};
-  color: ${color.white};
-  font-size: 22px;
-  font-weight: 500;
-  padding: 0;
-  text-transform: capitalize;
+const MobileLanguagesStyled = styled.div`
+  label {
+    font-size: 22px;
+    font-weight: 500;
+    padding: 0;
+    text-transform: capitalize;
+  }
 `;
 
 const LinkTranslate = styled.a`
-  color: ${color.white};
   display: inline-block;
   font-size: 22px;
   font-weight: 500;
@@ -27,20 +26,11 @@ const LinkTranslate = styled.a`
   transition: all 0.15s ease;
 
   &:hover {
-    color: ${color.white};
     text-decoration: none;
-  }
-
-  &:visited {
-    color: ${color.white} !important;
   }
 
   &:focus {
     outline: none;
-  }
-
-  &.active {
-    color: ${color.white} !important;
   }
 `;
 
@@ -52,15 +42,10 @@ interface Language {
 
 export interface MobileLanguagesProps {
   languages: Language[];
-  translate?: string;
-  translateMy?: number;
+  label?: TextProps;
 }
 
-const MobileLanguages: FC<MobileLanguagesProps> = ({
-  languages,
-  translate,
-  translateMy,
-}) => {
+const MobileLanguages: FC<MobileLanguagesProps> = ({ languages, label }) => {
   const { i18n } = useTranslation();
   //   const context = useContext(GlobalContext);
   //   const { language, setLanguage, open } = context;
@@ -78,30 +63,32 @@ const MobileLanguages: FC<MobileLanguagesProps> = ({
   };
 
   return (
-    <div>
-      <Label className={`my-${translateMy}`}>{translate}:</Label>
-      <div className={`${prefix}-languages`}>
-        {languages.map((language: Language, index: number) => (
-          <div key={index}>
-            <LinkTranslate
-              onClick={() => {
-                changeLocale(language.name);
-                //   open !== undefined &&
-                //     setLanguage !== undefined &&
-                //     setLanguage(index);
-              }}
-              className={language.classes ? language.classes : ""}
-              // TODO: include active
-              // className={classnames("text-capitalize", {
-              // active: language === index,
-              // })}
-            >
-              {language.name}
-            </LinkTranslate>
-          </div>
-        ))}
-      </div>
-    </div>
+    <MobileLanguagesStyled className={`${prefix}-mobile-languages`}>
+      <Text
+        text={label?.text ? label.text : ""}
+        classes={label?.classes ? label.classes : ""}
+        variant={label?.variant ? label.variant : "label"}
+      />
+      {languages.map((language: Language, index: number) => (
+        <div key={index}>
+          <LinkTranslate
+            onClick={() => {
+              changeLocale(language.name);
+              //   open !== undefined &&
+              //     setLanguage !== undefined &&
+              //     setLanguage(index);
+            }}
+            className={language.classes ? language.classes : ""}
+            // TODO: include active
+            // className={classnames("text-capitalize", {
+            // active: language === index,
+            // })}
+          >
+            {language.name}
+          </LinkTranslate>
+        </div>
+      ))}
+    </MobileLanguagesStyled>
   );
 };
 

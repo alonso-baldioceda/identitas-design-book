@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, color as colors } from "./../shared/styles.js";
+import { prefix } from "./../shared/styles.js";
 
 // Styles
 const StyledHR = styled((props) => <hr {...props} />)`
@@ -20,22 +20,20 @@ const StyledHR = styled((props) => <hr {...props} />)`
   ${(props) =>
     props.opacity &&
     `
-      opacity: ${props.opacity} !important;
+      opacity: ${props.opacity};
     `}
 `;
 
 // Types
-interface HRProps {
+export interface HRProps {
   classes?: string;
-  color?: string;
   height?: number;
   opacity?: number;
 }
 
-const HR: FC<HRProps> = ({ classes, color, height, opacity }) => (
+const HR: FC<HRProps> = ({ classes, height, opacity }) => (
   <StyledHR
     className={classnames({ [`${classes}`]: classes }, `${prefix}-hr`)}
-    color={color ? color : colors.white}
     height={height ? height : 1}
     opacity={opacity ? opacity : 0}
   />

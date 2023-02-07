@@ -8,6 +8,7 @@ interface Link {
   smooth?: boolean;
   spy?: true;
   text: string;
+  to?: string;
   type: LinkType;
 }
 
