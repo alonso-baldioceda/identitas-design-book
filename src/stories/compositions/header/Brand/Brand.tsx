@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix } from "./../../shared/styles";
+import { prefix } from "./../../../shared/styles";
 
 // Components
-import { TextProps } from "./../../components/Text";
-import LinkToPage from "./Brand/LinkToPage";
-import LinkToScroll from "./Brand/LinkToScroll";
-import LinkContent from "./Brand/LinkContent";
-import { SVGProps } from "./../../components/SVG";
+import { TextProps } from "./../../../components/Text";
+import LinkToPage from "./LinkToPage";
+import LinkToScroll from "./LinkToScroll";
+import LinkContent from "./LinkContent";
+import { SVGProps } from "./../../../components/SVG";
 
 // Styles
 const StyledBrand = styled((props) => <div {...props} />)`
