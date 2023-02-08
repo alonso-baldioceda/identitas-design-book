@@ -13,13 +13,6 @@ import LinkType from "./../../../shared/enums/linkType";
 export default {
   title: "Compositions/Footer",
   component: Footer,
-  argTypes: {
-    bgColor: {
-      name: "Background Color",
-      description: "Background color",
-      control: COLOR_CONTROL,
-    },
-  },
 } as ComponentMeta<typeof Footer>;
 
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
@@ -71,6 +64,9 @@ Default.args = {
         },
       },
     ],
+  },
+  location: {
+    pathname: "/",
   },
   navigation: {
     header: {

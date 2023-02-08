@@ -49,7 +49,7 @@ const StyledSVG = styled((props) => <div {...props} />)`
 `;
 
 // Types
-interface SVGProps {
+export interface SVGProps {
   classes?: string;
   icon: any;
   size?: string;

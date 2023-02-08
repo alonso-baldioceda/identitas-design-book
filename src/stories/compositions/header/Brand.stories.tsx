@@ -8,6 +8,10 @@ export default {
   title: "Compositions/Brand",
   component: Brand,
   argTypes: {
+    classes: {
+      name: "Classes",
+      control: "text",
+    },
     fontWeight: {
       control: "select",
       name: "Font Weight",
@@ -17,9 +21,18 @@ export default {
       name: "Hide Name On Mobile?",
       description: "Hide name on mobile devices",
     },
-    classes: {
-      name: "Classes",
-      control: "text",
+    location: {
+      name: "Location",
+      description: "Location of the page",
+      control: "object",
+      table: {
+        type: {
+          summary: "Location",
+          detail: `{
+            pathname: string;
+          }`,
+        },
+      },
     },
     size: {
       control: "select",
@@ -27,16 +40,12 @@ export default {
       // TODO: Add size enum
       options: ["sm", "md", "lg"],
     },
-    name: {
-      name: "Name",
-      description: "Company name",
-    },
     svg: {
       name: "SVG",
       description: "Logo",
-      // TODO: Add control to select SVG
-      // control: "text",
+      control: "text",
     },
+    text: {},
     to: {
       name: "To",
       description: "Link to",
@@ -49,10 +58,19 @@ const Template: ComponentStory<typeof Brand> = (args) => <Brand {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  classes: "me-3",
   fontWeight: 700,
   hideNameOnMobile: true,
-  svg: "logo",
-  name: "Company name",
+  location: {
+    pathname: "/",
+  },
+  svg: {
+    icon: "bedQueen",
+    size: "md",
+  },
+  text: {
+    text: "My Company",
+    variant: "span",
+  },
   to: "main",
-  classes: "me-3",
 };

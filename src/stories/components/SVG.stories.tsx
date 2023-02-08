@@ -7,9 +7,6 @@ import SVGComponent from "./SVG";
 // Constants
 import Size from "../../shared/enums/size.ts";
 
-// Assets
-import BedQueen from "./../../images/svg/bed-queen.svg";
-
 export default {
   title: "Components",
   component: SVGComponent,
@@ -33,6 +30,6 @@ const Template: ComponentStory<typeof SVGComponent> = (args) => (
 
 export const SVG = Template.bind({});
 SVG.args = {
-  icon: <BedQueen />,
+  icon: "bedQueen",
   size: Size.md,
 };

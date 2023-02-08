@@ -5,9 +5,6 @@ import styled from "styled-components";
 // Components
 import Header from "./Header";
 
-// Constants
-import { COLOR_CONTROL } from "./../../../shared/constants/";
-
 // Types
 import Size from "./../../../shared/enums/size";
 import LinkType from "./../../../shared/enums/linkType";
@@ -43,6 +40,19 @@ export default {
     languages: {
       description: "Languages list",
       name: "Languages",
+    },
+    location: {
+      name: "Location",
+      description: "Location of the page",
+      control: "object",
+      table: {
+        type: {
+          summary: "Location",
+          detail: `{
+            pathname: string;
+          }`,
+        },
+      },
     },
     minHeight: {
       name: "Min Height",
@@ -108,12 +118,18 @@ const Template: ComponentStory<typeof Header> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   brand: {
+    classes: "me-3",
     fontWeight: 700,
     hideNameOnMobile: true,
-    svg: "logo",
-    name: "Company name",
+    svg: {
+      icon: "logo",
+      size: Size.sm,
+    },
+    text: {
+      text: "Company name",
+      variant: "span",
+    },
     to: "main",
-    classes: "me-3",
   },
   call: {
     icon: "phone",
@@ -134,6 +150,9 @@ Default.args = {
       classes: "text-uppercase me-3",
     },
   ],
+  location: {
+    pathname: "/",
+  },
   minHeight: 84,
   mobile: {
     classes: "p-4",

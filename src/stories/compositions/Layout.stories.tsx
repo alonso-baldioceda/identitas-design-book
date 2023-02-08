@@ -9,6 +9,7 @@ import * as Header from "./header/Header.stories";
 
 // Types
 import LinkType from "./../../shared/enums/linkType";
+import Size from "./../../shared/enums/size";
 
 export default {
   title: "Compositions/Layout",
@@ -66,79 +67,7 @@ const Template: ComponentStory<typeof Layout> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  header: {
-    ...Header.Default.args,
-    brand: {
-      fontWeight: 700,
-      hideNameOnMobile: true,
-      svg: "logo",
-      name: "Vista Lago Arenal",
-      to: "main",
-      classes: "me-3",
-    },
-    languages: [
-      {
-        name: "es",
-        classes: "text-uppercase me-3",
-      },
-      {
-        name: "en",
-        classes: "text-uppercase me-3",
-      },
-    ],
-    navigation: [
-      {
-        type: LinkType.Anchor,
-        anchor: "top",
-        text: "Inicio",
-        offset: -104,
-        classes: "me-3 text-capitalize",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "units",
-        text: "Cabinas",
-        offset: -80,
-        classes: "me-3 text-capitalize",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "common-spaces",
-        text: "Espacios comúnes",
-        offset: -80,
-        classes: "me-3 text-capitalize",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "services",
-        text: "Servicios",
-        offset: -80,
-        classes: "me-3 text-capitalize",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "drive",
-        text: "Cómo llegar?",
-        offset: -80,
-        classes: "me-3 text-capitalize",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "contact",
-        text: "Contáctenos",
-        offset: -80,
-        classes: "me-3 text-capitalize",
-      },
-      {
-        type: LinkType.Link,
-        anchor: "info",
-        text: "Info",
-        classes: "me-3 text-capitalize",
-      },
-    ],
-  },
   footer: {
-    // bgColor: "#000",
     contact: {
       header: {
         text: "Contáctenos",
@@ -241,5 +170,91 @@ Default.args = {
         },
       ],
     },
+  },
+  header: {
+    ...Header.Default.args,
+    brand: {
+      classes: "me-3",
+      fontWeight: 700,
+      hideNameOnMobile: true,
+      svg: {
+        icon: "logo",
+        size: Size.sm,
+      },
+      text: {
+        text: "Company name",
+        variant: "span",
+      },
+      to: "main",
+    },
+    languages: [
+      {
+        name: "es",
+        classes: "text-uppercase me-3",
+      },
+      {
+        name: "en",
+        classes: "text-uppercase me-3",
+      },
+    ],
+    location: {
+      pathname: "/",
+    },
+    navigation: [
+      {
+        type: LinkType.Anchor,
+        anchor: "top",
+        text: "Inicio",
+        offset: -104,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "units",
+        text: "Cabinas",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "common-spaces",
+        text: "Espacios comúnes",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "services",
+        text: "Servicios",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "drive",
+        text: "Cómo llegar?",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Anchor,
+        anchor: "contact",
+        text: "Contáctenos",
+        offset: -80,
+        classes: "me-3 text-capitalize",
+      },
+      {
+        type: LinkType.Link,
+        anchor: "info",
+        text: "Info",
+        classes: "me-3 text-capitalize",
+      },
+    ],
+  },
+  location: {
+    pathname: "/",
+    search: "",
+    hash: "",
+    state: null,
   },
 };

@@ -15,14 +15,17 @@ interface LayoutProps {
   children: ReactNode | ReactNode[];
   footer: FooterProps;
   header: HeaderProps;
+  location: any;
 }
 
-const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
+const Layout: FC<LayoutProps> = ({ children, footer, header, location }) => {
   const [isDark, setIsDark] = useState<boolean>(false);
   const [active, setActive] = useState<number>(-1);
   const [language, setLanguage] = useState(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  // TODO: Add a useEffect to set the active state based on the location prop
+  // TODO: Move this to a hook
   useEffect(() => {
     if (isDark) {
       document.body.className += " theme-dark";
@@ -49,11 +52,11 @@ const Layout: FC<LayoutProps> = ({ header, children, footer }) => {
     >
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
         <GlobalStyle theme={isDark} />
-        <Header {...header} />
+        <Header {...header} location={location} />
         <main className="main" id="main">
           {children}
         </main>
-        <Footer {...footer} />
+        <Footer {...footer} location={location} />
       </ThemeProvider>
     </LayoutContext.Provider>
   );

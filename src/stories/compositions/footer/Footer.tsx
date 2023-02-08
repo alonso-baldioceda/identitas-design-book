@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Components
 import Contact from "./Contact";
@@ -29,11 +29,12 @@ interface ContactListItem {
 }
 
 export interface FooterProps {
-  navigation: { header: TextProps; list: LinkProps[] };
   contact: { header: TextProps; list: ContactListItem[] };
+  location?: any;
+  navigation: { header: TextProps; list: LinkProps[] };
 }
 
-const Footer: FC<FooterProps> = ({ contact, navigation }) => {
+const Footer: FC<FooterProps> = ({ contact, navigation, location }) => {
   return (
     <StyledFooter className={`text-muted ${prefix}-footer`}>
       <Spacer>

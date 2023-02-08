@@ -53,6 +53,7 @@ export interface HeaderProps {
   fixed?: boolean;
   hideLanguagesFrom?: string;
   languages: Language[];
+  location: any;
   minHeight?: number;
   mobile?: MobileProps;
   navigation: Link[];
@@ -70,6 +71,7 @@ const Header: FC<HeaderProps> = ({
   fixed,
   hideLanguagesFrom,
   languages,
+  location,
   minHeight,
   mobile,
   navigation,
@@ -96,7 +98,7 @@ const Header: FC<HeaderProps> = ({
             <div className="col-12">
               <StyledNavWrapper>
                 <div className="d-flex align-items-center">
-                  <Brand {...brand} />
+                  <Brand {...brand} location={location} />
                   <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">

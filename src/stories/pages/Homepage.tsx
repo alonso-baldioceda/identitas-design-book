@@ -45,6 +45,7 @@ export interface HomepageProps {
     list: ListGroupItemProps[];
   };
   footerProps: FooterProps;
+  location: any;
 }
 
 interface ServiceProps {
@@ -64,11 +65,12 @@ const Homepage: FC<HomepageProps> = ({
   driveProps,
   rulesProps,
   footerProps,
+  location,
 }) => {
   const [heroHeight, _] = useAvailHeight();
 
   return (
-    <Layout footer={footerProps} header={headerProps}>
+    <Layout footer={footerProps} header={headerProps} location={location}>
       <ContactPoint {...contactPointProps} />
       {/* Hero */}
       <Block {...topProps.blockProps}>

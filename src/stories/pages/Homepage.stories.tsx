@@ -25,12 +25,27 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  location: {
+    pathname: "/",
+    search: "",
+    hash: "",
+    state: null,
+  },
   headerProps: {
-    fixed: true,
-    minHeight: 84,
-    hideLanguagesFrom: "xl",
-    showLanguages: true,
-    showCall: true,
+    brand: {
+      classes: "me-3",
+      fontWeight: 700,
+      hideNameOnMobile: true,
+      svg: {
+        icon: "logo",
+        size: Size.sm,
+      },
+      text: {
+        text: "Vista Lago Arenal",
+        variant: "span",
+      },
+      to: "main",
+    },
     call: {
       icon: "phone",
       classes: "mb-0",
@@ -38,6 +53,22 @@ Default.args = {
       text: "call us",
       url: "tel:+50683274040",
     },
+    fixed: true,
+    hideLanguagesFrom: "xl",
+    languages: [
+      {
+        name: "es",
+        classes: "text-uppercase me-3",
+      },
+      {
+        name: "en",
+        classes: "text-uppercase me-3",
+      },
+    ],
+    location: {
+      pathname: "/",
+    },
+    minHeight: 84,
     mobile: {
       classes: "p-4",
       hideFrom: "xl",
@@ -109,45 +140,6 @@ Default.args = {
         variant: "label",
       },
     },
-    separator: {
-      classes: "mx-3",
-    },
-    showSocials: true,
-    showSwitchMode: true,
-    socials: [
-      {
-        icon: "facebook",
-        classes: "mb-0 mx-2 mx-sm-3",
-        size: Size.xs,
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal",
-      },
-      {
-        icon: "instagram",
-        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
-        size: Size.xs,
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-      },
-    ],
-    brand: {
-      fontWeight: 700,
-      hideNameOnMobile: true,
-      svg: "logo",
-      name: "Vista Lago Arenal",
-      to: "main",
-      classes: "me-3",
-    },
-    languages: [
-      {
-        name: "es",
-        classes: "text-uppercase me-3",
-      },
-      {
-        name: "en",
-        classes: "text-uppercase me-3",
-      },
-    ],
     navigation: [
       {
         type: LinkType.Anchor,
@@ -196,6 +188,29 @@ Default.args = {
         anchor: "info",
         text: "Info",
         classes: "me-3 text-capitalize",
+      },
+    ],
+    separator: {
+      classes: "mx-3",
+    },
+    showCall: true,
+    showLanguages: true,
+    showSocials: true,
+    showSwitchMode: true,
+    socials: [
+      {
+        icon: "facebook",
+        classes: "mb-0 mx-2 mx-sm-3",
+        size: Size.xs,
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
+      },
+      {
+        icon: "instagram",
+        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
+        size: Size.xs,
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
       },
     ],
   },
