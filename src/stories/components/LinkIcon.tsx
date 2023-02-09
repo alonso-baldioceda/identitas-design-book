@@ -1,5 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
+import classnames from "classnames";
 import { prefix } from "./../shared/styles.js";
 
 // Components
@@ -22,6 +23,7 @@ const StyledLinkIcon = styled((props) => <a {...props} />)`
 `;
 
 export interface LinkIconProps {
+  // appearance: string;
   classes?: string;
   disabled?: boolean;
   icon: ReactNode;
@@ -31,6 +33,7 @@ export interface LinkIconProps {
 }
 
 const LinkIcon: FC<LinkIconProps> = ({
+  // appearance,
   classes,
   disabled,
   icon,
@@ -40,8 +43,14 @@ const LinkIcon: FC<LinkIconProps> = ({
 }) => (
   <StyledLinkIcon
     href={url}
-    className={`${prefix}-button ${classes} 
-      ${disabled ? disabled : ""}`}
+    className={classnames(
+      "btn",
+      // { "bg-primary": !appearance },
+      // { [`bg-${appearance}`]: appearance },
+      { [`${classes}`]: classes },
+      { disabled: disabled },
+      `${prefix}-link-icon`
+    )}
     size={size}
   >
     {text}

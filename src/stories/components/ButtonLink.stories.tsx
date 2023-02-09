@@ -5,16 +5,16 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ButtonLinkComponent from "./ButtonLink";
 
 // Constants
-import { COLOR_CONTROL } from "./../../shared/constants/";
+// import { COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
   title: "Components/ButtonLink",
   component: ButtonLinkComponent,
   argTypes: {
-    appearance: {
-      name: "Appearance",
-      control: COLOR_CONTROL,
-    },
+    // appearance: {
+    //   name: "Appearance",
+    //   control: COLOR_CONTROL,
+    // },
     disabled: {
       control: "boolean",
       options: [false, true],
@@ -40,8 +40,7 @@ const Template: ComponentStory<typeof ButtonLinkComponent> = (args) => (
 
 export const ButtonLink = Template.bind({});
 ButtonLink.args = {
-  // appearance: "primary",
-  classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
+  classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary text-capitalize",
   text: "click me!!",
   url: "https://www.google.com/",
 };

@@ -1,4 +1,4 @@
-import React, { ReactNode, FC, useState, useEffect } from "react";
+import React, { ReactNode, FC, useState } from "react";
 import { GlobalStyle } from "./../shared/global.js";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./../../../.storybook/Theme.js";
@@ -10,6 +10,9 @@ import Footer, { FooterProps } from "./footer/Footer";
 // Contexts
 import LayoutContext from "./LayoutContext";
 
+// Hooks
+import useDark from "./../../hooks/useDark";
+
 // Interfaces
 interface LayoutProps {
   children: ReactNode | ReactNode[];
@@ -19,23 +22,10 @@ interface LayoutProps {
 }
 
 const Layout: FC<LayoutProps> = ({ children, footer, header, location }) => {
-  const [isDark, setIsDark] = useState<boolean>(false);
+  const [isDark, setIsDark] = useDark();
   const [active, setActive] = useState<number>(-1);
   const [language, setLanguage] = useState(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  // TODO: Add a useEffect to set the active state based on the location prop
-  // TODO: Move this to a hook
-  useEffect(() => {
-    if (isDark) {
-      document.body.className += " theme-dark";
-    } else {
-      document.body.className = document.body.className.replace(
-        " theme-dark",
-        ""
-      );
-    }
-  }, [isDark]);
 
   return (
     <LayoutContext.Provider

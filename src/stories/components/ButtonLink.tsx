@@ -2,9 +2,8 @@ import React, { FC } from "react";
 import classnames from "classnames";
 import { prefix } from "./../shared/styles.js";
 
-// TODO: Add hover and visited state
 export interface ButtonLinkProps {
-  appearance: string;
+  // appearance: string;
   classes?: string;
   disabled?: boolean;
   targetBlank: boolean;
@@ -13,9 +12,9 @@ export interface ButtonLinkProps {
 }
 
 const ButtonLink: FC<ButtonLinkProps> = ({
-  appearance,
-  disabled,
+  // appearance,
   classes,
+  disabled,
   targetBlank,
   text,
   url,
@@ -27,8 +26,11 @@ const ButtonLink: FC<ButtonLinkProps> = ({
     role="button"
     target={targetBlank ? "_blank" : "_self"}
     className={classnames(
-      `btn btn-${appearance ? appearance : "primary"} text-capitalize`,
-      `${classes ? classes : "mb-0 px-4 py-2"}`,
+      "btn",
+      // { "bg-primary": !appearance },
+      // { [`bg-${appearance}`]: appearance },
+      { "mb-0 px-4 py-2": !classes },
+      { [`${classes}`]: classes },
       { disabled: disabled },
       `${prefix}-button-link`
     )}

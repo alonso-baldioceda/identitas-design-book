@@ -5,16 +5,16 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ButtonComponent from "./Button";
 
 // Constants
-import { COLOR_CONTROL } from "./../../shared/constants/";
+// import { COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
   title: "Components/Button",
   component: ButtonComponent,
   argTypes: {
-    appearance: {
-      name: "Appearance",
-      control: COLOR_CONTROL,
-    },
+    // appearance: {
+    //   name: "Appearance",
+    //   control: COLOR_CONTROL,
+    // },
     disabled: {
       name: "Disabled",
       control: "boolean",
@@ -44,8 +44,6 @@ const Template: ComponentStory<typeof ButtonComponent> = (args) => (
 
 export const Button = Template.bind({});
 Button.args = {
-  // appearance: "primary",
-  // disabled: false,
   classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
   text: "button",
   type: "button",

@@ -4,15 +4,26 @@ import { prefix } from "./../shared/styles.js";
 import classnames from "classnames";
 
 interface LinkGatsbyProps {
+  // appearance: string;
   classes?: string;
   text: string;
   to: string;
 }
 
-const LinkGatsby: FC<LinkGatsbyProps> = ({ text, to, classes }) => (
+const LinkGatsby: FC<LinkGatsbyProps> = ({
+  //appearance,
+  text,
+  to,
+  classes,
+}) => (
   <Link
     to={to}
-    className={classnames({ [`${classes}`]: classes }, `${prefix}-link-gatsby`)}
+    className={classnames(
+      { [`${classes}`]: classes },
+      // { "bg-primary": !appearance },
+      // { [`bg-${appearance}`]: appearance },
+      `${prefix}-link-gatsby`
+    )}
   >
     {text}
   </Link>

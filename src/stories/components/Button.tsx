@@ -3,7 +3,7 @@ import classnames from "classnames";
 import { prefix } from "./../shared/styles.js";
 
 interface ButtonProps {
-  appearance: string;
+  // appearance: string;
   classes?: string;
   disabled?: boolean;
   text: string;
@@ -11,7 +11,7 @@ interface ButtonProps {
 }
 
 const Button: FC<ButtonProps> = ({
-  appearance,
+  // appearance,
   classes,
   disabled,
   text,
@@ -19,8 +19,11 @@ const Button: FC<ButtonProps> = ({
 }) => (
   <button
     className={classnames(
-      `btn btn-${appearance ? appearance : "primary"} text-capitalize`,
-      `${classes ? classes : "mb-0 px-4 py-2"}`,
+      "btn",
+      // { "bg-primary": !appearance },
+      // { [`bg-${appearance}`]: appearance },
+      { "mb-0 px-4 py-2": !classes },
+      { [`${classes}`]: classes },
       { disabled: disabled },
       `${prefix}-button`
     )}

@@ -1,6 +1,5 @@
 import { css } from "styled-components";
 
-// TODO: set from dev envs probably
 export const prefix = "identitas";
 
 // Global style variables

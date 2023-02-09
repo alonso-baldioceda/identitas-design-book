@@ -5,6 +5,7 @@ import classnames from "classnames";
 
 // Interfaces
 export interface LinkProps {
+  // appearance: string;
   classes?: string;
   duration?: number;
   offset?: number;
@@ -15,6 +16,7 @@ export interface LinkProps {
 }
 
 const LinkScroll: FC<LinkProps> = ({
+  // appearance,
   classes,
   duration,
   offset,
@@ -29,7 +31,12 @@ const LinkScroll: FC<LinkProps> = ({
     smooth={smooth ? smooth : true}
     spy={spy ? spy : true}
     to={to}
-    className={classnames({ [`${classes}`]: classes }, `${prefix}-link-scroll`)}
+    className={classnames(
+      { [`${classes}`]: classes },
+      // { "bg-primary": !appearance },
+      // { [`bg-${appearance}`]: appearance },
+      `${prefix}-link-scroll`
+    )}
   >
     {text}
   </Link>

@@ -7,9 +7,19 @@ import LinkGatsbyComponent from "./LinkGatsby";
 export default {
   title: "Components",
   component: LinkGatsbyComponent,
-  args: {
-    text: "Gatsby Link",
-    to: "/info",
+  argTypes: {
+    classes: {
+      description: "Classes to add",
+      control: "text",
+    },
+    text: {
+      description: "Text to display",
+      control: "text",
+    },
+    to: {
+      description: "Scroll to",
+      control: "text",
+    },
   },
 } as ComponentMeta<typeof LinkGatsbyComponent>;
 
