@@ -28,6 +28,7 @@ Default.args = {
   headerProps: {
     fixed: true,
     minHeight: 84,
+    hideCloseFrom: "d-xl-none d-flex",
     hideLanguagesFrom: "xl",
     showLanguages: true,
     showCall: true,
@@ -132,9 +133,14 @@ Default.args = {
     ],
     brand: {
       fontWeight: 700,
-      hideNameOnMobile: true,
-      svg: "logo",
-      name: "Vista Lago Arenal",
+      svg: {
+        icon: "logo",
+        size: Size.sm,
+      },
+      text: {
+        text: "Vista Lago Arenal",
+        variant: "span",
+      },
       to: "main",
       classes: "me-3",
     },

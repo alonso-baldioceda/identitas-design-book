@@ -9,19 +9,19 @@ import Size from "./../../../../shared/enums/size";
 
 // Types
 interface LinkContentProps {
-  hideNameOnMobile?: boolean;
+  showNameOnMobile?: boolean;
   icon: SVGProps;
   text: TextProps;
 }
 
 const LinkContent: FC<LinkContentProps> = ({
-  hideNameOnMobile,
+  showNameOnMobile,
   icon,
   text,
 }) => (
   <>
     <SVG {...icon} size={icon?.size ? icon.size : Size.sm} />
-    {hideNameOnMobile ? <Text {...text} /> : null}
+    {showNameOnMobile ? <Text {...text} /> : null}
   </>
 );
 

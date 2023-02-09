@@ -103,7 +103,19 @@ export const bodyStyles = css`
     }
 
     .${prefix}-separator {
-      background-color: ${color.body} !important;
+      background-color: ${color.body};
+    }
+
+    .${prefix}-menu-close {
+      .menu-close-bars {
+        span {
+          background: ${color.body};
+
+          &.is-open {
+            background: ${color.body};
+          }
+        }
+      }
     }
   }
 
@@ -222,7 +234,7 @@ export const bodyStyles = css`
   /* Buttons */
 
   .btn {
-    min-width: 200px;
+    padding: 0;
 
     &.btn-airbnb {
       background: ${color.airbnb};
@@ -232,6 +244,11 @@ export const bodyStyles = css`
     &.btn-booking {
       background: ${color.booking};
       color: ${color.white};
+    }
+
+    &.btn-airbnb,
+    &.btn-booking {
+      min-width: 200px;
     }
   }
 

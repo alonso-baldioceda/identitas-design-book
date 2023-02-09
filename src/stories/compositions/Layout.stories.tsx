@@ -176,7 +176,6 @@ Default.args = {
     brand: {
       classes: "me-3",
       fontWeight: 700,
-      hideNameOnMobile: true,
       svg: {
         icon: "logo",
         size: Size.sm,

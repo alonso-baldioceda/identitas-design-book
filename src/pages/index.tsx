@@ -27,6 +27,7 @@ const data = {
   headerProps: {
     fixed: true,
     minHeight: 84,
+    hideCloseFrom: "d-xl-none d-flex",
     hideLanguagesFrom: "xl",
     showLanguages: true,
     showCall: true,
@@ -131,7 +132,6 @@ const data = {
     ],
     brand: {
       fontWeight: 700,
-      hideNameOnMobile: true,
       svg: "logo",
       name: "Vista Lago Arenal",
       to: "main",

@@ -35,7 +35,6 @@ Default.args = {
     brand: {
       classes: "me-3",
       fontWeight: 700,
-      hideNameOnMobile: true,
       svg: {
         icon: "logo",
         size: Size.sm,
@@ -54,6 +53,7 @@ Default.args = {
       url: "tel:+50683274040",
     },
     fixed: true,
+    hideCloseFrom: "d-xl-none d-flex",
     hideLanguagesFrom: "xl",
     languages: [
       {

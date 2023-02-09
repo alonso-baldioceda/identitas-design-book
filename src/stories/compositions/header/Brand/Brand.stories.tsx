@@ -17,7 +17,7 @@ export default {
       name: "Font Weight",
       options: [400, 500, 600, 700, 800, 900],
     },
-    hideNameOnMobile: {
+    showNameOnMobile: {
       name: "Hide Name On Mobile?",
       description: "Hide name on mobile devices",
     },
@@ -60,7 +60,6 @@ export const Default = Template.bind({});
 Default.args = {
   classes: "me-3",
   fontWeight: 700,
-  hideNameOnMobile: true,
   location: {
     pathname: "/",
   },

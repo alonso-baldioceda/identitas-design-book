@@ -31,8 +31,5 @@ const Template: ComponentStory<typeof MenuCloseComponent> = (args) => (
 
 export const CloseMenu = Template.bind({});
 CloseMenu.args = {
-  colorOpen: color.body,
-  colorClose: color.body,
-  isOpen: false,
-  setIsOpen: () => void {},
+  hideCloseFrom: "d-xl-none d-flex",
 };

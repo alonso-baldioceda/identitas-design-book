@@ -51,6 +51,7 @@ export interface HeaderProps {
   brand: BrandProps;
   call?: LinkIconProps;
   fixed?: boolean;
+  hideCloseFrom?: string;
   hideLanguagesFrom?: string;
   languages: Language[];
   location: any;
@@ -69,6 +70,7 @@ const Header: FC<HeaderProps> = ({
   brand,
   call,
   fixed,
+  hideCloseFrom,
   hideLanguagesFrom,
   languages,
   location,
@@ -123,10 +125,7 @@ const Header: FC<HeaderProps> = ({
                     socials?.map((social: LinkIconProps, index: number) => (
                       <LinkIcon {...social} key={index} />
                     ))}
-                  {/* TODO: consider move this to props */}
-                  <div className="d-xl-none d-flex">
-                    <MenuClose />
-                  </div>
+                  <MenuClose hideCloseFrom={hideCloseFrom} />
                 </div>
               </StyledNavWrapper>
             </div>

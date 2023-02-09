@@ -37,12 +37,11 @@ const StyledBrand = styled((props) => <div {...props} />)`
   }
 `;
 
-// TODO: add feature hide name in XS devices
 // Types
 export interface BrandProps {
   classes?: string;
   fontWeight: number;
-  hideNameOnMobile?: boolean;
+  showNameOnMobile?: boolean;
   location?: any;
   svg: SVGProps;
   text: TextProps;
@@ -52,14 +51,14 @@ export interface BrandProps {
 const Brand: FC<BrandProps> = ({
   classes,
   fontWeight,
-  hideNameOnMobile,
+  showNameOnMobile,
   location,
   svg,
   text,
   to,
 }) => {
   const linkContent = {
-    hideNameOnMobile,
+    showNameOnMobile: showNameOnMobile ? showNameOnMobile : true,
     icon: svg,
     text,
   };

@@ -1,52 +1,55 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Contexts
 import LayoutContext from "./../LayoutContext";
 
 // Styles
+
 const StyledMenuClose = styled.div`
-  cursor: pointer;
-  display: inline-block;
   height: 32px;
-  overflow: hidden;
-  transform: rotate(0deg);
   width: 32px;
-  z-index: 1000;
 
-  &.is-open {
-    z-index: 99999;
+  .menu-close-bars {
+    cursor: pointer;
+    display: inline-block;
+    height: 32px;
+    overflow: hidden;
+    transform: rotate(0deg);
+    width: 32px;
+    z-index: 1000;
 
-    span {
-      background: ${color.body};
+    &.is-open {
+      z-index: 99999;
 
-      &:nth-child(1) {
-        left: 50%;
-        top: 12px;
-        width: 0%;
-      }
+      span {
+        &:nth-child(1) {
+          left: 50%;
+          top: 12px;
+          width: 0%;
+        }
 
-      &:nth-child(2) {
-        transform: rotate(45deg);
-      }
+        &:nth-child(2) {
+          transform: rotate(45deg);
+        }
 
-      &:nth-child(3) {
-        transform: rotate(-45deg);
-      }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
 
-      &:nth-child(4) {
-        left: 50%;
-        top: 12px;
-        width: 0%;
+        &:nth-child(4) {
+          left: 50%;
+          top: 12px;
+          width: 0%;
+        }
       }
     }
   }
 `;
 
 const StyledSpan = styled.span`
-  background: ${color.body};
   border-radius: 9px;
   display: block;
   height: 3px;
@@ -71,23 +74,30 @@ const StyledSpan = styled.span`
   }
 `;
 
-export interface MenuCloseProps {}
+export interface MenuCloseProps {
+  hideCloseFrom?: string;
+}
 
-const MenuClose: FC<MenuCloseProps> = () => {
+const MenuClose: FC<MenuCloseProps> = ({ hideCloseFrom }) => {
   const { isOpen, setIsOpen } = useContext(LayoutContext);
 
   return (
     <StyledMenuClose
-      className={classnames(`${prefix}-menu-close`, { "is-open": isOpen })}
+      className={classnames(
+        { [`${hideCloseFrom}`]: hideCloseFrom },
+        `${prefix}-menu-close`
+      )}
       onClick={() => {
         document.body.style.overflow = isOpen === true ? "scroll" : "hidden";
         setIsOpen(!isOpen);
       }}
     >
-      <StyledSpan />
-      <StyledSpan />
-      <StyledSpan />
-      <StyledSpan />
+      <div className={classnames({ "is-open": isOpen }, "menu-close-bars")}>
+        <StyledSpan />
+        <StyledSpan />
+        <StyledSpan />
+        <StyledSpan />
+      </div>
     </StyledMenuClose>
   );
 };
