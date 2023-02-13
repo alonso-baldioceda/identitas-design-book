@@ -9,7 +9,12 @@ const StyledBgImg = styled((props) => <div {...props} />)`
       background-color: ${props.bgcolor};
     `}
 
-  background-image: ${(props) => `url(${props.src})`};
+  ${(props) =>
+    props.src &&
+    `
+      background-image: url(${props.src});
+    `}
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

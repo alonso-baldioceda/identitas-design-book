@@ -54,7 +54,7 @@ export interface HeaderProps {
   hideCloseFrom?: string;
   hideLanguagesFrom?: string;
   languages: Language[];
-  location: any;
+  location: string;
   minHeight?: number;
   mobile?: MobileProps;
   navigation: Link[];
@@ -121,10 +121,13 @@ const Header: FC<HeaderProps> = ({
                       isDark={isDark ? isDark : false}
                     />
                   )}
-                  {showSocials &&
-                    socials?.map((social: LinkIconProps, index: number) => (
-                      <LinkIcon {...social} key={index} />
-                    ))}
+                  {showSocials && (
+                    <div className="d-flex">
+                      {socials?.map((social: LinkIconProps, index: number) => (
+                        <LinkIcon {...social} key={index} />
+                      ))}
+                    </div>
+                  )}
                   <MenuClose hideCloseFrom={hideCloseFrom} />
                 </div>
               </StyledNavWrapper>

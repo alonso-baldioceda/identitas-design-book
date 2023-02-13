@@ -14,11 +14,12 @@ import { FooterProps } from "./../compositions/footer/Footer";
 export interface InfoProps {
   headerProps: HeaderProps;
   footerProps: FooterProps;
+  location: string;
 }
 
-const Info: FC<InfoProps> = ({ headerProps, footerProps }) => {
+const Info: FC<InfoProps> = ({ headerProps, footerProps, location }) => {
   return (
-    <Layout footer={footerProps} header={headerProps}>
+    <Layout footer={footerProps} header={headerProps} location={location}>
       <h1>Info</h1>
       <p>text!</p>
     </Layout>

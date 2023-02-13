@@ -65,9 +65,7 @@ Default.args = {
       },
     ],
   },
-  location: {
-    pathname: "/",
-  },
+  location: "/",
   navigation: {
     header: {
       text: "Enlaces",

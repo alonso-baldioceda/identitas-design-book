@@ -15,7 +15,7 @@ const StyledLinkIcon = styled((props) => <a {...props} />)`
   border-radius: 50rem;
   color: transparent;
   display: flex;
-  font-size: 0;
+  font-size: 0 !important;
   justify-content: center;
   line-height: 0;
   margin-bottom: 0;
@@ -51,7 +51,6 @@ const LinkIcon: FC<LinkIconProps> = ({
       { disabled: disabled },
       `${prefix}-link-icon`
     )}
-    size={size}
   >
     {text}
     <SVG icon={icon} size={size ? size : Size.sm} />

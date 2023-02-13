@@ -196,9 +196,7 @@ Default.args = {
         classes: "text-uppercase me-3",
       },
     ],
-    location: {
-      pathname: "/",
-    },
+    location: "/",
     navigation: [
       {
         type: LinkType.Anchor,
@@ -250,10 +248,5 @@ Default.args = {
       },
     ],
   },
-  location: {
-    pathname: "/",
-    search: "",
-    hash: "",
-    state: null,
-  },
+  location: "/",
 };

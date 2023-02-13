@@ -9,12 +9,10 @@ import LinkType from "../../shared/enums/linkType";
 import Size from "../../shared/enums/size";
 
 // Assets
-import LogoIcon from "./../../images/svg/logo-black.svg";
+
 import PhoneIcon from "./../../images/svg/call.svg";
 import FacebookIcon from "./../../images/svg/facebook.svg";
 import InstagramIcon from "./../../images/svg/instagram.svg";
-import HomeIcon from "./../../images/svg/home.svg";
-import EnvelopeIcon from "./../../images/svg/envelope.svg";
 
 export default {
   title: "Pages/Info",
@@ -25,20 +23,43 @@ const Template: ComponentStory<typeof Info> = (args) => <Info {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  location: "/info",
   headerProps: {
-    fixed: true,
-    minHeight: 84,
-    hideCloseFrom: "d-xl-none d-flex",
-    hideLanguagesFrom: "xl",
-    showLanguages: true,
-    showCall: true,
+    brand: {
+      classes: "me-3",
+      fontWeight: 700,
+      svg: {
+        icon: "logo",
+        size: Size.sm,
+      },
+      text: {
+        text: "Vista Lago Arenal",
+        variant: "span",
+      },
+      to: "main",
+    },
     call: {
-      icon: <PhoneIcon />,
+      icon: "phone",
       classes: "mb-0",
       size: Size.xs,
       text: "call us",
       url: "tel:+50683274040",
     },
+    fixed: true,
+    hideCloseFrom: "d-xl-none d-flex",
+    hideLanguagesFrom: "xl",
+    languages: [
+      {
+        name: "es",
+        classes: "text-uppercase me-3",
+      },
+      {
+        name: "en",
+        classes: "text-uppercase me-3",
+      },
+    ],
+    location: "/info",
+    minHeight: 84,
     mobile: {
       classes: "p-4",
       hideFrom: "xl",
@@ -110,50 +131,6 @@ Default.args = {
         variant: "label",
       },
     },
-    separator: {
-      classes: "mx-3",
-    },
-    showSocials: true,
-    showSwitchMode: true,
-    socials: [
-      {
-        icon: <FacebookIcon />,
-        classes: "mb-0 mx-2 mx-sm-3",
-        size: Size.xs,
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal",
-      },
-      {
-        icon: <InstagramIcon />,
-        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
-        size: Size.xs,
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-      },
-    ],
-    brand: {
-      fontWeight: 700,
-      svg: {
-        icon: "logo",
-        size: Size.sm,
-      },
-      text: {
-        text: "Vista Lago Arenal",
-        variant: "span",
-      },
-      to: "main",
-      classes: "me-3",
-    },
-    languages: [
-      {
-        name: "es",
-        classes: "text-uppercase me-3",
-      },
-      {
-        name: "en",
-        classes: "text-uppercase me-3",
-      },
-    ],
     navigation: [
       {
         type: LinkType.Anchor,
@@ -202,6 +179,29 @@ Default.args = {
         anchor: "info",
         text: "Info",
         classes: "me-3 text-capitalize",
+      },
+    ],
+    separator: {
+      classes: "mx-3",
+    },
+    showCall: true,
+    showLanguages: true,
+    showSocials: true,
+    showSwitchMode: true,
+    socials: [
+      {
+        icon: "facebook",
+        classes: "mb-0 mx-2 mx-sm-3",
+        size: Size.xs,
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
+      },
+      {
+        icon: "instagram",
+        classes: "mb-0 me-2 me-sm-3",
+        size: Size.xs,
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
       },
     ],
   },

@@ -25,12 +25,7 @@ const Template: ComponentStory<typeof Homepage> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  location: {
-    pathname: "/",
-    search: "",
-    hash: "",
-    state: null,
-  },
+  location: "/",
   headerProps: {
     brand: {
       classes: "me-3",
@@ -65,9 +60,7 @@ Default.args = {
         classes: "text-uppercase me-3",
       },
     ],
-    location: {
-      pathname: "/",
-    },
+    location: "/",
     minHeight: 84,
     mobile: {
       classes: "p-4",
@@ -207,7 +200,7 @@ Default.args = {
       },
       {
         icon: "instagram",
-        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
+        classes: "mb-0 me-2 me-sm-3",
         size: Size.xs,
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",

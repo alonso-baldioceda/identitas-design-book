@@ -1,0 +1,313 @@
+{
+  "seo": {
+    "title": "Cabinas Vista Lago Arenal",
+    "description": "Cabinas con vista al lago Arenal, habilitadas para alojar cuatro personas, y cocina compartida. Ideal para Familias."
+  },
+  "nav": {
+    "main": {
+      "url": "Inicio",
+      "target": "#main"
+    },
+    "units": {
+      "url": "Cabinas",
+      "target": "#units"
+    },
+    "commonSpaces": {
+      "url": "Espacios Comúnes",
+      "target": "#common-spaces"
+    },
+    "services": {
+      "url": "Servicios",
+      "target": "#services"
+    },
+    "drive": {
+      "url": "Como llegar?",
+      "target": "#drive"
+    },
+    "contact": {
+      "url": "Escríbenos",
+      "target": "#contact"
+    }
+  },
+  "home": "Inicio",
+  "hero": {
+    "title": "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal."
+  },
+  "followInstagram": "Siganos en Instagram",
+  "followFacebook": "Siganos en Facebook",
+  "languages": "Idiomas",
+  "call": "llamar",
+  "booking": "Reservar",
+  "units": {
+    "heading": "Cabinas",
+    "description": "Cada una de las 4 cabinas tiene 2 camas matrimoniales. Estamos habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
+    "list": [
+      {
+        "heading": "Cabina 1",
+        "items": [
+          {
+            "text": "2 camas matrimoniales",
+            "icon": "double-bed"
+          }
+        ]
+      },
+      {
+        "heading": "Cabina 2",
+        "items": [
+          {
+            "text": "2 camas matrimoniales",
+            "icon": "double-bed"
+          }
+        ]
+      },
+      {
+        "heading": "Cabina 3",
+        "items": [
+          {
+            "text": "1 cama matrimonial",
+            "icon": "double-bed"
+          }
+        ]
+      }
+    ],
+    "OtaBooking": "Booking",
+    "OtaAirbnb": "Airbnb"
+  },
+  "commonSpaces": {
+    "heading": "Espacios comúnes",
+    "descriptionOne": "Nuestras áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, una cocina totalmente equipada, espacio de trabajo y hermosos jardines que adornan los rústicos corredores."
+  },
+  "services": {
+    "heading": "Servicios",
+    "basics": {
+      "heading": "Básicos",
+      "list": [
+        {
+          "heading": "Wifi"
+        },
+        {
+          "heading": "Lavadora"
+        },
+        {
+          "heading": "Secadora"
+        },
+        {
+          "heading": "Servicios imprescindibles",
+          "subheading": "Toallas, sábanas, jabón y papel higiénico"
+        },
+        {
+          "heading": "Agua caliente"
+        }
+      ]
+    },
+    "facilities": {
+      "heading": "Instalaciones",
+      "list": [
+        {
+          "heading": "Estacionamiento gratuito en las instalaciones"
+        },
+        {
+          "heading": "Admitimos animales de compañía"
+        }
+      ]
+    },
+    "kitchen": {
+      "heading": "Comedor",
+      "list": [
+        {
+          "heading": "Cocina",
+          "subheading": "Los huéspedes pueden cocinar en este espacio"
+        },
+        {
+          "heading": "Horno"
+        },
+        {
+          "heading": "Platos y cubiertos"
+        },
+        {
+          "heading": "Refrigerador"
+        },
+        {
+          "heading": "Cocina"
+        },
+        {
+          "heading": "Cafetera"
+        },
+        {
+          "heading": "Utensilios básicos para cocinar",
+          "subheading": "Ollas y sartenes, aceite, sal y pimienta"
+        },
+        {
+          "heading": "Utensilios para hacer parrillada"
+        }
+      ]
+    },
+    "betAndBath": {
+      "heading": "Cama y baño",
+      "list": [
+        {
+          "heading": "Almohadas y mantas adicionales"
+        },
+        {
+          "heading": "Sábanas"
+        },
+        {
+          "heading": "Champú"
+        }
+      ]
+    },
+    "outdoor": {
+      "heading": "Al aire libre",
+      "list": [
+        {
+          "heading": "Patio"
+        },
+        {
+          "heading": "Jardín"
+        }
+      ]
+    }
+  },
+  "drive": {
+    "heading": "Como llegar?",
+    "description": "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
+    "cta": "Abrir mapa"
+  },
+  "contact": {
+    "heading": "Escríbenos",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "email": "Correo electrónico",
+    "phone": "Teléfono",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "submitting": "Enviando",
+    "submit": "Enviar",
+    "validation": {
+      "firstNameRequired": "Nombre requerido",
+      "lastNameRequired": "Apellido requerido",
+      "emailRequired": "Correo requerido",
+      "emailInvalid": "Correo inválido",
+      "phoneRequired": "Teléfono requerido",
+      "subjectRequired": "Asunto requerido",
+      "messageRequired": "Mensaje requerido",
+      "successHeader": "Mensaje enviado :)",
+      "successBody": "De ser necesario lo contactaremos, gracias!",
+      "errorHeader": "Algo pasó :(",
+      "errorBody": "Por favor inténtelo de nuevo, gracias!"
+    }
+  },
+  "rules": {
+    "heading": "Lo que debes saber",
+    "list": [
+      {
+        "heading": "Llegada: 15:00 a 21:00"
+      },
+      {
+        "heading": "Salida: 11:00"
+      },
+      {
+        "heading": "Prohibido fumar"
+      },
+      {
+        "heading": "Está prohibido hacer fiestas o eventos"
+      }
+    ]
+  },
+  "cookies": {
+    "heading": "Usamos cookies",
+    "description": "Al hacer clic en 'Aceptar cookies', acepta que podemos almacenar cookies en su dispositivo para ayudar a personalizar el contenido del sitio, analizar el tráfico y ayudar en nuestro marketing para brindar la mejor experiencia de usuario posible.",
+    "button": "Aceptar Cookies"
+  },
+  "footer": {
+    "links": "Enlaces",
+    "heading": "Contáctenos",
+    "address": "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+    "phone": "+(506) 8327 4040"
+  },
+  "infoHeading": "Información",
+  "foodAndDrinks": {
+    "heading": "Alimentos y bebidas",
+    "list": [
+      {
+        "alt": "Café Macadamia logo",
+        "heading": "Café & Macadamia",
+        "time": "1 minute",
+        "distance": "300 mts",
+        "description": "Variedad de platillos y bebidas que parten de una base de cocina Criolla Costarricense, pero se incorporan sabores internacionales para convertirla en una fusión sofisticada sin perder el detalle tradicional e inigualable de Costa Rica."
+      },
+      {
+        "alt": "Foto del restaurante Lake Arenal Pizza & Seafood",
+        "heading": "Lake Arenal Pizza & Seafood",
+        "time": "3 mins",
+        "distance": "2,1 kms",
+        "description": "Restaurante & Marisquería \"Lake Arenal Pizza & Seafood\", un lugar Familiar."
+      },
+      {
+        "alt": "Foto del restaurante \"El Corral\"",
+        "heading": "Restaurante \"El Corral\"",
+        "time": "5 mins",
+        "distance": "3,8 kms",
+        "description": "Restaurante BBQ, especialista en carnes a la parrilla."
+      },
+      {
+        "alt": "Foto del bar y restaurante \"Equus\"",
+        "heading": "Bar y Restaurante \"Equus\"",
+        "time": "5 mins",
+        "distance": "3,7 kms",
+        "description": "Especialista en carnes a la parrilla."
+      }
+    ]
+  },
+  "ocio": {
+    "heading": "Ocio",
+    "list": [
+      {
+        "alt": "Foto de 2 personas practicando Windsurf",
+        "heading": "Entrada a Tico Wind",
+        "time": "8 mins",
+        "distance": "4,2 kms",
+        "description": "Este es el lugar que utilizan los practicantes del windsurf y kite del área. La gente también utiliza este lugar como sitio de encuentro y de actividades como bañarse en el lago y tomar el sol."
+      },
+      {
+        "alt": "Foto de una turbina de viento del parque eólico de Tejona",
+        "heading": "Parque Eólico de Tejona",
+        "time": "8 mins",
+        "distance": "6,9 kms",
+        "description": "Tilarán es cuna en la producción  de energías limpias en Costa Rica, donde destacan la energía hidroeléctrica en el Lago Arenal y la Eólica. Visite el proyecto eólico de Tejona, a minutos de \"Vista Lago Arenal\"."
+      },
+      {
+        "alt": "Foto del Catamarán, kayacs y bañistas",
+        "heading": "Catamaran Tucan Arenal",
+        "time": "21 mins",
+        "distance": "15,3 kms",
+        "description": "Tours en catamarán con reservación previa. Incluye almuerzo y actividades acuáticas: kayak ,toboganes y rampa de clavado."
+      },
+      {
+        "alt": "Foto de Waterfall La Piedra Del Indio ",
+        "heading": "Waterfall La Piedra Del Indio",
+        "time": "45 mins",
+        "distance": "30.1 kms",
+        "description": "Cascadas en Tilarán con un salto de agua de más de 80 metros, donde podrás disfrutar de caminatas, cabalgatas y recorridos de canyoning."
+      },
+      {
+        "alt": "Foto de las cataratas Viento Fresco",
+        "heading": "Viento Fresco Waterfalls & Restaurant For Nature Lovers Costa Rica.",
+        "time": "42 mins",
+        "distance": "28.6 kms",
+        "description": "Admire la fuerza de la naturaleza y explore cinco hermosas cataratas en medio del bosque, rodeado de rica vegetación y de diferentes animales."
+      }
+    ]
+  },
+  "supermarket": {
+    "heading": "Supermercados",
+    "list": [
+      {
+        "alt": "Supermercado",
+        "heading": "Super Market Zamora",
+        "time": "6 mins",
+        "distance": "3,7 kms"
+      }
+    ]
+  }
+}

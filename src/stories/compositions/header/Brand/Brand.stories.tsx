@@ -24,15 +24,7 @@ export default {
     location: {
       name: "Location",
       description: "Location of the page",
-      control: "object",
-      table: {
-        type: {
-          summary: "Location",
-          detail: `{
-            pathname: string;
-          }`,
-        },
-      },
+      control: "text",
     },
     size: {
       control: "select",

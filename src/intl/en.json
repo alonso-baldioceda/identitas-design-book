@@ -1,0 +1,313 @@
+{
+  "seo": {
+    "title": "Vista Lago Cabins",
+    "description": "Cabins overlooking Lake Arenal, enabled to accommodate four people, and shared kitchen. Ideal for families."
+  },
+  "nav": {
+    "main": {
+      "url": "Home",
+      "target": "#main"
+    },
+    "units": {
+      "url": "Cabins",
+      "target": "#units"
+    },
+    "commonSpaces": {
+      "url": "Common spaces",
+      "target": "#common-spaces"
+    },
+    "services": {
+      "url": "Services",
+      "target": "#services"
+    },
+    "drive": {
+      "url": "Drive",
+      "target": "#drive"
+    },
+    "contact": {
+      "url": "Contact Us",
+      "target": "#contact"
+    }
+  },
+  "home": "Home",
+  "hero": {
+    "title": "We are located in Costa Rica, Guanacaste, Tilarán. On a hill in front of Lake Arenal"
+  },
+  "followInstagram": "Follow us on Instagram",
+  "followFacebook": "Follow us on Facebook",
+  "languages": "Languages",
+  "call": "Call us",
+  "booking": "Booking",
+  "units": {
+    "heading": "The cottages",
+    "description": "Each of the 4 cabins has 2 double beds. We are enabled to accommodate families and friends of four to five people. They have warm lighting that induces rest, equipped to meet all needs and achieve a unique stay.",
+    "list": [
+      {
+        "heading": "Unit 1",
+        "items": [
+          {
+            "text": "2 double beds",
+            "icon": "double-bed"
+          }
+        ]
+      },
+      {
+        "heading": "Unit 2",
+        "items": [
+          {
+            "text": "2 double beds",
+            "icon": "double-bed"
+          }
+        ]
+      },
+      {
+        "heading": "Unit 3",
+        "items": [
+          {
+            "text": "1 double bed",
+            "icon": "double-bed"
+          }
+        ]
+      }
+    ],
+    "OtaBooking": "Booking",
+    "OtaAirbnb": "Airbnb"
+  },
+  "commonSpaces": {
+    "heading": "Common spaces",
+    "descriptionOne": "Our common areas call for an experience of social and personal connection linked to nature, a fully equipped kitchen, work space and beautiful gardens that adorn the rustic corridors."
+  },
+  "services": {
+    "heading": "Services",
+    "basics": {
+      "heading": "Basics",
+      "list": [
+        {
+          "heading": "Wifi"
+        },
+        {
+          "heading": "Washer"
+        },
+        {
+          "heading": "Dryer"
+        },
+        {
+          "heading": "Essentials",
+          "subheading": "Towels, bed sheets, soap, and toilet paper"
+        },
+        {
+          "heading": "Hot Water"
+        }
+      ]
+    },
+    "facilities": {
+      "heading": "Facilities",
+      "list": [
+        {
+          "heading": "Free parking on premises"
+        },
+        {
+          "heading": "Pets friendly"
+        }
+      ]
+    },
+    "kitchen": {
+      "heading": "Dining",
+      "list": [
+        {
+          "heading": "Kitchen",
+          "subheading": "Space where guests can cook their own meals"
+        },
+        {
+          "heading": "Oven"
+        },
+        {
+          "heading": "Dishes and silverware"
+        },
+        {
+          "heading": "Refrigerator"
+        },
+        {
+          "heading": "Stove"
+        },
+        {
+          "heading": "Coffee Maker"
+        },
+        {
+          "heading": "Cooking basics",
+          "subheading": "Pots and pans, oil, salt and pepper"
+        },
+        {
+          "heading": "Barbecue utensils"
+        }
+      ]
+    },
+    "betAndBath": {
+      "heading": "Bed and bath",
+      "list": [
+        {
+          "heading": "Extra pillows and blankets"
+        },
+        {
+          "heading": "Bed linens"
+        },
+        {
+          "heading": "Shampoo"
+        }
+      ]
+    },
+    "outdoor": {
+      "heading": "Outdoor",
+      "list": [
+        {
+          "heading": "Patio"
+        },
+        {
+          "heading": "Garden"
+        }
+      ]
+    }
+  },
+  "drive": {
+    "heading": "Drive",
+    "description": "We are located in the town of Río Piedras, in Tilarán, Guanacaste.",
+    "cta": "Open map"
+  },
+  "contact": {
+    "heading": "Contact Us",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email address",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "submitting": "submitting",
+    "submit": "Submit",
+    "validation": {
+      "firstNameRequired": "First name required",
+      "lastNameRequired": "Last name required",
+      "emailRequired": "Email required",
+      "emailInvalid": "Invalid email address",
+      "phoneRequired": "Phone required",
+      "subjectRequired": "Subject required",
+      "messageRequired": "Message required",
+      "successHeader": "Message sent :)",
+      "successBody": "We will come back to you if required, thanks!",
+      "errorHeader": "Something happened :(",
+      "errorBody": "Please try again, thanks!!"
+    }
+  },
+  "rules": {
+    "heading": "Things to know",
+    "list": [
+      {
+        "heading": "Check-in: 3:00 PM - 9:00 PM"
+      },
+      {
+        "heading": "Checkout: 11:00 AM"
+      },
+      {
+        "heading": "No smoking"
+      },
+      {
+        "heading": "No parties or events"
+      }
+    ]
+  },
+  "cookies": {
+    "heading": "We use cookies",
+    "description": "By clicking “Accept Cookies,” you agree we can store cookies on your device to help personalize site content, analyze traffic and assist in our marketing to provide the best possible user experience.",
+    "button": "Accept Cookies"
+  },
+  "footer": {
+    "links": "Links",
+    "heading": "Contact Us",
+    "address": "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
+    "phone": "+(506) 8327 4040"
+  },
+  "infoHeading": "Information",
+  "foodAndDrinks": {
+    "heading": "Food and drinks",
+    "list": [
+      {
+        "alt": "Café Macadamia logo",
+        "heading": "Café & Macadamia",
+        "time": "1 minute",
+        "distance": "300 mts",
+        "description": "Variety of dishes and drinks that start from a base of Costa Rican Creole cuisine, but international flavors are incorporated to turn it into a sophisticated fusion without losing the traditional and unique detail of Costa Rica."
+      },
+      {
+        "alt": "Photo of Lake Arenal Pizza & Seafood restaurant",
+        "heading": "Lake Arenal Pizza & Seafood",
+        "time": "3 mins",
+        "distance": "2,1 kms",
+        "description": "Restaurant & Seafood \"Lake Arenal Pizza & Seafood\", a family place."
+      },
+      {
+        "alt": "Photo of \"El Corral\" restaurant",
+        "heading": "El Corral",
+        "time": "5 mins",
+        "distance": "3,8 kms",
+        "description": "BBQ restaurant, specialist in grilled meats."
+      },
+      {
+        "alt": "Photo of the bar and restaurant \"Equus\"",
+        "heading": "Bar and Restaurant \"Equus\"",
+        "time": "5 mins",
+        "distance": "3,7 kms",
+        "description": "Specialist in grilled meats."
+      }
+    ]
+  },
+  "ocio": {
+    "heading": "Ocio",
+    "list": [
+      {
+        "alt": "Photo of 2 people practicing Windsurfing",
+        "heading": "Entrance to Tico Wind",
+        "time": "8 mins",
+        "distance": "4,2 kms",
+        "description": "This is the spot used by area windsurfers and kitesurfers. People also use this place as a meeting place and for activities such as bathing in the lake and sunbathing."
+      },
+      {
+        "alt": "Photo of a wind turbine from the Tejona wind farm",
+        "heading": "Tejona Wind Farm",
+        "time": "8 mins",
+        "distance": "6,9 kms",
+        "description": "Tilarán is the cradle of clean energy production in Costa Rica, where hydroelectric power in Lake Arenal and wind power stand out. Visit the Tejona Wind Project, minutes from \"Vista Lago Arenal\"."
+      },
+      {
+        "alt": "Photo of the catamaran, kayaks and swimmers",
+        "heading": "Catamaran Tucan Arenal",
+        "time": "21 mins",
+        "distance": "15,3 kms",
+        "description": "Catamaran tours with prior reservation. Includes lunch and water activities: kayak, slides and diving ramp."
+      },
+      {
+        "alt": "Waterfall La Piedra Del Indio image",
+        "heading": "Waterfall La Piedra Del Indio",
+        "time": "45 mins",
+        "distance": "30.1 kms",
+        "description": "Waterfalls in Tilarán with a waterfall of more than 80 meters, where you can enjoy hiking, horseback riding and canyoning tours."
+      },
+      {
+        "alt": "Photo of Viento Fresco waterfalls",
+        "heading": "Viento Fresco Waterfalls & Restaurant For Nature Lovers Costa Rica.",
+        "time": "42 mins",
+        "distance": "28.6 kms",
+        "description": "Admire the force of nature and explore five beautiful waterfalls in the middle of the forest, surrounded by rich vegetation and different animals."
+      }
+    ]
+  },
+  "supermarket": {
+    "heading": "Supermarkets",
+    "list": [
+      {
+        "alt": "Supermarket Zamora",
+        "heading": "Super Market Zamora",
+        "time": "6 mins",
+        "distance": "3,7 kms"
+      }
+    ]
+  }
+}

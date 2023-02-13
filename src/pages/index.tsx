@@ -1,15 +1,19 @@
 import * as React from "react";
-import type { HeadFC } from "gatsby";
+import { graphql } from "gatsby";
+import { useTranslation } from "react-i18next";
 
-import Layout from "./../stories/compositions/Layout";
-import Hero from "./../stories/compositions/hero/Hero";
+// Compositions
 import Block from "./../stories/components/Block";
-import Text from "./../stories/components/Text";
 import Card from "./../stories/compositions/card/Card";
 import Grid from "./../stories/compositions/Grid";
+import Hero from "./../stories/compositions/hero/Hero";
+import Layout from "./../stories/compositions/Layout";
+import Sphere from "./../stories/compositions/Sphere";
+
+// Components
 import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
 import Spacer from "./../stories/components/Spacer";
-import Sphere from "./../stories/compositions/Sphere";
+import Text from "./../stories/components/Text";
 
 // Hooks
 import useAvailHeight from "./../hooks/useAvailHeight";
@@ -25,12 +29,19 @@ import SpherePreviewImage1 from "./../images/tour/room1-preview.jpg";
 
 const data = {
   headerProps: {
-    fixed: true,
-    minHeight: 84,
-    hideCloseFrom: "d-xl-none d-flex",
-    hideLanguagesFrom: "xl",
-    showLanguages: true,
-    showCall: true,
+    brand: {
+      classes: "me-3",
+      fontWeight: 700,
+      svg: {
+        icon: "logo",
+        size: Size.sm,
+      },
+      text: {
+        text: "Vista Lago Arenal",
+        variant: "span",
+      },
+      to: "main",
+    },
     call: {
       icon: "phone",
       classes: "mb-0",
@@ -38,6 +49,21 @@ const data = {
       text: "call us",
       url: "tel:+50683274040",
     },
+    fixed: true,
+    hideCloseFrom: "d-xl-none d-flex",
+    hideLanguagesFrom: "xl",
+    languages: [
+      {
+        name: "es",
+        classes: "text-uppercase me-3",
+      },
+      {
+        name: "en",
+        classes: "text-uppercase me-3",
+      },
+    ],
+    location: "/",
+    minHeight: 84,
     mobile: {
       classes: "p-4",
       hideFrom: "xl",
@@ -109,44 +135,6 @@ const data = {
         variant: "label",
       },
     },
-    separator: {
-      classes: "mx-3",
-    },
-    showSocials: true,
-    showSwitchMode: true,
-    socials: [
-      {
-        icon: "facebook",
-        classes: "mb-0 mx-2 mx-sm-3",
-        size: Size.xs,
-        text: "Facebook",
-        url: "https://www.facebook.com/vistalagoarenal",
-      },
-      {
-        icon: "instagram",
-        classes: "mb-0 me-2 me-sm-3 me-md-3 me-lg-3 me-xl-3",
-        size: Size.xs,
-        text: "Instagram",
-        url: "https://www.instagram.com/vistalagoarenal/",
-      },
-    ],
-    brand: {
-      fontWeight: 700,
-      svg: "logo",
-      name: "Vista Lago Arenal",
-      to: "main",
-      classes: "me-3",
-    },
-    languages: [
-      {
-        name: "es",
-        classes: "text-uppercase me-3",
-      },
-      {
-        name: "en",
-        classes: "text-uppercase me-3",
-      },
-    ],
     navigation: [
       {
         type: LinkType.Anchor,
@@ -197,6 +185,29 @@ const data = {
         classes: "me-3 text-capitalize",
       },
     ],
+    separator: {
+      classes: "mx-3",
+    },
+    showCall: true,
+    showLanguages: true,
+    showSocials: true,
+    showSwitchMode: true,
+    socials: [
+      {
+        icon: "facebook",
+        classes: "mb-0 mx-2 mx-sm-3",
+        size: Size.xs,
+        text: "Facebook",
+        url: "https://www.facebook.com/vistalagoarenal",
+      },
+      {
+        icon: "instagram",
+        classes: "mb-0 me-2 me-sm-3",
+        size: Size.xs,
+        text: "Instagram",
+        url: "https://www.instagram.com/vistalagoarenal/",
+      },
+    ],
   },
   topProps: {
     blockProps: {
@@ -212,7 +223,6 @@ const data = {
           text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
           classes: "mb-0",
           variant: "h1",
-          color: "#FFFFFF",
         },
       },
     },
@@ -446,7 +456,6 @@ const data = {
             heading: {
               classes: "mb-0",
               text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-              color: "#FFFFFF",
             },
           },
         },
@@ -458,7 +467,6 @@ const data = {
             heading: {
               classes: "mb-0",
               text: "vistalagoarenal@gmail.com",
-              color: "#FFFFFF",
             },
           },
         },
@@ -470,7 +478,6 @@ const data = {
             heading: {
               classes: "mb-0",
               text: "+(506) 8327 4040",
-              color: "#FFFFFF",
             },
           },
         },
@@ -536,10 +543,25 @@ const data = {
   },
 };
 
-const IndexPage = () => {
+const IndexPage = ({ data: graphqlData, location }: any) => {
+  const { t } = useTranslation();
   const [heroHeight, _] = useAvailHeight();
+
+  const translateServices: any = t("services", {
+    returnObjects: true,
+  });
+
+  // const { basics, facilities, kitchen, betAndBath, outdoor } =
+  //   translateServices || [{}];
+
+  console.log("services", translateServices, t(`commonSpaces.heading`));
+
   return (
-    <Layout header={data.headerProps} footer={data.footerProps}>
+    <Layout
+      header={data.headerProps}
+      footer={data.footerProps}
+      location={location.pathname}
+    >
       {/* Hero */}
       <Block {...data.topProps.blockProps}>
         <Hero {...data.topProps.heroProps} height={`${heroHeight}px`} />
@@ -584,8 +606,8 @@ const IndexPage = () => {
                 <div className="col-10 col-sm-12">
                   <Grid {...data.unitsProps.unitsGridProps}>
                     <Sphere {...data.unitsProps.sphereProps1} />
-                    {/* <Sphere {...data.unitsProps.sphereProps2} />
-                    <Sphere {...data.unitsProps.sphereProps3} /> */}
+                    <Sphere {...data.unitsProps.sphereProps2} />
+                    <Sphere {...data.unitsProps.sphereProps3} />
                   </Grid>
                 </div>
               </div>
@@ -599,4 +621,50 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Home Page</title>;
+export const query = graphql`
+  query {
+    heroImage: file(relativePath: { eq: "home-hero.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(width: 2200)
+      }
+    }
+    units: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "units" }
+      }
+      sort: { order: ASC, fields: name }
+    ) {
+      totalCount
+      edges {
+        node {
+          base
+          name
+          id
+          childImageSharp {
+            gatsbyImageData(width: 1100)
+          }
+        }
+      }
+    }
+    common: allFile(
+      filter: {
+        extension: { regex: "/(jpg)|(png)|(jpeg)/" }
+        relativeDirectory: { eq: "common" }
+      }
+      sort: { order: ASC, fields: name }
+    ) {
+      totalCount
+      edges {
+        node {
+          base
+          name
+          id
+          childImageSharp {
+            gatsbyImageData(width: 1100)
+          }
+        }
+      }
+    }
+  }
+`;

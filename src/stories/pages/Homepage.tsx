@@ -23,6 +23,7 @@ import { ListGroupItemProps } from "../compositions/ListGroupItem";
 import useAvailHeight from "./../../hooks/useAvailHeight";
 
 export interface HomepageProps {
+  location: string;
   headerProps: HeaderProps;
   contactPointProps: ContactPointProps;
   topProps: { blockProps: BlockProps; heroProps: HeroProps };
@@ -45,7 +46,6 @@ export interface HomepageProps {
     list: ListGroupItemProps[];
   };
   footerProps: FooterProps;
-  location: any;
 }
 
 interface ServiceProps {

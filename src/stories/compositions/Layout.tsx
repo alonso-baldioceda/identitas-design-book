@@ -2,6 +2,7 @@ import React, { ReactNode, FC, useState } from "react";
 import { GlobalStyle } from "./../shared/global.js";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./../../../.storybook/Theme.js";
+import { I18nextProvider } from "react-i18next";
 
 // Components
 import Header, { HeaderProps } from "./header/Header";
@@ -13,12 +14,14 @@ import LayoutContext from "./LayoutContext";
 // Hooks
 import useDark from "./../../hooks/useDark";
 
+import i18next from "./../../i18e";
+
 // Interfaces
 interface LayoutProps {
   children: ReactNode | ReactNode[];
   footer: FooterProps;
   header: HeaderProps;
-  location: any;
+  location: string;
 }
 
 const Layout: FC<LayoutProps> = ({ children, footer, header, location }) => {
@@ -41,12 +44,14 @@ const Layout: FC<LayoutProps> = ({ children, footer, header, location }) => {
       }}
     >
       <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
-        <GlobalStyle theme={isDark} />
-        <Header {...header} location={location} />
-        <main className="main" id="main">
-          {children}
-        </main>
-        <Footer {...footer} location={location} />
+        <I18nextProvider i18n={i18next}>
+          <GlobalStyle theme={isDark} />
+          <Header {...header} location={location} />
+          <main className="main" id="main">
+            {children}
+          </main>
+          <Footer {...footer} location={location} />
+        </I18nextProvider>
       </ThemeProvider>
     </LayoutContext.Provider>
   );
