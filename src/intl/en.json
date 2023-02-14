@@ -4,75 +4,50 @@
     "description": "Cabins overlooking Lake Arenal, enabled to accommodate four people, and shared kitchen. Ideal for families."
   },
   "nav": {
-    "main": {
-      "url": "Home",
-      "target": "#main"
-    },
-    "units": {
-      "url": "Cabins",
-      "target": "#units"
-    },
-    "commonSpaces": {
-      "url": "Common spaces",
-      "target": "#common-spaces"
-    },
-    "services": {
-      "url": "Services",
-      "target": "#services"
-    },
-    "drive": {
-      "url": "Drive",
-      "target": "#drive"
-    },
-    "contact": {
-      "url": "Contact Us",
-      "target": "#contact"
+    "main": "Home",
+    "units": "Cabins",
+    "commonSpaces": "Common spaces",
+    "services": "Services",
+    "drive": "Drive",
+    "contact": "Contact Us",
+    "info": "Info"
+  },
+  "header": {
+    "brand": "Vista Lago Arenal",
+    "call": "Call us",
+    "mobileLanguagesLabel": "Languages"
+  },
+  "hero": {
+    "heading": "We are located in Costa Rica, Guanacaste, Tilarán. On a hill in front of Lake Arenal"
+  },
+  "units": {
+    "heading": "The cottages",
+    "text": "Each of the 4 cabins has 2 double beds. We are enabled to accommodate families and friends of four to five people. They have warm lighting that induces rest, equipped to meet all needs and achieve a unique stay.",
+    "list": {
+      "unit1": {
+        "heading": "Unit 1",
+        "text": "2 double beds",
+        "max": "(máx. 4 guests)"
+      },
+      "unit2": {
+        "heading": "Unit 2",
+        "text": "2 double beds",
+        "max": "(máx. 4 guests)"
+      },
+      "unit3": {
+        "heading": "Unit 3",
+        "text": "1 double bed",
+        "max": "(máx. 2 guests)"
+      }
     }
   },
-  "home": "Home",
-  "hero": {
-    "title": "We are located in Costa Rica, Guanacaste, Tilarán. On a hill in front of Lake Arenal"
-  },
+  "booking": "Book through",
+  "OtaBooking": "Booking",
+  "OtaAirbnb": "Airbnb",
   "followInstagram": "Follow us on Instagram",
   "followFacebook": "Follow us on Facebook",
   "languages": "Languages",
-  "call": "Call us",
-  "booking": "Booking",
-  "units": {
-    "heading": "The cottages",
-    "description": "Each of the 4 cabins has 2 double beds. We are enabled to accommodate families and friends of four to five people. They have warm lighting that induces rest, equipped to meet all needs and achieve a unique stay.",
-    "list": [
-      {
-        "heading": "Unit 1",
-        "items": [
-          {
-            "text": "2 double beds",
-            "icon": "double-bed"
-          }
-        ]
-      },
-      {
-        "heading": "Unit 2",
-        "items": [
-          {
-            "text": "2 double beds",
-            "icon": "double-bed"
-          }
-        ]
-      },
-      {
-        "heading": "Unit 3",
-        "items": [
-          {
-            "text": "1 double bed",
-            "icon": "double-bed"
-          }
-        ]
-      }
-    ],
-    "OtaBooking": "Booking",
-    "OtaAirbnb": "Airbnb"
-  },
+
   "commonSpaces": {
     "heading": "Common spaces",
     "descriptionOne": "Our common areas call for an experience of social and personal connection linked to nature, a fully equipped kitchen, work space and beautiful gardens that adorn the rustic corridors."
@@ -220,10 +195,9 @@
     "button": "Accept Cookies"
   },
   "footer": {
-    "links": "Links",
-    "heading": "Contact Us",
     "address": "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-    "phone": "+(506) 8327 4040"
+    "contact": "Contact Us",
+    "links": "Links"
   },
   "infoHeading": "Information",
   "foodAndDrinks": {

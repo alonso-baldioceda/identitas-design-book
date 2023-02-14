@@ -6,7 +6,7 @@ import { initReactI18next } from "react-i18next";
 // translation catalog
 const resources = {
   es: {
-    translations: require("./intl/en.json"),
+    translations: require("./intl/es.json"),
   },
   en: {
     translations: require("./intl/en.json"),
@@ -25,7 +25,6 @@ i18next
     defaultNS: "translations",
     returnObjects: true,
     debug: false,
-    // debug: process.env.NODE_ENV === "development",
     interpolation: {
       escapeValue: false,
     },

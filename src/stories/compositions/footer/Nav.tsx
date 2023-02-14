@@ -24,6 +24,7 @@ const StyledNav = styled.ul`
 
     a {
       color: ${color.white} !important;
+      cursor: pointer;
       text-decoration: none;
     }
   }

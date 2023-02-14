@@ -1,6 +1,7 @@
 import React, { useState, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import classnames from "classnames";
 import { prefix, color } from "./../../shared/styles.js";
 
 // Styles
@@ -45,7 +46,9 @@ const DesktopLanguages: FC<DesktopLanguagesProps> = ({ languages }) => {
   });
 
   const changeLocale = (language: string) => {
+    console.log("language", language);
     i18n.changeLanguage(language);
+
     setLanguage((oldValues) => ({
       ...oldValues,
       language: language,
@@ -56,16 +59,12 @@ const DesktopLanguages: FC<DesktopLanguagesProps> = ({ languages }) => {
     <div className={`${prefix}-languages`}>
       {languages.map((language: Language, index: number) => (
         <LinkTranslate
-          className={`${
-            language.classes ? language.classes : ""
-          } ${prefix}-language-link`}
           key={index}
-          onClick={() => {
-            changeLocale(language ? language.name : "es");
-            //   open !== undefined &&
-            //     setLanguage !== undefined &&
-            //     setLanguage(index);
-          }}
+          className={classnames(
+            { [`${language.classes}`]: language.classes },
+            `${prefix}-language-link`
+          )}
+          onClick={() => changeLocale(language ? language.name : "es")}
         >
           {language.name}
         </LinkTranslate>

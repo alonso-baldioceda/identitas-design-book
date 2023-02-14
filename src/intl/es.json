@@ -4,75 +4,51 @@
     "description": "Cabinas con vista al lago Arenal, habilitadas para alojar cuatro personas, y cocina compartida. Ideal para Familias."
   },
   "nav": {
-    "main": {
-      "url": "Inicio",
-      "target": "#main"
-    },
-    "units": {
-      "url": "Cabinas",
-      "target": "#units"
-    },
-    "commonSpaces": {
-      "url": "Espacios Comúnes",
-      "target": "#common-spaces"
-    },
-    "services": {
-      "url": "Servicios",
-      "target": "#services"
-    },
-    "drive": {
-      "url": "Como llegar?",
-      "target": "#drive"
-    },
-    "contact": {
-      "url": "Escríbenos",
-      "target": "#contact"
+    "main": "Inicio",
+    "units": "Cabinas",
+    "commonSpaces": "Espacios Comúnes",
+    "services": "Servicios",
+    "drive": "Como llegar?",
+    "contact": "Escríbenos",
+    "info": "Info"
+  },
+  "header": {
+    "brand": "Vista Lago Arenal",
+    "call": "llamar",
+    "mobileLanguagesLabel": "Idiomas"
+  },
+  "hero": {
+    "heading": "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal."
+  },
+  "units": {
+    "heading": "Cabinas",
+    "text": "Cada una de las 4 cabinas tiene 2 camas matrimoniales. Estamos habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
+    "list": {
+      "unit1": {
+        "heading": "Cabina 1",
+        "text": "2 camas matrimoniales",
+        "max": "(máx. 4 huéspedes)"
+      },
+      "unit2": {
+        "heading": "Cabina 2",
+        "text": "2 camas matrimoniales",
+        "max": "(máx. 4 huéspedes)"
+      },
+      "unit3": {
+        "heading": "Cabina 3",
+        "text": "1 cama matrimonial",
+        "max": "(máx. 2 huéspedes)"
+      }
     }
   },
-  "home": "Inicio",
-  "hero": {
-    "title": "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal."
-  },
+  "booking": "Reservar",
+  "OtaBooking": "Booking",
+  "OtaAirbnb": "Airbnb",
+
   "followInstagram": "Siganos en Instagram",
   "followFacebook": "Siganos en Facebook",
   "languages": "Idiomas",
-  "call": "llamar",
-  "booking": "Reservar",
-  "units": {
-    "heading": "Cabinas",
-    "description": "Cada una de las 4 cabinas tiene 2 camas matrimoniales. Estamos habilitadas para alojar familias y amigos de cuatro a cinco personas. Poseen una iluminación cálida que induce al reposo, equipada para suplir toda necesidad y lograr una estadía singular.",
-    "list": [
-      {
-        "heading": "Cabina 1",
-        "items": [
-          {
-            "text": "2 camas matrimoniales",
-            "icon": "double-bed"
-          }
-        ]
-      },
-      {
-        "heading": "Cabina 2",
-        "items": [
-          {
-            "text": "2 camas matrimoniales",
-            "icon": "double-bed"
-          }
-        ]
-      },
-      {
-        "heading": "Cabina 3",
-        "items": [
-          {
-            "text": "1 cama matrimonial",
-            "icon": "double-bed"
-          }
-        ]
-      }
-    ],
-    "OtaBooking": "Booking",
-    "OtaAirbnb": "Airbnb"
-  },
+
   "commonSpaces": {
     "heading": "Espacios comúnes",
     "descriptionOne": "Nuestras áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, una cocina totalmente equipada, espacio de trabajo y hermosos jardines que adornan los rústicos corredores."
@@ -220,10 +196,9 @@
     "button": "Aceptar Cookies"
   },
   "footer": {
-    "links": "Enlaces",
-    "heading": "Contáctenos",
     "address": "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-    "phone": "+(506) 8327 4040"
+    "contact": "Contáctenos",
+    "links": "Enlaces"
   },
   "infoHeading": "Información",
   "foodAndDrinks": {
