@@ -6,24 +6,14 @@ import { prefix, color } from "./../../shared/styles.js";
 
 // Styles
 const LinkTranslate = styled.a`
-  border-bottom: 2px solid ${color.transparent};
-  color: ${color.body};
   cursor: pointer;
   font-weight: 500;
   letter-spacing: 0.6px;
   padding-bottom: 4px;
   text-decoration: none;
-
-  /* TODO: improve hover effect */
-  &.active,
-  &:hover,
-  &:focus {
-    border-bottom: 2px solid ${color.secondary};
-    color: ${color.body};
-  }
+  transition: all 0.15s ease;
 
   &:visited {
-    color: ${color.body};
     text-decoration: none;
   }
 `;
@@ -35,41 +25,52 @@ interface Language {
 }
 
 export interface DesktopLanguagesProps {
+  hideLanguagesFrom?: string;
   languages: Language[];
+  showLanguages?: boolean;
 }
 
-const DesktopLanguages: FC<DesktopLanguagesProps> = ({ languages }) => {
+const DesktopLanguages: FC<DesktopLanguagesProps> = ({
+  hideLanguagesFrom,
+  languages,
+  showLanguages,
+}) => {
   const { i18n } = useTranslation();
 
-  const [, setLanguage] = useState({
-    language: "es",
-  });
+  const [, setLanguage] = useState<string>("es");
 
   const changeLocale = (language: string) => {
-    console.log("language", language);
     i18n.changeLanguage(language);
 
-    setLanguage((oldValues) => ({
-      ...oldValues,
-      language: language,
-    }));
+    setLanguage(language);
   };
 
   return (
-    <div className={`${prefix}-languages`}>
-      {languages.map((language: Language, index: number) => (
-        <LinkTranslate
-          key={index}
-          className={classnames(
-            { [`${language.classes}`]: language.classes },
-            `${prefix}-language-link`
-          )}
-          onClick={() => changeLocale(language ? language.name : "es")}
-        >
-          {language.name}
-        </LinkTranslate>
-      ))}
-    </div>
+    { showLanguages } && (
+      <div
+        className={classnames(
+          `d-none`,
+          {
+            [`d-${hideLanguagesFrom}-inline`]: hideLanguagesFrom,
+          },
+          { "d-xl-inline": !hideLanguagesFrom },
+          `${prefix}-languages`
+        )}
+      >
+        {languages.map((language: Language, index: number) => (
+          <LinkTranslate
+            key={index}
+            className={classnames(
+              { [`${language.classes}`]: language.classes },
+              `${prefix}-language-link`
+            )}
+            onClick={() => changeLocale(language ? language.name : "es")}
+          >
+            {language.name}
+          </LinkTranslate>
+        ))}
+      </div>
+    )
   );
 };
 

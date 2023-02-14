@@ -117,6 +117,24 @@ export const bodyStyles = css`
         }
       }
     }
+
+    .${prefix}-languages {
+      a {
+        border-bottom: 2px solid ${color.transparent};
+        color: ${color.body};
+
+        &.active,
+        &:hover,
+        &:focus {
+          border-bottom: 2px solid ${color.secondary};
+          color: ${color.body};
+        }
+
+        &:visited {
+          color: ${color.body};
+        }
+      }
+    }
   }
 
   /* Background */
@@ -198,6 +216,24 @@ export const bodyStyles = css`
 
       .${prefix}-separator {
         background-color: ${color.white} !important;
+      }
+
+      .${prefix}-languages {
+        a {
+          border-bottom: 2px solid ${color.transparent};
+          color: ${color.white};
+
+          &.active,
+          &:hover,
+          &:focus {
+            border-bottom: 2px solid ${color.secondary};
+            color: ${color.white};
+          }
+
+          &:visited {
+            color: ${color.white};
+          }
+        }
       }
     }
 

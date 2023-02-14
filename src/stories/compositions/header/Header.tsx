@@ -59,9 +59,7 @@ export interface HeaderProps {
   mobile?: MobileProps;
   navigation: Link[];
   separator?: SeparatorProps;
-  showCall?: boolean;
   showLanguages?: boolean;
-  showSocials?: boolean;
   showSwitchMode?: boolean;
   socials?: LinkIconProps[];
 }
@@ -78,9 +76,7 @@ const Header: FC<HeaderProps> = ({
   mobile,
   navigation,
   separator,
-  showCall,
   showLanguages,
-  showSocials,
   showSwitchMode,
   socials,
 }) => {
@@ -104,24 +100,20 @@ const Header: FC<HeaderProps> = ({
                   <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
-                  {showLanguages && languages && (
-                    <div
-                      className={`d-none d-${
-                        hideLanguagesFrom ? hideLanguagesFrom : "xl"
-                      }-inline`}
-                    >
-                      <DesktopLanguages languages={languages} />
-                    </div>
-                  )}
-                  {showCall && call && <LinkIcon {...call} />}
-                  {(showLanguages || showCall) && <Separator {...separator} />}
+                  <DesktopLanguages
+                    languages={languages}
+                    showLanguages={showLanguages}
+                    hideLanguagesFrom={hideLanguagesFrom}
+                  />
+                  {separator && <Separator {...separator} />}
+                  {call && <LinkIcon {...call} />}
                   {showSwitchMode && (
                     <SwitchMode
                       setIsDark={setIsDark}
                       isDark={isDark ? isDark : false}
                     />
                   )}
-                  {showSocials && (
+                  {socials && (
                     <div className="d-flex">
                       {socials?.map((social: LinkIconProps, index: number) => (
                         <LinkIcon {...social} key={index} />

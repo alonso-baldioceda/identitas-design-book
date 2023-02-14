@@ -193,7 +193,7 @@ Default.args = {
       },
       {
         name: "en",
-        classes: "text-uppercase me-3",
+        classes: "text-uppercase me-0",
       },
     ],
     location: "/",

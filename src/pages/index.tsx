@@ -55,7 +55,7 @@ const IndexPage = () => {
       },
       call: {
         icon: "phone",
-        classes: "mb-0",
+        classes: "mb-0 me-2 me-sm-3",
         size: Size.xs,
         text: t(header.call),
         url: "tel:+50683274040",
@@ -71,7 +71,7 @@ const IndexPage = () => {
         },
         {
           name: "en",
-          classes: "text-uppercase me-3",
+          classes: "text-uppercase me-0",
         },
       ],
       location: "/",
@@ -198,11 +198,9 @@ const IndexPage = () => {
         },
       ],
       separator: {
-        classes: "mx-3",
+        classes: "mx-3 d-none d-xl-block",
       },
-      showCall: true,
       showLanguages: true,
-      showSocials: true,
       showSwitchMode: true,
       socials: [
         {
