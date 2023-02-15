@@ -211,7 +211,7 @@ const Homepage: FC<HomepageProps> = ({
           </Spacer>
         </FadeInWhenVisible>
       </Block>
-      {/* Coontact */}
+      {/* Contact */}
       <section id="contact">
         <h1>Contact here!</h1>
       </section>

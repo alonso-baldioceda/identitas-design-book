@@ -16,6 +16,7 @@ import Sphere from "./../stories/compositions/Sphere";
 import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
 import Spacer from "./../stories/components/Spacer";
 import Text, { TextProps } from "./../stories/components/Text";
+import Drive from "./../stories/components/Drive";
 
 // Types
 import LinkType from "./../shared/enums/linkType";
@@ -25,6 +26,7 @@ import Size from "./../shared/enums/size";
 import HeroImage from "./../images/home-hero.jpg";
 import SphereImage1 from "./../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../images/tour/room1-preview.jpg";
+import Map from "./../images/svg/navigator.svg";
 
 // Hooks
 import useAvailHeight from "./../hooks/useAvailHeight";
@@ -48,6 +50,8 @@ const IndexPage = () => {
   const units: any = t("units", { returnObjects: true });
   const commonSpaces: any = t("commonSpaces", { returnObjects: true });
   const services: any = t("services", { returnObjects: true });
+  const drive: any = t("drive", { returnObjects: true });
+  const rules: any = t("rules", { returnObjects: true });
   const footer: any = t("footer", { returnObjects: true });
 
   const data = {
@@ -751,6 +755,83 @@ const IndexPage = () => {
         },
       ],
     },
+    driveProps: {
+      blockProps: {
+        id: "drive",
+      },
+      content: {
+        heading: {
+          text: t(drive.heading),
+          classes: "mb-5",
+          variant: "h2",
+        },
+        text: {
+          text: t(drive.text),
+          classes: "mb-5",
+        },
+        buttonLink: {
+          classes:
+            "mb-0 px-4 py-2 rounded-pill fw-bold mb-5 mb-md-0 btn-primary",
+          targetBlank: true,
+          text: t(drive.cta),
+          url: "https://goo.gl/maps/M2zvgGvrKBoyRzNH9",
+        },
+      },
+      icon: <Map />,
+    },
+    rulesProps: {
+      blockProps: {
+        id: "rules",
+      },
+      heading: {
+        text: t(rules.heading),
+        classes: "mb-0",
+        variant: "h2",
+      },
+      float: true,
+      list: [
+        {
+          svg: "clock",
+          svgSize: "sm",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: t(rules.list[0].heading),
+            },
+          },
+        },
+        {
+          svg: "clock",
+          svgSize: "sm",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: t(rules.list[1].heading),
+            },
+          },
+        },
+        {
+          svg: "smoke",
+          svgSize: "sm",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: t(rules.list[2].heading),
+            },
+          },
+        },
+        {
+          svg: "party",
+          svgSize: "sm",
+          text: {
+            heading: {
+              classes: "mb-0",
+              text: t(rules.list[3].heading),
+            },
+          },
+        },
+      ],
+    },
     footerProps: {
       contact: {
         header: {
@@ -978,6 +1059,53 @@ const IndexPage = () => {
               </div>
             )
           )}
+        </FadeInWhenVisible>
+      </Block>
+      {/* Drive */}
+      <Block {...data.driveProps.blockProps}>
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-10 col-sm-12 col-md-6">
+                  <Drive {...data.driveProps.content} />
+                </div>
+                <div className="col-10 col-sm-12 col-md-6">
+                  <img src={Map} alt="drive" />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+        </FadeInWhenVisible>
+      </Block>
+      {/* Contact */}
+      <section id="contact">
+        <h1>Contact here!</h1>
+      </section>
+      {/* Rules */}
+      <Block {...data.rulesProps.blockProps}>
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row justify-content-center justify-content-sm-start">
+                <div className="col-10 col-sm-12">
+                  <Text {...data.rulesProps.heading} />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+          <Spacer bottomOnly={true}>
+            <div className="container">
+              <div className="row justify-content-center justify-content-sm-start">
+                <div className="col-10 col-sm-12">
+                  <ListGroup
+                    list={data.rulesProps.list}
+                    float={data.rulesProps.float}
+                  />
+                </div>
+              </div>
+            </div>
+          </Spacer>
         </FadeInWhenVisible>
       </Block>
     </Layout>

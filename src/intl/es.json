@@ -136,18 +136,10 @@
       ]
     }
   },
-  "booking": "Reservar",
-  "OtaBooking": "Booking",
-  "OtaAirbnb": "Airbnb",
-
-  "followInstagram": "Siganos en Instagram",
-  "followFacebook": "Siganos en Facebook",
-  "languages": "Idiomas",
-
   "drive": {
     "heading": "Como llegar?",
-    "description": "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
-    "cta": "Abrir mapa"
+    "text": "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",
+    "cta": "Ver en Google Maps"
   },
   "contact": {
     "heading": "Escríbenos",
@@ -190,6 +182,14 @@
       }
     ]
   },
+  "booking": "Reservar",
+  "OtaBooking": "Booking",
+  "OtaAirbnb": "Airbnb",
+
+  "followInstagram": "Siganos en Instagram",
+  "followFacebook": "Siganos en Facebook",
+  "languages": "Idiomas",
+
   "cookies": {
     "heading": "Usamos cookies",
     "description": "Al hacer clic en 'Aceptar cookies', acepta que podemos almacenar cookies en su dispositivo para ayudar a personalizar el contenido del sitio, analizar el tráfico y ayudar en nuestro marketing para brindar la mejor experiencia de usuario posible.",

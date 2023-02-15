@@ -136,18 +136,10 @@
       ]
     }
   },
-  "booking": "Book through",
-  "OtaBooking": "Booking",
-  "OtaAirbnb": "Airbnb",
-
-  "followInstagram": "Follow us on Instagram",
-  "followFacebook": "Follow us on Facebook",
-  "languages": "Languages",
-
   "drive": {
-    "heading": "Drive",
-    "description": "We are located in the town of Río Piedras, in Tilarán, Guanacaste.",
-    "cta": "Open map"
+    "heading": "How to get there?",
+    "text": "We are located in the town of Río Piedras, in Tilarán, Guanacaste.",
+    "cta": "View on Google Maps"
   },
   "contact": {
     "heading": "Contact Us",
@@ -190,6 +182,14 @@
       }
     ]
   },
+  "booking": "Book through",
+  "OtaBooking": "Booking",
+  "OtaAirbnb": "Airbnb",
+
+  "followInstagram": "Follow us on Instagram",
+  "followFacebook": "Follow us on Facebook",
+  "languages": "Languages",
+
   "cookies": {
     "heading": "We use cookies",
     "description": "By clicking “Accept Cookies,” you agree we can store cookies on your device to help personalize site content, analyze traffic and assist in our marketing to provide the best possible user experience.",
