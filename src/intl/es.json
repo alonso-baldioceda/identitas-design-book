@@ -41,17 +41,9 @@
       }
     }
   },
-  "booking": "Reservar",
-  "OtaBooking": "Booking",
-  "OtaAirbnb": "Airbnb",
-
-  "followInstagram": "Siganos en Instagram",
-  "followFacebook": "Siganos en Facebook",
-  "languages": "Idiomas",
-
   "commonSpaces": {
     "heading": "Espacios comúnes",
-    "descriptionOne": "Nuestras áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, una cocina totalmente equipada, espacio de trabajo y hermosos jardines que adornan los rústicos corredores."
+    "text": "Nuestras áreas comunes convocan a una experiencia de vínculo social y personal enlazados a la naturaleza, una cocina totalmente equipada, espacio de trabajo y hermosos jardines que adornan los rústicos corredores."
   },
   "services": {
     "heading": "Servicios",
@@ -144,6 +136,14 @@
       ]
     }
   },
+  "booking": "Reservar",
+  "OtaBooking": "Booking",
+  "OtaAirbnb": "Airbnb",
+
+  "followInstagram": "Siganos en Instagram",
+  "followFacebook": "Siganos en Facebook",
+  "languages": "Idiomas",
+
   "drive": {
     "heading": "Como llegar?",
     "description": "Estamos ubicados en el pueblo Río Piedras, de Tilarán, Guanacaste.",

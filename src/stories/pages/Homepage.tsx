@@ -28,7 +28,7 @@ export interface HomepageProps {
   contactPointProps: ContactPointProps;
   topProps: { blockProps: BlockProps; heroProps: HeroProps };
   unitsProps: any;
-  commonProps?: any;
+  commonProps: any;
   servicesProps: {
     blockProps: BlockProps;
     heading: TextProps;

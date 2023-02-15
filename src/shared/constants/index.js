@@ -33,8 +33,6 @@ export const COLOR_CONTROL = {
   ],
 };
 
-export const OPACITY_OPTIONS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
 export const SPACING_OPTIONS = [0, 1, 2, 3, 4, 5];
 
 export const SIZE_OPTIONS = ["xs", "sm", "md", "lg"];

@@ -8,12 +8,14 @@ import Card from "./../stories/compositions/card/Card";
 import Grid from "./../stories/compositions/Grid";
 import Hero from "./../stories/compositions/hero/Hero";
 import Layout from "./../stories/compositions/Layout";
+import ListGroup from "./../stories/compositions/ListGroup";
+import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
 import Sphere from "./../stories/compositions/Sphere";
 
 // Components
 import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
 import Spacer from "./../stories/components/Spacer";
-import Text from "./../stories/components/Text";
+import Text, { TextProps } from "./../stories/components/Text";
 
 // Types
 import LinkType from "./../shared/enums/linkType";
@@ -27,6 +29,14 @@ import SpherePreviewImage1 from "./../images/tour/room1-preview.jpg";
 // Hooks
 import useAvailHeight from "./../hooks/useAvailHeight";
 
+// Types
+interface ServiceProps {
+  heading: TextProps;
+  float?: boolean;
+  list: ListGroupItemProps[];
+  classes?: string;
+}
+
 const IndexPage = () => {
   const { t } = useTranslation();
   const [heroHeight, _] = useAvailHeight();
@@ -36,6 +46,8 @@ const IndexPage = () => {
   const header: any = t("header", { returnObjects: true });
   const hero: any = t("hero", { returnObjects: true });
   const units: any = t("units", { returnObjects: true });
+  const commonSpaces: any = t("commonSpaces", { returnObjects: true });
+  const services: any = t("services", { returnObjects: true });
   const footer: any = t("footer", { returnObjects: true });
 
   const data = {
@@ -447,6 +459,298 @@ const IndexPage = () => {
         yaw: 40,
       },
     },
+    commonProps: {
+      blockProps: {
+        id: "common-spaces",
+      },
+      heading: {
+        text: t(commonSpaces.heading),
+        classes: "mb-0",
+        variant: "h2",
+      },
+      text: {
+        text: t(commonSpaces.text),
+        classes: "mb-0",
+      },
+    },
+    servicesProps: {
+      blockProps: {
+        id: "services",
+        classes: "bg-primary-pastel",
+      },
+      heading: {
+        text: t(services.heading),
+        classes: "mb-0",
+        variant: "h2",
+      },
+      list: [
+        {
+          heading: {
+            classes: "mb-0",
+            text: t(services.basics.heading),
+            variant: "h3",
+          },
+          float: true,
+          list: [
+            {
+              svg: "wifi",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.basics.list[0].heading),
+                },
+              },
+            },
+            {
+              svg: "washing",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.basics.list[1].heading),
+                },
+              },
+            },
+            {
+              svg: "dryer",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.basics.list[2].heading),
+                },
+              },
+            },
+            {
+              svg: "towels",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.basics.list[3].heading),
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: t(services.basics.list[3].subheading),
+                  variant: "small",
+                },
+              },
+            },
+            {
+              svg: "hotWater",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.basics.list[4].heading),
+                },
+              },
+            },
+          ],
+        },
+        {
+          heading: {
+            classes: "mb-0",
+            text: t(services.facilities.heading),
+            variant: "h3",
+          },
+          float: true,
+          list: [
+            {
+              svg: "parking",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.facilities.list[0].heading),
+                },
+              },
+            },
+            {
+              svg: "footprint",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.facilities.list[1].heading),
+                },
+              },
+            },
+          ],
+        },
+        {
+          heading: {
+            classes: "mb-0",
+            text: t(services.kitchen.heading),
+            variant: "h3",
+          },
+          float: true,
+          list: [
+            {
+              svg: "kitchen",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[0].heading),
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[0].subheading),
+                  variant: "small",
+                },
+              },
+            },
+            {
+              svg: "oven",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[1].heading),
+                },
+              },
+            },
+            {
+              svg: "silverware",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[2].heading),
+                },
+              },
+            },
+            {
+              svg: "refrigerator",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[3].heading),
+                },
+              },
+            },
+            {
+              svg: "stove",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[4].heading),
+                },
+              },
+            },
+            {
+              svg: "coffeeMaker",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[5].heading),
+                },
+              },
+            },
+            {
+              svg: "oil",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[6].heading),
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[6].subheading),
+                  variant: "small",
+                },
+              },
+            },
+            {
+              svg: "barbecueUtensils",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.kitchen.list[7].heading),
+                },
+              },
+            },
+          ],
+        },
+        {
+          heading: {
+            classes: "mb-0",
+            text: t(services.betAndBath.heading),
+            variant: "h3",
+          },
+          float: true,
+          list: [
+            {
+              svg: "pillow",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.betAndBath.list[0].heading),
+                },
+              },
+            },
+            {
+              svg: "bedLinens",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.betAndBath.list[1].heading),
+                },
+              },
+            },
+            {
+              svg: "shampoo",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.betAndBath.list[2].heading),
+                },
+              },
+            },
+          ],
+        },
+        {
+          heading: {
+            classes: "mb-0",
+            text: t(services.outdoor.heading),
+            variant: "h3",
+          },
+          float: true,
+          list: [
+            {
+              svg: "patio",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.outdoor.list[0].heading),
+                },
+              },
+            },
+            {
+              svg: "garden",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: t(services.outdoor.list[1].heading),
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
     footerProps: {
       contact: {
         header: {
@@ -607,6 +911,73 @@ const IndexPage = () => {
               </div>
             </div>
           </Spacer>
+        </FadeInWhenVisible>
+      </Block>
+      {/* Common spaces */}
+      <Block {...data.commonProps.blockProps}>
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-10 col-sm-12">
+                  <Text {...data.commonProps.heading} />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+          <Spacer bottomOnly={true}>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-10 col-sm-12">
+                  <Text {...data.commonProps.text} />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+        </FadeInWhenVisible>
+      </Block>
+      {/* Services */}
+      <Block {...data.servicesProps.blockProps}>
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row justify-content-center justify-content-sm-start">
+                {data.servicesProps?.heading && (
+                  <div className="col-10 col-sm-12">
+                    <Text {...data.servicesProps.heading} />
+                  </div>
+                )}
+              </div>
+            </div>
+          </Spacer>
+          {data.servicesProps.list.map(
+            (service: ServiceProps, index: number) => (
+              <div key={index} id={`service-${service.heading.text}`}>
+                <Spacer bottomOnly={true}>
+                  <div className="container">
+                    <div className="row justify-content-center justify-content-sm-start">
+                      <div className="col-10 col-sm-12">
+                        <Text {...service.heading} />
+                      </div>
+                    </div>
+                  </div>
+                </Spacer>
+                <Spacer bottomOnly={true}>
+                  <div className="container">
+                    <div className="row justify-content-center justify-content-sm-start">
+                      <div className="col-10 col-sm-12">
+                        <ListGroup
+                          list={service.list}
+                          float={service.float}
+                          classes={service.classes}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </Spacer>
+              </div>
+            )
+          )}
         </FadeInWhenVisible>
       </Block>
     </Layout>

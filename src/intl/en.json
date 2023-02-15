@@ -41,16 +41,9 @@
       }
     }
   },
-  "booking": "Book through",
-  "OtaBooking": "Booking",
-  "OtaAirbnb": "Airbnb",
-  "followInstagram": "Follow us on Instagram",
-  "followFacebook": "Follow us on Facebook",
-  "languages": "Languages",
-
   "commonSpaces": {
     "heading": "Common spaces",
-    "descriptionOne": "Our common areas call for an experience of social and personal connection linked to nature, a fully equipped kitchen, work space and beautiful gardens that adorn the rustic corridors."
+    "text": "Our common areas call for an experience of social and personal connection linked to nature, a fully equipped kitchen, work space and beautiful gardens that adorn the rustic corridors."
   },
   "services": {
     "heading": "Services",
@@ -143,6 +136,14 @@
       ]
     }
   },
+  "booking": "Book through",
+  "OtaBooking": "Booking",
+  "OtaAirbnb": "Airbnb",
+
+  "followInstagram": "Follow us on Instagram",
+  "followFacebook": "Follow us on Facebook",
+  "languages": "Languages",
+
   "drive": {
     "heading": "Drive",
     "description": "We are located in the town of Río Piedras, in Tilarán, Guanacaste.",
