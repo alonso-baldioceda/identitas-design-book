@@ -12,6 +12,7 @@ import Separator, { SeparatorProps } from "./Separator";
 import SwitchMode from "./../../components/SwitchMode";
 import MenuClose from "./MenuClose";
 import Mobile, { MobileProps } from "./Mobile";
+import Socials from "./Socials";
 
 // Contexts
 import LayoutContext from "./../LayoutContext";
@@ -21,9 +22,11 @@ import Link from "./../../../shared/interfaces/link";
 
 // Styles
 const StyledHeader = styled((props) => <header {...props} />)`
-  &.fixed {
-    position: fixed;
-  }
+  ${(props) =>
+    props.minheight &&
+    `
+      min-height: ${props.minheight};
+    `}
 
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
@@ -31,6 +34,10 @@ const StyledHeader = styled((props) => <header {...props} />)`
   transition: all 0.15s ease;
   width: 100%;
   z-index: 200;
+
+  &.fixed {
+    position: fixed;
+  }
 `;
 
 const StyledNavWrapper = styled.div`
@@ -56,7 +63,7 @@ export interface HeaderProps {
   languages: Language[];
   location: string;
   minHeight?: number;
-  mobile?: MobileProps;
+  mobile: MobileProps;
   navigation: Link[];
   separator?: SeparatorProps;
   socials?: LinkIconProps[];
@@ -78,43 +85,35 @@ const Header: FC<HeaderProps> = ({
 }) => {
   const { isOpen, isDark, setIsDark } = useContext(LayoutContext);
 
+  const headerMinHeight = minHeight ? minHeight : 84;
+  const isFixed = fixed ? fixed.toString() : null;
+
+  const brandProps = { ...brand, location };
   const mobileProps = { ...mobile, isOpen };
+  const desktopLanguagesProps = { languages, hideLanguagesFrom };
+  const switchModeProps = { isDark, setIsDark };
 
   return (
     <>
       <StyledHeader
         className={classnames({ fixed: fixed }, `${prefix}-header`)}
-        style={{ minHeight: minHeight ? minHeight : 84 }}
-        fixed={fixed ? fixed.toString() : null}
+        fixed={isFixed}
+        minheight={headerMinHeight}
       >
         <div className="container-fluid">
           <div className="row align-items-center">
             <div className="col-12">
               <StyledNavWrapper>
                 <div className="d-flex align-items-center">
-                  <Brand {...brand} location={location} />
+                  <Brand {...brandProps} />
                   <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
-                  {languages && (
-                    <DesktopLanguages
-                      languages={languages}
-                      hideLanguagesFrom={hideLanguagesFrom}
-                    />
-                  )}
-                  {separator && <Separator {...separator} />}
+                  <DesktopLanguages {...desktopLanguagesProps} />
+                  <Separator {...separator} />
                   {call && <LinkIcon {...call} />}
-                  <SwitchMode
-                    setIsDark={setIsDark}
-                    isDark={isDark ? isDark : false}
-                  />
-                  {socials && (
-                    <div className="d-flex">
-                      {socials?.map((social: LinkIconProps, index: number) => (
-                        <LinkIcon {...social} key={index} />
-                      ))}
-                    </div>
-                  )}
+                  <SwitchMode {...switchModeProps} />
+                  <Socials socials={socials} />
                   <MenuClose hideCloseFrom={hideCloseFrom} />
                 </div>
               </StyledNavWrapper>
@@ -122,7 +121,7 @@ const Header: FC<HeaderProps> = ({
           </div>
         </div>
       </StyledHeader>
-      {mobileProps && <Mobile {...mobileProps} />}
+      <Mobile {...mobileProps} />
     </>
   );
 };

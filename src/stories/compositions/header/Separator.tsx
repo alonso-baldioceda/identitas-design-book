@@ -18,15 +18,18 @@ const StyledSeparator = styled((props) => <div {...props} />)`
 // Interfaces
 export interface SeparatorProps {
   classes?: string;
-  color?: string;
   height?: number;
 }
 
-const Separator: FC<SeparatorProps> = ({ classes, height }) => (
-  <StyledSeparator
-    className={classnames({ [`${classes}`]: classes }, `${prefix}-separator`)}
-    height={height ? height : 44}
-  />
-);
+const Separator: FC<SeparatorProps> = (separator) =>
+  ({ separator } && (
+    <StyledSeparator
+      className={classnames(
+        { [`${separator.classes}`]: separator.classes },
+        `${prefix}-separator`
+      )}
+      height={separator.height ? separator.height : 44}
+    />
+  ));
 
 export default Separator;
