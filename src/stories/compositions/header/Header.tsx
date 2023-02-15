@@ -59,8 +59,6 @@ export interface HeaderProps {
   mobile?: MobileProps;
   navigation: Link[];
   separator?: SeparatorProps;
-  showLanguages?: boolean;
-  showSwitchMode?: boolean;
   socials?: LinkIconProps[];
 }
 
@@ -76,8 +74,6 @@ const Header: FC<HeaderProps> = ({
   mobile,
   navigation,
   separator,
-  showLanguages,
-  showSwitchMode,
   socials,
 }) => {
   const { isOpen, isDark, setIsDark } = useContext(LayoutContext);
@@ -100,19 +96,18 @@ const Header: FC<HeaderProps> = ({
                   <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
-                  <DesktopLanguages
-                    languages={languages}
-                    showLanguages={showLanguages}
-                    hideLanguagesFrom={hideLanguagesFrom}
-                  />
-                  {separator && <Separator {...separator} />}
-                  {call && <LinkIcon {...call} />}
-                  {showSwitchMode && (
-                    <SwitchMode
-                      setIsDark={setIsDark}
-                      isDark={isDark ? isDark : false}
+                  {languages && (
+                    <DesktopLanguages
+                      languages={languages}
+                      hideLanguagesFrom={hideLanguagesFrom}
                     />
                   )}
+                  {separator && <Separator {...separator} />}
+                  {call && <LinkIcon {...call} />}
+                  <SwitchMode
+                    setIsDark={setIsDark}
+                    isDark={isDark ? isDark : false}
+                  />
                   {socials && (
                     <div className="d-flex">
                       {socials?.map((social: LinkIconProps, index: number) => (

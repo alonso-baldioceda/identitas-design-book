@@ -186,8 +186,6 @@ Default.args = {
     separator: {
       classes: "mx-3 d-none d-xl-block",
     },
-    showLanguages: true,
-    showSwitchMode: true,
     socials: [
       {
         icon: "facebook",

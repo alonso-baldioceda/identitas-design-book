@@ -78,18 +78,6 @@ export default {
       description: "Separator between links",
       name: "Separator",
     },
-    showLanguages: {
-      name: "Show Languages?",
-      description: "Show Languages list",
-    },
-    showSocials: {
-      name: "Show Socials?",
-      description: "Show socials list",
-    },
-    showSwitchMode: {
-      name: "Show Switch Mode?",
-      description: "Show switch mode button",
-    },
     socials: {
       name: "Socials",
       description: "Facebook, Instagram, etc",
@@ -264,8 +252,6 @@ Default.args = {
   separator: {
     classes: "mx-3 d-none d-xl-block",
   },
-  showLanguages: true,
-  showSwitchMode: true,
   socials: [
     {
       icon: "facebook",

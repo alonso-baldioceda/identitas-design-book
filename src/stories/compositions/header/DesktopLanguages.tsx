@@ -27,13 +27,11 @@ interface Language {
 export interface DesktopLanguagesProps {
   hideLanguagesFrom?: string;
   languages: Language[];
-  showLanguages?: boolean;
 }
 
 const DesktopLanguages: FC<DesktopLanguagesProps> = ({
   hideLanguagesFrom,
   languages,
-  showLanguages,
 }) => {
   const { i18n } = useTranslation();
 
@@ -46,7 +44,7 @@ const DesktopLanguages: FC<DesktopLanguagesProps> = ({
   };
 
   return (
-    { showLanguages } && (
+    { languages } && (
       <div
         className={classnames(
           `d-none`,

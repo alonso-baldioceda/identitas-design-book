@@ -62,7 +62,6 @@ const IndexPage = () => {
       },
       fixed: true,
       hideCloseFrom: "d-xl-none d-flex",
-      // TODO: Maybe rename this to showLanguagesFrom
       hideLanguagesFrom: "xl",
       languages: [
         {
@@ -200,8 +199,6 @@ const IndexPage = () => {
       separator: {
         classes: "mx-3 d-none d-xl-block",
       },
-      showLanguages: true,
-      showSwitchMode: true,
       socials: [
         {
           icon: "facebook",
