@@ -10,14 +10,6 @@ import { SPACING_OPTIONS } from "./../../shared/constants/";
 export default {
   title: "Compositions/Grid",
   component: Grid,
-  args: {
-    gap: 30,
-    xs: 1,
-    sm: 1,
-    md: 2,
-    lg: 3,
-    xl: 4,
-  },
   argTypes: {
     xs: {
       control: "select",
@@ -50,11 +42,12 @@ const Template: ComponentStory<typeof Grid> = (args) => (
   </Grid>
 );
 
-export const Default = Template.bind({
+export const Default = Template.bind({});
+Default.args = {
   gap: 30,
   xs: 1,
   sm: 1,
   md: 2,
   lg: 3,
   xl: 4,
-});
+};

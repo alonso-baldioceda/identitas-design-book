@@ -19,16 +19,14 @@ const GalleryItem = styled((props) => <a {...props} />)`
 
 // Types
 interface AlbumProps {
-  alts?: string[];
-  appearance?: string;
-  borderWidth?: number;
+  // alts?: string[];
+  // borderWidth?: number;
   images: any;
 }
 
 const Album: FC<AlbumProps> = ({
-  alts = [""],
-  appearance = "white",
-  borderWidth = 5,
+  // alts = [""],
+  // borderWidth = 5,
   images,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,10 +63,11 @@ const Album: FC<AlbumProps> = ({
         href="/#"
         onClick={(e: React.MouseEvent<HTMLElement>) => openLightbox(e)}
         key={img !== undefined && img[0].id}
-        className={`border border-${appearance} border-${borderWidth}`}
+        // className={`border border-${appearance} border-${borderWidth}`}
       >
         {image !== undefined ? (
-          <GatsbyImage image={image} alt={alts[index]} data-key={index} />
+          // <GatsbyImage image={image} alt={alts[index]} data-key={index} />
+          <GatsbyImage image={image} alt="" data-key={index} />
         ) : null}
       </GalleryItem>
     );

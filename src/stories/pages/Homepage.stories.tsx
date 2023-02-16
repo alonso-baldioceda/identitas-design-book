@@ -404,10 +404,6 @@ Default.args = {
         },
       },
     ],
-    unitsGridProps: {
-      lg: 2,
-      xl: 2,
-    },
     sphereProps1: {
       border: 5,
       borderColor: "primary",

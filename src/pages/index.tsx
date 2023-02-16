@@ -3,20 +3,23 @@ import { graphql } from "gatsby";
 import { useTranslation } from "react-i18next";
 
 // Compositions
-import Block from "./../stories/components/Block";
+import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
 import Card from "./../stories/compositions/card/Card";
 import Grid from "./../stories/compositions/Grid";
 import Hero from "./../stories/compositions/hero/Hero";
 import Layout from "./../stories/compositions/Layout";
 import ListGroup from "./../stories/compositions/ListGroup";
-import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
 import Sphere from "./../stories/compositions/Sphere";
 
 // Components
+// The Album component is not used in the Storybook, but it is used in the
+// Gatsby components because it uses gatsby-plugin-image
+import Album from "../components/Album";
+import Block from "./../stories/components/Block";
+import Drive from "./../stories/components/Drive";
 import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
 import Spacer from "./../stories/components/Spacer";
 import Text, { TextProps } from "./../stories/components/Text";
-import Drive from "./../stories/components/Drive";
 
 // Types
 import LinkType from "./../shared/enums/linkType";
@@ -26,6 +29,15 @@ import Size from "./../shared/enums/size";
 import HeroImage from "./../images/home-hero.jpg";
 import SphereImage1 from "./../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../images/tour/room1-preview.jpg";
+import SphereImage2 from "./../images/tour/room2.jpg";
+import SpherePreviewImage2 from "./../images/tour/room2-preview.jpg";
+import SphereImage3 from "./../images/tour/bath.jpg";
+import SpherePreviewImage3 from "./../images/tour/bath-preview.jpg";
+import SphereCommonImage1 from "./../images/tour/common1.jpg";
+import SphereCommonPreviewImage1 from "./../images/tour/common1-preview.jpg";
+import SphereCommonImage2 from "./../images/tour/common2.jpg";
+import SphereCommonPreviewImage2 from "./../images/tour/common2-preview.jpg";
+
 import Map from "./../images/svg/navigator.svg";
 
 // Hooks
@@ -39,9 +51,11 @@ interface ServiceProps {
   classes?: string;
 }
 
-const IndexPage = () => {
+const IndexPage = ({ data: graphqlData }: any) => {
   const { t } = useTranslation();
   const [heroHeight, _] = useAvailHeight();
+
+  const { heroImageImg, unitsImgs, commonImgs } = graphqlData || [];
 
   // Translations
   const navigation: any = t("nav", { returnObjects: true });
@@ -422,19 +436,15 @@ const IndexPage = () => {
           },
         },
       ],
-      unitsGridProps: {
-        lg: 2,
-        xl: 2,
-      },
       sphereProps1: {
         border: 5,
         borderColor: "primary",
         height: "400px",
-        id: "sphereSample1",
+        id: "sphereUnits1",
         image: SphereImage1,
         pitch: 6,
         preview: SpherePreviewImage1,
-        sceneId: "sphereSample1",
+        sceneId: "sphereUnits1",
         width: "100%",
         yaw: 40,
       },
@@ -442,11 +452,11 @@ const IndexPage = () => {
         border: 5,
         borderColor: "primary",
         height: "400px",
-        id: "sphereSample2",
-        image: SphereImage1,
+        id: "sphereUnits2",
+        image: SphereImage2,
         pitch: 6,
-        preview: SpherePreviewImage1,
-        sceneId: "sphereSample2",
+        preview: SpherePreviewImage2,
+        sceneId: "sphereUnits2",
         width: "100%",
         yaw: 40,
       },
@@ -454,11 +464,11 @@ const IndexPage = () => {
         border: 5,
         borderColor: "primary",
         height: "400px",
-        id: "sphereSample3",
-        image: SphereImage1,
+        id: "sphereUnits3",
+        image: SphereImage3,
         pitch: 6,
-        preview: SpherePreviewImage1,
-        sceneId: "sphereSample3",
+        preview: SpherePreviewImage3,
+        sceneId: "sphereUnits3",
         width: "100%",
         yaw: 40,
       },
@@ -475,6 +485,30 @@ const IndexPage = () => {
       text: {
         text: t(commonSpaces.text),
         classes: "mb-0",
+      },
+      sphereProps1: {
+        border: 5,
+        borderColor: "primary",
+        height: "400px",
+        id: "sphereCommon1",
+        image: SphereCommonImage1,
+        pitch: 6,
+        preview: SphereCommonPreviewImage1,
+        sceneId: "sphereCommon1",
+        width: "100%",
+        yaw: 40,
+      },
+      sphereProps2: {
+        border: 5,
+        borderColor: "primary",
+        height: "400px",
+        id: "sphereCommon2",
+        image: SphereCommonImage2,
+        pitch: 6,
+        preview: SphereCommonPreviewImage2,
+        sceneId: "sphereCommon2",
+        width: "100%",
+        yaw: 40,
       },
     },
     servicesProps: {
@@ -981,13 +1015,18 @@ const IndexPage = () => {
           </Spacer>
           <Spacer bottomOnly={true}>
             <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
-                  <Grid {...data.unitsProps.unitsGridProps}>
-                    <Sphere {...data.unitsProps.sphereProps1} />
-                    <Sphere {...data.unitsProps.sphereProps2} />
-                    <Sphere {...data.unitsProps.sphereProps3} />
-                  </Grid>
+              <div className="row">
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Sphere {...data.unitsProps.sphereProps1} />
+                </div>
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Sphere {...data.unitsProps.sphereProps2} />
+                </div>
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Sphere {...data.unitsProps.sphereProps3} />
+                </div>
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Album images={unitsImgs} />
                 </div>
               </div>
             </div>
@@ -1011,6 +1050,25 @@ const IndexPage = () => {
               <div className="row justify-content-center">
                 <div className="col-10 col-sm-12">
                   <Text {...data.commonProps.text} />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+          <Spacer bottomOnly={true}>
+            <div className="container">
+              <div className="row justify-content-center justify-content-sm-start">
+                <div className="order-2 order-xl-1 col-10 col-sm-6">
+                  <div className="common">
+                    <Album images={commonImgs} />
+                  </div>
+                </div>
+                <div className="order-1 order-xl-2 col-10 col-sm-6">
+                  <div className="mb-2">
+                    <Sphere {...data.commonProps.sphereProps1} />
+                  </div>
+                  <div className="mb-2">
+                    <Sphere {...data.commonProps.sphereProps2} />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1116,12 +1174,7 @@ export default IndexPage;
 
 export const query = graphql`
   query {
-    heroImage: file(relativePath: { eq: "home-hero.jpg" }) {
-      childImageSharp {
-        gatsbyImageData(width: 2200)
-      }
-    }
-    units: allFile(
+    unitsImgs: allFile(
       filter: {
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
         relativeDirectory: { eq: "units" }
@@ -1140,7 +1193,7 @@ export const query = graphql`
         }
       }
     }
-    common: allFile(
+    commonImgs: allFile(
       filter: {
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
         relativeDirectory: { eq: "common" }

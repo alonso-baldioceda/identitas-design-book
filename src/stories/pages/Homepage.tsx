@@ -112,14 +112,19 @@ const Homepage: FC<HomepageProps> = ({
           </Spacer>
           <Spacer bottomOnly={true}>
             <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
-                  <Grid {...unitsProps.unitsGridProps}>
-                    <Sphere {...unitsProps.sphereProps1} />
-                    <Sphere {...unitsProps.sphereProps2} />
-                    <Sphere {...unitsProps.sphereProps3} />
-                  </Grid>
+              <div className="row">
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Sphere {...unitsProps.sphereProps1} />
                 </div>
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Sphere {...unitsProps.sphereProps2} />
+                </div>
+                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Sphere {...unitsProps.sphereProps3} />
+                </div>
+                {/* <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                  <Gallery images={images} />
+                </div> */}
               </div>
             </div>
           </Spacer>
