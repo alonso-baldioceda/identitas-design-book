@@ -39,11 +39,28 @@
         "text": "1 double bed",
         "max": "(máx. 2 guests)"
       }
+    },
+    "gallery": {
+      "img1": "Interior of a cabin showing the two double beds and entrance to the bathroom",
+      "img2": "Interior of a cabin showing the two double beds and main entrance"
     }
   },
   "commonSpaces": {
     "heading": "Common spaces",
-    "text": "Our common areas call for an experience of social and personal connection linked to nature, a fully equipped kitchen, work space and beautiful gardens that adorn the rustic corridors."
+    "text": "Our common areas call for an experience of social and personal connection linked to nature, a fully equipped kitchen, work space and beautiful gardens that adorn the rustic corridors.",
+    "gallery": {
+      "img1": "Vista aérea de las Cabinas Vista Lago Arenal, Tilarán, Guanacaste",
+      "img2": "Vista del Lago Arenal desde el frente de las Cabinas Vista Lago Arenal, Tilarán, Guanacaste",
+      "img3": "Sol ocultándose detrás de las montañas y las torres eólicas al atardecer",
+      "img4": "Vista del atardecer desde la parte frontal de las cabinas",
+      "img5": "Vista de Oeste a Este de las instalaciones",
+      "img6": "Corredores mostrando las paredes frontales de madera y sillas de madera frente al lago Arenal, Tilarán, Guanacaste",
+      "img7": "Corredores de las cabinas mostrando las columnas de piedra laja y sillas de madera frente al lago Arenal, Tilarán, Guanacaste",
+      "img8": "Entrada de la propiedad mostrando el lago Arenal, la parte trasera de las instalaciones y el parqueo",
+      "img9": "Jardínes junto al parqueo con vista al Lago Arenal, Tilarán, Guanacaste",
+      "img10": "Area de fregadero y cocina de gas de la cocina compartida",
+      "img11": "Comedor para 6 personas de la cocina compartida"
+    }
   },
   "services": {
     "heading": "Services",

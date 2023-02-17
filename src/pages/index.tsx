@@ -25,6 +25,9 @@ import Text, { TextProps } from "./../stories/components/Text";
 import LinkType from "./../shared/enums/linkType";
 import Size from "./../shared/enums/size";
 
+// Hooks
+import useAvailHeight from "./../hooks/useAvailHeight";
+
 // Assets
 import HeroImage from "./../images/home-hero.jpg";
 import SphereImage1 from "./../images/tour/room1.jpg";
@@ -37,11 +40,7 @@ import SphereCommonImage1 from "./../images/tour/common1.jpg";
 import SphereCommonPreviewImage1 from "./../images/tour/common1-preview.jpg";
 import SphereCommonImage2 from "./../images/tour/common2.jpg";
 import SphereCommonPreviewImage2 from "./../images/tour/common2-preview.jpg";
-
 import Map from "./../images/svg/navigator.svg";
-
-// Hooks
-import useAvailHeight from "./../hooks/useAvailHeight";
 
 // Types
 interface ServiceProps {
@@ -55,18 +54,22 @@ const IndexPage = ({ data: graphqlData }: any) => {
   const { t } = useTranslation();
   const [heroHeight, _] = useAvailHeight();
 
-  const { heroImageImg, unitsImgs, commonImgs } = graphqlData || [];
+  const { unitsImgs, commonImgs } = graphqlData || [];
 
   // Translations
   const navigation: any = t("nav", { returnObjects: true });
   const header: any = t("header", { returnObjects: true });
   const hero: any = t("hero", { returnObjects: true });
   const units: any = t("units", { returnObjects: true });
+  const unitsGallery: any = t("unitsGallery", { returnObjects: true });
   const commonSpaces: any = t("commonSpaces", { returnObjects: true });
+  const commonGallery: any = t("commonGallery", { returnObjects: true });
   const services: any = t("services", { returnObjects: true });
   const drive: any = t("drive", { returnObjects: true });
   const rules: any = t("rules", { returnObjects: true });
   const footer: any = t("footer", { returnObjects: true });
+
+  console.log("unitsGallery", unitsGallery, unitsImgs);
 
   const data = {
     headerProps: {

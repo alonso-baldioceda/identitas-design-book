@@ -4,6 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Lightbox from "react-image-lightbox";
 import Masonry from "react-masonry-component";
 import "react-image-lightbox/style.css";
+import classnames from "classnames";
+import { prefix } from "./../stories/shared/styles.js";
 
 // Styles
 
@@ -19,16 +21,10 @@ const GalleryItem = styled((props) => <a {...props} />)`
 
 // Types
 interface AlbumProps {
-  // alts?: string[];
-  // borderWidth?: number;
   images: any;
 }
 
-const Album: FC<AlbumProps> = ({
-  // alts = [""],
-  // borderWidth = 5,
-  images,
-}) => {
+const Album: FC<AlbumProps> = ({ images }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
@@ -63,7 +59,7 @@ const Album: FC<AlbumProps> = ({
         href="/#"
         onClick={(e: React.MouseEvent<HTMLElement>) => openLightbox(e)}
         key={img !== undefined && img[0].id}
-        // className={`border border-${appearance} border-${borderWidth}`}
+        className={classnames(`${prefix}-gallery-item`)}
       >
         {image !== undefined ? (
           // <GatsbyImage image={image} alt={alts[index]} data-key={index} />
@@ -79,24 +75,20 @@ const Album: FC<AlbumProps> = ({
 
   return (
     <>
-      {pictures !== undefined ? (
-        <>
-          <StyledAlbum elementType={"div"} className={"gallery"}>
-            {pictures.map((picture: any) => picture)}
-          </StyledAlbum>
+      <StyledAlbum elementType={"div"} className={"gallery"}>
+        {pictures.map((picture: any) => picture)}
+      </StyledAlbum>
 
-          {isOpen && (
-            <Lightbox
-              mainSrc={`${arrImgSorted[current][1]}`}
-              nextSrc={`${arrImgSorted[next][1]}`}
-              prevSrc={`${arrImgSorted[prev][1]}`}
-              onCloseRequest={() => setIsOpen(false)}
-              onMovePrevRequest={() => setPhotoIndex(prev)}
-              onMoveNextRequest={() => setPhotoIndex(next)}
-            />
-          )}
-        </>
-      ) : null}
+      {isOpen && (
+        <Lightbox
+          mainSrc={`${arrImgSorted[current][1]}`}
+          nextSrc={`${arrImgSorted[next][1]}`}
+          prevSrc={`${arrImgSorted[prev][1]}`}
+          onCloseRequest={() => setIsOpen(false)}
+          onMovePrevRequest={() => setPhotoIndex(prev)}
+          onMoveNextRequest={() => setPhotoIndex(next)}
+        />
+      )}
     </>
   );
 };
