@@ -14,7 +14,7 @@ import Sphere from "./../stories/compositions/Sphere";
 // Components
 // The Album component is not used in the Storybook, but it is used in the
 // Gatsby components because it uses gatsby-plugin-image
-import Album from "../components/Album";
+import Gallery from "../components/gallery/Gallery";
 import Block from "./../stories/components/Block";
 import Drive from "./../stories/components/Drive";
 import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
@@ -68,8 +68,6 @@ const IndexPage = ({ data: graphqlData }: any) => {
   const drive: any = t("drive", { returnObjects: true });
   const rules: any = t("rules", { returnObjects: true });
   const footer: any = t("footer", { returnObjects: true });
-
-  console.log("unitsGallery", unitsGallery, unitsImgs);
 
   const data = {
     headerProps: {
@@ -1018,7 +1016,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           </Spacer>
           <Spacer bottomOnly={true}>
             <div className="container">
-              <div className="row">
+              <div className="row justify-content-center">
                 <div className="col-10 col-sm-6 mb-3 mb-md-5">
                   <Sphere {...data.unitsProps.sphereProps1} />
                 </div>
@@ -1029,7 +1027,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
                   <Sphere {...data.unitsProps.sphereProps3} />
                 </div>
                 <div className="col-10 col-sm-6 mb-3 mb-md-5">
-                  <Album images={unitsImgs} />
+                  <Gallery images={unitsImgs} name="unitsGallery" />
                 </div>
               </div>
             </div>
@@ -1062,7 +1060,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
               <div className="row justify-content-center justify-content-sm-start">
                 <div className="order-2 order-xl-1 col-10 col-sm-6">
                   <div className="common">
-                    <Album images={commonImgs} />
+                    <Gallery images={commonImgs} name="commonGallery" />
                   </div>
                 </div>
                 <div className="order-1 order-xl-2 col-10 col-sm-6">
