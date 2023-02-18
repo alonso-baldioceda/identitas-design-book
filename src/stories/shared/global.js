@@ -137,6 +137,17 @@ export const bodyStyles = css`
     }
   }
 
+  /* Gallery */
+
+  .${prefix}-gallery {
+    .${prefix}-gallery-item {
+      img {
+        border: 5px solid ${color.primary};
+        /* width: 48% !important; */
+      }
+    }
+  }
+
   /* Background */
 
   .bg-primary {
@@ -233,6 +244,17 @@ export const bodyStyles = css`
           &:visited {
             color: ${color.white};
           }
+        }
+      }
+    }
+
+    /* Gallery */
+
+    .${prefix}-gallery {
+      .${prefix}-gallery-item {
+        img {
+          border: 5px solid ${color.primary};
+          /* width: 48% !important; */
         }
       }
     }

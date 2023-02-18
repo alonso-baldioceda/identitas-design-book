@@ -27,6 +27,7 @@ import Size from "./../shared/enums/size";
 
 // Hooks
 import useAvailHeight from "./../hooks/useAvailHeight";
+import useBootstrapBreakpoints from "./../hooks/useBootstrapBreakpoints";
 
 // Assets
 import HeroImage from "./../images/home-hero.jpg";
@@ -52,8 +53,27 @@ interface ServiceProps {
 
 const IndexPage = ({ data: graphqlData }: any) => {
   const { t } = useTranslation();
-  const [heroHeight, _] = useAvailHeight();
+  const heroHeight = useAvailHeight();
+  const breakpoint = useBootstrapBreakpoints();
 
+  const setSphereHeight = (size: string) => {
+    switch (size) {
+      case "sm":
+        return 350;
+      case "md":
+        return 350;
+      case "lg":
+        return 400;
+      case "xl":
+        return 400;
+      default:
+        return 300;
+    }
+  };
+
+  const sphereSize = setSphereHeight(breakpoint);
+
+  // GraphQL
   const { unitsImgs, commonImgs } = graphqlData || [];
 
   // Translations
@@ -61,9 +81,9 @@ const IndexPage = ({ data: graphqlData }: any) => {
   const header: any = t("header", { returnObjects: true });
   const hero: any = t("hero", { returnObjects: true });
   const units: any = t("units", { returnObjects: true });
-  const unitsGallery: any = t("unitsGallery", { returnObjects: true });
+  // const unitsGallery: any = t("unitsGallery", { returnObjects: true });
   const commonSpaces: any = t("commonSpaces", { returnObjects: true });
-  const commonGallery: any = t("commonGallery", { returnObjects: true });
+  // const commonGallery: any = t("commonGallery", { returnObjects: true });
   const services: any = t("services", { returnObjects: true });
   const drive: any = t("drive", { returnObjects: true });
   const rules: any = t("rules", { returnObjects: true });
@@ -440,7 +460,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       sphereProps1: {
         border: 5,
         borderColor: "primary",
-        height: "400px",
+        height: `${sphereSize}px`,
         id: "sphereUnits1",
         image: SphereImage1,
         pitch: 6,
@@ -452,7 +472,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       sphereProps2: {
         border: 5,
         borderColor: "primary",
-        height: "400px",
+        height: `${sphereSize}px`,
         id: "sphereUnits2",
         image: SphereImage2,
         pitch: 6,
@@ -464,7 +484,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       sphereProps3: {
         border: 5,
         borderColor: "primary",
-        height: "400px",
+        height: `${sphereSize}px`,
         id: "sphereUnits3",
         image: SphereImage3,
         pitch: 6,
@@ -490,7 +510,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       sphereProps1: {
         border: 5,
         borderColor: "primary",
-        height: "400px",
+        height: `${sphereSize}px`,
         id: "sphereCommon1",
         image: SphereCommonImage1,
         pitch: 6,
@@ -502,7 +522,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       sphereProps2: {
         border: 5,
         borderColor: "primary",
-        height: "400px",
+        height: `${sphereSize}px`,
         id: "sphereCommon2",
         image: SphereCommonImage2,
         pitch: 6,

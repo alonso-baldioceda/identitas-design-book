@@ -7,10 +7,7 @@ import { prefix } from "./../../stories/shared/styles.js";
 import "react-image-lightbox/style.css";
 
 // Styles
-const GalleryItem = styled((props) => <a {...props} />)`
-  margin: 0 0.5% 1%;
-  width: 49%;
-`;
+const GalleryItem = styled((props) => <a {...props} />)``;
 
 // Types
 interface ImagesProps {

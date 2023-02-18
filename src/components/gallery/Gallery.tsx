@@ -2,7 +2,6 @@ import React, { useState, useMemo, FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
 import Lightbox from "react-image-lightbox";
-import Masonry from "react-masonry-component";
 import "react-image-lightbox/style.css";
 import { prefix } from "./../../stories/shared/styles.js";
 
@@ -10,9 +9,30 @@ import { prefix } from "./../../stories/shared/styles.js";
 import Images from "./Images";
 
 // Styles
-const StyledGallery = styled((props) => <Masonry {...props} />)`
-  display: flex;
-  justify-content: space-between;
+const StyledGallery = styled((props) => <div {...props} />)`
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  > a {
+    display: flex;
+  }
 `;
 
 // Types
@@ -49,14 +69,12 @@ const Gallery: FC<GalleryProps> = ({ images, name }) => {
   };
 
   return (
-    <div className={classnames(`${prefix}-gallery`)}>
-      <StyledGallery elementType={"div"} className={"gallery"}>
-        <Images
-          images={arrImgSorted}
-          openLightbox={openLightbox}
-          gallery={name}
-        />
-      </StyledGallery>
+    <StyledGallery className={classnames(`${prefix}-gallery`)}>
+      <Images
+        images={arrImgSorted}
+        openLightbox={openLightbox}
+        gallery={name}
+      />
 
       {isOpen && (
         <Lightbox
@@ -68,7 +86,7 @@ const Gallery: FC<GalleryProps> = ({ images, name }) => {
           onMoveNextRequest={() => setPhotoIndex(next)}
         />
       )}
-    </div>
+    </StyledGallery>
   );
 };
 
