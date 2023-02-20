@@ -10,7 +10,6 @@ module.exports = {
     "storybook-addon-state",
     "storybook-addon-themes",
     "storybook-dark-mode",
-    "storybook-addon-breakpoints",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",

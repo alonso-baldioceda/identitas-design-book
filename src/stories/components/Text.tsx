@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color as colors } from "./../shared/styles.js";
+import { prefix } from "./../shared/styles.js";
 import classnames from "classnames";
 
 // Types
@@ -17,14 +17,22 @@ const Container = styled.div`
 
 // Types
 export interface TextProps {
-  text: string;
-  color?: string;
-  variant?: string;
   classes?: string;
+  color?: string;
+  idFor?: string;
   noWrap?: boolean;
+  text: string;
+  variant?: string;
 }
 
-const Text: FC<TextProps> = ({ variant, color, classes, noWrap, text }) => (
+const Text: FC<TextProps> = ({
+  classes,
+  color,
+  idFor,
+  noWrap,
+  text,
+  variant,
+}) => (
   <Container
     as={variant ? TextEnum[variant as TextEnum] : TextEnum.p}
     className={classnames(
@@ -33,6 +41,7 @@ const Text: FC<TextProps> = ({ variant, color, classes, noWrap, text }) => (
       `${prefix}-text`
     )}
     color={color ? color : ""}
+    htmlFor={idFor ? idFor : ""}
   >
     {text}
   </Container>
