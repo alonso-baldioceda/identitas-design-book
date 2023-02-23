@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 // Compositions
 import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
+import Contact from "./../stories/compositions/Contact";
 import Card from "./../stories/compositions/card/Card";
 import Grid from "./../stories/compositions/Grid";
 import Hero from "./../stories/compositions/hero/Hero";
@@ -86,6 +87,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
   // const commonGallery: any = t("commonGallery", { returnObjects: true });
   const services: any = t("services", { returnObjects: true });
   const drive: any = t("drive", { returnObjects: true });
+  const contact: any = t("contact", { returnObjects: true });
   const rules: any = t("rules", { returnObjects: true });
   const footer: any = t("footer", { returnObjects: true });
 
@@ -834,6 +836,134 @@ const IndexPage = ({ data: graphqlData }: any) => {
       },
       icon: <Map />,
     },
+    contactProps: {
+      blockProps: {
+        id: "contact",
+      },
+      heading: {
+        text: t(contact.heading),
+        classes: "mb-5",
+        variant: "h2",
+      },
+      formData: {
+        fields: [
+          {
+            error: {
+              classes: "invalid px-2",
+              text: t(contact.validation.firstnameRequired),
+            },
+            input: {
+              classes: "form-control",
+              name: "firstname",
+              placeholder: t(contact.firstname),
+            },
+            label: {
+              classes: "form-label",
+              idFor: "firstname",
+              text: t(contact.firstname),
+              variant: "label",
+            },
+            required: true,
+          },
+          {
+            error: {
+              classes: "invalid px-2",
+              text: t(contact.validation.lastnameRequired),
+            },
+            input: {
+              classes: "form-control",
+              name: "lastname",
+              placeholder: t(contact.lastname),
+            },
+            label: {
+              classes: "form-label",
+              idFor: "lastname",
+              text: t(contact.lastname),
+              variant: "label",
+            },
+            required: true,
+          },
+          {
+            error: {
+              classes: "invalid px-2",
+              text: t(contact.validation.emailRequired),
+            },
+            input: {
+              classes: "form-control",
+              name: "email",
+              placeholder: t(contact.email),
+              type: "email",
+            },
+            label: {
+              classes: "form-label",
+              idFor: "email",
+              text: t(contact.email),
+              variant: "label",
+            },
+            required: true,
+          },
+          {
+            error: {
+              classes: "invalid px-2",
+              text: t(contact.validation.phoneRequired),
+            },
+            input: {
+              classes: "form-control",
+              name: "phone",
+              placeholder: t(contact.phone),
+            },
+            label: {
+              classes: "form-label",
+              idFor: "phone",
+              text: t(contact.phone),
+              variant: "label",
+            },
+            required: true,
+          },
+          {
+            error: {
+              classes: "invalid px-2",
+              text: t(contact.validation.subjectRequired),
+            },
+            input: {
+              classes: "form-control",
+              name: "subject",
+              placeholder: t(contact.subject),
+            },
+            label: {
+              classes: "form-label",
+              idFor: "subject",
+              text: t(contact.subject),
+              variant: "label",
+            },
+            required: true,
+          },
+          {
+            error: {
+              classes: "invalid px-2",
+              text: t(contact.validation.messageRequired),
+            },
+            input: {
+              classes: "form-control",
+              name: "message",
+              placeholder: t(contact.message),
+              rows: 3,
+            },
+            label: {
+              classes: "form-label",
+              idFor: "message",
+              text: t(contact.message),
+              variant: "label",
+            },
+            required: true,
+          },
+          {
+            classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
+            type: "submit",
+          },
+        ],
+      },
+    },
     rulesProps: {
       blockProps: {
         id: "rules",
@@ -1144,13 +1274,15 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.driveProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-10 col-sm-12 col-md-6">
-                  <Drive {...data.driveProps.content} />
-                </div>
-                <div className="col-10 col-sm-12 col-md-6">
-                  <img src={Map} alt="drive" />
+            <div className="position-relative">
+              <div className="container">
+                <div className="row align-items-center justify-content-center">
+                  <div className="col-10 col-sm-12 col-md-6">
+                    <Drive {...data.driveProps.content} />
+                  </div>
+                  <div className="col-10 col-sm-12 col-md-6">
+                    <img src={Map} alt="drive" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -1158,9 +1290,20 @@ const IndexPage = ({ data: graphqlData }: any) => {
         </FadeInWhenVisible>
       </Block>
       {/* Contact */}
-      <section id="contact">
-        <h1>Contact here!</h1>
-      </section>
+      <Block {...data.contactProps.blockProps}>
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-10 col-sm-12">
+                  <Text {...data.contactProps.heading} />
+                  <Contact formData={data.contactProps.formData} />
+                </div>
+              </div>
+            </div>
+          </Spacer>
+        </FadeInWhenVisible>
+      </Block>
       {/* Rules */}
       <Block {...data.rulesProps.blockProps}>
         <FadeInWhenVisible>

@@ -143,8 +143,8 @@
   },
   "contact": {
     "heading": "Escríbenos",
-    "firstName": "Nombre",
-    "lastName": "Apellido",
+    "firstname": "Nombre",
+    "lastname": "Apellido",
     "email": "Correo electrónico",
     "phone": "Teléfono",
     "subject": "Asunto",
@@ -152,8 +152,8 @@
     "submitting": "Enviando",
     "submit": "Enviar",
     "validation": {
-      "firstNameRequired": "Nombre requerido",
-      "lastNameRequired": "Apellido requerido",
+      "firstnameRequired": "Nombre requerido",
+      "lastnameRequired": "Apellido requerido",
       "emailRequired": "Correo requerido",
       "emailInvalid": "Correo inválido",
       "phoneRequired": "Teléfono requerido",

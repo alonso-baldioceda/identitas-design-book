@@ -18,21 +18,13 @@ const Container = styled.div`
 // Types
 export interface TextProps {
   classes?: string;
-  color?: string;
   idFor?: string;
   noWrap?: boolean;
   text: string;
   variant?: string;
 }
 
-const Text: FC<TextProps> = ({
-  classes,
-  color,
-  idFor,
-  noWrap,
-  text,
-  variant,
-}) => (
+const Text: FC<TextProps> = ({ classes, idFor, noWrap, text, variant }) => (
   <Container
     as={variant ? TextEnum[variant as TextEnum] : TextEnum.p}
     className={classnames(
@@ -40,7 +32,6 @@ const Text: FC<TextProps> = ({
       { "text-nowrap": noWrap },
       `${prefix}-text`
     )}
-    color={color ? color : ""}
     htmlFor={idFor ? idFor : ""}
   >
     {text}

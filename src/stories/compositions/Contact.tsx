@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import * as Yup from "yup";
@@ -6,7 +6,8 @@ import { Formik } from "formik";
 import axios from "axios";
 
 // Components
-import InputField from "./forms/InputField";
+import Button from "./../components/Button";
+import FormControl from "./forms/FormControl";
 import TextareaField from "./forms/TextareaField";
 // import Toast from "./toast";
 
@@ -24,8 +25,8 @@ const StyledContact = styled.div`
 
 // Types
 interface IModel {
-  firstName: string;
-  lastName: string;
+  firstname: string;
+  lastname: string;
   email: string;
   phone: string;
   subject: string;
@@ -43,34 +44,26 @@ interface IServerResponse {
   data: any;
 }
 
-export const Contact = () => {
+interface ContactProps {
+  formData?: any;
+}
+
+export const Contact: FC<ContactProps> = ({ formData }) => {
   const { t } = useTranslation();
   const [conf, setConf] = useState({});
 
   // Translations
   const contact: any = t("contact", { returnObjects: true });
-  const { validation } = contact;
-
-  // const schema = Yup.object({
-  //   firstName: Yup.string().required(t(validation.firstNameRequired)),
-  //   lastName: Yup.string().required(t(validation.lastNameRequired)),
-  //   email: Yup.string()
-  //     .required(t(validation.emailRequired))
-  //     .email(t(validation.emailInvalid)),
-  //   phone: Yup.string().required(t(validation.phoneRequired)),
-  //   subject: Yup.string().required(t(validation.subjectRequired)),
-  //   message: Yup.string().required(t(validation.messageRequired)),
-  // });
-
-  // Failed to load preset: {} on level 2
 
   const schema = Yup.object({
-    firstName: Yup.string().required("required"),
-    lastName: Yup.string().required("required"),
-    email: Yup.string().required("required").email("required"),
-    phone: Yup.string().required("required"),
-    subject: Yup.string().required("required"),
-    message: Yup.string().required("required"),
+    firstname: Yup.string().required(t(contact.validation.firstnameRequired)),
+    lastname: Yup.string().required(t(contact.validation.lastnameRequired)),
+    email: Yup.string()
+      .required(t(contact.validation.emailRequired))
+      .email(t(contact.validation.emailInvalid)),
+    phone: Yup.string().required(t(contact.validation.phoneRequired)),
+    subject: Yup.string().required(t(contact.validation.subjectRequired)),
+    message: Yup.string().required(t(contact.validation.messageRequired)),
   });
 
   const handleSubmit = (
@@ -83,16 +76,49 @@ export const Contact = () => {
       resetForm: () => void;
     }
   ) => {
-    const { firstName, lastName, email, phone, subject, message } = model;
+    const formData = { ...model };
 
-    const formData = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      phone: phone,
-      subject: subject,
-      message: message,
-    };
+    // const axiosConfig = {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     // "Access-Control-Allow-Origin": "http://localhost:8000",
+    //   },
+    // };
+
+    // const sendForm = async () => {
+    //   try {
+    //     const response = await axios.post(
+    //       `${process.env.GATSBY_AWS_API_GATEWAY}`,
+    //       formData,
+    //       axiosConfig
+    //     );
+    //     if (response.status === 200) {
+    //       resetForm();
+    //       setConf({
+    //         type: "success",
+    //         error: false,
+    //         heading: t(contact.validation.successHeader),
+    //         body: t(contact.validation.successBody),
+    //         visible: true,
+    //       });
+    //       setTimeout(() => handleClose(), 5000);
+    //     }
+    //   } catch (error) {
+    //     setSubmitting(false);
+    //     if (error) {
+    //       setConf({
+    //         type: "alert",
+    //         error: true,
+    //         heading: t(contact.validation.errorHeader),
+    //         body: t(contact.validation.errorBody),
+    //         visible: true,
+    //       });
+    //       setTimeout(() => handleClose(), 5000);
+    //     }
+    //   }
+    // };
+
+    // sendForm();
 
     axios
       .request<IServerData>({
@@ -112,8 +138,8 @@ export const Contact = () => {
           setConf({
             type: "success",
             error: false,
-            heading: t(validation.successHeader),
-            body: t(validation.successBody),
+            heading: t(contact.validation.successHeader),
+            body: t(contact.validation.successBody),
             visible: true,
           });
           setTimeout(() => handleClose(), 5000);
@@ -125,8 +151,8 @@ export const Contact = () => {
           setConf({
             type: "alert",
             error: true,
-            heading: t(validation.errorHeader),
-            body: t(validation.errorBody),
+            heading: t(contact.validation.errorHeader),
+            body: t(contact.validation.errorBody),
             visible: true,
           });
           setTimeout(() => handleClose(), 5000);
@@ -146,8 +172,8 @@ export const Contact = () => {
     <Formik
       validationSchema={schema}
       initialValues={{
-        firstName: "",
-        lastName: "",
+        firstname: "",
+        lastname: "",
         email: "",
         phone: "",
         subject: "",
@@ -157,109 +183,97 @@ export const Contact = () => {
     >
       {({
         values,
-        errors,
+        // errors,
         touched,
         handleChange,
         handleSubmit,
         isValid,
         isSubmitting,
-      }) => (
-        <>
-          {/* <Toast handleClose={handleClose} conf={conf} /> */}
-          <StyledContact>
-            <form
-              noValidate
-              onSubmit={handleSubmit}
-              action={`${process.env.GATSBY_AWS_API_GATEWAY}`}
-              method="POST"
-            >
-              <div className="container">
-                <div className="row">
-                  <div className="col-12 col-md-6 mb-3">
-                    <InputField
-                      classes="form-control"
-                      error={errors.firstName}
-                      label="firstname"
-                      name="firstName"
-                      onChange={handleChange}
-                      touched={touched.firstName}
-                      value={values.firstName}
-                    />
-                  </div>
-                  <div className="col-12 col-md-6 mb-3">
-                    <InputField
-                      classes="form-control"
-                      error={errors.lastName}
-                      label="lastname"
-                      name="lastName"
-                      onChange={handleChange}
-                      touched={touched.lastName}
-                      value={values.lastName}
-                    />
-                  </div>
-                  <div className="col-12 col-md-6 mb-3">
-                    <InputField
-                      classes="form-control"
-                      error={errors.email}
-                      label="email"
-                      name="email"
-                      onChange={handleChange}
-                      touched={touched.email}
-                      type="email"
-                      value={values.email}
-                    />
-                  </div>
-                  <div className="col-12 col-md-6 mb-3">
-                    <InputField
-                      classes="form-control"
-                      error={errors.phone}
-                      label="phone"
-                      name="phone"
-                      onChange={handleChange}
-                      touched={touched.phone}
-                      value={values.phone}
-                    />
-                  </div>
-                  <div className="col-12 mb-3">
-                    <InputField
-                      classes="form-control"
-                      error={errors.subject}
-                      label="subject"
-                      name="subject"
-                      onChange={handleChange}
-                      touched={touched.subject}
-                      value={values.subject}
-                    />
-                  </div>
-                  <div className="col-12 mb-3">
-                    <TextareaField
-                      classes="form-control"
-                      error={errors.message}
-                      label="message"
-                      name="message"
-                      onChange={handleChange}
-                      rows={3}
-                      touched={touched.message}
-                      value={values.message}
-                    />
-                  </div>
-                  <div className="col-12">
-                    <button
-                      disabled={!isValid || isSubmitting}
-                      type="submit"
-                      className="btn rounded-pill py-2 px-4 text-capitalize font-weight-bold"
-                    >
-                      {isSubmitting
-                        ? t(`contact.submitting`)
-                        : t(`contact.submit`)}
-                    </button>
+      }) => {
+        return (
+          <>
+            {/* <Toast handleClose={handleClose} conf={conf} /> */}
+            <StyledContact>
+              <form
+                noValidate
+                onSubmit={handleSubmit}
+                action={`${process.env.GATSBY_AWS_API_GATEWAY}`}
+                method="POST"
+              >
+                <div className="container">
+                  <div className="row">
+                    <div className="col-12 col-md-6 mb-3">
+                      <FormControl
+                        {...formData.fields[0]}
+                        error={formData.fields[0].error}
+                        onChange={handleChange}
+                        touched={touched.firstname}
+                        value={values.firstname}
+                      />
+                    </div>
+                    {/* <div className="col-12 col-md-6 mb-3">
+                      <FormControl
+                        {...formData.fields[1]}
+                        error={formData.fields[1].error}
+                        onChange={handleChange}
+                        touched={touched.lastname}
+                        value={values.lastname}
+                      />
+                    </div> */}
+                    {/* <div className="col-12 col-md-6 mb-3">
+                      <FormControl
+                        {...formData.fields[2]}
+                        error={formData.fields[2].error}
+                        onChange={handleChange}
+                        touched={touched.email}
+                        value={values.email}
+                      />
+                    </div> */}
+                    {/* <div className="col-12 col-md-6 mb-3">
+                      <FormControl
+                        {...formData.fields[3]}
+                        error={formData.fields[3].error}
+                        onChange={handleChange}
+                        touched={touched.phone}
+                        value={values.phone}
+                      />
+                    </div> */}
+                    {/* <div className="col-12 mb-3">
+                      <FormControl
+                        {...formData.fields[4]}
+                        error={formData.fields[4].error}
+                        onChange={handleChange}
+                        touched={touched.subject}
+                        value={values.subject}
+                      />
+                    </div> */}
+                    {/* <div className="col-12 mb-3">
+                      <TextareaField
+                        {...formData.fields[5]}
+                        error={formData.fields[5].error}
+                        onChange={handleChange}
+                        touched={touched.message}
+                        value={values.message}
+                      />
+                    </div> */}
+                    <div className="col-12">
+                      <Button
+                        {...formData.fields[6]}
+                        text={
+                          isSubmitting
+                            ? t(contact.submitting)
+                            : t(contact.submit)
+                        }
+                        disabled={!isValid || isSubmitting}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </StyledContact>
-        </>
-      )}
+              </form>
+            </StyledContact>
+          </>
+        );
+      }}
     </Formik>
   );
 };

@@ -143,8 +143,8 @@
   },
   "contact": {
     "heading": "Contact Us",
-    "firstName": "First name",
-    "lastName": "Last name",
+    "firstname": "First name",
+    "lastname": "Last name",
     "email": "Email address",
     "phone": "Phone",
     "subject": "Subject",
@@ -152,8 +152,8 @@
     "submitting": "submitting",
     "submit": "Submit",
     "validation": {
-      "firstNameRequired": "First name required",
-      "lastNameRequired": "Last name required",
+      "firstnameRequired": "First name required",
+      "lastnameRequired": "Last name required",
       "emailRequired": "Email required",
       "emailInvalid": "Invalid email address",
       "phoneRequired": "Phone required",
