@@ -10,7 +10,7 @@ interface LinkToScrollProps {
 }
 
 const LinkToScroll: FC<LinkToScrollProps> = ({ children, to }) => (
-  <Link className={classnames(`${prefix}-brand-link-to-page`)} to={to}>
+  <Link className={classnames(`${prefix}-brand-link-to-scroll`)} to={to}>
     {children}
   </Link>
 );

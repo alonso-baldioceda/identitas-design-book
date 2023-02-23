@@ -1,18 +1,25 @@
 import React, { FC } from "react";
 import classnames from "classnames";
-import { prefix } from "./../../shared/styles.js";
+import { prefix } from "./../../../shared/styles.js";
 
 // Components
-import Text, { TextProps } from "./../../components/Text";
+import Text, { TextProps } from "../../../components/Text";
 import InputForm, { InputFormProps } from "./InputForm";
-import ErrorForm from "./ErrorForm";
+import TextareaForm, { TextareaFormProps } from "./TextareaForm";
+import ErrorForm from "../ErrorForm";
 
 // Types
+export enum Types {
+  INPUT = "input",
+  TEXTAREA = "textarea",
+}
+
 // TODO: Add required
 interface FormControlProps {
+  control: Types;
   error?: TextProps;
   id?: string;
-  input: InputFormProps;
+  input: InputFormProps | TextareaFormProps;
   label: TextProps;
   onChange: () => void;
   required?: boolean;
@@ -21,6 +28,7 @@ interface FormControlProps {
 }
 
 export const FormControl: FC<FormControlProps> = ({
+  control,
   error,
   id,
   input,
@@ -34,14 +42,17 @@ export const FormControl: FC<FormControlProps> = ({
     ...input,
     id: id ? id : input.name,
     onChange: onChange,
-    type: input.type ? input.type : "text",
     value: value,
   };
 
   return (
     <div className={classnames(`${prefix}-input`)}>
       <Text {...label} />
-      <InputForm {...newInputProps} />
+      {control === Types.INPUT ? (
+        <InputForm {...newInputProps} />
+      ) : (
+        <TextareaForm {...newInputProps} />
+      )}
       <ErrorForm error={error} touched={touched} />
     </div>
   );

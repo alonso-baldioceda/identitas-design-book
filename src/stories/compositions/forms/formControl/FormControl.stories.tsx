@@ -4,6 +4,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import { FormControl as FormControlComponent } from "./FormControl";
 
+// Types
+import { Types } from "./FormControl";
+
 export default {
   title: "Compositions/Form/Form Control",
   component: FormControlComponent,
@@ -14,10 +17,11 @@ const Template: ComponentStory<typeof FormControlComponent> = (args) => (
   <FormControlComponent {...args} />
 );
 
-export const FormControl = Template.bind({});
-FormControl.args = {
+export const FormControlInput = Template.bind({});
+
+FormControlInput.args = {
+  control: Types.INPUT,
   error: { text: "Error", classes: "invalid px-2 mb-0" },
-  id: "input-field",
   input: {
     classes: "form-control",
     id: "input-field",
@@ -36,4 +40,30 @@ FormControl.args = {
   },
   touched: true,
   value: "Input Field",
+};
+
+export const FormControlTextarea = Template.bind({});
+
+FormControlTextarea.args = {
+  control: Types.TEXTAREA,
+  error: { text: "Error", classes: "invalid px-2 mb-0" },
+  input: {
+    classes: "form-control",
+    id: "textarea-field",
+    name: "textarea-field",
+    onChange: () => {},
+    placeholder: "Textarea Field",
+    required: true,
+    rows: 6,
+    type: "text",
+    value: "Textarea Field",
+  },
+  label: {
+    text: "Label",
+    variant: "label",
+    idFor: "textarea-field",
+    classes: "form-label",
+  },
+  touched: true,
+  value: "Textarea Field",
 };

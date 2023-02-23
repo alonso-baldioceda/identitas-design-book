@@ -1,7 +1,6 @@
 import React, { FC } from "react";
 import classnames from "classnames";
 
-// Types
 export interface InputFormProps {
   classes: string;
   id?: string;

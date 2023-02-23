@@ -2,15 +2,15 @@ import React, { FC } from "react";
 import classnames from "classnames";
 
 // Types
-interface TextareaFormProps {
-  classes: any;
+export interface TextareaFormProps {
+  classes: string;
   id?: string;
   name: string;
   onChange: () => void;
   placeholder?: string;
   required?: boolean;
   rows?: number;
-  value: any;
+  value: string;
 }
 
 export const TextareaForm: FC<TextareaFormProps> = ({
