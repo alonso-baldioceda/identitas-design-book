@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof ErrorFormComponent> = (args) => (
 export const ErrorForm = Template.bind({});
 ErrorForm.args = {
   error: { text: "Error", classes: "invalid px-2" },
-  touched: true,
+  touched: "error",
 };

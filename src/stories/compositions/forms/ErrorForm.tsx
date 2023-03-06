@@ -9,11 +9,12 @@ import Text, { TextProps } from "./../../components/Text";
 // Types
 export interface ErrorFormProps {
   error?: TextProps;
-  touched: boolean;
+  touched: string;
 }
 
 // Styles
 const StyledErrorForm = styled.div`
+  /* TODO: move the whole class to global */
   .invalid {
     /* TODO:  move color */
     background-color: red;
@@ -25,10 +26,11 @@ const StyledErrorForm = styled.div`
   }
 `;
 
-export const ErrorForm: FC<ErrorFormProps> = ({ error, touched }) => (
-  <StyledErrorForm className={classnames(`${prefix}-error`)}>
-    {error && touched ? <Text {...error} /> : null}
-  </StyledErrorForm>
-);
+export const ErrorForm: FC<ErrorFormProps> = ({ error, touched }) =>
+  error && touched ? (
+    <StyledErrorForm className={classnames(`${prefix}-error`)}>
+      <Text {...error} />
+    </StyledErrorForm>
+  ) : null;
 
 export default ErrorForm;

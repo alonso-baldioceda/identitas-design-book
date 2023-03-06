@@ -38,7 +38,7 @@ FormControlInput.args = {
     idFor: "input-field",
     classes: "form-label",
   },
-  touched: true,
+  touched: "Input Field",
   value: "Input Field",
 };
 
@@ -64,6 +64,6 @@ FormControlTextarea.args = {
     idFor: "textarea-field",
     classes: "form-label",
   },
-  touched: true,
+  touched: "Input Field",
   value: "Textarea Field",
 };

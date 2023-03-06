@@ -7,7 +7,35 @@ import { prefix } from "./../shared/styles.js";
 import Text, { TextProps } from "./../components/Text";
 
 // Styles
-const StyledToast = styled.div`
+const StyledToast = styled((props) => <div {...props} />)`
+  ${(props) =>
+    props.type &&
+    props.type === "success" &&
+    `
+      background-color: ${props.type};
+    `}
+
+  ${(props) =>
+    props.type &&
+    props.type === "danger" &&
+    `
+      background-color: ${props.type};
+    `}
+
+  /* ${(props) =>
+    props.type &&
+    props.type === "warning" &&
+    `
+      background-color: ${props.type};
+    `}
+
+  ${(props) =>
+    props.type &&
+    props.type === "info" &&
+    `
+      background-color: ${props.type};
+    `} */
+
   bottom: 0;
   right: 0;
 `;
@@ -51,13 +79,14 @@ const Toast: FC<ToastProps> = ({
         { [`${classes}`]: classes },
         { "d-flex": conf.visible === true },
         { "d-none": conf.visible === false },
-        { "bg-success": conf.type === "success" },
-        { "bg-alert": conf.type === "alert" },
+        // { "bg-success": conf.type === "success" },
+        // { "bg-alert": conf.type === "alert" },
         `${prefix}-toast`
       )}
-      role="alert"
-      aria-live="assertive"
       aria-atomic="true"
+      aria-live="assertive"
+      role="alert"
+      type={conf.type ? conf.type : "success"}
     >
       <div className="d-flex">
         <div className="toast-body">

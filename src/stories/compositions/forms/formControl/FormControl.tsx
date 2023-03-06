@@ -15,7 +15,7 @@ export enum Types {
 }
 
 // TODO: Add required
-interface FormControlProps {
+export interface FormControlProps {
   control: Types;
   error?: TextProps;
   id?: string;
@@ -23,8 +23,8 @@ interface FormControlProps {
   label: TextProps;
   onChange: () => void;
   required?: boolean;
-  touched: boolean;
-  value: any;
+  touched: string;
+  value: string;
 }
 
 export const FormControl: FC<FormControlProps> = ({

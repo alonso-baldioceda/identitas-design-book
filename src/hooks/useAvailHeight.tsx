@@ -35,7 +35,7 @@ const useAvailHeight = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return availHeight ? availHeight : 0;
+  return availHeight ? [availHeight] : [0];
 };
 
 export default useAvailHeight;

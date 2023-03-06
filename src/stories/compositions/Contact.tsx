@@ -101,7 +101,10 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
     //         body: t(contact.validation.successBody),
     //         visible: true,
     //       });
-    //       setTimeout(() => handleClose(), 5000);
+    //       const timer = setTimeout(() => {
+    //         handleClose();
+    //       }, 5000);
+    //       return () => clearTimeout(timer);
     //     }
     //   } catch (error) {
     //     setSubmitting(false);
@@ -113,7 +116,10 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
     //         body: t(contact.validation.errorBody),
     //         visible: true,
     //       });
-    //       setTimeout(() => handleClose(), 5000);
+    //       const timer = setTimeout(() => {
+    //         handleClose();
+    //       }, 5000);
+    //       return () => clearTimeout(timer);
     //     }
     //   }
     // };
@@ -142,7 +148,11 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
             body: t(contact.validation.successBody),
             visible: true,
           });
-          setTimeout(() => handleClose(), 5000);
+          // setTimeout(() => handleClose(), 5000);
+          const timer = setTimeout(() => {
+            handleClose();
+          }, 5000);
+          return () => clearTimeout(timer);
         }
       })
       .catch(function (error) {
@@ -155,7 +165,11 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
             body: t(contact.validation.errorBody),
             visible: true,
           });
-          setTimeout(() => handleClose(), 5000);
+          // setTimeout(() => handleClose(), 5000);
+          const timer = setTimeout(() => {
+            handleClose();
+          }, 5000);
+          return () => clearTimeout(timer);
         }
       });
   };

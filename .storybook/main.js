@@ -7,9 +7,10 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-storysource",
     "storybook-addon-grid",
-    "storybook-addon-state",
-    "storybook-addon-themes",
-    "storybook-dark-mode",
+    // TODO: Analyze if we need these addons
+    // "storybook-addon-state",
+    // "storybook-addon-themes",
+    // "storybook-dark-mode",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",
