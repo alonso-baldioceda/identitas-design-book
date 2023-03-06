@@ -71,38 +71,33 @@ const Toast: FC<ToastProps> = ({
   handleClose,
   heading,
   text,
-}) => {
-  console.log(text);
-  return (
-    <StyledToast
-      className={classnames(
-        { [`${classes}`]: classes },
-        { "d-flex": conf.visible === true },
-        { "d-none": conf.visible === false },
-        // { "bg-success": conf.type === "success" },
-        // { "bg-alert": conf.type === "alert" },
-        `${prefix}-toast`
-      )}
-      aria-atomic="true"
-      aria-live="assertive"
-      role="alert"
-      type={conf.type ? conf.type : "success"}
-    >
-      <div className="d-flex">
-        <div className="toast-body">
-          <Text {...heading} />
-          <Text {...text} />
-        </div>
-        <StyledButton
-          type="button"
-          className={button.classes ? button.classes : ""}
-          data-bs-dismiss="toast"
-          aria-label="Close"
-          onClick={handleClose}
-        />
+}) => (
+  <StyledToast
+    className={classnames(
+      { [`${classes}`]: classes },
+      { "d-flex": conf.visible === true },
+      { "d-none": conf.visible === false },
+      `${prefix}-toast`
+    )}
+    aria-atomic="true"
+    aria-live="assertive"
+    role="alert"
+    type={conf.type ? conf.type : "success"}
+  >
+    <div className="d-flex">
+      <div className="toast-body">
+        <Text {...heading} />
+        <Text {...text} />
       </div>
-    </StyledToast>
-  );
-};
+      <StyledButton
+        type="button"
+        className={button.classes ? button.classes : ""}
+        data-bs-dismiss="toast"
+        aria-label="Close"
+        onClick={handleClose}
+      />
+    </div>
+  </StyledToast>
+);
 
 export default Toast;

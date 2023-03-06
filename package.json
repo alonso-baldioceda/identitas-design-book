@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "identitas-story-book",
-  "author": "Alonso Baldioceda",
+  "author": {
+    "name": "Alonso Baldioceda"
+  },
   "keywords": [
     "gatsby"
   ],
@@ -16,7 +18,8 @@
     "typecheck": "tsc --noEmit",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "chromatic": "npx chromatic --project-token=$(grep GATSBY_CHROMATIC_PROJECT_TOKEN .env | cut -d '=' -f2)"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
@@ -84,5 +87,7 @@
     "storybook-addon-themes": "^6.1.0",
     "storybook-dark-mode": "^1.1.2",
     "typescript": "<4.8"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "identitas-story-book@1.0.0"
 }

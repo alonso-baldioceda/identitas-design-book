@@ -227,7 +227,6 @@ Default.args = {
           text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
           classes: "mb-0",
           variant: "h1",
-          color: "#FFFFFF",
         },
       },
     },
@@ -405,8 +404,6 @@ Default.args = {
       },
     ],
     sphereProps1: {
-      border: 5,
-      borderColor: "primary",
       height: "400px",
       id: "sphereSample1",
       image: SphereImage1,
@@ -417,8 +414,6 @@ Default.args = {
       yaw: 40,
     },
     sphereProps2: {
-      border: 5,
-      borderColor: "primary",
       height: "400px",
       id: "sphereSample2",
       image: SphereImage1,
@@ -429,8 +424,6 @@ Default.args = {
       yaw: 40,
     },
     sphereProps3: {
-      border: 5,
-      borderColor: "primary",
       height: "400px",
       id: "sphereSample3",
       image: SphereImage1,
@@ -825,7 +818,6 @@ Default.args = {
             heading: {
               classes: "mb-0",
               text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-              color: "#FFFFFF",
             },
           },
         },
@@ -837,7 +829,6 @@ Default.args = {
             heading: {
               classes: "mb-0",
               text: "vistalagoarenal@gmail.com",
-              color: "#FFFFFF",
             },
           },
         },
@@ -849,7 +840,6 @@ Default.args = {
             heading: {
               classes: "mb-0",
               text: "+(506) 8327 4040",
-              color: "#FFFFFF",
             },
           },
         },

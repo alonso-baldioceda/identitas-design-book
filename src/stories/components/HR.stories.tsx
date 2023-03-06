@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import HRComponent from "./HR";
 
-// Constants
-import { COLOR_CONTROL } from "./../../shared/constants/";
-
 export default {
   title: "Components",
   component: HRComponent,

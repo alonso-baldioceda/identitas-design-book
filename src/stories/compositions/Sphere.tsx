@@ -45,7 +45,6 @@ const RotationIconStyled = styled.div`
 `;
 
 interface SphereProps {
-  border?: number;
   height?: string;
   id: string;
   image: any;
@@ -57,7 +56,6 @@ interface SphereProps {
 }
 
 const Sphere: FC<SphereProps> = ({
-  border,
   height,
   id,
   image,
@@ -79,24 +77,22 @@ const Sphere: FC<SphereProps> = ({
   };
 
   return (
-    <SphereStyled
-      className={classnames(`${prefix}-sphere`)}
-      border={border ? border : 5}
-    >
+    <SphereStyled className={classnames(`${prefix}-sphere`)}>
       <RotationIconStyled className="bg-white p-1">
         <SVG icon="rotation" size={Size.sm} />
       </RotationIconStyled>
-      <ReactPannellum
-        id={id}
-        sceneId={sceneId}
-        imageSource={image}
-        config={config}
-        style={{
-          background: `${color.primary}`,
-          height: `${height ? height : "400px"}`,
-          width: `${width ? width : "100%"}`,
-        }}
-      />
+      {id && sceneId && image && (
+        <ReactPannellum
+          id={id}
+          sceneId={sceneId}
+          imageSource={image}
+          config={config}
+          style={{
+            height: `${height ? height : "400px"}`,
+            width: `${width ? width : "100%"}`,
+          }}
+        />
+      )}
     </SphereStyled>
   );
 };

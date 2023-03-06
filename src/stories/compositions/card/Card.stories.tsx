@@ -7,9 +7,6 @@ import Card from "./Card";
 // Types
 import Size from "./../../../shared/enums/size";
 
-// Assets
-import BedQueen from "./../../../images/svg/bed-queen.svg";
-
 export default {
   title: "Compositions/Card/Default",
   component: Card,

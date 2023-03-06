@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
 import Toast from "./Toast";
-import Text, { TextProps } from "./../components/Text";
 
 export default {
   title: "Compositions/Toast",

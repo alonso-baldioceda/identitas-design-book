@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import SphereComponent from "./Sphere";
 
-// Constants
-import { SPACING_OPTIONS, COLOR_CONTROL } from "./../../shared/constants/";
-
 // Assets
 import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
@@ -15,14 +12,45 @@ export default {
   title: "Compositions/Sphere",
   component: SphereComponent,
   argTypes: {
-    border: {
-      name: "Border",
-      control: "select",
-      options: SPACING_OPTIONS,
+    height: {
+      name: "Height",
+      control: "text",
+      description: "Height of the sphere",
     },
-    borderColor: {
-      name: "Border Color",
-      control: COLOR_CONTROL,
+    id: {
+      name: "ID",
+      control: "text",
+      description: "ID of the sphere",
+    },
+    image: {
+      name: "Image",
+      control: "text",
+      description: "Image of the sphere",
+    },
+    pitch: {
+      name: "Pitch",
+      control: "number",
+      description: "Pitch of the sphere",
+    },
+    preview: {
+      name: "Preview",
+      control: "text",
+      description: "Preview of the sphere",
+    },
+    sceneId: {
+      name: "Scene ID",
+      control: "text",
+      description: "Scene ID of the sphere",
+    },
+    width: {
+      name: "Width",
+      control: "text",
+      description: "Width of the sphere",
+    },
+    yaw: {
+      name: "Yaw",
+      control: "number",
+      description: "Yaw of the sphere",
     },
   },
 } as ComponentMeta<typeof SphereComponent>;
@@ -31,9 +59,9 @@ const Template: ComponentStory<typeof SphereComponent> = (args) => (
   <SphereComponent {...args} />
 );
 
-export const Sphere = Template.bind({
-  border: 5,
-  borderColor: "primary",
+export const Default = Template.bind({});
+
+Default.args = {
   height: "400px",
   id: "sphereSample1",
   image: SphereImage1,
@@ -42,4 +70,4 @@ export const Sphere = Template.bind({
   sceneId: "sphereSample1",
   width: "100%",
   yaw: 40,
-});
+};

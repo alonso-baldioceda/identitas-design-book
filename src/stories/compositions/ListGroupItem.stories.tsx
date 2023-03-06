@@ -7,9 +7,6 @@ import ListGroupItemComponent from "./ListGroupItem";
 // Constants
 import { SPACING_OPTIONS, SIZE_OPTIONS } from "./../../shared/constants/";
 
-// Assets
-import BedQueen from "./../../images/svg/bed-queen.svg";
-
 export default {
   title: "Compositions",
   component: ListGroupItemComponent,

@@ -10,9 +10,6 @@ import { COLOR_CONTROL } from "./../../../shared/constants/";
 // Types
 import Size from "./../../../shared/enums/size";
 
-// Assets
-import BedQueen from "./../../../images/svg/bed-queen.svg";
-
 export default {
   title: "Compositions/Card/Body",
   component: Body,
