@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import classnames from "classnames";
 import styled from "styled-components";
-import { prefix } from "./../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 // Styles
 export const StyledSpacing = styled.div`

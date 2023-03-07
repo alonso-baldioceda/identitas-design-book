@@ -1,7 +1,7 @@
 import React, { FC, ReactNode } from "react";
 import classnames from "classnames";
 import { Link } from "react-scroll";
-import { prefix } from "./../../../shared/styles.js";
+import { prefix } from "./../../../../shared/styles.js";
 
 // Types
 interface LinkToScrollProps {

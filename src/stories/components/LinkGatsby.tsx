@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "gatsby";
-import { prefix } from "./../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 interface LinkGatsbyProps {

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classnames from "classnames";
-import { prefix } from "./../shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 
 export interface ButtonLinkProps {
   // appearance: string;

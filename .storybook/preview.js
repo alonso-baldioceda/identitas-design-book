@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-import { GlobalStyle } from "./../src/stories/shared/global";
+import { GlobalStyle } from "./../src/shared/global";
 
 import "./styles.css";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";

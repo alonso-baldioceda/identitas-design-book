@@ -7,8 +7,8 @@ import axios from "axios";
 
 // Components
 import Button from "./../components/Button";
-import FormControl from "./forms/FormControl";
-import TextareaField from "./forms/TextareaField";
+// import FormControl from "./forms/FormControl";
+// import TextareaField from "./forms/TextareaField";
 // import Toast from "./toast";
 
 // Styles
@@ -217,13 +217,13 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
                 <div className="container">
                   <div className="row">
                     <div className="col-12 col-md-6 mb-3">
-                      <FormControl
+                      {/* <FormControl
                         {...formData.fields[0]}
                         error={formData.fields[0].error}
                         onChange={handleChange}
                         touched={touched.firstname}
                         value={values.firstname}
-                      />
+                      /> */}
                     </div>
                     {/* <div className="col-12 col-md-6 mb-3">
                       <FormControl

@@ -1,6 +1,6 @@
 import React, { FC, useMemo } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix } from "./../../../shared/styles.js";
 
 // Components
 import LinkGatsby from "./../../components/LinkGatsby";

@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../shared/styles.js";
+import { prefix } from "./../../../shared/styles.js";
 import classnames from "classnames";
 
 // Components
@@ -121,7 +121,7 @@ const Header: FC<HeaderProps> = ({
           </div>
         </div>
       </StyledHeader>
-      <Mobile {...mobileProps} />
+      {/* <Mobile {...mobileProps} /> */}
     </>
   );
 };

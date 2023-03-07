@@ -1,4 +1,4 @@
-import { color } from "./../src/stories/shared/styles";
+import { color } from "./../src/shared/styles";
 
 export const lightTheme = {
   colors: {

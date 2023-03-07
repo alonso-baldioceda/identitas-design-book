@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { prefix } from "./../../stories/shared/styles.js";
+import { prefix } from "./../../shared/styles.js";
 import "react-image-lightbox/style.css";
 
 // Styles

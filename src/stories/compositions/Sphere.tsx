@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import ReactPannellum from "react-pannellum";
 import styled from "styled-components";
-import { prefix, color } from "./../shared/styles.js";
+import { prefix, color } from "./../../shared/styles.js";
 import classnames from "classnames";
 
 // Components

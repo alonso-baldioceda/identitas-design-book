@@ -35,7 +35,6 @@ Default.args = {
           heading: {
             classes: "mb-0",
             text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-            color: "#FFFFFF",
           },
         },
       },
@@ -47,7 +46,6 @@ Default.args = {
           heading: {
             classes: "mb-0",
             text: "vistalagoarenal@gmail.com",
-            color: "#FFFFFF",
           },
         },
       },
@@ -59,7 +57,6 @@ Default.args = {
           heading: {
             classes: "mb-0",
             text: "+(506) 8327 4040",
-            color: "#FFFFFF",
           },
         },
       },

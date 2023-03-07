@@ -1,11 +1,11 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, sizing } from "./../shared/styles.js";
-import { icons2 } from "./../shared/icons2";
+import { prefix, sizing } from "./../../shared/styles.js";
+import { icons2 } from "./../../shared/icons2";
 
 // Constants
-import Size from "../../shared/enums/size.ts";
+import Size from "./../../shared/enums/size.ts";
 
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`

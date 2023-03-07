@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix, color } from "./../../../shared/styles.js";
 import classnames from "classnames";
 
 // Components

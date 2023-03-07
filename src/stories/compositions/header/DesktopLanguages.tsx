@@ -2,7 +2,7 @@ import React, { useState, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, color } from "./../../shared/styles.js";
+import { prefix } from "./../../../shared/styles.js";
 
 // Styles
 const LinkTranslate = styled.a`
