@@ -9,6 +9,10 @@ jobs:
   test:
     # Operating System
     runs-on: ubuntu-latest
+    # Node version
+    strategy:
+      matrix:
+        node-version: [16.7.1]
     # Job steps
     steps:
       - uses: actions/checkout@v1
