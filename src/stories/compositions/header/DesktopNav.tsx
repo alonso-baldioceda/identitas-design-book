@@ -8,7 +8,6 @@ import LinkScroll from "./../../components/LinkScroll";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
-import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
 const StyledDesktopNav = styled.ul`
@@ -51,7 +50,7 @@ const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => {
     () =>
       navigation.map((navItem: Link, index: number) => (
         <li key={`nav-${index}`}>
-          {navItem.type && navItem.type === LinkType.Link ? (
+          {navItem.type && navItem.type === "link" ? (
             <LinkGatsby
               text={navItem.text}
               to={`/${navItem.anchor}`}

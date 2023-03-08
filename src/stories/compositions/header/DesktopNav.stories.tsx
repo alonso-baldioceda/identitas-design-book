@@ -5,7 +5,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import DesktopNavComponent from "./DesktopNav";
 
 // Types
-import LinkType from "./../../../shared/enums/linkType";
 
 export default {
   title: "Compositions",
@@ -29,7 +28,7 @@ export default {
                     spy: true;
                     text: string;
                     to: string;
-                    type: LinkType;
+                    type: string;
                   }`,
         },
       },
@@ -45,49 +44,49 @@ export const DesktopNav = Template.bind({});
 DesktopNav.args = {
   navigation: [
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "top",
       text: "Inicio",
       offset: -104,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "units",
       text: "Cabinas",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "common-spaces",
       text: "Espacios comúnes",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "services",
       text: "Servicios",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "drive",
       text: "Cómo llegar?",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "contact",
       text: "Contáctenos",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Link,
+      type: "link",
       anchor: "info",
       text: "Info",
       classes: "me-3 text-capitalize",

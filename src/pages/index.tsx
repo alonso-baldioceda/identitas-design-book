@@ -23,7 +23,6 @@ import Spacer from "./../stories/components/Spacer";
 import Text, { TextProps } from "./../stories/components/Text";
 
 // Types
-import LinkType from "./../shared/enums/linkType";
 import Size from "./../shared/enums/size";
 
 // Hooks
@@ -144,49 +143,49 @@ const IndexPage = ({ data: graphqlData }: any) => {
         ],
         navigation: [
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "top",
             text: t(navigation.main),
             offset: -104,
             classes: "mb-2",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "units",
             text: t(navigation.units),
             offset: -80,
             classes: "mb-2",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "common-spaces",
             text: t(navigation.commonSpaces),
             offset: -80,
             classes: "mb-2",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "services",
             text: t(navigation.services),
             offset: -80,
             classes: "mb-2",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "drive",
             text: t(navigation.drive),
             offset: -80,
             classes: "mb-2",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "contact",
             text: t(navigation.contact),
             offset: -80,
             classes: "mb-2",
           },
           {
-            type: LinkType.Link,
+            type: "link",
             anchor: "info",
             text: t(navigation.info),
             classes: "mb-2",
@@ -201,49 +200,49 @@ const IndexPage = ({ data: graphqlData }: any) => {
       },
       navigation: [
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "top",
           text: t(navigation.main),
           offset: -104,
           classes: "me-3 text-capitalize",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "units",
           text: t(navigation.units),
           offset: -80,
           classes: "me-3 text-capitalize",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "common-spaces",
           text: t(navigation.commonSpaces),
           offset: -80,
           classes: "me-3 text-capitalize",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "services",
           text: t(navigation.services),
           offset: -80,
           classes: "me-3 text-capitalize",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "drive",
           text: t(navigation.drive),
           offset: -80,
           classes: "me-3 text-capitalize",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "contact",
           text: t(navigation.contact),
           offset: -80,
           classes: "me-3 text-capitalize",
         },
         {
-          type: LinkType.Link,
+          type: "link",
           anchor: "info",
           text: t(navigation.info),
           classes: "me-3 text-capitalize",
@@ -1068,49 +1067,49 @@ const IndexPage = ({ data: graphqlData }: any) => {
         },
         list: [
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "top",
             text: t(navigation.main),
             offset: -104,
             classes: "mb-3 d-block",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "units",
             text: t(navigation.units),
             offset: -80,
             classes: "mb-3 d-block",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "common-spaces",
             text: t(navigation.commonSpaces),
             offset: -80,
             classes: "mb-3 d-block",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "services",
             text: t(navigation.services),
             offset: -80,
             classes: "mb-3 d-block",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "drive",
             text: t(navigation.drive),
             offset: -80,
             classes: "mb-3 d-block",
           },
           {
-            type: LinkType.Anchor,
+            type: "anchor",
             anchor: "contact",
             text: t(navigation.contact),
             offset: -80,
             classes: "mb-3 d-block",
           },
           {
-            type: LinkType.Link,
+            type: "link",
             anchor: "info",
             text: t(navigation.info),
             classes: "mb-0 d-block",

@@ -8,7 +8,6 @@ import LinkScroll from "./../../components/LinkScroll";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
-import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
 const StyledMobileNav = styled.ul`
@@ -44,7 +43,7 @@ const MobileNav: FC<MobileNavProps> = ({ navigation }) => {
     () =>
       navigation.map((navItem: Link, index: number) => (
         <li key={index}>
-          {navItem.type && navItem.type === LinkType.Link ? (
+          {navItem.type && navItem.type === "link" ? (
             <LinkGatsby
               text={navItem.text}
               to={navItem.anchor}

@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
-import LinkType from "./../../../shared/enums/linkType";
 
 // Components
 import MobileComponent from "./Mobile";
@@ -86,49 +85,49 @@ Mobile.args = {
   },
   navigation: [
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "top",
       text: "Inicio",
       offset: -104,
       classes: "mb-2 mb-sm-2",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "units",
       text: "Cabinas",
       offset: -80,
       classes: "mb-2 mb-sm-2",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "common-spaces",
       text: "Espacios comúnes",
       offset: -80,
       classes: "mb-2 mb-sm-2",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "services",
       text: "Servicios",
       offset: -80,
       classes: "mb-2 mb-sm-2",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "drive",
       text: "Cómo llegar?",
       offset: -80,
       classes: "mb-2 mb-sm-2",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "contact",
       text: "Contáctenos",
       offset: -80,
       classes: "mb-2 mb-sm-2",
     },
     {
-      type: LinkType.Link,
+      type: "link",
       anchor: "info",
       text: "Info",
       classes: "mb-2 mb-sm-2",

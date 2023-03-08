@@ -5,7 +5,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Homepage from "./Homepage";
 
 // Types
-import LinkType from "../../shared/enums/linkType";
 import Size from "./../../shared/enums/size";
 
 // Assets
@@ -78,49 +77,49 @@ Default.args = {
       ],
       navigation: [
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "top",
           text: "Inicio",
           offset: -104,
           classes: "mb-2",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "units",
           text: "Cabinas",
           offset: -80,
           classes: "mb-2",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "common-spaces",
           text: "Espacios comúnes",
           offset: -80,
           classes: "mb-2",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "services",
           text: "Servicios",
           offset: -80,
           classes: "mb-2",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "drive",
           text: "Cómo llegar?",
           offset: -80,
           classes: "mb-2",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "contact",
           text: "Contáctenos",
           offset: -80,
           classes: "mb-2",
         },
         {
-          type: LinkType.Link,
+          type: "link",
           anchor: "info",
           text: "Info",
           classes: "mb-2",
@@ -135,49 +134,49 @@ Default.args = {
     },
     navigation: [
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "top",
         text: "Inicio",
         offset: -104,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "units",
         text: "Cabinas",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "common-spaces",
         text: "Espacios comúnes",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "services",
         text: "Servicios",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "drive",
         text: "Cómo llegar?",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "contact",
         text: "Contáctenos",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Link,
+        type: "link",
         anchor: "info",
         text: "Info",
         classes: "me-3 text-capitalize",
@@ -853,49 +852,49 @@ Default.args = {
       },
       list: [
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "top",
           text: "Inicio",
           offset: -104,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "units",
           text: "Cabinas",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "common-spaces",
           text: "Espacios comúnes",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "services",
           text: "Servicios",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "drive",
           text: "Cómo llegar?",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "contact",
           text: "Contáctenos",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Link,
+          type: "link",
           anchor: "info",
           text: "Info",
           classes: "mb-0 d-block",

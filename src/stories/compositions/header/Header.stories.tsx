@@ -7,7 +7,6 @@ import Header from "./Header";
 
 // Types
 import Size from "./../../../shared/enums/size";
-import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
 const HeaderWrapper = styled.div`
@@ -135,115 +134,120 @@ Default.args = {
     languages: [
       {
         name: "es",
-        classes: "text-capitalize",
+        classes: "text-capitalize mb-3",
       },
       {
-        name: "es",
-        classes: "text-capitalize",
+        name: "en",
+        classes: "text-capitalize mb-3",
       },
     ],
-    navigation: [
-      {
-        type: LinkType.Anchor,
-        anchor: "top",
-        text: "Inicio",
-        offset: -104,
-        classes: "mb-2",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "units",
-        text: "Cabinas",
-        offset: -80,
-        classes: "mb-2",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "common-spaces",
-        text: "Espacios comúnes",
-        offset: -80,
-        classes: "mb-2",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "services",
-        text: "Servicios",
-        offset: -80,
-        classes: "mb-2",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "drive",
-        text: "Cómo llegar?",
-        offset: -80,
-        classes: "mb-2",
-      },
-      {
-        type: LinkType.Anchor,
-        anchor: "contact",
-        text: "Contáctenos",
-        offset: -80,
-        classes: "mb-2",
-      },
-      {
-        type: LinkType.Link,
-        anchor: "info",
-        text: "Info",
-        classes: "mb-2",
-      },
-    ],
-    startingAt: 82,
     mobileLanguagesLabel: {
       classes: "mb-3",
       text: "Idiomas:",
       variant: "label",
     },
+    navigation: [
+      {
+        type: "anchor",
+        anchor: "top",
+        text: "Inicio",
+        offset: -104,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: "anchor",
+        anchor: "units",
+        text: "Cabinas",
+        offset: -80,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: "anchor",
+        anchor: "common-spaces",
+        text: "Espacios comúnes",
+        offset: -80,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: "anchor",
+        anchor: "services",
+        text: "Servicios",
+        offset: -80,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: "anchor",
+        anchor: "drive",
+        text: "Cómo llegar?",
+        offset: -80,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: "anchor",
+        anchor: "contact",
+        text: "Contáctenos",
+        offset: -80,
+        classes: "mb-2 mb-sm-2",
+      },
+      {
+        type: "link",
+        anchor: "info",
+        text: "Info",
+        classes: "mb-2 mb-sm-2",
+      },
+    ],
+    separator: {
+      classes: "my-4",
+      height: 1,
+      opacity: 0,
+    },
+    startingAt: 0,
   },
   navigation: [
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "top",
       text: "Inicio",
       offset: -104,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "units",
       text: "Cabinas",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "common-spaces",
       text: "Espacios comúnes",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "services",
       text: "Servicios",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "drive",
       text: "Cómo llegar?",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Anchor,
+      type: "anchor",
       anchor: "contact",
       text: "Contáctenos",
       offset: -80,
       classes: "me-3 text-capitalize",
     },
     {
-      type: LinkType.Link,
+      type: "link",
       anchor: "info",
       text: "Info",
       classes: "me-3 text-capitalize",

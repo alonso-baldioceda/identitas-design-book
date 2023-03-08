@@ -9,7 +9,6 @@ import LinkGatsby from "./../../components/LinkGatsby";
 
 // Types
 import Link from "./../../../shared/interfaces/link";
-import LinkType from "./../../../shared/enums/linkType";
 
 // Styles
 const StyledNav = styled.ul`
@@ -40,7 +39,7 @@ const Nav: FC<NavProps> = ({ navigation }) => {
     () =>
       navigation.map((navItem: any, index: number) => (
         <li key={index}>
-          {navItem.type && navItem.type === LinkType.Link ? (
+          {navItem.type && navItem.type === "link" ? (
             <LinkGatsby
               text={navItem.text}
               to={navItem.anchor}

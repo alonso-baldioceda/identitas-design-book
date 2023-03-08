@@ -8,7 +8,6 @@ import Layout from "./Layout";
 import * as Header from "./header/Header.stories";
 
 // Types
-import LinkType from "./../../shared/enums/linkType";
 import Size from "./../../shared/enums/size";
 
 export default {
@@ -83,7 +82,6 @@ Default.args = {
             heading: {
               classes: "mb-0",
               text: "Costa Rica, Guanacaste, Río Piedras, Tilarán.",
-              color: "#FFFFFF",
             },
           },
         },
@@ -95,7 +93,6 @@ Default.args = {
             heading: {
               classes: "mb-0",
               text: "vistalagoarenal@gmail.com",
-              color: "#FFFFFF",
             },
           },
         },
@@ -107,7 +104,6 @@ Default.args = {
             heading: {
               classes: "mb-0",
               text: "+(506) 8327 4040",
-              color: "#FFFFFF",
             },
           },
         },
@@ -121,49 +117,49 @@ Default.args = {
       },
       list: [
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "top",
           text: "Inicio",
           offset: -104,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "units",
           text: "Cabinas",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "common-spaces",
           text: "Espacios comúnes",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "services",
           text: "Servicios",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "drive",
           text: "Cómo llegar?",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Anchor,
+          type: "anchor",
           anchor: "contact",
           text: "Contáctenos",
           offset: -80,
           classes: "mb-3 d-block",
         },
         {
-          type: LinkType.Link,
+          type: "link",
           anchor: "info",
           text: "Info",
           classes: "mb-0 d-block",
@@ -199,54 +195,130 @@ Default.args = {
     location: "/",
     navigation: [
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "top",
         text: "Inicio",
         offset: -104,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "units",
         text: "Cabinas",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "common-spaces",
         text: "Espacios comúnes",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "services",
         text: "Servicios",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "drive",
         text: "Cómo llegar?",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Anchor,
+        type: "anchor",
         anchor: "contact",
         text: "Contáctenos",
         offset: -80,
         classes: "me-3 text-capitalize",
       },
       {
-        type: LinkType.Link,
+        type: "link",
         anchor: "info",
         text: "Info",
         classes: "me-3 text-capitalize",
       },
     ],
+    mobile: {
+      classes: "p-4",
+      hideFrom: "xl",
+      isOpen: true,
+      languages: [
+        {
+          name: "es",
+          classes: "text-capitalize mb-3",
+        },
+        {
+          name: "en",
+          classes: "text-capitalize mb-3",
+        },
+      ],
+      mobileLanguagesLabel: {
+        classes: "mb-3",
+        text: "Idiomas:",
+        variant: "label",
+      },
+      navigation: [
+        {
+          type: "anchor",
+          anchor: "top",
+          text: "Inicio",
+          offset: -104,
+          classes: "mb-2 mb-sm-2",
+        },
+        {
+          type: "anchor",
+          anchor: "units",
+          text: "Cabinas",
+          offset: -80,
+          classes: "mb-2 mb-sm-2",
+        },
+        {
+          type: "anchor",
+          anchor: "common-spaces",
+          text: "Espacios comúnes",
+          offset: -80,
+          classes: "mb-2 mb-sm-2",
+        },
+        {
+          type: "anchor",
+          anchor: "services",
+          text: "Servicios",
+          offset: -80,
+          classes: "mb-2 mb-sm-2",
+        },
+        {
+          type: "anchor",
+          anchor: "drive",
+          text: "Cómo llegar?",
+          offset: -80,
+          classes: "mb-2 mb-sm-2",
+        },
+        {
+          type: "anchor",
+          anchor: "contact",
+          text: "Contáctenos",
+          offset: -80,
+          classes: "mb-2 mb-sm-2",
+        },
+        {
+          type: "link",
+          anchor: "info",
+          text: "Info",
+          classes: "mb-2 mb-sm-2",
+        },
+      ],
+      separator: {
+        classes: "my-4",
+        height: 1,
+        opacity: 0,
+      },
+      startingAt: 0,
+    },
   },
   location: "/",
 };

@@ -121,7 +121,7 @@ const Header: FC<HeaderProps> = ({
           </div>
         </div>
       </StyledHeader>
-      {/* <Mobile {...mobileProps} /> */}
+      <Mobile {...mobileProps} />
     </>
   );
 };

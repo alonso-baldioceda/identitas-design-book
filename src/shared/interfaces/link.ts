@@ -1,5 +1,3 @@
-import LinkType from "./../enums/linkType";
-
 interface Link {
   anchor: string;
   classes?: string;
@@ -9,7 +7,7 @@ interface Link {
   spy?: true;
   text: string;
   to?: string;
-  type: LinkType;
+  type: string;
 }
 
 export default Link;
