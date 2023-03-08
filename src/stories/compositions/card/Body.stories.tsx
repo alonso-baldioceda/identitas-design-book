@@ -7,9 +7,6 @@ import Body from "./Body";
 // Constants
 import { COLOR_CONTROL } from "./../../../shared/constants/";
 
-// Types
-import Size from "./../../../shared/enums/size";
-
 export default {
   title: "Compositions/Card/Body",
   component: Body,
@@ -106,7 +103,7 @@ Default.args = {
   list: [
     {
       svg: "bedQueen",
-      svgSize: Size.sm,
+      svgSize: "sm",
       text: {
         heading: {
           classes: "mb-0",

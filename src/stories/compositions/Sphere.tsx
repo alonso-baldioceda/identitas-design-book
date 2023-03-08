@@ -7,9 +7,6 @@ import classnames from "classnames";
 // Components
 import SVG from "./../components/SVG";
 
-// Types
-import Size from "./../../shared/enums/size";
-
 const SphereStyled = styled((props) => <div {...props} />)`
   ${(props) =>
     props.border &&
@@ -79,7 +76,7 @@ const Sphere: FC<SphereProps> = ({
   return (
     <SphereStyled className={classnames(`${prefix}-sphere`)}>
       <RotationIconStyled className="bg-white p-1">
-        <SVG icon="rotation" size={Size.sm} />
+        <SVG icon="rotation" size="sm" />
       </RotationIconStyled>
       {id && sceneId && image && (
         <ReactPannellum

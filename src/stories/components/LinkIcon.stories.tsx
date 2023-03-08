@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import LinkIconComponent from "./LinkIcon";
 
-// Types
-import Size from "./../../shared/enums/size";
-
 export default {
   title: "Components",
   component: LinkIconComponent,
@@ -50,7 +47,7 @@ LinkIcon.args = {
   disabled: false,
   icon: "facebook",
   classes: "text-white",
-  size: Size.sm,
+  size: "sm",
   text: "facebook",
   url: "https://www.google.com/",
 };

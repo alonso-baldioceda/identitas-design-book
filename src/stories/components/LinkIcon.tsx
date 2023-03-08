@@ -6,9 +6,6 @@ import { prefix } from "./../../shared/styles.js";
 // Components
 import SVG from "./SVG";
 
-// Types
-import Size from "./../../shared/enums/size";
-
 // Styles
 const StyledLinkIcon = styled((props) => <a {...props} />)`
   align-items: center;
@@ -27,7 +24,7 @@ export interface LinkIconProps {
   classes?: string;
   disabled?: boolean;
   icon: ReactNode;
-  size?: Size;
+  size?: string;
   text?: string;
   url: string;
 }
@@ -53,7 +50,7 @@ const LinkIcon: FC<LinkIconProps> = ({
     )}
   >
     {text}
-    <SVG icon={icon} size={size ? size : Size.sm} />
+    <SVG icon={icon} size={size ? size : "sm"} />
   </StyledLinkIcon>
 );
 

@@ -22,9 +22,6 @@ import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
 import Spacer from "./../stories/components/Spacer";
 import Text, { TextProps } from "./../stories/components/Text";
 
-// Types
-import Size from "./../shared/enums/size";
-
 // Hooks
 import useAvailHeight from "./../hooks/useAvailHeight";
 import useBootstrapBreakpoints from "./../hooks/useBootstrapBreakpoints";
@@ -97,7 +94,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
         fontWeight: 700,
         svg: {
           icon: "logo",
-          size: Size.sm,
+          size: "sm",
         },
         text: {
           text: t(header.brand),
@@ -108,7 +105,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       call: {
         icon: "phone",
         classes: "mb-0 me-2 me-sm-3",
-        size: Size.xs,
+        size: "xs",
         text: t(header.call),
         url: "tel:+50683274040",
       },
@@ -255,14 +252,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
         {
           icon: "facebook",
           classes: "mb-0 mx-2 mx-sm-3",
-          size: Size.xs,
+          size: "xs",
           text: "Facebook",
           url: "https://www.facebook.com/vistalagoarenal",
         },
         {
           icon: "instagram",
           classes: "mb-0 me-2 me-sm-3",
-          size: Size.xs,
+          size: "xs",
           text: "Instagram",
           url: "https://www.instagram.com/vistalagoarenal/",
         },
@@ -319,7 +316,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
             list: [
               {
                 svg: "bedQueen",
-                svgSize: Size.sm,
+                svgSize: "sm",
                 text: {
                   heading: {
                     classes: "mb-0",
@@ -370,7 +367,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
             list: [
               {
                 svg: "bedQueen",
-                svgSize: Size.sm,
+                svgSize: "sm",
                 text: {
                   heading: {
                     classes: "mb-0",
@@ -421,7 +418,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
             list: [
               {
                 svg: "",
-                svgSize: Size.sm,
+                svgSize: "sm",
                 text: {
                   heading: {
                     classes: "mb-0",

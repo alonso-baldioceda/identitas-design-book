@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import SVGComponent from "./SVG";
 
-// Constants
-import Size from "../../shared/enums/size.ts";
-
 export default {
   title: "Components",
   component: SVGComponent,
@@ -31,5 +28,5 @@ const Template: ComponentStory<typeof SVGComponent> = (args) => (
 export const SVG = Template.bind({});
 SVG.args = {
   icon: "bedQueen",
-  size: Size.md,
+  size: "md",
 };

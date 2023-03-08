@@ -7,9 +7,6 @@ import Layout from "./Layout";
 // Stories
 import * as Header from "./header/Header.stories";
 
-// Types
-import Size from "./../../shared/enums/size";
-
 export default {
   title: "Compositions/Layout",
   component: Layout,
@@ -174,7 +171,7 @@ Default.args = {
       fontWeight: 700,
       svg: {
         icon: "logo",
-        size: Size.sm,
+        size: "sm",
       },
       text: {
         text: "Company name",

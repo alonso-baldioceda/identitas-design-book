@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Page
 import Homepage from "./Homepage";
 
-// Types
-import Size from "./../../shared/enums/size";
-
 // Assets
 import HeroImage from "./../../images/home-hero.jpg";
 import SphereImage1 from "./../../images/tour/room1.jpg";
@@ -31,7 +28,7 @@ Default.args = {
       fontWeight: 700,
       svg: {
         icon: "logo",
-        size: Size.sm,
+        size: "sm",
       },
       text: {
         text: "Vista Lago Arenal",
@@ -42,7 +39,7 @@ Default.args = {
     call: {
       icon: "phone",
       classes: "mb-0 me-2 me-sm-3",
-      size: Size.xs,
+      size: "xs",
       text: "call us",
       url: "tel:+50683274040",
     },
@@ -189,14 +186,14 @@ Default.args = {
       {
         icon: "facebook",
         classes: "mb-0 mx-2 mx-sm-3",
-        size: Size.xs,
+        size: "xs",
         text: "Facebook",
         url: "https://www.facebook.com/vistalagoarenal",
       },
       {
         icon: "instagram",
         classes: "mb-0 me-2 me-sm-3 me-xl-0",
-        size: Size.xs,
+        size: "xs",
         text: "Instagram",
         url: "https://www.instagram.com/vistalagoarenal/",
       },
@@ -263,7 +260,7 @@ Default.args = {
           list: [
             {
               svg: "bedQueen",
-              svgSize: Size.sm,
+              svgSize: "sm",
               text: {
                 heading: {
                   classes: "mb-0",
@@ -314,7 +311,7 @@ Default.args = {
           list: [
             {
               svg: "bedQueen",
-              svgSize: Size.sm,
+              svgSize: "sm",
               text: {
                 heading: {
                   classes: "mb-0",
@@ -365,7 +362,7 @@ Default.args = {
           list: [
             {
               svg: "",
-              svgSize: Size.sm,
+              svgSize: "sm",
               text: {
                 heading: {
                   classes: "mb-0",

@@ -5,9 +5,6 @@ import styled from "styled-components";
 // Components
 import Header from "./Header";
 
-// Types
-import Size from "./../../../shared/enums/size";
-
 // Styles
 const HeaderWrapper = styled.div`
   > div {
@@ -97,7 +94,7 @@ Default.args = {
     fontWeight: 700,
     svg: {
       icon: "logo",
-      size: Size.sm,
+      size: "sm",
     },
     text: {
       text: "Company name",
@@ -108,7 +105,7 @@ Default.args = {
   call: {
     icon: "phone",
     classes: "mb-0 me-2 me-sm-3",
-    size: Size.xs,
+    size: "xs",
     text: "call us",
     url: "tel:+50683274040",
   },
@@ -260,14 +257,14 @@ Default.args = {
     {
       icon: "facebook",
       classes: "mb-0 mx-2 mx-sm-3",
-      size: Size.xs,
+      size: "xs",
       text: "Facebook",
       url: "https://www.facebook.com/vistalagoarenal",
     },
     {
       icon: "instagram",
       classes: "mb-0 me-2 me-sm-3",
-      size: Size.xs,
+      size: "xs",
       text: "Instagram",
       url: "https://www.instagram.com/vistalagoarenal/",
     },

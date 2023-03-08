@@ -4,9 +4,6 @@ import classnames from "classnames";
 import { prefix, sizing } from "./../../shared/styles.js";
 import { icons2 } from "./../../shared/icons2";
 
-// Constants
-import Size from "./../../shared/enums/size.ts";
-
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`
   svg {
@@ -57,7 +54,7 @@ export interface SVGProps {
 
 const SVG: FC<SVGProps> = ({ classes, icon, size }) => (
   <StyledSVG
-    size={size ? size : Size.md}
+    size={size ? size : "md"}
     className={classnames({ [`${classes}`]: classes }, `${prefix}-svg`)}
   >
     <div dangerouslySetInnerHTML={{ __html: icons2[icon] }} />

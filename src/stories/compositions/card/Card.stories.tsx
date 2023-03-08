@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import Card from "./Card";
 
-// Types
-import Size from "./../../../shared/enums/size";
-
 export default {
   title: "Compositions/Card/Default",
   component: Card,
@@ -102,7 +99,7 @@ Default.args = {
     list: [
       {
         svg: "bedQueen",
-        svgSize: Size.sm,
+        svgSize: "sm",
         text: {
           heading: {
             classes: "mb-0",

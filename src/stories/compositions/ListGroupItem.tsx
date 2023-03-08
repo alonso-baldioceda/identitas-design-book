@@ -6,7 +6,6 @@ import { prefix } from "./../../shared/styles.js";
 import SVG from "./../components/SVG";
 
 // Types
-import Size from "./../../shared/enums/size";
 import Text, { TextProps } from "./../components/Text";
 
 // Styles
@@ -39,7 +38,7 @@ const ListGroupItem: FC<ListGroupItemProps> = ({ svgSize, svg, text }) => {
     <ListGroupItemStyled className={`${prefix}-list-group-item`}>
       {svg && (
         <IconWrapper>
-          <SVG icon={svg} size={svgSize ? svgSize : Size.sm} />
+          <SVG icon={svg} size={svgSize ? svgSize : "sm"} />
         </IconWrapper>
       )}
       {text && (

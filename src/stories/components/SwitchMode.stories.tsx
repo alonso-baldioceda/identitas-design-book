@@ -4,9 +4,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Components
 import SwitchModeComponent from "./SwitchMode";
 
-// Constants
-import Size from "../../shared/enums/size.ts";
-
 export default {
   title: "Components/SwitchMode",
   component: SwitchModeComponent,
@@ -36,6 +33,6 @@ const Template: ComponentStory<typeof SwitchModeComponent> = (args) => (
 export const SwitchMode = Template.bind({});
 SwitchMode.args = {
   isDark: false,
-  size: Size.xs,
+  size: "xs",
   classes: "me-3",
 };

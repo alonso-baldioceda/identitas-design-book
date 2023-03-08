@@ -6,9 +6,6 @@ import classnames from "classnames";
 // Components
 import SVG from "./../components/SVG";
 
-// Constants
-import Size from "./../../shared/enums/size.ts";
-
 // Styles
 const StyledSwitchMode = styled((props) => <button {...props} />)`
   -moz-osx-font-smoothing: inherit;
@@ -75,7 +72,7 @@ const SwitchMode: FC<SwitchModeProps> = ({
       setIsDark && setIsDark(isDark ? false : true);
     }}
   >
-    <SVG icon="darkModeSwitch" size={size ? size : Size.xs} />
+    <SVG icon="darkModeSwitch" size={size ? size : "xs"} />
   </StyledSwitchMode>
 );
 
