@@ -12,7 +12,7 @@ jobs:
     # Node version
     strategy:
       matrix:
-        node-version: [16.7.1]
+        node-version: [16.17.1]
     # Job steps
     steps:
       - uses: actions/checkout@v1
