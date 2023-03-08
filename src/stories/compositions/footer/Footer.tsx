@@ -10,7 +10,6 @@ import Text from "../../components/Text";
 
 // Types
 import LinkProps from "./../../../shared/interfaces/link";
-import TextEnum from "./../../../shared/enums/text";
 import { TextProps } from "./../../components/Text";
 
 // Styles
@@ -43,9 +42,7 @@ const Footer: FC<FooterProps> = ({ contact, navigation, location }) => {
             <div className="col-10 col-sm-12 col-md-6 mx-auto">
               <Text
                 variant={
-                  navigation.header.variant
-                    ? navigation.header.variant
-                    : TextEnum.h2
+                  navigation.header.variant ? navigation.header.variant : "h2"
                 }
                 text={navigation.header.text}
                 classes={
@@ -56,9 +53,7 @@ const Footer: FC<FooterProps> = ({ contact, navigation, location }) => {
             </div>
             <div className="col-10 col-sm-12 col-md-6 mx-auto mt-5 mt-md-0">
               <Text
-                variant={
-                  contact.header.variant ? contact.header.variant : TextEnum.h2
-                }
+                variant={contact.header.variant ? contact.header.variant : "h2"}
                 text={contact.header.text}
                 classes={contact.header.classes ? contact.header.classes : ""}
               />

@@ -79,7 +79,6 @@ const Template: ComponentStory<typeof TextComponent> = (args) => (
 
 export const Text = Template.bind({});
 Text.args = {
-  // color: "red",
   text: "hi",
   variant: "h1",
   classes: "",

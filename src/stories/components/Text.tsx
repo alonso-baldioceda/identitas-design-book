@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { prefix } from "./../../shared/styles.js";
 import classnames from "classnames";
 
-// Types
-import TextEnum from "./../../shared/enums/text";
-
 // Styles
 const Container = styled.div`
   ${(props) =>
@@ -24,9 +21,22 @@ export interface TextProps {
   variant?: string;
 }
 
+enum TextEnum {
+  h1 = "h1",
+  h2 = "h2",
+  h3 = "h3",
+  h4 = "h4",
+  h5 = "h5",
+  h6 = "h6",
+  p = "p",
+  span = "span",
+  small = "small",
+  label = "label",
+}
+
 const Text: FC<TextProps> = ({ classes, idFor, noWrap, text, variant }) => (
   <Container
-    as={variant ? TextEnum[variant as TextEnum] : TextEnum.p}
+    as={variant ? TextEnum[variant as TextEnum] : "p"}
     className={classnames(
       { [`${classes}`]: classes },
       { "text-nowrap": noWrap },

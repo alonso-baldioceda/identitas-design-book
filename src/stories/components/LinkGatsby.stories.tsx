@@ -27,7 +27,10 @@ const Template: ComponentStory<typeof LinkGatsbyComponent> = (args) => (
   <LinkGatsbyComponent {...args} />
 );
 
-export const GatsbyLink = Template.bind({
+export const GatsbyLink = Template.bind({});
+
+GatsbyLink.args = {
   text: "Gatsby Link",
   to: "#",
-});
+  classes: "",
+};
