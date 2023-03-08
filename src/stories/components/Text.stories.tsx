@@ -8,7 +8,7 @@ import TextComponent from "./Text";
 import { COLOR_CONTROL } from "./../../shared/constants";
 
 export default {
-  title: "Components",
+  title: "Components/Text",
   component: TextComponent,
   argTypes: {
     align: {

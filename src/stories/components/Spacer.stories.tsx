@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SpacerComponent from "./Spacer";
 
 export default {
-  title: "Components",
+  title: "Components/Spacer",
   component: SpacerComponent,
   argTypes: {
     bottomOnly: {

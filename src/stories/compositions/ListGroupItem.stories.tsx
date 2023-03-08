@@ -8,7 +8,7 @@ import ListGroupItemComponent from "./ListGroupItem";
 import { SPACING_OPTIONS, SIZE_OPTIONS } from "./../../shared/constants/";
 
 export default {
-  title: "Compositions",
+  title: "Compositions/ListGroupItem",
   component: ListGroupItemComponent,
   argTypes: {
     text: {

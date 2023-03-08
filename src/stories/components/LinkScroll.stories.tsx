@@ -8,7 +8,7 @@ import LinkScrollComponent from "./LinkScroll";
 // import { COLOR_CONTROL } from "./../../shared/constants/";
 
 export default {
-  title: "Components",
+  title: "Components/LinkScroll",
   component: LinkScrollComponent,
   argTypes: {
     // appearance: {

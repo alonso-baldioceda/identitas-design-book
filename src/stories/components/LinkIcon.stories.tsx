@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import LinkIconComponent from "./LinkIcon";
 
 export default {
-  title: "Components",
+  title: "Components/LinkIcon",
   component: LinkIconComponent,
   argTypes: {
     classes: {

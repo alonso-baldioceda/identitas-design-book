@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { color } from "./../../../shared/styles.js";
 
 // Components
 import MenuCloseComponent from "./MenuClose";
@@ -15,7 +14,7 @@ const StyledStory = styled.div`
 `;
 
 export default {
-  title: "Components",
+  title: "Components/MenuClose",
   component: MenuCloseComponent,
   argTypes: {
     colorOpen: { name: "Color Open", control: COLOR_CONTROL },

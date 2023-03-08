@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import HRComponent from "./HR";
 
 export default {
-  title: "Components",
+  title: "Components/HR",
   component: HRComponent,
   argTypes: {
     classes: {

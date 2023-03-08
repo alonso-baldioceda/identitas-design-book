@@ -14,7 +14,7 @@ const StyledStory = styled.div`
 `;
 
 export default {
-  title: "Components",
+  title: "Components/Mask",
   component: MaskComponent,
   argTypes: {
     bgColor: {

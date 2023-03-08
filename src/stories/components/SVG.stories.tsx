@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import SVGComponent from "./SVG";
 
 export default {
-  title: "Components",
+  title: "Components/SVG",
   component: SVGComponent,
   argTypes: {
     size: {

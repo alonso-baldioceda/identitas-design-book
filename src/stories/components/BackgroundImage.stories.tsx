@@ -11,7 +11,7 @@ import { COLOR_CONTROL } from "./../../shared/constants/";
 import OceanImage from "./../../images/ocean.jpg";
 
 export default {
-  title: "Components",
+  title: "Components/BackgroundImage",
   component: BackgroundImageComponent,
   argTypes: {
     bgColor: {

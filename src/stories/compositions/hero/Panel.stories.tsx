@@ -15,7 +15,7 @@ const PanelWrapper = styled((props) => <div {...props} />)`
 `;
 
 export default {
-  title: "Compositions",
+  title: "Compositions/Hero/Panel",
   component: PanelComponent,
   argTypes: {
     bgColor: {

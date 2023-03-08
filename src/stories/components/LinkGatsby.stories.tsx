@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import LinkGatsbyComponent from "./LinkGatsby";
 
 export default {
-  title: "Components",
+  title: "Components/LinkGatsby",
   component: LinkGatsbyComponent,
   argTypes: {
     classes: {

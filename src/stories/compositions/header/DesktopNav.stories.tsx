@@ -7,7 +7,7 @@ import DesktopNavComponent from "./DesktopNav";
 // Types
 
 export default {
-  title: "Compositions",
+  title: "Compositions/Header/DesktopNav",
   component: DesktopNavComponent,
   argTypes: {
     navigation: {
