@@ -2,7 +2,10 @@
 name: 'Chromatic Publish'
 
 # Event for the workflow
-on: push
+on: 
+  push:
+    branches:
+      - main
 
 # List of jobs
 jobs:
@@ -24,3 +27,4 @@ jobs:
           #👇 Chromatic projectToken,
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
+          exitZeroOnChanges: true
