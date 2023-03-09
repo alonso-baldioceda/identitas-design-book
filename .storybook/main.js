@@ -1,4 +1,4 @@
-const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const path = require("path");
 
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -23,10 +23,6 @@ module.exports = {
     interactionsDebugger: true,
   },
   webpackFinal: async (config) => {
-    [].push.apply(config.resolve.plugins, [
-      new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
-    ]);
-
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [
       /node_modules\/(?!(gatsby|gatsby-script)\/)/,
@@ -38,6 +34,10 @@ module.exports = {
     config.module.rules[0].use[0].options.plugins.push(
       require.resolve("babel-plugin-remove-graphql-queries")
     );
+
+    config.resolve.alias = {
+      "@": path.resolve(__dirname, "..", "src"),
+    };
 
     config.resolve.mainFields = ["browser", "module", "main"];
 

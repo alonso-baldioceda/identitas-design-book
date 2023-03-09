@@ -1,26 +1,33 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../../shared/styles.js";
 import classnames from "classnames";
 
+// Compositions
+import Brand, { BrandProps } from "@/stories/compositions/header/brand/Brand";
+import DesktopLanguages from "@/stories/compositions/header/DesktopLanguages";
+import DesktopNav from "@/stories/compositions/header/DesktopNav";
+import MenuClose from "@/stories/compositions/header/MenuClose";
+import Mobile, { MobileProps } from "@/stories/compositions/header/Mobile";
+import Separator, {
+  SeparatorProps,
+} from "@/stories/compositions/header/Separator";
+import Socials from "@/stories/compositions/header/Socials";
+
 // Components
-import Brand, { BrandProps } from "./brand/Brand";
-import DesktopLanguages from "./DesktopLanguages";
-import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
-import DesktopNav from "./DesktopNav";
-import Separator, { SeparatorProps } from "./Separator";
-import SwitchMode from "./../../components/SwitchMode";
-import MenuClose from "./MenuClose";
-import Mobile, { MobileProps } from "./Mobile";
-import Socials from "./Socials";
+import LinkIcon, { LinkIconProps } from "@/stories/components/LinkIcon";
+import SwitchMode from "@/stories/components/SwitchMode";
 
 // Contexts
-import LayoutContext from "./../LayoutContext";
+import LayoutContext, {
+  LayoutContextProps,
+} from "@/stories/compositions/LayoutContext";
 
 // Types
-import Link from "./../../../shared/interfaces/link";
+import Link from "@/shared/interfaces/link";
 
 // Styles
+import { prefix } from "@/shared/styles";
+
 const StyledHeader = styled((props) => <header {...props} />)`
   ${(props) =>
     props.minheight &&
@@ -55,18 +62,18 @@ interface Language {
 }
 
 export interface HeaderProps {
-  brand: BrandProps;
-  call?: LinkIconProps;
+  brand: typeof BrandProps;
+  call?: typeof LinkIconProps;
   fixed?: boolean;
   hideCloseFrom?: string;
   hideLanguagesFrom?: string;
   languages: Language[];
   location: string;
   minHeight?: number;
-  mobile: MobileProps;
-  navigation: Link[];
-  separator?: SeparatorProps;
-  socials?: LinkIconProps[];
+  mobile: typeof MobileProps;
+  navigation: (typeof Link)[];
+  separator?: typeof SeparatorProps;
+  socials?: (typeof LinkIconProps)[];
 }
 
 const Header: FC<HeaderProps> = ({
@@ -83,7 +90,8 @@ const Header: FC<HeaderProps> = ({
   separator,
   socials,
 }) => {
-  const { isOpen, isDark, setIsDark } = useContext(LayoutContext);
+  const { isOpen, isDark, setIsDark } =
+    useContext<typeof LayoutContextProps>(LayoutContext);
 
   const headerMinHeight = minHeight ? minHeight : 84;
   const isFixed = fixed ? fixed.toString() : null;

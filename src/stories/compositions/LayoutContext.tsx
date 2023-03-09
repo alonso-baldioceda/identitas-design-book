@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 // Types
-interface LayoutContextProps {
+export interface LayoutContextProps {
   active: number;
   isDark: boolean;
   isOpen: boolean;
