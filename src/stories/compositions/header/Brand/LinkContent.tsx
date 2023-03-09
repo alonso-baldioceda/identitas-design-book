@@ -1,14 +1,14 @@
 import React, { FC } from "react";
 
 // Components
-import Text, { TextProps } from "./../../../components/Text.tsx";
-import SVG, { SVGProps } from "./../../../components/SVG.tsx";
+import Text, { TextProps } from "./../../../components/Text";
+import SVG, { SVGProps } from "./../../../components/SVG";
 
 // Types
 interface LinkContentProps {
   showNameOnMobile?: boolean;
-  icon: typeof SVGProps;
-  text: typeof TextProps;
+  icon: SVGProps;
+  text: TextProps;
 }
 
 const LinkContent: FC<LinkContentProps> = ({
