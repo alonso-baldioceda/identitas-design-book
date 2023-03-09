@@ -23,6 +23,10 @@ module.exports = {
     interactionsDebugger: true,
   },
   webpackFinal: async (config) => {
+    [].push.apply(config.resolve.plugins, [
+      new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
+    ]);
+
     // Transpile Gatsby module because Gatsby includes un-transpiled ES6 code.
     config.module.rules[0].exclude = [
       /node_modules\/(?!(gatsby|gatsby-script)\/)/,
@@ -36,13 +40,6 @@ module.exports = {
     );
 
     config.resolve.mainFields = ["browser", "module", "main"];
-
-    config.resolve.plugins = [
-      ...(config.resolve.plugins || []),
-      new TsconfigPathsPlugin({
-        extensions: config.resolve.extensions,
-      }),
-    ];
 
     return config;
   },
