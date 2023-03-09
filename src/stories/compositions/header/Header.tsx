@@ -4,7 +4,7 @@ import { prefix } from "./../../../shared/styles.js";
 import classnames from "classnames";
 
 // Components
-import Brand, { BrandProps } from "./brand/Brand";
+import Brand, { BrandProps } from "./brand/Brand.tsx";
 import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
@@ -55,7 +55,7 @@ interface Language {
 }
 
 export interface HeaderProps {
-  brand: BrandProps;
+  brand: typeof BrandProps;
   call?: LinkIconProps;
   fixed?: boolean;
   hideCloseFrom?: string;
