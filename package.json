@@ -21,6 +21,9 @@
     "test-storybook": "test-storybook",
     "chromatic": "chromatic --project-token=$(grep GATSBY_CHROMATIC_PROJECT_TOKEN .env.development | cut -d '=' -f2)"
   },
+  "overrides": {
+    "enhanced-resolve": "5.10.0"
+  },
   "dependencies": {
     "@babel/runtime": "^7.20.13",
     "@mdx-js/react": "^1.6.22",
