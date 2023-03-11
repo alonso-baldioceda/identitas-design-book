@@ -57,5 +57,5 @@ module.exports = {
   //       prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
   //   },
   // },
-  typescript: { reactDocgen: false },
+  // typescript: { reactDocgen: false },
 };
