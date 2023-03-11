@@ -36,7 +36,7 @@ module.exports = {
     );
 
     config.resolve.alias = {
-      "@": path.resolve(__dirname, "..", "src"),
+      "@stories": path.resolve(__dirname, "../", "src/stories"),
     };
 
     config.resolve.mainFields = ["browser", "module", "main"];
