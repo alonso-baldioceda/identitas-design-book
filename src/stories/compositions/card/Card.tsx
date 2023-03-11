@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { prefix, color } from "./../../../shared/styles.js";
+import { prefix, color } from "./../../../shared/styles";
 import styled from "styled-components";
 
 // Components

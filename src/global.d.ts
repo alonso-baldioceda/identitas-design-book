@@ -7,6 +7,3 @@ declare module "*.svg" {
 }
 
 declare module "react-pannellum";
-
-// TODO: Remove later
-declare module "*";

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Link } from "react-scroll";
-import { prefix } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles";
 import classnames from "classnames";
 
 // Interfaces

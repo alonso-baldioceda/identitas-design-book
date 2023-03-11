@@ -1,7 +1,7 @@
 import React, { ReactNode, FC, useState } from "react";
-import { GlobalStyle } from "./../../shared/global.js";
+import { GlobalStyle } from "./../../shared/global";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./../../../.storybook/Theme.js";
+import { lightTheme, darkTheme } from "./../../../.storybook/Theme";
 import { I18nextProvider } from "react-i18next";
 
 // Components

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import classnames from "classnames";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-import { prefix } from "./../../shared/styles.js";
+import { prefix } from "./../../shared/styles";
 
 // Components
 import Images from "./Images";
