@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix } from "./../../../../shared/styles.js";
+import { prefix } from "./../../../../shared/styles";
 
 // Components
 import { TextProps } from "./../../../components/Text";

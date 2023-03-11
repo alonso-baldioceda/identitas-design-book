@@ -84,7 +84,7 @@ export const typography = {
 };
 
 export const breakpoint = 600;
-export const pageMargin = "5.55555";
+export const pageMargin: number = 5.55555;
 
 export const pageMargins = css`
   padding: 0 ${spacing.padding.medium}px;

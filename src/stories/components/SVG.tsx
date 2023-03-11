@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
-import { prefix, sizing } from "./../../shared/styles.js";
+import { prefix, sizing } from "./../../shared/styles";
 import { icons2 } from "./../../shared/icons2";
 
 // Styles

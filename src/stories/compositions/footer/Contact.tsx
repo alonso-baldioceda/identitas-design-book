@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import styled from "styled-components";
 import ListGroup from "./../ListGroup";
-import { prefix, color } from "./../../../shared/styles.js";
+import { prefix, color } from "./../../../shared/styles";
 
 // Types
 import { TextProps } from "./../../components/Text";

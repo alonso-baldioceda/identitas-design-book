@@ -1,7 +1,7 @@
 import React, { useState, FC } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import { prefix } from "./../../../shared/styles.js";
+import { prefix } from "./../../../shared/styles";
 
 // Components
 import Text, { TextProps } from "../../components/Text";

@@ -1,6 +1,6 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../../shared/stylee";
+import { prefix } from "./../../../shared/styles";
 import classnames from "classnames";
 
 // Components
