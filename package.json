@@ -19,7 +19,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test-storybook": "test-storybook",
-    "chromatic": "chromatic --project-token f35f1873cf63"
+    "chromatic": "chromatic --project-token=f35f1873cf63"
   },
   "overrides": {
     "enhanced-resolve": "5.10.0"
