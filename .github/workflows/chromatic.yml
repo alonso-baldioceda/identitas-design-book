@@ -20,7 +20,7 @@ jobs:
         run: npm run build
 
       - name: Test visual changes with Chromatic
-        uses: chromaui/action@v1.3.3
+        uses: chromaui/action@v1
         env:
           CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
