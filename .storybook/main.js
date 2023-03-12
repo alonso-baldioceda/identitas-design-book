@@ -7,12 +7,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-links",
-    "@storybook/addon-storysource",
     "storybook-addon-grid",
-    // TODO: Analyze if we need these addons
-    // "storybook-addon-state",
-    // "storybook-addon-themes",
-    // "storybook-dark-mode",
   ],
   plugins: ["inline-react-svg"],
   framework: "@storybook/react",
@@ -43,9 +38,4 @@ module.exports = {
 
     return config;
   },
-  babel: async (options) => {
-    options.plugins.push("babel-plugin-inline-react-svg");
-    return options;
-  },
-  typescript: { reactDocgen: false },
 };
