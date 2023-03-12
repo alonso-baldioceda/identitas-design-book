@@ -1,10 +1,9 @@
 name: Chromatic
 
-on: 
-  push:
-    branches:
-      - main
-
+# on: 
+#   push:
+#     branches:
+#       - main
 
 env:
   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
@@ -19,16 +18,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2.1.5
         with:
-          node-version: '14.x'
+          node-version: '16.17.1'
       - name: Install dependencies
         run: npm install
       - name: Build Storybook
         run: npm run ${{ env.STORYBOOK_BUILD_SCRIPT }}
       - name: Deploy to Chromatic
-        uses: chromaqa/action@v2
+        uses: chromatic-deploy-action@v1.4.4
         with:
           token: ${{ env.CHROMATIC_PROJECT_TOKEN }}
-
 
 
 
