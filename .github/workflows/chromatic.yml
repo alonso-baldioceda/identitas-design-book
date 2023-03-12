@@ -11,7 +11,7 @@ on:
 
 env:
   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-  STORYBOOK_BUILD_SCRIPT: ${{ .env.STORYBOOK_BUILD_SCRIPT }}
+  STORYBOOK_BUILD_SCRIPT: ${{ env.STORYBOOK_BUILD_SCRIPT }}
 
 jobs:
   chromatic:
@@ -28,11 +28,11 @@ jobs:
       - name: Install dependencies
         run: npm install --legacy-peer-deps
       - name: Build Storybook
-        run: npm run ${{ .env.STORYBOOK_BUILD_SCRIPT }}
+        run: npm run ${{ env.STORYBOOK_BUILD_SCRIPT }}
       - name: Deploy to Chromatic
         uses: chromaqa/action@v2
         with:
-          token: ${{ .env.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ env.CHROMATIC_PROJECT_TOKEN }}
 
 
 
