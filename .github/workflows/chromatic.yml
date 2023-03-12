@@ -1,66 +1,66 @@
-name: Chromatic
+# name: Chromatic
 
-# on: 
-#   push:
-#     branches:
-#       - main
-
-env:
-  CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-  STORYBOOK_BUILD_SCRIPT: build-storybook
-
-jobs:
-  chromatic:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v2.1.5
-        with:
-          node-version: '16.17.1'
-      - name: Install dependencies
-        run: npm install
-      - name: Build Storybook
-        run: npm run ${{ env.STORYBOOK_BUILD_SCRIPT }}
-      - name: Deploy to Chromatic
-        uses: chromatic-deploy-action@v1.4.4
-        with:
-          token: ${{ env.CHROMATIC_PROJECT_TOKEN }}
-
-
-
-# # Workflow name
-# name: 'Chromatic Publish'
-
-# # Event for the workflow
-# on: 
-#   push:
-#     branches:
-#       - main
+# # on: 
+# #   push:
+# #     branches:
+# #       - main
 
 # env:
 #   CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 #   STORYBOOK_BUILD_SCRIPT: build-storybook
 
-# # List of jobs
 # jobs:
-#   test:
-#     # Operating System
+#   chromatic:
 #     runs-on: ubuntu-latest
-#     # Node version
-#     strategy:
-#       matrix:
-#         node-version: [16.17.1]
-#     # Job steps
 #     steps:
-#       - uses: actions/checkout@v1
-#       - run: npm install --legacy-peer-deps
-#         #👇 Adds Chromatic as a step in the workflow
-#       - uses: chromaui/action@v1
-#         # Options required for Chromatic's GitHub Action
+#       - name: Checkout code
+#         uses: actions/checkout@v2
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v2.1.5
 #         with:
-#           #👇 Chromatic projectToken,
-#           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-#           # token: ${{ secrets.GITHUB_TOKEN }}
-#           # exitZeroOnChanges: false
+#           node-version: '16.17.1'
+#       - name: Install dependencies
+#         run: npm install
+#       - name: Build Storybook
+#         run: npm run ${{ env.STORYBOOK_BUILD_SCRIPT }}
+#       - name: Deploy to Chromatic
+#         uses: chromatic-deploy-action@v1.4.4
+#         with:
+#           token: ${{ env.CHROMATIC_PROJECT_TOKEN }}
+
+
+
+# Workflow name
+name: 'Chromatic Publish'
+
+# Event for the workflow
+on: 
+  push:
+    branches:
+      - main
+
+env:
+  CHROMATIC_PROJECT_TOKEN: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+  STORYBOOK_BUILD_SCRIPT: build-storybook
+
+# List of jobs
+jobs:
+  test:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Node version
+    strategy:
+      matrix:
+        node-version: [16.17.1]
+    # Job steps
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install --legacy-peer-deps
+        #👇 Adds Chromatic as a step in the workflow
+      - uses: chromaui/action@v1
+        # Options required for Chromatic's GitHub Action
+        with:
+          #👇 Chromatic projectToken,
+          token: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          # token: ${{ secrets.GITHUB_TOKEN }}
+          # exitZeroOnChanges: false
