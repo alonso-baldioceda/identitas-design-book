@@ -31,10 +31,20 @@ module.exports = {
       require.resolve("babel-plugin-remove-graphql-queries")
     );
 
-    config.resolve.alias["@stories"] = path.resolve(
-      __dirname,
-      "../src/stories"
-    );
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, "../"),
+    ];
+
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@stories": path.resolve(__dirname, "../src/stories"),
+    };
+
+    // config.resolve.alias["@stories"] = path.resolve(
+    //   __dirname,
+    //   "../src/stories"
+    // );
 
     //  config.resolve.alias["@components"] = path.resolve(
     //    __dirname,
@@ -50,12 +60,6 @@ module.exports = {
     // config.resolve.plugins = [
     //   new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
     // ];
-
-    config.resolve.plugins.push(
-      new TsconfigPathsPlugin({
-        configFile: "./../tsconfig.json",
-      })
-    );
 
     return config;
   },
