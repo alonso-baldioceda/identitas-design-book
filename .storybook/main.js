@@ -47,22 +47,12 @@ module.exports = {
 
     config.resolve.mainFields = ["browser", "module", "main"];
 
-    config.resolve.mainFields = ["browser", "module", "main"];
-
     config.resolve.plugins = [
-      new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, "./../tsconfig.json"),
+      }),
     ];
 
-    config.resolve.plugins.push(
-      new TsconfigPathsPlugin({
-        configFile: "./../tsconfig.json",
-      })
-    );
-
     return config;
-  },
-  babel: async (options) => {
-    options.plugins.push("babel-plugin-inline-react-svg");
-    return options;
   },
 };
