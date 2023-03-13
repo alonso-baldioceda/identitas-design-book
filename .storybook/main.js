@@ -47,6 +47,18 @@ module.exports = {
 
     config.resolve.mainFields = ["browser", "module", "main"];
 
+    config.resolve.mainFields = ["browser", "module", "main"];
+
+    // config.resolve.plugins = [
+    //   new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
+    // ];
+
+    // config.resolve.plugins.push(
+    //   new TsconfigPathsPlugin({
+    //     configFile: "./../tsconfig.json",
+    //   })
+    // );
+
     return config;
   },
   babel: async (options) => {
