@@ -31,21 +31,31 @@ module.exports = {
       require.resolve("babel-plugin-remove-graphql-queries")
     );
 
-    config.resolve.alias = {
-      "@stories": path.resolve(__dirname, "../", "src/stories"),
-    };
+    config.resolve.alias["@stories"] = path.resolve(
+      __dirname,
+      "../src/stories"
+    );
+
+    //  config.resolve.alias["@components"] = path.resolve(
+    //    __dirname,
+    //    "../components"
+    //  );
+    //  config.resolve.alias["@images"] = path.resolve(
+    //    __dirname,
+    //    "../assets/images"
+    //  );
 
     config.resolve.mainFields = ["browser", "module", "main"];
 
-    config.resolve.plugins = [
-      new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
-    ];
+    // config.resolve.plugins = [
+    //   new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
+    // ];
 
-    // config.resolve.plugins.push(
-    //   new TsconfigPathsPlugin({
-    //     configFile: "./../tsconfig.json",
-    //   })
-    // );
+    config.resolve.plugins.push(
+      new TsconfigPathsPlugin({
+        configFile: "./../tsconfig.json",
+      })
+    );
 
     return config;
   },
