@@ -832,7 +832,6 @@ const IndexPage = ({ data: graphqlData }: any) => {
           url: "https://goo.gl/maps/M2zvgGvrKBoyRzNH9",
         },
       },
-      icon: <Map />,
     },
     contactProps: {
       blockProps: {

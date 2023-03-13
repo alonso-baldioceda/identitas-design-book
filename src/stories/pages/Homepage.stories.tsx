@@ -8,7 +8,6 @@ import Homepage from "./Homepage";
 import HeroImage from "./../../images/home-hero.jpg";
 import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
-import MapIcon from "./../../images/svg/navigator.svg";
 
 export default {
   title: "Pages/Homepage",
@@ -743,7 +742,6 @@ Default.args = {
         url: "https://goo.gl/maps/M2zvgGvrKBoyRzNH9",
       },
     },
-    icon: <MapIcon />,
   },
   rulesProps: {
     blockProps: {

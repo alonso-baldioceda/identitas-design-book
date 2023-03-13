@@ -22,6 +22,9 @@ import { ListGroupItemProps } from "../compositions/ListGroupItem";
 // Hooks
 import useAvailHeight from "./../../hooks/useAvailHeight";
 
+// Assets
+import Map from "./../../images/svg/navigator.svg";
+
 export interface HomepageProps {
   location: string;
   headerProps: HeaderProps;
@@ -206,11 +209,9 @@ const Homepage: FC<HomepageProps> = ({
                     <Drive {...driveProps.content} />
                   </div>
                 )}
-                {driveProps.icon && (
-                  <div className="col-10 col-sm-12 col-md-6">
-                    {driveProps.icon}
-                  </div>
-                )}
+                <div className="col-10 col-sm-12 col-md-6">
+                  <img src={Map} alt="drive" />
+                </div>
               </div>
             </div>
           </Spacer>

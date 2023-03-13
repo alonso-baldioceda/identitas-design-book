@@ -1,11 +1,12 @@
 {
-  "name": "identitas-story-book",
-  "version": "1.0.0",
+  "name": "@alonso.baldioceda/learnstorybook-design-system",
+  "version": "0.0.1",
   "private": true,
   "description": "identitas-story-book",
   "author": {
     "name": "Alonso Baldioceda"
   },
+  "repository": "https://github.com/alonso-baldioceda/identitas-design-book.git",
   "keywords": [
     "gatsby"
   ],
@@ -87,8 +88,10 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@types/styled-components": "^5.1.26",
+    "auto": "^10.43.0",
     "babel-loader": "^9.1.2",
     "chromatic": "^6.17.1",
+    "cross-env": "^7.0.3",
     "gatsby-plugin-root-import": "^2.0.9",
     "jest": "^27.5.1",
     "prettier": "^2.7.1",
