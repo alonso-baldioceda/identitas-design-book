@@ -2,9 +2,9 @@ const path = require("path");
 
 module.exports = {
   resolve: {
-    modules: [
-      path.resolve(__dirname, "../node_modules"),
-      path.resolve(__dirname, "../src"),
-    ],
+    alias: {
+      "@stories": path.resolve(__dirname, "./src/stories/"),
+    },
+    extensions: [".js", ".jsx", ".json", "ts", "tsx"],
   },
 };
