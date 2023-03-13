@@ -53,11 +53,11 @@ module.exports = {
       new TsconfigPathsPlugin({ extensions: config.resolve.extensions }),
     ];
 
-    // config.resolve.plugins.push(
-    //   new TsconfigPathsPlugin({
-    //     configFile: "./../tsconfig.json",
-    //   })
-    // );
+    config.resolve.plugins.push(
+      new TsconfigPathsPlugin({
+        configFile: "./../tsconfig.json",
+      })
+    );
 
     return config;
   },
