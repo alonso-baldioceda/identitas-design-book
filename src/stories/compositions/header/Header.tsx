@@ -4,7 +4,7 @@ import { prefix } from "./../../../shared/styles";
 import classnames from "classnames";
 
 // Components
-import Brand, { BrandProps } from "@stories/compositions/header/brand/Brand";
+import Brand, { BrandProps } from "./brand/Brand";
 import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
