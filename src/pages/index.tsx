@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "@reach/router";
 
 // Compositions
 import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
@@ -50,6 +51,7 @@ interface ServiceProps {
 
 const IndexPage = ({ data: graphqlData }: any) => {
   const { t } = useTranslation();
+  const location = useLocation();
   const heroHeight = useAvailHeight();
   const breakpoint = useBootstrapBreakpoints();
 

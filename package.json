@@ -47,6 +47,7 @@
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",
     "lightgallery": "^2.7.1",
+    "postcss": "^8.4.21",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -63,7 +64,9 @@
     "yup": "^1.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.0",
     "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
     "@storybook/addon-a11y": "^6.5.13",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-docs": "^6.5.13",
