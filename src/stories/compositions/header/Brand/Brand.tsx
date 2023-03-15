@@ -7,7 +7,7 @@ import { prefix } from "./../../../../shared/styles";
 import { TextProps } from "./../../../components/Text";
 import LinkToPage from "./LinkToPage";
 import LinkToScroll from "./LinkToScroll";
-import LinkContent from "./LinkContent";
+import Content from "./Content";
 import { SVGProps } from "./../../../components/SVG";
 
 // Styles
@@ -20,12 +20,6 @@ const StyledBrand = styled((props) => <div {...props} />)`
     text-decoration: none;
 
     span {
-      ${(props) =>
-        props.fw &&
-        `
-        font-weight: ${props.fw};
-      `}
-
       font-size: 1.175rem;
       margin-left: 0.375rem;
       transition: all 0.15s ease;
@@ -40,7 +34,6 @@ const StyledBrand = styled((props) => <div {...props} />)`
 // Types
 export interface BrandProps {
   classes?: string;
-  fontWeight: number;
   showNameOnMobile?: boolean;
   location?: any;
   svg: SVGProps;
@@ -50,14 +43,13 @@ export interface BrandProps {
 
 const Brand: FC<BrandProps> = ({
   classes,
-  fontWeight,
   showNameOnMobile,
   location,
   svg,
   text,
   to,
 }) => {
-  const linkContent = {
+  const content = {
     showNameOnMobile: showNameOnMobile ? showNameOnMobile : true,
     icon: svg,
     text,
@@ -66,15 +58,14 @@ const Brand: FC<BrandProps> = ({
   return (
     <StyledBrand
       className={classnames({ [`${classes}`]: classes }, `${prefix}-brand`)}
-      fw={fontWeight ? fontWeight : 700}
     >
       {location?.pathname === "/" ? (
         <LinkToScroll to={to}>
-          <LinkContent {...linkContent} />
+          <Content {...content} />
         </LinkToScroll>
       ) : (
         <LinkToPage to={to}>
-          <LinkContent {...linkContent} />
+          <Content {...content} />
         </LinkToPage>
       )}
     </StyledBrand>

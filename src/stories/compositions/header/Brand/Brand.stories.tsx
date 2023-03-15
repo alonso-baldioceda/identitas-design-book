@@ -2,11 +2,11 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import Brand from "./Brand";
+import BrandComponent from "./Brand";
 
 export default {
-  title: "Compositions/Brand",
-  component: Brand,
+  title: "Compositions/Header/Brand",
+  component: BrandComponent,
   argTypes: {
     classes: {
       name: "Classes",
@@ -44,12 +44,14 @@ export default {
       control: "text",
     },
   },
-} as ComponentMeta<typeof Brand>;
+} as ComponentMeta<typeof BrandComponent>;
 
-const Template: ComponentStory<typeof Brand> = (args) => <Brand {...args} />;
+const Template: ComponentStory<typeof BrandComponent> = (args) => (
+  <BrandComponent {...args} />
+);
 
-export const Default = Template.bind({});
-Default.args = {
+export const Brand = Template.bind({});
+Brand.args = {
   classes: "me-3",
   fontWeight: 700,
   location: {
@@ -60,6 +62,7 @@ Default.args = {
     size: "md",
   },
   text: {
+    classes: "text-capitalize text-dark fw-bold mb-0",
     text: "My Company",
     variant: "span",
   },

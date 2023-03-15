@@ -15,7 +15,6 @@ export default {
     disabled: {
       name: "Disabled",
       description: "Icon disabled",
-      defaultValue: false,
       control: "boolean",
       options: [false, true],
     },

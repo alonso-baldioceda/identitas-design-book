@@ -15,7 +15,7 @@ import Grid from "../compositions/Grid";
 import Hero, { HeroProps } from "../compositions/hero/Hero";
 import Layout from "../compositions/Layout";
 import ListGroup from "../compositions/ListGroup";
-import { HeaderProps } from "./../compositions/header/Header";
+import { HeaderProps } from "../compositions/header/HeaderV1";
 import { FooterProps } from "./../compositions/footer/Footer";
 import { ListGroupItemProps } from "../compositions/ListGroupItem";
 

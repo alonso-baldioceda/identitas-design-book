@@ -8,7 +8,7 @@ import React, { FC } from "react";
 
 // Compositions
 import Layout from "../compositions/Layout";
-import { HeaderProps } from "./../compositions/header/Header";
+import { HeaderProps } from "../compositions/header/HeaderV1";
 import { FooterProps } from "./../compositions/footer/Footer";
 
 export interface InfoProps {

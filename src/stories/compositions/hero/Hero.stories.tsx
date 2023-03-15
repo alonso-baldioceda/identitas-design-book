@@ -63,8 +63,8 @@ const Template: ComponentStory<typeof Hero> = (args) => {
   return <Hero {...args} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {
+export const HeroVersion1 = Template.bind({});
+HeroVersion1.args = {
   src: imageFile,
   mask: true,
   panel: {

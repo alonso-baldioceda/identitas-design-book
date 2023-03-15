@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { prefix } from "./../../shared/styles";
 import classnames from "classnames";
 
-interface LinkGatsbyProps {
+export interface LinkGatsbyProps {
   // appearance: string;
   classes?: string;
   text: string;

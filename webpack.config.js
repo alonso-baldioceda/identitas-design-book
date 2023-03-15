@@ -7,4 +7,12 @@ module.exports = {
     },
     extensions: [".js", ".jsx", ".json", "ts", "tsx"],
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
 };

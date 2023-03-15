@@ -24,13 +24,11 @@ export default {
     },
     hideFrom: {
       control: "select",
-      defaultValue: "xl",
       description: "Hide mobile from",
       name: "Hide From",
       options: ["md", "lg", "xl"],
     },
     isOpen: {
-      defaultValue: false,
       description: "Is the menu open?",
       name: "Is Open?",
     },

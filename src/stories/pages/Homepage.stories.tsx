@@ -10,7 +10,7 @@ import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
 
 export default {
-  title: "Pages/Homepage",
+  title: "Pages/Airbnb",
   component: Homepage,
 } as ComponentMeta<typeof Homepage>;
 
@@ -898,3 +898,4 @@ Default.args = {
     },
   },
 };
+Default.storyName = "Homepage";

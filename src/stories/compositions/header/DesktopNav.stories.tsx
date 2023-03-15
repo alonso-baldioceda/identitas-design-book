@@ -7,7 +7,7 @@ import DesktopNavComponent from "./DesktopNav";
 // Types
 
 export default {
-  title: "Compositions/Header/DesktopNav",
+  title: "Compositions/Header/Headers Navigation",
   component: DesktopNavComponent,
   argTypes: {
     navigation: {
@@ -40,8 +40,8 @@ const Template: ComponentStory<typeof DesktopNavComponent> = (args) => (
   <DesktopNavComponent {...args} />
 );
 
-export const DesktopNav = Template.bind({});
-DesktopNav.args = {
+export const HeadersNavigation = Template.bind({});
+HeadersNavigation.args = {
   navigation: [
     {
       type: "anchor",

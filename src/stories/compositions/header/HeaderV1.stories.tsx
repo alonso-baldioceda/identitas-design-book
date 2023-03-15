@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import styled from "styled-components";
 
 // Components
-import Header from "./Header";
+import Header from "./HeaderV1";
 
 // Styles
 const HeaderWrapper = styled.div`
@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
 `;
 
 export default {
-  title: "Compositions/Header",
+  title: "Compositions/Header/HeaderVersion1",
   component: Header,
   argTypes: {
     brand: {
@@ -87,8 +87,8 @@ const Template: ComponentStory<typeof Header> = (args) => (
   </HeaderWrapper>
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const HeaderVersion1 = Template.bind({});
+HeaderVersion1.args = {
   brand: {
     classes: "me-3",
     fontWeight: 700,

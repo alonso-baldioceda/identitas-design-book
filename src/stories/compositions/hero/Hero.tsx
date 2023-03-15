@@ -5,7 +5,7 @@ import { prefix } from "./../../../shared/styles";
 // Components
 import BackgroundImage from "./../../components/BackgroundImage";
 import Mask from "./../../components/Mask";
-import Panel, { PanelProps } from "./Panel";
+import Panel, { PanelProps } from "../Panel";
 
 // Styles
 const StyledHero = styled((props) => <div {...props} />)`

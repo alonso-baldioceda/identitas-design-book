@@ -1,18 +1,14 @@
 import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import { prefix } from "./../../../shared/styles";
 import classnames from "classnames";
+import { prefix } from "./../../../shared/styles";
 
 // Components
 import Brand, { BrandProps } from "./brand/Brand";
-import DesktopLanguages from "./DesktopLanguages";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
-import Separator, { SeparatorProps } from "./Separator";
-import SwitchMode from "./../../components/SwitchMode";
 import MenuClose from "./MenuClose";
 import Mobile, { MobileProps } from "./Mobile";
-import Socials from "./Socials";
 
 // Contexts
 import LayoutContext from "./../LayoutContext";
@@ -49,24 +45,15 @@ const StyledNavWrapper = styled.div`
 `;
 
 // Interfaces
-interface Language {
-  name: string;
-  classes?: string;
-}
-
 export interface HeaderProps {
   brand: BrandProps;
   call?: LinkIconProps;
   fixed?: boolean;
   hideCloseFrom?: string;
-  hideLanguagesFrom?: string;
-  languages: Language[];
   location: string;
   minHeight?: number;
   mobile: MobileProps;
   navigation: Link[];
-  separator?: SeparatorProps;
-  socials?: LinkIconProps[];
 }
 
 const Header: FC<HeaderProps> = ({
@@ -74,24 +61,19 @@ const Header: FC<HeaderProps> = ({
   call,
   fixed,
   hideCloseFrom,
-  hideLanguagesFrom,
-  languages,
   location,
   minHeight,
   mobile,
   navigation,
-  separator,
-  socials,
 }) => {
-  const { isOpen, isDark, setIsDark } = useContext(LayoutContext);
+  const { isOpen } = useContext(LayoutContext);
 
   const headerMinHeight = minHeight ? minHeight : 84;
   const isFixed = fixed ? fixed.toString() : null;
 
   const brandProps = { ...brand, location };
   const mobileProps = { ...mobile, isOpen };
-  const desktopLanguagesProps = { languages, hideLanguagesFrom };
-  const switchModeProps = { isDark, setIsDark };
+  //   const switchModeProps = { isDark, setIsDark };
 
   return (
     <>
@@ -106,14 +88,10 @@ const Header: FC<HeaderProps> = ({
               <StyledNavWrapper>
                 <div className="d-flex align-items-center">
                   <Brand {...brandProps} />
-                  <DesktopNav navigation={navigation} />
                 </div>
                 <div className="d-flex justify-content-end align-items-center">
-                  <DesktopLanguages {...desktopLanguagesProps} />
-                  <Separator {...separator} />
-                  {call && <LinkIcon {...call} />}
-                  <SwitchMode {...switchModeProps} />
-                  <Socials socials={socials} />
+                  <DesktopNav navigation={navigation} />
+                  {/* <SwitchMode {...switchModeProps} /> */}
                   <MenuClose hideCloseFrom={hideCloseFrom} />
                 </div>
               </StyledNavWrapper>

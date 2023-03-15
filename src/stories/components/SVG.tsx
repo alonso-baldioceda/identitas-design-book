@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 import classnames from "classnames";
 import { prefix, sizing } from "./../../shared/styles";
-import { icons2 } from "./../../shared/icons2";
+import { icons } from "../../shared/icons";
 
 // Styles
 const StyledSVG = styled((props) => <div {...props} />)`
@@ -57,7 +57,7 @@ const SVG: FC<SVGProps> = ({ classes, icon, size }) => (
     size={size ? size : "md"}
     className={classnames({ [`${classes}`]: classes }, `${prefix}-svg`)}
   >
-    <div dangerouslySetInnerHTML={{ __html: icons2[icon] }} />
+    <div dangerouslySetInnerHTML={{ __html: icons[icon] }} />
   </StyledSVG>
 );
 

@@ -5,7 +5,7 @@ import { lightTheme, darkTheme } from "./../../../.storybook/Theme";
 import { I18nextProvider } from "react-i18next";
 
 // Components
-import Header, { HeaderProps } from "./header/Header";
+import Header, { HeaderProps } from "./header/HeaderV1";
 import Footer, { FooterProps } from "./footer/Footer";
 
 // Contexts

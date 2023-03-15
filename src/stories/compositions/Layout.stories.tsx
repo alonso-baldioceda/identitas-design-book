@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Layout from "./Layout";
 
 // Stories
-import * as Header from "./header/Header.stories";
+import * as Header from "./header/HeaderV1.stories";
 
 export default {
   title: "Compositions/Layout",
@@ -165,7 +165,7 @@ Default.args = {
     },
   },
   header: {
-    ...Header.Default.args,
+    ...Header.HeaderVersion1.args,
     brand: {
       classes: "me-3",
       fontWeight: 700,

@@ -1,10 +1,7 @@
-import React, { FC } from "react";
-import styled from "styled-components";
-import { prefix, color } from "./../../../shared/styles";
+import React, { FC, ReactNode } from "react";
 import classnames from "classnames";
-
-// Components
-import Text, { TextProps } from "./../../components/Text";
+import styled from "styled-components";
+import { prefix } from "../../shared/styles";
 
 // Styles
 const StyledPanel = styled((props) => <div {...props} />)`
@@ -13,31 +10,14 @@ const StyledPanel = styled((props) => <div {...props} />)`
     `
       background-color: ${props.bgcolor};
     `}
-
-  ${(props) =>
-    props.bordercolor &&
-    `
-      border-color: ${props.bordercolor} !important;
-    `}
-
-  ${(props) =>
-    props.borderradius &&
-    `
-      border-radius: ${props.borderradius}px;
-      border-style: solid;
-    `}
-
-  position: absolute;
 `;
 
 // Types
 export interface PanelProps {
   bgColor?: string;
-  borderColor?: string;
   classes?: string;
-  color?: string;
   position?: string;
-  text?: TextProps;
+  children?: ReactNode | ReactNode[];
 }
 
 const Position = (position: string) => {
@@ -65,24 +45,16 @@ const Position = (position: string) => {
   }
 };
 
-const Panel: FC<PanelProps> = ({
-  borderColor,
-  bgColor,
-  // color,
-  classes,
-  position,
-  text,
-}) => (
+const Panel: FC<PanelProps> = ({ bgColor, classes, position, children }) => (
   <StyledPanel
+    bgcolor={bgColor ? bgColor : "transparent"}
     className={classnames(
       { [`${classes}`]: classes },
       `${position ? Position(position) : "bottom-0 start-0"}`,
       `${prefix}-panel`
     )}
-    bordercolor={borderColor ? borderColor : null}
-    bgcolor={bgColor ? bgColor : color.transparent}
   >
-    {text ? <Text {...text} /> : null}
+    {children}
   </StyledPanel>
 );
 
