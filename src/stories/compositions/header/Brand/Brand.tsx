@@ -5,9 +5,9 @@ import { prefix } from "./../../../../shared/styles";
 
 // Components
 import { TextProps } from "./../../../components/Text";
-import LinkToPage from "./LinkToPage";
-import LinkToScroll from "./LinkToScroll";
-import Content from "./Content";
+import LinkToPage from "./../Brand/LinkToPage";
+import LinkToScroll from "./../Brand/LinkToScroll";
+import Content from "./../Brand/Content";
 import { SVGProps } from "./../../../components/SVG";
 
 // Styles

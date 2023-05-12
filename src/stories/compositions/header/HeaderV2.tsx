@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { prefix } from "./../../../shared/styles";
 
 // Components
-import Brand, { BrandProps } from "./brand/Brand";
+import Brand, { BrandProps } from "./Brand/Brand";
 import LinkIcon, { LinkIconProps } from "./../../components/LinkIcon";
 import DesktopNav from "./DesktopNav";
 import MenuClose from "./MenuClose";

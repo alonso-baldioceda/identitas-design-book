@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
 import Text from "./../../../components/Text";
-import ContentComponent from "./Content";
+import ContentComponent from "./../Brand/Content";
 
 export default {
   title: "Compositions/Header/Brand/Content",

@@ -2,7 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import BrandComponent from "./Brand";
+import BrandComponent from "./../Brand/Brand";
 
 export default {
   title: "Compositions/Header/Brand",
