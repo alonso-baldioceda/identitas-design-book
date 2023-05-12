@@ -1,8 +1,8 @@
 {
-  "name": "@alonso.baldioceda/identitas-storybook",
+  "name": "identitas-storybook",
   "version": "1.0.0",
   "private": false,
-  "description": "identitas-story-book",
+  "description": "identitas-storybook",
   "author": {
     "name": "Alonso Baldioceda"
   },
