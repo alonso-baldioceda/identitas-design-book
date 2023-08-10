@@ -31,11 +31,16 @@
       },
       "unit2": {
         "heading": "Cabina 2",
-        "text": "2 camas matrimoniales",
-        "max": "(máx. 4 huéspedes)"
+        "text": "1 cama matrimonial",
+        "max": "(máx. 2 huéspedes)"
       },
       "unit3": {
         "heading": "Cabina 3",
+        "text": "1 cama matrimonial",
+        "max": "(máx. 2 huéspedes)"
+      },
+      "unit4": {
+        "heading": "Cabina 4",
         "text": "1 cama matrimonial",
         "max": "(máx. 2 huéspedes)"
       }

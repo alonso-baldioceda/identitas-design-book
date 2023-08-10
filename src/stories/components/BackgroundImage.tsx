@@ -18,7 +18,7 @@ const StyledBgImg = styled((props) => <div {...props} />)`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
 `;
 

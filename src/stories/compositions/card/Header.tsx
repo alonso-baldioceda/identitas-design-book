@@ -28,17 +28,19 @@ const StyledHeader = styled((props) => <div {...props} />)`
   width: 100%;
 `;
 
-const Header: FC<HeaderProps> = ({ text, backgroundColor }) => (
-  <StyledHeader
-    className={`text-center ${prefix}-card-header`}
-    background={backgroundColor ? backgroundColor : ""}
-  >
-    <Text
-      text={text?.text ? text.text : ""}
-      variant={text?.variant ? text.variant : "h3"}
-      classes={text?.classes ? text.classes : "mb-0 py-4 text-capitalize"}
-    />
-  </StyledHeader>
-);
+const Header: FC<HeaderProps> = ({ text, backgroundColor }) => {
+  return (
+    <StyledHeader
+      className={`text-center ${prefix}-card-header`}
+      background={backgroundColor ? backgroundColor : ""}
+    >
+      <Text
+        text={text?.text ? text.text : ""}
+        variant={text?.variant ? text.variant : "h3"}
+        classes={text?.classes ? text.classes : "mb-0 py-4 text-capitalize"}
+      />
+    </StyledHeader>
+  );
+};
 
 export default Header;

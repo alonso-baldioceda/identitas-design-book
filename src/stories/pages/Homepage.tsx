@@ -108,6 +108,7 @@ const Homepage: FC<HomepageProps> = ({
                     <Card {...unitsProps.cardsProps[0]} />
                     <Card {...unitsProps.cardsProps[1]} />
                     <Card {...unitsProps.cardsProps[2]} />
+                    <Card {...unitsProps.cardsProps[3]} />
                   </Grid>
                 </div>
               </div>

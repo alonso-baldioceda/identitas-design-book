@@ -216,13 +216,14 @@ Default.args = {
       src: HeroImage,
       mask: true,
       panel: {
-        classes: "p-2 p-lg-3 m-0 col-12 col-lg-7",
-        position: "bottom-start",
-        text: {
-          text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
-          classes: "mb-0",
-          variant: "h1",
-        },
+        classes:
+          "p-2 p-sm-3 p-md-4 p-lg-3 m-0 col-12 col-lg-7 position-absolute",
+        height: "100px",
+      },
+      text: {
+        text: "Estamos ubicados en Costa Rica, Guanacaste, Tilarán. En una loma frente al Lago Arenal.",
+        classes: "mb-0 text-white",
+        variant: "h1",
       },
     },
   },
@@ -241,7 +242,7 @@ Default.args = {
       classes: "mb-0",
     },
     cardsGridProps: {
-      xl: 3,
+      xl: 4,
     },
     cardsProps: [
       {
@@ -352,6 +353,57 @@ Default.args = {
           text: {
             classes: "mb-0 py-4 text-capitalize",
             text: "Cabina 3",
+            variant: "h3",
+          },
+          backgroundColor: "#81B29A",
+        },
+        body: {
+          backgroundColor: "transparent",
+          list: [
+            {
+              svg: "",
+              svgSize: "sm",
+              text: {
+                heading: {
+                  classes: "mb-0",
+                  text: "1 cama matrimonial",
+                  variant: "h4",
+                },
+                bottom: {
+                  classes: "mb-0",
+                  text: "(máx. 2 personas)",
+                },
+              },
+            },
+          ],
+          preCta: {
+            classes: "text-center small mb-2",
+            text: "Reservar por",
+          },
+          airbnb: {
+            bold: true,
+            disabled: false,
+            classes: "mb-2 px-4 py-2 rounded-pill fw-bold btn-airbnb",
+            targetBlank: false,
+            text: "Airbnb",
+            url: "https://www.google.com/",
+          },
+          booking: {
+            bold: true,
+            disabled: false,
+            classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-booking",
+            targetBlank: false,
+            text: "Booking",
+            url: "https://www.google.com/",
+          },
+        },
+      },
+      {
+        border: 4,
+        header: {
+          text: {
+            classes: "mb-0 py-4 text-capitalize",
+            text: "Cabina 4",
             variant: "h3",
           },
           backgroundColor: "#81B29A",

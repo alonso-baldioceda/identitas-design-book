@@ -7,7 +7,7 @@ import { prefix, color } from "./../../../shared/styles";
 import { TextProps } from "./../../components/Text";
 
 // Styles
-const StyledContact = styled.ul`
+const StyledContact = styled.div`
   list-style: none;
   margin-bottom: 0;
   padding-left: 0;

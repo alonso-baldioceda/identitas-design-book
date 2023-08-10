@@ -31,11 +31,16 @@
       },
       "unit2": {
         "heading": "Unit 2",
-        "text": "2 double beds",
-        "max": "(máx. 4 guests)"
+        "text": "1 double bed",
+        "max": "(máx. 2 guests)"
       },
       "unit3": {
         "heading": "Unit 3",
+        "text": "1 double bed",
+        "max": "(máx. 2 guests)"
+      },
+      "unit4": {
+        "heading": "Unit 4",
         "text": "1 double bed",
         "max": "(máx. 2 guests)"
       }

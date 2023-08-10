@@ -54,6 +54,7 @@ interface SwitchModeProps {
   classes?: string;
   setIsDark?: (isDark: boolean) => void;
   size?: string;
+  ariaLabel?: string;
 }
 
 const SwitchMode: FC<SwitchModeProps> = ({
@@ -61,6 +62,7 @@ const SwitchMode: FC<SwitchModeProps> = ({
   isDark,
   setIsDark,
   size,
+  ariaLabel,
 }) => (
   <StyledSwitchMode
     className={classnames(
@@ -68,6 +70,7 @@ const SwitchMode: FC<SwitchModeProps> = ({
       { "is-dark": isDark },
       `${prefix}-swith-mode`
     )}
+    aria-label={ariaLabel ? ariaLabel : "Switch mode"}
     onClick={() => {
       setIsDark && setIsDark(isDark ? false : true);
     }}

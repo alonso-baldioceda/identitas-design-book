@@ -6,24 +6,22 @@ import { prefix } from "./../../../shared/styles";
 import BackgroundImage from "./../../components/BackgroundImage";
 import Mask from "./../../components/Mask";
 import Panel, { PanelProps } from "../Panel";
+import Text, { TextProps } from "./../../components/Text";
 
 // Styles
 const StyledHero = styled((props) => <div {...props} />)`
-  ${(props) =>
-    props.height &&
-    `
-      height: ${props.height};
-    `}
-
-  ${(props) =>
-    !props.height &&
-    `
-      height: 100vh;
-    `}
-
+  height: 50vh;
   overflow: hidden;
   position: relative;
   width: 100%;
+
+  @media (min-width: 992px) {
+    ${(props) =>
+      props.height &&
+      `
+      height: ${props.height};
+    `}
+  }
 `;
 
 // Types
@@ -34,6 +32,7 @@ export interface HeroProps {
   maxWidth?: string;
   opacity?: number;
   panel?: PanelProps;
+  text?: TextProps;
   src: string;
 }
 
@@ -44,6 +43,7 @@ const Hero: FC<HeroProps> = ({
   maxWidth,
   opacity,
   panel,
+  text,
   src,
 }) => {
   return (
@@ -52,7 +52,6 @@ const Hero: FC<HeroProps> = ({
       style={{ maxWidth: maxWidth ? maxWidth : 2200 }}
       height={height ? height : null}
     >
-      {/* TODO: add a mobile image version */}
       <BackgroundImage src={src} />
       {mask && (
         <Mask
@@ -60,7 +59,9 @@ const Hero: FC<HeroProps> = ({
           opacity={opacity ? opacity : 25}
         />
       )}
-      <Panel {...panel} />
+      <Panel {...panel}>
+        <Text {...text} />
+      </Panel>
     </StyledHero>
   );
 };
