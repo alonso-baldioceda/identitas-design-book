@@ -300,7 +300,8 @@ const IndexPage = ({ data: graphqlData }: any) => {
         classes: "mb-0",
       },
       cardsGridProps: {
-        xl: 4,
+        lg: 2,
+        xl: 2,
       },
       cardsProps: [
         {
@@ -308,7 +309,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
-              text: "Cabina 1",
+              text: t(units.list.unit1.heading),
               variant: "h3",
             },
             backgroundColor: "#81B29A",
@@ -321,27 +322,27 @@ const IndexPage = ({ data: graphqlData }: any) => {
                 svgSize: "sm",
                 text: {
                   heading: {
-                    classes: "mb-0",
-                    text: "2 camas matrimoniales",
+                    classes: "mb-0 text-capitalize fs-5",
+                    text: t(units.list.unit1.text),
                     variant: "h4",
                   },
                   bottom: {
                     classes: "mb-0",
-                    text: "(máx. 4 personas)",
+                    text: t(units.list.unit1.max),
                   },
                 },
               },
             ],
             preCta: {
               classes: "text-center small mb-2",
-              text: "Reservar por",
+              text: t(`booking`),
             },
             airbnb: {
               bold: true,
-              disabled: false,
               classes: "mb-2 px-4 py-2 rounded-pill fw-bold btn-airbnb",
+              disabled: false,
               targetBlank: false,
-              text: "Airbnb",
+              text: t(`OtaAirbnb`),
               url: "https://www.google.com/",
             },
             booking: {
@@ -349,7 +350,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
               disabled: false,
               classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-booking",
               targetBlank: false,
-              text: "Booking",
+              text: t(`OtaBooking`),
               url: "https://www.google.com/",
             },
           },
@@ -359,7 +360,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
-              text: "Cabina 2",
+              text: t(units.list.unit2.heading),
               variant: "h3",
             },
             backgroundColor: "#81B29A",
@@ -372,27 +373,27 @@ const IndexPage = ({ data: graphqlData }: any) => {
                 svgSize: "sm",
                 text: {
                   heading: {
-                    classes: "mb-0",
-                    text: "2 camas matrimoniales",
+                    classes: "mb-0 text-capitalize fs-5",
+                    text: t(units.list.unit2.text),
                     variant: "h4",
                   },
                   bottom: {
                     classes: "mb-0",
-                    text: "(máx. 4 personas)",
+                    text: t(units.list.unit2.max),
                   },
                 },
               },
             ],
             preCta: {
               classes: "text-center small mb-2",
-              text: "Reservar por",
+              text: t(`booking`),
             },
             airbnb: {
               bold: true,
               disabled: false,
               classes: "mb-2 px-4 py-2 rounded-pill fw-bold btn-airbnb",
               targetBlank: false,
-              text: "Airbnb",
+              text: t(`OtaAirbnb`),
               url: "https://www.google.com/",
             },
             booking: {
@@ -400,7 +401,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
               disabled: false,
               classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-booking",
               targetBlank: false,
-              text: "Booking",
+              text: t(`OtaBooking`),
               url: "https://www.google.com/",
             },
           },
@@ -410,7 +411,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
-              text: "Cabina 3",
+              text: t(units.list.unit3.heading),
               variant: "h3",
             },
             backgroundColor: "#81B29A",
@@ -423,27 +424,27 @@ const IndexPage = ({ data: graphqlData }: any) => {
                 svgSize: "sm",
                 text: {
                   heading: {
-                    classes: "mb-0",
-                    text: "1 cama matrimonial",
+                    classes: "mb-0 text-capitalize fs-5",
+                    text: t(units.list.unit3.text),
                     variant: "h4",
                   },
                   bottom: {
                     classes: "mb-0",
-                    text: "(máx. 2 personas)",
+                    text: t(units.list.unit3.max),
                   },
                 },
               },
             ],
             preCta: {
               classes: "text-center small mb-2",
-              text: "Reservar por",
+              text: t(`booking`),
             },
             airbnb: {
               bold: true,
               disabled: false,
               classes: "mb-2 px-4 py-2 rounded-pill fw-bold btn-airbnb",
               targetBlank: false,
-              text: "Airbnb",
+              text: t(`OtaAirbnb`),
               url: "https://www.google.com/",
             },
             booking: {
@@ -451,7 +452,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
               disabled: false,
               classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-booking",
               targetBlank: false,
-              text: "Booking",
+              text: t(`OtaBooking`),
               url: "https://www.google.com/",
             },
           },
@@ -461,7 +462,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
-              text: "Cabina 4",
+              text: t(units.list.unit4.heading),
               variant: "h3",
             },
             backgroundColor: "#81B29A",
@@ -474,27 +475,27 @@ const IndexPage = ({ data: graphqlData }: any) => {
                 svgSize: "sm",
                 text: {
                   heading: {
-                    classes: "mb-0",
-                    text: "1 cama matrimonial",
+                    classes: "mb-0 text-capitalize fs-5",
+                    text: t(units.list.unit4.text),
                     variant: "h4",
                   },
                   bottom: {
                     classes: "mb-0",
-                    text: "(máx. 2 personas)",
+                    text: t(units.list.unit4.max),
                   },
                 },
               },
             ],
             preCta: {
               classes: "text-center small mb-2",
-              text: "Reservar por",
+              text: t(`booking`),
             },
             airbnb: {
               bold: true,
               disabled: false,
               classes: "mb-2 px-4 py-2 rounded-pill fw-bold btn-airbnb",
               targetBlank: false,
-              text: "Airbnb",
+              text: t(`OtaAirbnb`),
               url: "https://www.google.com/",
             },
             booking: {
@@ -502,7 +503,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
               disabled: false,
               classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-booking",
               targetBlank: false,
-              text: "Booking",
+              text: t(`OtaBooking`),
               url: "https://www.google.com/",
             },
           },
