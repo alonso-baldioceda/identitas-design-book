@@ -97,6 +97,7 @@ HeaderVersion1.args = {
       size: "sm",
     },
     text: {
+      classes: "fw-bold",
       text: "Company name",
       variant: "span",
     },

@@ -30,6 +30,7 @@ Default.args = {
         size: "sm",
       },
       text: {
+        classes: "fw-bold",
         text: "Vista Lago Arenal",
         variant: "span",
       },

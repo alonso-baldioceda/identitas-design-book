@@ -99,6 +99,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           size: "sm",
         },
         text: {
+          classes: "fw-bold",
           text: t(header.brand),
           variant: "span",
         },
