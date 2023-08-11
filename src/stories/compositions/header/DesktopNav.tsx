@@ -11,12 +11,7 @@ import Link from "./../../../shared/interfaces/link";
 
 // Styles
 const StyledDesktopNav = styled.ul`
-  display: none;
   justify-content: center;
-
-  @media (min-width: 1200px) {
-    display: flex;
-  }
 
   li {
     a {
@@ -73,7 +68,7 @@ const DesktopNav: FC<DesktopNavProps> = ({ navigation }) => {
   );
 
   return (
-    <StyledDesktopNav className={`nav ${prefix}-nav`}>
+    <StyledDesktopNav className={`d-none d-xl-flex nav ${prefix}-nav`}>
       {navigationLinks}
     </StyledDesktopNav>
   );

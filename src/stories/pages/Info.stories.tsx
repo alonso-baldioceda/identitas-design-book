@@ -115,7 +115,7 @@ Default.args = {
           classes: "mb-2",
         },
       ],
-      startingAt: 82,
+      startingAt: 72,
       mobileLanguagesLabel: {
         classes: "mb-3",
         text: "Idiomas:",

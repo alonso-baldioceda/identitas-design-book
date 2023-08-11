@@ -134,11 +134,11 @@ const IndexPage = ({ data: graphqlData }: any) => {
         languages: [
           {
             name: "es",
-            classes: "text-capitalize",
+            classes: "text-capitalize fw-bold",
           },
           {
             name: "es",
-            classes: "text-capitalize",
+            classes: "text-capitalize fw-bold",
           },
         ],
         navigation: [
@@ -147,42 +147,42 @@ const IndexPage = ({ data: graphqlData }: any) => {
             anchor: "top",
             text: t(navigation.main),
             offset: -104,
-            classes: "mb-2",
+            classes: "mb-2 fw-bold",
           },
           {
             type: "anchor",
             anchor: "units",
             text: t(navigation.units),
             offset: -80,
-            classes: "mb-2",
+            classes: "mb-2 fw-bold",
           },
           {
             type: "anchor",
             anchor: "common-spaces",
             text: t(navigation.commonSpaces),
             offset: -80,
-            classes: "mb-2",
+            classes: "mb-2 fw-bold",
           },
           {
             type: "anchor",
             anchor: "services",
             text: t(navigation.services),
             offset: -80,
-            classes: "mb-2",
+            classes: "mb-2 fw-bold",
           },
           {
             type: "anchor",
             anchor: "drive",
             text: t(navigation.drive),
             offset: -80,
-            classes: "mb-2",
+            classes: "mb-2 fw-bold",
           },
           {
             type: "anchor",
             anchor: "contact",
             text: t(navigation.contact),
             offset: -80,
-            classes: "mb-2",
+            classes: "mb-2 fw-bold",
           },
           {
             type: "link",
@@ -191,9 +191,9 @@ const IndexPage = ({ data: graphqlData }: any) => {
             classes: "mb-2",
           },
         ],
-        startingAt: 82,
+        startingAt: 72,
         mobileLanguagesLabel: {
-          classes: "mb-3",
+          classes: "mb-3 fw-bold",
           text: "Idiomas:",
           variant: "label",
         },
@@ -276,13 +276,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
         src: HeroImage,
         mask: true,
         panel: {
-          classes: "p-2 p-lg-3 m-0 col-4 col-lg-7",
-          position: "bottom-start",
-          text: {
-            text: t(hero.heading),
-            classes: "mb-0",
-            variant: "h1",
-          },
+          classes:
+            "p-2 p-sm-3 p-md-4 p-lg-3 m-0 col-12 col-lg-7 position-absolute",
+          height: "100px",
+        },
+        text: {
+          text: t(hero.heading),
+          classes: "mb-0 text-white",
+          variant: "h1",
         },
       },
     },
