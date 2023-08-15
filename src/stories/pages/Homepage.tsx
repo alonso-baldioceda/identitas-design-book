@@ -8,6 +8,7 @@ import Sphere from "../compositions/Sphere";
 import Text, { TextProps } from "../components/Text";
 import Drive, { DriveProps } from "../components/Drive";
 import Block, { BlockProps } from "../components/Block";
+import Contact, { ContactProps } from "../compositions/forms/templates/Contact";
 
 // Compositions
 import Card from "../compositions/card/Card";
@@ -42,6 +43,11 @@ export interface HomepageProps {
     content: DriveProps;
     icon: ReactNode;
   };
+  contactProps: {
+    blockProps: BlockProps;
+    heading: TextProps;
+    formData: ContactProps;
+  };
   rulesProps: {
     blockProps: BlockProps;
     heading: TextProps;
@@ -66,11 +72,14 @@ const Homepage: FC<HomepageProps> = ({
   commonProps,
   servicesProps,
   driveProps,
+  contactProps,
   rulesProps,
   footerProps,
   location,
 }) => {
   const [heroHeight, _] = useAvailHeight();
+
+  // console.log("contactProps", contactProps);
 
   return (
     <Layout footer={footerProps} header={headerProps} location={location}>
@@ -219,9 +228,22 @@ const Homepage: FC<HomepageProps> = ({
         </FadeInWhenVisible>
       </Block>
       {/* Contact */}
-      <section id="contact">
-        <h1>Contact here!</h1>
-      </section>
+      <Block {...contactProps.blockProps}>
+        <FadeInWhenVisible>
+          <Spacer>
+            <div className="container">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-10 col-sm-12">
+                  <Text {...contactProps.heading} />
+                  {contactProps.formData ? (
+                    <Contact formData={contactProps.formData} />
+                  ) : null}
+                </div>
+              </div>
+            </div>
+          </Spacer>
+        </FadeInWhenVisible>
+      </Block>
       {/* Rules */}
       <Block {...rulesProps.blockProps}>
         <FadeInWhenVisible>

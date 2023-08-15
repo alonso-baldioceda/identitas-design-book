@@ -3,14 +3,15 @@ import styled from "styled-components";
 
 // Components
 import FormControl, { FormControlProps } from "./../formControl/FormControl";
+import Button, { ButtonProps } from "./../../../components/Button";
 
 // Styles
 const StyledContact = styled.div``;
 
 // Types
-interface ContactProps {
+export interface ContactProps {
   formData?: any;
-  handleSubmit: () => void;
+  handleSubmit?: () => void;
 }
 
 export const Contact: FC<ContactProps> = ({ formData, handleSubmit }) => {
@@ -25,22 +26,25 @@ export const Contact: FC<ContactProps> = ({ formData, handleSubmit }) => {
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6 mb-3">
-              <FormControl {...formData[0]} />
+              <FormControl {...formData.fields[0]} />
             </div>
             <div className="col-12 col-md-6 mb-3">
-              <FormControl {...formData[1]} />
+              <FormControl {...formData.fields[1]} />
             </div>
             <div className="col-12 col-md-6 mb-3">
-              <FormControl {...formData[2]} />
+              <FormControl {...formData.fields[2]} />
             </div>
             <div className="col-12 col-md-6 mb-3">
-              <FormControl {...formData[3]} />
+              <FormControl {...formData.fields[3]} />
             </div>
             <div className="col-12 mb-3">
-              <FormControl {...formData[4]} />
+              <FormControl {...formData.fields[4]} />
             </div>
             <div className="col-12 mb-3">
-              <FormControl {...formData[5]} />
+              <FormControl {...formData.fields[5]} />
+            </div>
+            <div className="col-12">
+              <Button {...formData.button} />
             </div>
           </div>
         </div>

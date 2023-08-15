@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import classnames from "classnames";
 import { prefix } from "./../../shared/styles";
 
-interface ButtonProps {
+export interface ButtonProps {
   // appearance: string;
   classes?: string;
   disabled?: boolean;

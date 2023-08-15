@@ -6,7 +6,7 @@ export interface TextareaFormProps {
   classes: string;
   id?: string;
   name: string;
-  onChange: () => void;
+  onChange?: () => void;
   placeholder?: string;
   required?: boolean;
   rows?: number;

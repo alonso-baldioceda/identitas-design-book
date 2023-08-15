@@ -5,7 +5,7 @@ export interface InputFormProps {
   classes: string;
   id?: string;
   name: string;
-  onChange: () => void;
+  onChange?: () => void;
   placeholder?: string;
   required?: boolean;
   type?: string;

@@ -8,6 +8,10 @@ import Homepage from "./Homepage";
 import HeroImage from "./../../images/home-hero.jpg";
 import SphereImage1 from "./../../images/tour/room1.jpg";
 import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
+import { any, func } from "prop-types";
+
+// Types
+import { Types } from "./../compositions/forms/formControl/FormControl";
 
 export default {
   title: "Pages/Airbnb",
@@ -795,6 +799,142 @@ Default.args = {
         url: "https://goo.gl/maps/M2zvgGvrKBoyRzNH9",
       },
     },
+  },
+  contactProps: {
+    blockProps: {
+      id: "contact",
+      classes: "bg-secondary-pastel",
+    },
+    heading: {
+      text: "Escríbenos",
+      classes: "mb-5",
+      variant: "h2",
+    },
+    formData: {
+      fields: [
+        {
+          control: Types.INPUT,
+          error: {
+            classes: "invalid px-2",
+            text: "Nombre requerido",
+          },
+          input: {
+            classes: "form-control",
+            name: "firstname",
+            placeholder: "Nombre",
+          },
+          label: {
+            classes: "form-label",
+            idFor: "firstname",
+            text: "Nombre",
+            variant: "label",
+          },
+          required: true,
+        },
+        {
+          control: Types.INPUT,
+          error: {
+            classes: "invalid px-2",
+            text: "Apellido requerido",
+          },
+          input: {
+            classes: "form-control",
+            name: "lastname",
+            placeholder: "Apellido",
+          },
+          label: {
+            classes: "form-label",
+            idFor: "lastname",
+            text: "Apellido",
+            variant: "label",
+          },
+          required: true,
+        },
+        {
+          control: Types.INPUT,
+          error: {
+            classes: "invalid px-2",
+            text: "Correo electrónico requerido",
+          },
+          input: {
+            classes: "form-control",
+            name: "email",
+            placeholder: "correo electrónico",
+            type: "email",
+          },
+          label: {
+            classes: "form-label",
+            idFor: "email",
+            text: "correo electrónico",
+            variant: "label",
+          },
+          required: true,
+        },
+        {
+          control: Types.INPUT,
+          error: {
+            classes: "invalid px-2",
+            text: "Teléfono requerido",
+          },
+          input: {
+            classes: "form-control",
+            name: "phone",
+            placeholder: "Teléfono",
+          },
+          label: {
+            classes: "form-label",
+            idFor: "phone",
+            text: "Teléfono",
+            variant: "label",
+          },
+          required: true,
+        },
+        {
+          control: Types.INPUT,
+          error: {
+            classes: "invalid px-2",
+            text: "Asunto requerido",
+          },
+          input: {
+            classes: "form-control",
+            name: "subject",
+            placeholder: "Asunto",
+          },
+          label: {
+            classes: "form-label",
+            idFor: "subject",
+            text: "Asunto",
+            variant: "label",
+          },
+          required: true,
+        },
+        {
+          error: {
+            classes: "invalid px-2",
+            text: "Mensaje requerido",
+          },
+          input: {
+            classes: "form-control",
+            name: "message",
+            placeholder: "Mensaje",
+            rows: 3,
+          },
+          label: {
+            classes: "form-label",
+            idFor: "message",
+            text: "Mensaje",
+            variant: "label",
+          },
+          required: true,
+        },
+      ],
+      button: {
+        classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
+        text: "Enviar",
+        type: "submit",
+      },
+    },
+    handleSubmit: any,
   },
   rulesProps: {
     blockProps: {
