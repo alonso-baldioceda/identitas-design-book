@@ -4,11 +4,11 @@ import classnames from "classnames";
 export interface TextareaProps {
   containerClasses?: string;
   rows?: number;
-  touched?: any;
-  error?: any;
-  placeholder?: any;
-  field?: any;
-  value?: any;
+  touched?: boolean;
+  error?: boolean;
+  placeholder?: string;
+  field?: string;
+  value?: string;
   handleChange?: any;
 }
 

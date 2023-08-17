@@ -43,7 +43,6 @@ import SphereCommonPreviewImage2 from "./../images/tour/common2-preview.jpg";
 import Map from "./../images/svg/navigator.svg";
 
 // Types
-
 import { Types } from "./../stories/compositions/forms/formControl/FormControl";
 
 interface ServiceProps {
@@ -1387,10 +1386,6 @@ const IndexPage = ({ data: graphqlData }: any) => {
                 <div className='col-10 col-sm-12'>
                   <Text {...data.contactProps.heading} />
                   <Contact {...data.contactProps} />
-
-                  {/* {data.contactProps.formData ? (
-                    <ContactFormik {...data.contactProps} />
-                  ) : null} */}
                 </div>
               </div>
             </div>

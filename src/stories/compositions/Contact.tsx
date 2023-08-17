@@ -75,12 +75,12 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
     const { firstname, lastname, email, phone, subject, message } = model;
 
     const formData = {
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      phone: phone,
-      subject: subject,
-      message: message,
+      firstname,
+      lastname,
+      email,
+      phone,
+      subject,
+      message,
     };
 
     axios
@@ -166,17 +166,18 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
             >
               <div className='row'>
                 {formData.fields.map((field: any, index: number) => {
+                  const { containerClasses, input } = field;
                   if (field.control === "input") {
                     return (
                       <Input
                         key={index}
-                        containerClasses={field.containerClasses}
-                        type={field.input.type}
-                        touched={touched[field.input.name]}
-                        error={errors[field.input.name]}
-                        placeholder={field.input.placeholder}
-                        field={field.input.name}
-                        value={values[field.input.name]}
+                        containerClasses={containerClasses}
+                        type={input.type}
+                        touched={touched[input.name]}
+                        error={errors[input.name]}
+                        placeholder={input.placeholder}
+                        field={input.name}
+                        value={values[input.name]}
                         handleChange={handleChange}
                       />
                     );
@@ -186,13 +187,14 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
                     return (
                       <Textarea
                         key={index}
-                        containerClasses={field.containerClasses}
-                        touched={touched[field.input.name]}
-                        error={errors[field.input.name]}
-                        placeholder={field.input.placeholder}
-                        field={field.input.name}
-                        value={values[field.input.name]}
+                        containerClasses={containerClasses}
+                        touched={touched[input.name]}
+                        error={errors[input.name]}
+                        placeholder={input.placeholder}
+                        field={input.name}
+                        value={values[input.name]}
                         handleChange={handleChange}
+                        rows={input.rows}
                       />
                     );
                   }
