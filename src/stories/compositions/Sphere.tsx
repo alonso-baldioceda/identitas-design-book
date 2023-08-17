@@ -50,6 +50,7 @@ interface SphereProps {
   sceneId: string;
   width?: string;
   yaw?: number;
+  border?: number;
 }
 
 const Sphere: FC<SphereProps> = ({
@@ -61,6 +62,7 @@ const Sphere: FC<SphereProps> = ({
   sceneId,
   width,
   yaw,
+  border,
 }) => {
   const config = {
     autoLoad: false,
@@ -74,9 +76,12 @@ const Sphere: FC<SphereProps> = ({
   };
 
   return (
-    <SphereStyled className={classnames(`${prefix}-sphere`)}>
-      <RotationIconStyled className="bg-white p-1">
-        <SVG icon="rotation" size="sm" />
+    <SphereStyled
+      className={classnames(`${prefix}-sphere`)}
+      border={border ? border : 3}
+    >
+      <RotationIconStyled className='bg-white p-1'>
+        <SVG icon='rotation' size='sm' />
       </RotationIconStyled>
       {id && sceneId && image && (
         <ReactPannellum

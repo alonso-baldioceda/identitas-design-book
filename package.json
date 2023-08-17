@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.22.10",
+    "@loadable/component": "^5.15.3",
     "@mdx-js/react": "^2.3.0",
     "babel-plugin-styled-components": "^2.1.4",
     "bootstrap": "^5.3.1",

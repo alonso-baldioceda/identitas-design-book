@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "@reach/router";
+import loadable from "@loadable/component";
 
 // Compositions
 import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
@@ -10,8 +11,12 @@ import Grid from "./../stories/compositions/Grid";
 import Hero from "./../stories/compositions/hero/Hero";
 import Layout from "./../stories/compositions/Layout";
 import ListGroup from "./../stories/compositions/ListGroup";
-import Sphere from "./../stories/compositions/Sphere";
+// import Sphere from "./../stories/compositions/Sphere";
 import Contact from "./../stories/compositions/Contact";
+
+const LoadableSphere = loadable(
+  () => import("./../stories/compositions/Sphere")
+);
 
 // Components
 // The Album component is not used in the Storybook, but it is used in the
@@ -22,6 +27,10 @@ import Drive from "./../stories/components/Drive";
 import FadeInWhenVisible from "./../stories/components/FadeInWhenVisible";
 import Spacer from "./../stories/components/Spacer";
 import Text, { TextProps } from "./../stories/components/Text";
+
+// const LoadableGallery = loadable(
+//   () => import("./../stories/compositions/Gallery")
+// );
 
 // Hooks
 import useAvailHeight from "./../hooks/useAvailHeight";
@@ -309,7 +318,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
       },
       cardsProps: [
         {
-          border: 4,
+          border: 5,
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
@@ -360,7 +369,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
         },
         {
-          border: 4,
+          border: 5,
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
@@ -411,7 +420,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
         },
         {
-          border: 4,
+          border: 5,
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
@@ -462,7 +471,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
         },
         {
-          border: 4,
+          border: 5,
           header: {
             text: {
               classes: "mb-0 py-4 text-capitalize",
@@ -1242,10 +1251,9 @@ const IndexPage = ({ data: graphqlData }: any) => {
               <div className='row justify-content-center justify-content-md-start'>
                 <div className='col-10 col-sm-12'>
                   <Grid {...data.unitsProps.cardsGridProps}>
-                    <Card {...data.unitsProps.cardsProps[0]} />
-                    <Card {...data.unitsProps.cardsProps[1]} />
-                    <Card {...data.unitsProps.cardsProps[2]} />
-                    <Card {...data.unitsProps.cardsProps[3]} />
+                    {data.unitsProps.cardsProps.map((cardProps, index) => (
+                      <Card key={index} {...cardProps} />
+                    ))}
                   </Grid>
                 </div>
               </div>
@@ -1255,13 +1263,13 @@ const IndexPage = ({ data: graphqlData }: any) => {
             <div className='container'>
               <div className='row justify-content-center'>
                 <div className='col-10 col-sm-6 mb-3 mb-md-5'>
-                  <Sphere {...data.unitsProps.sphereProps1} />
+                  <LoadableSphere {...data.unitsProps.sphereProps1} />
                 </div>
                 <div className='col-10 col-sm-6 mb-3 mb-md-5'>
-                  <Sphere {...data.unitsProps.sphereProps2} />
+                  <LoadableSphere {...data.unitsProps.sphereProps2} />
                 </div>
                 <div className='col-10 col-sm-6 mb-3 mb-md-5'>
-                  <Sphere {...data.unitsProps.sphereProps3} />
+                  <LoadableSphere {...data.unitsProps.sphereProps3} />
                 </div>
                 <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Gallery images={unitsImgs} name='unitsGallery' />
@@ -1302,10 +1310,10 @@ const IndexPage = ({ data: graphqlData }: any) => {
                 </div>
                 <div className='order-1 order-xl-2 col-10 col-sm-6'>
                   <div className='mb-2'>
-                    <Sphere {...data.commonProps.sphereProps1} />
+                    <LoadableSphere {...data.commonProps.sphereProps1} />
                   </div>
                   <div className='mb-2'>
-                    <Sphere {...data.commonProps.sphereProps2} />
+                    <LoadableSphere {...data.commonProps.sphereProps2} />
                   </div>
                 </div>
               </div>
