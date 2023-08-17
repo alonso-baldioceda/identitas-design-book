@@ -386,6 +386,18 @@ export const bodyStyles = css`
       }
     }
   }
+
+  /* Forms */
+
+  .invalid {
+    background-color: ${color.alert};
+    border-radius: 10px;
+    color: #fff !important;
+    display: inline-block;
+    font-size: 0.875rem;
+    margin-top: 10px;
+    padding: 1.5px 7.5px;
+  }
 `;
 
 export const GlobalStyle = createGlobalStyle`

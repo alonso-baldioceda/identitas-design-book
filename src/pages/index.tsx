@@ -43,7 +43,7 @@ import SphereCommonPreviewImage2 from "./../images/tour/common2-preview.jpg";
 import Map from "./../images/svg/navigator.svg";
 
 // Types
-import { Types } from "./../stories/compositions/forms/formControl/FormControl";
+import { Controls } from "./../shared/interfaces/control";
 
 interface ServiceProps {
   heading: TextProps;
@@ -904,7 +904,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
         fields: [
           {
             containerClasses: "col-12 col-md-6 mb-3",
-            control: Types.INPUT,
+            control: Controls.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.firstnameRequired),
@@ -925,7 +925,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
           {
             containerClasses: "col-12 col-md-6 mb-3",
-            control: Types.INPUT,
+            control: Controls.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.lastnameRequired),
@@ -946,7 +946,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
           {
             containerClasses: "col-12 col-md-6 mb-3",
-            control: Types.INPUT,
+            control: Controls.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.emailRequired),
@@ -967,7 +967,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
           {
             containerClasses: "col-12 col-md-6 mb-3",
-            control: Types.INPUT,
+            control: Controls.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.phoneRequired),
@@ -988,7 +988,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
           {
             containerClasses: "col-12 col-md-6 mb-3",
-            control: Types.INPUT,
+            control: Controls.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.subjectRequired),
@@ -1009,7 +1009,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
           },
           {
             containerClasses: "col-12 mb-3",
-            control: Types.TEXTAREA,
+            control: Controls.TEXTAREA,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.messageRequired),

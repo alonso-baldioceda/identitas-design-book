@@ -11,7 +11,7 @@ import SpherePreviewImage1 from "./../../images/tour/room1-preview.jpg";
 import { any, func } from "prop-types";
 
 // Types
-import { Types } from "./../compositions/forms/formControl/FormControl";
+import { Controls } from "./../../shared/interfaces/control";
 
 export default {
   title: "Pages/Airbnb",
@@ -813,7 +813,7 @@ Default.args = {
     formData: {
       fields: [
         {
-          control: Types.INPUT,
+          control: Controls.INPUT,
           error: {
             classes: "invalid px-2",
             text: "Nombre requerido",
@@ -832,7 +832,7 @@ Default.args = {
           required: true,
         },
         {
-          control: Types.INPUT,
+          control: Controls.INPUT,
           error: {
             classes: "invalid px-2",
             text: "Apellido requerido",
@@ -851,7 +851,7 @@ Default.args = {
           required: true,
         },
         {
-          control: Types.INPUT,
+          control: Controls.INPUT,
           error: {
             classes: "invalid px-2",
             text: "Correo electrónico requerido",
@@ -871,7 +871,7 @@ Default.args = {
           required: true,
         },
         {
-          control: Types.INPUT,
+          control: Controls.INPUT,
           error: {
             classes: "invalid px-2",
             text: "Teléfono requerido",
@@ -890,7 +890,7 @@ Default.args = {
           required: true,
         },
         {
-          control: Types.INPUT,
+          control: Controls.INPUT,
           error: {
             classes: "invalid px-2",
             text: "Asunto requerido",

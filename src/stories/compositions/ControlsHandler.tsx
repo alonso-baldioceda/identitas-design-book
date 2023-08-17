@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { prefix } from "../../shared/styles";
 
 // Components
-import Input from "./../compositions/forms/formControl/Input";
-import Textarea from "./../compositions/forms/formControl/Textarea";
+import Input from "./forms/controls/Input";
+import Textarea from "./forms/controls/Textarea";
 
 // Styles
 const StyledControlsHandler = styled.div``;

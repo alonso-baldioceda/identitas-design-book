@@ -1,6 +1,9 @@
 import React, { FC } from "react";
 import classnames from "classnames";
-import { prefix } from "./../../../../shared/styles";
+import { prefix } from "../../../../shared/styles";
+
+// Components
+import Text from "./../../../components/Text";
 
 export interface InputProps {
   type?: string;

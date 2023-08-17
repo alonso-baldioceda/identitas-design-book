@@ -5,7 +5,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { ContactFormik as ContactFormikComponent } from "./contactFormik";
 
 // Types
-import { Types } from "./../formControl/FormControl";
+import { Controls } from "./../../../../shared/interfaces/control";
 
 // Stories
 import * as ContactStories from "./../templates/Contact.stories";
