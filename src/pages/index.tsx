@@ -12,7 +12,6 @@ import Layout from "./../stories/compositions/Layout";
 import ListGroup from "./../stories/compositions/ListGroup";
 import Sphere from "./../stories/compositions/Sphere";
 import Contact from "./../stories/compositions/Contact";
-import ContactFormik from "./../stories/compositions/forms/formik/contactFormik";
 
 // Components
 // The Album component is not used in the Storybook, but it is used in the
@@ -1431,7 +1430,7 @@ export const query = graphql`
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
         relativeDirectory: { eq: "units" }
       }
-      sort: { order: ASC, fields: name }
+      sort: { name: ASC }
     ) {
       totalCount
       edges {
@@ -1450,7 +1449,7 @@ export const query = graphql`
         extension: { regex: "/(jpg)|(png)|(jpeg)/" }
         relativeDirectory: { eq: "common" }
       }
-      sort: { order: ASC, fields: name }
+      sort: { name: ASC }
     ) {
       totalCount
       edges {
