@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import classnames from "classnames";
+import { prefix } from "./../../../../shared/styles";
 
 export interface TextareaProps {
-  containerClasses?: string;
   rows?: number;
   touched?: boolean;
   error?: boolean;
@@ -13,7 +13,6 @@ export interface TextareaProps {
 }
 
 export const Textarea: FC<TextareaProps> = ({
-  containerClasses,
   rows,
   touched,
   error,
@@ -23,7 +22,7 @@ export const Textarea: FC<TextareaProps> = ({
   handleChange,
 }) => {
   return (
-    <div className={containerClasses}>
+    <div className={`${prefix}-textarea`}>
       <label htmlFor={field}>{placeholder}</label>
       <textarea
         className={classnames(

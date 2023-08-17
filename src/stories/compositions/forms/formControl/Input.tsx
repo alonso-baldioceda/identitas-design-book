@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import classnames from "classnames";
+import { prefix } from "./../../../../shared/styles";
 
 export interface InputProps {
-  containerClasses?: string;
   type?: string;
   touched?: boolean;
   error?: boolean;
@@ -13,7 +13,6 @@ export interface InputProps {
 }
 
 export const Input: FC<InputProps> = ({
-  containerClasses,
   type,
   touched,
   error,
@@ -23,7 +22,7 @@ export const Input: FC<InputProps> = ({
   handleChange,
 }) => {
   return (
-    <div className={containerClasses}>
+    <div className={`${prefix}-input`}>
       <label htmlFor={field}>{placeholder}</label>
       <input
         type={type}

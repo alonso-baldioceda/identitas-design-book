@@ -57,7 +57,6 @@ export const ContactFormik: FC<ContactFormikProps> = (props) => {
       resetForm: () => void;
     }
   ) => {
-    console.log("hi!!");
     const formData = { ...model };
 
     // const axiosConfig = {

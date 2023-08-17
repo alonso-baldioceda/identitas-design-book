@@ -79,8 +79,6 @@ const Homepage: FC<HomepageProps> = ({
 }) => {
   const [heroHeight, _] = useAvailHeight();
 
-  // console.log("contactProps", contactProps);
-
   return (
     <Layout footer={footerProps} header={headerProps} location={location}>
       <ContactPoint {...contactPointProps} />
@@ -92,27 +90,27 @@ const Homepage: FC<HomepageProps> = ({
       <Block {...unitsProps.block}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...unitsProps.heading} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...unitsProps.text} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center justify-content-md-start">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-md-start'>
+                <div className='col-10 col-sm-12'>
                   <Grid {...unitsProps.cardsGridProps}>
                     <Card {...unitsProps.cardsProps[0]} />
                     <Card {...unitsProps.cardsProps[1]} />
@@ -124,15 +122,15 @@ const Homepage: FC<HomepageProps> = ({
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row">
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+            <div className='container'>
+              <div className='row'>
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Sphere {...unitsProps.sphereProps1} />
                 </div>
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Sphere {...unitsProps.sphereProps2} />
                 </div>
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Sphere {...unitsProps.sphereProps3} />
                 </div>
                 {/* <div className="col-10 col-sm-6 mb-3 mb-md-5">
@@ -147,18 +145,18 @@ const Homepage: FC<HomepageProps> = ({
       <Block {...commonProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...commonProps.heading} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...commonProps.text} />
                 </div>
               </div>
@@ -170,10 +168,10 @@ const Homepage: FC<HomepageProps> = ({
       <Block {...servicesProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
                 {servicesProps?.heading && (
-                  <div className="col-10 col-sm-12">
+                  <div className='col-10 col-sm-12'>
                     <Text {...servicesProps.heading} />
                   </div>
                 )}
@@ -183,18 +181,18 @@ const Homepage: FC<HomepageProps> = ({
           {servicesProps?.list.map((service: ServiceProps, index: number) => (
             <div key={index} id={`service-${service.heading.text}`}>
               <Spacer bottomOnly={true}>
-                <div className="container">
-                  <div className="row justify-content-center justify-content-sm-start">
-                    <div className="col-10 col-sm-12">
+                <div className='container'>
+                  <div className='row justify-content-center justify-content-sm-start'>
+                    <div className='col-10 col-sm-12'>
                       <Text {...service.heading} />
                     </div>
                   </div>
                 </div>
               </Spacer>
               <Spacer bottomOnly={true}>
-                <div className="container">
-                  <div className="row justify-content-center justify-content-sm-start">
-                    <div className="col-10 col-sm-12">
+                <div className='container'>
+                  <div className='row justify-content-center justify-content-sm-start'>
+                    <div className='col-10 col-sm-12'>
                       <ListGroup
                         list={service.list}
                         float={service.float}
@@ -212,15 +210,15 @@ const Homepage: FC<HomepageProps> = ({
       <Block {...driveProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row align-items-center justify-content-center">
+            <div className='container'>
+              <div className='row align-items-center justify-content-center'>
                 {driveProps && (
-                  <div className="col-10 col-sm-12 col-md-6">
+                  <div className='col-10 col-sm-12 col-md-6'>
                     <Drive {...driveProps.content} />
                   </div>
                 )}
-                <div className="col-10 col-sm-12 col-md-6">
-                  <img src={Map} alt="drive" />
+                <div className='col-10 col-sm-12 col-md-6'>
+                  <img src={Map} alt='drive' />
                 </div>
               </div>
             </div>
@@ -231,9 +229,9 @@ const Homepage: FC<HomepageProps> = ({
       <Block {...contactProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row align-items-center justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...contactProps.heading} />
                   {contactProps.formData ? (
                     <Contact formData={contactProps.formData} />
@@ -248,18 +246,18 @@ const Homepage: FC<HomepageProps> = ({
       <Block {...rulesProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
+                <div className='col-10 col-sm-12'>
                   <Text {...rulesProps.heading} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
+                <div className='col-10 col-sm-12'>
                   <ListGroup list={rulesProps.list} float={rulesProps.float} />
                 </div>
               </div>

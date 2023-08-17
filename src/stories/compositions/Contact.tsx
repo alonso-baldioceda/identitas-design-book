@@ -8,8 +8,7 @@ import axios from "axios";
 
 // Components
 // import Toast from "./toast";
-import Input from "./../compositions/forms/formControl/Input";
-import Textarea from "./../compositions/forms/formControl/Textarea";
+import ControlsHandler from "./../compositions/ControlsHandler";
 
 // Styles
 const ContactForm = styled.div`
@@ -131,8 +130,6 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
     handleSubmit;
   }, []);
 
-  console.log(formData.fields);
-
   return (
     <Formik
       validationSchema={schema}
@@ -166,38 +163,18 @@ export const Contact: FC<ContactProps> = ({ formData }) => {
             >
               <div className='row'>
                 {formData.fields.map((field: any, index: number) => {
-                  const { containerClasses, input } = field;
-                  if (field.control === "input") {
-                    return (
-                      <Input
-                        key={index}
-                        containerClasses={containerClasses}
-                        type={input.type}
-                        touched={touched[input.name]}
-                        error={errors[input.name]}
-                        placeholder={input.placeholder}
-                        field={input.name}
-                        value={values[input.name]}
-                        handleChange={handleChange}
-                      />
-                    );
-                  }
+                  const { input } = field;
 
-                  if (field.control === "textarea") {
-                    return (
-                      <Textarea
-                        key={index}
-                        containerClasses={containerClasses}
-                        touched={touched[input.name]}
-                        error={errors[input.name]}
-                        placeholder={input.placeholder}
-                        field={input.name}
-                        value={values[input.name]}
-                        handleChange={handleChange}
-                        rows={input.rows}
-                      />
-                    );
-                  }
+                  return (
+                    <ControlsHandler
+                      key={`controls-handler-${index}`}
+                      field={field}
+                      touched={touched[input.name]}
+                      error={errors[input.name]}
+                      value={values[input.name]}
+                      handleChange={handleChange}
+                    />
+                  );
                 })}
                 <div className='col-12'>
                   <Button
