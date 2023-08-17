@@ -5,13 +5,14 @@ import { useLocation } from "@reach/router";
 
 // Compositions
 import { ListGroupItemProps } from "../stories/compositions/ListGroupItem";
-import Contact from "./../stories/compositions/Contact";
 import Card from "./../stories/compositions/card/Card";
 import Grid from "./../stories/compositions/Grid";
 import Hero from "./../stories/compositions/hero/Hero";
 import Layout from "./../stories/compositions/Layout";
 import ListGroup from "./../stories/compositions/ListGroup";
 import Sphere from "./../stories/compositions/Sphere";
+import Contact from "./../stories/compositions/Contact";
+import ContactFormik from "./../stories/compositions/forms/formik/contactFormik";
 
 // Components
 // The Album component is not used in the Storybook, but it is used in the
@@ -42,6 +43,9 @@ import SphereCommonPreviewImage2 from "./../images/tour/common2-preview.jpg";
 import Map from "./../images/svg/navigator.svg";
 
 // Types
+
+import { Types } from "./../stories/compositions/forms/formControl/FormControl";
+
 interface ServiceProps {
   heading: TextProps;
   float?: boolean;
@@ -890,6 +894,7 @@ const IndexPage = ({ data: graphqlData }: any) => {
     contactProps: {
       blockProps: {
         id: "contact",
+        classes: "bg-secondary-pastel",
       },
       heading: {
         text: t(contact.heading),
@@ -899,11 +904,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
       formData: {
         fields: [
           {
+            containerClasses: "col-12 col-md-6 mb-3",
+            control: Types.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.firstnameRequired),
             },
             input: {
+              type: "text",
               classes: "form-control",
               name: "firstname",
               placeholder: t(contact.firstname),
@@ -917,11 +925,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
             required: true,
           },
           {
+            containerClasses: "col-12 col-md-6 mb-3",
+            control: Types.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.lastnameRequired),
             },
             input: {
+              type: "text",
               classes: "form-control",
               name: "lastname",
               placeholder: t(contact.lastname),
@@ -935,15 +946,17 @@ const IndexPage = ({ data: graphqlData }: any) => {
             required: true,
           },
           {
+            containerClasses: "col-12 col-md-6 mb-3",
+            control: Types.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.emailRequired),
             },
             input: {
+              type: "email",
               classes: "form-control",
               name: "email",
               placeholder: t(contact.email),
-              type: "email",
             },
             label: {
               classes: "form-label",
@@ -954,11 +967,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
             required: true,
           },
           {
+            containerClasses: "col-12 col-md-6 mb-3",
+            control: Types.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.phoneRequired),
             },
             input: {
+              type: "text",
               classes: "form-control",
               name: "phone",
               placeholder: t(contact.phone),
@@ -972,11 +988,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
             required: true,
           },
           {
+            containerClasses: "col-12 col-md-6 mb-3",
+            control: Types.INPUT,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.subjectRequired),
             },
             input: {
+              type: "text",
               classes: "form-control",
               name: "subject",
               placeholder: t(contact.subject),
@@ -990,6 +1009,8 @@ const IndexPage = ({ data: graphqlData }: any) => {
             required: true,
           },
           {
+            containerClasses: "col-12 mb-3",
+            control: Types.TEXTAREA,
             error: {
               classes: "invalid px-2",
               text: t(contact.validation.messageRequired),
@@ -1008,11 +1029,27 @@ const IndexPage = ({ data: graphqlData }: any) => {
             },
             required: true,
           },
-          {
-            classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
-            type: "submit",
-          },
         ],
+        button: {
+          classes: "mb-0 px-4 py-2 rounded-pill fw-bold btn-primary",
+          text: "Enviar",
+          submitting: t(contact.submitting),
+          submit: t(contact.submit),
+          type: "submit",
+        },
+        validations: {
+          firstnameRequired: t(contact.validation.firstnameRequired),
+          lastnameRequired: t(contact.validation.lastnameRequired),
+          emailRequired: t(contact.validation.emailRequired),
+          emailInvalid: t(contact.validation.emailInvalid),
+          phoneRequired: t(contact.validation.phoneRequired),
+          subjectRequired: t(contact.validation.subjectRequired),
+          messageRequired: t(contact.validation.messageRequired),
+          successHeader: t(contact.validation.successHeader),
+          successBody: t(contact.validation.successBody),
+          errorHeader: t(contact.validation.errorHeader),
+          errorBody: t(contact.validation.errorBody),
+        },
       },
     },
     rulesProps: {
@@ -1185,27 +1222,27 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.unitsProps.block}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...data.unitsProps.heading} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...data.unitsProps.text} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center justify-content-md-start">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-md-start'>
+                <div className='col-10 col-sm-12'>
                   <Grid {...data.unitsProps.cardsGridProps}>
                     <Card {...data.unitsProps.cardsProps[0]} />
                     <Card {...data.unitsProps.cardsProps[1]} />
@@ -1217,19 +1254,19 @@ const IndexPage = ({ data: graphqlData }: any) => {
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Sphere {...data.unitsProps.sphereProps1} />
                 </div>
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Sphere {...data.unitsProps.sphereProps2} />
                 </div>
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
                   <Sphere {...data.unitsProps.sphereProps3} />
                 </div>
-                <div className="col-10 col-sm-6 mb-3 mb-md-5">
-                  <Gallery images={unitsImgs} name="unitsGallery" />
+                <div className='col-10 col-sm-6 mb-3 mb-md-5'>
+                  <Gallery images={unitsImgs} name='unitsGallery' />
                 </div>
               </div>
             </div>
@@ -1240,36 +1277,36 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.commonProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...data.commonProps.heading} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...data.commonProps.text} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="order-2 order-xl-1 col-10 col-sm-6">
-                  <div className="common">
-                    <Gallery images={commonImgs} name="commonGallery" />
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
+                <div className='order-2 order-xl-1 col-10 col-sm-6'>
+                  <div className='common'>
+                    <Gallery images={commonImgs} name='commonGallery' />
                   </div>
                 </div>
-                <div className="order-1 order-xl-2 col-10 col-sm-6">
-                  <div className="mb-2">
+                <div className='order-1 order-xl-2 col-10 col-sm-6'>
+                  <div className='mb-2'>
                     <Sphere {...data.commonProps.sphereProps1} />
                   </div>
-                  <div className="mb-2">
+                  <div className='mb-2'>
                     <Sphere {...data.commonProps.sphereProps2} />
                   </div>
                 </div>
@@ -1282,10 +1319,10 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.servicesProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
                 {data.servicesProps?.heading && (
-                  <div className="col-10 col-sm-12">
+                  <div className='col-10 col-sm-12'>
                     <Text {...data.servicesProps.heading} />
                   </div>
                 )}
@@ -1296,18 +1333,18 @@ const IndexPage = ({ data: graphqlData }: any) => {
             (service: ServiceProps, index: number) => (
               <div key={index} id={`service-${service.heading.text}`}>
                 <Spacer bottomOnly={true}>
-                  <div className="container">
-                    <div className="row justify-content-center justify-content-sm-start">
-                      <div className="col-10 col-sm-12">
+                  <div className='container'>
+                    <div className='row justify-content-center justify-content-sm-start'>
+                      <div className='col-10 col-sm-12'>
                         <Text {...service.heading} />
                       </div>
                     </div>
                   </div>
                 </Spacer>
                 <Spacer bottomOnly={true}>
-                  <div className="container">
-                    <div className="row justify-content-center justify-content-sm-start">
-                      <div className="col-10 col-sm-12">
+                  <div className='container'>
+                    <div className='row justify-content-center justify-content-sm-start'>
+                      <div className='col-10 col-sm-12'>
                         <ListGroup
                           list={service.list}
                           float={service.float}
@@ -1326,14 +1363,14 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.driveProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="position-relative">
-              <div className="container">
-                <div className="row align-items-center justify-content-center">
-                  <div className="col-10 col-sm-12 col-md-6">
+            <div className='position-relative'>
+              <div className='container'>
+                <div className='row align-items-center justify-content-center'>
+                  <div className='col-10 col-sm-12 col-md-6'>
                     <Drive {...data.driveProps.content} />
                   </div>
-                  <div className="col-10 col-sm-12 col-md-6">
-                    <img src={Map} alt="drive" />
+                  <div className='col-10 col-sm-12 col-md-6'>
+                    <img src={Map} alt='drive' />
                   </div>
                 </div>
               </div>
@@ -1345,11 +1382,15 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.contactProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row align-items-center justify-content-center'>
+                <div className='col-10 col-sm-12'>
                   <Text {...data.contactProps.heading} />
-                  <Contact formData={data.contactProps.formData} />
+                  <Contact {...data.contactProps} />
+
+                  {/* {data.contactProps.formData ? (
+                    <ContactFormik {...data.contactProps} />
+                  ) : null} */}
                 </div>
               </div>
             </div>
@@ -1360,18 +1401,18 @@ const IndexPage = ({ data: graphqlData }: any) => {
       <Block {...data.rulesProps.blockProps}>
         <FadeInWhenVisible>
           <Spacer>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
+                <div className='col-10 col-sm-12'>
                   <Text {...data.rulesProps.heading} />
                 </div>
               </div>
             </div>
           </Spacer>
           <Spacer bottomOnly={true}>
-            <div className="container">
-              <div className="row justify-content-center justify-content-sm-start">
-                <div className="col-10 col-sm-12">
+            <div className='container'>
+              <div className='row justify-content-center justify-content-sm-start'>
+                <div className='col-10 col-sm-12'>
                   <ListGroup
                     list={data.rulesProps.list}
                     float={data.rulesProps.float}

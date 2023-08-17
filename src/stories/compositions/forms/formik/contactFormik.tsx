@@ -31,7 +31,7 @@ interface IServerResponse {
   data: any;
 }
 
-interface ContactFormikProps { }
+interface ContactFormikProps {}
 
 export const ContactFormik: FC<ContactFormikProps> = (props) => {
   const [conf, setConf] = useState({});
@@ -47,7 +47,6 @@ export const ContactFormik: FC<ContactFormikProps> = (props) => {
     message: Yup.string().required("Mensage requerido"),
   });
 
-
   const handleSubmit = (
     model: IModel,
     {
@@ -58,6 +57,7 @@ export const ContactFormik: FC<ContactFormikProps> = (props) => {
       resetForm: () => void;
     }
   ) => {
+    console.log("hi!!");
     const formData = { ...model };
 
     // const axiosConfig = {
@@ -108,52 +108,52 @@ export const ContactFormik: FC<ContactFormikProps> = (props) => {
 
     // sendForm();
 
-    axios
-      .request<IServerData>({
-        method: "post",
-        url: `${process.env.GATSBY_AWS_API_GATEWAY}`,
-        headers: {
-          "Content-Type": "application/json",
-          // "Access-Control-Allow-Origin": "http://localhost:8000",
-        },
+    // axios
+    //   .request<IServerData>({
+    //     method: "post",
+    //     url: `${process.env.GATSBY_AWS_API_GATEWAY}`,
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       // "Access-Control-Allow-Origin": "http://localhost:8000",
+    //     },
 
-        transformRequest: (data = formData) => JSON.stringify(data),
-        transformResponse: (response: IServerResponse) => response.data,
-      })
-      .then((response) => {
-        if (response.status === 200) {
-          resetForm();
-          setConf({
-            type: "success",
-            error: false,
-            heading: "Mensaje enviado :)",
-            body: "De ser necesario lo contactaremos, gracias!",
-            visible: true,
-          });
-          // setTimeout(() => handleClose(), 5000);
-          const timer = setTimeout(() => {
-            handleClose();
-          }, 5000);
-          return () => clearTimeout(timer);
-        }
-      })
-      .catch(function (error) {
-        setSubmitting(false);
-        if (error) {
-          setConf({
-            type: "alert",
-            error: true,
-            heading: "Algo pasó :(",
-            body: "Por favor inténtelo de nuevo, gracias!",
-            visible: true,
-          });
-          // setTimeout(() => handleClose(), 5000);
-          const timer = setTimeout(() => {
-            handleClose();
-          }, 5000);
-          return () => clearTimeout(timer);
-        }
-      });
+    //     transformRequest: (data = formData) => JSON.stringify(data),
+    //     transformResponse: (response: IServerResponse) => response.data,
+    //   })
+    //   .then((response) => {
+    //     if (response.status === 200) {
+    //       resetForm();
+    //       setConf({
+    //         type: "success",
+    //         error: false,
+    //         heading: "Mensaje enviado :)",
+    //         body: "De ser necesario lo contactaremos, gracias!",
+    //         visible: true,
+    //       });
+    //       // setTimeout(() => handleClose(), 5000);
+    //       const timer = setTimeout(() => {
+    //         handleClose();
+    //       }, 5000);
+    //       return () => clearTimeout(timer);
+    //     }
+    //   })
+    //   .catch(function (error) {
+    //     setSubmitting(false);
+    //     if (error) {
+    //       setConf({
+    //         type: "alert",
+    //         error: true,
+    //         heading: "Algo pasó :(",
+    //         body: "Por favor inténtelo de nuevo, gracias!",
+    //         visible: true,
+    //       });
+    //       // setTimeout(() => handleClose(), 5000);
+    //       const timer = setTimeout(() => {
+    //         handleClose();
+    //       }, 5000);
+    //       return () => clearTimeout(timer);
+    //     }
+    //   });
   };
 
   const handleClose = () => {
@@ -183,14 +183,11 @@ export const ContactFormik: FC<ContactFormikProps> = (props) => {
           isValid,
           isSubmitting,
         }) => {
-          return (
-            <>
-              <Contact {...props} />
-            </>
-          );
+          return <Contact {...props} />;
         }}
       </Formik>
-    </StyledContactFormik>);
+    </StyledContactFormik>
+  );
 };
 
 export default ContactFormik;

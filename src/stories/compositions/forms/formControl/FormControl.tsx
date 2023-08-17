@@ -41,7 +41,7 @@ export const FormControl: FC<FormControlProps> = ({
   const newInputProps = {
     ...input,
     id: id ? id : input.name,
-    onChange: onChange ? onChange : () => {},
+    onChange: onChange,
     value: value,
   };
 
