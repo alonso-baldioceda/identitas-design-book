@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { prefix } from "../../shared/styles";
+import { prefix } from "../../../shared/styles";
 
 // Components
-import Input from "./forms/controls/Input";
-import Textarea from "./forms/controls/Textarea";
+import Input from "./controls/Input";
+import Textarea from "./controls/Textarea";
 
 // Styles
 const StyledControlsHandler = styled.div``;

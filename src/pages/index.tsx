@@ -12,7 +12,7 @@ import Hero from "./../stories/compositions/hero/Hero";
 import Layout from "./../stories/compositions/Layout";
 import ListGroup from "./../stories/compositions/ListGroup";
 // import Sphere from "./../stories/compositions/Sphere";
-import Contact from "./../stories/compositions/Contact";
+import Contact from "../stories/compositions/forms/templates/Contact";
 
 const LoadableSphere = loadable(
   () => import("./../stories/compositions/Sphere")
